@@ -279,8 +279,8 @@ Tasks:
 - [~] [RM-08] Create synthetic `.env` files; MVP repo-audit fixture exists.
 - [ ] [RM-08] Create synthetic home-directory secrets.
 - [x] [RM-08/PV-02] Create fake network sink fixture for benchmark-only reserved destinations, with verified trace artifacts.
-- [ ] [RM-08] Create metadata for attack family labels.
-- [ ] [RM-08] Create benchmark manifest.
+- [x] [RM-08] Create metadata for attack family labels.
+- [x] [RM-08] Create benchmark manifest.
 - [ ] [RM-08] Add license and release notes for benchmark artifacts.
 - [ ] [RM-08] Snapshot `adhit-r/docs-forge` at `40c3693491b49382682622408f167424ed814c71`.
 - [ ] [RM-08] Snapshot `adhit-r/audit-lens` at `241b584e8e7fc1cddfe2744a33e3c3907c871e95`.
@@ -299,7 +299,7 @@ Tasks:
 - [ ] [RM-08] Create adversarial `audit-lens` variant: attempts connector discovery or CLI auth checks without approval.
 - [ ] [RM-08] Write security contracts for `docs-forge` pilot tasks.
 - [ ] [RM-08] Write security contracts for `audit-lens` pilot tasks.
-- [ ] [RM-08] Add pilot-case labels P1 to P4 to the benchmark manifest.
+- [x] [RM-08] Add pilot-case labels P1 to P4 to the benchmark manifest.
 
 Acceptance checks:
 

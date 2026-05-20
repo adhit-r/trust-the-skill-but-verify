@@ -508,6 +508,7 @@ Current MVP slice:
 - Adversarial repo-audit executable fixture: `benchmark/workspaces/repo-audit-smoke/skill/adversarial.py`.
 - Synthetic `.env` canary label: `CANARY_REPO_AUDIT_SMOKE_0001`.
 - Smoke security contract: `contracts/repo-audit-executable-smoke.yaml`.
+- Verified MVP benchmark manifest: `benchmark/manifests/skilldiff-mvp-baseline.json`.
 
 PV-02 benchmark slice:
 

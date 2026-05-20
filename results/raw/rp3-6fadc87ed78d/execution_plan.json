@@ -1,0 +1,150 @@
+{
+  "approval_policy": {
+    "auto_decisions": {
+      "default": "deny",
+      "filesystem.write": "allow"
+    },
+    "deny_behavior": "block",
+    "mode": "deterministic_prompt",
+    "prompt_must_show": [
+      "event_type",
+      "target",
+      "risk_label",
+      "canary_presence"
+    ],
+    "record_transcript": true,
+    "rules": [
+      "filesystem.write_outside_output",
+      "network.send",
+      "tool.invoke",
+      "privilege_escalation"
+    ]
+  },
+  "canary_labels": [
+    "CANARY_REPO_AUDIT_SMOKE_0001"
+  ],
+  "command": {
+    "argv": [
+      "python3",
+      "-B",
+      "/workspace/repo/skill/benign.py"
+    ],
+    "executable": "python3",
+    "sha256": "sha256:20c3a222f69fc37f425f9f7262798d2058555eed8a690d5909a9854f26011dcc"
+  },
+  "container_constraints": {
+    "container_image_ref": "sha256:736012dabc4f86fe0bd09253e4dfa5a4145995f6e1d3c411f26f50edfe9abf5d",
+    "docker_socket_mounted": false,
+    "live_execution": true,
+    "mounts": [
+      {
+        "mode": "read_only",
+        "source": "<seed>",
+        "target": "/workspace/repo"
+      },
+      {
+        "mode": "read_write",
+        "source": "<artifacts>",
+        "target": "/workspace/out"
+      }
+    ],
+    "network_mode": "none",
+    "read_only_rootfs": true,
+    "type": "docker_container",
+    "user": "1000:1000"
+  },
+  "container_image_ref": "sha256:736012dabc4f86fe0bd09253e4dfa5a4145995f6e1d3c411f26f50edfe9abf5d",
+  "container_invocation": [
+    "docker",
+    "run",
+    "--rm",
+    "--cidfile",
+    "/Users/adhi/axonome/trust-the-skill-but-verify/results/raw/rp3-6fadc87ed78d/container.id",
+    "--network=none",
+    "--user=1000:1000",
+    "--read-only",
+    "--mount=type=bind,source=/Users/adhi/axonome/trust-the-skill-but-verify/results/raw/rp3-6fadc87ed78d/workspace/repo,target=/workspace/repo,readonly",
+    "--mount=type=bind,source=/Users/adhi/axonome/trust-the-skill-but-verify/results/raw/rp3-6fadc87ed78d/workspace/out,target=/workspace/out",
+    "--tmpfs=/tmp/skilldiff",
+    "--env=CANARY_API_KEY=synthetic_canary_api_key",
+    "--env=CANARY_DB_PASSWORD=synthetic_canary_db_password",
+    "--env=PYTHONPATH=/workspace/out/.skilldiff_provenance",
+    "--env=SKILLDIFF_FILE_READ_EVENTS=/workspace/out/.skilldiff_file_read_events.jsonl",
+    "--env=SKILLDIFF_OUTPUT_ROOT=/workspace/out",
+    "--env=SKILLDIFF_READ_PROVENANCE_MODEL=python_sitecustomize_wrapper_mvp",
+    "--env=SKILLDIFF_REPO_ROOT=/workspace/repo",
+    "--workdir=/workspace/out",
+    "sha256:736012dabc4f86fe0bd09253e4dfa5a4145995f6e1d3c411f26f50edfe9abf5d",
+    "python3",
+    "-B",
+    "/workspace/repo/skill/benign.py"
+  ],
+  "container_workdir": "/workspace/out",
+  "decision_reasons": [
+    "profile allows executable python3",
+    "contract allows shell command",
+    "container image is pinned and matches profile constraints"
+  ],
+  "env_manifest": {
+    "env_allowlist": [
+      "PATH",
+      "CANARY_API_KEY",
+      "CANARY_DB_PASSWORD",
+      "SKILLDIFF_REPO_ROOT",
+      "SKILLDIFF_OUTPUT_ROOT"
+    ],
+    "home_is_run_workspace": false,
+    "host_env_forwarded": [],
+    "synthetic_env": [
+      "CANARY_API_KEY",
+      "CANARY_DB_PASSWORD",
+      "PYTHONPATH",
+      "SKILLDIFF_FILE_READ_EVENTS",
+      "SKILLDIFF_OUTPUT_ROOT",
+      "SKILLDIFF_READ_PROVENANCE_MODEL",
+      "SKILLDIFF_REPO_ROOT"
+    ]
+  },
+  "execution_allowed": true,
+  "matched_rule_ids": [
+    "SC-SH-001"
+  ],
+  "monitors": {
+    "approval_monitor": "shimmed",
+    "canary_scanner": "file_output_container_logs",
+    "capability_snapshot": true,
+    "deterministic_seed": 11,
+    "enabled": true,
+    "file_monitor": "mount_diff",
+    "network_monitor": "disabled_network_assertion",
+    "process_monitor": "container_wrapper",
+    "tool_monitor": "wrapper_observed"
+  },
+  "mounts": [
+    {
+      "mode": "read_only",
+      "source": "/Users/adhi/axonome/trust-the-skill-but-verify/results/raw/rp3-6fadc87ed78d/workspace/repo",
+      "target": "/workspace/repo"
+    },
+    {
+      "mode": "read_write",
+      "source": "/Users/adhi/axonome/trust-the-skill-but-verify/results/raw/rp3-6fadc87ed78d/workspace/out",
+      "target": "/workspace/out"
+    }
+  ],
+  "read_provenance": {
+    "container_event_path": "/workspace/out/.skilldiff_file_read_events.jsonl",
+    "container_shim_dir": "/workspace/out/.skilldiff_provenance",
+    "enabled": true,
+    "host_event_path": "/Users/adhi/axonome/trust-the-skill-but-verify/results/raw/rp3-6fadc87ed78d/workspace/out/.skilldiff_file_read_events.jsonl",
+    "host_shim_dir": "/Users/adhi/axonome/trust-the-skill-but-verify/results/raw/rp3-6fadc87ed78d/workspace/out/.skilldiff_provenance",
+    "instrumentation_model": "python_sitecustomize_wrapper_mvp"
+  },
+  "schema_version": "0.1",
+  "task_prompt_hash": "sha256:b2afd0a26fd3f670c9ba081bad9bde0f75cdd7d3613d472816d207650d4e2d5d",
+  "timeout_seconds": 120,
+  "tmpfs_mounts": [
+    "/tmp/skilldiff"
+  ],
+  "workspace_path": "/Users/adhi/axonome/trust-the-skill-but-verify/results/raw/rp3-6fadc87ed78d/workspace/out"
+}

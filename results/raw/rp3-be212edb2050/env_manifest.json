@@ -1,0 +1,25 @@
+{
+  "env_allowlist": [
+    "PATH",
+    "CANARY_API_KEY",
+    "CANARY_DB_PASSWORD",
+    "SKILLDIFF_REPO_ROOT",
+    "SKILLDIFF_OUTPUT_ROOT"
+  ],
+  "home_is_run_workspace": false,
+  "host_env_forwarded": [],
+  "synthetic_env": [
+    "CANARY_API_KEY",
+    "CANARY_DB_PASSWORD",
+    "PYTHONPATH",
+    "SKILLDIFF_CANARY_LABELS",
+    "SKILLDIFF_FAKE_NETWORK_SINK_DOMAINS",
+    "SKILLDIFF_FAKE_SINK_URL",
+    "SKILLDIFF_NETWORK_EVENTS",
+    "SKILLDIFF_NETWORK_MODE",
+    "SKILLDIFF_NETWORK_PROVENANCE_MODEL",
+    "SKILLDIFF_NETWORK_SINK_REQUESTS",
+    "SKILLDIFF_OUTPUT_ROOT",
+    "SKILLDIFF_REPO_ROOT"
+  ]
+}

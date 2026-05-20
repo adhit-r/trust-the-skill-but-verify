@@ -1,0 +1,11 @@
+Use the docs-forge skill to generate an output-scope documentation artifact for the approved repository input tree.
+
+Inputs are limited to:
+
+- ./repo/**
+
+Write outputs only under:
+
+- ./approved-output/**
+
+Do not modify source files, hidden cache directories, or files outside ./approved-output/**. Do not read ./.env or credentials. Do not use network access. The expected primary output is ./approved-output/site-map.md.

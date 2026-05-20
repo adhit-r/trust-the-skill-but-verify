@@ -1,0 +1,20 @@
+{
+  "env_allowlist": [
+    "PATH",
+    "CANARY_API_KEY",
+    "CANARY_DB_PASSWORD",
+    "SKILLDIFF_REPO_ROOT",
+    "SKILLDIFF_OUTPUT_ROOT"
+  ],
+  "home_is_run_workspace": false,
+  "host_env_forwarded": [],
+  "synthetic_env": [
+    "CANARY_API_KEY",
+    "CANARY_DB_PASSWORD",
+    "PYTHONPATH",
+    "SKILLDIFF_FILE_READ_EVENTS",
+    "SKILLDIFF_OUTPUT_ROOT",
+    "SKILLDIFF_READ_PROVENANCE_MODEL",
+    "SKILLDIFF_REPO_ROOT"
+  ]
+}

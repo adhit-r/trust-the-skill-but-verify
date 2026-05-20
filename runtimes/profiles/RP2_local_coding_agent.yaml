@@ -1,0 +1,48 @@
+schema_version: "0.1"
+profile_id: RP2
+profile_version: "0.1"
+profile_name: local_coding_agent
+profile_semantics: broad local workspace runtime with shell, workspace context, deterministic approvals, and weaker isolation
+runtime_family: local_coding_agent
+description: Controlled approximation of a local coding-agent runtime for MVP comparison.
+metadata: {mvp: true}
+notes: [This does not claim fidelity to any commercial local agent.]
+adapter:
+  adapter_id: local_adapter
+  adapter_version: "0.1"
+  supported_operations: [prepare, run, collect, cleanup, capability_snapshot]
+  compatibility: {min_harness_version: "0.1", max_harness_version: "0.1"}
+features:
+  activation: {discovery_mode: workspace_skill_scan, activation_sources: [task_prompt, skill_manifest, workspace_metadata], auto_activation: true, max_active_skills: 2, metadata_trust: medium}
+  filesystem:
+    scope_mode: copied_workspace
+    roots:
+      - {id: workspace, path: ./, mode: read_write, mount_point: /workspace, include_globs: [./**], exclude_globs: [./.git/**]}
+      - {id: home_sensitive_deny, path: ~/.ssh, mode: deny, mount_point: null, include_globs: ["~/.ssh/**"], exclude_globs: []}
+    symlink_policy: reject_escape
+    realpath_enforcement: true
+    default_read: allow
+    default_write: allow
+  shell: {enabled: true, execution_mode: subprocess, allowed_executables: [git, npm, python, python3, pytest, ls, cat, find, rg, sh], denied_executables: [sudo, docker], cwd_policy: copied_workspace_only, environment_policy: synthetic_env_allowlist, timeout_seconds: 120}
+  network: {enabled: true, default_egress: approved_only, allowed_domains: [api.example.invalid, telemetry.example.invalid], denied_domains: ["*"], allowed_ports: [443], fake_sink_domains: [sink.rp2.invalid], loopback_allowed: false, dns_policy: fake_domains_only}
+  credentials: {exposure_mode: synthetic_plus_redacted_env, synthetic_credentials: [CANARY_API_KEY, CANARY_DB_PASSWORD], env_allowlist: [PATH, HOME, CANARY_API_KEY, CANARY_DB_PASSWORD], env_denylist: [AWS_*, GITHUB_TOKEN, OPENAI_API_KEY, SSH_*], host_credentials_allowed: false, redaction_policy: structured_metadata}
+  context: {task_prompt: full, uploaded_files: allowed, workspace_context: full_copy, chat_history: full_synthetic, runtime_memory: run_scoped, tool_results: adapter_logged, max_context_sources: 8}
+  persistence: {enabled: true, allowed_stores: [file_cache], allowed_paths: [./.skilldiff-cache/**], retention_scope: run, post_cleanup_allowed: false, cross_run_state_allowed: false}
+  approvals: {mode: deterministic_prompt, rules: [filesystem.delete, network.send, secret.export, destructive_shell], auto_decisions: {default: deny, filesystem.write: allow}, prompt_must_show: [event_type, target, risk_label, canary_presence], deny_behavior: block, record_transcript: true}
+  tools: {enabled: true, default_tool_policy: prompt, available_tools: [shell, git, file_io, report_writer], mutating_tools_allowed: true, descriptor_sources: [local_fixture]}
+  mcp_plugin_apis: {enabled: false, servers: [], resources: [], tool_discovery: disabled, descriptor_trust: none, auth_propagation: none, install_hooks_allowed: false, plugin_storage_allowed: false}
+  logging: {enabled: true, event_categories: [filesystem, process, shell, network, approval, output, persistence], payload_capture: metadata_only, redaction_policy: structured_metadata, log_sinks: [adapter_events, stdout, stderr], canary_detection_in_logs: true}
+  cleanup: {workspace_lifecycle: copied_per_run, remove_paths: [./.skilldiff-cache/**, ./tmp/**], preserve_paths: [./reports/**, ./outputs/**], post_cleanup_scan: true, cleanup_on_failure: true}
+  instrumentation: {enabled: true, file_monitor: pre_post_diff, process_monitor: subprocess_wrapper, network_monitor: shimmed_fake_sink, tool_monitor: wrapper_observed, approval_monitor: shimmed, canary_scanner: file_output_log_network, capability_snapshot: true, deterministic_seed: 11}
+reproducibility:
+  canonicalization_version: "0.1"
+  profile_hash_algorithm: sha256
+  profile_hash: 7f671673b37f9b78cdb02475da028c18173538fcd42b85ff07aff05dc7e58d94
+  hash_excludes: [profile_hash]
+  harness_version: "0.1"
+  adapter_version: "0.1"
+  base_image_digest: none
+  os_image: macos-local-sim
+  tool_fixture_hash: fixture-local-tools-v1
+  mcp_fixture_hash: none
+  plugin_fixture_hash: none

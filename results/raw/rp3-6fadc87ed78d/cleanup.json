@@ -1,0 +1,10 @@
+{
+  "container_id": "bc626f6d51577e9ac963a1e3f01a2226c7fc5633e198262130e76afb3a883123",
+  "leftover_paths": [
+    "/Users/adhi/axonome/trust-the-skill-but-verify/results/raw/rp3-6fadc87ed78d"
+  ],
+  "removed_paths": [],
+  "run_id": "rp3-6fadc87ed78d",
+  "status": "recorded_container_removed_by_docker_rm",
+  "timestamp": "2026-05-19T19:30:04+00:00"
+}

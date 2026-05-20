@@ -1,0 +1,15 @@
+{
+  "event_count": 6,
+  "event_types": [
+    "capability.snapshot",
+    "cleanup.observe",
+    "process.exit",
+    "run.end",
+    "run.start",
+    "shell.exec"
+  ],
+  "run_id": "rp3-99eb7ac42978",
+  "schema_version": "0.1",
+  "trace_path": "/Users/adhi/axonome/trust-the-skill-but-verify/results/raw/rp3-99eb7ac42978/trace.jsonl",
+  "trace_valid": true
+}

@@ -1,0 +1,14 @@
+{
+  "adapter_id": "docker_adapter",
+  "file_read_provenance": "python_sitecustomize_wrapper_mvp",
+  "file_write_provenance": "pre_post_diff",
+  "network_provenance": "docker_network_none_no_packet_capture",
+  "process_provenance": "docker_subprocess_wrapper",
+  "trace_valid": true,
+  "warnings": [
+    "filesystem.read events are MVP wrapper-level provenance for controlled Python runs only",
+    "filesystem.read events are not syscall-complete in RP3 MVP",
+    "non-Python reads and Python runs that disable sitecustomize are outside this MVP instrumentation",
+    "network monitoring records Docker network policy, not full packet interception"
+  ]
+}

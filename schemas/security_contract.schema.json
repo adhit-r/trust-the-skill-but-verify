@@ -1,0 +1,389 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/trust-the-skill/security_contract.schema.json",
+  "title": "Skill Security Contract",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "contract_id",
+    "contract_version",
+    "skill_id",
+    "task_id",
+    "task",
+    "activation",
+    "access",
+    "approval_required",
+    "canaries",
+    "expected_outputs",
+    "severity_overrides",
+    "rules"
+  ],
+  "properties": {
+    "schema_version": { "type": "string", "minLength": 1 },
+    "contract_id": { "type": "string", "minLength": 1 },
+    "contract_version": { "type": "string", "minLength": 1 },
+    "skill_id": { "type": "string", "minLength": 1 },
+    "task_id": { "type": "string", "minLength": 1 },
+    "description": { "type": "string" },
+    "category": { "type": "string" },
+    "attack_family": { "type": "string" },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": {
+        "type": ["string", "number", "integer", "boolean", "null"]
+      }
+    },
+    "task": { "$ref": "#/$defs/task" },
+    "activation": { "$ref": "#/$defs/activation" },
+    "access": { "$ref": "#/$defs/access" },
+    "approval_required": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/approvalRule" }
+    },
+    "canaries": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/canaryRule" }
+    },
+    "expected_outputs": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/outputRule" }
+    },
+    "severity_overrides": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/severityOverride" }
+    },
+    "rules": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/rule" }
+    }
+  },
+  "$defs": {
+    "task": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["prompt_ref", "intent", "negative_control"],
+      "properties": {
+        "prompt_ref": { "type": "string", "minLength": 1 },
+        "intent": { "type": "string", "minLength": 1 },
+        "negative_control": { "type": "boolean" }
+      }
+    },
+    "activation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "mode",
+        "expected_skill_id",
+        "allowed_contexts",
+        "denied_contexts",
+        "allowed_triggers",
+        "denied_triggers",
+        "max_additional_skills",
+        "rules"
+      ],
+      "properties": {
+        "mode": { "enum": ["required", "optional", "forbidden"] },
+        "expected_skill_id": { "type": "string" },
+        "allowed_contexts": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "denied_contexts": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "allowed_triggers": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "denied_triggers": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "max_additional_skills": { "type": "integer", "minimum": 0 }
+        ,"rules": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/rule" }
+        }
+      }
+    },
+    "access": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "filesystem",
+        "shell",
+        "network",
+        "tools",
+        "sinks",
+        "persistence",
+        "context",
+        "credentials"
+      ],
+      "properties": {
+        "filesystem": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["reads", "writes"],
+          "properties": {
+            "reads": { "$ref": "#/$defs/ruleBag" },
+            "writes": { "$ref": "#/$defs/ruleBag" }
+          }
+        },
+        "shell": { "$ref": "#/$defs/ruleBag" },
+        "network": { "$ref": "#/$defs/ruleBag" },
+        "tools": { "$ref": "#/$defs/ruleBag" },
+        "sinks": { "$ref": "#/$defs/ruleBag" },
+        "persistence": { "$ref": "#/$defs/ruleBag" },
+        "context": { "$ref": "#/$defs/ruleBag" },
+        "credentials": { "$ref": "#/$defs/ruleBag" }
+      }
+    },
+    "ruleBag": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["allow", "deny"],
+      "properties": {
+        "allow": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/rule" }
+        },
+        "deny": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/rule" }
+        }
+      }
+    },
+    "rule": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "event_type", "match"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "event_type": { "type": "string", "minLength": 1 },
+        "match": { "$ref": "#/$defs/match" },
+        "reason": { "type": "string" },
+        "drift_classes": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/driftClass" },
+          "uniqueItems": true
+        },
+        "severity": { "$ref": "#/$defs/severity" }
+      }
+    },
+    "match": {
+      "type": "object",
+      "additionalProperties": false,
+      "minProperties": 1,
+      "properties": {
+        "path_glob": { "type": "string" },
+        "path_regex": { "type": "string" },
+        "operation": {
+          "enum": ["read", "write", "delete", "append", "mkdir", "modify"]
+        },
+        "must_exist": { "type": "boolean" },
+        "command": { "type": "string" },
+        "argv_prefix": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "argv_exact": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "executable": { "type": "string" },
+        "cwd_glob": { "type": "string" },
+        "scheme": { "type": "string" },
+        "domain": { "type": "string" },
+        "domain_glob": { "type": "string" },
+        "port": { "type": "integer", "minimum": 1, "maximum": 65535 },
+        "method": { "type": "string" },
+        "tool_name": { "type": "string" },
+        "resource_uri_glob": { "type": "string" },
+        "mutation": { "type": "boolean" },
+        "sink_type": { "$ref": "#/$defs/sinkType" },
+        "destination_glob": { "type": "string" },
+        "may_contain_canary": { "type": "boolean" },
+        "store_type": {
+          "enum": ["file", "memory", "cache", "database", "scheduled_job"]
+        },
+        "retention_scope": {
+          "enum": ["run", "workspace", "user", "host"]
+        },
+        "post_cleanup_allowed": { "type": "boolean" },
+        "source_type": {
+          "enum": [
+            "task_prompt",
+            "uploaded_file",
+            "workspace",
+            "chat_history",
+            "runtime_memory",
+            "tool_result"
+          ]
+        },
+        "source_glob": { "type": "string" },
+        "credential_type": {
+          "enum": ["env", "api_key", "token", "cookie", "ssh_key", "cloud_credential"]
+        },
+        "name_glob": { "type": "string" },
+        "exposure": {
+          "enum": ["read", "pass_through", "transmit"]
+        }
+      }
+    },
+    "approvalRule": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "event_type",
+        "match",
+        "required",
+        "prompt_must_show",
+        "decision_required"
+      ],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "event_type": { "type": "string", "minLength": 1 },
+        "match": { "$ref": "#/$defs/match" },
+        "required": { "type": "boolean" },
+        "prompt_must_show": {
+          "type": "array",
+          "items": {
+            "enum": ["event_type", "target", "risk_label", "canary_presence"]
+          }
+        },
+        "decision_required": {
+          "enum": ["explicit_allow", "explicit_deny_or_allow"]
+        },
+        "drift_classes": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/driftClass" },
+          "uniqueItems": true
+        },
+        "severity_if_bypassed": { "$ref": "#/$defs/severity" }
+      }
+    },
+    "canaryRule": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "label",
+        "source",
+        "sensitivity",
+        "allowed_sinks",
+        "denied_sinks",
+        "severity_if_observed",
+        "severity_if_transmitted"
+      ],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "label": { "type": "string", "minLength": 1 },
+        "source": { "$ref": "#/$defs/canarySource" },
+        "sensitivity": {
+          "enum": ["synthetic_secret", "synthetic_private_data", "synthetic_credential"]
+        },
+        "allowed_sinks": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/sinkType" }
+        },
+        "denied_sinks": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/sinkType" }
+        },
+        "severity_if_observed": { "$ref": "#/$defs/severity" },
+        "severity_if_transmitted": { "$ref": "#/$defs/severity" }
+      }
+    },
+    "canarySource": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "path_glob"],
+      "properties": {
+        "type": {
+          "enum": ["file", "environment", "credential", "context", "tool_result"]
+        },
+        "path_glob": { "type": "string" }
+      }
+    },
+    "outputRule": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "type", "target", "required", "oracle"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "type": {
+          "enum": ["file_exists", "contains_text", "json_field", "no_canary", "command_exit"]
+        },
+        "target": { "type": "string", "minLength": 1 },
+        "required": { "type": "boolean" },
+        "oracle": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "contains_any": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "contains_all": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "json_path": { "type": "string" },
+            "expected_value": {},
+            "must_not_contain_canaries": { "type": "boolean" },
+            "exit_code": { "type": "integer" }
+          }
+        }
+      }
+    },
+    "severityOverride": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "when", "set_severity", "reason"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "when": {
+          "type": "object",
+          "additionalProperties": true
+        },
+        "set_severity": { "$ref": "#/$defs/severity" },
+        "add_drift_classes": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/driftClass" },
+          "uniqueItems": true
+        },
+        "reason": { "type": "string", "minLength": 1 }
+      }
+    },
+    "sinkType": {
+      "enum": [
+        "local_report",
+        "generated_summary",
+        "fake_http",
+        "external_http",
+        "tool_message",
+        "persistent_state",
+        "stdout_log",
+        "stderr_log",
+        "local_json",
+        "local_html",
+        "dashboard_bundle",
+        "docs_bundle",
+        "approved_output_tree",
+        "output_tree",
+        "source_tree",
+        "connector_log"
+      ]
+    },
+    "severity": {
+      "enum": ["low", "medium", "high", "critical"]
+    },
+    "driftClass": {
+      "enum": ["D1", "D2", "D3", "D4", "D5"]
+    }
+  }
+}

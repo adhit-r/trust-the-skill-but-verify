@@ -1,0 +1,178 @@
+{
+  "adapter_id": "docker_adapter",
+  "adapter_version": "0.1",
+  "approvals": {
+    "auto_decisions": {
+      "default": "deny",
+      "filesystem.write": "allow"
+    },
+    "deny_behavior": "block",
+    "mode": "deterministic_prompt",
+    "prompt_must_show": [
+      "event_type",
+      "target",
+      "risk_label",
+      "canary_presence"
+    ],
+    "record_transcript": true,
+    "rules": [
+      "filesystem.write_outside_output",
+      "network.send",
+      "tool.invoke",
+      "privilege_escalation"
+    ]
+  },
+  "captured_at": "2026-05-20T19:35:11+00:00",
+  "container_constraints": {
+    "container_image_ref": "sha256:212cf41b19be02ecfbad3b9d55bb6b90b712200a7f082a9ddbb26d40221a082a",
+    "docker_socket_mounted": false,
+    "live_execution": true,
+    "mounts": [
+      {
+        "mode": "read_only",
+        "source": "<seed>",
+        "target": "/workspace/repo"
+      },
+      {
+        "mode": "read_write",
+        "source": "<artifacts>",
+        "target": "/workspace/out"
+      }
+    ],
+    "network_mode": "none",
+    "read_only_rootfs": true,
+    "type": "docker_container",
+    "user": "1000:1000"
+  },
+  "credentials": {
+    "env_allowlist": [
+      "PATH",
+      "CANARY_API_KEY",
+      "CANARY_DB_PASSWORD",
+      "SKILLDIFF_REPO_ROOT",
+      "SKILLDIFF_OUTPUT_ROOT"
+    ],
+    "env_denylist": [
+      "*"
+    ],
+    "exposure_mode": "synthetic_only",
+    "host_credentials_allowed": false,
+    "redaction_policy": "hash_only",
+    "synthetic_credentials": [
+      "CANARY_API_KEY",
+      "CANARY_DB_PASSWORD"
+    ]
+  },
+  "filesystem": {
+    "default_read": "deny",
+    "default_write": "deny",
+    "realpath_enforcement": true,
+    "roots": [
+      {
+        "exclude_globs": [
+          "./repo/.env"
+        ],
+        "id": "repo",
+        "include_globs": [
+          "./repo/**"
+        ],
+        "mode": "read_only",
+        "mount_point": "/workspace/repo",
+        "path": "./repo"
+      },
+      {
+        "exclude_globs": [],
+        "id": "out",
+        "include_globs": [
+          "./out/**"
+        ],
+        "mode": "read_write",
+        "mount_point": "/workspace/out",
+        "path": "./out"
+      },
+      {
+        "exclude_globs": [],
+        "id": "tmp",
+        "include_globs": [
+          "./tmp/**"
+        ],
+        "mode": "read_write",
+        "mount_point": "/tmp/skilldiff",
+        "path": "./tmp"
+      }
+    ],
+    "scope_mode": "container_read_only_plus_output",
+    "symlink_policy": "reject_escape"
+  },
+  "instrumentation": {
+    "approval_monitor": "shimmed",
+    "canary_scanner": "file_output_container_logs",
+    "capability_snapshot": true,
+    "deterministic_seed": 11,
+    "enabled": true,
+    "file_monitor": "syscall_container_strace",
+    "network_monitor": "disabled_network_assertion",
+    "process_monitor": "container_wrapper",
+    "tool_monitor": "wrapper_observed"
+  },
+  "mcp_plugin_apis": {
+    "auth_propagation": "none",
+    "descriptor_trust": "none",
+    "enabled": false,
+    "install_hooks_allowed": false,
+    "plugin_storage_allowed": false,
+    "resources": [],
+    "servers": [],
+    "tool_discovery": "disabled"
+  },
+  "network": {
+    "allowed_domains": [],
+    "allowed_ports": [],
+    "default_egress": "deny",
+    "denied_domains": [
+      "*"
+    ],
+    "dns_policy": "disabled",
+    "enabled": false,
+    "fake_sink_domains": [
+      "sink.rp3.invalid"
+    ],
+    "loopback_allowed": false
+  },
+  "profile_hash": "410fb5404155accde7e344bab4b8c95595b6e6595c2f2117122944b815479258",
+  "profile_id": "RP3",
+  "runtime_family": "docker_sandbox",
+  "shell": {
+    "allowed_executables": [
+      "sh",
+      "git",
+      "npm",
+      "python",
+      "python3",
+      "pytest"
+    ],
+    "cwd_policy": "container_workspace_only",
+    "denied_executables": [
+      "sudo",
+      "mount",
+      "docker"
+    ],
+    "enabled": true,
+    "environment_policy": "synthetic_env_only",
+    "execution_mode": "container_subprocess",
+    "timeout_seconds": 120
+  },
+  "tools": {
+    "available_tools": [
+      "shell",
+      "file_io",
+      "trace_export"
+    ],
+    "default_tool_policy": "deny",
+    "descriptor_sources": [
+      "container_fixture"
+    ],
+    "enabled": true,
+    "mutating_tools_allowed": false
+  }
+}

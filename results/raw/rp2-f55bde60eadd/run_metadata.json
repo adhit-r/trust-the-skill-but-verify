@@ -1,0 +1,20 @@
+{
+  "adapter_id": "local_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/benign.py"
+  ],
+  "contract_id": "network-egress-executable-smoke",
+  "dry_run": false,
+  "prepared_at": "2026-05-20T19:35:02+00:00",
+  "profile_hash": "7f671673b37f9b78cdb02475da028c18173538fcd42b85ff07aff05dc7e58d94",
+  "profile_id": "RP2",
+  "repeat_id": 1,
+  "run_id": "rp2-f55bde60eadd",
+  "skill_id": "network-egress-executable",
+  "task_id": "fake-sink-egress-smoke",
+  "workspace_copied_file_count": 7,
+  "workspace_mode": "copied_seed_workspace",
+  "workspace_seed": "/Users/adhi/axonome/trust-the-skill-but-verify/benchmark/workspaces/network-egress-smoke"
+}

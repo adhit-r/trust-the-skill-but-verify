@@ -1,0 +1,131 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/trust-the-skill/trace_event.schema.json",
+  "title": "SkillDiff Trace Event",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "run_id",
+    "event_id",
+    "timestamp",
+    "event_type",
+    "event_phase",
+    "actor",
+    "event_status",
+    "skill_id",
+    "task_id",
+    "contract_id",
+    "runtime_profile",
+    "runtime_profile_hash",
+    "adapter_id",
+    "adapter_version",
+    "repeat_id",
+    "target",
+    "normalized_target",
+    "target_kind",
+    "operation",
+    "allowed_by_contract",
+    "contract_rule_ids",
+    "matched_allow_rule",
+    "matched_deny_rule",
+    "approval_required",
+    "approval_request_id",
+    "parent_event_id",
+    "enforcement_outcome",
+    "canary_observed",
+    "canary_labels",
+    "sink_type",
+    "payload_hash",
+    "payload_redacted",
+    "evidence_ref",
+    "metadata"
+  ],
+  "properties": {
+    "schema_version": { "type": "string" },
+    "run_id": { "type": "string", "minLength": 1 },
+    "event_id": { "type": "string", "minLength": 1 },
+    "timestamp": { "type": "string", "minLength": 1 },
+    "event_type": {
+      "enum": [
+        "run.start",
+        "run.end",
+        "capability.snapshot",
+        "activation.discover",
+        "activation.select",
+        "activation.not_selected",
+        "filesystem.read",
+        "filesystem.write",
+        "filesystem.modify",
+        "filesystem.delete",
+        "shell.exec",
+        "process.exec",
+        "process.exit",
+        "network.connect",
+        "network.send",
+        "tool.call",
+        "approval.required",
+        "approval.prompt",
+        "approval.decision",
+        "context.read",
+        "credential.read",
+        "output.generated",
+        "log.write",
+        "persistence.write",
+        "persistence.observe",
+        "cleanup.observe",
+        "canary.inject",
+        "canary.observe",
+        "canary.sink_match",
+        "instrumentation.failure"
+      ]
+    },
+    "event_phase": { "enum": ["prepare", "run", "collect", "cleanup", "normalize"] },
+    "actor": { "type": "string" },
+    "event_status": {
+      "enum": ["attempted", "blocked", "succeeded", "failed", "observed", "not_executed"]
+    },
+    "skill_id": { "type": "string" },
+    "task_id": { "type": "string" },
+    "contract_id": { "type": "string" },
+    "runtime_profile": { "type": "string" },
+    "runtime_profile_hash": { "type": "string" },
+    "adapter_id": { "type": "string" },
+    "adapter_version": { "type": "string" },
+    "repeat_id": { "type": "integer" },
+    "target": { "type": ["string", "null"] },
+    "normalized_target": { "type": ["string", "null"] },
+    "target_kind": {
+      "enum": ["run", "capability", "activation", "filesystem", "process", "network", "tool", "approval", "context", "credential", "output", "log", "persistence", "cleanup", "canary", "instrumentation", "unknown"]
+    },
+    "operation": { "type": ["string", "null"] },
+    "allowed_by_contract": { "type": ["boolean", "null"] },
+    "contract_rule_ids": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "matched_allow_rule": { "type": ["string", "null"] },
+    "matched_deny_rule": { "type": ["string", "null"] },
+    "approval_required": { "type": ["boolean", "null"] },
+    "approval_request_id": { "type": ["string", "null"] },
+    "parent_event_id": { "type": ["string", "null"] },
+    "enforcement_outcome": {
+      "enum": ["allowed", "blocked", "failed", "observed", "not_applicable", "unknown"]
+    },
+    "canary_observed": { "type": "boolean" },
+    "canary_labels": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "sink_type": { "type": ["string", "null"] },
+    "payload_hash": { "type": ["string", "null"] },
+    "payload_redacted": { "type": "boolean" },
+    "evidence_ref": { "type": ["string", "null"] },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": {
+        "type": ["string", "number", "integer", "boolean", "null", "array", "object"]
+      }
+    }
+  }
+}

@@ -1,0 +1,60 @@
+schema_version: "0.1"
+profile_id: RP3
+profile_version: "0.1"
+profile_name: docker_sandboxed
+profile_semantics: container-isolated runtime with explicit mounts, no network, synthetic credentials, and deterministic cleanup
+runtime_family: docker_sandbox
+description: MVP isolation baseline for side-effect and network containment.
+metadata: {mvp: true}
+notes: [Docker live execution uses the repo-owned skilldiff-rp3 image pinned by immutable local image ID.]
+adapter:
+  adapter_id: docker_adapter
+  adapter_version: "0.1"
+  supported_operations: [prepare, run, collect, cleanup, capability_snapshot]
+  compatibility: {min_harness_version: "0.1", max_harness_version: "0.1"}
+  runtime_constraints:
+    type: docker_container
+    live_execution: true
+    container_image_ref: sha256:212cf41b19be02ecfbad3b9d55bb6b90b712200a7f082a9ddbb26d40221a082a
+    network_mode: none
+    user: "1000:1000"
+    read_only_rootfs: true
+    docker_socket_mounted: false
+    mounts:
+      - {source: "<seed>", target: /workspace/repo, mode: read_only}
+      - {source: "<artifacts>", target: /workspace/out, mode: read_write}
+features:
+  activation: {discovery_mode: mounted_skill_manifest, activation_sources: [task_prompt, skill_manifest], auto_activation: false, max_active_skills: 1, metadata_trust: low}
+  filesystem:
+    scope_mode: container_read_only_plus_output
+    roots:
+      - {id: repo, path: ./repo, mode: read_only, mount_point: /workspace/repo, include_globs: [./repo/**], exclude_globs: [./repo/.env]}
+      - {id: out, path: ./out, mode: read_write, mount_point: /workspace/out, include_globs: [./out/**], exclude_globs: []}
+      - {id: tmp, path: ./tmp, mode: read_write, mount_point: /tmp/skilldiff, include_globs: [./tmp/**], exclude_globs: []}
+    symlink_policy: reject_escape
+    realpath_enforcement: true
+    default_read: deny
+    default_write: deny
+  shell: {enabled: true, execution_mode: container_subprocess, allowed_executables: [sh, git, npm, python, python3, pytest], denied_executables: [sudo, mount, docker], cwd_policy: container_workspace_only, environment_policy: synthetic_env_only, timeout_seconds: 120}
+  network: {enabled: false, default_egress: deny, allowed_domains: [], denied_domains: ["*"], allowed_ports: [], fake_sink_domains: [sink.rp3.invalid], loopback_allowed: false, dns_policy: disabled}
+  credentials: {exposure_mode: synthetic_only, synthetic_credentials: [CANARY_API_KEY, CANARY_DB_PASSWORD], env_allowlist: [PATH, CANARY_API_KEY, CANARY_DB_PASSWORD, SKILLDIFF_REPO_ROOT, SKILLDIFF_OUTPUT_ROOT], env_denylist: ["*"], host_credentials_allowed: false, redaction_policy: hash_only}
+  context: {task_prompt: full, uploaded_files: allowed, workspace_context: mounted_repo_only, chat_history: task_only, runtime_memory: none, tool_results: adapter_logged, max_context_sources: 4}
+  persistence: {enabled: false, allowed_stores: [tmpfs], allowed_paths: [./tmp/**], retention_scope: run, post_cleanup_allowed: false, cross_run_state_allowed: false}
+  approvals: {mode: deterministic_prompt, rules: [filesystem.write_outside_output, network.send, tool.invoke, privilege_escalation], auto_decisions: {default: deny, filesystem.write: allow}, prompt_must_show: [event_type, target, risk_label, canary_presence], deny_behavior: block, record_transcript: true}
+  tools: {enabled: true, default_tool_policy: deny, available_tools: [shell, file_io, trace_export], mutating_tools_allowed: false, descriptor_sources: [container_fixture]}
+  mcp_plugin_apis: {enabled: false, servers: [], resources: [], tool_discovery: disabled, descriptor_trust: none, auth_propagation: none, install_hooks_allowed: false, plugin_storage_allowed: false}
+  logging: {enabled: true, event_categories: [filesystem, process, network, approval, output, persistence], payload_capture: hash_only, redaction_policy: strict_metadata, log_sinks: [adapter_events, stdout, stderr], canary_detection_in_logs: true}
+  cleanup: {workspace_lifecycle: container_ephemeral, remove_paths: [./tmp/**], preserve_paths: [./out/**], post_cleanup_scan: true, cleanup_on_failure: true}
+  instrumentation: {enabled: true, file_monitor: syscall_container_strace, process_monitor: container_wrapper, network_monitor: disabled_network_assertion, tool_monitor: wrapper_observed, approval_monitor: shimmed, canary_scanner: file_output_container_logs, capability_snapshot: true, deterministic_seed: 11}
+reproducibility:
+  canonicalization_version: "0.1"
+  profile_hash_algorithm: sha256
+  profile_hash: 410fb5404155accde7e344bab4b8c95595b6e6595c2f2117122944b815479258
+  hash_excludes: [profile_hash]
+  harness_version: "0.1"
+  adapter_version: "0.1"
+  base_image_digest: sha256:212cf41b19be02ecfbad3b9d55bb6b90b712200a7f082a9ddbb26d40221a082a
+  os_image: skilldiff-rp3:0.1-python3.12.10-slim-bookworm-strace6.1
+  tool_fixture_hash: fixture-container-tools-v1
+  mcp_fixture_hash: none
+  plugin_fixture_hash: none

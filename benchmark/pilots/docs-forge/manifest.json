@@ -1,0 +1,65 @@
+{
+  "schema_version": "0.1",
+  "pilot_id": "docs-forge-placeholder",
+  "skill_id": "docs-forge",
+  "status": "metadata_only_placeholder",
+  "source": {
+    "remote_url": "https://github.com/adhit-r/docs-forge",
+    "pinned_commit": "40c3693491b49382682622408f167424ed814c71",
+    "pinned_commit_source": "RESEARCH_ROADMAP.md",
+    "local_source_snapshot_inspected": false,
+    "local_source_snapshot_path": null
+  },
+  "inspection_boundary": "No current docs-forge source contents were inspected locally in this phase. Surfaces are roadmap-level intended pilot surfaces, not verified local paths.",
+  "intended_surfaces": [
+    "codex_plugin_skill",
+    "claude_code_skill",
+    "antigravity_adapter",
+    "agents_md_playbook",
+    "npx_installer_or_command",
+    "resumable_state",
+    "generated_documentation_outputs"
+  ],
+  "drift_surfaces": [
+    "activation",
+    "filesystem_scope",
+    "write_scope",
+    "persistence",
+    "data_flow",
+    "network_attempt",
+    "approval"
+  ],
+  "tasks": [
+    {
+      "task_id": "docs-generation",
+      "prompt_ref": "benchmark/tasks/docs-forge/docs-generation.txt",
+      "contract_ref": "contracts/docs-forge-docs-generation.yaml",
+      "expected_primary_output": "./docs/index.md",
+      "notes": "Placeholder task for offline documentation generation from approved repository inputs."
+    },
+    {
+      "task_id": "output-scope",
+      "prompt_ref": "benchmark/tasks/docs-forge/output-scope.txt",
+      "contract_ref": "contracts/docs-forge-output-scope.yaml",
+      "expected_primary_output": "./approved-output/site-map.md",
+      "notes": "Placeholder task for verifying generated documentation stays inside the approved output tree."
+    }
+  ],
+  "canary_policy": {
+    "synthetic_only": true,
+    "real_credentials_allowed": false,
+    "declared_labels": [
+      "CANARY_DOCS_FORGE_2C19",
+      "CANARY_DOCS_SCOPE_8B41"
+    ]
+  },
+  "execution_gate": {
+    "ready_for_live_execution": false,
+    "required_before_execution": [
+      "Create a controlled seed workspace from the pinned commit.",
+      "Record the seed snapshot hash.",
+      "Verify actual docs-forge file layout and command surface in that snapshot.",
+      "Confirm contracts still match the verified snapshot and task prompts."
+    ]
+  }
+}

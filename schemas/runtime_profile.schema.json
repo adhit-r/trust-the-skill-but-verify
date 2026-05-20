@@ -1,0 +1,572 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/trust-the-skill/runtime_profile.schema.json",
+  "title": "Runtime Profile",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "profile_id",
+    "profile_version",
+    "profile_name",
+    "profile_semantics",
+    "runtime_family",
+    "adapter",
+    "features",
+    "reproducibility"
+  ],
+  "properties": {
+    "schema_version": { "type": "string", "minLength": 1 },
+    "profile_id": { "type": "string", "pattern": "^RP[1-6]$" },
+    "profile_version": { "type": "string", "minLength": 1 },
+    "profile_name": { "type": "string", "minLength": 1 },
+    "profile_semantics": { "type": "string", "minLength": 1 },
+    "runtime_family": {
+      "enum": [
+        "restricted_hosted",
+        "local_coding_agent",
+        "docker_sandbox",
+        "mcp_connected",
+        "plugin_style",
+        "policy_hardened"
+      ]
+    },
+    "description": { "type": "string" },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": {
+        "type": ["string", "number", "integer", "boolean", "null"]
+      }
+    },
+    "notes": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "adapter": { "$ref": "#/$defs/adapter" },
+    "features": { "$ref": "#/$defs/features" },
+    "reproducibility": { "$ref": "#/$defs/reproducibility" }
+  },
+  "$defs": {
+    "adapter": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "adapter_id",
+        "adapter_version",
+        "supported_operations",
+        "compatibility"
+      ],
+      "properties": {
+        "adapter_id": { "type": "string", "minLength": 1 },
+        "adapter_version": { "type": "string", "minLength": 1 },
+        "supported_operations": {
+          "type": "array",
+          "items": {
+            "enum": ["prepare", "run", "collect", "cleanup", "capability_snapshot"]
+          },
+          "uniqueItems": true
+        },
+        "compatibility": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["min_harness_version", "max_harness_version"],
+          "properties": {
+            "min_harness_version": { "type": "string" },
+            "max_harness_version": { "type": "string" }
+          }
+        },
+        "runtime_constraints": { "$ref": "#/$defs/runtimeConstraints" }
+      }
+    },
+    "runtimeConstraints": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "live_execution",
+        "container_image_ref",
+        "network_mode",
+        "user",
+        "read_only_rootfs",
+        "docker_socket_mounted",
+        "mounts"
+      ],
+      "properties": {
+        "type": { "enum": ["docker_container"] },
+        "live_execution": { "type": "boolean" },
+        "container_image_ref": { "type": "string", "minLength": 1 },
+        "network_mode": { "enum": ["none"] },
+        "user": { "type": "string", "minLength": 1 },
+        "read_only_rootfs": { "type": "boolean" },
+        "docker_socket_mounted": { "type": "boolean" },
+        "mounts": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/containerMount" }
+        }
+      }
+    },
+    "containerMount": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source", "target", "mode"],
+      "properties": {
+        "source": { "type": "string", "minLength": 1 },
+        "target": { "type": "string", "minLength": 1 },
+        "mode": { "enum": ["read_only", "read_write"] }
+      }
+    },
+    "features": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "activation",
+        "filesystem",
+        "shell",
+        "network",
+        "credentials",
+        "context",
+        "persistence",
+        "approvals",
+        "tools",
+        "mcp_plugin_apis",
+        "logging",
+        "cleanup",
+        "instrumentation"
+      ],
+      "properties": {
+        "activation": { "$ref": "#/$defs/activation" },
+        "filesystem": { "$ref": "#/$defs/filesystem" },
+        "shell": { "$ref": "#/$defs/shell" },
+        "network": { "$ref": "#/$defs/network" },
+        "credentials": { "$ref": "#/$defs/credentials" },
+        "context": { "$ref": "#/$defs/context" },
+        "persistence": { "$ref": "#/$defs/persistence" },
+        "approvals": { "$ref": "#/$defs/approvals" },
+        "tools": { "$ref": "#/$defs/tools" },
+        "mcp_plugin_apis": { "$ref": "#/$defs/mcpPluginApis" },
+        "logging": { "$ref": "#/$defs/logging" },
+        "cleanup": { "$ref": "#/$defs/cleanup" },
+        "instrumentation": { "$ref": "#/$defs/instrumentation" }
+      }
+    },
+    "activation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "discovery_mode",
+        "activation_sources",
+        "auto_activation",
+        "max_active_skills",
+        "metadata_trust"
+      ],
+      "properties": {
+        "discovery_mode": {
+          "enum": [
+            "manifest_only",
+            "workspace_skill_scan",
+            "mounted_skill_manifest",
+            "mcp_descriptor_scan",
+            "plugin_manifest_scan",
+            "contract_bound_manifest_scan"
+          ]
+        },
+        "activation_sources": { "$ref": "#/$defs/stringArray" },
+        "auto_activation": { "type": "boolean" },
+        "max_active_skills": { "type": "integer", "minimum": 0 },
+        "metadata_trust": { "enum": ["none", "low", "medium", "fixture_signed"] }
+      }
+    },
+    "filesystem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "scope_mode",
+        "roots",
+        "symlink_policy",
+        "realpath_enforcement",
+        "default_read",
+        "default_write"
+      ],
+      "properties": {
+        "scope_mode": {
+          "enum": [
+            "upload_only",
+            "copied_workspace",
+            "container_read_only_plus_output",
+            "workspace_plus_mcp_fixtures",
+            "plugin_bundle_plus_scoped_storage",
+            "contract_scoped_workspace"
+          ]
+        },
+        "roots": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/root" }
+        },
+        "symlink_policy": { "enum": ["reject_escape"] },
+        "realpath_enforcement": { "type": "boolean" },
+        "default_read": { "enum": ["allow", "deny", "prompt"] },
+        "default_write": { "enum": ["allow", "deny", "prompt"] }
+      }
+    },
+    "root": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "path", "mode", "mount_point", "include_globs", "exclude_globs"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "path": { "type": "string", "minLength": 1 },
+        "mode": { "enum": ["read_only", "read_write", "deny"] },
+        "mount_point": { "type": ["string", "null"] },
+        "include_globs": { "$ref": "#/$defs/stringArray" },
+        "exclude_globs": { "$ref": "#/$defs/stringArray" }
+      }
+    },
+    "shell": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "enabled",
+        "execution_mode",
+        "allowed_executables",
+        "denied_executables",
+        "cwd_policy",
+        "environment_policy",
+        "timeout_seconds"
+      ],
+      "properties": {
+        "enabled": { "type": "boolean" },
+        "execution_mode": {
+          "enum": [
+            "disabled",
+            "subprocess",
+            "container_subprocess",
+            "plugin_hook_runner",
+            "contract_allowlist_subprocess"
+          ]
+        },
+        "allowed_executables": { "$ref": "#/$defs/stringArray" },
+        "denied_executables": { "$ref": "#/$defs/stringArray" },
+        "cwd_policy": {
+          "enum": [
+            "none",
+            "copied_workspace_only",
+            "container_workspace_only",
+            "plugin_bundle_or_workspace",
+            "contract_workspace_only"
+          ]
+        },
+        "environment_policy": {
+          "enum": ["redacted", "synthetic_env_allowlist", "synthetic_env_only"]
+        },
+        "timeout_seconds": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "network": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "enabled",
+        "default_egress",
+        "allowed_domains",
+        "denied_domains",
+        "allowed_ports",
+        "fake_sink_domains",
+        "loopback_allowed",
+        "dns_policy"
+      ],
+      "properties": {
+        "enabled": { "type": "boolean" },
+        "default_egress": { "enum": ["allow", "deny", "approved_only", "host_api_only"] },
+        "allowed_domains": { "$ref": "#/$defs/stringArray" },
+        "denied_domains": { "$ref": "#/$defs/stringArray" },
+        "allowed_ports": {
+          "type": "array",
+          "items": { "type": "integer", "minimum": 1, "maximum": 65535 }
+        },
+        "fake_sink_domains": { "$ref": "#/$defs/stringArray" },
+        "loopback_allowed": { "type": "boolean" },
+        "dns_policy": {
+          "enum": ["disabled", "fake_domains_only", "fixture_only", "host_api_fixture_only"]
+        }
+      }
+    },
+    "credentials": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "exposure_mode",
+        "synthetic_credentials",
+        "env_allowlist",
+        "env_denylist",
+        "host_credentials_allowed",
+        "redaction_policy"
+      ],
+      "properties": {
+        "exposure_mode": {
+          "enum": [
+            "synthetic_only",
+            "synthetic_plus_redacted_env",
+            "synthetic_mcp_tokens_only",
+            "synthetic_host_api_tokens_only"
+          ]
+        },
+        "synthetic_credentials": { "$ref": "#/$defs/stringArray" },
+        "env_allowlist": { "$ref": "#/$defs/stringArray" },
+        "env_denylist": { "$ref": "#/$defs/stringArray" },
+        "host_credentials_allowed": { "type": "boolean" },
+        "redaction_policy": { "enum": ["hash_only", "structured_metadata", "strict_metadata"] }
+      }
+    },
+    "context": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "task_prompt",
+        "uploaded_files",
+        "workspace_context",
+        "chat_history",
+        "runtime_memory",
+        "tool_results",
+        "max_context_sources"
+      ],
+      "properties": {
+        "task_prompt": { "enum": ["full"] },
+        "uploaded_files": { "enum": ["allowed", "contract_allowed"] },
+        "workspace_context": {
+          "enum": [
+            "none",
+            "full_copy",
+            "mounted_repo_only",
+            "selected_fixture",
+            "contract_allowed_only"
+          ]
+        },
+        "chat_history": { "enum": ["minimal", "full_synthetic", "task_only"] },
+        "runtime_memory": { "enum": ["none", "run_scoped"] },
+        "tool_results": { "enum": ["none", "adapter_logged", "metadata_only"] },
+        "max_context_sources": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "persistence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "enabled",
+        "allowed_stores",
+        "allowed_paths",
+        "retention_scope",
+        "post_cleanup_allowed",
+        "cross_run_state_allowed"
+      ],
+      "properties": {
+        "enabled": { "type": "boolean" },
+        "allowed_stores": { "$ref": "#/$defs/stringArray" },
+        "allowed_paths": { "$ref": "#/$defs/stringArray" },
+        "retention_scope": { "enum": ["none", "run"] },
+        "post_cleanup_allowed": { "type": "boolean" },
+        "cross_run_state_allowed": { "type": "boolean" }
+      }
+    },
+    "approvals": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "mode",
+        "rules",
+        "auto_decisions",
+        "prompt_must_show",
+        "deny_behavior",
+        "record_transcript"
+      ],
+      "properties": {
+        "mode": { "enum": ["deterministic_prompt"] },
+        "rules": { "$ref": "#/$defs/stringArray" },
+        "auto_decisions": { "type": "object", "additionalProperties": { "type": "string" } },
+        "prompt_must_show": { "$ref": "#/$defs/stringArray" },
+        "deny_behavior": { "enum": ["block", "block_and_record"] },
+        "record_transcript": { "type": "boolean" }
+      }
+    },
+    "tools": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "enabled",
+        "default_tool_policy",
+        "available_tools",
+        "mutating_tools_allowed",
+        "descriptor_sources"
+      ],
+      "properties": {
+        "enabled": { "type": "boolean" },
+        "default_tool_policy": { "enum": ["allow", "deny", "prompt"] },
+        "available_tools": { "$ref": "#/$defs/stringArray" },
+        "mutating_tools_allowed": { "type": "boolean" },
+        "descriptor_sources": { "$ref": "#/$defs/stringArray" }
+      }
+    },
+    "mcpPluginApis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "enabled",
+        "servers",
+        "resources",
+        "tool_discovery",
+        "descriptor_trust",
+        "auth_propagation",
+        "install_hooks_allowed",
+        "plugin_storage_allowed"
+      ],
+      "properties": {
+        "enabled": { "type": "boolean" },
+        "servers": { "$ref": "#/$defs/stringArray" },
+        "resources": { "$ref": "#/$defs/stringArray" },
+        "tool_discovery": {
+          "enum": ["disabled", "fixture_catalog", "plugin_manifest"]
+        },
+        "descriptor_trust": { "enum": ["none", "fixture_signed"] },
+        "auth_propagation": { "enum": ["none", "synthetic_tokens_only"] },
+        "install_hooks_allowed": { "type": "boolean" },
+        "plugin_storage_allowed": { "type": "boolean" }
+      }
+    },
+    "logging": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "enabled",
+        "event_categories",
+        "payload_capture",
+        "redaction_policy",
+        "log_sinks",
+        "canary_detection_in_logs"
+      ],
+      "properties": {
+        "enabled": { "type": "boolean" },
+        "event_categories": { "$ref": "#/$defs/stringArray" },
+        "payload_capture": { "enum": ["hash_only", "metadata_only"] },
+        "redaction_policy": { "enum": ["strict_metadata", "structured_metadata"] },
+        "log_sinks": { "$ref": "#/$defs/stringArray" },
+        "canary_detection_in_logs": { "type": "boolean" }
+      }
+    },
+    "cleanup": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "workspace_lifecycle",
+        "remove_paths",
+        "preserve_paths",
+        "post_cleanup_scan",
+        "cleanup_on_failure"
+      ],
+      "properties": {
+        "workspace_lifecycle": {
+          "enum": [
+            "ephemeral",
+            "copied_per_run",
+            "container_ephemeral",
+            "ephemeral_fixture_session",
+            "ephemeral_plugin_session",
+            "ephemeral_contract_run"
+          ]
+        },
+        "remove_paths": { "$ref": "#/$defs/stringArray" },
+        "preserve_paths": { "$ref": "#/$defs/stringArray" },
+        "post_cleanup_scan": { "type": "boolean" },
+        "cleanup_on_failure": { "type": "boolean" }
+      }
+    },
+    "instrumentation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "enabled",
+        "file_monitor",
+        "process_monitor",
+        "network_monitor",
+        "tool_monitor",
+        "approval_monitor",
+        "canary_scanner",
+        "capability_snapshot",
+        "deterministic_seed"
+      ],
+      "properties": {
+        "enabled": { "type": "boolean" },
+        "file_monitor": {
+          "enum": [
+            "wrapper_observed",
+            "pre_post_diff",
+            "mount_diff",
+            "syscall_container_strace",
+            "fixture_diff",
+            "storage_diff",
+            "contract_diff"
+          ]
+        },
+        "process_monitor": {
+          "enum": [
+            "disabled",
+            "subprocess_wrapper",
+            "container_wrapper",
+            "plugin_hook_wrapper"
+          ]
+        },
+        "network_monitor": {
+          "enum": ["disabled", "shimmed_fake_sink", "disabled_network_assertion"]
+        },
+        "tool_monitor": {
+          "enum": ["wrapper_observed", "mcp_wrapper_observed", "host_api_wrapper_observed"]
+        },
+        "approval_monitor": { "enum": ["shimmed"] },
+        "canary_scanner": {
+          "enum": [
+            "file_and_output",
+            "file_output_log_network",
+            "file_output_container_logs",
+            "resource_tool_output_log",
+            "plugin_storage_output_log",
+            "taint_aware_file_output_log"
+          ]
+        },
+        "capability_snapshot": { "type": "boolean" },
+        "deterministic_seed": { "type": "integer" }
+      }
+    },
+    "reproducibility": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "canonicalization_version",
+        "profile_hash_algorithm",
+        "profile_hash",
+        "hash_excludes",
+        "harness_version",
+        "adapter_version",
+        "base_image_digest",
+        "os_image",
+        "tool_fixture_hash",
+        "mcp_fixture_hash",
+        "plugin_fixture_hash"
+      ],
+      "properties": {
+        "canonicalization_version": { "type": "string" },
+        "profile_hash_algorithm": { "enum": ["sha256"] },
+        "profile_hash": { "type": "string" },
+        "hash_excludes": { "$ref": "#/$defs/stringArray" },
+        "harness_version": { "type": "string" },
+        "adapter_version": { "type": "string" },
+        "base_image_digest": { "type": "string" },
+        "os_image": { "type": "string" },
+        "tool_fixture_hash": { "type": "string" },
+        "mcp_fixture_hash": { "type": "string" },
+        "plugin_fixture_hash": { "type": "string" }
+      }
+    },
+    "stringArray": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  }
+}

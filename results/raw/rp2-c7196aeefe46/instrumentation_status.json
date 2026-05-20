@@ -1,0 +1,11 @@
+{
+  "adapter_id": "local_adapter",
+  "file_read_provenance": "not_available",
+  "file_write_provenance": "pre_post_diff",
+  "network_provenance": "not_available",
+  "process_provenance": "subprocess_wrapper",
+  "trace_valid": true,
+  "warnings": [
+    "filesystem.read events are not syscall-complete in RM-07 MVP"
+  ]
+}

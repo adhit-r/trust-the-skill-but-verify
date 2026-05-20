@@ -1,0 +1,9 @@
+{
+  "mounts": [
+    {
+      "mode": "read_write",
+      "source": "/Users/adhi/axonome/trust-the-skill-but-verify/results/raw/rp2-aeb5f9eceea2/workspace",
+      "target": "/Users/adhi/axonome/trust-the-skill-but-verify/results/raw/rp2-aeb5f9eceea2/workspace"
+    }
+  ]
+}

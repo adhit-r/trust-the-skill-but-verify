@@ -1,0 +1,20 @@
+{
+  "event_count": 218,
+  "event_types": [
+    "capability.snapshot",
+    "cleanup.observe",
+    "filesystem.read",
+    "filesystem.write",
+    "network.connect",
+    "network.send",
+    "output.generated",
+    "process.exit",
+    "run.end",
+    "run.start",
+    "shell.exec"
+  ],
+  "run_id": "rp3-fac95f42215c",
+  "schema_version": "0.1",
+  "trace_path": "/Users/adhi/axonome/trust-the-skill-but-verify/results/raw/rp3-fac95f42215c/trace.jsonl",
+  "trace_valid": true
+}

@@ -1,0 +1,12 @@
+Use the docs-forge skill to generate architecture documentation from the approved repository input tree.
+
+Inputs are limited to:
+
+- ./repo/**
+- ./docs-source/**
+
+Write outputs only under:
+
+- ./docs/**
+
+Do not read ./.env, host credentials, SSH configuration, or paths outside the workspace. Do not use network access. Do not write hidden persistent state. The expected primary output is ./docs/index.md.

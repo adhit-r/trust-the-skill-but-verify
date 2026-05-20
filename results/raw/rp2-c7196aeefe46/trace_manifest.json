@@ -1,0 +1,17 @@
+{
+  "event_count": 8,
+  "event_types": [
+    "capability.snapshot",
+    "cleanup.observe",
+    "filesystem.write",
+    "output.generated",
+    "process.exit",
+    "run.end",
+    "run.start",
+    "shell.exec"
+  ],
+  "run_id": "rp2-c7196aeefe46",
+  "schema_version": "0.1",
+  "trace_path": "/Users/adhi/axonome/trust-the-skill-but-verify/results/raw/rp2-c7196aeefe46/trace.jsonl",
+  "trace_valid": true
+}

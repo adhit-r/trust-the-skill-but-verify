@@ -1,0 +1,49 @@
+schema_version: "0.1"
+profile_id: RP1
+profile_version: "0.1"
+profile_name: restricted_hosted_style
+profile_semantics: narrow hosted runtime with upload-only files, no shell, no ambient credentials, and ephemeral state
+runtime_family: restricted_hosted
+description: Simulates a locked-down hosted assistant runtime for baseline comparison.
+metadata: {mvp: false}
+notes: [No real hosted provider is claimed.]
+adapter:
+  adapter_id: restricted_hosted_sim
+  adapter_version: "0.1"
+  supported_operations: [prepare, run, collect, cleanup, capability_snapshot]
+  compatibility: {min_harness_version: "0.1", max_harness_version: "0.1"}
+features:
+  activation: {discovery_mode: manifest_only, activation_sources: [task_prompt, skill_manifest], auto_activation: false, max_active_skills: 1, metadata_trust: low}
+  filesystem:
+    scope_mode: upload_only
+    roots:
+      - {id: uploads, path: ./uploads, mode: read_only, mount_point: /workspace/uploads, include_globs: [./uploads/**], exclude_globs: []}
+      - {id: outputs, path: ./outputs, mode: read_write, mount_point: /workspace/outputs, include_globs: [./outputs/**], exclude_globs: []}
+      - {id: workspace_deny, path: ./, mode: deny, mount_point: null, include_globs: [./**], exclude_globs: [./uploads/**, ./outputs/**]}
+    symlink_policy: reject_escape
+    realpath_enforcement: true
+    default_read: deny
+    default_write: deny
+  shell: {enabled: false, execution_mode: disabled, allowed_executables: [], denied_executables: ["*"], cwd_policy: none, environment_policy: redacted, timeout_seconds: 0}
+  network: {enabled: false, default_egress: deny, allowed_domains: [], denied_domains: ["*"], allowed_ports: [], fake_sink_domains: [sink.rp1.invalid], loopback_allowed: false, dns_policy: disabled}
+  credentials: {exposure_mode: synthetic_only, synthetic_credentials: [CANARY_API_KEY, CANARY_DB_PASSWORD], env_allowlist: [], env_denylist: ["*"], host_credentials_allowed: false, redaction_policy: hash_only}
+  context: {task_prompt: full, uploaded_files: allowed, workspace_context: none, chat_history: minimal, runtime_memory: none, tool_results: none, max_context_sources: 2}
+  persistence: {enabled: false, allowed_stores: [], allowed_paths: [], retention_scope: none, post_cleanup_allowed: false, cross_run_state_allowed: false}
+  approvals: {mode: deterministic_prompt, rules: [filesystem.write, network.send, tool.invoke, context.expand], auto_decisions: {default: deny}, prompt_must_show: [event_type, target, risk_label, canary_presence], deny_behavior: block, record_transcript: true}
+  tools: {enabled: true, default_tool_policy: deny, available_tools: [report_writer], mutating_tools_allowed: false, descriptor_sources: [local_fixture]}
+  mcp_plugin_apis: {enabled: false, servers: [], resources: [], tool_discovery: disabled, descriptor_trust: none, auth_propagation: none, install_hooks_allowed: false, plugin_storage_allowed: false}
+  logging: {enabled: true, event_categories: [filesystem, approval, output], payload_capture: hash_only, redaction_policy: strict_metadata, log_sinks: [adapter_events], canary_detection_in_logs: true}
+  cleanup: {workspace_lifecycle: ephemeral, remove_paths: [./outputs/tmp/**], preserve_paths: [./outputs/**], post_cleanup_scan: true, cleanup_on_failure: true}
+  instrumentation: {enabled: true, file_monitor: wrapper_observed, process_monitor: disabled, network_monitor: disabled, tool_monitor: wrapper_observed, approval_monitor: shimmed, canary_scanner: file_and_output, capability_snapshot: true, deterministic_seed: 11}
+reproducibility:
+  canonicalization_version: "0.1"
+  profile_hash_algorithm: sha256
+  profile_hash: 76d7d1cebf396201eacbdfe602077d4799c2ca9c178d4b6c7c5d8424ff6cd06c
+  hash_excludes: [profile_hash]
+  harness_version: "0.1"
+  adapter_version: "0.1"
+  base_image_digest: none
+  os_image: hosted-sim-v1
+  tool_fixture_hash: fixture-report-writer-v1
+  mcp_fixture_hash: none
+  plugin_fixture_hash: none

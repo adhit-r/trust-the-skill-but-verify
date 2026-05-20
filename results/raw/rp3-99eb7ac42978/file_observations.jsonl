@@ -1,0 +1,2 @@
+{"copied_file_count": 7, "event": "workspace_seed_copied", "path": "/Users/adhi/axonome/trust-the-skill-but-verify/benchmark/workspaces/repo-audit-smoke", "profile_id": "RP3", "seed_copy_path": "/Users/adhi/axonome/trust-the-skill-but-verify/results/raw/rp3-99eb7ac42978/workspace/repo", "timestamp": "2026-05-19T19:06:14+00:00"}
+{"event": "mount_plan_registered", "mount_mode": "read_only_seed_plus_writable_artifacts", "profile_id": "RP3", "timestamp": "2026-05-19T19:06:14+00:00"}

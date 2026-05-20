@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "bc626f6d51577e9ac963a1e3f01a2226c7fc5633e198262130e76afb3a883123",
+  "generated_outputs": [
+    {
+      "path": "./reports/audit.md",
+      "size": 102
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-6fadc87ed78d"
+}

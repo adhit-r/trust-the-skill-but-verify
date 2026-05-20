@@ -1,0 +1,12 @@
+{
+  "adapter_id": "docker_adapter",
+  "file_read_provenance": "not_available",
+  "file_write_provenance": "pre_post_diff",
+  "network_provenance": "docker_network_none_no_packet_capture",
+  "process_provenance": "docker_subprocess_wrapper",
+  "trace_valid": true,
+  "warnings": [
+    "filesystem.read events are not syscall-complete in RP3 MVP",
+    "network monitoring records Docker network policy, not full packet interception"
+  ]
+}

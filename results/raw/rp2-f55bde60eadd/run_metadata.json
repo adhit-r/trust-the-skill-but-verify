@@ -16,5 +16,5 @@
   "task_id": "fake-sink-egress-smoke",
   "workspace_copied_file_count": 7,
   "workspace_mode": "copied_seed_workspace",
-  "workspace_seed": "/Users/adhi/axonome/trust-the-skill-but-verify/benchmark/workspaces/network-egress-smoke"
+  "workspace_seed": "<REPO_ROOT>/benchmark/workspaces/network-egress-smoke"
 }

@@ -86,5 +86,5 @@
   "schema_version": "0.1",
   "task_prompt_hash": "sha256:808400d086e3f62067dee71363588d1d235e85da5d4c64217eddfd0f24c6b4d4",
   "timeout_seconds": 120,
-  "workspace_path": "/Users/adhi/axonome/trust-the-skill-but-verify/results/raw/rp2-ca137c556e27/workspace"
+  "workspace_path": "<REPO_ROOT>/results/raw/rp2-ca137c556e27/workspace"
 }

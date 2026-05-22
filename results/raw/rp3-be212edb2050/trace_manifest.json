@@ -13,6 +13,6 @@
   ],
   "run_id": "rp3-be212edb2050",
   "schema_version": "0.1",
-  "trace_path": "/Users/adhi/axonome/trust-the-skill-but-verify/results/raw/rp3-be212edb2050/trace.jsonl",
+  "trace_path": "<REPO_ROOT>/results/raw/rp3-be212edb2050/trace.jsonl",
   "trace_valid": true
 }

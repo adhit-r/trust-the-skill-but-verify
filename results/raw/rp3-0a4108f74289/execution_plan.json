@@ -78,12 +78,12 @@
     "run",
     "--rm",
     "--cidfile",
-    "/Users/adhi/axonome/trust-the-skill-but-verify/results/raw/rp3-0a4108f74289/container.id",
+    "<REPO_ROOT>/results/raw/rp3-0a4108f74289/container.id",
     "--network=none",
     "--user=1000:1000",
     "--read-only",
-    "--mount=type=bind,source=/Users/adhi/axonome/trust-the-skill-but-verify/results/raw/rp3-0a4108f74289/workspace/repo,target=/workspace/repo,readonly",
-    "--mount=type=bind,source=/Users/adhi/axonome/trust-the-skill-but-verify/results/raw/rp3-0a4108f74289/workspace/out,target=/workspace/out",
+    "--mount=type=bind,source=<REPO_ROOT>/results/raw/rp3-0a4108f74289/workspace/repo,target=/workspace/repo,readonly",
+    "--mount=type=bind,source=<REPO_ROOT>/results/raw/rp3-0a4108f74289/workspace/out,target=/workspace/out",
     "--tmpfs=/tmp/skilldiff",
     "--env=CANARY_API_KEY=synthetic_canary_api_key",
     "--env=CANARY_DB_PASSWORD=synthetic_canary_db_password",
@@ -164,12 +164,12 @@
   "mounts": [
     {
       "mode": "read_only",
-      "source": "/Users/adhi/axonome/trust-the-skill-but-verify/results/raw/rp3-0a4108f74289/workspace/repo",
+      "source": "<REPO_ROOT>/results/raw/rp3-0a4108f74289/workspace/repo",
       "target": "/workspace/repo"
     },
     {
       "mode": "read_write",
-      "source": "/Users/adhi/axonome/trust-the-skill-but-verify/results/raw/rp3-0a4108f74289/workspace/out",
+      "source": "<REPO_ROOT>/results/raw/rp3-0a4108f74289/workspace/out",
       "target": "/workspace/out"
     }
   ],
@@ -183,11 +183,11 @@
     "fake_sink_domains": [
       "sink.rp3.invalid"
     ],
-    "host_event_path": "/Users/adhi/axonome/trust-the-skill-but-verify/results/raw/rp3-0a4108f74289/workspace/out/.skilldiff_file_read_events.jsonl",
-    "host_network_event_path": "/Users/adhi/axonome/trust-the-skill-but-verify/results/raw/rp3-0a4108f74289/workspace/out/.skilldiff_network_events.jsonl",
-    "host_network_sink_requests_path": "/Users/adhi/axonome/trust-the-skill-but-verify/results/raw/rp3-0a4108f74289/workspace/out/.skilldiff_network_sink_requests.jsonl",
-    "host_shim_dir": "/Users/adhi/axonome/trust-the-skill-but-verify/results/raw/rp3-0a4108f74289/workspace/out/.skilldiff_provenance",
-    "host_strace_log_path": "/Users/adhi/axonome/trust-the-skill-but-verify/results/raw/rp3-0a4108f74289/workspace/out/.skilldiff_strace_file_reads.log",
+    "host_event_path": "<REPO_ROOT>/results/raw/rp3-0a4108f74289/workspace/out/.skilldiff_file_read_events.jsonl",
+    "host_network_event_path": "<REPO_ROOT>/results/raw/rp3-0a4108f74289/workspace/out/.skilldiff_network_events.jsonl",
+    "host_network_sink_requests_path": "<REPO_ROOT>/results/raw/rp3-0a4108f74289/workspace/out/.skilldiff_network_sink_requests.jsonl",
+    "host_shim_dir": "<REPO_ROOT>/results/raw/rp3-0a4108f74289/workspace/out/.skilldiff_provenance",
+    "host_strace_log_path": "<REPO_ROOT>/results/raw/rp3-0a4108f74289/workspace/out/.skilldiff_strace_file_reads.log",
     "instrumentation_model": "container_strace_mvp",
     "network_enabled": true,
     "network_mode": "block",
@@ -201,5 +201,5 @@
   "tmpfs_mounts": [
     "/tmp/skilldiff"
   ],
-  "workspace_path": "/Users/adhi/axonome/trust-the-skill-but-verify/results/raw/rp3-0a4108f74289/workspace/out"
+  "workspace_path": "<REPO_ROOT>/results/raw/rp3-0a4108f74289/workspace/out"
 }

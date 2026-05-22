@@ -9,7 +9,7 @@
     "pinned_tree": "6fbaec7f16561e5cedd7725d05613ce4a0e61739",
     "pinned_commit_source": "RESEARCH_ROADMAP.md",
     "local_source_snapshot_inspected": true,
-    "local_source_snapshot_path": "/Users/adhi/Documents/Codex/2026-05-06/files-mentioned-by-the-user-docs",
+    "local_source_snapshot_path": "<LOCAL_SOURCE_CHECKOUT:docs-forge>",
     "local_source_tracked_state": "clean"
   },
   "inspection_boundary": "Pinned docs-forge source was inspected for provenance and command-surface truth. The executable P1/P2 evidence uses a benchmark-owned controlled Python fixture; it does not claim execution of the real docs-forge Node installer.",

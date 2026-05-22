@@ -10,7 +10,7 @@
     "source_repo": "adhit-r/audit-lens",
     "fixture_source_commit": "241b584e8e7fc1cddfe2744a33e3c3907c871e95",
     "fixture_source_mode": "clean_git_archive_from_pinned_commit",
-    "local_inspection_path": "/Users/adhi/axonome/Compliance-master-skill/audit-lens",
+    "local_inspection_path": "<LOCAL_SOURCE_CHECKOUT:audit-lens>",
     "local_worktree_not_used_for_fixture": true,
     "does_not_vendor_full_source": true,
     "generator_not_run": true

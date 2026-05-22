@@ -13,6 +13,6 @@
   ],
   "run_id": "rp3-6df10049a3b6",
   "schema_version": "0.1",
-  "trace_path": "/Users/adhi/axonome/trust-the-skill-but-verify/results/raw/rp3-6df10049a3b6/trace.jsonl",
+  "trace_path": "<REPO_ROOT>/results/raw/rp3-6df10049a3b6/trace.jsonl",
   "trace_valid": true
 }

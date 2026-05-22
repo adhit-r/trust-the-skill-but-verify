@@ -3,7 +3,7 @@
 - Run: `rp2-8acbda77b256`
 - Runtime profile: `RP2`
 - Contract: `network-egress-executable-smoke`
-- Trace: `/Users/adhi/axonome/trust-the-skill-but-verify/results/raw/rp2-8acbda77b256/trace.jsonl`
+- Trace: `<REPO_ROOT>/results/raw/rp2-8acbda77b256/trace.jsonl`
 - Events: `10`
 - Realized contract violations: `2`
 - Attempted overreach: `0`

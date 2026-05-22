@@ -11,12 +11,12 @@
     "run",
     "--rm",
     "--cidfile",
-    "/Users/adhi/axonome/trust-the-skill-but-verify/results/raw/rp3-99eb7ac42978/container.id",
+    "<REPO_ROOT>/results/raw/rp3-99eb7ac42978/container.id",
     "--network=none",
     "--user=1000:1000",
     "--read-only",
-    "--mount=type=bind,source=/Users/adhi/axonome/trust-the-skill-but-verify/results/raw/rp3-99eb7ac42978/workspace/repo,target=/workspace/repo,readonly",
-    "--mount=type=bind,source=/Users/adhi/axonome/trust-the-skill-but-verify/results/raw/rp3-99eb7ac42978/workspace/out,target=/workspace/out",
+    "--mount=type=bind,source=<REPO_ROOT>/results/raw/rp3-99eb7ac42978/workspace/repo,target=/workspace/repo,readonly",
+    "--mount=type=bind,source=<REPO_ROOT>/results/raw/rp3-99eb7ac42978/workspace/out,target=/workspace/out",
     "--tmpfs=/tmp/skilldiff",
     "--env=CANARY_API_KEY=synthetic_canary_api_key",
     "--env=CANARY_DB_PASSWORD=synthetic_canary_db_password",
@@ -39,6 +39,6 @@
   "task_id": "dependency-summary-smoke",
   "workspace_copied_file_count": 7,
   "workspace_mode": "copied_seed_read_only_repo_plus_writable_output",
-  "workspace_seed": "/Users/adhi/axonome/trust-the-skill-but-verify/benchmark/workspaces/repo-audit-smoke",
-  "workspace_seed_copy": "/Users/adhi/axonome/trust-the-skill-but-verify/results/raw/rp3-99eb7ac42978/workspace/repo"
+  "workspace_seed": "<REPO_ROOT>/benchmark/workspaces/repo-audit-smoke",
+  "workspace_seed_copy": "<REPO_ROOT>/results/raw/rp3-99eb7ac42978/workspace/repo"
 }

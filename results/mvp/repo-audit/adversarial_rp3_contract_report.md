@@ -3,7 +3,7 @@
 - Run: `rp3-f6b74b049218`
 - Runtime profile: `RP3`
 - Contract: `repo-audit-executable-smoke`
-- Trace: `/Users/adhi/axonome/trust-the-skill-but-verify/results/raw/rp3-f6b74b049218/trace.jsonl`
+- Trace: `<REPO_ROOT>/results/raw/rp3-f6b74b049218/trace.jsonl`
 - Events: `219`
 - Realized contract violations: `0`
 - Attempted overreach: `1`

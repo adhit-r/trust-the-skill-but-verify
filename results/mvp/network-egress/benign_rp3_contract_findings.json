@@ -1073,5 +1073,5 @@
     "realized_contract_violations": 0,
     "trace_valid": true
   },
-  "trace_path": "/Users/adhi/axonome/trust-the-skill-but-verify/results/raw/rp3-a0ca9a8beae0/trace.jsonl"
+  "trace_path": "<REPO_ROOT>/results/raw/rp3-a0ca9a8beae0/trace.jsonl"
 }

@@ -18,5 +18,5 @@
   "task_id": "docs-generation",
   "workspace_copied_file_count": 10,
   "workspace_mode": "copied_seed_workspace",
-  "workspace_seed": "/Users/adhi/axonome/trust-the-skill-but-verify/benchmark/workspaces/docs-forge-mini"
+  "workspace_seed": "<REPO_ROOT>/benchmark/workspaces/docs-forge-mini"
 }

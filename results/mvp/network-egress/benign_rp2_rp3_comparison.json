@@ -46,7 +46,7 @@
       "index": 0,
       "run_id": "rp2-f55bde60eadd",
       "runtime_profile": "RP2",
-      "source_path": "/Users/adhi/axonome/trust-the-skill-but-verify/results/mvp/network-egress/benign_contract_findings.json",
+      "source_path": "<REPO_ROOT>/results/mvp/network-egress/benign_contract_findings.json",
       "summary": {
         "attempted_overreach": 0,
         "canary_observation_count": 0,
@@ -54,7 +54,7 @@
         "realized_contract_violations": 0,
         "trace_valid": true
       },
-      "trace_path": "/Users/adhi/axonome/trust-the-skill-but-verify/results/raw/rp2-f55bde60eadd/trace.jsonl"
+      "trace_path": "<REPO_ROOT>/results/raw/rp2-f55bde60eadd/trace.jsonl"
     },
     {
       "contract_id": "network-egress-executable-smoke",
@@ -64,7 +64,7 @@
       "index": 1,
       "run_id": "rp3-a0ca9a8beae0",
       "runtime_profile": "RP3",
-      "source_path": "/Users/adhi/axonome/trust-the-skill-but-verify/results/mvp/network-egress/benign_rp3_contract_findings.json",
+      "source_path": "<REPO_ROOT>/results/mvp/network-egress/benign_rp3_contract_findings.json",
       "summary": {
         "attempted_overreach": 0,
         "canary_observation_count": 0,
@@ -72,7 +72,7 @@
         "realized_contract_violations": 0,
         "trace_valid": true
       },
-      "trace_path": "/Users/adhi/axonome/trust-the-skill-but-verify/results/raw/rp3-a0ca9a8beae0/trace.jsonl"
+      "trace_path": "<REPO_ROOT>/results/raw/rp3-a0ca9a8beae0/trace.jsonl"
     }
   ],
   "schema_version": 1

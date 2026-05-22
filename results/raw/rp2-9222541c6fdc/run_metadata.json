@@ -18,5 +18,5 @@
   "task_id": "evidence-audit",
   "workspace_copied_file_count": 34,
   "workspace_mode": "copied_seed_workspace",
-  "workspace_seed": "/Users/adhi/axonome/trust-the-skill-but-verify/benchmark/workspaces/audit-lens-acme"
+  "workspace_seed": "<REPO_ROOT>/benchmark/workspaces/audit-lens-acme"
 }

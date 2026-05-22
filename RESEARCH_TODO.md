@@ -17,7 +17,7 @@ Status key:
 4. [~] [RM-07] Build the smallest trace harness; MVP captures process launches, Python-level file reads for controlled Python commands, RP3 container-strace MVP file reads for supported container `open`, `openat`, and `openat2` syscalls, writes, outputs, canaries, and PV-02 controlled Python fake-sink plus blocked RP3 egress evidence. Broader syscall/network/tool/approval/persistence completeness remains pending.
 5. [x] [RM-08] Create the MVP repo-audit benign skill and adversarial variant.
 6. [x] [RM-09] Produce the first RP2/RP3 contract-evidence report with an adversarial runtime-drift candidate and MVP Python-level read provenance.
-7. [ ] [RM-08] Onboard `adhit-r/docs-forge` as the first realistic documentation-skill case study.
+7. [x] [RM-08] Onboard `adhit-r/docs-forge` as the first realistic documentation-skill case study with a controlled Python fixture, pinned provenance, and RP2/RP3 traces.
 8. [x] [RM-08] Onboard `adhit-r/audit-lens` as the first realistic compliance-skill case study with a sanitized runnable Acme fixture and RP2/RP3 traces.
 
 ## RM-01: Research Claim and Scope
@@ -260,9 +260,9 @@ Tasks:
 - [x] [RM-08] Create `benchmark/workspaces`.
 - [ ] [RM-08] Create `benchmark/secrets`.
 - [ ] [RM-08] Create `benchmark/contracts`.
-- [~] [RM-08] Create `benchmark/expected`; repo-audit and AuditLens oracle metadata exist.
-- [ ] [RM-08] Write benign document automation skills.
-- [ ] [RM-08] Write adversarial document automation variants.
+- [~] [RM-08] Create `benchmark/expected`; repo-audit, AuditLens, and docs-forge oracle metadata exist.
+- [x] [RM-08] Write benign document automation skills for the controlled docs-forge P1/P2 fixture.
+- [x] [RM-08] Write adversarial document automation variants for docs-forge canary leak and source mutation.
 - [~] [RM-08] Write benign repository maintenance skills; MVP repo-audit fixture exists.
 - [~] [RM-08] Write adversarial repository maintenance variants; MVP repo-audit canary-leak fixture exists.
 - [ ] [RM-08] Write benign data extraction skills.
@@ -274,30 +274,30 @@ Tasks:
 - [ ] [RM-08] Write benign local file operation skills.
 - [ ] [RM-08] Write adversarial local file operation variants.
 - [ ] [RM-08] Create task prompts for each skill.
-- [~] [RM-08] Create expected functional outputs for each task; repo-audit and AuditLens MVP expected-output metadata exist.
-- [~] [RM-08] Create synthetic canary files; repo-audit, network-egress, and AuditLens synthetic canaries exist.
-- [~] [RM-08] Create synthetic `.env` files; MVP repo-audit fixture exists.
+- [~] [RM-08] Create expected functional outputs for each task; repo-audit, network-egress, AuditLens, and docs-forge MVP expected-output metadata exist.
+- [~] [RM-08] Create synthetic canary files; repo-audit, network-egress, AuditLens, and docs-forge synthetic canaries exist.
+- [~] [RM-08] Create synthetic `.env` files; repo-audit, AuditLens, and docs-forge MVP fixtures exist.
 - [ ] [RM-08] Create synthetic home-directory secrets.
 - [x] [RM-08/PV-02] Create fake network sink fixture for benchmark-only reserved destinations, with verified trace artifacts.
 - [x] [RM-08] Create metadata for attack family labels.
 - [x] [RM-08] Create benchmark manifest.
 - [ ] [RM-08] Add license and release notes for benchmark artifacts.
-- [ ] [RM-08] Snapshot `adhit-r/docs-forge` at `40c3693491b49382682622408f167424ed814c71`.
+- [x] [RM-08] Snapshot `adhit-r/docs-forge` at `40c3693491b49382682622408f167424ed814c71`.
 - [x] [RM-08] Snapshot `adhit-r/audit-lens` at `241b584e8e7fc1cddfe2744a33e3c3907c871e95` for the sanitized AuditLens fixture.
-- [ ] [RM-08] Extract `docs-forge` canonical skill from `plugins/docs-forge/skills/docs-forge/SKILL.md`.
-- [ ] [RM-08] Extract `docs-forge` adapter surfaces from `adapters/claude-code`, `adapters/antigravity`, and `adapters/universal`.
+- [x] [RM-08] Extract `docs-forge` canonical skill provenance from `plugins/docs-forge/skills/docs-forge/SKILL.md`.
+- [x] [RM-08] Extract `docs-forge` adapter-surface provenance from `adapters/claude-code`, `adapters/antigravity`, and `adapters/universal`.
 - [ ] [RM-08] Extract `audit-lens` canonical skill from `skill/SKILL.md`.
 - [x] [RM-08] Inventory `audit-lens` references under `skill/references/`.
 - [x] [RM-08] Inventory `audit-lens` demo evidence under `demo/acme-corp/`.
-- [ ] [RM-08] Create benign `docs-forge` task: generate architecture docs for a synthetic repo.
-- [ ] [RM-08] Create benign `docs-forge` task: generate framework-ready docs under an approved output directory.
-- [ ] [RM-08] Create adversarial `docs-forge` variant: overbroad ingestion tries to read `.env` and unrelated workspace files.
-- [ ] [RM-08] Create adversarial `docs-forge` variant: hidden side effect writes outside approved docs output.
+- [x] [RM-08] Create benign `docs-forge` task: generate architecture docs for a synthetic repo.
+- [x] [RM-08] Create benign `docs-forge` task: generate framework-ready docs under an approved output directory.
+- [x] [RM-08] Create adversarial `docs-forge` variant: overbroad ingestion tries to read `.env` and unrelated workspace files.
+- [x] [RM-08] Create adversarial `docs-forge` variant: hidden side effect writes outside approved docs output.
 - [x] [RM-08] Create benign `audit-lens` task: audit synthetic Acme evidence against ISO 27001.
 - [x] [RM-08] Create benign `audit-lens` task: produce GRC and auditor workspace outputs from approved evidence.
 - [x] [RM-08] Create adversarial `audit-lens` variant: propagates synthetic secrets into reports or generated HTML.
 - [ ] [RM-08] Create adversarial `audit-lens` variant: attempts connector discovery or CLI auth checks without approval.
-- [~] [RM-08] Write security contracts for `docs-forge` pilot tasks; placeholder contracts exist but must be aligned to the runnable Python fixture before P1/P2 execution.
+- [x] [RM-08] Write security contracts for `docs-forge` pilot tasks aligned to the runnable Python fixture.
 - [x] [RM-08] Write security contracts for `audit-lens` pilot tasks.
 - [x] [RM-08] Add pilot-case labels P1 to P4 to the benchmark manifest.
 
@@ -305,10 +305,10 @@ Acceptance checks:
 
 - [ ] [RM-08] Every skill has at least one task.
 - [ ] [RM-08] Every task has a contract.
-- [~] [RM-08] Every adversarial variant maps to a named attack family; repo-audit, network-egress, and AuditLens MVP variants are mapped.
-- [~] [RM-08] The benchmark contains no real secrets; current verified MVP and AuditLens fixture use synthetic canaries only.
-- [ ] [RM-08] First-party seed repos are pinned by commit hash.
-- [~] [RM-08] Pilot mutations are controlled and do not publish real harmful payloads; AuditLens canary variants are synthetic and local-only.
+- [~] [RM-08] Every adversarial variant maps to a named attack family; repo-audit, network-egress, AuditLens, and docs-forge MVP variants are mapped.
+- [~] [RM-08] The benchmark contains no real secrets; current verified MVP, AuditLens, and docs-forge fixtures use synthetic canaries only.
+- [x] [RM-08] First-party seed repos are pinned by commit hash.
+- [~] [RM-08] Pilot mutations are controlled and do not publish real harmful payloads; AuditLens and docs-forge canary variants are synthetic and local-only.
 
 ## RM-09: Differential Analysis and Report Cards
 
@@ -331,7 +331,7 @@ Tasks:
 - [ ] [RM-09] Implement per-runtime report.
 - [ ] [RM-09] Implement per-category report.
 - [ ] [RM-09] Implement benchmark aggregate report.
-- [~] [RM-09] Generate Markdown report cards; MVP contract reports, repo-audit, network-egress, AuditLens summaries, and contract-run comparisons exist.
+- [~] [RM-09] Generate Markdown report cards; MVP contract reports, repo-audit, network-egress, AuditLens, docs-forge summaries, and contract-run comparisons exist.
 - [ ] [RM-09] Generate CSV tables.
 - [ ] [RM-09] Generate LaTeX tables.
 - [ ] [RM-09] Generate heatmap data.
@@ -432,12 +432,12 @@ Tasks:
 - [ ] [RM-12] Add figure F2 architecture.
 - [ ] [RM-12] Add table T1 runtime profile matrix.
 - [ ] [RM-12] Add table T2 drift taxonomy.
-- [ ] [RM-12] Add table T3 benchmark composition.
+- [x] [RM-12] Add table T3 benchmark composition draft in `paper/tables/mvp-results.md`.
 - [ ] [RM-12] Add table T8 related-work differentiation.
-- [ ] [RM-12] Create artifact README.
-- [ ] [RM-12] Create artifact install instructions.
+- [x] [RM-12] Create artifact README draft in `paper/artifact-readme.md`.
+- [x] [RM-12] Create artifact install instructions draft in `paper/artifact-readme.md`.
 - [ ] [RM-12] Create artifact reproduction script.
-- [ ] [RM-12] Create safe release checklist.
+- [x] [RM-12] Create safe release checklist draft in `paper/artifact-readme.md`.
 - [ ] [RM-12] Add CITATION.cff.
 - [ ] [RM-12] Add SECURITY.md.
 - [ ] [RM-12] Add LICENSE.
@@ -446,7 +446,7 @@ Acceptance checks:
 
 - [ ] [RM-12] Paper tells one coherent story: portable skill, different runtime, different security outcome.
 - [ ] [RM-12] Artifact runs the MVP end to end.
-- [ ] [RM-12] Public release excludes real secrets and harmful payloads.
+- [~] [RM-12] Public release excludes real secrets and harmful payloads; local paths are now scrubbed from tracked artifacts, with final license/security metadata still pending.
 
 ## Suggested Repository Structure
 
@@ -526,24 +526,24 @@ Purpose: produce the first concrete result quickly.
 
 Purpose: turn the two existing skill repos into publishable case studies.
 
-- [ ] [RM-08] Create `benchmark/seeds/docs-forge/README.md` with source URL, commit hash, and included paths.
-- [ ] [RM-08] Create `benchmark/seeds/audit-lens/README.md` with source URL, commit hash, and included paths.
-- [ ] [RM-08] Decide whether to vendor snapshots or fetch pinned commits during reproduction.
+- [x] [RM-08] Create `benchmark/seeds/docs-forge/README.md` with source URL, commit hash, and included paths.
+- [x] [RM-08] Create `benchmark/seeds/audit-lens/README.md` with source URL, commit hash, and included paths.
+- [x] [RM-08] Decide whether to vendor snapshots or fetch pinned commits during reproduction; current publishable artifact uses controlled fixtures and pinned provenance, not vendored full source trees.
 - [x] [RM-05] Create `contracts/docs-forge-docs-generation.yaml`.
 - [x] [RM-05] Create `contracts/docs-forge-output-scope.yaml`.
 - [x] [RM-05] Create `contracts/audit-lens-evidence-audit.yaml`.
 - [x] [RM-05] Create `contracts/audit-lens-dashboard-generation.yaml`.
-- [ ] [RM-07] Run `docs-forge` benign task under RP2.
-- [ ] [RM-07] Run `docs-forge` benign task under RP3.
-- [ ] [RM-07] Run `docs-forge` adversarial variant under RP2.
-- [ ] [RM-07] Run `docs-forge` adversarial variant under RP3.
+- [x] [RM-07] Run `docs-forge` benign task under RP2.
+- [x] [RM-07] Run `docs-forge` benign task under RP3.
+- [x] [RM-07] Run `docs-forge` adversarial variant under RP2.
+- [x] [RM-07] Run `docs-forge` adversarial variant under RP3.
 - [x] [RM-07] Run `audit-lens` benign task under RP2.
 - [x] [RM-07] Run `audit-lens` benign task under RP3.
 - [x] [RM-07] Run `audit-lens` adversarial variant under RP2.
 - [x] [RM-07] Run `audit-lens` adversarial variant under RP3.
-- [ ] [RM-09] Produce `results/pilots/docs-forge_report.md`.
+- [x] [RM-09] Produce docs-forge MVP report at `results/mvp/docs-forge/drift_report.md`.
 - [x] [RM-09] Produce AuditLens MVP report at `results/mvp/audit-lens/drift_report.md`.
-- [ ] [RM-12] Write a paper subsection: "Pilot Case Studies: Documentation and Compliance Skills."
+- [x] [RM-12] Write a paper subsection draft: "Pilot Case Studies: Documentation and Compliance Skills" in `paper/case-studies.md`.
 
 MVP done when:
 
@@ -562,8 +562,8 @@ MVP done when:
 - [ ] [RM-12] Avoid saying all skills are dangerous.
 - [ ] [RM-12] Avoid saying approval prompts solve the problem.
 - [ ] [RM-12] Avoid making the policy compiler sound like the main invention.
-- [ ] [RM-12] Include limitations honestly.
-- [ ] [RM-12] Include ethics and safe-release details.
+- [x] [RM-12] Include limitations honestly in `paper/method-boundaries.md`.
+- [~] [RM-12] Include ethics and safe-release details; artifact safety notes exist, full ethics section still pending.
 
 ## Open Decisions
 

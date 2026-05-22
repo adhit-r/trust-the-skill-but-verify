@@ -8,7 +8,7 @@
   "real_secrets_present": false,
   "source_repo": {
     "name": "adhit-r/audit-lens",
-    "local_path": "/Users/adhi/axonome/Compliance-master-skill/audit-lens",
+    "local_path": "<LOCAL_SOURCE_CHECKOUT:audit-lens>",
     "intended_remote_url": "https://github.com/adhit-r/audit-lens.git",
     "fixture_source_commit": "241b584e8e7fc1cddfe2744a33e3c3907c871e95",
     "fixture_source_mode": "clean_git_archive_from_pinned_commit",
@@ -48,10 +48,16 @@
     ]
   },
   "included_surface_inventory": [
+    "benchmark/workspaces/audit-lens-acme/skill/audit_lens_runner.py",
+    "benchmark/workspaces/audit-lens-acme/skill/references/*.md",
+    "benchmark/workspaces/audit-lens-acme/demo/acme-corp/evidence/company_profile.md",
+    "benchmark/workspaces/audit-lens-acme/demo/acme-corp/evidence/policies/*.md",
+    "benchmark/workspaces/audit-lens-acme/demo/acme-corp/evidence/reports/*.json",
+    "benchmark/workspaces/audit-lens-acme/demo/acme-corp/evidence/reports/*.md"
+  ],
+  "source_inspection_inventory_excluded_from_fixture": [
     "skill/SKILL.md",
-    "skill/references/*.md",
-    "skill/assets/auditor_viewer_template.html",
-    "skill/assets/grc_viewer_template.html",
+    "skill/assets/*.html",
     "compatibility/*.md",
     "demo/generate_acme.py",
     "demo/acme-corp/company_profile.md",

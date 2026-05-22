@@ -1,2 +1,2 @@
-{"copied_file_count": 6, "event": "workspace_seed_copied", "path": "/Users/adhi/axonome/trust-the-skill-but-verify/benchmark/workspaces/repo-audit-smoke", "profile_id": "RP2", "timestamp": "2026-05-20T19:35:11+00:00"}
+{"copied_file_count": 6, "event": "workspace_seed_copied", "path": "<REPO_ROOT>/benchmark/workspaces/repo-audit-smoke", "profile_id": "RP2", "timestamp": "2026-05-20T19:35:11+00:00"}
 {"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./reports/audit.md", "sha256": "sha256:cc54a6cc4b5ba8e77bf66e6cdf04b2ffd0310cadb6c5d7e4ba03bbd27ff97bdd", "size": 102, "status": "succeeded", "timestamp": "2026-05-20T19:35:11+00:00"}

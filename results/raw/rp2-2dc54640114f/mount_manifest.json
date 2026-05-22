@@ -2,8 +2,8 @@
   "mounts": [
     {
       "mode": "read_write",
-      "source": "/Users/adhi/axonome/trust-the-skill-but-verify/results/raw/rp2-2dc54640114f/workspace",
-      "target": "/Users/adhi/axonome/trust-the-skill-but-verify/results/raw/rp2-2dc54640114f/workspace"
+      "source": "<REPO_ROOT>/results/raw/rp2-2dc54640114f/workspace",
+      "target": "<REPO_ROOT>/results/raw/rp2-2dc54640114f/workspace"
     }
   ]
 }

@@ -16,5 +16,5 @@
   "task_id": "dependency-summary-smoke",
   "workspace_copied_file_count": 6,
   "workspace_mode": "copied_seed_workspace",
-  "workspace_seed": "/Users/adhi/axonome/trust-the-skill-but-verify/benchmark/workspaces/repo-audit-smoke"
+  "workspace_seed": "<REPO_ROOT>/benchmark/workspaces/repo-audit-smoke"
 }

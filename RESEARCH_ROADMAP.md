@@ -513,6 +513,10 @@ Current MVP slice:
 - AuditLens P3/P4 variant metadata: `benchmark/variants/audit-lens/`.
 - AuditLens expected-output metadata: `benchmark/expected/audit-lens/`.
 - AuditLens runnable pilot manifest: `benchmark/manifests/audit-lens-acme.json`.
+- docs-forge sanitized documentation workspace: `benchmark/workspaces/docs-forge-mini/`.
+- docs-forge P1/P2 variant metadata: `benchmark/variants/docs-forge/`.
+- docs-forge expected-output metadata: `benchmark/expected/docs-forge/`.
+- docs-forge runnable pilot manifest: `benchmark/manifests/docs-forge-mini.json`.
 
 PV-02 benchmark slice:
 
@@ -549,9 +553,11 @@ Current MVP slice:
 - Repo-audit MVP runner: `tools/run_repo_audit_mvp.py`.
 - Network-egress MVP runner: `tools/run_network_egress_mvp.py`.
 - AuditLens MVP runner: `tools/run_audit_lens_mvp.py`.
+- docs-forge MVP runner: `tools/run_docs_forge_mvp.py`.
 - First report: `results/mvp/repo-audit/drift_report.md`.
 - PV-02 network report: `results/mvp/network-egress/drift_report.md`.
 - AuditLens report: `results/mvp/audit-lens/drift_report.md`.
+- docs-forge report: `results/mvp/docs-forge/drift_report.md`.
 - Current comparison reports: `results/mvp/repo-audit/benign_rp2_rp3_comparison.md` and `results/mvp/repo-audit/adversarial_rp2_rp3_comparison.md`.
 - Current concrete result: benign RP2/RP3 runs have 0 realized violations and 0 canary observations; adversarial RP2 records a Python-level successful `./.env` read and leaks the synthetic canary into `reports/audit.md`, while adversarial RP3 records a `container_strace_mvp` failed `./.env` read because `.env` is excluded from the mounted repo and no canary movement occurs.
 - Boundary: this is the first runtime-drift candidate from contract outputs plus MVP Python-level read provenance and RP3 container-strace read provenance. RP3 container-strace MVP read provenance now covers supported container `open`, `openat`, and `openat2` evidence, but syscall-complete `.env` read provenance across all runtimes remains pending.

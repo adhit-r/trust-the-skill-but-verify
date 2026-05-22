@@ -2,12 +2,12 @@
   "mounts": [
     {
       "mode": "read_only",
-      "source": "/Users/adhi/axonome/trust-the-skill-but-verify/results/raw/rp3-f6b74b049218/workspace/repo",
+      "source": "<REPO_ROOT>/results/raw/rp3-f6b74b049218/workspace/repo",
       "target": "/workspace/repo"
     },
     {
       "mode": "read_write",
-      "source": "/Users/adhi/axonome/trust-the-skill-but-verify/results/raw/rp3-f6b74b049218/workspace/out",
+      "source": "<REPO_ROOT>/results/raw/rp3-f6b74b049218/workspace/out",
       "target": "/workspace/out"
     }
   ],

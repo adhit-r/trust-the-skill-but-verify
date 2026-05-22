@@ -7,7 +7,7 @@ This directory records the first-party `docs-forge` seed provenance for the cont
 - Remote repository: `https://github.com/adhit-r/docs-forge`
 - Pinned commit: `40c3693491b49382682622408f167424ed814c71`
 - Pinned tree: `6fbaec7f16561e5cedd7725d05613ce4a0e61739`
-- Local inspection path: `/Users/adhi/Documents/Codex/2026-05-06/files-mentioned-by-the-user-docs`
+- Local inspection path: `<LOCAL_SOURCE_CHECKOUT:docs-forge>`
 - Local tracked state at inspection: clean
 
 ## Execution Boundary

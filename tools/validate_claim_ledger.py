@@ -234,6 +234,25 @@ def validate_evidence(evidence: dict[str, Any]) -> None:
         expect_equal(actual, evidence.get("expected"), f"{path}:object-key-count-sum")
         return
 
+    if evidence_type == "json_object_key_count_min":
+        target = resolve_pointer(document, evidence["pointer"])
+        if not isinstance(target, dict):
+            raise AssertionError(
+                f"{path}:{evidence['pointer']} must resolve to a JSON object"
+            )
+        actual = len(target)
+        minimum = evidence.get("minimum")
+        if not isinstance(minimum, int):
+            raise ValueError(
+                f"{path}: json_object_key_count_min requires integer minimum"
+            )
+        if actual < minimum:
+            raise AssertionError(
+                f"{path}:{evidence['pointer']} key count: expected at least "
+                f"{minimum}, observed {actual}"
+            )
+        return
+
     raise ValueError(f"unsupported evidence type: {evidence_type}")
 
 

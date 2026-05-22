@@ -9,7 +9,10 @@ or copy the source repository.
 - Local inspection checkout: `<LOCAL_SOURCE_CHECKOUT:audit-lens>`
 - Intended remote URL: `https://github.com/adhit-r/audit-lens.git`
 - Fixture source commit: `241b584e8e7fc1cddfe2744a33e3c3907c871e95`
+- Fixture source tree: `1ebe897763e8e95bad78d87644a81fdc942c9447`
 - Fixture source mode: clean git archive from the pinned commit.
+- Published source blob hash list: 42 entries in
+  `benchmark/manifests/audit-lens-acme.json`
 
 The runnable benchmark fixture is staged from the clean pinned commit above.
 The local worktree is not used as the fixture source.
@@ -37,6 +40,14 @@ The pinned source checkout was also inspected for provenance, templates, and
 generator behavior. `demo/generate_acme.py`, `skill/assets/**`, and
 `compatibility/**` are explicitly excluded from the runnable fixture and are not
 claimed as executed surfaces.
+
+Optionally verify the pinned external source checkout with:
+
+```bash
+AUDIT_LENS_SOURCE_ROOT=<LOCAL_SOURCE_CHECKOUT:audit-lens> \
+PYTHON_BIN=/private/tmp/skilldiff-venv/bin/python \
+experiments/audit-lens-mvp/reproduce_audit_lens_mvp.sh
+```
 
 ## Safe-To-Publish Boundary
 

@@ -58,10 +58,14 @@ def git_output(source_root: Path, args: list[str]) -> str:
     return completed.stdout.strip()
 
 
+def object_value(value: Any) -> dict[str, Any]:
+    return value if isinstance(value, dict) else {}
+
+
 def find_expected_commit(manifest: dict[str, Any]) -> str | None:
-    source_boundary = manifest.get("source_boundary", {})
-    source_repo = manifest.get("source_repo", {})
-    source = manifest.get("source", {})
+    source_boundary = object_value(manifest.get("source_boundary"))
+    source_repo = object_value(manifest.get("source_repo"))
+    source = object_value(manifest.get("source"))
     return (
         source_boundary.get("fixture_source_commit")
         or source_repo.get("fixture_source_commit")
@@ -70,9 +74,58 @@ def find_expected_commit(manifest: dict[str, Any]) -> str | None:
 
 
 def find_expected_tree(manifest: dict[str, Any]) -> str | None:
-    source_boundary = manifest.get("source_boundary", {})
-    source = manifest.get("source", {})
-    return source_boundary.get("fixture_source_tree") or source.get("pinned_tree")
+    source_boundary = object_value(manifest.get("source_boundary"))
+    source_repo = object_value(manifest.get("source_repo"))
+    source = object_value(manifest.get("source"))
+    return (
+        source_boundary.get("fixture_source_tree")
+        or source_repo.get("fixture_source_tree")
+        or source.get("pinned_tree")
+    )
+
+
+def verify_pinned_source_hash_list(manifest_path: Path, manifest: dict[str, Any]) -> None:
+    source_boundary = object_value(manifest.get("source_boundary"))
+    source_repo = object_value(manifest.get("source_repo"))
+    source = object_value(manifest.get("source"))
+    required = any(
+        value is True
+        for value in (
+            source_boundary.get("requires_pinned_source_hashes"),
+            source_repo.get("requires_pinned_source_hashes"),
+            source.get("requires_pinned_source_hashes"),
+        )
+    )
+    if not required:
+        return
+
+    pinned_hashes = manifest.get("pinned_source_hashes")
+    if not isinstance(pinned_hashes, dict) or not pinned_hashes:
+        raise RuntimeError(
+            f"{manifest_path}: pinned_source_hashes must be a non-empty object"
+        )
+
+    expected_min = (
+        source_boundary.get("pinned_source_hashes_min_count")
+        or source_repo.get("pinned_source_hashes_min_count")
+        or source.get("pinned_source_hashes_min_count")
+    )
+    if isinstance(expected_min, int) and len(pinned_hashes) < expected_min:
+        raise RuntimeError(
+            f"{manifest_path}: pinned_source_hashes has {len(pinned_hashes)} entries, "
+            f"expected at least {expected_min}"
+        )
+
+    for rel_path, expected_hash in sorted(pinned_hashes.items()):
+        if not isinstance(rel_path, str) or not rel_path:
+            raise RuntimeError(
+                f"{manifest_path}: pinned source path must be a non-empty string"
+            )
+        if not isinstance(expected_hash, str) or not expected_hash:
+            raise RuntimeError(
+                f"{manifest_path}: pinned source hash for {rel_path!r} "
+                "must be a non-empty string"
+            )
 
 
 def verify_workspace(root: Path, manifest_path: Path, manifest: dict[str, Any]) -> None:
@@ -121,9 +174,11 @@ def verify_source_checkout(manifest_path: Path, manifest: dict[str, Any], source
             )
 
     status = git_output(source_root, ["status", "--short"])
+    source_boundary = object_value(manifest.get("source_boundary"))
+    source = object_value(manifest.get("source"))
     expected_clean = (
-        manifest.get("source", {}).get("local_source_tracked_state") == "clean"
-        or manifest.get("source_boundary", {}).get("local_source_status") == "clean_tracked_tree"
+        source.get("local_source_tracked_state") == "clean"
+        or source_boundary.get("local_source_status") == "clean_tracked_tree"
     )
     if expected_clean and status:
         raise RuntimeError(f"{manifest_path}: source checkout is not clean:\n{status}")
@@ -150,6 +205,7 @@ def main(argv: list[str] | None = None) -> int:
         print(workspace_snapshot_hash(root / workspace_ref))
         return 0
 
+    verify_pinned_source_hash_list(manifest_path, manifest)
     verify_workspace(root, manifest_path, manifest)
     if args.source_root:
         verify_source_checkout(manifest_path, manifest, args.source_root.resolve())

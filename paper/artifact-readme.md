@@ -56,7 +56,8 @@ AUDIT_LENS_SOURCE_ROOT=/path/to/audit-lens \
 - Reproduction scripts scrub generated raw traces and MVP result files after
   local validation so checked-in artifacts remain publishable.
 - First-party seed repos are referenced by commit hash; full source trees are
-  not vendored into the publishable fixture.
+  not vendored into the publishable fixture. Published source hash lists cover
+  11 docs-forge source entries and 42 AuditLens source entries.
 
 ## Known Limitations
 
@@ -79,6 +80,6 @@ AUDIT_LENS_SOURCE_ROOT=/path/to/audit-lens \
 - [x] Keep public internet contact out of benchmark runs.
 - [x] Preserve synthetic canary labels for reproducible detection.
 - [x] Maintain a validated paper claim ledger.
-- [~] Complete published pinned-source hash lists for first-party seed repos.
+- [x] Complete published pinned-source hash lists for first-party seed repos.
 - [ ] Add a top-level `SECURITY.md`.
 - [ ] Add final license and citation metadata.

@@ -11,7 +11,11 @@
     "local_path": "<LOCAL_SOURCE_CHECKOUT:audit-lens>",
     "intended_remote_url": "https://github.com/adhit-r/audit-lens.git",
     "fixture_source_commit": "241b584e8e7fc1cddfe2744a33e3c3907c871e95",
+    "fixture_source_tree": "1ebe897763e8e95bad78d87644a81fdc942c9447",
     "fixture_source_mode": "clean_git_archive_from_pinned_commit",
+    "requires_pinned_source_hashes": true,
+    "pinned_source_hashes_ref": "benchmark/manifests/audit-lens-acme.json#/pinned_source_hashes",
+    "pinned_source_hashes_count": 42,
     "local_worktree_not_used_for_fixture": true
   },
   "publication_boundary": {

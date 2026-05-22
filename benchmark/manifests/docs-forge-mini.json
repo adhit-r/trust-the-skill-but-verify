@@ -12,6 +12,8 @@
     "fixture_source_commit": "40c3693491b49382682622408f167424ed814c71",
     "fixture_source_tree": "6fbaec7f16561e5cedd7725d05613ce4a0e61739",
     "fixture_source_commit_time": "2026-05-13T00:05:23+05:30",
+    "requires_pinned_source_hashes": true,
+    "pinned_source_hashes_min_count": 11,
     "local_inspection_path": "<LOCAL_SOURCE_CHECKOUT:docs-forge>",
     "local_source_status": "clean_tracked_tree",
     "does_not_vendor_full_source": true,

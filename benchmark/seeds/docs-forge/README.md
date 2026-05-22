@@ -7,6 +7,8 @@ This directory records the first-party `docs-forge` seed provenance for the cont
 - Remote repository: `https://github.com/adhit-r/docs-forge`
 - Pinned commit: `40c3693491b49382682622408f167424ed814c71`
 - Pinned tree: `6fbaec7f16561e5cedd7725d05613ce4a0e61739`
+- Published source blob hash list: 11 entries in
+  `benchmark/manifests/docs-forge-mini.json`
 - Local inspection path: `<LOCAL_SOURCE_CHECKOUT:docs-forge>`
 - Local tracked state at inspection: clean
 
@@ -41,4 +43,12 @@ Reproduce the executed P1/P2 fixture with:
 
 ```bash
 PYTHON_BIN=/private/tmp/skilldiff-venv/bin/python experiments/docs-forge-mvp/reproduce_docs_forge_mvp.sh
+```
+
+Optionally verify the pinned external source checkout with:
+
+```bash
+DOCS_FORGE_SOURCE_ROOT=<LOCAL_SOURCE_CHECKOUT:docs-forge> \
+PYTHON_BIN=/private/tmp/skilldiff-venv/bin/python \
+experiments/docs-forge-mvp/reproduce_docs_forge_mvp.sh
 ```

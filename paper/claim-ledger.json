@@ -190,6 +190,42 @@
       ]
     },
     {
+      "claim_id": "CL-MVP-011",
+      "status": "supported",
+      "claim": "First-party MVP source manifests publish verifier-required pinned source hash lists for docs-forge and AuditLens.",
+      "paper_locations": [
+        "paper/claim-ledger.md",
+        "paper/artifact-readme.md",
+        "paper/tables/mvp-results.md"
+      ],
+      "evidence": [
+        {
+          "type": "json_value",
+          "path": "benchmark/manifests/docs-forge-mini.json",
+          "pointer": "/source_boundary/requires_pinned_source_hashes",
+          "expected": true
+        },
+        {
+          "type": "json_object_key_count_min",
+          "path": "benchmark/manifests/docs-forge-mini.json",
+          "pointer": "/pinned_source_hashes",
+          "minimum": 11
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/manifests/audit-lens-acme.json",
+          "pointer": "/source_boundary/requires_pinned_source_hashes",
+          "expected": true
+        },
+        {
+          "type": "json_object_key_count_min",
+          "path": "benchmark/manifests/audit-lens-acme.json",
+          "pointer": "/pinned_source_hashes",
+          "minimum": 42
+        }
+      ]
+    },
+    {
       "claim_id": "CL-MVP-007",
       "status": "supported",
       "claim": "The MVP includes two first-party seed case families: AuditLens and docs-forge.",

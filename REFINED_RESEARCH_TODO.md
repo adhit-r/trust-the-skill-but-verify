@@ -8,18 +8,18 @@ This TODO is mapped to `REFINED_RESEARCH_ROADMAP.md`. Status values:
 
 ## P0: Evidence Integrity Gate
 
-1. [~] Add source-provenance hash verification to
+1. [x] Add source-provenance hash verification to
    `experiments/audit-lens-mvp/reproduce_audit_lens_mvp.sh`.
-   Current state: the script verifies the committed fixture workspace snapshot
-   before Docker execution, and verifies the external pinned source checkout
-   when `AUDIT_LENS_SOURCE_ROOT` is supplied. Full done still requires a
-   published pinned-source hash list for AuditLens.
-2. [~] Add source-provenance hash verification to
+   Done: the script verifies the committed fixture workspace snapshot before
+   Docker execution; optional `AUDIT_LENS_SOURCE_ROOT` verification checks the
+   pinned commit, pinned tree, and 42 published source blob hashes. The
+   provenance verifier now requires the pinned hash list and minimum count.
+2. [x] Add source-provenance hash verification to
    `experiments/docs-forge-mvp/reproduce_docs_forge_mvp.sh`.
-   Current state: the script verifies the committed fixture workspace snapshot
-   before Docker execution, and verifies the external pinned source commit,
-   tree, and listed source blob hashes when `DOCS_FORGE_SOURCE_ROOT` is
-   supplied.
+   Done: the script verifies the committed fixture workspace snapshot before
+   Docker execution; optional `DOCS_FORGE_SOURCE_ROOT` verification checks the
+   pinned commit, pinned tree, and 11 published source blob hashes. The
+   provenance verifier now requires the pinned hash list and minimum count.
 3. [x] Add a repo-wide path-scrub validation command.
    Done when CI fails if tracked publishable artifacts contain local paths such
    as `<LOCAL_HOME>`.
@@ -220,12 +220,13 @@ This TODO is mapped to `REFINED_RESEARCH_ROADMAP.md`. Status values:
 
 ## Immediate Next Step
 
-Continue P0 before scaling P4. The next concrete implementation task is:
+Finish the last P0 automation gap before scaling P4. The next concrete
+implementation task is:
 
-1. Finish the published pinned-source hash lists for first-party seed repos.
-2. Wire `make verify` into CI.
-3. Start P1 by freezing the claim contract, threat model, and reviewer-risk
+1. Wire `make verify` into CI.
+2. Start P1 by freezing the claim contract, threat model, and reviewer-risk
    table.
+3. Then scale P2/P4 instrumentation and case-study coverage.
 
 That sequence turns the current verified MVP from a strong local artifact into
 a reviewer-ready evidence package.

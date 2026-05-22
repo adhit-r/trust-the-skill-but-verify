@@ -64,7 +64,7 @@ come from `benchmark/manifests/skilldiff-mvp-baseline.json`,
 
 ## Open Measurement Gaps
 
-- Complete published pinned-source hash lists for the first-party seed repos.
+- Wire `make verify` into CI and document clean-checkout source-root handling.
 - Add approval, MCP/tool-call, connector, and persistence observers before
   claiming broader runtime coverage.
 - Add repeat-run policy before making prevalence or stability claims.

@@ -111,16 +111,15 @@ Technical weaknesses:
 - `compare_contract_runs` now machine-checks the MVP comparability fields
   needed for RP2/RP3 drift candidates, but this guard must stay enforced as new
   runtimes, repeats, and model-mediated variants are added.
-- `checker._read_event_evidence_text` reads evidence paths directly. Scrubbed
-  `<REPO_ROOT>` placeholders make published traces safer, but rechecking
-  sanitized artifacts may fail unless evidence resolution is made
-  artifact-root-aware.
+- Artifact-root-aware evidence resolution is now present, but new trace fields
+  must preserve scrubbed placeholder semantics and clean-checkout rechecks.
 - Current validation is script-based; there is no top-level CI matrix or
   conventional test suite.
 - Runners encode expected summaries, which is useful for regression but can
   hide whether the expected metrics are conceptually complete.
-- Reproduction scripts record or depend on source provenance, but do not yet
-  verify all source hashes before execution.
+- First-party pinned source hash lists are now verifier-enforced for
+  docs-forge and AuditLens when source roots are supplied. The remaining gap is
+  CI or clean-checkout access to those source roots, not missing hash lists.
 - Trace vocabulary includes activation, approval, tool, and persistence
   concepts, but current adapters do not yet cover them enough for claims.
 

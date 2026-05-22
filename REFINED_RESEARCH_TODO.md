@@ -39,17 +39,18 @@ evidence strength or be removed.
    Done: runners emit `workspace_snapshot_hash`, `task_prompt_hash`, and
    `variant_id`; trace start metadata carries those fields; contract findings
    expose them; and `compare_contract_runs` reports no unchecked comparator
-   fields across the twelve RP2/RP3 MVP comparison artifacts.
+   fields across the twelve RP2/RP3 comparison artifacts.
 7. [x] Normalize RP3 blocked source mutation as an attempted write event.
    Done: docs-forge P2 RP3 emits a failed `filesystem.write` event for
    `./repo/src/generated-docs.ts`, and the contract checker counts it as one
    attempted overreach.
-8. [~] Add top-level CI or local `make verify`.
-   Current state: local `make verify` runs JSON checks, contract validation,
-   trace validation, profile validation, compile checks, provenance checks, and
-   no-local-path checks. Full done still requires CI wiring.
+8. [x] Add top-level CI or local `make verify`.
+   Done: local `make verify` runs JSON checks, contract validation, trace
+   validation, profile validation, compile checks, provenance checks,
+   claim-ledger validation, and no-local-path checks. GitHub Actions now runs
+   the same gate on push to `main` and pull requests.
 9. [x] Create a paper-claim ledger.
-   Done: `paper/claim-ledger.json` maps paper-facing MVP numbers and boundary
+   Done: `paper/claim-ledger.json` maps paper-facing numbers and boundary
    claims to source manifests, result artifacts, or paper notes, and
    `tools/validate_claim_ledger.py` runs from `make verify`.
 
@@ -186,7 +187,7 @@ evidence strength or be removed.
 2. [ ] Implement RP6 hardened profile policies.
    Done when filesystem, network, approval, tool, and persistence restrictions
    are expressed and validated.
-3. [ ] Run RP6 against all MVP case families.
+3. [ ] Run RP6 against all current benchmark case families.
    Done when report cards show whether hardening reduces drift and what utility
    cost it introduces.
 4. [ ] Add least-privilege baseline.
@@ -226,18 +227,17 @@ evidence strength or be removed.
 
 ## Immediate Next Step
 
-Finish the remaining P0 automation gap, then build only toward top-tier
-full-paper gates. The next concrete implementation sequence is:
+P0 is now implementation-complete for the current evidence gate. The next
+concrete implementation sequence is:
 
-1. Wire `make verify` into CI.
-2. Freeze the P1 paper spine: RQs, threat model, contribution list,
+1. Freeze the P1 paper spine: RQs, threat model, contribution list,
    reviewer-risk table, related-work differentiation, and top-tier venue
    backplan.
-3. Close P2/P3 coverage gaps for activation, approval, tool/MCP, persistence,
+2. Close P2/P3 coverage gaps for activation, approval, tool/MCP, persistence,
    and at least four runtime profiles.
-4. Scale P4 to 40+ skills and 120+ skill-task-contract runs before repeats.
-5. Complete P5/P6 rigor: repeats, uncertainty, utility, adjudication,
+3. Scale P4 to 40+ skills and 120+ skill-task-contract runs before repeats.
+4. Complete P5/P6 rigor: repeats, uncertainty, utility, adjudication,
    reviewer agreement, and mitigation/report-card baselines.
-6. Complete P7 artifact and manuscript packaging for anonymous top-tier review.
+5. Complete P7 artifact and manuscript packaging for anonymous top-tier review.
 
 There is no short-paper fallback in this roadmap.

@@ -1,9 +1,9 @@
 # Refined Research Roadmap
 
-This roadmap converts the current pilot into a top-tier full systems-security
-paper. The only accepted end goal is a full-paper submission suitable for NDSS,
-USENIX Security, IEEE S&P, or ACM CCS. Workshop, demo, short-paper, and
-technical-report paths are out of scope for this roadmap.
+This roadmap converts the current benchmark evidence into a top-tier full
+systems-security paper. The only accepted end goal is a full-paper submission
+suitable for NDSS, USENIX Security, IEEE S&P, or ACM CCS. Workshop, demo,
+short-paper, and technical-report paths are out of scope for this roadmap.
 
 All priorities below optimize for evidence integrity, runtime comparability,
 instrumentation coverage, benchmark scale, statistical rigor, mitigation
@@ -31,15 +31,15 @@ Top-tier full-paper readiness means the paper can defend all of the following:
   activation, approval, tool/MCP, persistence, output, cleanup, and canary-flow
   behavior.
 - At least 40 skills and at least 120 skill-task-contract runs across at least
-  four runtime profiles, or an explicitly justified narrower full-paper scope
-  with equivalent depth.
+  four runtime profiles, or an explicitly justified equivalent-depth
+  full-paper scope.
 - Repeat-run evidence, uncertainty estimates, utility metrics, manual
   adjudication, and mitigation baselines.
 - A clean, anonymous, reviewer-reproducible artifact package.
 
 ## P0: Evidence Integrity Gate
 
-Goal: make the existing MVP evidence reliable, rerunnable, and safe before
+Goal: make the existing benchmark evidence reliable, rerunnable, and safe before
 adding more cases.
 
 Why this is first: top-tier reviewers punish artifact drift. Current evidence is
@@ -60,7 +60,7 @@ Milestone outputs:
 
 Acceptance gate:
 
-- A clean checkout can regenerate the current MVP tables without local path
+- A clean checkout can regenerate the current evidence tables without local path
   leakage or manual patching.
 
 ## P1: Claim Contract And Paper Spine
@@ -132,11 +132,11 @@ Acceptance gate:
   unsupported surfaces recorded in the adapter support matrix. If access limits
   force a narrower profile set, the paper must compensate with deeper
   instrumentation, repeats, and mitigation evidence rather than falling back to
-  a lower-scope claim.
+  a weaker evidence claim.
 
 ## P4: Benchmark Expansion
 
-Goal: turn pilot cases into a benchmark with enough breadth for quantitative
+Goal: turn current benchmark cases into a benchmark with enough breadth for quantitative
 claims.
 
 Full-paper dataset target:
@@ -154,7 +154,7 @@ Full-paper dataset target:
 Acceptance gate:
 
 - The paper can report category-level, runtime-pair-level, and
-  mitigation-level metrics without relying on only the original four pilot
+  mitigation-level metrics without relying on only the original benchmark
   families.
 
 ## P5: Experimental Rigor And Statistics
@@ -163,7 +163,7 @@ Goal: make the evaluation legible to systems-security reviewers.
 
 Milestone outputs:
 
-- Stable train/dev/test or pilot/paper split for cases.
+- Stable train/dev/test or benchmark/paper split for cases.
 - Repeat-run records with fixed seeds or recorded model/runtime parameters.
 - Manual adjudication protocol for semantic findings.
 - Two-reviewer agreement sample with percent agreement and Cohen's kappa when
@@ -248,8 +248,8 @@ Only top-tier full-paper targets are in scope:
 | Concept | Runtime conformance drift is the central unit of analysis, not attack success alone. | Paper reads like another skill-safety benchmark. |
 | Evidence integrity | Clean checkout reproduces main tables with provenance, claim-ledger, path-scrub, and comparator checks. | Any paper number lacks machine-checked evidence. |
 | Instrumentation | File, process, network, activation, approval, tool/MCP, persistence, output, cleanup, and canary-flow surfaces are covered or explicitly bounded. | Missing observers are mistaken for security successes. |
-| Runtime diversity | At least four runtime profiles are executable or an equivalent narrower full-paper scope is rigorously justified. | Results remain RP2/RP3-only without a strong causal or mitigation story. |
-| Benchmark scale | At least 40 skills and 120+ skill-task-contract runs before repeats. | Claims rely on the original four pilot families. |
+| Runtime diversity | At least four runtime profiles are executable or an equivalent-depth full-paper scope is rigorously justified. | Results remain RP2/RP3-only without a strong causal or mitigation story. |
+| Benchmark scale | At least 40 skills and 120+ skill-task-contract runs before repeats. | Claims rely on the original benchmark families. |
 | Rigor | Repeats, utility metrics, uncertainty estimates, adjudication, and reviewer agreement are reported. | Single-run deterministic evidence is treated as general behavior. |
 | Mitigations | RP6/report-card or least-privilege-style baselines quantify drift reduction and utility cost. | Paper only identifies failures and offers no actionable control comparison. |
 | Artifact | Anonymous artifact package is safe, complete, documented, and reviewer-rerunnable. | Local paths, secrets, unclear licenses, or missing reproduction commands remain. |

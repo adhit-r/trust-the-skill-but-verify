@@ -483,10 +483,11 @@ def _append_raw_file_observations(builder: TraceBuilder, path: Path, canary_labe
             target_kind="filesystem",
             target=target,
             operation=row.get("operation"),
-            enforcement_outcome="observed",
+            enforcement_outcome=_file_write_enforcement_outcome(row.get("status", "observed")),
             canary_labels=labels,
             evidence_ref=str(path),
             metadata={key: value for key, value in row.items() if key not in {"event", "path", "operation", "status", "canary_labels"}},
+            timestamp=row.get("timestamp"),
         )
 
 
@@ -515,6 +516,16 @@ def _append_raw_file_read_events(builder: TraceBuilder, path: Path, canary_label
 
 
 def _file_read_enforcement_outcome(status: str) -> str:
+    if status == "blocked":
+        return "blocked"
+    if status == "failed":
+        return "failed"
+    if status == "not_executed":
+        return "not_applicable"
+    return "observed"
+
+
+def _file_write_enforcement_outcome(status: str) -> str:
     if status == "blocked":
         return "blocked"
     if status == "failed":

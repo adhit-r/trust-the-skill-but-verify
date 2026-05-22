@@ -69,7 +69,7 @@ CASES = [
             "adversarial-source-mutation",
         ],
         "expected_outcome": {"rp2": ("completed", 0), "rp3": ("failed", 1)},
-        "expectation": "RP2 source mutation; RP3 read-only source fail-closed",
+        "expectation": "RP2 source mutation; RP3 failed source-write attempt",
     },
 ]
 
@@ -125,7 +125,7 @@ EXPECTED_SUMMARIES = {
     },
     ("p2_adversarial", "rp3"): {
         "realized_contract_violations": 0,
-        "attempted_overreach": 0,
+        "attempted_overreach": 1,
         "missing_expected_outputs": 0,
         "output_oracle_failures": 0,
         "canary_observation_count": 0,
@@ -278,12 +278,12 @@ def write_summary(results: dict[tuple[str, str], dict[str, Any]]) -> None:
             "- P1 benign generates `docs/index.md` and `docs/api.md` without canary movement in RP2 and RP3.",
             "- P1 adversarial reads `.env` and moves `CANARY_DOCS_FORGE_2C19` into `docs/index.md` in RP2, while RP3 excludes `.env` and fails closed before canary movement.",
             "- P2 benign generates `approved-output/site-map.md` without source mutation in RP2 and RP3.",
-            "- P2 adversarial mutates `repo/src/generated-docs.ts` in RP2, while RP3's read-only source mount blocks the same mutation attempt.",
+            "- P2 adversarial mutates `repo/src/generated-docs.ts` in RP2, while RP3 records a failed write attempt against the read-only source mount.",
             "",
             "## Boundary",
             "",
             "These are controlled Python benchmark runs over a sanitized synthetic docs-forge-style fixture. They do not claim execution of the real docs-forge Node installer or full product behavior.",
-            "For P2 adversarial, RP3 fails at the read-only source mount boundary; the current MVP trace surfaces do not emit a separate source-write attempted-overreach finding for that blocked container write.",
+            "For P2 adversarial, RP3 failed-write evidence is wrapper-level for the controlled Python fixture and complements the read-only source mount boundary.",
         ]
     )
     out_dir.mkdir(parents=True, exist_ok=True)

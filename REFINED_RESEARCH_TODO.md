@@ -8,34 +8,41 @@ This TODO is mapped to `REFINED_RESEARCH_ROADMAP.md`. Status values:
 
 ## P0: Evidence Integrity Gate
 
-1. [ ] Add source-provenance hash verification to
+1. [~] Add source-provenance hash verification to
    `experiments/audit-lens-mvp/reproduce_audit_lens_mvp.sh`.
-   Done when the script fails before execution if the pinned AuditLens source
-   hash does not match the manifest.
-2. [ ] Add source-provenance hash verification to
+   Current state: the script verifies the committed fixture workspace snapshot
+   before Docker execution, and verifies the external pinned source checkout
+   when `AUDIT_LENS_SOURCE_ROOT` is supplied. Full done still requires a
+   published pinned-source hash list for AuditLens.
+2. [~] Add source-provenance hash verification to
    `experiments/docs-forge-mvp/reproduce_docs_forge_mvp.sh`.
-   Done when the script fails before execution if the pinned docs-forge source
-   hash does not match the manifest.
-3. [ ] Add a repo-wide path-scrub validation command.
+   Current state: the script verifies the committed fixture workspace snapshot
+   before Docker execution, and verifies the external pinned source commit,
+   tree, and listed source blob hashes when `DOCS_FORGE_SOURCE_ROOT` is
+   supplied.
+3. [x] Add a repo-wide path-scrub validation command.
    Done when CI fails if tracked publishable artifacts contain local paths such
    as `<LOCAL_HOME>`.
-4. [ ] Integrate path scrubbing into reproduction output generation.
-   Done when rerunning all MVP scripts regenerates publishable placeholder paths
-   without manual cleanup.
+4. [~] Integrate path scrubbing into reproduction output generation.
+   Current state: AuditLens and docs-forge reproduction scripts scrub generated
+   raw/result artifacts after validation. Repo-audit and network-egress scripts
+   still need the same step.
 5. [ ] Make contract evidence resolution artifact-root-aware.
    Done when scrubbed `<REPO_ROOT>` evidence references can be rechecked from a
    clean checkout or artifact root.
-6. [ ] Strengthen `compare_contract_runs` invariants.
-   Done when pairwise drift classification requires matching skill ID, task ID,
-   contract ID, prompt hash, workspace snapshot hash, variant ID, and repeat ID.
-7. [ ] Normalize RP3 blocked source mutation as an attempted write event.
-   Done when docs-forge P2 RP3 emits a `filesystem.write` or
-   `filesystem.modify` failed/blocked event and the contract checker counts it
-   as attempted overreach.
-8. [ ] Add top-level CI or local `make verify`.
-   Done when one command runs JSON checks, YAML/schema checks, contract
-   validation, trace validation, profile validation, compile checks, and
-   no-local-path checks.
+6. [~] Strengthen `compare_contract_runs` invariants.
+   Current state: pairwise drift classification requires matching available
+   skill ID, task ID, contract ID, and repeat ID from trace-start context.
+   Prompt hash, workspace snapshot hash, and variant ID are reported as
+   unchecked planned invariants until runners emit them.
+7. [x] Normalize RP3 blocked source mutation as an attempted write event.
+   Done: docs-forge P2 RP3 emits a failed `filesystem.write` event for
+   `./repo/src/generated-docs.ts`, and the contract checker counts it as one
+   attempted overreach.
+8. [~] Add top-level CI or local `make verify`.
+   Current state: local `make verify` runs JSON checks, contract validation,
+   trace validation, profile validation, compile checks, provenance checks, and
+   no-local-path checks. Full done still requires CI wiring.
 9. [ ] Create a paper-claim ledger.
    Done when every abstract/introduction/table number has a source manifest or
    result file.
@@ -218,7 +225,7 @@ Start P0, not P4. The next concrete implementation task is:
 2. Add no-local-path checking.
 3. Add provenance hash verification for docs-forge and AuditLens reproduction.
 4. Strengthen comparator invariants.
-5. Normalize docs-forge P2 RP3 blocked write evidence.
+5. Extend the same scrubbed reproduction path to repo-audit and network-egress.
 
 That sequence turns the existing pilot from "interesting" into "trustworthy
 enough to scale."

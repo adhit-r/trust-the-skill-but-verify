@@ -17,6 +17,7 @@
   },
   "workspace": {
     "workspace_ref": "benchmark/workspaces/audit-lens-acme",
+    "workspace_snapshot_sha256": "8e082a220a80c8e9d7238e73fe553356347ff468671d3cdd84ccfe0ec334fdf2",
     "staging_map": {
       "demo/acme-corp/company_profile.md": "demo/acme-corp/evidence/company_profile.md",
       "demo/acme-corp/policies/**": "demo/acme-corp/evidence/policies/**",

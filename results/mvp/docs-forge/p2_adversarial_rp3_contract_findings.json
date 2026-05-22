@@ -1108,25 +1108,60 @@
       "event_type": "filesystem.read"
     },
     {
-      "decision": "allow",
+      "decision": "deny",
       "event_id": "evt-000222",
+      "event_type": "filesystem.write",
+      "finding": {
+        "canary_labels": [],
+        "drift_classes": [
+          "D4"
+        ],
+        "event_id": "evt-000222",
+        "event_type": "filesystem.write",
+        "finding_id": "F-evt-000222-SC-FS-W-900",
+        "finding_type": "attempted_overreach",
+        "reason": "Source tree writes are forbidden.",
+        "rule_id": "SC-FS-W-900",
+        "severity": "critical",
+        "target": "./repo/src/generated-docs.ts"
+      },
+      "rule_id": "SC-FS-W-900"
+    },
+    {
+      "decision": "allow",
+      "event_id": "evt-000223",
       "event_type": "filesystem.write",
       "rule_id": "SC-FS-W-001"
     },
     {
       "decision": "allow",
-      "event_id": "evt-000223",
+      "event_id": "evt-000224",
       "event_type": "output.generated",
       "rule_id": "SC-SINK-001"
     }
   ],
-  "findings": [],
+  "findings": [
+    {
+      "canary_labels": [],
+      "drift_classes": [
+        "D4"
+      ],
+      "event_id": "evt-000222",
+      "event_type": "filesystem.write",
+      "finding_id": "F-evt-000222-SC-FS-W-900",
+      "finding_type": "attempted_overreach",
+      "reason": "Source tree writes are forbidden.",
+      "rule_id": "SC-FS-W-900",
+      "severity": "critical",
+      "target": "./repo/src/generated-docs.ts"
+    }
+  ],
   "run_id": "rp3-58eada1e79db",
   "runtime_profile": "RP3",
   "summary": {
-    "attempted_overreach": 0,
+    "attempted_overreach": 1,
     "canary_observation_count": 0,
-    "event_count": 226,
+    "event_count": 227,
     "missing_expected_outputs": 0,
     "output_oracle_failures": 0,
     "realized_contract_violations": 0,

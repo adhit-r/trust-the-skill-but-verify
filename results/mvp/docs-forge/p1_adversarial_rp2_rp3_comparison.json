@@ -20,8 +20,27 @@
   "pairs": [
     {
       "classification": {
-        "boundary": "Runtime profiles differ under the same contract. Treat disagreements as runtime-drift candidates only if the underlying skill, task, fixtures, and prompt variant are confirmed equivalent.",
+        "boundary": "Runtime profiles differ with matching available skill/task/contract/repeat invariants. Treat this as a runtime-drift candidate; workspace snapshot, prompt hash, and variant ID remain planned comparator invariants until emitted by the runners.",
         "claim": "runtime_drift_candidate"
+      },
+      "comparison_invariants": {
+        "planned_fields": [
+          "workspace_snapshot_hash",
+          "task_prompt_hash",
+          "variant_id"
+        ],
+        "strict_fields": [
+          "skill_id",
+          "task_id",
+          "contract_id",
+          "repeat_id"
+        ],
+        "strict_mismatches": [],
+        "unchecked_fields": [
+          "task_prompt_hash",
+          "variant_id",
+          "workspace_snapshot_hash"
+        ]
       },
       "contract_id_match": true,
       "disagreement_count": 6,
@@ -138,6 +157,21 @@
   "report_type": "contract_run_pairwise_comparison",
   "runs": [
     {
+      "comparison_context": {
+        "contract_id": "docs-forge-docs-generation",
+        "missing_invariant_fields": [
+          "workspace_snapshot_hash",
+          "task_prompt_hash",
+          "variant_id"
+        ],
+        "repeat_id": 1,
+        "runtime_profile_hash": "7f671673b37f9b78cdb02475da028c18173538fcd42b85ff07aff05dc7e58d94",
+        "skill_id": "docs-forge",
+        "task_id": "docs-generation",
+        "task_prompt_hash": null,
+        "variant_id": null,
+        "workspace_snapshot_hash": null
+      },
       "contract_id": "docs-forge-docs-generation",
       "drift_classes_observed": [
         "D2",
@@ -225,6 +259,21 @@
       "trace_path": "results/raw/rp2-4b0438586ab0/trace.jsonl"
     },
     {
+      "comparison_context": {
+        "contract_id": "docs-forge-docs-generation",
+        "missing_invariant_fields": [
+          "workspace_snapshot_hash",
+          "task_prompt_hash",
+          "variant_id"
+        ],
+        "repeat_id": 1,
+        "runtime_profile_hash": "410fb5404155accde7e344bab4b8c95595b6e6595c2f2117122944b815479258",
+        "skill_id": "docs-forge",
+        "task_id": "docs-generation",
+        "task_prompt_hash": null,
+        "variant_id": null,
+        "workspace_snapshot_hash": null
+      },
       "contract_id": "docs-forge-docs-generation",
       "drift_classes_observed": [
         "D2",

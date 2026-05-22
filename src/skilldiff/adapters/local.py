@@ -95,7 +95,7 @@ class LocalDryRunAdapter(RuntimeAdapter):
             {
                 "adapter_id": self.adapter_id,
                 "file_read_provenance": "python_sitecustomize_wrapper_mvp",
-                "file_write_provenance": "pre_post_diff",
+                "file_write_provenance": "pre_post_diff_plus_python_failed_write_wrapper_mvp",
                 "network_provenance": "python_network_shim_mvp_for_controlled_python_commands",
                 "process_provenance": "subprocess_wrapper",
                 "trace_valid": True,
@@ -104,6 +104,7 @@ class LocalDryRunAdapter(RuntimeAdapter):
                     "filesystem.read events are not syscall-complete in RM-07 MVP",
                     "non-Python reads and Python runs that disable sitecustomize are outside this MVP instrumentation",
                     "network events are produced by a Python urllib shim for controlled benchmark runs, not packet capture",
+                    "failed Python write attempts are wrapper-level evidence for controlled Python runs only",
                 ],
             },
         )
@@ -381,6 +382,8 @@ def _run_local_live(adapter_id: str, prepared_run: PreparedRun) -> RunExecution:
                 command,
                 prepared_run.artifacts_dir,
                 files["file_read_events"],
+                files["file_write_events"],
+                files["file_observations"],
                 files["network_events"],
                 files["network_sink_requests"],
                 plan,
@@ -574,6 +577,8 @@ def _live_env(
     command: list[str],
     artifacts_dir: Path,
     file_read_events_path: Path,
+    file_write_events_path: Path,
+    file_observations_path: Path,
     network_events_path: Path,
     network_sink_requests_path: Path,
     plan: dict[str, Any],
@@ -589,6 +594,8 @@ def _live_env(
         shim_dir = _install_python_read_provenance_shim(artifacts_dir / "python_read_provenance")
         env["PYTHONPATH"] = _prepend_path_env(str(shim_dir), env.get("PYTHONPATH", ""))
         env["SKILLDIFF_FILE_READ_EVENTS"] = str(file_read_events_path)
+        env["SKILLDIFF_FILE_WRITE_EVENTS"] = str(file_write_events_path)
+        env["SKILLDIFF_FILE_WRITE_OBSERVATIONS"] = str(file_observations_path)
         env["SKILLDIFF_READ_PROVENANCE_MODEL"] = "python_sitecustomize_wrapper_mvp"
         env["SKILLDIFF_NETWORK_EVENTS"] = str(network_events_path)
         env["SKILLDIFF_NETWORK_SINK_REQUESTS"] = str(network_sink_requests_path)
@@ -657,6 +664,8 @@ _PYTHON_READ_PROVENANCE_SHIM = textwrap.dedent(
 
 
     _EVENTS_PATH = os.environ.get("SKILLDIFF_FILE_READ_EVENTS")
+    _WRITE_EVENTS_PATH = os.environ.get("SKILLDIFF_FILE_WRITE_EVENTS")
+    _WRITE_OBSERVATIONS_PATH = os.environ.get("SKILLDIFF_FILE_WRITE_OBSERVATIONS")
     _MODEL = os.environ.get("SKILLDIFF_READ_PROVENANCE_MODEL", "python_sitecustomize_wrapper_mvp")
     _NETWORK_EVENTS_PATH = os.environ.get("SKILLDIFF_NETWORK_EVENTS")
     _NETWORK_SINK_REQUESTS_PATH = os.environ.get("SKILLDIFF_NETWORK_SINK_REQUESTS")
@@ -687,11 +696,23 @@ _PYTHON_READ_PROVENANCE_SHIM = textwrap.dedent(
         return "r" in mode and not any(flag in mode for flag in ("w", "a", "x"))
 
 
+    def _is_write_mode(mode):
+        mode = mode or "r"
+        return any(flag in mode for flag in ("w", "a", "x", "+"))
+
+
     def _target(path):
         try:
             return os.fspath(path)
         except TypeError:
             return str(path)
+
+
+    def _append_jsonl(path, row):
+        if not path:
+            return
+        with _ORIGINAL_OPEN(path, "a", encoding="utf-8") as handle:
+            handle.write(json.dumps(row, sort_keys=True) + "\n")
 
 
     def _append_event(path, status, mode, error=None):
@@ -710,11 +731,36 @@ _PYTHON_READ_PROVENANCE_SHIM = textwrap.dedent(
             row["error_type"] = type(error).__name__
             row["error_message"] = str(error)
         with _LOCK:
-            with _ORIGINAL_OPEN(_EVENTS_PATH, "a", encoding="utf-8") as handle:
-                handle.write(json.dumps(row, sort_keys=True) + "\n")
+            _append_jsonl(_EVENTS_PATH, row)
+
+
+    def _append_write_event(path, status, mode, error=None):
+        if not _WRITE_EVENTS_PATH and not _WRITE_OBSERVATIONS_PATH:
+            return
+        row = {
+            "event": "filesystem.write",
+            "instrumentation_model": "python_failed_write_wrapper_mvp",
+            "operation": "write",
+            "path": _target(path),
+            "status": status,
+            "timestamp": _utc_now(),
+            "mode": mode or "w",
+        }
+        if error is not None:
+            row["error_type"] = type(error).__name__
+            row["error_message"] = str(error)
+        with _LOCK:
+            _append_jsonl(_WRITE_EVENTS_PATH, row)
+            _append_jsonl(_WRITE_OBSERVATIONS_PATH, row)
 
 
     def _open(path, mode="r", *args, **kwargs):
+        if _is_write_mode(mode):
+            try:
+                return _ORIGINAL_OPEN(path, mode, *args, **kwargs)
+            except Exception as exc:
+                _append_write_event(path, "failed", mode, exc)
+                raise
         if not _is_read_mode(mode):
             return _ORIGINAL_OPEN(path, mode, *args, **kwargs)
         try:
@@ -727,6 +773,12 @@ _PYTHON_READ_PROVENANCE_SHIM = textwrap.dedent(
 
 
     def _path_open(self, mode="r", buffering=-1, encoding=None, errors=None, newline=None):
+        if _is_write_mode(mode):
+            try:
+                return _ORIGINAL_PATH_OPEN(self, mode, buffering, encoding, errors, newline)
+            except Exception as exc:
+                _append_write_event(self, "failed", mode, exc)
+                raise
         if not _is_read_mode(mode):
             return _ORIGINAL_PATH_OPEN(self, mode, buffering, encoding, errors, newline)
         try:

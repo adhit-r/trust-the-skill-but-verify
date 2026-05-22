@@ -32,10 +32,11 @@ Acceptability if submitted today:
 
 ## Current Project Status
 
-The repository is clean and synchronized with `origin/main` at:
+At review time, the repository was clean and synchronized with `origin/main` at
+the paper-spine commit range ending in:
 
 ```text
-ea122a2 Add experiment protocol and intro skeleton
+24cf76b Add top-tier research review roadmap
 ```
 
 Implemented project layers:
@@ -114,8 +115,6 @@ Technical weaknesses:
   `<REPO_ROOT>` placeholders make published traces safer, but rechecking
   sanitized artifacts may fail unless evidence resolution is made
   artifact-root-aware.
-- RP3 docs-forge P2 blocked source mutation is described in the report but not
-  normalized as an attempted write event in the contract findings.
 - Current validation is script-based; there is no top-level CI matrix or
   conventional test suite.
 - Runners encode expected summaries, which is useful for regression but can

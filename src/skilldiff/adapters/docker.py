@@ -404,6 +404,7 @@ def _build_execution_plan(
                     synthetic_env.get("PYTHONPATH", ""),
                     separator=":",
                 ),
+                "SKILLDIFF_FILE_WRITE_EVENTS": read_provenance["container_write_event_path"],
             }
         )
     if read_provenance.get("python_enabled"):
@@ -589,6 +590,7 @@ def _run_docker_live(adapter_id: str, prepared_run: PreparedRun) -> RunExecution
     files["stderr"].write_text(stderr, encoding="utf-8")
     _merge_syscall_read_provenance_events(files, plan)
     _merge_python_read_provenance_events(files, plan)
+    _merge_python_write_provenance_events(files, plan)
     _merge_python_network_events(files, plan)
     _merge_python_network_sink_requests(files, plan)
     _record_workspace_diff(files, prepared_run.workspace_path, before, plan["canary_labels"])
@@ -955,6 +957,7 @@ def _generated_outputs(workspace_path: Path) -> list[dict[str, Any]]:
 def _is_adapter_instrumentation_path(path: str) -> bool:
     return (
         path == "./.skilldiff_file_read_events.jsonl"
+        or path == "./.skilldiff_file_write_events.jsonl"
         or path == "./.skilldiff_network_events.jsonl"
         or path == "./.skilldiff_network_sink_requests.jsonl"
         or path == "./.skilldiff_strace_file_reads.log"
@@ -994,6 +997,7 @@ def _read_provenance_config(
     python_shim_enabled = python_enabled or network_enabled
     host_shim_dir = output_workspace_path / ".skilldiff_provenance"
     host_event_path = output_workspace_path / ".skilldiff_file_read_events.jsonl"
+    host_write_event_path = output_workspace_path / ".skilldiff_file_write_events.jsonl"
     host_network_event_path = output_workspace_path / ".skilldiff_network_events.jsonl"
     host_network_sink_requests_path = output_workspace_path / ".skilldiff_network_sink_requests.jsonl"
     host_strace_log_path = output_workspace_path / ".skilldiff_strace_file_reads.log"
@@ -1010,11 +1014,13 @@ def _read_provenance_config(
         "fake_sink_domains": network_policy.get("fake_sink_domains", []),
         "instrumentation_model": "container_strace_mvp" if syscall_enabled else "python_sitecustomize_wrapper_mvp",
         "host_event_path": str(host_event_path),
+        "host_write_event_path": str(host_write_event_path),
         "host_network_event_path": str(host_network_event_path),
         "host_network_sink_requests_path": str(host_network_sink_requests_path),
         "host_shim_dir": str(host_shim_dir),
         "host_strace_log_path": str(host_strace_log_path),
         "container_event_path": "/workspace/out/.skilldiff_file_read_events.jsonl",
+        "container_write_event_path": "/workspace/out/.skilldiff_file_write_events.jsonl",
         "container_network_event_path": "/workspace/out/.skilldiff_network_events.jsonl",
         "container_network_sink_requests_path": "/workspace/out/.skilldiff_network_sink_requests.jsonl",
         "container_shim_dir": "/workspace/out/.skilldiff_provenance",
@@ -1041,6 +1047,11 @@ def _initial_instrumentation_status(adapter_id: str, read_provenance: dict[str, 
             "network events are produced by a Python urllib shim for controlled benchmark runs, not packet capture",
             *warnings,
         ]
+    if read_provenance.get("python_shim_enabled"):
+        warnings = [
+            "failed Python write attempts are wrapper-level evidence for controlled Python runs only",
+            *warnings,
+        ]
     if read_provenance.get("syscall_enabled"):
         warnings = [
             "container_strace_mvp records open/openat/openat2 events for RP3 container commands when enabled",
@@ -1057,7 +1068,7 @@ def _initial_instrumentation_status(adapter_id: str, read_provenance: dict[str, 
     return {
         "adapter_id": adapter_id,
         "file_read_provenance": _file_read_provenance_label(read_provenance),
-        "file_write_provenance": "pre_post_diff",
+        "file_write_provenance": "pre_post_diff_plus_python_failed_write_wrapper_mvp",
         "network_provenance": network_provenance,
         "process_provenance": "docker_subprocess_wrapper",
         "trace_valid": True,
@@ -1154,6 +1165,25 @@ def _merge_python_read_provenance_events(files: dict[str, Path], plan: dict[str,
                 translated["original_path"] = path
                 translated["path"] = contract_path
         append_jsonl(files["file_read_events"], translated)
+
+
+def _merge_python_write_provenance_events(files: dict[str, Path], plan: dict[str, Any]) -> None:
+    provenance = plan.get("read_provenance") or {}
+    if not provenance.get("python_shim_enabled"):
+        return
+    event_path = Path(provenance["host_write_event_path"])
+    if not event_path.exists():
+        return
+    for row in _read_jsonl(event_path):
+        translated = dict(row)
+        path = translated.get("path")
+        if isinstance(path, str):
+            contract_path = _container_path_to_contract_path(path, plan.get("mounts", []))
+            if contract_path != path:
+                translated["original_path"] = path
+                translated["path"] = contract_path
+        append_jsonl(files["file_write_events"], translated)
+        append_jsonl(files["file_observations"], translated)
 
 
 def _merge_python_network_events(files: dict[str, Path], plan: dict[str, Any]) -> None:

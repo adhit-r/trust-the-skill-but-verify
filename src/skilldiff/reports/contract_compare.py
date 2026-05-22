@@ -33,14 +33,17 @@ def render_markdown(report: dict[str, Any]) -> str:
         "",
         "## Per-Run Counts",
         "",
-        "| Run | Runtime | Contract | Events | Findings | Realized Violations | Attempted Overreach | Canary Observations | Drift Classes |",
-        "| --- | --- | --- | ---: | ---: | ---: | ---: | ---: | --- |",
+        "| Run | Runtime | Skill | Task | Contract | Events | Findings | Realized Violations | Attempted Overreach | Canary Observations | Drift Classes |",
+        "| --- | --- | --- | --- | --- | ---: | ---: | ---: | ---: | ---: | --- |",
     ]
     for run in report["runs"]:
+        context = run.get("comparison_context", {})
         lines.append(
-            "| `{run}` | `{runtime}` | `{contract}` | {events} | {findings} | {violations} | {overreach} | {canaries} | `{classes}` |".format(
+            "| `{run}` | `{runtime}` | `{skill}` | `{task}` | `{contract}` | {events} | {findings} | {violations} | {overreach} | {canaries} | `{classes}` |".format(
                 run=run["run_id"],
                 runtime=run["runtime_profile"],
+                skill=context.get("skill_id") or "unknown",
+                task=context.get("task_id") or "unknown",
                 contract=run["contract_id"],
                 events=run["summary"]["event_count"],
                 findings=run["finding_count"],
@@ -59,6 +62,7 @@ def render_markdown(report: dict[str, Any]) -> str:
                 f"- Runtime profiles: `{pair['left_runtime_profile']}` vs `{pair['right_runtime_profile']}`",
                 f"- Classification: `{pair['classification']['claim']}`",
                 f"- Boundary: {pair['classification']['boundary']}",
+                f"- Unchecked planned invariants: `{', '.join(pair.get('comparison_invariants', {}).get('unchecked_fields', [])) or 'none'}`",
                 f"- Shared findings: `{pair['shared_finding_count']}`",
                 f"- Disagreements: `{pair['disagreement_count']}`",
                 "- Summary delta (right minus left): realized violations `{violations}`, attempted overreach `{overreach}`, canary observations `{canaries}`, events `{events}`".format(

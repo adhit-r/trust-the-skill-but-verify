@@ -7,6 +7,15 @@ cd "$ROOT"
 PYTHON_BIN="${PYTHON_BIN:-${PYTHON:-python3}}"
 export PYTHONDONTWRITEBYTECODE=1
 
+if [[ -n "${DOCS_FORGE_SOURCE_ROOT:-}" ]]; then
+  "$PYTHON_BIN" tools/verify_source_provenance.py \
+    --manifest benchmark/manifests/docs-forge-mini.json \
+    --source-root "$DOCS_FORGE_SOURCE_ROOT"
+else
+  "$PYTHON_BIN" tools/verify_source_provenance.py \
+    --manifest benchmark/manifests/docs-forge-mini.json
+fi
+
 DOCKER_BIN="${DOCKER_BIN:-$(command -v docker || true)}"
 if [[ -z "${DOCKER_BIN}" && -x /usr/local/bin/docker ]]; then
   DOCKER_BIN="/usr/local/bin/docker"
@@ -50,3 +59,4 @@ if [[ "${#TRACE_PATHS[@]}" -ne 8 ]]; then
 fi
 
 "$PYTHON_BIN" tools/validate_traces.py "${TRACE_PATHS[@]}"
+"$PYTHON_BIN" tools/scrub_local_paths.py --target results/raw --target results/mvp/docs-forge

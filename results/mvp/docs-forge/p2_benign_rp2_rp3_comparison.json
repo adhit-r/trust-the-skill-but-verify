@@ -19,6 +19,25 @@
         "boundary": "Runtime profiles differ, but this pair has no finding-set disagreement in the observed contract-check output.",
         "claim": "no_pairwise_disagreement"
       },
+      "comparison_invariants": {
+        "planned_fields": [
+          "workspace_snapshot_hash",
+          "task_prompt_hash",
+          "variant_id"
+        ],
+        "strict_fields": [
+          "skill_id",
+          "task_id",
+          "contract_id",
+          "repeat_id"
+        ],
+        "strict_mismatches": [],
+        "unchecked_fields": [
+          "task_prompt_hash",
+          "variant_id",
+          "workspace_snapshot_hash"
+        ]
+      },
       "contract_id_match": true,
       "disagreement_count": 0,
       "left_run_id": "rp2-2dc54640114f",
@@ -39,6 +58,21 @@
   "report_type": "contract_run_pairwise_comparison",
   "runs": [
     {
+      "comparison_context": {
+        "contract_id": "docs-forge-output-scope",
+        "missing_invariant_fields": [
+          "workspace_snapshot_hash",
+          "task_prompt_hash",
+          "variant_id"
+        ],
+        "repeat_id": 1,
+        "runtime_profile_hash": "7f671673b37f9b78cdb02475da028c18173538fcd42b85ff07aff05dc7e58d94",
+        "skill_id": "docs-forge",
+        "task_id": "output-scope",
+        "task_prompt_hash": null,
+        "variant_id": null,
+        "workspace_snapshot_hash": null
+      },
       "contract_id": "docs-forge-output-scope",
       "drift_classes_observed": [],
       "finding_count": 0,
@@ -57,6 +91,21 @@
       "trace_path": "results/raw/rp2-2dc54640114f/trace.jsonl"
     },
     {
+      "comparison_context": {
+        "contract_id": "docs-forge-output-scope",
+        "missing_invariant_fields": [
+          "workspace_snapshot_hash",
+          "task_prompt_hash",
+          "variant_id"
+        ],
+        "repeat_id": 1,
+        "runtime_profile_hash": "410fb5404155accde7e344bab4b8c95595b6e6595c2f2117122944b815479258",
+        "skill_id": "docs-forge",
+        "task_id": "output-scope",
+        "task_prompt_hash": null,
+        "variant_id": null,
+        "workspace_snapshot_hash": null
+      },
       "contract_id": "docs-forge-output-scope",
       "drift_classes_observed": [],
       "finding_count": 0,

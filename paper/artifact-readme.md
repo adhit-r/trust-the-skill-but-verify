@@ -10,6 +10,7 @@ Use a clean checkout with Python 3.11+ and Docker available for RP3 runs.
 ```bash
 python3 -m venv /tmp/skilldiff-venv
 /tmp/skilldiff-venv/bin/pip install -r requirements-dev.txt
+PYTHON_BIN=/tmp/skilldiff-venv/bin/python make verify
 ```
 
 The existing reproduction scripts also accept `PYTHON_BIN`:
@@ -19,6 +20,19 @@ PYTHON_BIN=/tmp/skilldiff-venv/bin/python bash experiments/repo-audit-mvp/reprod
 PYTHON_BIN=/tmp/skilldiff-venv/bin/python bash experiments/network-egress-mvp/reproduce_network_egress_mvp.sh
 PYTHON_BIN=/tmp/skilldiff-venv/bin/python bash experiments/audit-lens-mvp/reproduce_audit_lens_mvp.sh
 PYTHON_BIN=/tmp/skilldiff-venv/bin/python bash experiments/docs-forge-mvp/reproduce_docs_forge_mvp.sh
+```
+
+If external first-party source checkouts are available, pass them explicitly to
+verify pinned provenance before the fixture runs:
+
+```bash
+DOCS_FORGE_SOURCE_ROOT=/path/to/docs-forge \
+  PYTHON_BIN=/tmp/skilldiff-venv/bin/python \
+  bash experiments/docs-forge-mvp/reproduce_docs_forge_mvp.sh
+
+AUDIT_LENS_SOURCE_ROOT=/path/to/audit-lens \
+  PYTHON_BIN=/tmp/skilldiff-venv/bin/python \
+  bash experiments/audit-lens-mvp/reproduce_audit_lens_mvp.sh
 ```
 
 ## Expected Outputs
@@ -45,6 +59,8 @@ PYTHON_BIN=/tmp/skilldiff-venv/bin/python bash experiments/docs-forge-mvp/reprod
 ## Known Limitations
 
 - RP2 read provenance is Python wrapper-level.
+- Failed Python write-attempt provenance is wrapper-level evidence for
+  controlled Python commands.
 - RP3 file-read provenance is container-strace MVP coverage for supported
   `open`, `openat`, and `openat2` events.
 - The current artifact does not measure approval prompts, MCP tool calls,
@@ -60,6 +76,6 @@ PYTHON_BIN=/tmp/skilldiff-venv/bin/python bash experiments/docs-forge-mvp/reprod
 - [x] Keep real secrets out of fixtures and results.
 - [x] Keep public internet contact out of benchmark runs.
 - [x] Preserve synthetic canary labels for reproducible detection.
-- [ ] Add source-provenance hash verification to every reproduction script.
+- [~] Add source-provenance hash verification to every reproduction script.
 - [ ] Add a top-level `SECURITY.md`.
 - [ ] Add final license and citation metadata.

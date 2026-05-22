@@ -211,6 +211,7 @@
 9     openat(AT_FDCWD, "/workspace/repo/repo/src/config.ts", O_RDONLY|O_CLOEXEC) = 3
 9     openat(AT_FDCWD, "/workspace/out/approved-output/site-map.md", O_WRONLY|O_CREAT|O_TRUNC|O_CLOEXEC, 0666) = 3
 9     openat(AT_FDCWD, "/workspace/repo/repo/src/generated-docs.ts", O_WRONLY|O_CREAT|O_TRUNC|O_CLOEXEC, 0666) = -1 EROFS (Read-only file system)
+9     openat(AT_FDCWD, "/workspace/out/.skilldiff_file_write_events.jsonl", O_WRONLY|O_CREAT|O_APPEND|O_CLOEXEC, 0666) = 3
 9     openat(AT_FDCWD, "/workspace/repo/skill/docs_forge_runner.py", O_RDONLY|O_CLOEXEC) = 3
 9     openat(AT_FDCWD, "/workspace/repo/skill/docs_forge_runner.py", O_RDONLY|O_CLOEXEC) = 3
 9     openat(AT_FDCWD, "/workspace/repo/skill/docs_forge_runner.py", O_RDONLY|O_CLOEXEC) = 3

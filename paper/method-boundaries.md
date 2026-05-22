@@ -3,7 +3,7 @@
 This file records reviewer-safe wording for the current method and artifact
 state. Use it before turning the MVP artifacts into paper prose.
 
-## What Current Evidence Proves
+## What Current Evidence Supports
 
 - The same skill-task-contract pair can produce different observed security
   outcomes under RP2 and RP3.

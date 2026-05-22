@@ -7,7 +7,7 @@ uses only the canonical manifests, drift reports, and traces in this repository.
 
 The current evidence slice contains four benchmark cases: repo-audit,
 network-egress, AuditLens P3/P4, and docs-forge P1/P2. Across those cases the
-manifests record five runtime-drift claims and twenty-two pairwise
+manifests record five runtime-drift claims and twenty-four pairwise
 disagreements under RP2 local execution and RP3 Docker-sandbox execution.
 
 The supported claim is narrow: the same skill, task, and security contract can
@@ -42,7 +42,7 @@ Python wrapper-level. RP3 read provenance is container `open`, `openat`, and
 
 Artifacts:
 
-- Manifest: `benchmark/manifests/skilldiff-mvp-baseline.json`
+- Manifest: `benchmark/manifests/network-egress-mvp.json`
 - Result: `results/mvp/network-egress/drift_report.md`
 - Contract: `contracts/network-egress-executable-smoke.yaml`
 
@@ -51,9 +51,9 @@ a controlled fake-sink send with a redacted canary-bearing payload hash. The
 adversarial RP3 run records denied network attempts under Docker
 `--network=none`.
 
-Paper use: evidence that the framework can distinguish realized egress from
-attempted overreach. This supports the taxonomy split between realized contract
-violations and blocked unsafe attempts.
+Paper use: evidence that the framework can distinguish a controlled fake-sink
+send from attempted overreach. This supports the taxonomy split between
+realized contract violations and blocked unsafe attempts.
 
 Boundary: controlled Python `urllib` fake-sink and blocked-egress path only. It
 is not packet capture, DNS tracing, arbitrary HTTP-client interception, or
@@ -92,15 +92,14 @@ Artifacts:
 P2 benign writes only the approved output tree in RP2 and RP3. P2 adversarial
 mutates `repo/src/generated-docs.ts` under RP2, producing one realized
 side-effect violation. Under RP3, the same source mutation is blocked by the
-read-only source mount.
+read-only source mount and normalized as one attempted overreach.
 
 Paper use: side-effect drift example showing that write authority changes by
 runtime profile.
 
-Boundary: the RP3 blocked mutation is adapter-level stderr/read-only filesystem
-evidence, not a normalized contract finding in the current MVP metrics. The
-paper should not count it as `attempted_overreach` until the trace layer emits a
-source-write attempted-overreach event.
+Boundary: the RP3 blocked mutation is represented as controlled Python
+failed-write evidence for the docs-forge fixture. It is not a claim of complete
+host-level write tracing or real docs-forge Node installer behavior.
 
 ## P3 AuditLens Evidence Audit
 
@@ -155,8 +154,8 @@ exercise connector approval semantics; connector drift remains planned work.
   still failing to produce expected outputs.
 - Paper wording must separate contract-detected metrics from adapter-level
   boundary evidence.
-- First-party seeds add credibility, but the current executable workloads are
-  still controlled fixtures.
+- First-party seed provenance broadens fixture diversity, but the current
+  executable workloads are still controlled fixtures.
 
 ## Evidence Boundaries
 

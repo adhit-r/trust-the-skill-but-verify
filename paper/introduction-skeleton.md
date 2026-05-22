@@ -102,13 +102,13 @@ Operational version:
 
 The current MVP evaluates four controlled case families: repo-audit,
 network-egress, AuditLens P3/P4, and docs-forge P1/P2. Across these cases,
-tracked manifests record five runtime-drift claims and twenty-two pairwise
+tracked manifests record five runtime-drift claims and twenty-four pairwise
 disagreements under RP2 and RP3. The evidence includes RP2 canary movement into
 generated reports or dashboards, RP3 blocked attempts, missing outputs,
 read-only source-mount failures, and controlled fake-sink network evidence.
-These results are not prevalence claims; they demonstrate that the measurement
-problem is real and that differential traces can separate realized violations
-from blocked overreach and utility failures.
+These results are not prevalence claims; the controlled MVP traces demonstrate
+measurable runtime-conditioned differences and show that differential traces
+can separate realized violations from blocked overreach and utility failures.
 
 ## Scope And Nonclaims
 

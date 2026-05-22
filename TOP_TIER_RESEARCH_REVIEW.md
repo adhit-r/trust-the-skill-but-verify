@@ -61,7 +61,7 @@ Current paper-facing evidence:
 | Paper-facing canonical traces | 24 |
 | Tracked traces including older smoke | 30 |
 | Recorded runtime-drift claims | 5 |
-| Recorded pairwise disagreements | 22 |
+| Recorded pairwise disagreements | 24 |
 | First-party seed case families | 2 |
 | Controlled synthetic case families | 2 |
 

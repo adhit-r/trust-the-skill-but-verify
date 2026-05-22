@@ -78,6 +78,7 @@ AUDIT_LENS_SOURCE_ROOT=/path/to/audit-lens \
 - [x] Keep real secrets out of fixtures and results.
 - [x] Keep public internet contact out of benchmark runs.
 - [x] Preserve synthetic canary labels for reproducible detection.
+- [x] Maintain a validated paper claim ledger.
 - [~] Complete published pinned-source hash lists for first-party seed repos.
 - [ ] Add a top-level `SECURITY.md`.
 - [ ] Add final license and citation metadata.

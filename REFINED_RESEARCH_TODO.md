@@ -43,9 +43,10 @@ This TODO is mapped to `REFINED_RESEARCH_ROADMAP.md`. Status values:
    Current state: local `make verify` runs JSON checks, contract validation,
    trace validation, profile validation, compile checks, provenance checks, and
    no-local-path checks. Full done still requires CI wiring.
-9. [ ] Create a paper-claim ledger.
-   Done when every abstract/introduction/table number has a source manifest or
-   result file.
+9. [x] Create a paper-claim ledger.
+   Done: `paper/claim-ledger.json` maps paper-facing MVP numbers and boundary
+   claims to source manifests, result artifacts, or paper notes, and
+   `tools/validate_claim_ledger.py` runs from `make verify`.
 
 ## P1: Claim Contract And Paper Spine
 
@@ -221,12 +222,10 @@ This TODO is mapped to `REFINED_RESEARCH_ROADMAP.md`. Status values:
 
 Continue P0 before scaling P4. The next concrete implementation task is:
 
-1. Create the paper-claim ledger so each table and abstract number points to a
-   manifest or result file.
-2. Emit `workspace_snapshot_hash`, `task_prompt_hash`, and `variant_id` from
+1. Emit `workspace_snapshot_hash`, `task_prompt_hash`, and `variant_id` from
    runners so `compare_contract_runs` can enforce the planned invariants.
-3. Finish the published pinned-source hash lists for first-party seed repos.
-4. Wire `make verify` into CI.
+2. Finish the published pinned-source hash lists for first-party seed repos.
+3. Wire `make verify` into CI.
 
 That sequence turns the current verified MVP from a strong local artifact into
 a reviewer-ready evidence package.

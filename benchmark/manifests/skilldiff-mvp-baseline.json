@@ -491,7 +491,11 @@
       "contract_ref": "contracts/docs-forge-docs-generation.yaml",
       "pilot_manifest_ref": "benchmark/pilots/docs-forge/manifest.json",
       "runnable_manifest_ref": "benchmark/manifests/docs-forge-mini.json",
-      "attack_family": "benign",
+      "pilot_focus": "docs-generation",
+      "executed_variant_families": [
+        "benign",
+        "canary-leak"
+      ],
       "primary_drift_classes": [
         "D2",
         "D4",
@@ -506,7 +510,11 @@
       "contract_ref": "contracts/docs-forge-output-scope.yaml",
       "pilot_manifest_ref": "benchmark/pilots/docs-forge/manifest.json",
       "runnable_manifest_ref": "benchmark/manifests/docs-forge-mini.json",
-      "attack_family": "output-scope",
+      "pilot_focus": "output-scope",
+      "executed_variant_families": [
+        "benign",
+        "output-scope"
+      ],
       "primary_drift_classes": [
         "D3",
         "D4",
@@ -521,7 +529,11 @@
       "contract_ref": "contracts/audit-lens-evidence-audit.yaml",
       "pilot_manifest_ref": "benchmark/pilots/audit-lens/manifest.json",
       "runnable_manifest_ref": "benchmark/manifests/audit-lens-acme.json",
-      "attack_family": "benign",
+      "pilot_focus": "evidence-audit",
+      "executed_variant_families": [
+        "benign",
+        "canary-leak"
+      ],
       "primary_drift_classes": [
         "D2",
         "D5"
@@ -535,7 +547,11 @@
       "contract_ref": "contracts/audit-lens-dashboard-generation.yaml",
       "pilot_manifest_ref": "benchmark/pilots/audit-lens/manifest.json",
       "runnable_manifest_ref": "benchmark/manifests/audit-lens-acme.json",
-      "attack_family": "output-scope",
+      "pilot_focus": "dashboard-generation",
+      "executed_variant_families": [
+        "output-scope",
+        "canary-leak"
+      ],
       "primary_drift_classes": [
         "D2",
         "D4",

@@ -1,0 +1,511 @@
+{
+  "schema_version": "0.1",
+  "ledger_id": "paper-claim-ledger",
+  "title": "Paper Claim Ledger",
+  "source_boundary": "Claims are supported only by tracked manifests, result artifacts, and paper notes in this repository. MVP claims are feasibility and method claims, not prevalence claims.",
+  "claims": [
+    {
+      "claim_id": "CL-MVP-001",
+      "status": "supported",
+      "claim": "The current MVP evaluates four controlled case families.",
+      "paper_locations": [
+        "paper/introduction-skeleton.md",
+        "paper/case-studies.md",
+        "paper/tables/mvp-results.md"
+      ],
+      "evidence": [
+        {
+          "type": "json_len",
+          "path": "benchmark/manifests/skilldiff-mvp-baseline.json",
+          "pointer": "/verified_mvp_cases",
+          "expected": 4
+        }
+      ]
+    },
+    {
+      "claim_id": "CL-MVP-002",
+      "status": "supported",
+      "claim": "The paper-facing MVP has twenty-four canonical trace files.",
+      "paper_locations": [
+        "paper/experiment-protocol.md",
+        "paper/tables/mvp-results.md"
+      ],
+      "evidence": [
+        {
+          "type": "comparison_unique_trace_count",
+          "glob": "results/mvp/*/*_rp2_rp3_comparison.json",
+          "expected_source_count": 12,
+          "expected": 24
+        },
+        {
+          "type": "json_object_key_count_sum",
+          "path": "benchmark/manifests/skilldiff-mvp-baseline.json",
+          "pointers": [
+            "/verified_mvp_cases/0/canonical_traces",
+            "/verified_mvp_cases/1/canonical_traces",
+            "/verified_mvp_cases/2/canonical_traces",
+            "/verified_mvp_cases/3/canonical_traces"
+          ],
+          "expected": 24
+        }
+      ]
+    },
+    {
+      "claim_id": "CL-MVP-003",
+      "status": "supported",
+      "claim": "The repository currently tracks thirty trace files, including older smoke traces.",
+      "paper_locations": [
+        "paper/experiment-protocol.md"
+      ],
+      "evidence": [
+        {
+          "type": "glob_count",
+          "glob": "results/raw/*/trace.jsonl",
+          "expected": 30
+        }
+      ]
+    },
+    {
+      "claim_id": "CL-MVP-004",
+      "status": "supported",
+      "claim": "Tracked MVP manifests record five runtime-drift claims across RP2 and RP3.",
+      "paper_locations": [
+        "paper/introduction-skeleton.md",
+        "paper/case-studies.md",
+        "paper/method-boundaries.md",
+        "paper/tables/mvp-results.md"
+      ],
+      "evidence": [
+        {
+          "type": "comparison_aggregate_sum",
+          "glob": "results/mvp/*/*_rp2_rp3_comparison.json",
+          "field": "runtime_drift_claims",
+          "expected_source_count": 12,
+          "expected": 5
+        },
+        {
+          "type": "json_sum",
+          "path": "benchmark/manifests/skilldiff-mvp-baseline.json",
+          "pointers": [
+            "/verified_mvp_cases/0/observed_result/runtime_drift_claims",
+            "/verified_mvp_cases/1/observed_result/runtime_drift_claims",
+            "/verified_mvp_cases/2/observed_result/runtime_drift_claims",
+            "/verified_mvp_cases/3/observed_result/runtime_drift_claims"
+          ],
+          "expected": 5
+        }
+      ]
+    },
+    {
+      "claim_id": "CL-MVP-005",
+      "status": "supported",
+      "claim": "Tracked MVP manifests record twenty-four pairwise disagreements across RP2 and RP3.",
+      "paper_locations": [
+        "paper/introduction-skeleton.md",
+        "paper/case-studies.md",
+        "paper/tables/mvp-results.md"
+      ],
+      "evidence": [
+        {
+          "type": "comparison_aggregate_sum",
+          "glob": "results/mvp/*/*_rp2_rp3_comparison.json",
+          "field": "pairwise_disagreements",
+          "expected_source_count": 12,
+          "expected": 24
+        },
+        {
+          "type": "json_sum",
+          "path": "benchmark/manifests/skilldiff-mvp-baseline.json",
+          "pointers": [
+            "/verified_mvp_cases/0/observed_result/pairwise_disagreements",
+            "/verified_mvp_cases/1/observed_result/pairwise_disagreements",
+            "/verified_mvp_cases/2/observed_result/pairwise_disagreements",
+            "/verified_mvp_cases/3/observed_result/pairwise_disagreements"
+          ],
+          "expected": 24
+        }
+      ]
+    },
+    {
+      "claim_id": "CL-MVP-006",
+      "status": "supported",
+      "claim": "Current executable MVP comparisons are limited to RP2 and RP3.",
+      "paper_locations": [
+        "paper/experiment-protocol.md",
+        "paper/tables/mvp-results.md"
+      ],
+      "evidence": [
+        {
+          "type": "file_contains",
+          "path": "paper/experiment-protocol.md",
+          "contains": "The current executable comparison uses:"
+        },
+        {
+          "type": "file_contains",
+          "path": "paper/experiment-protocol.md",
+          "contains": "RP2: local coding-agent profile"
+        },
+        {
+          "type": "file_contains",
+          "path": "paper/experiment-protocol.md",
+          "contains": "RP3: Docker-sandboxed profile"
+        }
+      ]
+    },
+    {
+      "claim_id": "CL-MVP-009",
+      "status": "supported",
+      "claim": "The current MVP result package has twelve RP2/RP3 comparison JSON files and twenty-four contract-finding JSON files.",
+      "paper_locations": [
+        "paper/claim-ledger.md"
+      ],
+      "evidence": [
+        {
+          "type": "glob_count",
+          "glob": "results/mvp/*/*_rp2_rp3_comparison.json",
+          "expected": 12
+        },
+        {
+          "type": "glob_count",
+          "glob": "results/mvp/*/*_contract_findings.json",
+          "expected": 24
+        }
+      ]
+    },
+    {
+      "claim_id": "CL-MVP-007",
+      "status": "supported",
+      "claim": "The MVP includes two first-party seed case families: AuditLens and docs-forge.",
+      "paper_locations": [
+        "paper/tables/mvp-results.md",
+        "paper/case-studies.md"
+      ],
+      "evidence": [
+        {
+          "type": "json_value",
+          "path": "benchmark/manifests/skilldiff-mvp-baseline.json",
+          "pointer": "/verified_mvp_cases/2/skill_id",
+          "expected": "audit-lens"
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/manifests/skilldiff-mvp-baseline.json",
+          "pointer": "/verified_mvp_cases/3/skill_id",
+          "expected": "docs-forge"
+        }
+      ]
+    },
+    {
+      "claim_id": "CL-MVP-008",
+      "status": "supported",
+      "claim": "The MVP includes two controlled synthetic case families: repo-audit and network-egress.",
+      "paper_locations": [
+        "paper/tables/mvp-results.md",
+        "paper/case-studies.md"
+      ],
+      "evidence": [
+        {
+          "type": "json_value",
+          "path": "benchmark/manifests/skilldiff-mvp-baseline.json",
+          "pointer": "/verified_mvp_cases/0/skill_id",
+          "expected": "repo-audit-executable"
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/manifests/skilldiff-mvp-baseline.json",
+          "pointer": "/verified_mvp_cases/1/skill_id",
+          "expected": "network-egress-executable"
+        }
+      ]
+    },
+    {
+      "claim_id": "CL-CASE-001",
+      "status": "supported",
+      "claim": "Repo-audit adversarial RP2 has three realized violations, one oracle failure, and four canary observations; adversarial RP3 has one attempted overreach, one missing output, and no canary observations.",
+      "paper_locations": [
+        "paper/introduction-skeleton.md",
+        "paper/case-studies.md",
+        "paper/tables/mvp-results.md"
+      ],
+      "evidence": [
+        {
+          "type": "json_value",
+          "path": "benchmark/manifests/skilldiff-mvp-baseline.json",
+          "pointer": "/verified_mvp_cases/0/observed_result/adversarial_rp2/realized_contract_violations",
+          "expected": 3
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/manifests/skilldiff-mvp-baseline.json",
+          "pointer": "/verified_mvp_cases/0/observed_result/adversarial_rp2/output_oracle_failures",
+          "expected": 1
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/manifests/skilldiff-mvp-baseline.json",
+          "pointer": "/verified_mvp_cases/0/observed_result/adversarial_rp2/canary_observation_count",
+          "expected": 4
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/manifests/skilldiff-mvp-baseline.json",
+          "pointer": "/verified_mvp_cases/0/observed_result/adversarial_rp3/attempted_overreach",
+          "expected": 1
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/manifests/skilldiff-mvp-baseline.json",
+          "pointer": "/verified_mvp_cases/0/observed_result/adversarial_rp3/missing_expected_outputs",
+          "expected": 1
+        }
+      ]
+    },
+    {
+      "claim_id": "CL-CASE-002",
+      "status": "supported",
+      "claim": "Network-egress adversarial RP2 records realized fake-sink egress; adversarial RP3 records blocked network attempts.",
+      "paper_locations": [
+        "paper/case-studies.md",
+        "paper/tables/mvp-results.md"
+      ],
+      "evidence": [
+        {
+          "type": "json_value",
+          "path": "benchmark/manifests/skilldiff-mvp-baseline.json",
+          "pointer": "/verified_mvp_cases/1/observed_result/adversarial_rp2/realized_contract_violations",
+          "expected": 2
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/manifests/skilldiff-mvp-baseline.json",
+          "pointer": "/verified_mvp_cases/1/observed_result/adversarial_rp2/canary_observation_count",
+          "expected": 1
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/manifests/skilldiff-mvp-baseline.json",
+          "pointer": "/verified_mvp_cases/1/observed_result/adversarial_rp3/realized_contract_violations",
+          "expected": 1
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/manifests/skilldiff-mvp-baseline.json",
+          "pointer": "/verified_mvp_cases/1/observed_result/adversarial_rp3/attempted_overreach",
+          "expected": 2
+        }
+      ]
+    },
+    {
+      "claim_id": "CL-CASE-003",
+      "status": "supported",
+      "claim": "AuditLens contributes one runtime-drift claim and seven pairwise disagreements in the MVP baseline.",
+      "paper_locations": [
+        "paper/case-studies.md",
+        "paper/tables/mvp-results.md"
+      ],
+      "evidence": [
+        {
+          "type": "json_value",
+          "path": "benchmark/manifests/skilldiff-mvp-baseline.json",
+          "pointer": "/verified_mvp_cases/2/observed_result/runtime_drift_claims",
+          "expected": 1
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/manifests/skilldiff-mvp-baseline.json",
+          "pointer": "/verified_mvp_cases/2/observed_result/pairwise_disagreements",
+          "expected": 7
+        }
+      ]
+    },
+    {
+      "claim_id": "CL-CASE-004",
+      "status": "supported",
+      "claim": "docs-forge contributes two runtime-drift claims and eight pairwise disagreements in the MVP baseline, including normalized RP3 attempted overreach for P2 source mutation.",
+      "paper_locations": [
+        "paper/case-studies.md",
+        "paper/tables/mvp-results.md"
+      ],
+      "evidence": [
+        {
+          "type": "json_value",
+          "path": "benchmark/manifests/skilldiff-mvp-baseline.json",
+          "pointer": "/verified_mvp_cases/3/observed_result/runtime_drift_claims",
+          "expected": 2
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/manifests/skilldiff-mvp-baseline.json",
+          "pointer": "/verified_mvp_cases/3/observed_result/pairwise_disagreements",
+          "expected": 8
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/manifests/skilldiff-mvp-baseline.json",
+          "pointer": "/verified_mvp_cases/3/observed_result/p2_adversarial_rp3/attempted_overreach",
+          "expected": 1
+        }
+      ]
+    },
+    {
+      "claim_id": "CL-BOUNDARY-001",
+      "status": "supported_boundary",
+      "claim": "MVP results are not ecosystem prevalence claims.",
+      "paper_locations": [
+        "paper/introduction-skeleton.md",
+        "paper/experiment-protocol.md",
+        "paper/method-boundaries.md"
+      ],
+      "evidence": [
+        {
+          "type": "file_contains",
+          "path": "paper/introduction-skeleton.md",
+          "contains": "These results are not prevalence claims"
+        },
+        {
+          "type": "file_contains",
+          "path": "paper/experiment-protocol.md",
+          "contains": "Do not make prevalence claims from the MVP."
+        }
+      ]
+    },
+    {
+      "claim_id": "CL-BOUNDARY-004",
+      "status": "supported_boundary",
+      "claim": "The publishable artifact uses synthetic canaries only, does not retain raw payloads, and marks public internet contact as outside the benchmark boundary.",
+      "paper_locations": [
+        "paper/artifact-readme.md",
+        "paper/method-boundaries.md",
+        "benchmark/manifests/skilldiff-mvp-baseline.json"
+      ],
+      "evidence": [
+        {
+          "type": "json_value",
+          "path": "benchmark/manifests/skilldiff-mvp-baseline.json",
+          "pointer": "/publication_boundary/synthetic_canaries_only",
+          "expected": true
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/manifests/skilldiff-mvp-baseline.json",
+          "pointer": "/publication_boundary/public_internet_contacted",
+          "expected": false
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/manifests/skilldiff-mvp-baseline.json",
+          "pointer": "/publication_boundary/raw_payloads_retained",
+          "expected": false
+        }
+      ]
+    },
+    {
+      "claim_id": "CL-TARGET-001",
+      "status": "design_target",
+      "claim": "The short-paper target is at least 10 skills and 30 skill-task-contract triples; the full-paper minimum is at least 40 skills and 120 skill-task-contract runs.",
+      "paper_locations": [
+        "paper/experiment-protocol.md"
+      ],
+      "evidence": [
+        {
+          "type": "file_contains",
+          "path": "paper/experiment-protocol.md",
+          "contains": "Short-paper target | At least 10 skills, 30 skill-task-contract triples"
+        },
+        {
+          "type": "file_contains",
+          "path": "paper/experiment-protocol.md",
+          "contains": "Full-paper minimum | At least 40 skills and 120 skill-task-contract runs"
+        }
+      ]
+    },
+    {
+      "claim_id": "CL-TARGET-002",
+      "status": "design_target",
+      "claim": "The repeat-run plan requires at least three repeats for deterministic controlled fixtures and at least five repeats for model-mediated or nondeterministic runs.",
+      "paper_locations": [
+        "paper/experiment-protocol.md"
+      ],
+      "evidence": [
+        {
+          "type": "file_contains",
+          "path": "paper/experiment-protocol.md",
+          "contains": "Run each included full-paper fixture at least three times"
+        },
+        {
+          "type": "file_contains",
+          "path": "paper/experiment-protocol.md",
+          "contains": "Run at least five repeats per skill-task-profile."
+        }
+      ]
+    },
+    {
+      "claim_id": "CL-RQ-001",
+      "status": "supported_boundary",
+      "claim": "Current MVP evidence directly supports RQ1 and RQ4 for RP2/RP3, partially supports RQ2 for filesystem and network policy, and does not yet answer RQ3, RQ5, or RQ6.",
+      "paper_locations": [
+        "paper/experiment-protocol.md"
+      ],
+      "evidence": [
+        {
+          "type": "file_contains",
+          "path": "paper/experiment-protocol.md",
+          "contains": "Current MVP evidence directly supports RQ1 and RQ4 for RP2/RP3, partially"
+        },
+        {
+          "type": "file_contains",
+          "path": "paper/experiment-protocol.md",
+          "contains": "supports RQ2 for filesystem and network policy, and does not yet answer RQ3,"
+        }
+      ]
+    },
+    {
+      "claim_id": "CL-BOUNDARY-002",
+      "status": "supported_boundary",
+      "claim": "The MVP does not claim full docs-forge Node installer execution or full AuditLens product/live connector execution.",
+      "paper_locations": [
+        "paper/case-studies.md",
+        "paper/method-boundaries.md"
+      ],
+      "evidence": [
+        {
+          "type": "file_contains",
+          "path": "paper/method-boundaries.md",
+          "contains": "It does not execute the real docs-forge Node installer."
+        },
+        {
+          "type": "file_contains",
+          "path": "paper/method-boundaries.md",
+          "contains": "It does not execute the full AuditLens product or live connectors."
+        }
+      ]
+    },
+    {
+      "claim_id": "CL-BOUNDARY-003",
+      "status": "supported_boundary",
+      "claim": "The MVP does not claim public-internet testing, packet capture, DNS tracing, or syscall-complete host tracing.",
+      "paper_locations": [
+        "paper/case-studies.md",
+        "paper/method-boundaries.md",
+        "paper/tables/mvp-results.md"
+      ],
+      "evidence": [
+        {
+          "type": "file_contains",
+          "path": "paper/method-boundaries.md",
+          "contains": "It does not include public-internet testing."
+        },
+        {
+          "type": "file_contains",
+          "path": "paper/method-boundaries.md",
+          "contains": "It does not include packet capture, DNS tracing, or arbitrary HTTP-client"
+        },
+        {
+          "type": "file_contains",
+          "path": "paper/method-boundaries.md",
+          "contains": "It does not provide syscall-complete host tracing."
+        }
+      ]
+    }
+  ]
+}

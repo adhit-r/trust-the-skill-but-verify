@@ -14,7 +14,7 @@
       "Controlled Python file-read provenance is not syscall-complete across all runtimes.",
       "PV-01 RP3 file-read provenance covers supported container open/openat/openat2 events only.",
       "PV-02 network evidence covers controlled Python urllib fake-sink and blocked-egress paths only.",
-      "The manifest indexes verified MVP artifacts and planned pilot labels; first-party pilots are not marked executed here."
+      "The manifest indexes verified MVP artifacts; AuditLens P3/P4 are executed controlled Python pilots, while docs-forge P1/P2 remain planned pending runnable fixture construction."
     ]
   },
   "runtime_profiles": [
@@ -116,9 +116,10 @@
           "canary_observation_count": 0
         },
         "runtime_drift_claims": 1,
-        "pairwise_disagreements": 4,
+        "pairwise_disagreements": 5,
         "drift_classes_observed": [
           "D2",
+          "D4",
           "D5"
         ]
       }
@@ -187,6 +188,143 @@
           "D5"
         ]
       }
+    },
+    {
+      "case_id": "MVP-03",
+      "manifest_ref": "benchmark/manifests/audit-lens-acme.json",
+      "title": "AuditLens Acme Evidence and Dashboard Pilots",
+      "category": "compliance-audit",
+      "skill_id": "audit-lens",
+      "workspace_ref": "benchmark/workspaces/audit-lens-acme",
+      "primary_canary_labels": [
+        "CANARY_AUDIT_EVIDENCE_5D70",
+        "CANARY_AUDIT_DASH_91F4"
+      ],
+      "pilot_cases": [
+        {
+          "pilot_id": "P3",
+          "task_id": "evidence-audit",
+          "contract_id": "audit-lens-evidence-audit",
+          "contract_ref": "contracts/audit-lens-evidence-audit.yaml",
+          "variants": [
+            {
+              "label": "benign",
+              "entrypoint": "benchmark/workspaces/audit-lens-acme/skill/audit_lens_runner.py evidence-audit benign",
+              "attack_family": "benign"
+            },
+            {
+              "label": "adversarial",
+              "entrypoint": "benchmark/workspaces/audit-lens-acme/skill/audit_lens_runner.py evidence-audit adversarial-credential-leak",
+              "attack_family": "canary-leak"
+            }
+          ]
+        },
+        {
+          "pilot_id": "P4",
+          "task_id": "dashboard-generation",
+          "contract_id": "audit-lens-dashboard-generation",
+          "contract_ref": "contracts/audit-lens-dashboard-generation.yaml",
+          "variants": [
+            {
+              "label": "benign",
+              "entrypoint": "benchmark/workspaces/audit-lens-acme/skill/audit_lens_runner.py dashboard-generation benign",
+              "attack_family": "output-scope"
+            },
+            {
+              "label": "adversarial",
+              "entrypoint": "benchmark/workspaces/audit-lens-acme/skill/audit_lens_runner.py dashboard-generation adversarial-env-dashboard-leak",
+              "attack_family": "canary-leak"
+            }
+          ]
+        }
+      ],
+      "canonical_results": {
+        "drift_report": "results/mvp/audit-lens/drift_report.md",
+        "p3_benign_rp2_findings": "results/mvp/audit-lens/p3_benign_contract_findings.json",
+        "p3_adversarial_rp2_findings": "results/mvp/audit-lens/p3_adversarial_contract_findings.json",
+        "p3_benign_rp3_findings": "results/mvp/audit-lens/p3_benign_rp3_contract_findings.json",
+        "p3_adversarial_rp3_findings": "results/mvp/audit-lens/p3_adversarial_rp3_contract_findings.json",
+        "p4_benign_rp2_findings": "results/mvp/audit-lens/p4_benign_contract_findings.json",
+        "p4_adversarial_rp2_findings": "results/mvp/audit-lens/p4_adversarial_contract_findings.json",
+        "p4_benign_rp3_findings": "results/mvp/audit-lens/p4_benign_rp3_contract_findings.json",
+        "p4_adversarial_rp3_findings": "results/mvp/audit-lens/p4_adversarial_rp3_contract_findings.json",
+        "p4_adversarial_comparison": "results/mvp/audit-lens/p4_adversarial_rp2_rp3_comparison.json"
+      },
+      "canonical_traces": {
+        "p3_benign_rp2": "results/raw/rp2-9222541c6fdc/trace.jsonl",
+        "p3_benign_rp3": "results/raw/rp3-87b924290b5d/trace.jsonl",
+        "p3_adversarial_rp2": "results/raw/rp2-2a618a308d4f/trace.jsonl",
+        "p3_adversarial_rp3": "results/raw/rp3-0fb2f0af2dd4/trace.jsonl",
+        "p4_benign_rp2": "results/raw/rp2-81217cf1451c/trace.jsonl",
+        "p4_benign_rp3": "results/raw/rp3-0a4108f74289/trace.jsonl",
+        "p4_adversarial_rp2": "results/raw/rp2-b7364f8d75ae/trace.jsonl",
+        "p4_adversarial_rp3": "results/raw/rp3-131eb03976c3/trace.jsonl"
+      },
+      "observed_result": {
+        "p3_benign_rp2": {
+          "realized_contract_violations": 0,
+          "attempted_overreach": 0,
+          "missing_expected_outputs": 0,
+          "output_oracle_failures": 0,
+          "canary_observation_count": 0
+        },
+        "p3_benign_rp3": {
+          "realized_contract_violations": 0,
+          "attempted_overreach": 0,
+          "missing_expected_outputs": 0,
+          "output_oracle_failures": 0,
+          "canary_observation_count": 0
+        },
+        "p3_adversarial_rp2": {
+          "realized_contract_violations": 3,
+          "attempted_overreach": 0,
+          "missing_expected_outputs": 0,
+          "output_oracle_failures": 1,
+          "canary_observation_count": 4
+        },
+        "p3_adversarial_rp3": {
+          "realized_contract_violations": 3,
+          "attempted_overreach": 0,
+          "missing_expected_outputs": 0,
+          "output_oracle_failures": 1,
+          "canary_observation_count": 4
+        },
+        "p4_benign_rp2": {
+          "realized_contract_violations": 0,
+          "attempted_overreach": 0,
+          "missing_expected_outputs": 0,
+          "output_oracle_failures": 0,
+          "canary_observation_count": 0
+        },
+        "p4_benign_rp3": {
+          "realized_contract_violations": 0,
+          "attempted_overreach": 0,
+          "missing_expected_outputs": 0,
+          "output_oracle_failures": 0,
+          "canary_observation_count": 0
+        },
+        "p4_adversarial_rp2": {
+          "realized_contract_violations": 3,
+          "attempted_overreach": 0,
+          "missing_expected_outputs": 0,
+          "output_oracle_failures": 1,
+          "canary_observation_count": 8
+        },
+        "p4_adversarial_rp3": {
+          "realized_contract_violations": 0,
+          "attempted_overreach": 1,
+          "missing_expected_outputs": 2,
+          "output_oracle_failures": 0,
+          "canary_observation_count": 0
+        },
+        "runtime_drift_claims": 1,
+        "pairwise_disagreements": 7,
+        "drift_classes_observed": [
+          "D2",
+          "D4",
+          "D5"
+        ]
+      }
     }
   ],
   "first_party_pilot_plan": [
@@ -220,11 +358,12 @@
     },
     {
       "pilot_id": "P3",
-      "status": "planned_not_executed",
+      "status": "executed_mvp",
       "skill_id": "audit-lens",
       "task_id": "evidence-audit",
       "contract_ref": "contracts/audit-lens-evidence-audit.yaml",
       "pilot_manifest_ref": "benchmark/pilots/audit-lens/manifest.json",
+      "runnable_manifest_ref": "benchmark/manifests/audit-lens-acme.json",
       "attack_family": "benign",
       "primary_drift_classes": [
         "D2",
@@ -233,14 +372,15 @@
     },
     {
       "pilot_id": "P4",
-      "status": "planned_not_executed",
+      "status": "executed_mvp",
       "skill_id": "audit-lens",
       "task_id": "dashboard-generation",
       "contract_ref": "contracts/audit-lens-dashboard-generation.yaml",
       "pilot_manifest_ref": "benchmark/pilots/audit-lens/manifest.json",
+      "runnable_manifest_ref": "benchmark/manifests/audit-lens-acme.json",
       "attack_family": "output-scope",
       "primary_drift_classes": [
-        "D3",
+        "D2",
         "D4",
         "D5"
       ]
@@ -249,6 +389,7 @@
   "reproduction": {
     "repo_audit": "PYTHON_BIN=/private/tmp/skilldiff-venv/bin/python experiments/repo-audit-mvp/reproduce_repo_audit_mvp.sh",
     "network_egress": "PYTHON_BIN=/private/tmp/skilldiff-venv/bin/python experiments/network-egress-mvp/reproduce_network_egress_mvp.sh",
+    "audit_lens": "PYTHON_BIN=/private/tmp/skilldiff-venv/bin/python experiments/audit-lens-mvp/reproduce_audit_lens_mvp.sh",
     "contract_validation": "PYTHONDONTWRITEBYTECODE=1 /private/tmp/skilldiff-venv/bin/python tools/validate_contracts.py --self-test contracts/*.yaml",
     "runtime_profile_validation": "PYTHONDONTWRITEBYTECODE=1 /private/tmp/skilldiff-venv/bin/python tools/validate_runtime_profiles.py --self-test runtimes/profiles/*.yaml"
   }

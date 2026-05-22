@@ -1,0 +1,19 @@
+{
+  "event_count": 248,
+  "event_types": [
+    "canary.observe",
+    "capability.snapshot",
+    "cleanup.observe",
+    "filesystem.read",
+    "filesystem.write",
+    "output.generated",
+    "process.exit",
+    "run.end",
+    "run.start",
+    "shell.exec"
+  ],
+  "run_id": "rp3-0fb2f0af2dd4",
+  "schema_version": "0.1",
+  "trace_path": "/Users/adhi/axonome/trust-the-skill-but-verify/results/raw/rp3-0fb2f0af2dd4/trace.jsonl",
+  "trace_valid": true
+}

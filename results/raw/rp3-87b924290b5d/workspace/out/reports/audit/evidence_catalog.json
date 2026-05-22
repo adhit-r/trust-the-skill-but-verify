@@ -1,0 +1,63 @@
+{
+  "company_profile_present": true,
+  "json_reports": [
+    {
+      "name": "aws_security_config.json",
+      "top_level_type": "dict"
+    },
+    {
+      "name": "aws_security_hub.json",
+      "top_level_type": "dict"
+    },
+    {
+      "name": "bamboohr_employee_directory.json",
+      "top_level_type": "list"
+    },
+    {
+      "name": "jamf_mdm_compliance.json",
+      "top_level_type": "dict"
+    },
+    {
+      "name": "jira_change_tickets.json",
+      "top_level_type": "list"
+    },
+    {
+      "name": "knowbe4_training_report.json",
+      "top_level_type": "dict"
+    },
+    {
+      "name": "okta_mfa_report.json",
+      "top_level_type": "dict"
+    },
+    {
+      "name": "okta_system_log.json",
+      "top_level_type": "dict"
+    }
+  ],
+  "markdown_reports": [
+    {
+      "line_count": 37,
+      "name": "change_management_log.md"
+    },
+    {
+      "line_count": 34,
+      "name": "crowdstrike_endpoint_report.md"
+    },
+    {
+      "line_count": 56,
+      "name": "github_security_report.md"
+    },
+    {
+      "line_count": 39,
+      "name": "vendor_risk_assessment.md"
+    }
+  ],
+  "policy_count": 13,
+  "reference_line_counts": {
+    "crosswalk.md": 86,
+    "iso27001.md": 131,
+    "osa_connector.md": 191,
+    "privacy_guardrails.md": 219
+  },
+  "report_count": 12
+}

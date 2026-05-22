@@ -1,0 +1,69 @@
+{
+  "report_name": "KnowBe4 Security Awareness Training Summary",
+  "organization": "Acme Corp",
+  "period": "Q1 2026 (Jan 1 - Mar 31)",
+  "generated_at": "2026-04-05T14:00:00Z",
+  "training": {
+    "campaign_name": "2026 Annual Security Awareness",
+    "assigned_users": 142,
+    "completed_users": 129,
+    "completion_rate": 0.908,
+    "target_completion_rate": 1.0,
+    "incomplete_users": [
+      {"name": "Jordan Lee", "department": "Sales", "status": "in_progress", "modules_completed": "3/5"},
+      {"name": "Amy Zhang", "department": "Engineering", "status": "not_started", "reason": "on_parental_leave"},
+      {"name": "Carlos Rivera", "department": "Marketing", "status": "in_progress", "modules_completed": "4/5"},
+      {"name": "Rachel Adams", "department": "Engineering", "status": "in_progress", "modules_completed": "2/5"},
+      {"name": "Tom Chen", "department": "Sales", "status": "not_started", "reason": "new_hire_jan_28"},
+      {"name": "Lisa Park", "department": "Customer Success", "status": "in_progress", "modules_completed": "4/5"},
+      {"name": "Nate Williams", "department": "Engineering", "status": "in_progress", "modules_completed": "1/5"},
+      {"name": "Sofia Martinez", "department": "Design", "status": "in_progress", "modules_completed": "3/5"},
+      {"name": "Kevin O'Brien", "department": "Sales", "status": "not_started", "reason": "on_medical_leave"},
+      {"name": "Mei Wong", "department": "Finance", "status": "in_progress", "modules_completed": "4/5"},
+      {"name": "Daniel Foster", "department": "Engineering", "status": "in_progress", "modules_completed": "2/5"},
+      {"name": "Hannah Brooks", "department": "HR", "status": "in_progress", "modules_completed": "3/5"},
+      {"name": "Ryan Taylor", "department": "Engineering", "status": "not_started", "reason": "new_hire_mar_15"}
+    ],
+    "modules": [
+      {"name": "Phishing Identification", "avg_score": 87},
+      {"name": "Password Security & MFA", "avg_score": 92},
+      {"name": "Data Classification & Handling", "avg_score": 84},
+      {"name": "Social Engineering", "avg_score": 79},
+      {"name": "Incident Reporting", "avg_score": 91}
+    ]
+  },
+  "phishing_simulations": {
+    "campaigns_run": 3,
+    "results": [
+      {
+        "campaign": "January Phishing Test",
+        "date": "2026-01-15",
+        "emails_sent": 142,
+        "clicked": 8,
+        "click_rate": 0.056,
+        "reported": 94,
+        "report_rate": 0.662
+      },
+      {
+        "campaign": "February Spear Phishing",
+        "date": "2026-02-12",
+        "emails_sent": 142,
+        "clicked": 4,
+        "click_rate": 0.028,
+        "reported": 102,
+        "report_rate": 0.718
+      },
+      {
+        "campaign": "March Invoice Scam",
+        "date": "2026-03-20",
+        "emails_sent": 142,
+        "clicked": 6,
+        "click_rate": 0.042,
+        "reported": 98,
+        "report_rate": 0.690
+      }
+    ],
+    "industry_average_click_rate": 0.118,
+    "acme_average_click_rate": 0.042
+  }
+}

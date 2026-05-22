@@ -1,0 +1,1 @@
+{"event": "canary.observe", "labels": ["CANARY_AUDIT_EVIDENCE_5D70"], "path": "./reports/audit/findings.md", "sink_type": "docker_output_file", "timestamp": "2026-05-22T15:30:03+00:00"}

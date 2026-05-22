@@ -1,0 +1,14 @@
+{
+  "events": [
+    {
+      "action": "user.session.start",
+      "outcome": "SUCCESS",
+      "mfaUsed": "Okta Verify"
+    },
+    {
+      "action": "user.lifecycle.deactivate",
+      "target": "empId_101",
+      "actor": "BambooHR_SCIM"
+    }
+  ]
+}

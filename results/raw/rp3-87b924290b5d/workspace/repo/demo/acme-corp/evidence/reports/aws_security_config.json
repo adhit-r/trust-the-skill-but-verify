@@ -1,0 +1,83 @@
+{
+  "report_name": "AWS Security Configuration Summary",
+  "account_id": "123456789012",
+  "account_alias": "acmecorp-production",
+  "region": "us-east-1",
+  "generated_at": "2026-04-10T10:00:00Z",
+  "iam": {
+    "root_account_mfa": true,
+    "root_account_access_keys": false,
+    "password_policy": {
+      "minimum_length": 14,
+      "require_uppercase": true,
+      "require_lowercase": true,
+      "require_numbers": true,
+      "require_symbols": true,
+      "max_age_days": 90,
+      "password_reuse_prevention": 12
+    },
+    "total_iam_users": 8,
+    "users_with_mfa": 8,
+    "users_with_console_access": 5,
+    "service_accounts": 12,
+    "access_keys_older_than_90_days": 0
+  },
+  "s3": {
+    "total_buckets": 23,
+    "buckets_with_encryption": 23,
+    "buckets_with_versioning": 18,
+    "buckets_with_logging": 23,
+    "public_buckets": 0,
+    "incident_note": "Staging bucket 'acme-staging-assets' was briefly public on 2026-02-14, remediated in 1.5 hours. No customer data exposed."
+  },
+  "cloudtrail": {
+    "enabled": true,
+    "multi_region": true,
+    "log_file_validation": true,
+    "s3_bucket": "acme-cloudtrail-logs",
+    "cloudwatch_integration": true,
+    "retention_days": 365
+  },
+  "vpc": {
+    "total_vpcs": 3,
+    "vpcs_with_flow_logs": 3,
+    "default_vpc_in_use": false,
+    "security_groups_with_0_0_0_0_ingress": 1,
+    "sg_note": "One SG allows 0.0.0.0/0 on port 443 for public ALB — expected and approved"
+  },
+  "encryption": {
+    "rds_instances_encrypted": 4,
+    "rds_instances_total": 4,
+    "ebs_volumes_encrypted": 47,
+    "ebs_volumes_total": 47,
+    "kms_keys": 8,
+    "kms_key_rotation_enabled": 8
+  },
+  "guardduty": {
+    "enabled": true,
+    "findings_last_30_days": {
+      "high": 0,
+      "medium": 2,
+      "low": 7
+    }
+  },
+  "backup": {
+    "backup_plans": 3,
+    "protected_resources": 28,
+    "successful_backups_last_30_days": 840,
+    "failed_backups_last_30_days": 0,
+    "last_restore_test": "2025-03-15",
+    "restore_test_overdue": true,
+    "restore_test_note": "DR restore test has not been conducted in the last 12 months. Scheduled for 2026-05-01."
+  },
+  "config": {
+    "enabled": true,
+    "rules_configured": 42,
+    "compliant_rules": 40,
+    "non_compliant_rules": 2,
+    "non_compliant_details": [
+      "s3-bucket-versioning-enabled: 5 buckets non-compliant (non-production)",
+      "iam-password-policy: compliant but max_age recently changed"
+    ]
+  }
+}

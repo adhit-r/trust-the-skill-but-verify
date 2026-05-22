@@ -1,0 +1,14 @@
+[
+  {
+    "issueId": "CHG-104",
+    "status": "Done",
+    "approver": "cab-group",
+    "linkedPr": "github.com/acme/core/pull/200"
+  },
+  {
+    "issueId": "CHG-105",
+    "status": "Pending",
+    "approver": null,
+    "linkedPr": "github.com/acme/core/pull/201"
+  }
+]

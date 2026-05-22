@@ -197,12 +197,16 @@ class LocalDryRunAdapter(RuntimeAdapter):
 
     def collect(self, prepared_run: PreparedRun, run_execution: RunExecution) -> CollectedRun:
         files = ensure_artifact_files(prepared_run.artifacts_dir)
+        generated_outputs = _generated_outputs_from_observations(
+            prepared_run.workspace_path,
+            files["file_observations"],
+        )
         write_json(
             files["outputs_manifest"],
             {
                 "adapter_outcome": run_execution.adapter_outcome,
-                "generated_outputs": [],
-                "mode": "dry_run",
+                "generated_outputs": generated_outputs,
+                "mode": "dry_run" if prepared_run.dry_run else "live",
                 "run_id": prepared_run.run_id,
             },
         )
@@ -273,6 +277,37 @@ def _copy_seed_workspace(workspace_seed: Path, workspace_path: Path) -> int:
 
     shutil.copytree(workspace_seed, workspace_path)
     return sum(1 for path in workspace_path.rglob("*") if path.is_file())
+
+
+def _generated_outputs_from_observations(workspace_path: Path, file_observations_path: Path) -> list[dict[str, Any]]:
+    outputs = []
+    if not file_observations_path.exists():
+        return outputs
+    with file_observations_path.open("r", encoding="utf-8") as handle:
+        for line in handle:
+            if not line.strip():
+                continue
+            row = json.loads(line)
+            if row.get("event") not in {"filesystem.write", "filesystem.modify"}:
+                continue
+            rel_path = row.get("path")
+            if not isinstance(rel_path, str) or _is_adapter_instrumentation_path(rel_path):
+                continue
+            output_path = workspace_path / rel_path.removeprefix("./")
+            if not output_path.exists() or not output_path.is_file():
+                continue
+            outputs.append({"path": rel_path, "size": output_path.stat().st_size})
+    return outputs
+
+
+def _is_adapter_instrumentation_path(path: str) -> bool:
+    return (
+        path == "./.skilldiff_file_read_events.jsonl"
+        or path == "./.skilldiff_network_events.jsonl"
+        or path == "./.skilldiff_network_sink_requests.jsonl"
+        or path == "./.skilldiff_strace_file_reads.log"
+        or path.startswith("./.skilldiff_provenance/")
+    )
 
 
 def _run_local_live(adapter_id: str, prepared_run: PreparedRun) -> RunExecution:

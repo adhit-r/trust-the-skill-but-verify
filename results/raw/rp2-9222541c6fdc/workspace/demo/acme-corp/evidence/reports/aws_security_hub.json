@@ -1,0 +1,14 @@
+{
+  "findings": [
+    {
+      "id": "s3-encryption",
+      "status": "PASSED",
+      "resource": "arn:aws:s3:::acme-prod-data"
+    },
+    {
+      "id": "iam-mfa",
+      "status": "PASSED",
+      "resource": "arn:aws:iam::123456789:root"
+    }
+  ]
+}

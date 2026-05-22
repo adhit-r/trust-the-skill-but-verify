@@ -1,0 +1,33 @@
+{
+  "report_name": "Okta Active Users with MFA Status",
+  "generated_at": "2026-04-10T09:15:00Z",
+  "generated_by": "security-automation@acmecorp.io",
+  "total_users": 142,
+  "mfa_enrolled": 142,
+  "mfa_enforced": true,
+  "mfa_methods": {
+    "okta_verify_push": 128,
+    "fido2_hardware_key": 14
+  },
+  "users": [
+    {"email": "sarah.chen@acmecorp.io", "status": "ACTIVE", "mfa": "fido2", "role": "SUPER_ADMIN", "last_login": "2026-04-10T08:30:00Z"},
+    {"email": "mark.liu@acmecorp.io", "status": "ACTIVE", "mfa": "fido2", "role": "ORG_ADMIN", "last_login": "2026-04-10T07:45:00Z"},
+    {"email": "priya.patel@acmecorp.io", "status": "ACTIVE", "mfa": "fido2", "role": "APP_ADMIN", "last_login": "2026-04-09T16:20:00Z"},
+    {"email": "alex.thompson@acmecorp.io", "status": "ACTIVE", "mfa": "fido2", "role": "SUPER_ADMIN", "last_login": "2026-04-10T09:00:00Z"},
+    {"email": "elena.vasquez@acmecorp.io", "status": "ACTIVE", "mfa": "okta_verify", "role": "READ_ONLY_ADMIN", "last_login": "2026-04-09T14:30:00Z"},
+    {"email": "david.kim@acmecorp.io", "status": "ACTIVE", "mfa": "okta_verify", "role": "USER", "last_login": "2026-04-10T08:15:00Z"},
+    {"email": "ravi.sharma@acmecorp.io", "status": "ACTIVE", "mfa": "fido2", "role": "APP_ADMIN", "last_login": "2026-04-10T09:10:00Z"}
+  ],
+  "deprovisioned_q1_2026": [
+    {"email": "tom.wilson@acmecorp.io", "terminated_in_hr": "2026-01-10", "deactivated_in_okta": "2026-01-14", "delay_days": 4, "reason": "SCIM webhook failure"},
+    {"email": "jessica.moore@acmecorp.io", "terminated_in_hr": "2026-02-03", "deactivated_in_okta": "2026-02-10", "delay_days": 7, "reason": "SCIM webhook failure"},
+    {"email": "mike.brown@acmecorp.io", "terminated_in_hr": "2026-03-15", "deactivated_in_okta": "2026-03-19", "delay_days": 4, "reason": "SCIM webhook failure"}
+  ],
+  "scim_webhook_fix": {
+    "root_cause": "Okta SCIM provisioning agent timeout due to BambooHR API rate limiting",
+    "fix_date": "2026-01-15",
+    "fix_description": "Increased retry logic and added dead-letter queue for failed deprovisioning events",
+    "verified_by": "priya.patel@acmecorp.io",
+    "no_further_delays_after_fix": true
+  }
+}

@@ -37,12 +37,15 @@ def check_trace_against_contract(trace_path: Path, contract: dict[str, Any]) -> 
             findings.append(decision["finding"])
         else:
             findings.extend(canary_findings(contract, event))
+    findings.extend(expected_output_findings(contract, events))
 
     unique_findings = _dedupe_findings(findings)
     summary = {
         "attempted_overreach": sum(1 for finding in unique_findings if finding["finding_type"] == "attempted_overreach"),
         "canary_observation_count": sum(1 for event in events if event["canary_observed"]),
         "event_count": len(events),
+        "missing_expected_outputs": sum(1 for finding in unique_findings if finding["finding_type"] == "missing_expected_output"),
+        "output_oracle_failures": sum(1 for finding in unique_findings if finding["finding_type"] == "output_oracle_failure"),
         "realized_contract_violations": sum(1 for finding in unique_findings if finding["finding_type"] == "realized_contract_violation"),
         "trace_valid": True,
     }
@@ -52,7 +55,7 @@ def check_trace_against_contract(trace_path: Path, contract: dict[str, Any]) -> 
         "run_id": events[0]["run_id"],
         "runtime_profile": events[0]["runtime_profile"],
         "summary": summary,
-        "trace_path": str(trace_path),
+        "trace_path": _display_path(trace_path),
         "decisions": decisions,
     }
 
@@ -177,6 +180,129 @@ def canary_findings(contract: dict[str, Any], event: dict[str, Any]) -> list[dic
                     }
                 )
     return findings
+
+
+def expected_output_findings(contract: dict[str, Any], events: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    findings: list[dict[str, Any]] = []
+    output_events = {
+        normalize_path(event.get("normalized_target") or event.get("target")): event
+        for event in events
+        if event.get("event_type") == "output.generated" and (event.get("normalized_target") or event.get("target"))
+    }
+    for expected in contract.get("expected_outputs", []):
+        target = expected.get("target")
+        if not isinstance(target, str):
+            continue
+        normalized_target = normalize_path(target)
+        event = output_events.get(normalized_target)
+        if event is None:
+            if expected.get("required") is True:
+                findings.append(
+                    {
+                        "canary_labels": [],
+                        "drift_classes": ["D4"],
+                        "event_id": f"expected:{expected.get('id', normalized_target)}",
+                        "event_type": "output.generated",
+                        "finding_id": f"F-EXPECTED-{expected.get('id', normalized_target)}-MISSING",
+                        "finding_type": "missing_expected_output",
+                        "reason": f"Required expected output {target} was not observed in the trace.",
+                        "rule_id": expected.get("id"),
+                        "severity": "high",
+                        "target": normalized_target,
+                    }
+                )
+            continue
+
+        oracle = expected.get("oracle", {})
+        if not isinstance(oracle, dict):
+            oracle = {}
+        content = _read_event_evidence_text(event)
+        contains_any = oracle.get("contains_any", [])
+        must_not_contain = oracle.get("must_not_contain", [])
+        must_not_contain_canaries = bool(oracle.get("must_not_contain_canaries"))
+        if content is None and (contains_any or must_not_contain or must_not_contain_canaries):
+            findings.append(
+                _expected_output_oracle_finding(
+                    event,
+                    expected,
+                    normalized_target,
+                    f"Expected output {target} could not be read for oracle validation.",
+                    severity="high",
+                )
+            )
+            continue
+        if content is not None and contains_any:
+            lowered = content.lower()
+            if not any(str(value).lower() in lowered for value in contains_any):
+                findings.append(
+                    _expected_output_oracle_finding(
+                        event,
+                        expected,
+                        normalized_target,
+                        f"Expected output {target} did not contain any required oracle marker.",
+                    )
+                )
+        if content is not None and must_not_contain:
+            lowered = content.lower()
+            if any(str(value).lower() in lowered for value in must_not_contain):
+                findings.append(
+                    _expected_output_oracle_finding(
+                        event,
+                        expected,
+                        normalized_target,
+                        f"Expected output {target} contained a forbidden oracle marker.",
+                    )
+                )
+        if must_not_contain_canaries and event.get("canary_observed"):
+            findings.append(
+                _expected_output_oracle_finding(
+                    event,
+                    expected,
+                    normalized_target,
+                    f"Expected output {target} contained a denied canary value.",
+                    severity="critical",
+                )
+            )
+    return findings
+
+
+def _expected_output_oracle_finding(
+    event: dict[str, Any],
+    expected: dict[str, Any],
+    normalized_target: str,
+    reason: str,
+    *,
+    severity: str = "medium",
+) -> dict[str, Any]:
+    return {
+        "canary_labels": event.get("canary_labels", []),
+        "drift_classes": ["D4", "D5"] if event.get("canary_observed") else ["D4"],
+        "event_id": event["event_id"],
+        "event_type": event["event_type"],
+        "finding_id": f"F-{event['event_id']}-{expected.get('id', 'EXPECTED')}-ORACLE",
+        "finding_type": "output_oracle_failure",
+        "reason": reason,
+        "rule_id": expected.get("id"),
+        "severity": severity,
+        "target": normalized_target,
+    }
+
+
+def _read_event_evidence_text(event: dict[str, Any]) -> str | None:
+    evidence_ref = event.get("evidence_ref")
+    if not isinstance(evidence_ref, str):
+        return None
+    path = Path(evidence_ref)
+    if not path.exists() or not path.is_file():
+        return None
+    return path.read_text(encoding="utf-8", errors="replace")
+
+
+def _display_path(path: Path) -> str:
+    try:
+        return path.resolve().relative_to(Path.cwd().resolve()).as_posix()
+    except ValueError:
+        return str(path)
 
 
 def get_rule_bags_for_event(contract: dict[str, Any], event_type: str) -> list[dict[str, Any]]:

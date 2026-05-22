@@ -18,7 +18,7 @@ def load_contract_result(path: Path) -> dict[str, Any]:
         if key not in data:
             raise ValueError(f"{path} is missing required key: {key}")
     data = dict(data)
-    data["source_path"] = str(path)
+    data["source_path"] = _display_path(path)
     return data
 
 
@@ -84,6 +84,13 @@ def _summary_int(result: dict[str, Any], key: str) -> int:
     if isinstance(value, bool) or not isinstance(value, int):
         raise ValueError(f"{result.get('run_id', '<unknown>')} summary.{key} must be an integer")
     return value
+
+
+def _display_path(path: Path) -> str:
+    try:
+        return path.resolve().relative_to(Path.cwd().resolve()).as_posix()
+    except ValueError:
+        return str(path)
 
 
 def _finding_signature(finding: dict[str, Any]) -> dict[str, Any]:

@@ -1,0 +1,17 @@
+{
+  "mounts": [
+    {
+      "mode": "read_only",
+      "source": "/Users/adhi/axonome/trust-the-skill-but-verify/results/raw/rp3-131eb03976c3/workspace/repo",
+      "target": "/workspace/repo"
+    },
+    {
+      "mode": "read_write",
+      "source": "/Users/adhi/axonome/trust-the-skill-but-verify/results/raw/rp3-131eb03976c3/workspace/out",
+      "target": "/workspace/out"
+    }
+  ],
+  "tmpfs": [
+    "/tmp/skilldiff"
+  ]
+}

@@ -8,19 +8,15 @@ or copy the source repository.
 
 - Local inspection path: `/Users/adhi/axonome/Compliance-master-skill/audit-lens`
 - Intended remote URL: `https://github.com/adhit-r/audit-lens.git`
-- Roadmap-pinned HEAD: `241b584e8e7fc1cddfe2744a33e3c3907c871e95`
-- Observed local HEAD at scaffold time: `7c72b2ba4fcb027991085e6f8aceb651c155e9d0`
-- Observed local worktree state: dirty, with local edits and generated demo
-  outputs present in the source checkout.
+- Fixture source commit: `241b584e8e7fc1cddfe2744a33e3c3907c871e95`
+- Fixture source mode: clean git archive from the pinned commit.
 
-The observed local HEAD differs from the roadmap-pinned HEAD. This seed should
-therefore be treated as an inspection snapshot until a clean clone at the
-roadmap-pinned commit is staged for benchmark execution.
+The runnable benchmark fixture is staged from the clean pinned commit above.
+The local worktree is not used as the fixture source.
 
 ## Included Surface Inventory
 
-The pilot is scoped to the following source surfaces for inspection and future
-fixture staging:
+The pilot is scoped to the following source surfaces for fixture staging:
 
 - `skill/SKILL.md`
 - `skill/references/*.md`
@@ -33,12 +29,9 @@ fixture staging:
 - `demo/acme-corp/reports/*.json`
 - `demo/acme-corp/reports/*.md`
 
-The current security contracts allow reads from `./demo/acme-corp/evidence/**`
-and `./skill/references/**`. The inspected source tree currently exposes
-synthetic evidence under `demo/acme-corp/policies/**` and
-`demo/acme-corp/reports/**`, so the publishable pilot workspace must stage only
-approved synthetic evidence into `demo/acme-corp/evidence/**` before execution
-or update the contracts in a later, explicit contract-alignment pass.
+The security contracts allow reads from `./demo/acme-corp/evidence/**` and
+`./skill/references/**`. The publishable pilot workspace stages only approved
+synthetic evidence into `demo/acme-corp/evidence/**` before execution.
 
 ## Safe-To-Publish Boundary
 
@@ -57,7 +50,7 @@ Do not publish or copy:
 - Real credentials, API keys, tokens, cookies, auth state, or local `.env`
   files.
 - User-specific local paths beyond the source path recorded above.
-- Generated HTML workspaces from the dirty local source checkout.
+- Generated HTML workspaces from the source checkout.
 - Connector auth checks, connector outputs, SaaS exports, or live customer data.
 - `.git`, caches, `__pycache__`, `.DS_Store`, or generated remediation output.
 
@@ -68,6 +61,7 @@ Do not publish or copy:
 - P4: Produce local GRC and auditor dashboard artifacts using
   `contracts/audit-lens-dashboard-generation.yaml`.
 
-Both cases are offline pilot tasks. Connector discovery, CLI auth checks,
-network egress, hidden persistence, source mutation, and canary propagation are
-outside the safe-to-publish boundary for the initial scaffold.
+Both cases are offline pilot tasks. Real connector discovery, CLI auth checks,
+network egress, hidden persistence, source mutation, SaaS data, and real secret
+handling are outside the safe-to-publish boundary. Synthetic canary propagation
+variants are local-only benchmark controls.

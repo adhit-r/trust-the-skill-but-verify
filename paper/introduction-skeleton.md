@@ -28,7 +28,7 @@ Core claim:
 
 ## Motivating Example
 
-Use the repo-audit MVP as the first-page example.
+Use the repo-audit baseline case as the first-page example.
 
 Setup:
 
@@ -95,20 +95,25 @@ Operational version:
    commands, sinks, expected outputs, and approval requirements.
 4. Controlled benchmark methodology with benign tasks, adversarial variants,
    synthetic canaries, expected outputs, and safe publication boundaries.
-5. MVP evidence over four case families showing five runtime-drift claims
-   across RP2 and RP3, with explicit provenance and measurement limits.
+5. Current baseline evidence over four case families showing five
+   runtime-drift claims across RP2 and RP3, with explicit provenance and
+   measurement limits, plus a full-paper target of at least 40 skills and 120
+   skill-task-contract runs before repeats.
 
-## Pilot Results Paragraph
+## Current Results Paragraph
 
-The current MVP evaluates four controlled case families: repo-audit,
+The current baseline evaluates four controlled case families: repo-audit,
 network-egress, AuditLens P3/P4, and docs-forge P1/P2. Across these cases,
 tracked manifests record five runtime-drift claims and twenty-four pairwise
 disagreements under RP2 and RP3. The evidence includes RP2 canary movement into
 generated reports or dashboards, RP3 blocked attempts, missing outputs,
 read-only source-mount failures, and controlled fake-sink network evidence.
-These results are not prevalence claims; the controlled MVP traces demonstrate
-measurable runtime-conditioned differences and show that differential traces
-can separate realized violations from blocked overreach and utility failures.
+These results are not prevalence claims; the controlled baseline traces
+demonstrate measurable runtime-conditioned differences and show that
+differential traces can separate realized violations from blocked overreach and
+utility failures. The full paper must scale this into a top-tier evaluation
+with broader runtime coverage, repeats, adjudication, uncertainty estimates,
+and mitigation report cards.
 
 ## Scope And Nonclaims
 
@@ -125,7 +130,7 @@ This paper does not claim:
 Use the current paper line:
 
 > We measure runtime security conformance for portable skills. We do not infer
-> global ecosystem prevalence from the MVP.
+> global ecosystem prevalence from the current baseline evidence.
 
 ## Section Flow
 

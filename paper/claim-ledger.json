@@ -2,12 +2,12 @@
   "schema_version": "0.1",
   "ledger_id": "paper-claim-ledger",
   "title": "Paper Claim Ledger",
-  "source_boundary": "Claims are supported only by tracked manifests, result artifacts, and paper notes in this repository. MVP claims are feasibility and method claims, not prevalence claims.",
+  "source_boundary": "Claims are supported only by tracked manifests, result artifacts, and paper notes in this repository. Current baseline claims are feasibility and method claims, not prevalence claims.",
   "claims": [
     {
       "claim_id": "CL-MVP-001",
       "status": "supported",
-      "claim": "The current MVP evaluates four controlled case families.",
+      "claim": "The current baseline evaluates four controlled case families.",
       "paper_locations": [
         "paper/introduction-skeleton.md",
         "paper/case-studies.md",
@@ -25,7 +25,7 @@
     {
       "claim_id": "CL-MVP-002",
       "status": "supported",
-      "claim": "The paper-facing MVP has twenty-four canonical trace files.",
+      "claim": "The paper-facing baseline has twenty-four canonical trace files.",
       "paper_locations": [
         "paper/experiment-protocol.md",
         "paper/tables/mvp-results.md"
@@ -68,7 +68,7 @@
     {
       "claim_id": "CL-MVP-004",
       "status": "supported",
-      "claim": "Tracked MVP manifests record five runtime-drift claims across RP2 and RP3.",
+      "claim": "Tracked baseline manifests record five runtime-drift claims across RP2 and RP3.",
       "paper_locations": [
         "paper/introduction-skeleton.md",
         "paper/case-studies.md",
@@ -99,7 +99,7 @@
     {
       "claim_id": "CL-MVP-005",
       "status": "supported",
-      "claim": "Tracked MVP manifests record twenty-four pairwise disagreements across RP2 and RP3.",
+      "claim": "Tracked baseline manifests record twenty-four pairwise disagreements across RP2 and RP3.",
       "paper_locations": [
         "paper/introduction-skeleton.md",
         "paper/case-studies.md",
@@ -129,7 +129,7 @@
     {
       "claim_id": "CL-MVP-006",
       "status": "supported",
-      "claim": "Current executable MVP comparisons are limited to RP2 and RP3.",
+      "claim": "Current executable baseline comparisons are limited to RP2 and RP3.",
       "paper_locations": [
         "paper/experiment-protocol.md",
         "paper/tables/mvp-results.md"
@@ -155,7 +155,7 @@
     {
       "claim_id": "CL-MVP-009",
       "status": "supported",
-      "claim": "The current MVP result package has twelve RP2/RP3 comparison JSON files and twenty-four contract-finding JSON files.",
+      "claim": "The current baseline result package has twelve RP2/RP3 comparison JSON files and twenty-four contract-finding JSON files.",
       "paper_locations": [
         "paper/claim-ledger.md"
       ],
@@ -192,7 +192,7 @@
     {
       "claim_id": "CL-MVP-011",
       "status": "supported",
-      "claim": "First-party MVP source manifests publish verifier-required pinned source hash lists for docs-forge and AuditLens.",
+      "claim": "First-party baseline source manifests publish verifier-required pinned source hash lists for docs-forge and AuditLens.",
       "paper_locations": [
         "paper/claim-ledger.md",
         "paper/artifact-readme.md",
@@ -226,9 +226,40 @@
       ]
     },
     {
+      "claim_id": "CL-P1-001",
+      "status": "paper_spine",
+      "claim": "The paper spine freezes the top-tier full-paper thesis, research questions, threat model, reviewer-risk table, and venue backplan.",
+      "paper_locations": [
+        "paper/paper-spine.md",
+        "REFINED_RESEARCH_TODO.md"
+      ],
+      "evidence": [
+        {
+          "type": "file_contains",
+          "path": "paper/paper-spine.md",
+          "contains": "Primary RQ: RQ1 is the paper's main measurement question."
+        },
+        {
+          "type": "file_contains",
+          "path": "paper/paper-spine.md",
+          "contains": "## Threat Model"
+        },
+        {
+          "type": "file_contains",
+          "path": "paper/paper-spine.md",
+          "contains": "## Reviewer-Risk Table"
+        },
+        {
+          "type": "file_contains",
+          "path": "paper/paper-spine.md",
+          "contains": "USENIX Security 2027 Cycle 2 deadline, January 26, 2027"
+        }
+      ]
+    },
+    {
       "claim_id": "CL-MVP-007",
       "status": "supported",
-      "claim": "The MVP includes two first-party seed case families: AuditLens and docs-forge.",
+      "claim": "The current baseline includes two first-party seed case families: AuditLens and docs-forge.",
       "paper_locations": [
         "paper/tables/mvp-results.md",
         "paper/case-studies.md"
@@ -251,7 +282,7 @@
     {
       "claim_id": "CL-MVP-008",
       "status": "supported",
-      "claim": "The MVP includes two controlled synthetic case families: repo-audit and network-egress.",
+      "claim": "The current baseline includes two controlled synthetic case families: repo-audit and network-egress.",
       "paper_locations": [
         "paper/tables/mvp-results.md",
         "paper/case-studies.md"
@@ -351,7 +382,7 @@
     {
       "claim_id": "CL-CASE-003",
       "status": "supported",
-      "claim": "AuditLens contributes one runtime-drift claim and seven pairwise disagreements in the MVP baseline.",
+      "claim": "AuditLens contributes one runtime-drift claim and seven pairwise disagreements in the current baseline.",
       "paper_locations": [
         "paper/case-studies.md",
         "paper/tables/mvp-results.md"
@@ -374,7 +405,7 @@
     {
       "claim_id": "CL-CASE-004",
       "status": "supported",
-      "claim": "docs-forge contributes two runtime-drift claims and eight pairwise disagreements in the MVP baseline, including normalized RP3 attempted overreach for P2 source mutation.",
+      "claim": "docs-forge contributes two runtime-drift claims and eight pairwise disagreements in the current baseline, including normalized RP3 attempted overreach for P2 source mutation.",
       "paper_locations": [
         "paper/case-studies.md",
         "paper/tables/mvp-results.md"
@@ -403,7 +434,7 @@
     {
       "claim_id": "CL-BOUNDARY-001",
       "status": "supported_boundary",
-      "claim": "MVP results are not ecosystem prevalence claims.",
+      "claim": "Current baseline evidence is not ecosystem prevalence evidence.",
       "paper_locations": [
         "paper/introduction-skeleton.md",
         "paper/experiment-protocol.md",
@@ -418,7 +449,7 @@
         {
           "type": "file_contains",
           "path": "paper/experiment-protocol.md",
-          "contains": "Do not make prevalence claims from the MVP."
+          "contains": "Do not make prevalence claims from the current baseline evidence."
         }
       ]
     },
@@ -455,7 +486,7 @@
     {
       "claim_id": "CL-TARGET-001",
       "status": "design_target",
-      "claim": "The short-paper target is at least 10 skills and 30 skill-task-contract triples; the full-paper minimum is at least 40 skills and 120 skill-task-contract runs.",
+      "claim": "The full-paper evidence floor is at least 40 skills and 120 skill-task-contract runs before repeats.",
       "paper_locations": [
         "paper/experiment-protocol.md"
       ],
@@ -463,12 +494,12 @@
         {
           "type": "file_contains",
           "path": "paper/experiment-protocol.md",
-          "contains": "Short-paper target | At least 10 skills, 30 skill-task-contract triples"
+          "contains": "Full-paper evidence floor | At least 40 skills and 120 skill-task-contract runs before repeats"
         },
         {
           "type": "file_contains",
           "path": "paper/experiment-protocol.md",
-          "contains": "Full-paper minimum | At least 40 skills and 120 skill-task-contract runs"
+          "contains": "Full benchmark stretch | 60 base skills, 60 adversarial variants"
         }
       ]
     },
@@ -495,7 +526,7 @@
     {
       "claim_id": "CL-RQ-001",
       "status": "supported_boundary",
-      "claim": "Current MVP evidence directly supports RQ1 and RQ4 for RP2/RP3, partially supports RQ2 for filesystem and network policy, and does not yet answer RQ3, RQ5, or RQ6.",
+      "claim": "Current baseline evidence directly supports RQ1 and RQ4 for RP2/RP3, partially supports RQ2 for filesystem and network policy, and does not yet answer RQ3, RQ5, or RQ6.",
       "paper_locations": [
         "paper/experiment-protocol.md"
       ],
@@ -503,19 +534,24 @@
         {
           "type": "file_contains",
           "path": "paper/experiment-protocol.md",
-          "contains": "Current MVP evidence directly supports RQ1 and RQ4 for RP2/RP3, partially"
+          "contains": "Current baseline evidence directly supports RQ1 and RQ4 for RP2/RP3,"
         },
         {
           "type": "file_contains",
           "path": "paper/experiment-protocol.md",
-          "contains": "supports RQ2 for filesystem and network policy, and does not yet answer RQ3,"
+          "contains": "partially supports RQ2 for filesystem and network policy, and does not yet"
+        },
+        {
+          "type": "file_contains",
+          "path": "paper/experiment-protocol.md",
+          "contains": "answer RQ3, RQ5, or RQ6."
         }
       ]
     },
     {
       "claim_id": "CL-BOUNDARY-002",
       "status": "supported_boundary",
-      "claim": "The MVP does not claim full docs-forge Node installer execution or full AuditLens product/live connector execution.",
+      "claim": "The current baseline does not claim full docs-forge Node installer execution or full AuditLens product/live connector execution.",
       "paper_locations": [
         "paper/case-studies.md",
         "paper/method-boundaries.md"
@@ -536,7 +572,7 @@
     {
       "claim_id": "CL-BOUNDARY-003",
       "status": "supported_boundary",
-      "claim": "The MVP does not claim public-internet testing, packet capture, DNS tracing, or syscall-complete host tracing.",
+      "claim": "The current baseline does not claim public-internet testing, packet capture, DNS tracing, or syscall-complete host tracing.",
       "paper_locations": [
         "paper/case-studies.md",
         "paper/method-boundaries.md",

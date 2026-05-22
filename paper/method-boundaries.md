@@ -1,7 +1,7 @@
 # Method Boundaries
 
 This file records reviewer-safe wording for the current method and artifact
-state. Use it before turning the MVP artifacts into paper prose.
+state. Use it before turning the current evidence artifacts into paper prose.
 
 ## What Current Evidence Supports
 
@@ -53,9 +53,9 @@ real secrets are outside the safe artifact boundary.
 ## Approval, Tool, and Persistence Gaps
 
 Approval prompts, MCP tool calls, connector auth checks, and hidden persistence
-are part of the broader roadmap but are not completed by the current MVP. The
-paper can name them as future measurement axes or planned benchmark categories,
-but current results should not count them as evaluated.
+are part of the broader roadmap but are not completed by the current baseline
+evidence. The paper can name them as future measurement axes or planned
+benchmark categories, but current results should not count them as evaluated.
 
 ## Reviewer-Safe Claim
 
@@ -64,9 +64,10 @@ given a skill, task, contract, fixed task prompt, fixed workspace snapshot,
 variant, repeat ID, and runtime profile, the framework executes controlled
 benign and adversarial variants, records normalized traces, and compares
 whether violations are realized, blocked, or converted into missing outputs
-across runtimes. In the current MVP, four controlled case families produce five
-runtime-drift claims across RP2 and RP3, while preserving explicit boundaries
-around provenance, network evidence, product execution, and safe publication.
+across runtimes. In the current baseline evidence, four controlled case
+families produce five runtime-drift claims across RP2 and RP3, while preserving
+explicit boundaries around provenance, network evidence, product execution, and
+safe publication.
 
 ## Reviewer-Risky Wording To Avoid
 
@@ -76,4 +77,4 @@ around provenance, network evidence, product execution, and safe publication.
 - "Network exfiltration was observed on the internet."
 - "docs-forge was fully executed."
 - "AuditLens connector behavior was evaluated."
-- "Approval drift is measured in the current MVP."
+- "Approval drift is measured in the current baseline evidence."

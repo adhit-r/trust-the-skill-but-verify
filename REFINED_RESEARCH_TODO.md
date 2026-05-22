@@ -56,25 +56,29 @@ evidence strength or be removed.
 
 ## P1: Claim Contract And Paper Spine
 
-1. [ ] Freeze final research questions.
-   Done when one primary RQ is runtime conformance drift and all secondary RQs
-   map to measurable artifacts.
-2. [ ] Write a threat model section.
-   Done when attacker capabilities, benign skill assumptions, adversarial skill
-   assumptions, host trust, and non-goals are explicit.
-3. [ ] Update related work with May 2026 skill-security papers.
-   Done when the paper differentiates against Agent Skills in the Wild,
-   SkillScope, Under the Hood of SKILL.md, SkCC, SkillSafetyBench, and relevant
-   MCP/tool-security work.
-4. [ ] Rewrite the introduction around "runtime as the security variable."
-   Done when the first page makes the differential testing contribution clear
-   before discussing individual case studies.
-5. [ ] Add a reviewer-risk table to the paper notes.
-   Done when each likely objection has a planned evidence answer or limitation.
-6. [ ] Select the top-tier full-paper target and deadline plan.
-   Done when the target is chosen from NDSS, USENIX Security, IEEE S&P, or ACM
-   CCS, and the page budget, artifact expectations, evidence gates, anonymity
-   requirements, and deadline backplan are written down.
+1. [x] Freeze final research questions.
+   Done: `paper/paper-spine.md` freezes RQ1 as the primary runtime
+   conformance-drift question and maps RQ2-RQ6 to measurable artifacts and
+   full-paper gates.
+2. [x] Write a threat model section.
+   Done: `paper/paper-spine.md` records assets, trusted components, runtime
+   under test, benign and adversarial skill assumptions, attacker capabilities,
+   non-goals, and safe-release boundaries.
+3. [x] Update related work with May 2026 skill-security papers.
+   Done: `paper/paper-spine.md` and `RELATED_WORK.md` differentiate against
+   skill-scanning, malicious-skill, SkillScope, SKILL.md governance, SkCC,
+   MCP/tool-security, and prompt-injection benchmark work.
+4. [x] Rewrite the introduction around "runtime as the security variable."
+   Done: `paper/introduction-skeleton.md` now frames the opening claim around
+   fixed skill/task/contract evidence and runtime-conditioned outcomes.
+5. [x] Add a reviewer-risk table to the paper notes.
+   Done: `paper/paper-spine.md` includes a reviewer-risk table with evidence
+   answers or required work for each likely top-tier objection.
+6. [x] Select the top-tier full-paper target and deadline plan.
+   Done: `paper/paper-spine.md` records NDSS 2027 Fall as the aggressive
+   target, IEEE S&P 2027 second cycle as a strong target, USENIX Security 2027
+   Cycle 2 as the primary realistic target, and ACM CCS next full cycle as a
+   backup top-tier target.
 
 ## P2: Instrumentation Coverage Expansion
 
@@ -227,17 +231,14 @@ evidence strength or be removed.
 
 ## Immediate Next Step
 
-P0 is now implementation-complete for the current evidence gate. The next
-concrete implementation sequence is:
+P0 and P1 are now implementation-complete for the current evidence and paper
+spine gates. The next concrete implementation sequence is:
 
-1. Freeze the P1 paper spine: RQs, threat model, contribution list,
-   reviewer-risk table, related-work differentiation, and top-tier venue
-   backplan.
-2. Close P2/P3 coverage gaps for activation, approval, tool/MCP, persistence,
+1. Close P2/P3 coverage gaps for activation, approval, tool/MCP, persistence,
    and at least four runtime profiles.
-3. Scale P4 to 40+ skills and 120+ skill-task-contract runs before repeats.
-4. Complete P5/P6 rigor: repeats, uncertainty, utility, adjudication,
+2. Scale P4 to 40+ skills and 120+ skill-task-contract runs before repeats.
+3. Complete P5/P6 rigor: repeats, uncertainty, utility, adjudication,
    reviewer agreement, and mitigation/report-card baselines.
-5. Complete P7 artifact and manuscript packaging for anonymous top-tier review.
+4. Complete P7 artifact and manuscript packaging for anonymous top-tier review.
 
 There is no short-paper fallback in this roadmap.

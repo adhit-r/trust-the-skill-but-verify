@@ -382,28 +382,28 @@ Goal: make claims measurable and defensible.
 
 Tasks:
 
-- [ ] [RM-11] Write experiment protocol.
-- [ ] [RM-11] Define sample size target for MVP.
-- [ ] [RM-11] Define sample size target for full paper.
-- [ ] [RM-11] Decide number of repeated runs per skill-task-profile.
-- [ ] [RM-11] Decide how to handle nondeterministic agent outputs.
-- [ ] [RM-11] Define manual review procedure.
-- [ ] [RM-11] Define blinded review procedure if using human judgment.
-- [ ] [RM-11] Define inter-rater agreement plan if using humans.
-- [ ] [RM-11] Define confidence intervals or bootstrap method for drift rates.
-- [ ] [RM-11] Define ablations by runtime feature.
-- [ ] [RM-11] Define ablations by skill category.
-- [ ] [RM-11] Define ablations by attack family.
-- [ ] [RM-11] Define error taxonomy.
+- [x] [RM-11] Write experiment protocol in `paper/experiment-protocol.md`.
+- [x] [RM-11] Define sample size target for MVP.
+- [x] [RM-11] Define sample size target for full paper.
+- [x] [RM-11] Decide number of repeated runs per skill-task-profile.
+- [x] [RM-11] Decide how to handle nondeterministic agent outputs.
+- [x] [RM-11] Define manual review procedure.
+- [x] [RM-11] Define blinded review procedure if using human judgment.
+- [x] [RM-11] Define inter-rater agreement plan if using humans.
+- [x] [RM-11] Define confidence intervals or bootstrap method for drift rates.
+- [x] [RM-11] Define ablations by runtime feature.
+- [x] [RM-11] Define ablations by skill category.
+- [x] [RM-11] Define ablations by attack family.
+- [x] [RM-11] Define error taxonomy.
 - [ ] [RM-11] Create results notebook or script.
 - [ ] [RM-11] Create figure generation scripts.
-- [ ] [RM-11] Create reproducibility checklist.
+- [x] [RM-11] Create reproducibility checklist in `paper/experiment-protocol.md`.
 
 Acceptance checks:
 
-- [ ] [RM-11] Each research question maps to at least one table or figure.
-- [ ] [RM-11] Results distinguish measurement artifacts from true drift.
-- [ ] [RM-11] The evaluation can be rerun from a clean checkout.
+- [x] [RM-11] Each research question maps to at least one table or figure.
+- [x] [RM-11] Results distinguish measurement artifacts from true drift.
+- [~] [RM-11] The evaluation can be rerun from a clean checkout; protocol and artifact README define the path, full release automation remains pending.
 
 ## RM-12: Paper, Artifact, and Release Plan
 
@@ -426,7 +426,7 @@ Tasks:
 - [ ] [RM-12] Create `paper/ethics.tex`.
 - [ ] [RM-12] Create `paper/conclusion.tex`.
 - [ ] [RM-12] Create `paper/refs.bib`.
-- [ ] [RM-12] Write introduction around the motivating example.
+- [x] [RM-12] Write introduction around the motivating example in `paper/introduction-skeleton.md`.
 - [ ] [RM-12] Write the related-work differentiation before the full system section.
 - [ ] [RM-12] Add figure F1 motivating example.
 - [ ] [RM-12] Add figure F2 architecture.
@@ -444,7 +444,7 @@ Tasks:
 
 Acceptance checks:
 
-- [ ] [RM-12] Paper tells one coherent story: portable skill, different runtime, different security outcome.
+- [~] [RM-12] Paper tells one coherent story: portable skill, different runtime, different security outcome; skeleton exists, full TeX draft remains pending.
 - [ ] [RM-12] Artifact runs the MVP end to end.
 - [~] [RM-12] Public release excludes real secrets and harmful payloads; local paths are now scrubbed from tracked artifacts, with final license/security metadata still pending.
 
@@ -555,13 +555,13 @@ MVP done when:
 ## Writing Checklist
 
 - [ ] [RM-12] Keep the abstract focused on differential testing.
-- [ ] [RM-12] Use the motivating example in the first two pages.
+- [x] [RM-12] Use the motivating example in the first two pages.
 - [ ] [RM-12] Put the drift taxonomy before system details.
 - [ ] [RM-12] Put related-work differentiation early enough that reviewers see the novelty.
-- [ ] [RM-12] Avoid overclaiming real-world prevalence if the benchmark is synthetic.
-- [ ] [RM-12] Avoid saying all skills are dangerous.
-- [ ] [RM-12] Avoid saying approval prompts solve the problem.
-- [ ] [RM-12] Avoid making the policy compiler sound like the main invention.
+- [x] [RM-12] Avoid overclaiming real-world prevalence if the benchmark is synthetic.
+- [x] [RM-12] Avoid saying all skills are dangerous.
+- [x] [RM-12] Avoid saying approval prompts solve the problem.
+- [x] [RM-12] Avoid making the policy compiler sound like the main invention.
 - [x] [RM-12] Include limitations honestly in `paper/method-boundaries.md`.
 - [~] [RM-12] Include ethics and safe-release details; artifact safety notes exist, full ethics section still pending.
 
@@ -603,8 +603,8 @@ Week 4:
 
 - [ ] [RM-08] Expand benchmark to 10 skills.
 - [ ] [RM-10] Add one mitigation baseline.
-- [ ] [RM-11] Write initial experiment protocol.
-- [ ] [RM-12] Draft introduction and motivating example.
+- [x] [RM-11] Write initial experiment protocol.
+- [x] [RM-12] Draft introduction and motivating example.
 
 Week 5 to 8:
 

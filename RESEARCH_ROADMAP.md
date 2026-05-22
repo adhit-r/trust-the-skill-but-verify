@@ -600,7 +600,7 @@ Make the evaluation credible for a security venue.
 
 Outputs:
 
-- Experiment protocol.
+- Experiment protocol: `paper/experiment-protocol.md`.
 - Primary and secondary metrics.
 - Ablations.
 - Error analysis.
@@ -611,6 +611,18 @@ Acceptance criteria:
 
 - Results answer RQ1 to RQ6.
 - Claims are backed by measurements, not anecdotes.
+
+Current protocol status:
+
+- Current MVP is treated as feasibility and motivating evidence, not prevalence
+  evidence.
+- The full-paper minimum is at least 40 skills and 120 skill-task-contract
+  runs, with the roadmap target remaining 60 base skills, 60 adversarial
+  variants, 3-5 tasks per skill, and 3-6 runtime profiles.
+- Deterministic full-paper fixtures should run at least three repeats per
+  skill-task-profile; nondeterministic model-mediated runs should run at least
+  five repeats.
+- The protocol maps each RQ to a primary measurement and figure/table target.
 
 ### RM-12: Paper, Artifact, and Release Plan
 

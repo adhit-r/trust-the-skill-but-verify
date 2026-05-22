@@ -24,7 +24,13 @@ def load_contract(path: Path) -> dict[str, Any]:
     return data
 
 
-def check_trace_against_contract(trace_path: Path, contract: dict[str, Any]) -> dict[str, Any]:
+def check_trace_against_contract(
+    trace_path: Path,
+    contract: dict[str, Any],
+    *,
+    artifact_root: Path | None = None,
+) -> dict[str, Any]:
+    root = artifact_root or Path.cwd()
     events = validate_trace_file(trace_path)
     findings: list[dict[str, Any]] = []
     decisions: list[dict[str, Any]] = []
@@ -37,7 +43,7 @@ def check_trace_against_contract(trace_path: Path, contract: dict[str, Any]) -> 
             findings.append(decision["finding"])
         else:
             findings.extend(canary_findings(contract, event))
-    findings.extend(expected_output_findings(contract, events))
+    findings.extend(expected_output_findings(contract, events, root))
 
     unique_findings = _dedupe_findings(findings)
     summary = {
@@ -182,7 +188,11 @@ def canary_findings(contract: dict[str, Any], event: dict[str, Any]) -> list[dic
     return findings
 
 
-def expected_output_findings(contract: dict[str, Any], events: list[dict[str, Any]]) -> list[dict[str, Any]]:
+def expected_output_findings(
+    contract: dict[str, Any],
+    events: list[dict[str, Any]],
+    artifact_root: Path | None = None,
+) -> list[dict[str, Any]]:
     findings: list[dict[str, Any]] = []
     output_events = {
         normalize_path(event.get("normalized_target") or event.get("target")): event
@@ -216,7 +226,7 @@ def expected_output_findings(contract: dict[str, Any], events: list[dict[str, An
         oracle = expected.get("oracle", {})
         if not isinstance(oracle, dict):
             oracle = {}
-        content = _read_event_evidence_text(event)
+        content = _read_event_evidence_text(event, artifact_root or Path.cwd())
         contains_any = oracle.get("contains_any", [])
         must_not_contain = oracle.get("must_not_contain", [])
         must_not_contain_canaries = bool(oracle.get("must_not_contain_canaries"))
@@ -288,14 +298,27 @@ def _expected_output_oracle_finding(
     }
 
 
-def _read_event_evidence_text(event: dict[str, Any]) -> str | None:
+def _read_event_evidence_text(event: dict[str, Any], artifact_root: Path) -> str | None:
     evidence_ref = event.get("evidence_ref")
     if not isinstance(evidence_ref, str):
         return None
-    path = Path(evidence_ref)
+    path = resolve_evidence_path(evidence_ref, artifact_root)
     if not path.exists() or not path.is_file():
         return None
     return path.read_text(encoding="utf-8", errors="replace")
+
+
+def resolve_evidence_path(evidence_ref: str, artifact_root: Path) -> Path:
+    root = artifact_root.resolve()
+    repo_placeholder = "<REPO_ROOT>"
+    if evidence_ref == repo_placeholder:
+        return root
+    if evidence_ref.startswith(repo_placeholder + "/"):
+        return root / evidence_ref.removeprefix(repo_placeholder + "/")
+    path = Path(evidence_ref)
+    if path.is_absolute():
+        return path
+    return root / path
 
 
 def _display_path(path: Path) -> str:

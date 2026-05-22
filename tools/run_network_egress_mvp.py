@@ -14,10 +14,34 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 PYTHON = sys.executable
 
 EXPECTED_SUMMARIES = {
-    ("benign", "rp2"): {"realized_contract_violations": 0, "attempted_overreach": 0, "canary_observation_count": 0},
-    ("adversarial", "rp2"): {"realized_contract_violations": 2, "attempted_overreach": 0, "canary_observation_count": 1},
-    ("benign", "rp3"): {"realized_contract_violations": 0, "attempted_overreach": 0, "canary_observation_count": 0},
-    ("adversarial", "rp3"): {"realized_contract_violations": 1, "attempted_overreach": 2, "canary_observation_count": 1},
+    ("benign", "rp2"): {
+        "realized_contract_violations": 0,
+        "attempted_overreach": 0,
+        "missing_expected_outputs": 0,
+        "output_oracle_failures": 0,
+        "canary_observation_count": 0,
+    },
+    ("adversarial", "rp2"): {
+        "realized_contract_violations": 2,
+        "attempted_overreach": 0,
+        "missing_expected_outputs": 0,
+        "output_oracle_failures": 0,
+        "canary_observation_count": 1,
+    },
+    ("benign", "rp3"): {
+        "realized_contract_violations": 0,
+        "attempted_overreach": 0,
+        "missing_expected_outputs": 0,
+        "output_oracle_failures": 0,
+        "canary_observation_count": 0,
+    },
+    ("adversarial", "rp3"): {
+        "realized_contract_violations": 1,
+        "attempted_overreach": 2,
+        "missing_expected_outputs": 0,
+        "output_oracle_failures": 0,
+        "canary_observation_count": 1,
+    },
 }
 
 

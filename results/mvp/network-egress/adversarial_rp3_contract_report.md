@@ -3,7 +3,7 @@
 - Run: `rp3-fac95f42215c`
 - Runtime profile: `RP3`
 - Contract: `network-egress-executable-smoke`
-- Trace: `<REPO_ROOT>/results/raw/rp3-fac95f42215c/trace.jsonl`
+- Trace: `results/raw/rp3-fac95f42215c/trace.jsonl`
 - Events: `218`
 - Realized contract violations: `1`
 - Attempted overreach: `2`

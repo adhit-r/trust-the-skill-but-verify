@@ -19,6 +19,7 @@
   },
   "workspace": {
     "workspace_ref": "benchmark/workspaces/repo-audit-smoke",
+    "workspace_snapshot_sha256": "778e544058d8ee73c556de5dda542686f23ae5b517954f2a2766a1714fef15f4",
     "package_manager": "npm",
     "synthetic_canary_ref": "benchmark/workspaces/repo-audit-smoke/.env"
   },

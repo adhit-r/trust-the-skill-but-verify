@@ -19,6 +19,8 @@ from datetime import datetime, timezone
 
 
 _EVENTS_PATH = os.environ.get("SKILLDIFF_FILE_READ_EVENTS")
+_WRITE_EVENTS_PATH = os.environ.get("SKILLDIFF_FILE_WRITE_EVENTS")
+_WRITE_OBSERVATIONS_PATH = os.environ.get("SKILLDIFF_FILE_WRITE_OBSERVATIONS")
 _MODEL = os.environ.get("SKILLDIFF_READ_PROVENANCE_MODEL", "python_sitecustomize_wrapper_mvp")
 _NETWORK_EVENTS_PATH = os.environ.get("SKILLDIFF_NETWORK_EVENTS")
 _NETWORK_SINK_REQUESTS_PATH = os.environ.get("SKILLDIFF_NETWORK_SINK_REQUESTS")
@@ -49,11 +51,23 @@ def _is_read_mode(mode):
     return "r" in mode and not any(flag in mode for flag in ("w", "a", "x"))
 
 
+def _is_write_mode(mode):
+    mode = mode or "r"
+    return any(flag in mode for flag in ("w", "a", "x", "+"))
+
+
 def _target(path):
     try:
         return os.fspath(path)
     except TypeError:
         return str(path)
+
+
+def _append_jsonl(path, row):
+    if not path:
+        return
+    with _ORIGINAL_OPEN(path, "a", encoding="utf-8") as handle:
+        handle.write(json.dumps(row, sort_keys=True) + "\n")
 
 
 def _append_event(path, status, mode, error=None):
@@ -72,11 +86,36 @@ def _append_event(path, status, mode, error=None):
         row["error_type"] = type(error).__name__
         row["error_message"] = str(error)
     with _LOCK:
-        with _ORIGINAL_OPEN(_EVENTS_PATH, "a", encoding="utf-8") as handle:
-            handle.write(json.dumps(row, sort_keys=True) + "\n")
+        _append_jsonl(_EVENTS_PATH, row)
+
+
+def _append_write_event(path, status, mode, error=None):
+    if not _WRITE_EVENTS_PATH and not _WRITE_OBSERVATIONS_PATH:
+        return
+    row = {
+        "event": "filesystem.write",
+        "instrumentation_model": "python_failed_write_wrapper_mvp",
+        "operation": "write",
+        "path": _target(path),
+        "status": status,
+        "timestamp": _utc_now(),
+        "mode": mode or "w",
+    }
+    if error is not None:
+        row["error_type"] = type(error).__name__
+        row["error_message"] = str(error)
+    with _LOCK:
+        _append_jsonl(_WRITE_EVENTS_PATH, row)
+        _append_jsonl(_WRITE_OBSERVATIONS_PATH, row)
 
 
 def _open(path, mode="r", *args, **kwargs):
+    if _is_write_mode(mode):
+        try:
+            return _ORIGINAL_OPEN(path, mode, *args, **kwargs)
+        except Exception as exc:
+            _append_write_event(path, "failed", mode, exc)
+            raise
     if not _is_read_mode(mode):
         return _ORIGINAL_OPEN(path, mode, *args, **kwargs)
     try:
@@ -89,6 +128,12 @@ def _open(path, mode="r", *args, **kwargs):
 
 
 def _path_open(self, mode="r", buffering=-1, encoding=None, errors=None, newline=None):
+    if _is_write_mode(mode):
+        try:
+            return _ORIGINAL_PATH_OPEN(self, mode, buffering, encoding, errors, newline)
+        except Exception as exc:
+            _append_write_event(self, "failed", mode, exc)
+            raise
     if not _is_read_mode(mode):
         return _ORIGINAL_PATH_OPEN(self, mode, buffering, encoding, errors, newline)
     try:

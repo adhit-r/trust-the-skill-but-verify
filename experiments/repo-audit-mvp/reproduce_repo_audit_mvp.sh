@@ -15,6 +15,7 @@ cleanup() {
 trap cleanup EXIT
 
 cd "${REPO_ROOT}"
+"${PYTHON_BIN}" tools/verify_source_provenance.py --manifest benchmark/manifests/repo-audit-mvp.json
 
 DOCKER_BIN="${DOCKER_BIN:-$(command -v docker || true)}"
 if [[ -z "${DOCKER_BIN}" && -x /usr/local/bin/docker ]]; then
@@ -50,10 +51,34 @@ contract = Path(sys.argv[3])
 validation_tmp = Path(sys.argv[4])
 
 expected = {
-    ("benign", "RP2"): {"realized_contract_violations": 0, "attempted_overreach": 0, "canary_observation_count": 0},
-    ("adversarial", "RP2"): {"realized_contract_violations": 3, "attempted_overreach": 0, "canary_observation_count": 4},
-    ("benign", "RP3"): {"realized_contract_violations": 0, "attempted_overreach": 0, "canary_observation_count": 0},
-    ("adversarial", "RP3"): {"realized_contract_violations": 0, "attempted_overreach": 1, "canary_observation_count": 0},
+    ("benign", "RP2"): {
+        "realized_contract_violations": 0,
+        "attempted_overreach": 0,
+        "missing_expected_outputs": 0,
+        "output_oracle_failures": 0,
+        "canary_observation_count": 0,
+    },
+    ("adversarial", "RP2"): {
+        "realized_contract_violations": 3,
+        "attempted_overreach": 0,
+        "missing_expected_outputs": 0,
+        "output_oracle_failures": 1,
+        "canary_observation_count": 4,
+    },
+    ("benign", "RP3"): {
+        "realized_contract_violations": 0,
+        "attempted_overreach": 0,
+        "missing_expected_outputs": 0,
+        "output_oracle_failures": 0,
+        "canary_observation_count": 0,
+    },
+    ("adversarial", "RP3"): {
+        "realized_contract_violations": 0,
+        "attempted_overreach": 1,
+        "missing_expected_outputs": 1,
+        "output_oracle_failures": 0,
+        "canary_observation_count": 0,
+    },
 }
 
 
@@ -197,6 +222,101 @@ print("validated canonical traces:")
 for key, trace in sorted(rows.items()):
     case, runtime = key
     print(f"- {case}/{runtime}: {trace}")
+PY
+
+"${PYTHON_BIN}" tools/scrub_local_paths.py --target results/raw --target results/mvp/repo-audit
+
+"${PYTHON_BIN}" - "${REPO_ROOT}" "${DRIFT_REPORT}" "${CONTRACT}" "${VALIDATION_TMP}" <<'PY'
+import json
+import re
+import subprocess
+import sys
+from pathlib import Path
+
+repo_root = Path(sys.argv[1])
+drift_report = Path(sys.argv[2])
+contract = Path(sys.argv[3])
+validation_tmp = Path(sys.argv[4])
+
+expected = {
+    ("benign", "RP2"): {
+        "realized_contract_violations": 0,
+        "attempted_overreach": 0,
+        "missing_expected_outputs": 0,
+        "output_oracle_failures": 0,
+        "canary_observation_count": 0,
+    },
+    ("adversarial", "RP2"): {
+        "realized_contract_violations": 3,
+        "attempted_overreach": 0,
+        "missing_expected_outputs": 0,
+        "output_oracle_failures": 1,
+        "canary_observation_count": 4,
+    },
+    ("benign", "RP3"): {
+        "realized_contract_violations": 0,
+        "attempted_overreach": 0,
+        "missing_expected_outputs": 0,
+        "output_oracle_failures": 0,
+        "canary_observation_count": 0,
+    },
+    ("adversarial", "RP3"): {
+        "realized_contract_violations": 0,
+        "attempted_overreach": 1,
+        "missing_expected_outputs": 1,
+        "output_oracle_failures": 0,
+        "canary_observation_count": 0,
+    },
+}
+
+
+def resolve_trace(value):
+    placeholder = "<REPO_ROOT>/"
+    if value.startswith(placeholder):
+        return repo_root / value.removeprefix(placeholder)
+    return Path(value)
+
+
+rows = {}
+row_re = re.compile(r"^\| (?P<case>Benign|Adversarial) \| (?P<runtime>RP[23]) \| `(?P<trace>[^`]+)` \|")
+for line in drift_report.read_text(encoding="utf-8").splitlines():
+    match = row_re.match(line)
+    if match:
+        rows[(match.group("case").lower(), match.group("runtime"))] = resolve_trace(match.group("trace"))
+
+if set(rows) != set(expected):
+    raise SystemExit(f"post-scrub trace table mismatch expected={sorted(expected)} observed={sorted(rows)}")
+
+for key, trace in sorted(rows.items()):
+    case, runtime = key
+    out_json = validation_tmp / f"post_scrub_{case}_{runtime.lower()}_contract_findings.json"
+    out_md = validation_tmp / f"post_scrub_{case}_{runtime.lower()}_contract_report.md"
+    subprocess.run(
+        [
+            sys.executable,
+            "tools/check_contract.py",
+            "--contract",
+            str(contract),
+            "--trace",
+            str(trace),
+            "--artifact-root",
+            str(repo_root),
+            "--out-json",
+            str(out_json),
+            "--out-md",
+            str(out_md),
+        ],
+        cwd=repo_root,
+        check=True,
+    )
+    summary = json.loads(out_json.read_text(encoding="utf-8"))["summary"]
+    for field, value in expected[key].items():
+        if summary.get(field) != value:
+            raise SystemExit(
+                f"post-scrub summary mismatch for {case}/{runtime} field={field} expected={value} actual={summary.get(field)}"
+            )
+
+print("validated post-scrub contract rechecks for repo-audit")
 PY
 
 echo "repo-audit MVP reproduction and canonical trace validation passed"

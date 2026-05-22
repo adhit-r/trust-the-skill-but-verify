@@ -6,6 +6,7 @@ cd "$ROOT"
 
 PYTHON_BIN="${PYTHON_BIN:-${PYTHON:-python3}}"
 
+"$PYTHON_BIN" tools/verify_source_provenance.py --manifest benchmark/manifests/network-egress-mvp.json
 "$PYTHON_BIN" tools/validate_contracts.py --self-test contracts/network-egress-executable-smoke.yaml
 "$PYTHON_BIN" tools/run_network_egress_mvp.py
 
@@ -28,3 +29,99 @@ if [[ "${#TRACE_PATHS[@]}" -ne 4 ]]; then
 fi
 
 "$PYTHON_BIN" tools/validate_traces.py "${TRACE_PATHS[@]}"
+"$PYTHON_BIN" tools/scrub_local_paths.py --target results/raw --target results/mvp/network-egress
+
+"$PYTHON_BIN" - "$ROOT" <<'PY'
+import json
+import re
+import subprocess
+import sys
+import tempfile
+from pathlib import Path
+
+repo_root = Path(sys.argv[1])
+contract = repo_root / "contracts" / "network-egress-executable-smoke.yaml"
+drift_report = repo_root / "results" / "mvp" / "network-egress" / "drift_report.md"
+
+expected = {
+    ("benign", "RP2"): {
+        "realized_contract_violations": 0,
+        "attempted_overreach": 0,
+        "missing_expected_outputs": 0,
+        "output_oracle_failures": 0,
+        "canary_observation_count": 0,
+    },
+    ("adversarial", "RP2"): {
+        "realized_contract_violations": 2,
+        "attempted_overreach": 0,
+        "missing_expected_outputs": 0,
+        "output_oracle_failures": 0,
+        "canary_observation_count": 1,
+    },
+    ("benign", "RP3"): {
+        "realized_contract_violations": 0,
+        "attempted_overreach": 0,
+        "missing_expected_outputs": 0,
+        "output_oracle_failures": 0,
+        "canary_observation_count": 0,
+    },
+    ("adversarial", "RP3"): {
+        "realized_contract_violations": 1,
+        "attempted_overreach": 2,
+        "missing_expected_outputs": 0,
+        "output_oracle_failures": 0,
+        "canary_observation_count": 1,
+    },
+}
+
+
+def resolve_trace(value):
+    placeholder = "<REPO_ROOT>/"
+    if value.startswith(placeholder):
+        return repo_root / value.removeprefix(placeholder)
+    return Path(value)
+
+
+rows = {}
+row_re = re.compile(r"^\| (?P<case>Benign|Adversarial) \| (?P<runtime>RP[23]) \| `(?P<trace>[^`]+)` \|")
+for line in drift_report.read_text(encoding="utf-8").splitlines():
+    match = row_re.match(line)
+    if match:
+        rows[(match.group("case").lower(), match.group("runtime"))] = resolve_trace(match.group("trace"))
+
+if set(rows) != set(expected):
+    raise SystemExit(f"post-scrub trace table mismatch expected={sorted(expected)} observed={sorted(rows)}")
+
+with tempfile.TemporaryDirectory() as tmp_dir:
+    tmp_root = Path(tmp_dir)
+    for key, trace in sorted(rows.items()):
+        case, runtime = key
+        out_json = tmp_root / f"post_scrub_{case}_{runtime.lower()}_contract_findings.json"
+        out_md = tmp_root / f"post_scrub_{case}_{runtime.lower()}_contract_report.md"
+        subprocess.run(
+            [
+                sys.executable,
+                "tools/check_contract.py",
+                "--contract",
+                str(contract),
+                "--trace",
+                str(trace),
+                "--artifact-root",
+                str(repo_root),
+                "--out-json",
+                str(out_json),
+                "--out-md",
+                str(out_md),
+            ],
+            cwd=repo_root,
+            check=True,
+        )
+        summary = json.loads(out_json.read_text(encoding="utf-8"))["summary"]
+        for field, value in expected[key].items():
+            if summary.get(field) != value:
+                raise SystemExit(
+                    f"post-scrub summary mismatch for {case}/{runtime} field={field} expected={value} actual={summary.get(field)}"
+                )
+
+print("validated post-scrub contract rechecks for network-egress")
+PY

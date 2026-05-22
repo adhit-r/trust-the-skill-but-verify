@@ -26,6 +26,9 @@ SKIP_SUFFIXES = {
     ".zip",
     ".gz",
 }
+SKIP_RELATIVE_PATHS = {
+    Path("tools/check_no_local_paths.py"),
+}
 
 
 def git_files(root: Path) -> list[Path]:
@@ -58,7 +61,8 @@ def main(argv: list[str] | None = None) -> int:
     findings: list[tuple[Path, int, str]] = []
 
     for path in git_files(root):
-        if is_skipped(path):
+        rel_path = path.relative_to(root)
+        if rel_path in SKIP_RELATIVE_PATHS or is_skipped(path):
             continue
         try:
             text = path.read_text(encoding="utf-8")
@@ -66,7 +70,7 @@ def main(argv: list[str] | None = None) -> int:
             continue
         for line_no, line in enumerate(text.splitlines(), start=1):
             if any(pattern.search(line) for pattern in patterns):
-                findings.append((path.relative_to(root), line_no, line.strip()))
+                findings.append((rel_path, line_no, line.strip()))
 
     if findings:
         print("tracked local path leakage detected:", file=sys.stderr)

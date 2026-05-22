@@ -23,13 +23,13 @@ This TODO is mapped to `REFINED_RESEARCH_ROADMAP.md`. Status values:
 3. [x] Add a repo-wide path-scrub validation command.
    Done when CI fails if tracked publishable artifacts contain local paths such
    as `<LOCAL_HOME>`.
-4. [~] Integrate path scrubbing into reproduction output generation.
-   Current state: AuditLens and docs-forge reproduction scripts scrub generated
-   raw/result artifacts after validation. Repo-audit and network-egress scripts
-   still need the same step.
-5. [ ] Make contract evidence resolution artifact-root-aware.
-   Done when scrubbed `<REPO_ROOT>` evidence references can be rechecked from a
-   clean checkout or artifact root.
+4. [x] Integrate path scrubbing into reproduction output generation.
+   Done: AuditLens, docs-forge, repo-audit, and network-egress reproduction
+   scripts scrub generated raw/result artifacts after validation.
+5. [x] Make contract evidence resolution artifact-root-aware.
+   Done: scrubbed `<REPO_ROOT>` evidence references are resolved through
+   `tools/check_contract.py --artifact-root`, which defaults to the checkout
+   root for clean artifact rechecks.
 6. [~] Strengthen `compare_contract_runs` invariants.
    Current state: pairwise drift classification requires matching available
    skill ID, task ID, contract ID, and repeat ID from trace-start context.
@@ -219,13 +219,14 @@ This TODO is mapped to `REFINED_RESEARCH_ROADMAP.md`. Status values:
 
 ## Immediate Next Step
 
-Start P0, not P4. The next concrete implementation task is:
+Continue P0 before scaling P4. The next concrete implementation task is:
 
-1. Add `make verify` or `scripts/verify_all.sh`.
-2. Add no-local-path checking.
-3. Add provenance hash verification for docs-forge and AuditLens reproduction.
-4. Strengthen comparator invariants.
-5. Extend the same scrubbed reproduction path to repo-audit and network-egress.
+1. Create the paper-claim ledger so each table and abstract number points to a
+   manifest or result file.
+2. Emit `workspace_snapshot_hash`, `task_prompt_hash`, and `variant_id` from
+   runners so `compare_contract_runs` can enforce the planned invariants.
+3. Finish the published pinned-source hash lists for first-party seed repos.
+4. Wire `make verify` into CI.
 
-That sequence turns the existing pilot from "interesting" into "trustworthy
-enough to scale."
+That sequence turns the current verified MVP from a strong local artifact into
+a reviewer-ready evidence package.

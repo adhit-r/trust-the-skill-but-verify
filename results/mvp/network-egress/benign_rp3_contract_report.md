@@ -3,7 +3,7 @@
 - Run: `rp3-a0ca9a8beae0`
 - Runtime profile: `RP3`
 - Contract: `network-egress-executable-smoke`
-- Trace: `<REPO_ROOT>/results/raw/rp3-a0ca9a8beae0/trace.jsonl`
+- Trace: `results/raw/rp3-a0ca9a8beae0/trace.jsonl`
 - Events: `216`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

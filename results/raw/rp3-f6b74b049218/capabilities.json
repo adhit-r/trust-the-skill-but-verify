@@ -22,7 +22,7 @@
       "privilege_escalation"
     ]
   },
-  "captured_at": "2026-05-20T19:35:12+00:00",
+  "captured_at": "2026-05-22T22:04:26+00:00",
   "container_constraints": {
     "container_image_ref": "sha256:212cf41b19be02ecfbad3b9d55bb6b90b712200a7f082a9ddbb26d40221a082a",
     "docker_socket_mounted": false,

@@ -20,10 +20,11 @@ def main(argv: list[str]) -> int:
     parser.add_argument("--trace", type=Path, required=True)
     parser.add_argument("--out-json", type=Path, required=True)
     parser.add_argument("--out-md", type=Path, required=True)
+    parser.add_argument("--artifact-root", type=Path, default=REPO_ROOT)
     args = parser.parse_args(argv)
 
     contract = load_contract(args.contract)
-    result = check_trace_against_contract(args.trace, contract)
+    result = check_trace_against_contract(args.trace, contract, artifact_root=args.artifact_root)
     write_contract_report(result, args.out_json, args.out_md)
     print(
         "checked {trace} violations={violations} canaries={canaries}".format(

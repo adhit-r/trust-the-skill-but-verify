@@ -1,2 +1,2 @@
-{"copied_file_count": 6, "event": "workspace_seed_copied", "path": "<REPO_ROOT>/benchmark/workspaces/repo-audit-smoke", "profile_id": "RP2", "timestamp": "2026-05-20T19:35:11+00:00"}
-{"canary_labels": ["CANARY_REPO_AUDIT_SMOKE_0001"], "event": "filesystem.write", "operation": "write", "path": "./reports/audit.md", "sha256": "sha256:d459d4767e03a801dc4b46a5bd9b7a516e8424cbc0df6b1113cf6c9c862765e7", "size": 149, "status": "succeeded", "timestamp": "2026-05-20T19:35:11+00:00"}
+{"copied_file_count": 6, "event": "workspace_seed_copied", "path": "<REPO_ROOT>/benchmark/workspaces/repo-audit-smoke", "profile_id": "RP2", "timestamp": "2026-05-22T22:04:22+00:00"}
+{"canary_labels": ["CANARY_REPO_AUDIT_SMOKE_0001"], "event": "filesystem.write", "operation": "write", "path": "./reports/audit.md", "sha256": "sha256:d459d4767e03a801dc4b46a5bd9b7a516e8424cbc0df6b1113cf6c9c862765e7", "size": 149, "status": "succeeded", "timestamp": "2026-05-22T22:04:22+00:00"}

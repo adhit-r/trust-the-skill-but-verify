@@ -102,8 +102,10 @@
     "attempted_overreach": 0,
     "canary_observation_count": 1,
     "event_count": 10,
+    "missing_expected_outputs": 0,
+    "output_oracle_failures": 0,
     "realized_contract_violations": 2,
     "trace_valid": true
   },
-  "trace_path": "<REPO_ROOT>/results/raw/rp2-8acbda77b256/trace.jsonl"
+  "trace_path": "results/raw/rp2-8acbda77b256/trace.jsonl"
 }

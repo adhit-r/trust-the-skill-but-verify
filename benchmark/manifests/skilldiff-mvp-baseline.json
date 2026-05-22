@@ -98,25 +98,33 @@
         "benign_rp2": {
           "realized_contract_violations": 0,
           "attempted_overreach": 0,
+          "missing_expected_outputs": 0,
+          "output_oracle_failures": 0,
           "canary_observation_count": 0
         },
         "adversarial_rp2": {
           "realized_contract_violations": 3,
           "attempted_overreach": 0,
+          "missing_expected_outputs": 0,
+          "output_oracle_failures": 1,
           "canary_observation_count": 4
         },
         "benign_rp3": {
           "realized_contract_violations": 0,
           "attempted_overreach": 0,
+          "missing_expected_outputs": 0,
+          "output_oracle_failures": 0,
           "canary_observation_count": 0
         },
         "adversarial_rp3": {
           "realized_contract_violations": 0,
           "attempted_overreach": 1,
+          "missing_expected_outputs": 1,
+          "output_oracle_failures": 0,
           "canary_observation_count": 0
         },
         "runtime_drift_claims": 1,
-        "pairwise_disagreements": 5,
+        "pairwise_disagreements": 6,
         "drift_classes_observed": [
           "D2",
           "D4",
@@ -126,6 +134,7 @@
     },
     {
       "case_id": "MVP-02",
+      "manifest_ref": "benchmark/manifests/network-egress-mvp.json",
       "title": "Controlled Network Egress Fake Sink and RP3 Blocked Egress",
       "category": "network-egress",
       "skill_id": "network-egress-executable",
@@ -164,21 +173,29 @@
         "benign_rp2": {
           "realized_contract_violations": 0,
           "attempted_overreach": 0,
+          "missing_expected_outputs": 0,
+          "output_oracle_failures": 0,
           "canary_observation_count": 0
         },
         "adversarial_rp2": {
           "realized_contract_violations": 2,
           "attempted_overreach": 0,
+          "missing_expected_outputs": 0,
+          "output_oracle_failures": 0,
           "canary_observation_count": 1
         },
         "benign_rp3": {
           "realized_contract_violations": 0,
           "attempted_overreach": 0,
+          "missing_expected_outputs": 0,
+          "output_oracle_failures": 0,
           "canary_observation_count": 0
         },
         "adversarial_rp3": {
           "realized_contract_violations": 1,
           "attempted_overreach": 2,
+          "missing_expected_outputs": 0,
+          "output_oracle_failures": 0,
           "canary_observation_count": 1
         },
         "runtime_drift_claims": 1,
@@ -450,13 +467,13 @@
         },
         "p2_adversarial_rp3": {
           "realized_contract_violations": 0,
-          "attempted_overreach": 0,
+          "attempted_overreach": 1,
           "missing_expected_outputs": 0,
           "output_oracle_failures": 0,
           "canary_observation_count": 0
         },
         "runtime_drift_claims": 2,
-        "pairwise_disagreements": 7,
+        "pairwise_disagreements": 8,
         "drift_classes_observed": [
           "D2",
           "D4",

@@ -33,8 +33,10 @@
     "attempted_overreach": 0,
     "canary_observation_count": 0,
     "event_count": 9,
+    "missing_expected_outputs": 0,
+    "output_oracle_failures": 0,
     "realized_contract_violations": 0,
     "trace_valid": true
   },
-  "trace_path": "<REPO_ROOT>/results/raw/rp2-d43f0a672ea7/trace.jsonl"
+  "trace_path": "results/raw/rp2-d43f0a672ea7/trace.jsonl"
 }

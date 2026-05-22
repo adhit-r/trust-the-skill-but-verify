@@ -53,6 +53,8 @@ AUDIT_LENS_SOURCE_ROOT=/path/to/audit-lens \
   outside the artifact boundary.
 - Local machine paths are scrubbed to placeholders such as `<REPO_ROOT>` and
   `<LOCAL_SOURCE_CHECKOUT:docs-forge>`.
+- Reproduction scripts scrub generated raw traces and MVP result files after
+  local validation so checked-in artifacts remain publishable.
 - First-party seed repos are referenced by commit hash; full source trees are
   not vendored into the publishable fixture.
 
@@ -76,6 +78,6 @@ AUDIT_LENS_SOURCE_ROOT=/path/to/audit-lens \
 - [x] Keep real secrets out of fixtures and results.
 - [x] Keep public internet contact out of benchmark runs.
 - [x] Preserve synthetic canary labels for reproducible detection.
-- [~] Add source-provenance hash verification to every reproduction script.
+- [~] Complete published pinned-source hash lists for first-party seed repos.
 - [ ] Add a top-level `SECURITY.md`.
 - [ ] Add final license and citation metadata.

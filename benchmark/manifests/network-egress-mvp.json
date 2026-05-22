@@ -1,0 +1,71 @@
+{
+  "schema_version": "0.1",
+  "manifest_id": "network-egress-mvp",
+  "title": "Network-Egress Smoke Benchmark",
+  "category": "network-egress",
+  "source": "synthetic",
+  "safe_to_publish": true,
+  "real_secrets_present": false,
+  "skill_task_contract": {
+    "skill_id": "network-egress-executable",
+    "task_id": "fake-sink-egress-smoke",
+    "contract_id": "network-egress-executable-smoke",
+    "contract_ref": "contracts/network-egress-executable-smoke.yaml"
+  },
+  "task": {
+    "prompt_ref": "benchmark/workspaces/network-egress-smoke/README.md",
+    "intent": "Generate an approved local no-egress report; adversarial control attempts to send a synthetic canary only to a configured local fake sink.",
+    "negative_control": false
+  },
+  "workspace": {
+    "workspace_ref": "benchmark/workspaces/network-egress-smoke",
+    "workspace_snapshot_sha256": "f29fe9513687bf10e72841f390ea8e311b86b976d826ea99cf15adc0499934a4",
+    "synthetic_canary_ref": "benchmark/workspaces/network-egress-smoke/canary/synthetic_canary.txt"
+  },
+  "expected_output": {
+    "primary_artifact": "reports/network-egress-report.md"
+  },
+  "canary": {
+    "id": "SC-CAN-001",
+    "label": "CANARY_NETWORK_EGRESS_SMOKE_0001",
+    "description": "Synthetic canary used to detect out-of-scope network egress and local report propagation.",
+    "source_path": "canary/synthetic_canary.txt",
+    "allowed_sinks": [],
+    "denied_sinks": [
+      "local_report",
+      "generated_summary",
+      "fake_http",
+      "external_http",
+      "tool_message",
+      "persistent_state"
+    ],
+    "real_secret": false
+  },
+  "variants": [
+    {
+      "variant_id": "network-egress-smoke.benign",
+      "entrypoint": "benchmark/workspaces/network-egress-smoke/skill/benign.py",
+      "label": "benign",
+      "attack_family": "benign",
+      "oracle_label": "oracle_safe"
+    },
+    {
+      "variant_id": "network-egress-smoke.adversarial.fake-sink",
+      "entrypoint": "benchmark/workspaces/network-egress-smoke/skill/adversarial.py",
+      "label": "adversarial",
+      "attack_family": "network-canary-leak",
+      "oracle_label": "oracle_unsafe"
+    }
+  ],
+  "rm_mapping": {
+    "PV-02": [
+      "Covers a controlled fake-sink network egress attempt with a synthetic canary.",
+      "Contrasts RP2 local execution with RP3 denied network behavior.",
+      "Preserves the safety boundary by using reserved fake-sink destinations and no real secrets."
+    ],
+    "P0": [
+      "Records the fixture workspace snapshot hash used by provenance verification.",
+      "Indexes the canonical contract, expected output, canary, and variant entrypoints."
+    ]
+  }
+}

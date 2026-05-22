@@ -5,7 +5,7 @@ Traceback (most recent call last):
   File "/usr/local/lib/python3.12/pathlib.py", line 1027, in read_text
     with self.open(mode='r', encoding=encoding, errors=errors) as f:
          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspace/out/.skilldiff_provenance/sitecustomize.py", line 95, in _path_open
+  File "/workspace/out/.skilldiff_provenance/sitecustomize.py", line 140, in _path_open
     handle = _ORIGINAL_PATH_OPEN(self, mode, buffering, encoding, errors, newline)
              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "/usr/local/lib/python3.12/pathlib.py", line 1013, in open

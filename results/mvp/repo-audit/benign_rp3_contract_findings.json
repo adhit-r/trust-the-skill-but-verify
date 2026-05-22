@@ -1070,8 +1070,10 @@
     "attempted_overreach": 0,
     "canary_observation_count": 0,
     "event_count": 216,
+    "missing_expected_outputs": 0,
+    "output_oracle_failures": 0,
     "realized_contract_violations": 0,
     "trace_valid": true
   },
-  "trace_path": "<REPO_ROOT>/results/raw/rp3-be212edb2050/trace.jsonl"
+  "trace_path": "results/raw/rp3-be212edb2050/trace.jsonl"
 }

@@ -1,2 +1,2 @@
-{"copied_file_count": 7, "event": "workspace_seed_copied", "path": "<REPO_ROOT>/benchmark/workspaces/network-egress-smoke", "profile_id": "RP2", "timestamp": "2026-05-20T19:35:03+00:00"}
-{"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./reports/network-egress-report.md", "sha256": "sha256:885e9e85d3a7ea648a682a366df7ae48189b2726b59db56b2d278d4fbd32e08e", "size": 247, "status": "succeeded", "timestamp": "2026-05-20T19:35:03+00:00"}
+{"copied_file_count": 5, "event": "workspace_seed_copied", "path": "<REPO_ROOT>/benchmark/workspaces/network-egress-smoke", "profile_id": "RP2", "timestamp": "2026-05-22T22:04:31+00:00"}
+{"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./reports/network-egress-report.md", "sha256": "sha256:885e9e85d3a7ea648a682a366df7ae48189b2726b59db56b2d278d4fbd32e08e", "size": 247, "status": "succeeded", "timestamp": "2026-05-22T22:04:31+00:00"}

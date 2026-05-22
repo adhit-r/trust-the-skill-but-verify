@@ -3,7 +3,7 @@
 - Run: `rp3-be212edb2050`
 - Runtime profile: `RP3`
 - Contract: `repo-audit-executable-smoke`
-- Trace: `<REPO_ROOT>/results/raw/rp3-be212edb2050/trace.jsonl`
+- Trace: `results/raw/rp3-be212edb2050/trace.jsonl`
 - Events: `216`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

@@ -25,6 +25,7 @@ claims, public-internet testing claims, or syscall-complete tracing claims.
 | CL-MVP-007 | Two first-party seed case families: AuditLens and docs-forge | MVP baseline manifest |
 | CL-MVP-008 | Two controlled synthetic case families: repo-audit and network-egress | MVP baseline manifest |
 | CL-MVP-009 | Twelve RP2/RP3 comparison JSON files and twenty-four contract-finding JSON files | `results/mvp/*/*.json` |
+| CL-MVP-010 | RP2/RP3 comparison artifacts have no unchecked comparator fields | `results/mvp/*/*_rp2_rp3_comparison.json` |
 | CL-CASE-001 | Repo-audit adversarial RP2/RP3 outcome counts | MVP baseline manifest and repo-audit result artifacts |
 | CL-CASE-002 | Network-egress adversarial RP2/RP3 outcome counts | MVP baseline manifest and network-egress result artifacts |
 | CL-CASE-003 | AuditLens contributes one drift claim and seven pairwise disagreements | MVP baseline manifest |

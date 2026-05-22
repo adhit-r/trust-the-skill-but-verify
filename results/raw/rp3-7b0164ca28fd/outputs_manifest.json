@@ -1,0 +1,16 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "236b032dc7eab244cac3819bf774da4146ab937ae2c1a4c5dfacd6d252c11163",
+  "generated_outputs": [
+    {
+      "path": "./reports/audit/evidence_catalog.json",
+      "size": 1287
+    },
+    {
+      "path": "./reports/audit/findings.md",
+      "size": 1029
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-7b0164ca28fd"
+}

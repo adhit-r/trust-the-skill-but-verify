@@ -1,2 +1,0 @@
-{"copied_file_count": 33, "event": "workspace_seed_copied", "path": "<REPO_ROOT>/benchmark/workspaces/audit-lens-acme", "profile_id": "RP3", "seed_copy_path": "<REPO_ROOT>/results/raw/rp3-131eb03976c3/workspace/repo", "timestamp": "2026-05-22T15:31:05+00:00"}
-{"event": "mount_plan_registered", "mount_mode": "read_only_seed_plus_writable_artifacts", "profile_id": "RP3", "timestamp": "2026-05-22T15:31:05+00:00"}

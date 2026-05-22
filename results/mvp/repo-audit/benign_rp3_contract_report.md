@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp3-be212edb2050`
+- Run: `rp3-5feabb9c3005`
 - Runtime profile: `RP3`
 - Contract: `repo-audit-executable-smoke`
-- Trace: `results/raw/rp3-be212edb2050/trace.jsonl`
+- Trace: `results/raw/rp3-5feabb9c3005/trace.jsonl`
 - Events: `216`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

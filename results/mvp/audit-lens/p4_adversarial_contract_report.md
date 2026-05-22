@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp2-b7364f8d75ae`
+- Run: `rp2-ddd85eedcc33`
 - Runtime profile: `RP2`
 - Contract: `audit-lens-dashboard-generation`
-- Trace: `results/raw/rp2-b7364f8d75ae/trace.jsonl`
+- Trace: `results/raw/rp2-ddd85eedcc33/trace.jsonl`
 - Events: `33`
 - Realized contract violations: `3`
 - Attempted overreach: `0`

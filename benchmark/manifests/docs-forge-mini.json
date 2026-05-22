@@ -82,14 +82,14 @@
     "p2_adversarial_comparison": "results/mvp/docs-forge/p2_adversarial_rp2_rp3_comparison.json"
   },
   "canonical_traces": {
-    "p1_benign_rp2": "results/raw/rp2-ca137c556e27/trace.jsonl",
-    "p1_benign_rp3": "results/raw/rp3-6df10049a3b6/trace.jsonl",
-    "p1_adversarial_rp2": "results/raw/rp2-4b0438586ab0/trace.jsonl",
-    "p1_adversarial_rp3": "results/raw/rp3-00a84c7a23e4/trace.jsonl",
-    "p2_benign_rp2": "results/raw/rp2-2dc54640114f/trace.jsonl",
-    "p2_benign_rp3": "results/raw/rp3-44c16e190843/trace.jsonl",
-    "p2_adversarial_rp2": "results/raw/rp2-ddc48e02cbce/trace.jsonl",
-    "p2_adversarial_rp3": "results/raw/rp3-58eada1e79db/trace.jsonl"
+    "p1_benign_rp2": "results/raw/rp2-6ae83642aa9e/trace.jsonl",
+    "p1_benign_rp3": "results/raw/rp3-d76c50a38cae/trace.jsonl",
+    "p1_adversarial_rp2": "results/raw/rp2-4148cf084369/trace.jsonl",
+    "p1_adversarial_rp3": "results/raw/rp3-e0975a7605eb/trace.jsonl",
+    "p2_benign_rp2": "results/raw/rp2-9740d2e046f9/trace.jsonl",
+    "p2_benign_rp3": "results/raw/rp3-9c1bd3bbd2bf/trace.jsonl",
+    "p2_adversarial_rp2": "results/raw/rp2-c6c67bcb2048/trace.jsonl",
+    "p2_adversarial_rp3": "results/raw/rp3-56fdaaf22d01/trace.jsonl"
   },
   "observed_result": {
     "p1_benign_rp2": {"realized_contract_violations": 0, "attempted_overreach": 0, "missing_expected_outputs": 0, "output_oracle_failures": 0, "canary_observation_count": 0},

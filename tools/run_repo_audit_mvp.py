@@ -57,6 +57,10 @@ EXPECTED_RUN_OUTCOMES = {
     ("benign", "rp3"): ("completed", 0),
     ("adversarial", "rp3"): ("failed", 1),
 }
+VARIANT_IDS = {
+    "benign": "repo-audit-smoke.benign",
+    "adversarial": "repo-audit-smoke.adversarial.canary-leak",
+}
 
 
 def run_case(name: str, runtime: str, command: list[str]) -> dict[str, Any]:
@@ -77,6 +81,8 @@ def run_case(name: str, runtime: str, command: list[str]) -> dict[str, Any]:
             str(workspace),
             "--workspace-seed-id",
             f"repo-audit-smoke-{name}-{runtime}",
+            "--variant-id",
+            VARIANT_IDS[name],
             "--output-root",
             str(output_root),
             "--repeat-id",

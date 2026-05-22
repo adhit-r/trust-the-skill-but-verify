@@ -1,0 +1,26 @@
+{
+  "adapter_id": "local_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/adversarial.py"
+  ],
+  "contract_id": "network-egress-executable-smoke",
+  "dry_run": false,
+  "prepared_at": "2026-05-22T22:31:40+00:00",
+  "profile_hash": "7f671673b37f9b78cdb02475da028c18173538fcd42b85ff07aff05dc7e58d94",
+  "profile_id": "RP2",
+  "repeat_id": 1,
+  "run_id": "rp2-7485384d51d7",
+  "skill_artifact": "local-fixture",
+  "skill_id": "network-egress-executable",
+  "task_id": "fake-sink-egress-smoke",
+  "task_prompt_hash": "sha256:c2ce53871b120b981334909424c71749811461d0289cf705a4b6b0f39ac0023d",
+  "task_prompt_ref": "benchmark/workspaces/network-egress-smoke/README.md",
+  "variant_id": "network-egress-smoke.adversarial.fake-sink",
+  "workspace_copied_file_count": 5,
+  "workspace_mode": "copied_seed_workspace",
+  "workspace_seed": "<REPO_ROOT>/benchmark/workspaces/network-egress-smoke",
+  "workspace_seed_id": "network-egress-smoke-adversarial-rp2",
+  "workspace_snapshot_hash": "f29fe9513687bf10e72841f390ea8e311b86b976d826ea99cf15adc0499934a4"
+}

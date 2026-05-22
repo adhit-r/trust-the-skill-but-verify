@@ -24,6 +24,7 @@ from .base import (
     ensure_artifact_files,
     stable_run_id,
     utc_now,
+    workspace_snapshot_hash,
     write_json,
     write_jsonl,
 )
@@ -52,12 +53,20 @@ class LocalDryRunAdapter(RuntimeAdapter):
         if runtime_profile["adapter"]["adapter_id"] != self.adapter_id:
             raise ValueError(f"profile requires {runtime_profile['adapter']['adapter_id']}, not {self.adapter_id}")
 
-        run_id = stable_run_id(self.adapter_id, runtime_profile, run_spec)
+        command = run_spec.command or []
+        task_prompt_hash = _hash_text(task_prompt)
+        workspace_hash = workspace_snapshot_hash(workspace_seed)
+        run_id = stable_run_id(
+            self.adapter_id,
+            runtime_profile,
+            run_spec,
+            task_prompt_hash=task_prompt_hash,
+            workspace_snapshot_hash=workspace_hash,
+        )
         run_dir = run_spec.output_root / run_id
         workspace_path = run_dir / "workspace"
         copied_files = _copy_seed_workspace(workspace_seed, workspace_path)
         files = ensure_artifact_files(run_dir)
-        command = run_spec.command or []
         execution_plan = _build_execution_plan(
             command,
             runtime_profile,
@@ -80,11 +89,17 @@ class LocalDryRunAdapter(RuntimeAdapter):
                 "profile_hash": canonical_profile_hash(runtime_profile),
                 "repeat_id": run_spec.repeat_id,
                 "run_id": run_id,
+                "skill_artifact": run_spec.skill_artifact,
                 "skill_id": run_spec.skill_id,
                 "task_id": run_spec.task_id,
+                "task_prompt_hash": task_prompt_hash,
+                "task_prompt_ref": run_spec.task_prompt_ref,
+                "variant_id": run_spec.variant_id,
                 "workspace_copied_file_count": copied_files,
                 "workspace_mode": "copied_seed_workspace",
                 "workspace_seed": str(workspace_seed),
+                "workspace_seed_id": run_spec.workspace_seed,
+                "workspace_snapshot_hash": workspace_hash,
             },
         )
         write_json(files["execution_plan"], execution_plan)

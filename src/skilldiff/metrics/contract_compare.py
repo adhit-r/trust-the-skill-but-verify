@@ -123,24 +123,40 @@ def _load_trace_context(trace_path: str | None) -> dict[str, Any]:
         "contract_id": event.get("contract_id"),
         "repeat_id": event.get("repeat_id"),
         "runtime_profile_hash": event.get("runtime_profile_hash"),
+        "task_prompt_hash": (event.get("metadata") or {}).get("task_prompt_hash"),
+        "variant_id": (event.get("metadata") or {}).get("variant_id"),
+        "workspace_snapshot_hash": (event.get("metadata") or {}).get("workspace_snapshot_hash"),
     }
 
 
 def _comparison_context(result: dict[str, Any]) -> dict[str, Any]:
     trace_context = result.get("trace_context") or {}
     context = {
-        "skill_id": result.get("skill_id") or trace_context.get("skill_id"),
-        "task_id": result.get("task_id") or trace_context.get("task_id"),
-        "contract_id": result.get("contract_id") or trace_context.get("contract_id"),
-        "repeat_id": result.get("repeat_id") or trace_context.get("repeat_id"),
-        "workspace_snapshot_hash": result.get("workspace_snapshot_hash"),
-        "task_prompt_hash": result.get("task_prompt_hash"),
-        "variant_id": result.get("variant_id"),
-        "runtime_profile_hash": result.get("runtime_profile_hash") or trace_context.get("runtime_profile_hash"),
+        "skill_id": _first_present(result.get("skill_id"), trace_context.get("skill_id")),
+        "task_id": _first_present(result.get("task_id"), trace_context.get("task_id")),
+        "contract_id": _first_present(result.get("contract_id"), trace_context.get("contract_id")),
+        "repeat_id": _first_present(result.get("repeat_id"), trace_context.get("repeat_id")),
+        "workspace_snapshot_hash": _first_present(
+            result.get("workspace_snapshot_hash"),
+            trace_context.get("workspace_snapshot_hash"),
+        ),
+        "task_prompt_hash": _first_present(result.get("task_prompt_hash"), trace_context.get("task_prompt_hash")),
+        "variant_id": _first_present(result.get("variant_id"), trace_context.get("variant_id")),
+        "runtime_profile_hash": _first_present(
+            result.get("runtime_profile_hash"),
+            trace_context.get("runtime_profile_hash"),
+        ),
     }
     missing = [field for field in (*STRICT_COMPARISON_FIELDS, *PLANNED_COMPARISON_FIELDS) if context.get(field) is None]
     context["missing_invariant_fields"] = missing
     return context
+
+
+def _first_present(*values: Any) -> Any:
+    for value in values:
+        if value is not None:
+            return value
+    return None
 
 
 def _finding_signature(finding: dict[str, Any]) -> dict[str, Any]:
@@ -250,9 +266,14 @@ def _classify_pair(
             "claim": "no_pairwise_disagreement",
             "boundary": "Runtime profiles differ, but this pair has no finding-set disagreement in the observed contract-check output.",
         }
+    if not invariants["unchecked_fields"]:
+        return {
+            "claim": "runtime_drift_candidate",
+            "boundary": "Runtime profiles differ with matching skill, task, contract, repeat, workspace snapshot, task prompt, and variant invariants.",
+        }
     return {
-        "claim": "runtime_drift_candidate",
-        "boundary": "Runtime profiles differ with matching available skill/task/contract/repeat invariants. Treat this as a runtime-drift candidate; workspace snapshot, prompt hash, and variant ID remain planned comparator invariants until emitted by the runners.",
+        "claim": "not_comparable",
+        "boundary": "Compared runs are missing one or more planned comparator invariants. Disagreements are not runtime drift evidence until those fields are emitted.",
     }
 
 

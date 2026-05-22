@@ -1,0 +1,2 @@
+{"copied_file_count": 9, "event": "workspace_seed_copied", "path": "<REPO_ROOT>/benchmark/workspaces/docs-forge-mini", "profile_id": "RP3", "seed_copy_path": "<REPO_ROOT>/results/raw/rp3-e0975a7605eb/workspace/repo", "timestamp": "2026-05-22T22:31:51+00:00"}
+{"event": "mount_plan_registered", "mount_mode": "read_only_seed_plus_writable_artifacts", "profile_id": "RP3", "timestamp": "2026-05-22T22:31:51+00:00"}

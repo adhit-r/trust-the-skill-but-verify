@@ -1,9 +1,0 @@
-{
-  "mounts": [
-    {
-      "mode": "read_write",
-      "source": "<REPO_ROOT>/results/raw/rp2-81217cf1451c/workspace",
-      "target": "<REPO_ROOT>/results/raw/rp2-81217cf1451c/workspace"
-    }
-  ]
-}

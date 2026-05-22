@@ -89,10 +89,10 @@
         "adversarial_comparison": "results/mvp/repo-audit/adversarial_rp2_rp3_comparison.json"
       },
       "canonical_traces": {
-        "benign_rp2": "results/raw/rp2-d43f0a672ea7/trace.jsonl",
-        "adversarial_rp2": "results/raw/rp2-f0ee8821875b/trace.jsonl",
-        "benign_rp3": "results/raw/rp3-be212edb2050/trace.jsonl",
-        "adversarial_rp3": "results/raw/rp3-f6b74b049218/trace.jsonl"
+        "benign_rp2": "results/raw/rp2-abf6e88e54d0/trace.jsonl",
+        "adversarial_rp2": "results/raw/rp2-6f25c6536a8e/trace.jsonl",
+        "benign_rp3": "results/raw/rp3-5feabb9c3005/trace.jsonl",
+        "adversarial_rp3": "results/raw/rp3-160ab972eeb4/trace.jsonl"
       },
       "observed_result": {
         "benign_rp2": {
@@ -164,10 +164,10 @@
         "adversarial_comparison": "results/mvp/network-egress/adversarial_rp2_rp3_comparison.json"
       },
       "canonical_traces": {
-        "benign_rp2": "results/raw/rp2-f55bde60eadd/trace.jsonl",
-        "adversarial_rp2": "results/raw/rp2-8acbda77b256/trace.jsonl",
-        "benign_rp3": "results/raw/rp3-a0ca9a8beae0/trace.jsonl",
-        "adversarial_rp3": "results/raw/rp3-fac95f42215c/trace.jsonl"
+        "benign_rp2": "results/raw/rp2-d7d6195d171a/trace.jsonl",
+        "adversarial_rp2": "results/raw/rp2-7485384d51d7/trace.jsonl",
+        "benign_rp3": "results/raw/rp3-4e334380f4ce/trace.jsonl",
+        "adversarial_rp3": "results/raw/rp3-29c5fc313796/trace.jsonl"
       },
       "observed_result": {
         "benign_rp2": {
@@ -268,14 +268,14 @@
         "p4_adversarial_comparison": "results/mvp/audit-lens/p4_adversarial_rp2_rp3_comparison.json"
       },
       "canonical_traces": {
-        "p3_benign_rp2": "results/raw/rp2-9222541c6fdc/trace.jsonl",
-        "p3_benign_rp3": "results/raw/rp3-87b924290b5d/trace.jsonl",
-        "p3_adversarial_rp2": "results/raw/rp2-2a618a308d4f/trace.jsonl",
-        "p3_adversarial_rp3": "results/raw/rp3-0fb2f0af2dd4/trace.jsonl",
-        "p4_benign_rp2": "results/raw/rp2-81217cf1451c/trace.jsonl",
-        "p4_benign_rp3": "results/raw/rp3-0a4108f74289/trace.jsonl",
-        "p4_adversarial_rp2": "results/raw/rp2-b7364f8d75ae/trace.jsonl",
-        "p4_adversarial_rp3": "results/raw/rp3-131eb03976c3/trace.jsonl"
+        "p3_benign_rp2": "results/raw/rp2-c818465db8d3/trace.jsonl",
+        "p3_benign_rp3": "results/raw/rp3-7b0164ca28fd/trace.jsonl",
+        "p3_adversarial_rp2": "results/raw/rp2-6c88446c2439/trace.jsonl",
+        "p3_adversarial_rp3": "results/raw/rp3-d49f59333831/trace.jsonl",
+        "p4_benign_rp2": "results/raw/rp2-e9c94577a846/trace.jsonl",
+        "p4_benign_rp3": "results/raw/rp3-9a17551778b0/trace.jsonl",
+        "p4_adversarial_rp2": "results/raw/rp2-ddd85eedcc33/trace.jsonl",
+        "p4_adversarial_rp3": "results/raw/rp3-9a6819754a76/trace.jsonl"
       },
       "observed_result": {
         "p3_benign_rp2": {
@@ -406,14 +406,14 @@
         "p2_adversarial_comparison": "results/mvp/docs-forge/p2_adversarial_rp2_rp3_comparison.json"
       },
       "canonical_traces": {
-        "p1_benign_rp2": "results/raw/rp2-ca137c556e27/trace.jsonl",
-        "p1_benign_rp3": "results/raw/rp3-6df10049a3b6/trace.jsonl",
-        "p1_adversarial_rp2": "results/raw/rp2-4b0438586ab0/trace.jsonl",
-        "p1_adversarial_rp3": "results/raw/rp3-00a84c7a23e4/trace.jsonl",
-        "p2_benign_rp2": "results/raw/rp2-2dc54640114f/trace.jsonl",
-        "p2_benign_rp3": "results/raw/rp3-44c16e190843/trace.jsonl",
-        "p2_adversarial_rp2": "results/raw/rp2-ddc48e02cbce/trace.jsonl",
-        "p2_adversarial_rp3": "results/raw/rp3-58eada1e79db/trace.jsonl"
+        "p1_benign_rp2": "results/raw/rp2-6ae83642aa9e/trace.jsonl",
+        "p1_benign_rp3": "results/raw/rp3-d76c50a38cae/trace.jsonl",
+        "p1_adversarial_rp2": "results/raw/rp2-4148cf084369/trace.jsonl",
+        "p1_adversarial_rp3": "results/raw/rp3-e0975a7605eb/trace.jsonl",
+        "p2_benign_rp2": "results/raw/rp2-9740d2e046f9/trace.jsonl",
+        "p2_benign_rp3": "results/raw/rp3-9c1bd3bbd2bf/trace.jsonl",
+        "p2_adversarial_rp2": "results/raw/rp2-c6c67bcb2048/trace.jsonl",
+        "p2_adversarial_rp3": "results/raw/rp3-56fdaaf22d01/trace.jsonl"
       },
       "observed_result": {
         "p1_benign_rp2": {

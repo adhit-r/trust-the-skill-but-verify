@@ -30,11 +30,11 @@ This TODO is mapped to `REFINED_RESEARCH_ROADMAP.md`. Status values:
    Done: scrubbed `<REPO_ROOT>` evidence references are resolved through
    `tools/check_contract.py --artifact-root`, which defaults to the checkout
    root for clean artifact rechecks.
-6. [~] Strengthen `compare_contract_runs` invariants.
-   Current state: pairwise drift classification requires matching available
-   skill ID, task ID, contract ID, and repeat ID from trace-start context.
-   Prompt hash, workspace snapshot hash, and variant ID are reported as
-   unchecked planned invariants until runners emit them.
+6. [x] Strengthen `compare_contract_runs` invariants.
+   Done: runners emit `workspace_snapshot_hash`, `task_prompt_hash`, and
+   `variant_id`; trace start metadata carries those fields; contract findings
+   expose them; and `compare_contract_runs` reports no unchecked comparator
+   fields across the twelve RP2/RP3 MVP comparison artifacts.
 7. [x] Normalize RP3 blocked source mutation as an attempted write event.
    Done: docs-forge P2 RP3 emits a failed `filesystem.write` event for
    `./repo/src/generated-docs.ts`, and the contract checker counts it as one
@@ -222,10 +222,10 @@ This TODO is mapped to `REFINED_RESEARCH_ROADMAP.md`. Status values:
 
 Continue P0 before scaling P4. The next concrete implementation task is:
 
-1. Emit `workspace_snapshot_hash`, `task_prompt_hash`, and `variant_id` from
-   runners so `compare_contract_runs` can enforce the planned invariants.
-2. Finish the published pinned-source hash lists for first-party seed repos.
-3. Wire `make verify` into CI.
+1. Finish the published pinned-source hash lists for first-party seed repos.
+2. Wire `make verify` into CI.
+3. Start P1 by freezing the claim contract, threat model, and reviewer-risk
+   table.
 
 That sequence turns the current verified MVP from a strong local artifact into
 a reviewer-ready evidence package.

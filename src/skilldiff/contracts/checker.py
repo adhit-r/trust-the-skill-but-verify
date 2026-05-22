@@ -46,6 +46,7 @@ def check_trace_against_contract(
     findings.extend(expected_output_findings(contract, events, root))
 
     unique_findings = _dedupe_findings(findings)
+    run_context = (events[0].get("metadata") or {}) if events else {}
     summary = {
         "attempted_overreach": sum(1 for finding in unique_findings if finding["finding_type"] == "attempted_overreach"),
         "canary_observation_count": sum(1 for event in events if event["canary_observed"]),
@@ -58,9 +59,16 @@ def check_trace_against_contract(
     return {
         "contract_id": contract["contract_id"],
         "findings": unique_findings,
+        "repeat_id": events[0].get("repeat_id"),
         "run_id": events[0]["run_id"],
         "runtime_profile": events[0]["runtime_profile"],
+        "runtime_profile_hash": events[0].get("runtime_profile_hash"),
+        "skill_id": events[0].get("skill_id"),
         "summary": summary,
+        "task_id": events[0].get("task_id"),
+        "task_prompt_hash": run_context.get("task_prompt_hash"),
+        "variant_id": run_context.get("variant_id"),
+        "workspace_snapshot_hash": run_context.get("workspace_snapshot_hash"),
         "trace_path": _display_path(trace_path),
         "decisions": decisions,
     }

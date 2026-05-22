@@ -27,6 +27,7 @@ from .base import (
     ensure_artifact_files,
     stable_run_id,
     utc_now,
+    workspace_snapshot_hash,
     write_json,
     write_jsonl,
 )
@@ -58,7 +59,16 @@ class DockerDryRunAdapter(RuntimeAdapter):
             raise ValueError(f"profile requires {runtime_profile['adapter']['adapter_id']}, not {self.adapter_id}")
 
         constraints = _validated_constraints(runtime_profile)
-        run_id = stable_run_id(self.adapter_id, runtime_profile, run_spec)
+        command = run_spec.command or []
+        task_prompt_hash = _hash_text(task_prompt)
+        workspace_hash = workspace_snapshot_hash(workspace_seed)
+        run_id = stable_run_id(
+            self.adapter_id,
+            runtime_profile,
+            run_spec,
+            task_prompt_hash=task_prompt_hash,
+            workspace_snapshot_hash=workspace_hash,
+        )
         run_dir = (run_spec.output_root / run_id).resolve()
         if run_dir.exists():
             shutil.rmtree(run_dir)
@@ -69,7 +79,6 @@ class DockerDryRunAdapter(RuntimeAdapter):
         output_workspace_path.mkdir(parents=True, exist_ok=True)
         (workspace_root / "tmp").mkdir(parents=True, exist_ok=True)
         files = ensure_artifact_files(run_dir)
-        command = run_spec.command or []
         mounts = _resolved_mounts(constraints, seed_copy_path, output_workspace_path)
         read_provenance = _read_provenance_config(command, runtime_profile, output_workspace_path)
         execution_plan = _build_execution_plan(
@@ -100,12 +109,18 @@ class DockerDryRunAdapter(RuntimeAdapter):
                 "profile_hash": canonical_profile_hash(runtime_profile),
                 "repeat_id": run_spec.repeat_id,
                 "run_id": run_id,
+                "skill_artifact": run_spec.skill_artifact,
                 "skill_id": run_spec.skill_id,
                 "task_id": run_spec.task_id,
+                "task_prompt_hash": task_prompt_hash,
+                "task_prompt_ref": run_spec.task_prompt_ref,
+                "variant_id": run_spec.variant_id,
                 "workspace_copied_file_count": copied_files,
                 "workspace_mode": "copied_seed_read_only_repo_plus_writable_output",
                 "workspace_seed": str(workspace_seed),
+                "workspace_seed_id": run_spec.workspace_seed,
                 "workspace_seed_copy": str(seed_copy_path),
+                "workspace_snapshot_hash": workspace_hash,
                 "container_invocation": invocation,
             },
         )

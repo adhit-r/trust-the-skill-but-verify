@@ -124,6 +124,35 @@ def validate_comparison_file(path: Path) -> dict[str, Any]:
     return comparison
 
 
+def validate_no_unchecked_comparison_fields(path: Path) -> None:
+    comparison = validate_comparison_file(path)
+    runs = comparison.get("runs")
+    if not isinstance(runs, list) or not runs:
+        raise ValueError(f"{path}: comparison_no_unchecked_fields requires non-empty runs")
+    for run in runs:
+        context = run.get("comparison_context")
+        if not isinstance(context, dict):
+            raise AssertionError(f"{path}: run {run.get('run_id')} missing comparison_context")
+        missing_fields = context.get("missing_invariant_fields", [])
+        if not isinstance(missing_fields, list):
+            raise AssertionError(f"{path}: run {run.get('run_id')} has invalid missing_invariant_fields")
+        if missing_fields:
+            raise AssertionError(f"{path}: run {run.get('run_id')} missing invariant fields: {missing_fields}")
+
+    pairs = comparison.get("pairs")
+    if not isinstance(pairs, list) or not pairs:
+        raise ValueError(f"{path}: comparison_no_unchecked_fields requires non-empty pairs")
+    for index, pair in enumerate(pairs):
+        invariants = pair.get("comparison_invariants")
+        if not isinstance(invariants, dict):
+            raise AssertionError(f"{path}: pair {index} missing comparison_invariants")
+        unchecked_fields = invariants.get("unchecked_fields", [])
+        if not isinstance(unchecked_fields, list):
+            raise AssertionError(f"{path}: pair {index} has invalid unchecked_fields")
+        if unchecked_fields:
+            raise AssertionError(f"{path}: pair {index} has unchecked invariant fields: {unchecked_fields}")
+
+
 def validate_evidence(evidence: dict[str, Any]) -> None:
     evidence_type = evidence.get("type")
     if evidence_type == "file_contains":
@@ -169,6 +198,17 @@ def validate_evidence(evidence: dict[str, Any]) -> None:
             for run in validate_comparison_file(path).get("runs", [])
         }
         expect_equal(len(trace_paths), evidence.get("expected"), f"{pattern}: unique trace count")
+        return
+
+    if evidence_type == "comparison_no_unchecked_fields":
+        pattern = evidence.get("glob")
+        if not isinstance(pattern, str):
+            raise ValueError("comparison_no_unchecked_fields evidence requires glob")
+        files = comparison_files(pattern)
+        if "expected_source_count" in evidence:
+            expect_equal(len(files), evidence["expected_source_count"], f"{pattern}: source count")
+        for path in files:
+            validate_no_unchecked_comparison_fields(path)
         return
 
     path = evidence_path(evidence)

@@ -173,6 +173,23 @@
       ]
     },
     {
+      "claim_id": "CL-MVP-010",
+      "status": "supported",
+      "claim": "Current RP2/RP3 comparison artifacts emit workspace snapshot, task prompt, and variant invariants with no unchecked comparator fields.",
+      "paper_locations": [
+        "paper/claim-ledger.md",
+        "paper/experiment-protocol.md",
+        "paper/method-boundaries.md"
+      ],
+      "evidence": [
+        {
+          "type": "comparison_no_unchecked_fields",
+          "glob": "results/mvp/*/*_rp2_rp3_comparison.json",
+          "expected_source_count": 12
+        }
+      ]
+    },
+    {
       "claim_id": "CL-MVP-007",
       "status": "supported",
       "claim": "The MVP includes two first-party seed case families: AuditLens and docs-forge.",

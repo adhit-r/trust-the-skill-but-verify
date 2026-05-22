@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp2-8acbda77b256`
+- Run: `rp2-7485384d51d7`
 - Runtime profile: `RP2`
 - Contract: `network-egress-executable-smoke`
-- Trace: `results/raw/rp2-8acbda77b256/trace.jsonl`
+- Trace: `results/raw/rp2-7485384d51d7/trace.jsonl`
 - Events: `10`
 - Realized contract violations: `2`
 - Attempted overreach: `0`

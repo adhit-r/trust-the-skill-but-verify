@@ -1,0 +1,2 @@
+{"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./reports/audit/evidence_catalog.json", "sha256": "sha256:150d0504118e78d17567af321612089a64713946f7ed145ac1d8739517a9c027", "size": 1287, "status": "succeeded", "timestamp": "2026-05-22T22:32:01+00:00"}
+{"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./reports/audit/findings.md", "sha256": "sha256:8b976735e4072e30bec9b0592c8d6c91372c318b5fa419ea35e5ad31b9ba0f0b", "size": 1029, "status": "succeeded", "timestamp": "2026-05-22T22:32:01+00:00"}

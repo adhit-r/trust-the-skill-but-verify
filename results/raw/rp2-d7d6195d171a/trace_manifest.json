@@ -1,0 +1,18 @@
+{
+  "event_count": 9,
+  "event_types": [
+    "capability.snapshot",
+    "cleanup.observe",
+    "filesystem.read",
+    "filesystem.write",
+    "output.generated",
+    "process.exit",
+    "run.end",
+    "run.start",
+    "shell.exec"
+  ],
+  "run_id": "rp2-d7d6195d171a",
+  "schema_version": "0.1",
+  "trace_path": "<REPO_ROOT>/results/raw/rp2-d7d6195d171a/trace.jsonl",
+  "trace_valid": true
+}

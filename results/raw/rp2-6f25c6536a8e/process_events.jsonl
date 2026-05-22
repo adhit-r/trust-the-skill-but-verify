@@ -1,0 +1,2 @@
+{"argv": ["python3", "skill/adversarial.py"], "command_sha256": "sha256:552d00767b1dd98fe50a29e897b27499e6efc42a7f7c8e1b8640de78ad959f5e", "cwd": "<REPO_ROOT>/results/raw/rp2-6f25c6536a8e/workspace", "event": "shell.exec", "matched_rule_ids": ["SC-SH-001"], "operation": "exec", "status": "attempted", "target": "python3", "timestamp": "2026-05-22T22:31:28+00:00"}
+{"argv": ["python3", "skill/adversarial.py"], "event": "process.exit", "exit_code": 0, "operation": "exit", "status": "succeeded", "target": "python3", "timestamp": "2026-05-22T22:31:28+00:00"}

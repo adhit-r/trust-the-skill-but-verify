@@ -1,0 +1,19 @@
+{
+  "event_count": 248,
+  "event_types": [
+    "canary.observe",
+    "capability.snapshot",
+    "cleanup.observe",
+    "filesystem.read",
+    "filesystem.write",
+    "output.generated",
+    "process.exit",
+    "run.end",
+    "run.start",
+    "shell.exec"
+  ],
+  "run_id": "rp3-d49f59333831",
+  "schema_version": "0.1",
+  "trace_path": "<REPO_ROOT>/results/raw/rp3-d49f59333831/trace.jsonl",
+  "trace_valid": true
+}

@@ -1,0 +1,17 @@
+{
+  "mounts": [
+    {
+      "mode": "read_only",
+      "source": "<REPO_ROOT>/results/raw/rp3-5feabb9c3005/workspace/repo",
+      "target": "/workspace/repo"
+    },
+    {
+      "mode": "read_write",
+      "source": "<REPO_ROOT>/results/raw/rp3-5feabb9c3005/workspace/out",
+      "target": "/workspace/out"
+    }
+  ],
+  "tmpfs": [
+    "/tmp/skilldiff"
+  ]
+}

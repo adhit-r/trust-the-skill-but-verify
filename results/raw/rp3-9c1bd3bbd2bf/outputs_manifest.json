@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "436cb949a283f55c43cf78b3f5c5d63eeb253739b0ead3f68c7a223020302d22",
+  "generated_outputs": [
+    {
+      "path": "./approved-output/site-map.md",
+      "size": 251
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-9c1bd3bbd2bf"
+}

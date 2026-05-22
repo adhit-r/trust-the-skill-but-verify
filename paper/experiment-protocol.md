@@ -53,6 +53,11 @@ The current executable comparison uses:
 - RP3: Docker-sandboxed profile with explicit mounts, read-only source
   boundaries, and controlled network denial.
 
+For a run pair to support a runtime-drift candidate, the comparator requires
+matching `skill_id`, `task_id`, `contract_id`, `repeat_id`,
+`workspace_snapshot_hash`, `task_prompt_hash`, and `variant_id`. The current
+MVP comparison artifacts report no unchecked comparator fields.
+
 The full paper should add RP1, RP4, RP5, and RP6 only when each profile has:
 
 - a profile YAML file with a stable hash,

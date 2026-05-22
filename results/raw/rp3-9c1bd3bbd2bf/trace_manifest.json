@@ -1,0 +1,18 @@
+{
+  "event_count": 219,
+  "event_types": [
+    "capability.snapshot",
+    "cleanup.observe",
+    "filesystem.read",
+    "filesystem.write",
+    "output.generated",
+    "process.exit",
+    "run.end",
+    "run.start",
+    "shell.exec"
+  ],
+  "run_id": "rp3-9c1bd3bbd2bf",
+  "schema_version": "0.1",
+  "trace_path": "<REPO_ROOT>/results/raw/rp3-9c1bd3bbd2bf/trace.jsonl",
+  "trace_valid": true
+}

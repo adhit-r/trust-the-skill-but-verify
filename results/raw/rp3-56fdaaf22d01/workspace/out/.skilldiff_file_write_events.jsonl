@@ -1,0 +1,1 @@
+{"error_message": "[Errno 30] Read-only file system: '/workspace/repo/repo/src/generated-docs.ts'", "error_type": "OSError", "event": "filesystem.write", "instrumentation_model": "python_failed_write_wrapper_mvp", "mode": "w", "operation": "write", "path": "/workspace/repo/repo/src/generated-docs.ts", "status": "failed", "timestamp": "2026-05-22T22:31:56+00:00"}

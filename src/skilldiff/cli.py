@@ -18,6 +18,9 @@ from skilldiff.traces import TraceValidationError, validate_trace_file
 from skilldiff.traces.events import build_trace_from_artifacts
 
 
+REPO_ROOT = Path(__file__).resolve().parents[2]
+
+
 def load_yaml(path: Path) -> dict[str, Any]:
     with path.open("r", encoding="utf-8") as handle:
         data = yaml.safe_load(handle)
@@ -35,6 +38,17 @@ def choose_adapter(profile: dict[str, Any]) -> Any:
     raise ValueError(f"no RM-07 adapter implementation for {adapter_id}")
 
 
+def load_task_prompt(contract: dict[str, Any]) -> str:
+    task = contract.get("task", {})
+    prompt_ref = task.get("prompt_ref")
+    if isinstance(prompt_ref, str) and prompt_ref and prompt_ref != "inline":
+        prompt_path = Path(prompt_ref)
+        if not prompt_path.is_absolute():
+            prompt_path = REPO_ROOT / prompt_path
+        return prompt_path.read_text(encoding="utf-8")
+    return str(task.get("intent", ""))
+
+
 def cmd_run(args: argparse.Namespace) -> int:
     profile = load_yaml(args.profile)
     contract = load_yaml(args.contract)
@@ -47,12 +61,13 @@ def cmd_run(args: argparse.Namespace) -> int:
         repeat_id=args.repeat_id,
         skill_artifact=args.skill_artifact,
         task_prompt_ref=str(contract.get("task", {}).get("prompt_ref", "inline")),
+        variant_id=args.variant_id,
         workspace_seed=args.workspace_seed_id or str(args.workspace),
         output_root=args.output_root,
         dry_run=not args.live,
         command=command,
     )
-    task_prompt = contract.get("task", {}).get("intent", "")
+    task_prompt = load_task_prompt(contract)
     prepared = adapter.prepare(run_spec, profile, args.workspace, contract, task_prompt)
     execution = adapter.run(prepared)
     collected = adapter.collect(prepared, execution)
@@ -127,6 +142,7 @@ def build_parser() -> argparse.ArgumentParser:
     run.add_argument("--output-root", type=Path, default=Path("results/raw"))
     run.add_argument("--workspace-seed-id", default="")
     run.add_argument("--skill-artifact", default="local-fixture")
+    run.add_argument("--variant-id", default="fixture-variant")
     run.add_argument("--repeat-id", type=int, default=0)
     run.add_argument("--live", action="store_true", help="Execute the prepared command when supported")
     run.add_argument("--command", nargs=argparse.REMAINDER, help="Command argv to execute after --command")

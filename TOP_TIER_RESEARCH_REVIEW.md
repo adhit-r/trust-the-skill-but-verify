@@ -47,7 +47,7 @@ Implemented project layers:
 | Runtime profiles | RP1-RP6 YAML profiles exist; RP2/RP3 are executable in current evidence | Good profile abstraction; most profiles are not yet evaluated. |
 | Adapters | RP2 local execution and RP3 Docker sandbox live paths exist | Good pilot; names still imply dry-run in some classes despite live behavior. |
 | Trace model | Normalized JSONL events, profile hashes, run identity, instrumentation status, canary scanning | Good base; activation, approval, tool, connector, and persistence events are mostly future-facing. |
-| Contract model | YAML contracts, schema validation, event matching, canary and output-oracle findings | Good start; comparator should enforce stronger pair comparability. |
+| Contract model | YAML contracts, schema validation, event matching, canary and output-oracle findings | Good MVP base; comparator now enforces pair comparability for current RP2/RP3 artifacts. |
 | Experiments | Repo-audit, network-egress, AuditLens, docs-forge MVP runners and reproduction scripts | Strong for pilot; not enough for top-tier quantitative claims. |
 | Paper artifacts | Method boundaries, case studies, tables, protocol, intro skeleton | Honest and reviewer-safe; this honesty should be preserved. |
 
@@ -108,9 +108,9 @@ Strengths:
 
 Technical weaknesses:
 
-- `compare_contract_runs` does not yet machine-enforce equal `skill_id`,
-  `task_id`, `workspace_snapshot_hash`, `task_prompt_hash`, `variant_id`, and
-  repeat comparability before labeling drift candidates.
+- `compare_contract_runs` now machine-checks the MVP comparability fields
+  needed for RP2/RP3 drift candidates, but this guard must stay enforced as new
+  runtimes, repeats, and model-mediated variants are added.
 - `checker._read_event_evidence_text` reads evidence paths directly. Scrubbed
   `<REPO_ROOT>` placeholders make published traces safer, but rechecking
   sanitized artifacts may fail unless evidence resolution is made
@@ -163,7 +163,7 @@ What is missing for top-tier rigor:
 | Runtime diversity | RP2/RP3 only misses hosted, plugin, MCP, and hardened profiles. | Execute RP1/RP4/RP5/RP6 or clearly defer them. |
 | Repeats | Single deterministic runs cannot handle agent nondeterminism. | Add 3 deterministic repeats and 5 model-mediated repeats where relevant. |
 | Instrumentation coverage | D1/D3/tool/persistence are mostly not measured. | Add event emitters and profile support before claiming those classes. |
-| Comparator invariants | Drift claims need stronger machine-checked comparability. | Enforce skill/task/contract/prompt/workspace/repeat equivalence. |
+| Comparator invariants | The MVP now enforces skill/task/contract/prompt/workspace/variant/repeat equivalence, but expansion can regress this if new runners omit fields. | Keep no-unchecked-field validation in the claim ledger and CI for every new runtime profile. |
 | External validity | Controlled Python fixtures may look artificial. | Add real execution slices and diverse skill categories. |
 | Baselines | No comparison to least-privilege or runtime guardrails. | Add SkillScope-style policy baseline, hardened RP6, and possibly ClawGuard-like boundary checks. |
 | Human review | Semantic findings need adjudication. | Add two-reviewer classification with agreement metrics. |

@@ -1,0 +1,11 @@
+{
+  "adapter_outcome": "completed",
+  "generated_outputs": [
+    {
+      "path": "./reports/network-egress-report.md",
+      "size": 167
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp2-d7d6195d171a"
+}

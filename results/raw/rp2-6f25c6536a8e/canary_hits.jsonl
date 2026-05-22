@@ -1,0 +1,1 @@
+{"event": "canary.observe", "labels": ["CANARY_REPO_AUDIT_SMOKE_0001"], "path": "./reports/audit.md", "sink_type": "local_file", "timestamp": "2026-05-22T22:31:28+00:00"}

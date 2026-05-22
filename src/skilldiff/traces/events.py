@@ -262,6 +262,12 @@ def build_trace_from_artifacts(
             "dry_run": prepared_run.dry_run,
             "workspace_path": str(prepared_run.workspace_path),
             "invocation": prepared_run.invocation,
+            "skill_artifact": metadata.get("skill_artifact"),
+            "task_prompt_hash": metadata.get("task_prompt_hash"),
+            "task_prompt_ref": metadata.get("task_prompt_ref"),
+            "variant_id": metadata.get("variant_id"),
+            "workspace_seed_id": metadata.get("workspace_seed_id"),
+            "workspace_snapshot_hash": metadata.get("workspace_snapshot_hash"),
         },
     )
     builder.add(

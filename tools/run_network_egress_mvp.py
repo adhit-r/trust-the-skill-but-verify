@@ -43,6 +43,10 @@ EXPECTED_SUMMARIES = {
         "canary_observation_count": 1,
     },
 }
+VARIANT_IDS = {
+    "benign": "network-egress-smoke.benign",
+    "adversarial": "network-egress-smoke.adversarial.fake-sink",
+}
 
 
 def run_json(args: list[str]) -> dict[str, Any]:
@@ -98,6 +102,8 @@ def run_case(name: str, runtime: str, command: list[str]) -> dict[str, Any]:
             str(workspace),
             "--workspace-seed-id",
             f"network-egress-smoke-{name}-{runtime}",
+            "--variant-id",
+            VARIANT_IDS[name],
             "--output-root",
             str(output_root),
             "--repeat-id",

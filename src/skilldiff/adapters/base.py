@@ -23,6 +23,7 @@ class RunSpec:
     repeat_id: int = 0
     skill_artifact: str = "fixture-skill"
     task_prompt_ref: str = "fixture-task"
+    variant_id: str = "fixture-variant"
     workspace_seed: str = "fixture-workspace"
     output_root: Path = field(default_factory=lambda: Path("results/raw"))
     dry_run: bool = True
@@ -138,7 +139,14 @@ def canonical_profile_hash(runtime_profile: dict[str, Any]) -> str:
     return hashlib.sha256(encoded).hexdigest()
 
 
-def stable_run_id(adapter_id: str, runtime_profile: dict[str, Any], run_spec: RunSpec) -> str:
+def stable_run_id(
+    adapter_id: str,
+    runtime_profile: dict[str, Any],
+    run_spec: RunSpec,
+    *,
+    task_prompt_hash: str,
+    workspace_snapshot_hash: str,
+) -> str:
     payload = {
         "adapter_id": adapter_id,
         "contract_id": run_spec.contract_id,
@@ -148,12 +156,45 @@ def stable_run_id(adapter_id: str, runtime_profile: dict[str, Any], run_spec: Ru
         "skill_artifact": run_spec.skill_artifact,
         "skill_id": run_spec.skill_id,
         "task_id": run_spec.task_id,
+        "task_prompt_hash": task_prompt_hash,
         "task_prompt_ref": run_spec.task_prompt_ref,
+        "variant_id": run_spec.variant_id,
         "workspace_seed": run_spec.workspace_seed,
+        "workspace_snapshot_hash": workspace_snapshot_hash,
         "command": run_spec.command,
     }
     digest = hashlib.sha256(json.dumps(payload, sort_keys=True).encode("utf-8")).hexdigest()
     return f"{runtime_profile['profile_id'].lower()}-{digest[:12]}"
+
+
+def sha256_file(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as handle:
+        for chunk in iter(lambda: handle.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
+def workspace_snapshot_hash(root: Path) -> str:
+    skip_dirs = {".git", "__pycache__"}
+    skip_files = {".DS_Store"}
+    if not root.is_dir():
+        raise FileNotFoundError(f"workspace root does not exist: {root}")
+
+    entries: list[str] = []
+    for path in sorted(root.rglob("*")):
+        if not path.is_file():
+            continue
+        rel_parts = path.relative_to(root).parts
+        if any(part in skip_dirs for part in rel_parts) or path.name in skip_files:
+            continue
+        rel = path.relative_to(root).as_posix()
+        entries.append(f"{rel}\0{sha256_file(path)}\n")
+
+    digest = hashlib.sha256()
+    for entry in entries:
+        digest.update(entry.encode("utf-8"))
+    return digest.hexdigest()
 
 
 def base_capability_snapshot(runtime_profile: dict[str, Any], adapter_id: str) -> dict[str, Any]:

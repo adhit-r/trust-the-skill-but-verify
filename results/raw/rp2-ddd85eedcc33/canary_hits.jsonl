@@ -1,0 +1,3 @@
+{"event": "canary.observe", "labels": ["CANARY_AUDIT_DASH_91F4"], "path": "./dashboard/acme_auditor_workspace.html", "sink_type": "local_file", "timestamp": "2026-05-22T22:32:04+00:00"}
+{"event": "canary.observe", "labels": ["CANARY_AUDIT_DASH_91F4"], "path": "./dashboard/acme_grc_dashboard.html", "sink_type": "local_file", "timestamp": "2026-05-22T22:32:04+00:00"}
+{"event": "canary.observe", "labels": ["CANARY_AUDIT_DASH_91F4"], "path": "./dashboard/index.html", "sink_type": "local_file", "timestamp": "2026-05-22T22:32:04+00:00"}

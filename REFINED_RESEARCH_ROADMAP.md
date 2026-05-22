@@ -1,9 +1,13 @@
 # Refined Research Roadmap
 
-This roadmap converts the current pilot into a submission-grade security
-measurement paper. It preserves the existing project framing but tightens
-priorities around evidence integrity, runtime comparability, instrumentation
-coverage, scale, and artifact readiness.
+This roadmap converts the current pilot into a top-tier full systems-security
+paper. The only accepted end goal is a full-paper submission suitable for NDSS,
+USENIX Security, IEEE S&P, or ACM CCS. Workshop, demo, short-paper, and
+technical-report paths are out of scope for this roadmap.
+
+All priorities below optimize for evidence integrity, runtime comparability,
+instrumentation coverage, benchmark scale, statistical rigor, mitigation
+baselines, and artifact readiness.
 
 ## North Star
 
@@ -19,6 +23,19 @@ The full-paper claim should be:
 > different agent runtime profiles can produce measurably different security
 > outcomes. These outcomes can be captured through normalized traces, classified
 > through contracts, and summarized as security conformance report cards.
+
+Top-tier full-paper readiness means the paper can defend all of the following:
+
+- A clear formal model of runtime-induced security drift.
+- A normalized trace and contract system that covers file, process, network,
+  activation, approval, tool/MCP, persistence, output, cleanup, and canary-flow
+  behavior.
+- At least 40 skills and at least 120 skill-task-contract runs across at least
+  four runtime profiles, or an explicitly justified narrower full-paper scope
+  with equivalent depth.
+- Repeat-run evidence, uncertainty estimates, utility metrics, manual
+  adjudication, and mitigation baselines.
+- A clean, anonymous, reviewer-reproducible artifact package.
 
 ## P0: Evidence Integrity Gate
 
@@ -111,36 +128,34 @@ Priority profiles:
 
 Acceptance gate:
 
-- At least three profiles are executable for the short-paper target.
-- At least four profiles are executable for the full-paper target, or the paper
-  narrows claims to profiles actually evaluated.
+- At least four profiles are executable for the full-paper target, with
+  unsupported surfaces recorded in the adapter support matrix. If access limits
+  force a narrower profile set, the paper must compensate with deeper
+  instrumentation, repeats, and mitigation evidence rather than falling back to
+  a lower-scope claim.
 
 ## P4: Benchmark Expansion
 
 Goal: turn pilot cases into a benchmark with enough breadth for quantitative
 claims.
 
-Short-paper target:
-
-- At least 10 skills.
-- At least 30 skill-task-contract triples.
-- 2-3 runtime profiles.
-- 3 repeats for deterministic fixtures where useful.
-- 5 repeats for model-mediated or nondeterministic agent runs.
-
-Full-paper target:
+Full-paper dataset target:
 
 - At least 40 skills.
-- At least 120 skill-task-contract runs.
-- 3-6 runtime profiles.
-- Benign and adversarial variants.
+- At least 120 skill-task-contract runs before repeats.
+- At least four executable runtime profiles, with six profiles as the stretch
+  target.
+- Benign and adversarial variants for every included category.
 - Categories: document automation, repository maintenance, compliance audit,
   network/API workflow, MCP/tool workflow, local file operation, and persistence.
+- Clear separation of full-product execution, controlled fixture execution, and
+  source-only inspection.
 
 Acceptance gate:
 
-- The paper can report category-level and runtime-pair-level metrics without
-  relying on only the original four pilot families.
+- The paper can report category-level, runtime-pair-level, and
+  mitigation-level metrics without relying on only the original four pilot
+  families.
 
 ## P5: Experimental Rigor And Statistics
 
@@ -185,7 +200,7 @@ Acceptance gate:
 
 ## P7: Submission And Artifact Package
 
-Goal: make the paper and artifact acceptable to top-tier review.
+Goal: make the paper and artifact acceptable to top-tier full-paper review.
 
 Milestone outputs:
 
@@ -217,17 +232,24 @@ more cleanup work and reduces confidence.
 
 ## Submission Targets
 
-| Target | Recommended Use |
-| --- | --- |
-| Workshop / technical report | After P0-P2, to get feedback on method and artifact shape. |
-| NDSS 2027 Fall | Only if P0-P5 are substantially complete by late July 2026. |
-| IEEE S&P 2027 second cycle | Good target if P0-P6 mature by October 2026. |
-| USENIX Security 2027 Cycle 2 | Best target for a mature systems-security measurement artifact by January 2027. |
+Only top-tier full-paper targets are in scope:
 
-## Go / No-Go Gates
+| Target | Readiness Requirement |
+| --- | --- |
+| NDSS 2027 Fall | P0-P5 complete, P2/P3 coverage defensible, benchmark scaled by late July 2026. |
+| IEEE S&P 2027 second cycle | P0-P6 mature, threat model and statistics polished by October 2026. |
+| USENIX Security 2027 Cycle 2 | Full benchmark, mitigation report cards, artifact package, and manuscript mature by January 2027. |
+| ACM CCS next full cycle | Viable only with full top-tier evidence package and clear differentiation from skill-safety benchmarks. |
+
+## Top-Tier Go / No-Go Gates
 
 | Gate | Go Condition | No-Go Signal |
 | --- | --- | --- |
-| Workshop | Current MVP reruns cleanly and new instrumentation has at least one case | Path leaks, unverifiable provenance, or unclear claims. |
-| Short paper | 10 skills, 30 triples, 3 profiles, repeat policy, clean artifact | Only RP2/RP3 or only controlled Python fixtures. |
-| Full top-tier paper | 40 skills, 120+ runs, 4+ profiles or explicit narrowed scope, adjudication, baselines, artifact package | Missing approval/tool/persistence evidence, no repeats, no mitigation baseline. |
+| Concept | Runtime conformance drift is the central unit of analysis, not attack success alone. | Paper reads like another skill-safety benchmark. |
+| Evidence integrity | Clean checkout reproduces main tables with provenance, claim-ledger, path-scrub, and comparator checks. | Any paper number lacks machine-checked evidence. |
+| Instrumentation | File, process, network, activation, approval, tool/MCP, persistence, output, cleanup, and canary-flow surfaces are covered or explicitly bounded. | Missing observers are mistaken for security successes. |
+| Runtime diversity | At least four runtime profiles are executable or an equivalent narrower full-paper scope is rigorously justified. | Results remain RP2/RP3-only without a strong causal or mitigation story. |
+| Benchmark scale | At least 40 skills and 120+ skill-task-contract runs before repeats. | Claims rely on the original four pilot families. |
+| Rigor | Repeats, utility metrics, uncertainty estimates, adjudication, and reviewer agreement are reported. | Single-run deterministic evidence is treated as general behavior. |
+| Mitigations | RP6/report-card or least-privilege-style baselines quantify drift reduction and utility cost. | Paper only identifies failures and offers no actionable control comparison. |
+| Artifact | Anonymous artifact package is safe, complete, documented, and reviewer-rerunnable. | Local paths, secrets, unclear licenses, or missing reproduction commands remain. |

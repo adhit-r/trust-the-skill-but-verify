@@ -6,6 +6,11 @@ This TODO is mapped to `REFINED_RESEARCH_ROADMAP.md`. Status values:
 - `[~]` in progress or partially present
 - `[x]` complete in the current repo
 
+Only goal: reach top-tier full-paper readiness for NDSS, USENIX Security,
+IEEE S&P, or ACM CCS. Workshop, short-paper, demo, and technical-report tracks
+are not planning targets. Every TODO below should either increase full-paper
+evidence strength or be removed.
+
 ## P0: Evidence Integrity Gate
 
 1. [x] Add source-provenance hash verification to
@@ -65,10 +70,10 @@ This TODO is mapped to `REFINED_RESEARCH_ROADMAP.md`. Status values:
    before discussing individual case studies.
 5. [ ] Add a reviewer-risk table to the paper notes.
    Done when each likely objection has a planned evidence answer or limitation.
-6. [ ] Decide whether the first submission is workshop, short paper, or full
-   paper.
-   Done when target venue, deadline, page budget, and required evidence level
-   are written down.
+6. [ ] Select the top-tier full-paper target and deadline plan.
+   Done when the target is chosen from NDSS, USENIX Security, IEEE S&P, or ACM
+   CCS, and the page budget, artifact expectations, evidence gates, anonymity
+   requirements, and deadline backplan are written down.
 
 ## P2: Instrumentation Coverage Expansion
 
@@ -140,11 +145,12 @@ This TODO is mapped to `REFINED_RESEARCH_ROADMAP.md`. Status values:
    Done when hidden state, resumable state, and cleanup retention are measured.
 7. [ ] Add activation-negative-control fixtures.
    Done when skills are tested for non-activation under unrelated tasks.
-8. [ ] Add at least 10 skills for a short-paper dataset.
-   Done when each has manifest, task prompt, contract, expected outputs, and
-   at least two runtime profiles.
-9. [ ] Add at least 40 skills for full-paper minimum.
-   Done when the benchmark has enough category diversity for aggregate tables.
+8. [ ] Add at least 40 skills for the full-paper benchmark.
+   Done when every skill has a manifest, task prompt, contract, expected
+   outputs, provenance level, execution level, and publication boundary.
+9. [ ] Produce at least 120 skill-task-contract runs before repeats.
+   Done when the benchmark supports category-level and runtime-pair-level
+   aggregate tables across at least four runtime profiles.
 10. [ ] Separate full product, controlled fixture, and source-only evidence.
     Done when tables never blur these levels.
 
@@ -220,13 +226,18 @@ This TODO is mapped to `REFINED_RESEARCH_ROADMAP.md`. Status values:
 
 ## Immediate Next Step
 
-Finish the last P0 automation gap before scaling P4. The next concrete
-implementation task is:
+Finish the remaining P0 automation gap, then build only toward top-tier
+full-paper gates. The next concrete implementation sequence is:
 
 1. Wire `make verify` into CI.
-2. Start P1 by freezing the claim contract, threat model, and reviewer-risk
-   table.
-3. Then scale P2/P4 instrumentation and case-study coverage.
+2. Freeze the P1 paper spine: RQs, threat model, contribution list,
+   reviewer-risk table, related-work differentiation, and top-tier venue
+   backplan.
+3. Close P2/P3 coverage gaps for activation, approval, tool/MCP, persistence,
+   and at least four runtime profiles.
+4. Scale P4 to 40+ skills and 120+ skill-task-contract runs before repeats.
+5. Complete P5/P6 rigor: repeats, uncertainty, utility, adjudication,
+   reviewer agreement, and mitigation/report-card baselines.
+6. Complete P7 artifact and manuscript packaging for anonymous top-tier review.
 
-That sequence turns the current verified MVP from a strong local artifact into
-a reviewer-ready evidence package.
+There is no short-paper fallback in this roadmap.

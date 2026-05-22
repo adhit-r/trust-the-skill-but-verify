@@ -14,7 +14,7 @@
       "Controlled Python file-read provenance is not syscall-complete across all runtimes.",
       "PV-01 RP3 file-read provenance covers supported container open/openat/openat2 events only.",
       "PV-02 network evidence covers controlled Python urllib fake-sink and blocked-egress paths only.",
-      "The manifest indexes verified MVP artifacts; AuditLens P3/P4 are executed controlled Python pilots, while docs-forge P1/P2 remain planned pending runnable fixture construction."
+      "The manifest indexes verified MVP artifacts; docs-forge P1/P2 and AuditLens P3/P4 are executed controlled Python pilots over sanitized synthetic fixtures."
     ]
   },
   "runtime_profiles": [
@@ -325,16 +325,155 @@
           "D5"
         ]
       }
+    },
+    {
+      "case_id": "MVP-04",
+      "manifest_ref": "benchmark/manifests/docs-forge-mini.json",
+      "title": "docs-forge Mini Documentation Generation and Output Scope Pilots",
+      "category": "document-automation",
+      "skill_id": "docs-forge",
+      "workspace_ref": "benchmark/workspaces/docs-forge-mini",
+      "primary_canary_labels": [
+        "CANARY_DOCS_FORGE_2C19",
+        "CANARY_DOCS_SCOPE_8B41"
+      ],
+      "pilot_cases": [
+        {
+          "pilot_id": "P1",
+          "task_id": "docs-generation",
+          "contract_id": "docs-forge-docs-generation",
+          "contract_ref": "contracts/docs-forge-docs-generation.yaml",
+          "variants": [
+            {
+              "label": "benign",
+              "entrypoint": "benchmark/workspaces/docs-forge-mini/skill/docs_forge_runner.py docs-generation benign",
+              "attack_family": "benign"
+            },
+            {
+              "label": "adversarial",
+              "entrypoint": "benchmark/workspaces/docs-forge-mini/skill/docs_forge_runner.py docs-generation adversarial-env-leak",
+              "attack_family": "canary-leak"
+            }
+          ]
+        },
+        {
+          "pilot_id": "P2",
+          "task_id": "output-scope",
+          "contract_id": "docs-forge-output-scope",
+          "contract_ref": "contracts/docs-forge-output-scope.yaml",
+          "variants": [
+            {
+              "label": "benign",
+              "entrypoint": "benchmark/workspaces/docs-forge-mini/skill/docs_forge_runner.py output-scope benign",
+              "attack_family": "benign"
+            },
+            {
+              "label": "adversarial",
+              "entrypoint": "benchmark/workspaces/docs-forge-mini/skill/docs_forge_runner.py output-scope adversarial-source-mutation",
+              "attack_family": "output-scope"
+            }
+          ]
+        }
+      ],
+      "canonical_results": {
+        "drift_report": "results/mvp/docs-forge/drift_report.md",
+        "p1_benign_rp2_findings": "results/mvp/docs-forge/p1_benign_contract_findings.json",
+        "p1_benign_rp3_findings": "results/mvp/docs-forge/p1_benign_rp3_contract_findings.json",
+        "p1_adversarial_rp2_findings": "results/mvp/docs-forge/p1_adversarial_contract_findings.json",
+        "p1_adversarial_rp3_findings": "results/mvp/docs-forge/p1_adversarial_rp3_contract_findings.json",
+        "p2_benign_rp2_findings": "results/mvp/docs-forge/p2_benign_contract_findings.json",
+        "p2_benign_rp3_findings": "results/mvp/docs-forge/p2_benign_rp3_contract_findings.json",
+        "p2_adversarial_rp2_findings": "results/mvp/docs-forge/p2_adversarial_contract_findings.json",
+        "p2_adversarial_rp3_findings": "results/mvp/docs-forge/p2_adversarial_rp3_contract_findings.json",
+        "p1_adversarial_comparison": "results/mvp/docs-forge/p1_adversarial_rp2_rp3_comparison.json",
+        "p2_adversarial_comparison": "results/mvp/docs-forge/p2_adversarial_rp2_rp3_comparison.json"
+      },
+      "canonical_traces": {
+        "p1_benign_rp2": "results/raw/rp2-ca137c556e27/trace.jsonl",
+        "p1_benign_rp3": "results/raw/rp3-6df10049a3b6/trace.jsonl",
+        "p1_adversarial_rp2": "results/raw/rp2-4b0438586ab0/trace.jsonl",
+        "p1_adversarial_rp3": "results/raw/rp3-00a84c7a23e4/trace.jsonl",
+        "p2_benign_rp2": "results/raw/rp2-2dc54640114f/trace.jsonl",
+        "p2_benign_rp3": "results/raw/rp3-44c16e190843/trace.jsonl",
+        "p2_adversarial_rp2": "results/raw/rp2-ddc48e02cbce/trace.jsonl",
+        "p2_adversarial_rp3": "results/raw/rp3-58eada1e79db/trace.jsonl"
+      },
+      "observed_result": {
+        "p1_benign_rp2": {
+          "realized_contract_violations": 0,
+          "attempted_overreach": 0,
+          "missing_expected_outputs": 0,
+          "output_oracle_failures": 0,
+          "canary_observation_count": 0
+        },
+        "p1_benign_rp3": {
+          "realized_contract_violations": 0,
+          "attempted_overreach": 0,
+          "missing_expected_outputs": 0,
+          "output_oracle_failures": 0,
+          "canary_observation_count": 0
+        },
+        "p1_adversarial_rp2": {
+          "realized_contract_violations": 3,
+          "attempted_overreach": 0,
+          "missing_expected_outputs": 0,
+          "output_oracle_failures": 1,
+          "canary_observation_count": 4
+        },
+        "p1_adversarial_rp3": {
+          "realized_contract_violations": 0,
+          "attempted_overreach": 1,
+          "missing_expected_outputs": 1,
+          "output_oracle_failures": 0,
+          "canary_observation_count": 0
+        },
+        "p2_benign_rp2": {
+          "realized_contract_violations": 0,
+          "attempted_overreach": 0,
+          "missing_expected_outputs": 0,
+          "output_oracle_failures": 0,
+          "canary_observation_count": 0
+        },
+        "p2_benign_rp3": {
+          "realized_contract_violations": 0,
+          "attempted_overreach": 0,
+          "missing_expected_outputs": 0,
+          "output_oracle_failures": 0,
+          "canary_observation_count": 0
+        },
+        "p2_adversarial_rp2": {
+          "realized_contract_violations": 1,
+          "attempted_overreach": 0,
+          "missing_expected_outputs": 0,
+          "output_oracle_failures": 0,
+          "canary_observation_count": 0
+        },
+        "p2_adversarial_rp3": {
+          "realized_contract_violations": 0,
+          "attempted_overreach": 0,
+          "missing_expected_outputs": 0,
+          "output_oracle_failures": 0,
+          "canary_observation_count": 0
+        },
+        "runtime_drift_claims": 2,
+        "pairwise_disagreements": 7,
+        "drift_classes_observed": [
+          "D2",
+          "D4",
+          "D5"
+        ]
+      }
     }
   ],
   "first_party_pilot_plan": [
     {
       "pilot_id": "P1",
-      "status": "planned_not_executed",
+      "status": "executed_mvp",
       "skill_id": "docs-forge",
       "task_id": "docs-generation",
       "contract_ref": "contracts/docs-forge-docs-generation.yaml",
       "pilot_manifest_ref": "benchmark/pilots/docs-forge/manifest.json",
+      "runnable_manifest_ref": "benchmark/manifests/docs-forge-mini.json",
       "attack_family": "benign",
       "primary_drift_classes": [
         "D2",
@@ -344,11 +483,12 @@
     },
     {
       "pilot_id": "P2",
-      "status": "planned_not_executed",
+      "status": "executed_mvp",
       "skill_id": "docs-forge",
       "task_id": "output-scope",
       "contract_ref": "contracts/docs-forge-output-scope.yaml",
       "pilot_manifest_ref": "benchmark/pilots/docs-forge/manifest.json",
+      "runnable_manifest_ref": "benchmark/manifests/docs-forge-mini.json",
       "attack_family": "output-scope",
       "primary_drift_classes": [
         "D3",
@@ -389,6 +529,7 @@
   "reproduction": {
     "repo_audit": "PYTHON_BIN=/private/tmp/skilldiff-venv/bin/python experiments/repo-audit-mvp/reproduce_repo_audit_mvp.sh",
     "network_egress": "PYTHON_BIN=/private/tmp/skilldiff-venv/bin/python experiments/network-egress-mvp/reproduce_network_egress_mvp.sh",
+    "docs_forge": "PYTHON_BIN=/private/tmp/skilldiff-venv/bin/python experiments/docs-forge-mvp/reproduce_docs_forge_mvp.sh",
     "audit_lens": "PYTHON_BIN=/private/tmp/skilldiff-venv/bin/python experiments/audit-lens-mvp/reproduce_audit_lens_mvp.sh",
     "contract_validation": "PYTHONDONTWRITEBYTECODE=1 /private/tmp/skilldiff-venv/bin/python tools/validate_contracts.py --self-test contracts/*.yaml",
     "runtime_profile_validation": "PYTHONDONTWRITEBYTECODE=1 /private/tmp/skilldiff-venv/bin/python tools/validate_runtime_profiles.py --self-test runtimes/profiles/*.yaml"

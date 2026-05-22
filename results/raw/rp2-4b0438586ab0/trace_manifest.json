@@ -1,0 +1,19 @@
+{
+  "event_count": 18,
+  "event_types": [
+    "canary.observe",
+    "capability.snapshot",
+    "cleanup.observe",
+    "filesystem.read",
+    "filesystem.write",
+    "output.generated",
+    "process.exit",
+    "run.end",
+    "run.start",
+    "shell.exec"
+  ],
+  "run_id": "rp2-4b0438586ab0",
+  "schema_version": "0.1",
+  "trace_path": "/Users/adhi/axonome/trust-the-skill-but-verify/results/raw/rp2-4b0438586ab0/trace.jsonl",
+  "trace_valid": true
+}

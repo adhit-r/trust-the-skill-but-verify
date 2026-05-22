@@ -1,24 +1,33 @@
 {
   "schema_version": "0.1",
-  "pilot_id": "docs-forge-placeholder",
+  "pilot_id": "docs-forge-mini",
   "skill_id": "docs-forge",
-  "status": "metadata_only_placeholder",
+  "status": "executed_controlled_mvp",
   "source": {
     "remote_url": "https://github.com/adhit-r/docs-forge",
     "pinned_commit": "40c3693491b49382682622408f167424ed814c71",
+    "pinned_tree": "6fbaec7f16561e5cedd7725d05613ce4a0e61739",
     "pinned_commit_source": "RESEARCH_ROADMAP.md",
-    "local_source_snapshot_inspected": false,
-    "local_source_snapshot_path": null
+    "local_source_snapshot_inspected": true,
+    "local_source_snapshot_path": "/Users/adhi/Documents/Codex/2026-05-06/files-mentioned-by-the-user-docs",
+    "local_source_tracked_state": "clean"
   },
-  "inspection_boundary": "No current docs-forge source contents were inspected locally in this phase. Surfaces are roadmap-level intended pilot surfaces, not verified local paths.",
-  "intended_surfaces": [
-    "codex_plugin_skill",
-    "claude_code_skill",
-    "antigravity_adapter",
-    "agents_md_playbook",
-    "npx_installer_or_command",
-    "resumable_state",
+  "inspection_boundary": "Pinned docs-forge source was inspected for provenance and command-surface truth. The executable P1/P2 evidence uses a benchmark-owned controlled Python fixture; it does not claim execution of the real docs-forge Node installer.",
+  "runnable_manifest_ref": "benchmark/manifests/docs-forge-mini.json",
+  "workspace_ref": "benchmark/workspaces/docs-forge-mini",
+  "included_surfaces": [
+    "codex_plugin_skill_provenance",
+    "claude_code_skill_provenance",
+    "antigravity_adapter_provenance",
+    "agents_md_playbook_provenance",
+    "controlled_documentation_workload",
     "generated_documentation_outputs"
+  ],
+  "excluded_surfaces": [
+    "npx_installer_execution",
+    "real_docs_forge_node_runtime",
+    "ignored_.docs-forge_dogfood_artifacts",
+    "full_source_vendoring"
   ],
   "drift_surfaces": [
     "activation",
@@ -31,18 +40,28 @@
   ],
   "tasks": [
     {
+      "pilot_id": "P1",
       "task_id": "docs-generation",
       "prompt_ref": "benchmark/tasks/docs-forge/docs-generation.txt",
       "contract_ref": "contracts/docs-forge-docs-generation.yaml",
+      "expected_output_ref": "benchmark/expected/docs-forge/docs-generation.json",
       "expected_primary_output": "./docs/index.md",
-      "notes": "Placeholder task for offline documentation generation from approved repository inputs."
+      "variants": [
+        "benchmark/variants/docs-forge/p1-benign.json",
+        "benchmark/variants/docs-forge/p1-adversarial-env-leak.json"
+      ]
     },
     {
+      "pilot_id": "P2",
       "task_id": "output-scope",
       "prompt_ref": "benchmark/tasks/docs-forge/output-scope.txt",
       "contract_ref": "contracts/docs-forge-output-scope.yaml",
+      "expected_output_ref": "benchmark/expected/docs-forge/output-scope.json",
       "expected_primary_output": "./approved-output/site-map.md",
-      "notes": "Placeholder task for verifying generated documentation stays inside the approved output tree."
+      "variants": [
+        "benchmark/variants/docs-forge/p2-benign.json",
+        "benchmark/variants/docs-forge/p2-adversarial-source-mutation.json"
+      ]
     }
   ],
   "canary_policy": {
@@ -54,12 +73,9 @@
     ]
   },
   "execution_gate": {
-    "ready_for_live_execution": false,
-    "required_before_execution": [
-      "Create a controlled seed workspace from the pinned commit.",
-      "Record the seed snapshot hash.",
-      "Verify actual docs-forge file layout and command surface in that snapshot.",
-      "Confirm contracts still match the verified snapshot and task prompts."
-    ]
+    "ready_for_live_execution": true,
+    "last_verified_command": "PYTHON_BIN=/private/tmp/skilldiff-venv/bin/python experiments/docs-forge-mvp/reproduce_docs_forge_mvp.sh",
+    "validated_trace_count": 8,
+    "validated_event_count": 952
   }
 }

@@ -1,0 +1,15 @@
+{
+  "adapter_outcome": "completed",
+  "generated_outputs": [
+    {
+      "path": "./docs/api.md",
+      "size": 114
+    },
+    {
+      "path": "./docs/index.md",
+      "size": 587
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp2-ca137c556e27"
+}

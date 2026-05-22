@@ -775,6 +775,13 @@ def _read_text_safely(path: Path) -> str:
 
 
 def _infer_sink_type(target: str) -> str:
+    normalized = target.replace("\\", "/")
+    if normalized.startswith("./docs/") or normalized.startswith("docs/"):
+        return "docs_bundle"
+    if normalized.startswith("./approved-output/") or normalized.startswith("approved-output/"):
+        return "approved_output_tree"
+    if normalized.startswith("./repo/") or normalized.startswith("repo/"):
+        return "source_tree"
     if target.endswith(".html"):
         return "local_html"
     if target.endswith(".json"):

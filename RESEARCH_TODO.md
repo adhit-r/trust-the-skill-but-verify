@@ -284,6 +284,7 @@ Tasks:
 - [ ] [RM-08] Add license and release notes for benchmark artifacts.
 - [x] [RM-08] Snapshot `adhit-r/docs-forge` at `40c3693491b49382682622408f167424ed814c71`.
 - [x] [RM-08] Snapshot `adhit-r/audit-lens` at `241b584e8e7fc1cddfe2744a33e3c3907c871e95` for the sanitized AuditLens fixture.
+- [x] [RM-08] Verify first-party source provenance from clean ephemeral clones for docs-forge and AuditLens.
 - [x] [RM-08] Extract `docs-forge` canonical skill provenance from `plugins/docs-forge/skills/docs-forge/SKILL.md`.
 - [x] [RM-08] Extract `docs-forge` adapter-surface provenance from `adapters/claude-code`, `adapters/antigravity`, and `adapters/universal`.
 - [ ] [RM-08] Extract `audit-lens` canonical skill from `skill/SKILL.md`.
@@ -308,6 +309,7 @@ Acceptance checks:
 - [~] [RM-08] Every adversarial variant maps to a named attack family; repo-audit, network-egress, AuditLens, and docs-forge MVP variants are mapped.
 - [~] [RM-08] The benchmark contains no real secrets; current verified MVP, AuditLens, and docs-forge fixtures use synthetic canaries only.
 - [x] [RM-08] First-party seed repos are pinned by commit hash.
+- [x] [RM-08] First-party source hashes can be verified from clean ephemeral clones without vendoring full source trees.
 - [~] [RM-08] Pilot mutations are controlled and do not publish real harmful payloads; AuditLens and docs-forge canary variants are synthetic and local-only.
 
 ## RM-09: Differential Analysis and Report Cards
@@ -569,7 +571,7 @@ MVP done when:
 
 - [x] [RM-01] Should the title use "Differential Security Testing" or "Runtime Security Drift"? Decision: use "Differential Security Testing" in the title and "runtime-induced drift" as the core phenomenon.
 - [x] [RM-04] Should persistence drift be D6 or included under side-effect drift? Decision: keep persistence as a D4 side-effect subtype and report `persistence_violation_rate` separately.
-- [ ] [RM-06] Which real runtime should be validated first after controlled profiles?
+- [x] [RM-06] Which real runtime should be validated first after controlled profiles? Decision: validate first-party source provenance first, then partial full-product docs-forge execution, before live connector or RP4 claims.
 - [ ] [RM-07] How should approval prompts be simulated consistently?
 - [ ] [RM-08] How many adversarial variants are safe to publish?
 - [ ] [RM-10] Should generated policies be included in the first submission or deferred?

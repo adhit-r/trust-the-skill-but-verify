@@ -229,6 +229,92 @@
       ]
     },
     {
+      "claim_id": "CL-EXT-001",
+      "status": "supported_source_provenance",
+      "claim": "The first-party docs-forge and AuditLens source repositories verify from clean ephemeral clones against their pinned commits, trees, and 53 published source hashes.",
+      "paper_locations": [
+        "paper/claim-ledger.md",
+        "paper/artifact-readme.md",
+        "paper/method-boundaries.md",
+        "paper/tables/mvp-results.md"
+      ],
+      "evidence": [
+        {
+          "type": "json_value",
+          "path": "results/external/first-party-source-provenance.json",
+          "pointer": "/aggregate/repositories_verified",
+          "expected": 2
+        },
+        {
+          "type": "json_value",
+          "path": "results/external/first-party-source-provenance.json",
+          "pointer": "/aggregate/pinned_source_hashes_verified",
+          "expected": 53
+        },
+        {
+          "type": "json_value",
+          "path": "results/external/first-party-source-provenance.json",
+          "pointer": "/cases/0/verification_status",
+          "expected": "passed"
+        },
+        {
+          "type": "json_value",
+          "path": "results/external/first-party-source-provenance.json",
+          "pointer": "/cases/1/verification_status",
+          "expected": "passed"
+        },
+        {
+          "type": "json_len",
+          "path": "benchmark/manifests/external-validity-scaffolds.json",
+          "pointer": "/entries",
+          "expected": 2
+        }
+      ]
+    },
+    {
+      "claim_id": "CL-EXT-002",
+      "status": "supported_boundary",
+      "claim": "External-validity scaffold entries are source-only and excluded from MVP runtime-drift counts until live traces and comparisons exist.",
+      "paper_locations": [
+        "paper/claim-ledger.md",
+        "paper/artifact-readme.md",
+        "paper/method-boundaries.md",
+        "paper/tables/mvp-results.md"
+      ],
+      "evidence": [
+        {
+          "type": "json_value",
+          "path": "benchmark/manifests/external-validity-scaffolds.json",
+          "pointer": "/excluded_from_mvp_runtime_counts",
+          "expected": true
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/manifests/external-validity-scaffolds.json",
+          "pointer": "/entries/0/execution_level",
+          "expected": "source_provenance_only"
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/manifests/external-validity-scaffolds.json",
+          "pointer": "/entries/1/execution_level",
+          "expected": "source_provenance_only"
+        },
+        {
+          "type": "json_value",
+          "path": "results/external/first-party-source-provenance.json",
+          "pointer": "/aggregate/full_product_workloads_executed",
+          "expected": 0
+        },
+        {
+          "type": "json_value",
+          "path": "results/external/first-party-source-provenance.json",
+          "pointer": "/aggregate/full_source_trees_vendored",
+          "expected": 0
+        }
+      ]
+    },
+    {
       "claim_id": "CL-P1-001",
       "status": "paper_spine",
       "claim": "The paper spine freezes the top-tier full-paper thesis, research questions, threat model, reviewer-risk table, and venue backplan.",

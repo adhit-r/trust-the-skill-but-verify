@@ -20,6 +20,7 @@ PYTHON_BIN=/tmp/skilldiff-venv/bin/python bash experiments/repo-audit-mvp/reprod
 PYTHON_BIN=/tmp/skilldiff-venv/bin/python bash experiments/network-egress-mvp/reproduce_network_egress_mvp.sh
 PYTHON_BIN=/tmp/skilldiff-venv/bin/python bash experiments/audit-lens-mvp/reproduce_audit_lens_mvp.sh
 PYTHON_BIN=/tmp/skilldiff-venv/bin/python bash experiments/docs-forge-mvp/reproduce_docs_forge_mvp.sh
+PYTHON_BIN=/tmp/skilldiff-venv/bin/python bash experiments/first-party-source-provenance/reproduce_first_party_source_provenance.sh
 ```
 
 If external first-party source checkouts are available, pass them explicitly to
@@ -43,6 +44,7 @@ AUDIT_LENS_SOURCE_ROOT=/path/to/audit-lens \
 | `experiments/network-egress-mvp/reproduce_network_egress_mvp.sh` | `results/mvp/network-egress/drift_report.md` |
 | `experiments/audit-lens-mvp/reproduce_audit_lens_mvp.sh` | `results/mvp/audit-lens/drift_report.md` |
 | `experiments/docs-forge-mvp/reproduce_docs_forge_mvp.sh` | `results/mvp/docs-forge/drift_report.md` |
+| `experiments/first-party-source-provenance/reproduce_first_party_source_provenance.sh` | `results/external/first-party-source-provenance.md` |
 
 ## Safety Notes
 
@@ -58,6 +60,9 @@ AUDIT_LENS_SOURCE_ROOT=/path/to/audit-lens \
 - First-party seed repos are referenced by commit hash; full source trees are
   not vendored into the publishable fixture. Published source hash lists cover
   11 docs-forge source entries and 42 AuditLens source entries.
+- `results/external/first-party-source-provenance.json` records clean
+  ephemeral-clone verification for those pinned first-party source hashes
+  without vendoring the source trees or executing full products.
 
 ## Known Limitations
 
@@ -74,6 +79,8 @@ AUDIT_LENS_SOURCE_ROOT=/path/to/audit-lens \
   not by real Node installer execution.
 - AuditLens is represented by a sanitized synthetic Acme fixture, not full
   product or connector execution.
+- First-party source provenance is source-only evidence; it does not create
+  new runtime-drift claims by itself.
 
 ## Release Checklist
 

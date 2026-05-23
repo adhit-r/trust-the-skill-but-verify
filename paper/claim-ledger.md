@@ -27,6 +27,7 @@ claims, public-internet testing claims, or syscall-complete tracing claims.
 | CL-MVP-009 | Fourteen RP2/RP3 comparison JSON files and twenty-eight contract-finding JSON files | `results/mvp/*/*.json` |
 | CL-MVP-010 | RP2/RP3 comparison artifacts have no unchecked comparator fields | `results/mvp/*/*_rp2_rp3_comparison.json` |
 | CL-MVP-011 | First-party manifests publish verifier-required pinned source hash lists: 11 docs-forge entries and 42 AuditLens entries | First-party source manifests |
+| CL-EXT-001 | First-party docs-forge and AuditLens source repositories verify from clean ephemeral clones against pinned commits, trees, and 53 source hashes | `results/external/first-party-source-provenance.json` |
 | CL-P1-001 | Paper spine freezes the top-tier thesis, RQs, threat model, reviewer risks, and venue backplan | `paper/paper-spine.md` |
 | CL-CASE-001 | Repo-audit adversarial RP2/RP3 outcome counts | Baseline manifest and repo-audit result artifacts |
 | CL-CASE-002 | Network-egress adversarial RP2/RP3 outcome counts | Baseline manifest and network-egress result artifacts |
@@ -43,6 +44,7 @@ claims, public-internet testing claims, or syscall-complete tracing claims.
 | CL-BOUNDARY-002 | Current baseline does not claim full docs-forge Node installer execution or full AuditLens product/live connector execution. |
 | CL-BOUNDARY-003 | Current baseline does not claim public-internet testing, packet capture, DNS tracing, or syscall-complete host tracing. |
 | CL-BOUNDARY-004 | Publishable artifacts use synthetic canaries only, do not retain raw payloads, and keep public internet contact outside the benchmark boundary. |
+| CL-EXT-002 | External-validity scaffold entries are source-only and excluded from MVP runtime-drift counts until live traces and comparisons exist. |
 | CL-RQ-001 | Current baseline evidence supports RQ1/RQ4, partially supports RQ2, partially supports RQ3/RQ5 only for controlled semantic-event representation, and does not yet answer RQ6. |
 
 ## Design Targets

@@ -53,6 +53,11 @@ evidence strength or be removed.
    Done: `paper/claim-ledger.json` maps paper-facing numbers and boundary
    claims to source manifests, result artifacts, or paper notes, and
    `tools/validate_claim_ledger.py` runs from `make verify`.
+10. [x] Add clean-clone first-party source verification.
+    Done: `experiments/first-party-source-provenance/reproduce_first_party_source_provenance.sh`
+    verifies `adhit-r/docs-forge` and `adhit-r/audit-lens` from ephemeral
+    clean clones against the pinned commits, trees, and 53 published source
+    hashes, producing `results/external/first-party-source-provenance.json`.
 
 ## P1: Claim Contract And Paper Spine
 
@@ -160,8 +165,9 @@ evidence strength or be removed.
 9. [ ] Produce at least 120 skill-task-contract runs before repeats.
    Done when the benchmark supports category-level and runtime-pair-level
    aggregate tables across at least four runtime profiles.
-10. [ ] Separate full product, controlled fixture, and source-only evidence.
-    Done when tables never blur these levels.
+10. [~] Separate full product, controlled fixture, and source-only evidence.
+    Partial: tables and method boundaries now include a source-only clean-clone
+    provenance level. Full-product execution levels remain pending.
 
 ## P5: Experimental Rigor And Statistics
 

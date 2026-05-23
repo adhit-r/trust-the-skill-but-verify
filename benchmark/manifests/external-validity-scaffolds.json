@@ -1,0 +1,40 @@
+{
+  "schema_version": "0.1",
+  "manifest_id": "external-validity-scaffolds",
+  "title": "First-Party External-Validity Scaffolds",
+  "scope": "source-only first-party provenance and planned full-product validation gates",
+  "excluded_from_mvp_runtime_counts": true,
+  "entries": [
+    {
+      "case_id": "docs-forge-source-provenance",
+      "source_repo": "adhit-r/docs-forge",
+      "controlled_fixture_manifest_ref": "benchmark/manifests/docs-forge-mini.json",
+      "source_provenance_result_ref": "results/external/first-party-source-provenance.json#/cases/0",
+      "status": "source_verified_full_product_not_executed",
+      "execution_level": "source_provenance_only",
+      "evidence_level": "clean_ephemeral_clone_source_verification",
+      "excluded_from_mvp_runtime_counts": true,
+      "claim_boundary": "Verifies pinned source commit, tree, and published source hashes only. Does not execute the real docs-forge Node installer and does not create runtime-drift claims.",
+      "next_live_step": "Build a safe adapter for partial docs-forge real-workload execution without publishing local source trees, secrets, or ignored dogfood artifacts."
+    },
+    {
+      "case_id": "audit-lens-source-provenance",
+      "source_repo": "adhit-r/audit-lens",
+      "controlled_fixture_manifest_ref": "benchmark/manifests/audit-lens-acme.json",
+      "source_provenance_result_ref": "results/external/first-party-source-provenance.json#/cases/1",
+      "status": "source_verified_full_product_not_executed",
+      "execution_level": "source_provenance_only",
+      "evidence_level": "clean_ephemeral_clone_source_verification",
+      "excluded_from_mvp_runtime_counts": true,
+      "claim_boundary": "Verifies pinned source commit, tree, and published source hashes only. Does not execute the full AuditLens product, connector auth flows, or live SaaS exports and does not create runtime-drift claims.",
+      "next_live_step": "Build a safe adapter for partial AuditLens generator or connector-mock execution using synthetic evidence and explicit no-real-credential guards."
+    }
+  ],
+  "prohibited_scaffold_fields": [
+    "observed_result",
+    "runtime_drift_claims",
+    "pairwise_disagreements",
+    "canonical_traces",
+    "canonical_results"
+  ]
+}

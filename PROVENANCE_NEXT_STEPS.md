@@ -21,6 +21,44 @@ The current evidence is useful for MVP contract checking, but it must not be des
 4. Never store sensitive payloads by default; hash and redact payloads unless a synthetic benchmark fixture explicitly opts in.
 5. Treat instrumentation gaps as first-class artifacts, not silent absence.
 6. Keep adapter support matrix explicit per runtime profile.
+7. Keep source-only first-party provenance separate from runtime evidence; clean
+   clone verification supports seed provenance, not runtime-drift claims.
+
+## First-Party Source Provenance
+
+### Target
+
+Make the first-party seed boundary externally reproducible without vendoring
+source trees. The current source-provenance phase verifies `adhit-r/docs-forge`
+and `adhit-r/audit-lens` from clean ephemeral clones against the pinned commits,
+trees, and published source-hash lists in their benchmark manifests.
+
+### Current Artifact
+
+```text
+tools/verify_first_party_sources.py
+experiments/first-party-source-provenance/reproduce_first_party_source_provenance.sh
+benchmark/manifests/external-validity-scaffolds.json
+results/external/first-party-source-provenance.json
+results/external/first-party-source-provenance.md
+```
+
+### Boundary
+
+- This evidence is source provenance only.
+- It does not execute the real docs-forge Node installer.
+- It does not execute the full AuditLens product, connector auth flows, or live
+  SaaS exports.
+- It is excluded from MVP runtime-drift counts until live traces and
+  comparisons exist.
+
+### Next Live-Evidence Gate
+
+The next safe external-validity step is a disposable docs-forge live-installer
+pilot: run the real Node CLI help/version and dry-run installer surfaces first,
+then trace non-dry-run installer writes in a temporary target workspace under a
+contract that permits only target skill/playbook files and denies source-tree
+mutation, network egress, hidden persistence, and synthetic canary movement.
 
 ## Syscall-Level File-Read Provenance
 

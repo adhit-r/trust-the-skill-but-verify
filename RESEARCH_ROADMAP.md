@@ -213,6 +213,16 @@ Use the user's existing skill repositories as the first realistic case studies b
 | `adhit-r/docs-forge` | `40c3693491b49382682622408f167424ed814c71` | Codex plugin skill, Claude Code skill, Antigravity adapter, universal `AGENTS.md` playbook, `npx` installer | Strong seed for activation drift, filesystem-scope drift, write-scope drift, resumable state persistence, and docs-generation side effects |
 | `adhit-r/audit-lens` | `241b584e8e7fc1cddfe2744a33e3c3907c871e95` | Agent skill under `skill/`, framework references, compatibility guides, demo evidence workspace, dashboard templates | Strong seed for data-flow drift, connector drift, approval drift, evidence-ingestion overreach, synthetic secret handling, and compliance-report leakage |
 
+Current first-party source-provenance status:
+
+- `experiments/first-party-source-provenance/reproduce_first_party_source_provenance.sh`
+  verifies both pinned source repositories from clean ephemeral clones.
+- The verification covers two commits, two trees, and 53 published source blob
+  hashes without vendoring full source trees.
+- This is source-only evidence. It does not execute the real docs-forge Node
+  installer, the full AuditLens product, connector auth flows, or live SaaS
+  exports, and it does not add runtime-drift claims.
+
 Suggested role in the paper:
 
 - Use these as **pilot case studies**, not as the whole benchmark.

@@ -1,0 +1,70 @@
+{
+  "schema_version": "0.1",
+  "artifact_id": "first-party-source-provenance",
+  "generated_at_utc": "2026-05-23T00:49:19+00:00",
+  "evidence_scope": "ephemeral_clean_clone_source_provenance_only",
+  "safe_to_publish": true,
+  "cases": [
+    {
+      "case_id": "docs-forge",
+      "source_repo": "adhit-r/docs-forge",
+      "remote_url": "https://github.com/adhit-r/docs-forge.git",
+      "manifest_ref": "benchmark/manifests/docs-forge-mini.json",
+      "expected_commit": "40c3693491b49382682622408f167424ed814c71",
+      "expected_tree": "6fbaec7f16561e5cedd7725d05613ce4a0e61739",
+      "workload_boundary": "controlled Python docs-forge-style fixture",
+      "product_execution_claim": "real docs-forge Node installer not executed",
+      "evidence_scope": "ephemeral_clean_clone_source_provenance_only",
+      "full_source_vendored": false,
+      "full_product_workload_executed": false,
+      "real_secrets_present": false,
+      "public_internet_contacted_by_benchmark": false,
+      "pinned_source_hash_count": 11,
+      "verification_status": "passed",
+      "observed_commit": "40c3693491b49382682622408f167424ed814c71",
+      "observed_tree": "6fbaec7f16561e5cedd7725d05613ce4a0e61739",
+      "clean_worktree": true,
+      "workspace_fixture_verified": true,
+      "pinned_source_hashes_verified": true,
+      "verification_command": "python3 tools/verify_source_provenance.py --manifest benchmark/manifests/docs-forge-mini.json --source-root <EPHEMERAL_SOURCE_ROOT>"
+    },
+    {
+      "case_id": "audit-lens",
+      "source_repo": "adhit-r/audit-lens",
+      "remote_url": "https://github.com/adhit-r/audit-lens.git",
+      "manifest_ref": "benchmark/manifests/audit-lens-acme.json",
+      "expected_commit": "241b584e8e7fc1cddfe2744a33e3c3907c871e95",
+      "expected_tree": "1ebe897763e8e95bad78d87644a81fdc942c9447",
+      "workload_boundary": "sanitized synthetic AuditLens Acme fixture",
+      "product_execution_claim": "full AuditLens product and live connectors not executed",
+      "evidence_scope": "ephemeral_clean_clone_source_provenance_only",
+      "full_source_vendored": false,
+      "full_product_workload_executed": false,
+      "real_secrets_present": false,
+      "public_internet_contacted_by_benchmark": false,
+      "pinned_source_hash_count": 42,
+      "verification_status": "passed",
+      "observed_commit": "241b584e8e7fc1cddfe2744a33e3c3907c871e95",
+      "observed_tree": "1ebe897763e8e95bad78d87644a81fdc942c9447",
+      "clean_worktree": true,
+      "workspace_fixture_verified": true,
+      "pinned_source_hashes_verified": true,
+      "verification_command": "python3 tools/verify_source_provenance.py --manifest benchmark/manifests/audit-lens-acme.json --source-root <EPHEMERAL_SOURCE_ROOT>"
+    }
+  ],
+  "aggregate": {
+    "repositories_checked": 2,
+    "repositories_verified": 2,
+    "pinned_source_hashes_verified": 53,
+    "workspace_fixtures_verified": 2,
+    "full_product_workloads_executed": 0,
+    "full_source_trees_vendored": 0,
+    "real_secrets_present": false
+  },
+  "claims_not_supported": [
+    "full docs-forge Node installer execution",
+    "full AuditLens product execution",
+    "live connector auth or SaaS export behavior",
+    "runtime drift from the external clone check alone"
+  ]
+}

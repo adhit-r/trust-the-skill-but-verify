@@ -47,15 +47,25 @@ experiments/docs-forge-live-installer/reproduce_docs_forge_live_installer.sh
 benchmark/manifests/docs-forge-live-installer.json
 results/live/docs-forge-installer/dry_run_result.json
 results/live/docs-forge-installer/dry_run_report.md
+tools/run_docs_forge_live_project_local_install.py
+tools/validate_docs_forge_live_project_local_install.py
+experiments/docs-forge-live-project-local-install/reproduce_docs_forge_live_project_local_install.sh
+benchmark/manifests/docs-forge-live-project-local-install.json
+results/live/docs-forge-installer/project_local_install_result.json
+results/live/docs-forge-installer/project_local_install_report.md
+results/live/docs-forge-installer/project_local_install_trace.jsonl
 ```
 
 ### Boundary
 
-- This evidence is source provenance only.
+- The first-party source-provenance artifact is source provenance only.
 - The docs-forge live-installer dry-run evidence exercises only help, version,
   and dry-run installer surfaces.
-- It does not execute non-dry-run docs-forge installation, `npx`, package
-  acquisition, or the Codex marketplace command.
+- The docs-forge project-local installer evidence executes one non-dry-run
+  project-local install command against a disposable target and allows only
+  expected target skill/playbook writes.
+- It does not execute `npx`, package acquisition, the Codex marketplace
+  command, user-scope/global installation, or docs generation.
 - It does not execute the full AuditLens product, connector auth flows, or live
   SaaS exports.
 - It is excluded from MVP runtime-drift counts until live traces and
@@ -63,12 +73,12 @@ results/live/docs-forge-installer/dry_run_report.md
 
 ### Current Live-Evidence Gate
 
-The disposable docs-forge live-installer dry-run pilot now runs the real Node
-CLI help/version and dry-run installer surfaces against a temporary target. The
-next gate is non-dry-run project-local installation in a temporary target
-workspace under trace capture, with a contract that permits only target
-skill/playbook files and denies source-tree mutation, network egress, hidden
-persistence, user-home writes, and synthetic canary movement.
+The disposable docs-forge live-installer pilots now run the real Node CLI
+help/version/dry-run surfaces and one project-local non-dry-run install against
+a temporary target workspace. The project-local gate uses Node filesystem-call
+instrumentation plus source, target, and user-home pre/post checks. The next
+gate is a Node-capable runtime-pair harness before real docs-forge evidence can
+support runtime-drift claims.
 
 ## Syscall-Level File-Read Provenance
 

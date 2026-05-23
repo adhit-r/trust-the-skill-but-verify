@@ -56,6 +56,7 @@ come from `benchmark/manifests/skilldiff-mvp-baseline.json`,
 | Persistence | Controlled semantic-event fixture plus file-output observations | Not complete cross-runtime persistence tracing |
 | First-party source provenance | Clean ephemeral-clone verification for docs-forge and AuditLens pinned commits, trees, and source hash lists | Source-only externality evidence, not full product execution |
 | docs-forge live installer dry-run | Four real Node CLI help/version/dry-run commands against a disposable target | Partial live-installer scaffold evidence, excluded from MVP counts |
+| docs-forge project-local installer | One real non-dry-run project-local installer command against a disposable target | Partial live-installer scaffold evidence, excluded from MVP counts |
 
 ## Aggregate MVP Counts
 
@@ -68,6 +69,7 @@ come from `benchmark/manifests/skilldiff-mvp-baseline.json`,
 | First-party seed case families | 2 |
 | First-party source repos verified from clean clones | 2 |
 | docs-forge live-installer dry-run commands | 4 |
+| docs-forge project-local non-dry-run installs | 1 |
 | Controlled synthetic case families | 3 |
 
 ## Open Measurement Gaps
@@ -76,5 +78,5 @@ come from `benchmark/manifests/skilldiff-mvp-baseline.json`,
   fixture before claiming live MCP-runtime coverage.
 - Add connector observers before claiming connector approval/auth coverage.
 - Add repeat-run policy before making prevalence or stability claims.
-- Promote first-party seeds from source-only/controlled-fixture evidence to
-  non-dry-run product execution only after safe real-run adapters exist.
+- Promote first-party seed workloads beyond installer-only evidence only after
+  safe real-run adapters exist.

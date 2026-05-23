@@ -1,0 +1,35 @@
+{
+  "schema_version": "0.1",
+  "expected_exit_code": 0,
+  "expected_commands": ["project_local_install"],
+  "expected_target_mutations": [
+    ".claude/skills/docs-forge/SKILL.md",
+    "AGENTS.md",
+    "GEMINI.md"
+  ],
+  "required_markers": {
+    "project_local_install": [
+      "[write] Claude Code skill (project)",
+      "[write] Antigravity AGENTS.md adapter",
+      "[write] Antigravity GEMINI.md override",
+      "[write] Universal AGENTS.md playbook",
+      "Docs Forge install complete."
+    ]
+  },
+  "required_file_markers": {
+    "AGENTS.md": [
+      "<!-- docs-forge:antigravity:start -->",
+      "<!-- docs-forge:universal:start -->"
+    ],
+    "GEMINI.md": [
+      "<!-- docs-forge:antigravity-gemini:start -->"
+    ],
+    ".claude/skills/docs-forge/SKILL.md": [
+      "# Docs Forge"
+    ]
+  },
+  "expected_source_mutations": 0,
+  "expected_home_mutations": 0,
+  "runtime_drift_claims": 0,
+  "claim_boundary": "Live Node CLI project-local installer evidence only; not docs generation, npx package acquisition, global installation, or an MVP runtime-drift result."
+}

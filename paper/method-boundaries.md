@@ -26,13 +26,17 @@ state. Use it before turning the current evidence artifacts into paper prose.
 - Bounded docs-forge Node CLI help, version, and installer dry-run surfaces can
   be exercised against a disposable target without adding MVP runtime-drift
   counts.
+- Bounded docs-forge project-local installer execution can be exercised against
+  a disposable target while allowing only expected target skill/playbook writes
+  and without adding MVP runtime-drift counts.
 
 ## What Current Evidence Does Not Prove
 
 - It does not prove that all agent skills are unsafe.
 - It does not prove real-world prevalence.
-- It does not execute non-dry-run docs-forge installation or `npx`
-  package-acquisition behavior.
+- It does not execute the full docs-forge product or docs-generation workload.
+- It does not execute `npx` package-acquisition behavior.
+- It does not execute user-scope or global docs-forge installation.
 - It does not execute the full AuditLens product or live connectors.
 - It does not include public-internet testing.
 - It does not include packet capture, DNS tracing, or arbitrary HTTP-client
@@ -54,6 +58,7 @@ state. Use it before turning the current evidence artifacts into paper prose.
 | Canaries | Output/log/change scanning | Synthetic canary movement in observed sinks | Real secret exfiltration evidence |
 | First-party source provenance | Clean ephemeral clones checked against pinned manifests | Source-provenance evidence for seed realism and artifact reproducibility | Full product execution or runtime-drift evidence |
 | docs-forge live installer dry-run | `node bin/docs-forge.js` help, version, and installer dry-run commands | Partial live CLI dry-run evidence with source/target pre/post checks | Full installer execution, `npx` safety, network absence under packet capture, or runtime-drift evidence |
+| docs-forge project-local installer | One non-dry-run `node bin/docs-forge.js install --agents claude,antigravity,universal --scope project` command against a disposable target | Partial live installer evidence with Node filesystem-call instrumentation and source/target/home pre/post checks | Docs generation, `npx` safety, user/global install behavior, packet-capture network absence, or runtime-drift evidence |
 
 ## Network Evidence Boundary
 
@@ -87,10 +92,12 @@ The first-party source-provenance artifact separately verifies that the pinned
 docs-forge and AuditLens source repositories match their published commits,
 trees, and source hash lists from clean ephemeral clones. The docs-forge
 live-installer artifact then exercises bounded Node CLI help, version, and
-dry-run installer surfaces against a disposable target. These artifacts do not
-support claims about non-dry-run installation, `npx` package-acquisition
-behavior, the full AuditLens product, connector auth flows, or live SaaS
-exports.
+dry-run installer surfaces against a disposable target. A separate docs-forge
+live project-local installer artifact exercises the pinned Node CLI against a
+disposable target and verifies only expected project-local skill/playbook
+writes. These artifacts do not support claims about `npx` package-acquisition
+behavior, full docs generation, global/user-scope installation, the full
+AuditLens product, connector auth flows, or live SaaS exports.
 
 ## Reviewer-Risky Wording To Avoid
 

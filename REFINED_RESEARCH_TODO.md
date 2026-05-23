@@ -63,6 +63,11 @@ evidence strength or be removed.
     runs real Node CLI help/version and two installer dry-run commands against
     a disposable target, verifies zero source/target mutations, and writes
     `results/live/docs-forge-installer/dry_run_result.json`.
+12. [x] Add bounded docs-forge project-local non-dry-run installer evidence.
+    Done: `experiments/docs-forge-live-project-local-install/reproduce_docs_forge_live_project_local_install.sh`
+    runs one real project-local installer command against a disposable target,
+    verifies only expected target skill/playbook writes, and writes
+    `results/live/docs-forge-installer/project_local_install_result.json`.
 
 ## P1: Claim Contract And Paper Spine
 

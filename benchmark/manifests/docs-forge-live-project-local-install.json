@@ -1,0 +1,53 @@
+{
+  "schema_version": "0.1",
+  "manifest_id": "docs-forge-live-project-local-install",
+  "title": "docs-forge Live Project-Local Installer Pilot",
+  "category": "document-automation",
+  "source": "first-party-pinned-source-plus-disposable-target",
+  "safe_to_publish": true,
+  "real_secrets_present": false,
+  "excluded_from_mvp_runtime_counts": true,
+  "execution_level": "live_node_cli_project_local_install",
+  "evidence_level": "bounded_project_local_installer_execution",
+  "claim_boundary": "Partial live project-local installer evidence only. Excluded from MVP runtime-drift counts and not a claim of docs generation, npx package acquisition, global/user-scope installation, public-internet safety under packet capture, or complete Node runtime tracing.",
+  "source_boundary": {
+    "source_repo": "adhit-r/docs-forge",
+    "remote_url": "https://github.com/adhit-r/docs-forge.git",
+    "fixture_source_commit": "40c3693491b49382682622408f167424ed814c71",
+    "fixture_source_tree": "6fbaec7f16561e5cedd7725d05613ce4a0e61739",
+    "requires_pinned_source_hashes": true,
+    "pinned_source_hashes_ref": "benchmark/manifests/docs-forge-mini.json#/pinned_source_hashes",
+    "pinned_source_hashes_min_count": 11,
+    "full_source_vendored": false,
+    "source_checkout_required_for_reproduction": true
+  },
+  "task_ref": "benchmark/tasks/docs-forge/project-local-install.txt",
+  "contract_ref": "contracts/docs-forge-live-project-local-install.yaml",
+  "expected_output_ref": "benchmark/expected/docs-forge/project-local-install.json",
+  "target_fixture_ref": "benchmark/workspaces/docs-forge-live-target",
+  "result_refs": {
+    "json": "results/live/docs-forge-installer/project_local_install_result.json",
+    "markdown": "results/live/docs-forge-installer/project_local_install_report.md",
+    "trace": "results/live/docs-forge-installer/project_local_install_trace.jsonl"
+  },
+  "commands": [
+    {
+      "case_id": "project_local_install",
+      "argv": ["node", "bin/docs-forge.js", "install", "--agents", "claude,antigravity,universal", "--scope", "project", "--target", "<EPHEMERAL_TARGET>", "--with-gemini", "--force", "--yes"],
+      "mutating": true,
+      "expected_exit_code": 0,
+      "allowed_target_mutations": [
+        ".claude/skills/docs-forge/SKILL.md",
+        "AGENTS.md",
+        "GEMINI.md"
+      ]
+    }
+  ],
+  "prohibited_live_fields": [
+    "runtime_drift_claims",
+    "pairwise_disagreements",
+    "canonical_traces",
+    "canonical_results"
+  ],
+  "next_live_step": "After project-local installer evidence remains clean, add a Node-capable runtime-pair harness before making runtime-drift claims from real docs-forge execution."
+}

@@ -45,6 +45,15 @@ DOCS_FORGE_SOURCE_ROOT=/path/to/docs-forge \
   bash experiments/docs-forge-live-installer/reproduce_docs_forge_live_installer.sh
 ```
 
+The bounded docs-forge project-local non-dry-run installer check also requires
+the pinned docs-forge source checkout:
+
+```bash
+DOCS_FORGE_SOURCE_ROOT=/path/to/docs-forge \
+  PYTHON_BIN=/tmp/skilldiff-venv/bin/python \
+  bash experiments/docs-forge-live-project-local-install/reproduce_docs_forge_live_project_local_install.sh
+```
+
 ## Expected Outputs
 
 | Script | Primary Result |
@@ -55,6 +64,7 @@ DOCS_FORGE_SOURCE_ROOT=/path/to/docs-forge \
 | `experiments/docs-forge-mvp/reproduce_docs_forge_mvp.sh` | `results/mvp/docs-forge/drift_report.md` |
 | `experiments/first-party-source-provenance/reproduce_first_party_source_provenance.sh` | `results/external/first-party-source-provenance.md` |
 | `experiments/docs-forge-live-installer/reproduce_docs_forge_live_installer.sh` | `results/live/docs-forge-installer/dry_run_report.md` |
+| `experiments/docs-forge-live-project-local-install/reproduce_docs_forge_live_project_local_install.sh` | `results/live/docs-forge-installer/project_local_install_report.md` |
 
 ## Safety Notes
 
@@ -76,6 +86,10 @@ DOCS_FORGE_SOURCE_ROOT=/path/to/docs-forge \
 - `results/live/docs-forge-installer/dry_run_result.json` records bounded
   Node CLI help, version, and installer dry-run evidence against a disposable
   target. It is excluded from MVP runtime-drift counts.
+- `results/live/docs-forge-installer/project_local_install_result.json`
+  records one bounded project-local non-dry-run installer command against a
+  disposable target. It allows only expected project-local skill/playbook
+  writes and is excluded from MVP runtime-drift counts.
 
 ## Known Limitations
 
@@ -89,14 +103,15 @@ DOCS_FORGE_SOURCE_ROOT=/path/to/docs-forge \
   measure live MCP server behavior, connector auth, or complete persistence
   behavior.
 - docs-forge P1/P2 runtime-drift evidence is represented by a controlled Python
-  docs-forge-style fixture. The live-installer evidence is dry-run only and is
-  not a full install or `npx` execution.
+  docs-forge-style fixture. The live-installer evidence covers dry-run and
+  project-local installer-only execution; it is not docs generation, user/global
+  installation, or `npx` execution.
 - AuditLens is represented by a sanitized synthetic Acme fixture, not full
   product or connector execution.
 - First-party source provenance is source-only evidence; it does not create
   new runtime-drift claims by itself.
-- docs-forge live-installer dry-run evidence does not prove network absence
-  under packet capture or complete Node runtime tracing.
+- docs-forge live-installer evidence does not prove network absence under
+  packet capture or complete Node runtime tracing.
 
 ## Release Checklist
 

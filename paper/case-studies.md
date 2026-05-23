@@ -125,7 +125,8 @@ runtime profile.
 
 Boundary: the RP3 blocked mutation is represented as controlled Python
 failed-write evidence for the docs-forge fixture. It is not a claim of complete
-host-level write tracing or non-dry-run docs-forge installer behavior.
+host-level write tracing, docs-generation workload behavior, `npx` behavior, or
+user/global installer behavior.
 
 ## P3 AuditLens Evidence Audit
 

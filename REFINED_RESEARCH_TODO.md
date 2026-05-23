@@ -58,6 +58,11 @@ evidence strength or be removed.
     verifies `adhit-r/docs-forge` and `adhit-r/audit-lens` from ephemeral
     clean clones against the pinned commits, trees, and 53 published source
     hashes, producing `results/external/first-party-source-provenance.json`.
+11. [x] Add bounded docs-forge live-installer dry-run evidence.
+    Done: `experiments/docs-forge-live-installer/reproduce_docs_forge_live_installer.sh`
+    runs real Node CLI help/version and two installer dry-run commands against
+    a disposable target, verifies zero source/target mutations, and writes
+    `results/live/docs-forge-installer/dry_run_result.json`.
 
 ## P1: Claim Contract And Paper Spine
 

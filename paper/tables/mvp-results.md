@@ -55,6 +55,7 @@ come from `benchmark/manifests/skilldiff-mvp-baseline.json`,
 | Canaries | Generated outputs, changed files, stdout, and stderr scans | Synthetic canary movement into observed sinks |
 | Persistence | Controlled semantic-event fixture plus file-output observations | Not complete cross-runtime persistence tracing |
 | First-party source provenance | Clean ephemeral-clone verification for docs-forge and AuditLens pinned commits, trees, and source hash lists | Source-only externality evidence, not full product execution |
+| docs-forge live installer dry-run | Four real Node CLI help/version/dry-run commands against a disposable target | Partial live-installer scaffold evidence, excluded from MVP counts |
 
 ## Aggregate MVP Counts
 
@@ -66,6 +67,7 @@ come from `benchmark/manifests/skilldiff-mvp-baseline.json`,
 | Recorded pairwise disagreements | 36 |
 | First-party seed case families | 2 |
 | First-party source repos verified from clean clones | 2 |
+| docs-forge live-installer dry-run commands | 4 |
 | Controlled synthetic case families | 3 |
 
 ## Open Measurement Gaps
@@ -75,4 +77,4 @@ come from `benchmark/manifests/skilldiff-mvp-baseline.json`,
 - Add connector observers before claiming connector approval/auth coverage.
 - Add repeat-run policy before making prevalence or stability claims.
 - Promote first-party seeds from source-only/controlled-fixture evidence to
-  partial full-product execution only after safe real-run adapters exist.
+  non-dry-run product execution only after safe real-run adapters exist.

@@ -20,6 +20,7 @@ done < <(git ls-files -z '*.json')
 "$PYTHON_BIN" tools/verify_source_provenance.py --manifest benchmark/manifests/docs-forge-mini.json
 "$PYTHON_BIN" tools/verify_source_provenance.py --manifest benchmark/manifests/audit-lens-acme.json
 "$PYTHON_BIN" tools/validate_external_validity_scaffolds.py
+"$PYTHON_BIN" tools/validate_docs_forge_live_installer.py
 "$PYTHON_BIN" tools/validate_claim_ledger.py
 "$PYTHON_BIN" tools/check_no_local_paths.py
 "$PYTHON_BIN" tools/validate_traces.py results/raw/*/trace.jsonl

@@ -41,24 +41,34 @@ experiments/first-party-source-provenance/reproduce_first_party_source_provenanc
 benchmark/manifests/external-validity-scaffolds.json
 results/external/first-party-source-provenance.json
 results/external/first-party-source-provenance.md
+tools/run_docs_forge_live_installer.py
+tools/validate_docs_forge_live_installer.py
+experiments/docs-forge-live-installer/reproduce_docs_forge_live_installer.sh
+benchmark/manifests/docs-forge-live-installer.json
+results/live/docs-forge-installer/dry_run_result.json
+results/live/docs-forge-installer/dry_run_report.md
 ```
 
 ### Boundary
 
 - This evidence is source provenance only.
-- It does not execute the real docs-forge Node installer.
+- The docs-forge live-installer dry-run evidence exercises only help, version,
+  and dry-run installer surfaces.
+- It does not execute non-dry-run docs-forge installation, `npx`, package
+  acquisition, or the Codex marketplace command.
 - It does not execute the full AuditLens product, connector auth flows, or live
   SaaS exports.
 - It is excluded from MVP runtime-drift counts until live traces and
   comparisons exist.
 
-### Next Live-Evidence Gate
+### Current Live-Evidence Gate
 
-The next safe external-validity step is a disposable docs-forge live-installer
-pilot: run the real Node CLI help/version and dry-run installer surfaces first,
-then trace non-dry-run installer writes in a temporary target workspace under a
-contract that permits only target skill/playbook files and denies source-tree
-mutation, network egress, hidden persistence, and synthetic canary movement.
+The disposable docs-forge live-installer dry-run pilot now runs the real Node
+CLI help/version and dry-run installer surfaces against a temporary target. The
+next gate is non-dry-run project-local installation in a temporary target
+workspace under trace capture, with a contract that permits only target
+skill/playbook files and denies source-tree mutation, network egress, hidden
+persistence, user-home writes, and synthetic canary movement.
 
 ## Syscall-Level File-Read Provenance
 

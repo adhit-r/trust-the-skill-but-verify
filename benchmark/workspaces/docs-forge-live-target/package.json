@@ -1,0 +1,9 @@
+{
+  "name": "docs-forge-live-target",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Synthetic target project for docs-forge live installer dry-run evidence.",
+  "scripts": {
+    "test": "node src/app.js"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "schema_version": "0.1",
+  "expected_exit_code": 0,
+  "expected_commands": [
+    "help",
+    "version",
+    "project_agents_dry_run",
+    "codex_dry_run"
+  ],
+  "required_markers": {
+    "help": ["Usage:", "--dry-run"],
+    "version": ["0.3.0"],
+    "project_agents_dry_run": [
+      "[dry-run] Claude Code skill (project)",
+      "[dry-run] Antigravity AGENTS.md adapter",
+      "[dry-run] Antigravity GEMINI.md override",
+      "[dry-run] Universal AGENTS.md playbook"
+    ],
+    "codex_dry_run": [
+      "[dry-run] codex plugin marketplace add adhit-r/docs-forge --ref v0.3.0"
+    ]
+  },
+  "expected_target_mutations": 0,
+  "expected_source_mutations": 0,
+  "runtime_drift_claims": 0,
+  "claim_boundary": "Live Node CLI dry-run evidence only; not full installer execution and not an MVP runtime-drift result."
+}

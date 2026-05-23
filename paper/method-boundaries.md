@@ -23,12 +23,16 @@ state. Use it before turning the current evidence artifacts into paper prose.
 - First-party seed provenance can be rechecked from clean ephemeral clones for
   the two pinned repos, covering commit, tree, and source-hash evidence without
   turning that check into full product execution.
+- Bounded docs-forge Node CLI help, version, and installer dry-run surfaces can
+  be exercised against a disposable target without adding MVP runtime-drift
+  counts.
 
 ## What Current Evidence Does Not Prove
 
 - It does not prove that all agent skills are unsafe.
 - It does not prove real-world prevalence.
-- It does not execute the real docs-forge Node installer.
+- It does not execute non-dry-run docs-forge installation or `npx`
+  package-acquisition behavior.
 - It does not execute the full AuditLens product or live connectors.
 - It does not include public-internet testing.
 - It does not include packet capture, DNS tracing, or arbitrary HTTP-client
@@ -49,6 +53,7 @@ state. Use it before turning the current evidence artifacts into paper prose.
 | Activation, approvals, and tools | Controlled semantic events in the MCP/tool workflow fixture | Deterministic fixture evidence for event representation and contract checking | Live MCP server telemetry or commercial approval UX measurement |
 | Canaries | Output/log/change scanning | Synthetic canary movement in observed sinks | Real secret exfiltration evidence |
 | First-party source provenance | Clean ephemeral clones checked against pinned manifests | Source-provenance evidence for seed realism and artifact reproducibility | Full product execution or runtime-drift evidence |
+| docs-forge live installer dry-run | `node bin/docs-forge.js` help, version, and installer dry-run commands | Partial live CLI dry-run evidence with source/target pre/post checks | Full installer execution, `npx` safety, network absence under packet capture, or runtime-drift evidence |
 
 ## Network Evidence Boundary
 
@@ -80,9 +85,11 @@ safe publication.
 
 The first-party source-provenance artifact separately verifies that the pinned
 docs-forge and AuditLens source repositories match their published commits,
-trees, and source hash lists from clean ephemeral clones. That artifact supports
-the seed-provenance claim only; it does not execute the real docs-forge Node
-installer, the full AuditLens product, connector auth flows, or live SaaS
+trees, and source hash lists from clean ephemeral clones. The docs-forge
+live-installer artifact then exercises bounded Node CLI help, version, and
+dry-run installer surfaces against a disposable target. These artifacts do not
+support claims about non-dry-run installation, `npx` package-acquisition
+behavior, the full AuditLens product, connector auth flows, or live SaaS
 exports.
 
 ## Reviewer-Risky Wording To Avoid

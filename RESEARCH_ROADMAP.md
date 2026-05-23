@@ -219,9 +219,12 @@ Current first-party source-provenance status:
   verifies both pinned source repositories from clean ephemeral clones.
 - The verification covers two commits, two trees, and 53 published source blob
   hashes without vendoring full source trees.
-- This is source-only evidence. It does not execute the real docs-forge Node
-  installer, the full AuditLens product, connector auth flows, or live SaaS
-  exports, and it does not add runtime-drift claims.
+- Source provenance is source-only evidence. A separate docs-forge live
+  installer dry-run pilot now exercises real Node CLI help, version, and
+  dry-run installer surfaces against a disposable target. Neither artifact
+  executes non-dry-run docs-forge installation, `npx`, the full AuditLens
+  product, connector auth flows, or live SaaS exports, and neither adds
+  runtime-drift claims.
 
 Suggested role in the paper:
 

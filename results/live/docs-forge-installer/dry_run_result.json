@@ -1,0 +1,170 @@
+{
+  "schema_version": "0.1",
+  "artifact_id": "docs-forge-live-installer-dry-run",
+  "generated_at_utc": "2026-05-23T01:00:58+00:00",
+  "safe_to_publish": true,
+  "real_secrets_present": false,
+  "excluded_from_mvp_runtime_counts": true,
+  "execution_level": "live_node_cli_dry_run",
+  "evidence_level": "bounded_help_version_and_installer_dry_run",
+  "source_repo": "adhit-r/docs-forge",
+  "source_root": "<DOCS_FORGE_SOURCE_ROOT>",
+  "source_commit": "40c3693491b49382682622408f167424ed814c71",
+  "source_tree": "6fbaec7f16561e5cedd7725d05613ce4a0e61739",
+  "contract_ref": "contracts/docs-forge-live-installer.yaml",
+  "target_fixture_ref": "benchmark/workspaces/docs-forge-live-target",
+  "target_fixture_snapshot_sha256": "7c1e7866ba4208afbf9c10360fcc9dc33873a52c28043c4e773a4d210c26b58f",
+  "cases": [
+    {
+      "case_id": "help",
+      "argv": [
+        "node",
+        "bin/docs-forge.js",
+        "--help"
+      ],
+      "argv_sha256": "62ab108d405049ab70234f2f202d8d610a2d47a6177e1fc51b8f220d27337fe2",
+      "dry_run": false,
+      "expected_exit_code": 0,
+      "exit_code": 0,
+      "mutating": false,
+      "planned_actions": [],
+      "source_status_clean_before": true,
+      "source_status_clean_after": true,
+      "stdout_sha256": "6d71abdb2c758a28bb05942b63200a72616131ba18256a3a5b2e231eb2cde076",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_excerpt": "Docs Forge 0.3.0\n\nUsage:\n  docs-forge [install] [options]\n\nOptions:\n  --agents <list>       Comma-separated agents: codex, claude, antigravity, universal, all\n  --agent <name>        Add one agent selection. Can be repeated.\n  --target <path>       Target project path for project-local installs. Defaults to cwd.\n  --scope <scope>       Claude Code install scope: user or project. Defaults to user.\n  --with-gemini         Also install Antigravity GEMINI.md override.\n  --yes                 Use defaults and skip prompts.\n  --force               Replace existing Claude skill directory when needed.\n  --dry-run             Print planned actions without writing files or running commands.\n  --help                Show this help.\n  --version             Show version.\n\nExamples:\n  docs-forge\n  docs-forge install --agents claude --scope user\n  docs-forge install --agents antigravity --target .\n  docs-forge install --agents claude,antigravity --scope project --target .\n\n",
+      "stderr_excerpt": "",
+      "target_changed_files": [],
+      "target_mutation_count": 0,
+      "required_markers": [
+        "Usage:",
+        "--dry-run"
+      ],
+      "missing_markers": [],
+      "passed": true
+    },
+    {
+      "case_id": "version",
+      "argv": [
+        "node",
+        "bin/docs-forge.js",
+        "--version"
+      ],
+      "argv_sha256": "c333fe8ba89d402a587b3deb319472d3c246e9e8fc2620aad9abc76ca463025c",
+      "dry_run": false,
+      "expected_exit_code": 0,
+      "exit_code": 0,
+      "mutating": false,
+      "planned_actions": [],
+      "source_status_clean_before": true,
+      "source_status_clean_after": true,
+      "stdout_sha256": "d915cc95d6ca8f47ae297713ed46d4e5c5d99ddd29fc3c61e263bdf305f2b5b0",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_excerpt": "0.3.0\n",
+      "stderr_excerpt": "",
+      "target_changed_files": [],
+      "target_mutation_count": 0,
+      "required_markers": [
+        "0.3.0"
+      ],
+      "missing_markers": [],
+      "passed": true
+    },
+    {
+      "case_id": "project_agents_dry_run",
+      "argv": [
+        "node",
+        "bin/docs-forge.js",
+        "install",
+        "--agents",
+        "claude,antigravity,universal",
+        "--scope",
+        "project",
+        "--target",
+        "<EPHEMERAL_TARGET>",
+        "--with-gemini",
+        "--force",
+        "--dry-run",
+        "--yes"
+      ],
+      "argv_sha256": "aaed02ca4ebc89dd4e0ce2eb1844e0fe7651567abf0b9ebc7705a6ce79964e38",
+      "dry_run": true,
+      "expected_exit_code": 0,
+      "exit_code": 0,
+      "mutating": false,
+      "planned_actions": [
+        "[dry-run] Claude Code skill (project): copy <DOCS_FORGE_SOURCE_ROOT>/plugins/docs-forge/skills/docs-forge -> <EPHEMERAL_TARGET>/.claude/skills/docs-forge",
+        "[dry-run] Antigravity AGENTS.md adapter: create <EPHEMERAL_TARGET>/AGENTS.md",
+        "[dry-run] Antigravity GEMINI.md override: create <EPHEMERAL_TARGET>/GEMINI.md",
+        "[dry-run] Universal AGENTS.md playbook: create <EPHEMERAL_TARGET>/AGENTS.md"
+      ],
+      "source_status_clean_before": true,
+      "source_status_clean_after": true,
+      "stdout_sha256": "494fbf3206e7d20fef236f50dfcb9f27a9d858acb5f59d08211f20ced40ac20f",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_excerpt": "Docs Forge 0.3.0\nInstall the Docs Forge workflow for your coding agent.\n\n[dry-run] Claude Code skill (project): copy <DOCS_FORGE_SOURCE_ROOT>/plugins/docs-forge/skills/docs-forge -> <EPHEMERAL_TARGET>/.claude/skills/docs-forge\n[dry-run] Antigravity AGENTS.md adapter: create <EPHEMERAL_TARGET>/AGENTS.md\n[dry-run] Antigravity GEMINI.md override: create <EPHEMERAL_TARGET>/GEMINI.md\n[dry-run] Universal AGENTS.md playbook: create <EPHEMERAL_TARGET>/AGENTS.md\n\nDocs Forge install complete.\n",
+      "stderr_excerpt": "",
+      "target_changed_files": [],
+      "target_mutation_count": 0,
+      "required_markers": [
+        "[dry-run] Claude Code skill (project)",
+        "[dry-run] Antigravity AGENTS.md adapter",
+        "[dry-run] Antigravity GEMINI.md override",
+        "[dry-run] Universal AGENTS.md playbook"
+      ],
+      "missing_markers": [],
+      "passed": true
+    },
+    {
+      "case_id": "codex_dry_run",
+      "argv": [
+        "node",
+        "bin/docs-forge.js",
+        "install",
+        "--agents",
+        "codex",
+        "--dry-run",
+        "--yes"
+      ],
+      "argv_sha256": "1d99bd32481222895aeabaadbdb0a05189fb38c06c5d5bf73ed40b4da79c5268",
+      "dry_run": true,
+      "expected_exit_code": 0,
+      "exit_code": 0,
+      "mutating": false,
+      "planned_actions": [
+        "[dry-run] codex plugin marketplace add adhit-r/docs-forge --ref v0.3.0"
+      ],
+      "source_status_clean_before": true,
+      "source_status_clean_after": true,
+      "stdout_sha256": "8c14dc24c1e01a0658cf71909f1308ceb72688c4234c79c72670a6d95f5093a3",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_excerpt": "Docs Forge 0.3.0\nInstall the Docs Forge workflow for your coding agent.\n\n[dry-run] codex plugin marketplace add adhit-r/docs-forge --ref v0.3.0\n\nDocs Forge install complete.\n",
+      "stderr_excerpt": "",
+      "target_changed_files": [],
+      "target_mutation_count": 0,
+      "required_markers": [
+        "[dry-run] codex plugin marketplace add adhit-r/docs-forge --ref v0.3.0"
+      ],
+      "missing_markers": [],
+      "passed": true
+    }
+  ],
+  "aggregate": {
+    "commands_run": 4,
+    "commands_succeeded": 4,
+    "dry_run_installer_commands_run": 2,
+    "target_mutations_observed": 0,
+    "source_mutations_observed": 0,
+    "non_dry_run_installs_executed": 0,
+    "runtime_drift_counts_changed": false,
+    "runtime_drift_claims_added": 0,
+    "pairwise_disagreements_added": 0
+  },
+  "claims_not_supported": [
+    "full docs-forge installer execution",
+    "npx docs-forge execution",
+    "network egress absence under packet capture",
+    "complete Node runtime tracing",
+    "runtime-drift claims from dry-run evidence"
+  ]
+}

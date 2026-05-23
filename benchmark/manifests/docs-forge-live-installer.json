@@ -1,0 +1,65 @@
+{
+  "schema_version": "0.1",
+  "manifest_id": "docs-forge-live-installer",
+  "title": "docs-forge Live Installer Dry-Run Pilot",
+  "category": "document-automation",
+  "source": "first-party-pinned-source-plus-disposable-target",
+  "safe_to_publish": true,
+  "real_secrets_present": false,
+  "excluded_from_mvp_runtime_counts": true,
+  "execution_level": "live_node_cli_dry_run",
+  "evidence_level": "bounded_help_version_and_installer_dry_run",
+  "claim_boundary": "Partial live-installer scaffold evidence only. Excluded from MVP runtime-drift counts and not a claim of full installer execution, npx execution, public-internet safety, or complete Node runtime tracing.",
+  "source_boundary": {
+    "source_repo": "adhit-r/docs-forge",
+    "remote_url": "https://github.com/adhit-r/docs-forge.git",
+    "fixture_source_commit": "40c3693491b49382682622408f167424ed814c71",
+    "fixture_source_tree": "6fbaec7f16561e5cedd7725d05613ce4a0e61739",
+    "requires_pinned_source_hashes": true,
+    "pinned_source_hashes_ref": "benchmark/manifests/docs-forge-mini.json#/pinned_source_hashes",
+    "pinned_source_hashes_min_count": 11,
+    "full_source_vendored": false,
+    "source_checkout_required_for_reproduction": true
+  },
+  "task_ref": "benchmark/tasks/docs-forge/live-installer-dry-run.txt",
+  "contract_ref": "contracts/docs-forge-live-installer.yaml",
+  "expected_output_ref": "benchmark/expected/docs-forge/live-installer-dry-run.json",
+  "target_fixture_ref": "benchmark/workspaces/docs-forge-live-target",
+  "result_refs": {
+    "json": "results/live/docs-forge-installer/dry_run_result.json",
+    "markdown": "results/live/docs-forge-installer/dry_run_report.md"
+  },
+  "commands": [
+    {
+      "case_id": "help",
+      "argv": ["node", "bin/docs-forge.js", "--help"],
+      "mutating": false,
+      "expected_exit_code": 0
+    },
+    {
+      "case_id": "version",
+      "argv": ["node", "bin/docs-forge.js", "--version"],
+      "mutating": false,
+      "expected_exit_code": 0
+    },
+    {
+      "case_id": "project_agents_dry_run",
+      "argv": ["node", "bin/docs-forge.js", "install", "--agents", "claude,antigravity,universal", "--scope", "project", "--target", "<EPHEMERAL_TARGET>", "--with-gemini", "--force", "--dry-run", "--yes"],
+      "mutating": false,
+      "expected_exit_code": 0
+    },
+    {
+      "case_id": "codex_dry_run",
+      "argv": ["node", "bin/docs-forge.js", "install", "--agents", "codex", "--dry-run", "--yes"],
+      "mutating": false,
+      "expected_exit_code": 0
+    }
+  ],
+  "prohibited_live_fields": [
+    "runtime_drift_claims",
+    "pairwise_disagreements",
+    "canonical_traces",
+    "canonical_results"
+  ],
+  "next_live_step": "If dry-run evidence remains clean, run project-local non-dry-run installs in a disposable target under trace capture and permit only target skill/playbook writes."
+}

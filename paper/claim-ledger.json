@@ -315,6 +315,67 @@
       ]
     },
     {
+      "claim_id": "CL-EXT-003",
+      "status": "supported_live_readiness",
+      "claim": "Bounded docs-forge Node CLI help/version and two installer dry-run commands pass against the pinned source checkout and disposable target without target/source mutations.",
+      "paper_locations": [
+        "paper/claim-ledger.md",
+        "paper/artifact-readme.md",
+        "paper/method-boundaries.md",
+        "paper/tables/mvp-results.md"
+      ],
+      "evidence": [
+        {
+          "type": "json_value",
+          "path": "results/live/docs-forge-installer/dry_run_result.json",
+          "pointer": "/aggregate/commands_run",
+          "expected": 4
+        },
+        {
+          "type": "json_value",
+          "path": "results/live/docs-forge-installer/dry_run_result.json",
+          "pointer": "/aggregate/commands_succeeded",
+          "expected": 4
+        },
+        {
+          "type": "json_value",
+          "path": "results/live/docs-forge-installer/dry_run_result.json",
+          "pointer": "/aggregate/dry_run_installer_commands_run",
+          "expected": 2
+        },
+        {
+          "type": "json_value",
+          "path": "results/live/docs-forge-installer/dry_run_result.json",
+          "pointer": "/aggregate/target_mutations_observed",
+          "expected": 0
+        },
+        {
+          "type": "json_value",
+          "path": "results/live/docs-forge-installer/dry_run_result.json",
+          "pointer": "/aggregate/source_mutations_observed",
+          "expected": 0
+        },
+        {
+          "type": "json_value",
+          "path": "results/live/docs-forge-installer/dry_run_result.json",
+          "pointer": "/aggregate/non_dry_run_installs_executed",
+          "expected": 0
+        },
+        {
+          "type": "json_value",
+          "path": "results/live/docs-forge-installer/dry_run_result.json",
+          "pointer": "/aggregate/runtime_drift_claims_added",
+          "expected": 0
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/manifests/docs-forge-live-installer.json",
+          "pointer": "/excluded_from_mvp_runtime_counts",
+          "expected": true
+        }
+      ]
+    },
+    {
       "claim_id": "CL-P1-001",
       "status": "paper_spine",
       "claim": "The paper spine freezes the top-tier full-paper thesis, research questions, threat model, reviewer-risk table, and venue backplan.",
@@ -698,7 +759,7 @@
     {
       "claim_id": "CL-BOUNDARY-002",
       "status": "supported_boundary",
-      "claim": "The current baseline does not claim full docs-forge Node installer execution or full AuditLens product/live connector execution.",
+      "claim": "The current baseline does not claim non-dry-run/full docs-forge installer execution or full AuditLens product/live connector execution.",
       "paper_locations": [
         "paper/case-studies.md",
         "paper/method-boundaries.md"
@@ -707,7 +768,7 @@
         {
           "type": "file_contains",
           "path": "paper/method-boundaries.md",
-          "contains": "It does not execute the real docs-forge Node installer."
+          "contains": "It does not execute non-dry-run docs-forge installation or `npx`"
         },
         {
           "type": "file_contains",

@@ -1,0 +1,29 @@
+{
+  "schema_version": "0.1",
+  "expected_exit_code": 0,
+  "expected_package": {
+    "name": "docs-forge",
+    "version": "0.3.0",
+    "filename": "docs-forge-0.3.0.tgz",
+    "entry_count": 10,
+    "files": [
+      "LICENSE",
+      "README.md",
+      "adapters/antigravity/AGENTS.md",
+      "adapters/antigravity/GEMINI.md",
+      "adapters/claude-code/README.md",
+      "adapters/universal/AGENTS.md",
+      "bin/docs-forge.js",
+      "package.json",
+      "plugins/docs-forge/.codex-plugin/plugin.json",
+      "plugins/docs-forge/skills/docs-forge/SKILL.md"
+    ]
+  },
+  "expected_source_mutations": 0,
+  "expected_home_mutations": 0,
+  "expected_package_tarballs": 1,
+  "expected_npx_executions": 0,
+  "expected_lifecycle_scripts_executed": 0,
+  "runtime_drift_claims": 0,
+  "claim_boundary": "Offline local npm pack observer evidence only; not npx execution, registry acquisition, package install, docs generation, or an MVP runtime-drift result."
+}

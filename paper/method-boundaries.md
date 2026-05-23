@@ -32,6 +32,9 @@ state. Use it before turning the current evidence artifacts into paper prose.
 - A bounded docs-forge live Node runtime-pair scaffold can compare
   project-local installer behavior across host-environment and
   minimal-environment synthetic-home executions without changing MVP counts.
+- A bounded docs-forge live package observer can materialize the pinned local
+  npm package with lifecycle scripts disabled and record the tarball boundary
+  without executing `npx` or package install behavior.
 
 ## What Current Evidence Does Not Prove
 
@@ -65,6 +68,7 @@ state. Use it before turning the current evidence artifacts into paper prose.
 | docs-forge live installer dry-run | `node bin/docs-forge.js` help, version, and installer dry-run commands | Partial live CLI dry-run evidence with source/target pre/post checks | Full installer execution, `npx` safety, network absence under packet capture, or runtime-drift evidence |
 | docs-forge project-local installer | One non-dry-run `node bin/docs-forge.js install --agents claude,antigravity,universal --scope project` command against a disposable target | Partial live installer evidence with Node filesystem-call instrumentation and source/target/home pre/post checks | Docs generation, `npx` safety, user/global install behavior, packet-capture network absence, or runtime-drift evidence |
 | docs-forge live runtime-pair scaffold | Host-environment and minimal-environment synthetic-home Node executions of the same project-local installer command | Bounded local Node environment-pair comparison with matching target/output hashes, excluded from MVP counts | RP2/RP3 drift evidence, commercial runtime evidence, docs generation, `npx` package acquisition, or complete Node/runtime tracing |
+| docs-forge live package observer | Local `npm pack --ignore-scripts` materialization of the pinned source package into an ephemeral package directory | Offline package-boundary evidence for the tarball and expected entry list, excluded from MVP counts | `npx` execution, registry acquisition, install behavior, public-internet safety under packet capture, or runtime-drift evidence |
 
 ## Network Evidence Boundary
 
@@ -104,10 +108,12 @@ disposable target and verifies only expected project-local skill/playbook
 writes. The docs-forge live runtime-pair scaffold then compares the same
 project-local installer command under host-environment and minimal-environment
 synthetic-home Node executions, with no target-output disagreement and no
-source/home mutation. These artifacts do not support claims about `npx`
-package-acquisition behavior, full docs generation, global/user-scope
-installation, RP2/RP3 runtime drift, the full AuditLens product, connector auth
-flows, or live SaaS exports.
+source/home mutation. The docs-forge live package observer materializes the
+local npm package from pinned source with lifecycle scripts disabled and records
+the expected tarball boundary. These artifacts do not support claims about
+`npx` execution, registry package acquisition, full docs generation,
+global/user-scope installation, RP2/RP3 runtime drift, the full AuditLens
+product, connector auth flows, or live SaaS exports.
 
 ## Reviewer-Risky Wording To Avoid
 

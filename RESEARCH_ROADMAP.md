@@ -223,10 +223,12 @@ Current first-party source-provenance status:
   pilots now exercise real Node CLI help, version, dry-run installer surfaces,
   one project-local non-dry-run install against a disposable target, and a
   local Node runtime-pair scaffold comparing host-environment and
-  minimal-environment synthetic-home project-local installs. These artifacts do
-  not execute `npx`, docs generation, user-scope/global installation, the full
-  AuditLens product, connector auth flows, or live SaaS exports, and they do
-  not add runtime-drift claims.
+  minimal-environment synthetic-home project-local installs. The live package
+  observer materializes the pinned local npm package with lifecycle scripts
+  disabled and records the tarball boundary. These artifacts do not execute
+  `npx`, registry acquisition, docs generation, user-scope/global installation,
+  the full AuditLens product, connector auth flows, or live SaaS exports, and
+  they do not add runtime-drift claims.
 
 Suggested role in the paper:
 

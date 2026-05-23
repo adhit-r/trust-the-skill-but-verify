@@ -74,6 +74,11 @@ evidence strength or be removed.
     minimal-environment synthetic-home Node profiles, compares output and
     target mutation hashes, and writes
     `results/live/docs-forge-installer/project_local_runtime_pair_result.json`.
+14. [x] Add bounded docs-forge live package-observer evidence.
+    Done: `experiments/docs-forge-live-package-observer/reproduce_docs_forge_live_package_observer.sh`
+    materializes the pinned local npm package with lifecycle scripts disabled,
+    verifies the expected tarball entries, and writes
+    `results/live/docs-forge-installer/package_observer_result.json`.
 
 ## P1: Claim Contract And Paper Spine
 
@@ -261,8 +266,8 @@ P0 and P1 are now implementation-complete for the current evidence and paper
 spine gates. The next concrete implementation sequence is:
 
 1. Promote the docs-forge live scaffold into a true Node-capable RP2/RP3
-   adapter or container image, or add an `npx` package-acquisition observer,
-   before making live docs-forge runtime-drift claims.
+   adapter or container image, or add a registry/npx observer with explicit
+   network controls, before making live docs-forge runtime-drift claims.
 2. Close P2/P3 coverage gaps for activation, approval, tool/MCP, persistence,
    and at least four runtime profiles.
 3. Scale P4 to 40+ skills and 120+ skill-task-contract runs before repeats.

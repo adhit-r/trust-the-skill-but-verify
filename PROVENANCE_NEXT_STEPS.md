@@ -62,6 +62,13 @@ results/live/docs-forge-installer/project_local_runtime_pair_result.json
 results/live/docs-forge-installer/project_local_runtime_pair_report.md
 results/live/docs-forge-installer/project_local_runtime_pair_host_trace.jsonl
 results/live/docs-forge-installer/project_local_runtime_pair_minimal_env_trace.jsonl
+tools/run_docs_forge_live_package_observer.py
+tools/validate_docs_forge_live_package_observer.py
+experiments/docs-forge-live-package-observer/reproduce_docs_forge_live_package_observer.sh
+benchmark/manifests/docs-forge-live-package-observer.json
+results/live/docs-forge-installer/package_observer_result.json
+results/live/docs-forge-installer/package_observer_report.md
+results/live/docs-forge-installer/package_observer_trace.jsonl
 ```
 
 ### Boundary
@@ -75,8 +82,11 @@ results/live/docs-forge-installer/project_local_runtime_pair_minimal_env_trace.j
 - The docs-forge live runtime-pair scaffold executes the same project-local
   installer command under host-environment and minimal-environment
   synthetic-home Node profiles and compares output and target mutation hashes.
-- It does not execute `npx`, package acquisition, the Codex marketplace
-  command, user-scope/global installation, or docs generation.
+- The docs-forge live package observer materializes the pinned local npm package
+  with lifecycle scripts disabled and records the tarball boundary.
+- It does not execute `npx`, registry acquisition, the Codex marketplace
+  command, package install behavior, user-scope/global installation, or docs
+  generation.
 - It does not execute the full AuditLens product, connector auth flows, or live
   SaaS exports.
 - It is excluded from MVP runtime-drift counts until live traces and
@@ -90,9 +100,11 @@ a temporary target workspace. The project-local gate uses Node filesystem-call
 instrumentation plus source, target, and synthetic-home pre/post checks. The
 current live-evidence gate also compares host-environment and
 minimal-environment synthetic-home Node project-local installs with matching
-target/output hashes and no source/home mutations. The next gate is a
-Node-capable RP2/RP3 adapter or container image, or an `npx` package-acquisition
-observer, before real docs-forge evidence can support runtime-drift claims.
+target/output hashes and no source/home mutations. It also materializes the
+pinned local npm package through an offline `npm pack --ignore-scripts`
+observer. The next gate is a Node-capable RP2/RP3 adapter or container image,
+or a registry/npx observer with explicit network controls, before real
+docs-forge evidence can support runtime-drift claims.
 
 ## Syscall-Level File-Read Provenance
 

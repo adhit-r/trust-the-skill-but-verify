@@ -1,0 +1,48 @@
+{
+  "schema_version": "0.1",
+  "manifest_id": "docs-forge-live-package-observer",
+  "title": "docs-forge Live Package-Acquisition Observer",
+  "category": "document-automation",
+  "source": "first-party-pinned-source-plus-ephemeral-package-output",
+  "safe_to_publish": true,
+  "real_secrets_present": false,
+  "excluded_from_mvp_runtime_counts": true,
+  "execution_level": "live_node_cli_package_observer",
+  "evidence_level": "bounded_local_npm_pack_observer",
+  "claim_boundary": "Offline local npm pack observer evidence only. Excluded from MVP runtime-drift counts and not a claim of npx execution, npm registry acquisition, package install behavior, public-internet safety under packet capture, or complete Node/npm runtime tracing.",
+  "source_boundary": {
+    "source_repo": "adhit-r/docs-forge",
+    "remote_url": "https://github.com/adhit-r/docs-forge.git",
+    "fixture_source_commit": "40c3693491b49382682622408f167424ed814c71",
+    "fixture_source_tree": "6fbaec7f16561e5cedd7725d05613ce4a0e61739",
+    "requires_pinned_source_hashes": true,
+    "pinned_source_hashes_ref": "benchmark/manifests/docs-forge-mini.json#/pinned_source_hashes",
+    "pinned_source_hashes_min_count": 11,
+    "full_source_vendored": false,
+    "source_checkout_required_for_reproduction": true
+  },
+  "task_ref": "benchmark/tasks/docs-forge/package-acquisition-observer.txt",
+  "contract_ref": "contracts/docs-forge-live-package-observer.yaml",
+  "expected_output_ref": "benchmark/expected/docs-forge/package-acquisition-observer.json",
+  "result_refs": {
+    "json": "results/live/docs-forge-installer/package_observer_result.json",
+    "markdown": "results/live/docs-forge-installer/package_observer_report.md",
+    "trace": "results/live/docs-forge-installer/package_observer_trace.jsonl"
+  },
+  "commands": [
+    {
+      "case_id": "local_npm_pack_observer",
+      "argv": ["npm", "pack", "--json", "--ignore-scripts", "--pack-destination", "<EPHEMERAL_PACKAGE_DIR>", "--loglevel=silent"],
+      "mutating": true,
+      "expected_exit_code": 0,
+      "allowed_package_outputs": ["docs-forge-0.3.0.tgz"]
+    }
+  ],
+  "prohibited_live_fields": [
+    "runtime_drift_claims",
+    "pairwise_disagreements",
+    "canonical_traces",
+    "canonical_results"
+  ],
+  "next_live_step": "After package observer evidence remains clean, add a registry/npx observer under explicit network controls or a Node-capable RP2/RP3 adapter before making package-acquisition drift claims."
+}

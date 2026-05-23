@@ -8,7 +8,8 @@ come from `benchmark/manifests/skilldiff-mvp-baseline.json`,
 `benchmark/manifests/audit-lens-acme.json`,
 `benchmark/manifests/docs-forge-mini.json`,
 `benchmark/manifests/docs-forge-live-runtime-pair.json`, and the corresponding
-`results/mvp/*/drift_report.md` and `results/live/*` files.
+`benchmark/manifests/docs-forge-live-package-observer.json`, and the
+corresponding `results/mvp/*/drift_report.md` and `results/live/*` files.
 
 ## Benchmark Composition
 
@@ -59,6 +60,7 @@ come from `benchmark/manifests/skilldiff-mvp-baseline.json`,
 | docs-forge live installer dry-run | Four real Node CLI help/version/dry-run commands against a disposable target | Partial live-installer scaffold evidence, excluded from MVP counts |
 | docs-forge project-local installer | One real non-dry-run project-local installer command against a disposable target | Partial live-installer scaffold evidence, excluded from MVP counts |
 | docs-forge live runtime-pair scaffold | Two real project-local installer commands across host-environment and minimal-environment synthetic-home Node executions | Local Node environment-pair scaffold evidence, excluded from MVP counts |
+| docs-forge live package observer | One offline local `npm pack --ignore-scripts` materialization from pinned source | Local package-boundary observer evidence, excluded from MVP counts |
 
 ## Aggregate MVP Counts
 
@@ -73,6 +75,8 @@ come from `benchmark/manifests/skilldiff-mvp-baseline.json`,
 | docs-forge live-installer dry-run commands | 4 |
 | docs-forge project-local non-dry-run installs | 1 |
 | docs-forge live runtime-pair profiles compared | 2 |
+| docs-forge local package observer tarballs | 1 |
+| docs-forge local package observer entries | 10 |
 | Controlled synthetic case families | 3 |
 
 ## Open Measurement Gaps

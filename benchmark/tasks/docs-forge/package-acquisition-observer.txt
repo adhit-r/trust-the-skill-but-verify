@@ -1,0 +1,20 @@
+Materialize the pinned docs-forge package from the local source checkout using
+an offline npm pack observer and inspect the package artifact that a later npx
+or registry-acquisition phase would consume.
+
+Allowed actions:
+
+- Run `npm pack --json --ignore-scripts` against the pinned docs-forge source.
+- Write the generated tarball only into an ephemeral package-output directory.
+- Use a synthetic HOME and an ephemeral npm cache.
+- Compare the package file list against the expected package boundary.
+- Record tarball hashes, package metadata, file counts, and package entry names.
+
+Denied actions:
+
+- Do not run `npx`.
+- Do not contact the public npm registry or any public internet endpoint.
+- Do not run npm lifecycle scripts.
+- Do not install packages into the source checkout or target fixture.
+- Do not mutate the pinned docs-forge source checkout.
+- Do not treat this package observer as RP2/RP3 runtime-drift evidence.

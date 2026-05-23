@@ -63,6 +63,15 @@ DOCS_FORGE_SOURCE_ROOT=/path/to/docs-forge \
   bash experiments/docs-forge-live-runtime-pair/reproduce_docs_forge_live_runtime_pair.sh
 ```
 
+The bounded docs-forge live package-observer check also requires the pinned
+docs-forge source checkout:
+
+```bash
+DOCS_FORGE_SOURCE_ROOT=/path/to/docs-forge \
+  PYTHON_BIN=/tmp/skilldiff-venv/bin/python \
+  bash experiments/docs-forge-live-package-observer/reproduce_docs_forge_live_package_observer.sh
+```
+
 ## Expected Outputs
 
 | Script | Primary Result |
@@ -75,6 +84,7 @@ DOCS_FORGE_SOURCE_ROOT=/path/to/docs-forge \
 | `experiments/docs-forge-live-installer/reproduce_docs_forge_live_installer.sh` | `results/live/docs-forge-installer/dry_run_report.md` |
 | `experiments/docs-forge-live-project-local-install/reproduce_docs_forge_live_project_local_install.sh` | `results/live/docs-forge-installer/project_local_install_report.md` |
 | `experiments/docs-forge-live-runtime-pair/reproduce_docs_forge_live_runtime_pair.sh` | `results/live/docs-forge-installer/project_local_runtime_pair_report.md` |
+| `experiments/docs-forge-live-package-observer/reproduce_docs_forge_live_package_observer.sh` | `results/live/docs-forge-installer/package_observer_report.md` |
 
 ## Safety Notes
 
@@ -105,6 +115,10 @@ DOCS_FORGE_SOURCE_ROOT=/path/to/docs-forge \
   and minimal-environment synthetic-home Node executions. It compares target
   mutation hashes and output hashes, and is excluded from MVP runtime-drift
   counts.
+- `results/live/docs-forge-installer/package_observer_result.json` records one
+  bounded offline local `npm pack --ignore-scripts` package materialization
+  into an ephemeral package directory. It records tarball and expected package
+  entry evidence, and is excluded from MVP runtime-drift counts.
 
 ## Known Limitations
 
@@ -130,6 +144,10 @@ DOCS_FORGE_SOURCE_ROOT=/path/to/docs-forge \
 - docs-forge live runtime-pair evidence is a local Node environment-pair
   scaffold. It is not RP2/RP3 runtime-drift evidence, `npx`
   package-acquisition evidence, or full docs-generation evidence.
+- docs-forge live package-observer evidence is offline local package
+  materialization. It is not `npx` execution, npm registry acquisition,
+  package-install behavior, public-internet packet-capture evidence, or
+  runtime-drift evidence.
 
 ## Release Checklist
 

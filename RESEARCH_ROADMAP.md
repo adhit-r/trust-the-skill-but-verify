@@ -221,10 +221,12 @@ Current first-party source-provenance status:
   hashes without vendoring full source trees.
 - Source provenance is source-only evidence. Separate docs-forge live installer
   pilots now exercise real Node CLI help, version, dry-run installer surfaces,
-  and one project-local non-dry-run install against a disposable target. These
-  artifacts do not execute `npx`, docs generation, user-scope/global
-  installation, the full AuditLens product, connector auth flows, or live SaaS
-  exports, and they do not add runtime-drift claims.
+  one project-local non-dry-run install against a disposable target, and a
+  local Node runtime-pair scaffold comparing host-environment and
+  minimal-environment synthetic-home project-local installs. These artifacts do
+  not execute `npx`, docs generation, user-scope/global installation, the full
+  AuditLens product, connector auth flows, or live SaaS exports, and they do
+  not add runtime-drift claims.
 
 Suggested role in the paper:
 

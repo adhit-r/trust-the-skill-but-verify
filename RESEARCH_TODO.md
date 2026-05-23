@@ -21,6 +21,7 @@ Status key:
 8. [x] [RM-08] Onboard `adhit-r/audit-lens` as the first realistic compliance-skill case study with a sanitized runnable Acme fixture and RP2/RP3 traces.
 9. [x] [RM-08] Add bounded docs-forge live Node CLI dry-run evidence without changing MVP runtime-drift counts.
 10. [x] [RM-08] Add bounded docs-forge project-local non-dry-run installer evidence without changing MVP runtime-drift counts.
+11. [x] [RM-08] Add bounded docs-forge live Node runtime-pair scaffold evidence without changing MVP runtime-drift counts.
 
 ## RM-01: Research Claim and Scope
 
@@ -289,6 +290,7 @@ Tasks:
 - [x] [RM-08] Verify first-party source provenance from clean ephemeral clones for docs-forge and AuditLens.
 - [x] [RM-08] Add bounded docs-forge live-installer dry-run scaffold and result evidence.
 - [x] [RM-08] Add bounded docs-forge project-local non-dry-run installer scaffold, trace, and result evidence.
+- [x] [RM-08] Add bounded docs-forge live runtime-pair scaffold, paired traces, and comparison result evidence.
 - [x] [RM-08] Extract `docs-forge` canonical skill provenance from `plugins/docs-forge/skills/docs-forge/SKILL.md`.
 - [x] [RM-08] Extract `docs-forge` adapter-surface provenance from `adapters/claude-code`, `adapters/antigravity`, and `adapters/universal`.
 - [ ] [RM-08] Extract `audit-lens` canonical skill from `skill/SKILL.md`.
@@ -316,6 +318,7 @@ Acceptance checks:
 - [x] [RM-08] First-party source hashes can be verified from clean ephemeral clones without vendoring full source trees.
 - [x] [RM-08] First live docs-forge Node CLI dry-run evidence is excluded from MVP runtime-drift counts.
 - [x] [RM-08] First live docs-forge project-local non-dry-run installer evidence is excluded from MVP runtime-drift counts.
+- [x] [RM-08] First live docs-forge Node runtime-pair scaffold evidence is excluded from MVP runtime-drift counts.
 - [~] [RM-08] Pilot mutations are controlled and do not publish real harmful payloads; AuditLens and docs-forge canary variants are synthetic and local-only.
 
 ## RM-09: Differential Analysis and Report Cards
@@ -577,7 +580,7 @@ MVP done when:
 
 - [x] [RM-01] Should the title use "Differential Security Testing" or "Runtime Security Drift"? Decision: use "Differential Security Testing" in the title and "runtime-induced drift" as the core phenomenon.
 - [x] [RM-04] Should persistence drift be D6 or included under side-effect drift? Decision: keep persistence as a D4 side-effect subtype and report `persistence_violation_rate` separately.
-- [x] [RM-06] Which real runtime should be validated first after controlled profiles? Decision: validate first-party source provenance first, then bounded docs-forge live-installer dry-run and project-local non-dry-run evidence; next is a Node-capable runtime-pair harness before live connector or RP4 claims.
+- [x] [RM-06] Which real runtime should be validated first after controlled profiles? Decision: validate first-party source provenance first, then bounded docs-forge live-installer dry-run, project-local non-dry-run evidence, and a live Node runtime-pair scaffold. Next is a Node-capable RP2/RP3 adapter or container image, or an `npx` package-acquisition observer, before live connector or RP4 claims.
 - [ ] [RM-07] How should approval prompts be simulated consistently?
 - [ ] [RM-08] How many adversarial variants are safe to publish?
 - [ ] [RM-10] Should generated policies be included in the first submission or deferred?

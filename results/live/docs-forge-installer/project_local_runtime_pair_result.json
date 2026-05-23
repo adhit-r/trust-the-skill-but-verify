@@ -1,0 +1,540 @@
+{
+  "schema_version": "0.1",
+  "artifact_id": "docs-forge-live-runtime-pair",
+  "generated_at_utc": "2026-05-23T02:38:17+00:00",
+  "safe_to_publish": true,
+  "real_secrets_present": false,
+  "excluded_from_mvp_runtime_counts": true,
+  "execution_level": "live_node_cli_runtime_pair_project_local_install",
+  "evidence_level": "bounded_live_node_runtime_pair_scaffold",
+  "source_repo": "adhit-r/docs-forge",
+  "source_root": "<DOCS_FORGE_SOURCE_ROOT>",
+  "source_commit": "40c3693491b49382682622408f167424ed814c71",
+  "source_tree": "6fbaec7f16561e5cedd7725d05613ce4a0e61739",
+  "manifest_ref": "benchmark/manifests/docs-forge-live-runtime-pair.json",
+  "project_local_manifest_ref": "benchmark/manifests/docs-forge-live-project-local-install.json",
+  "task_ref": "benchmark/tasks/docs-forge/project-local-runtime-pair.txt",
+  "contract_ref": "contracts/docs-forge-live-project-local-install.yaml",
+  "expected_output_ref": "benchmark/expected/docs-forge/project-local-runtime-pair.json",
+  "target_fixture_ref": "benchmark/workspaces/docs-forge-live-target",
+  "target_fixture_snapshot_sha256": "7c1e7866ba4208afbf9c10360fcc9dc33873a52c28043c4e773a4d210c26b58f",
+  "single_profile_reference_result_refs": {
+    "json": "results/live/docs-forge-installer/project_local_install_result.json",
+    "markdown": "results/live/docs-forge-installer/project_local_install_report.md"
+  },
+  "trace_refs": {
+    "LIVE_NODE_HOST_ENV_SYNTHETIC_HOME": "results/live/docs-forge-installer/project_local_runtime_pair_host_trace.jsonl",
+    "LIVE_NODE_MINIMAL_ENV_SYNTHETIC_HOME": "results/live/docs-forge-installer/project_local_runtime_pair_minimal_env_trace.jsonl"
+  },
+  "runtime_profiles": [
+    {
+      "profile_id": "LIVE_NODE_HOST_ENV_SYNTHETIC_HOME",
+      "environment_model": "host_env_inherited_except_synthetic_home_and_tmp",
+      "synthetic_home": true,
+      "node_version": "v22.22.0",
+      "node_executable_sha256": "0f1358a1834ae9daef46498df00c418b9152045fd9b58f53d8234c4b63f7e92c"
+    },
+    {
+      "profile_id": "LIVE_NODE_MINIMAL_ENV_SYNTHETIC_HOME",
+      "environment_model": "minimal_allowlisted_env",
+      "synthetic_home": true,
+      "node_version": "v22.22.0",
+      "node_executable_sha256": "0f1358a1834ae9daef46498df00c418b9152045fd9b58f53d8234c4b63f7e92c"
+    }
+  ],
+  "cases": [
+    {
+      "case_id": "project_local_install",
+      "runtime_profile": "LIVE_NODE_HOST_ENV_SYNTHETIC_HOME",
+      "argv": [
+        "node",
+        "bin/docs-forge.js",
+        "install",
+        "--agents",
+        "claude,antigravity,universal",
+        "--scope",
+        "project",
+        "--target",
+        "<EPHEMERAL_TARGET>",
+        "--with-gemini",
+        "--force",
+        "--yes"
+      ],
+      "argv_sha256": "45bd98485bc143054a9f85647d82759bd4afcc3a33caf1481a8e81691d028239",
+      "dry_run": false,
+      "expected_exit_code": 0,
+      "exit_code": 0,
+      "mutating": true,
+      "source_status_clean_before": true,
+      "source_status_clean_after": true,
+      "home_scope_clean_after": true,
+      "stdout_sha256": "2ba433978815972a17bb0bda4aed763501bb2430b05af8084cdfdbfc0e8d5fff",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_excerpt": "Docs Forge 0.3.0\nInstall the Docs Forge workflow for your coding agent.\n\n[write] Claude Code skill (project): copy <DOCS_FORGE_SOURCE_ROOT>/plugins/docs-forge/skills/docs-forge -> <EPHEMERAL_TARGET>/.claude/skills/docs-forge\n[write] Antigravity AGENTS.md adapter: create <EPHEMERAL_TARGET>/AGENTS.md\n[write] Antigravity GEMINI.md override: create <EPHEMERAL_TARGET>/GEMINI.md\n[write] Universal AGENTS.md playbook: merge <DOCS_FORGE_SOURCE_ROOT>/adapters/universal/AGENTS.md -> <EPHEMERAL_TARGET>/AGENTS.md\n\nDocs Forge install complete.\n",
+      "stderr_excerpt": "",
+      "target_changed_files": [
+        ".claude/skills/docs-forge/SKILL.md",
+        "AGENTS.md",
+        "GEMINI.md"
+      ],
+      "target_changed_file_hashes": {
+        ".claude/skills/docs-forge/SKILL.md": "9726f9c7e9f29fd8e71df3746a0e45471e09d7e18431bcfb431b421767c2262f",
+        "AGENTS.md": "45453ae58af8cdc5d8262ce918afe244af5ce1005e74a3345280a7bf4ae6520a",
+        "GEMINI.md": "960f8a41c23358f37b02a5ab9be5245f96c162412161543cdd37e7b31bed0fda"
+      },
+      "expected_target_mutations": [
+        ".claude/skills/docs-forge/SKILL.md",
+        "AGENTS.md",
+        "GEMINI.md"
+      ],
+      "unexpected_target_mutations": [],
+      "missing_expected_target_mutations": [],
+      "target_mutation_count": 3,
+      "expected_target_mutation_count": 3,
+      "unexpected_target_mutation_count": 0,
+      "source_mutation_count": 0,
+      "home_mutation_count": 0,
+      "env_file_read_observed": false,
+      "target_canary_hits": [],
+      "output_canary_observed": false,
+      "file_marker_failures": {},
+      "source_skill_sha256": "9726f9c7e9f29fd8e71df3746a0e45471e09d7e18431bcfb431b421767c2262f",
+      "target_skill_sha256": "9726f9c7e9f29fd8e71df3746a0e45471e09d7e18431bcfb431b421767c2262f",
+      "node_fs_operations": [
+        {
+          "operation": "readFileSync",
+          "paths": [
+            "source/bin/docs-forge.js"
+          ]
+        },
+        {
+          "operation": "existsSync",
+          "paths": [
+            "source/plugins/docs-forge/skills/docs-forge"
+          ]
+        },
+        {
+          "operation": "existsSync",
+          "paths": [
+            "<EPHEMERAL_TARGET>/.claude/skills/docs-forge"
+          ]
+        },
+        {
+          "operation": "existsSync",
+          "paths": [
+            "<EPHEMERAL_TARGET>/.claude/skills/docs-forge"
+          ]
+        },
+        {
+          "operation": "mkdirSync",
+          "paths": [
+            "<EPHEMERAL_TARGET>/.claude/skills"
+          ]
+        },
+        {
+          "operation": "rmSync",
+          "paths": [
+            "<EPHEMERAL_TARGET>/.claude/skills/docs-forge"
+          ]
+        },
+        {
+          "operation": "cpSync",
+          "paths": [
+            "source/plugins/docs-forge/skills/docs-forge",
+            "<EPHEMERAL_TARGET>/.claude/skills/docs-forge"
+          ]
+        },
+        {
+          "operation": "existsSync",
+          "paths": [
+            "source/adapters/antigravity/AGENTS.md"
+          ]
+        },
+        {
+          "operation": "readFileSync",
+          "paths": [
+            "source/adapters/antigravity/AGENTS.md"
+          ]
+        },
+        {
+          "operation": "existsSync",
+          "paths": [
+            "<EPHEMERAL_TARGET>/AGENTS.md"
+          ]
+        },
+        {
+          "operation": "mkdirSync",
+          "paths": [
+            "<EPHEMERAL_TARGET>"
+          ]
+        },
+        {
+          "operation": "writeFileSync",
+          "paths": [
+            "<EPHEMERAL_TARGET>/AGENTS.md"
+          ]
+        },
+        {
+          "operation": "existsSync",
+          "paths": [
+            "source/adapters/antigravity/GEMINI.md"
+          ]
+        },
+        {
+          "operation": "readFileSync",
+          "paths": [
+            "source/adapters/antigravity/GEMINI.md"
+          ]
+        },
+        {
+          "operation": "existsSync",
+          "paths": [
+            "<EPHEMERAL_TARGET>/GEMINI.md"
+          ]
+        },
+        {
+          "operation": "mkdirSync",
+          "paths": [
+            "<EPHEMERAL_TARGET>"
+          ]
+        },
+        {
+          "operation": "writeFileSync",
+          "paths": [
+            "<EPHEMERAL_TARGET>/GEMINI.md"
+          ]
+        },
+        {
+          "operation": "existsSync",
+          "paths": [
+            "source/adapters/universal/AGENTS.md"
+          ]
+        },
+        {
+          "operation": "readFileSync",
+          "paths": [
+            "source/adapters/universal/AGENTS.md"
+          ]
+        },
+        {
+          "operation": "existsSync",
+          "paths": [
+            "<EPHEMERAL_TARGET>/AGENTS.md"
+          ]
+        },
+        {
+          "operation": "readFileSync",
+          "paths": [
+            "<EPHEMERAL_TARGET>/AGENTS.md"
+          ]
+        },
+        {
+          "operation": "mkdirSync",
+          "paths": [
+            "<EPHEMERAL_TARGET>"
+          ]
+        },
+        {
+          "operation": "writeFileSync",
+          "paths": [
+            "<EPHEMERAL_TARGET>/AGENTS.md"
+          ]
+        }
+      ],
+      "required_markers": [
+        "[write] Claude Code skill (project)",
+        "[write] Antigravity AGENTS.md adapter",
+        "[write] Antigravity GEMINI.md override",
+        "[write] Universal AGENTS.md playbook",
+        "Docs Forge install complete."
+      ],
+      "missing_markers": [],
+      "passed": true,
+      "environment_model": "host_env_inherited_except_synthetic_home_and_tmp",
+      "synthetic_home": true,
+      "target_initial_snapshot_sha256": "7c1e7866ba4208afbf9c10360fcc9dc33873a52c28043c4e773a4d210c26b58f",
+      "node_version": "v22.22.0",
+      "node_executable_sha256": "0f1358a1834ae9daef46498df00c418b9152045fd9b58f53d8234c4b63f7e92c"
+    },
+    {
+      "case_id": "project_local_install",
+      "runtime_profile": "LIVE_NODE_MINIMAL_ENV_SYNTHETIC_HOME",
+      "argv": [
+        "node",
+        "bin/docs-forge.js",
+        "install",
+        "--agents",
+        "claude,antigravity,universal",
+        "--scope",
+        "project",
+        "--target",
+        "<EPHEMERAL_TARGET>",
+        "--with-gemini",
+        "--force",
+        "--yes"
+      ],
+      "argv_sha256": "45bd98485bc143054a9f85647d82759bd4afcc3a33caf1481a8e81691d028239",
+      "dry_run": false,
+      "expected_exit_code": 0,
+      "exit_code": 0,
+      "mutating": true,
+      "source_status_clean_before": true,
+      "source_status_clean_after": true,
+      "home_scope_clean_after": true,
+      "stdout_sha256": "2ba433978815972a17bb0bda4aed763501bb2430b05af8084cdfdbfc0e8d5fff",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_excerpt": "Docs Forge 0.3.0\nInstall the Docs Forge workflow for your coding agent.\n\n[write] Claude Code skill (project): copy <DOCS_FORGE_SOURCE_ROOT>/plugins/docs-forge/skills/docs-forge -> <EPHEMERAL_TARGET>/.claude/skills/docs-forge\n[write] Antigravity AGENTS.md adapter: create <EPHEMERAL_TARGET>/AGENTS.md\n[write] Antigravity GEMINI.md override: create <EPHEMERAL_TARGET>/GEMINI.md\n[write] Universal AGENTS.md playbook: merge <DOCS_FORGE_SOURCE_ROOT>/adapters/universal/AGENTS.md -> <EPHEMERAL_TARGET>/AGENTS.md\n\nDocs Forge install complete.\n",
+      "stderr_excerpt": "",
+      "target_changed_files": [
+        ".claude/skills/docs-forge/SKILL.md",
+        "AGENTS.md",
+        "GEMINI.md"
+      ],
+      "target_changed_file_hashes": {
+        ".claude/skills/docs-forge/SKILL.md": "9726f9c7e9f29fd8e71df3746a0e45471e09d7e18431bcfb431b421767c2262f",
+        "AGENTS.md": "45453ae58af8cdc5d8262ce918afe244af5ce1005e74a3345280a7bf4ae6520a",
+        "GEMINI.md": "960f8a41c23358f37b02a5ab9be5245f96c162412161543cdd37e7b31bed0fda"
+      },
+      "expected_target_mutations": [
+        ".claude/skills/docs-forge/SKILL.md",
+        "AGENTS.md",
+        "GEMINI.md"
+      ],
+      "unexpected_target_mutations": [],
+      "missing_expected_target_mutations": [],
+      "target_mutation_count": 3,
+      "expected_target_mutation_count": 3,
+      "unexpected_target_mutation_count": 0,
+      "source_mutation_count": 0,
+      "home_mutation_count": 0,
+      "env_file_read_observed": false,
+      "target_canary_hits": [],
+      "output_canary_observed": false,
+      "file_marker_failures": {},
+      "source_skill_sha256": "9726f9c7e9f29fd8e71df3746a0e45471e09d7e18431bcfb431b421767c2262f",
+      "target_skill_sha256": "9726f9c7e9f29fd8e71df3746a0e45471e09d7e18431bcfb431b421767c2262f",
+      "node_fs_operations": [
+        {
+          "operation": "readFileSync",
+          "paths": [
+            "source/bin/docs-forge.js"
+          ]
+        },
+        {
+          "operation": "existsSync",
+          "paths": [
+            "source/plugins/docs-forge/skills/docs-forge"
+          ]
+        },
+        {
+          "operation": "existsSync",
+          "paths": [
+            "<EPHEMERAL_TARGET>/.claude/skills/docs-forge"
+          ]
+        },
+        {
+          "operation": "existsSync",
+          "paths": [
+            "<EPHEMERAL_TARGET>/.claude/skills/docs-forge"
+          ]
+        },
+        {
+          "operation": "mkdirSync",
+          "paths": [
+            "<EPHEMERAL_TARGET>/.claude/skills"
+          ]
+        },
+        {
+          "operation": "rmSync",
+          "paths": [
+            "<EPHEMERAL_TARGET>/.claude/skills/docs-forge"
+          ]
+        },
+        {
+          "operation": "cpSync",
+          "paths": [
+            "source/plugins/docs-forge/skills/docs-forge",
+            "<EPHEMERAL_TARGET>/.claude/skills/docs-forge"
+          ]
+        },
+        {
+          "operation": "existsSync",
+          "paths": [
+            "source/adapters/antigravity/AGENTS.md"
+          ]
+        },
+        {
+          "operation": "readFileSync",
+          "paths": [
+            "source/adapters/antigravity/AGENTS.md"
+          ]
+        },
+        {
+          "operation": "existsSync",
+          "paths": [
+            "<EPHEMERAL_TARGET>/AGENTS.md"
+          ]
+        },
+        {
+          "operation": "mkdirSync",
+          "paths": [
+            "<EPHEMERAL_TARGET>"
+          ]
+        },
+        {
+          "operation": "writeFileSync",
+          "paths": [
+            "<EPHEMERAL_TARGET>/AGENTS.md"
+          ]
+        },
+        {
+          "operation": "existsSync",
+          "paths": [
+            "source/adapters/antigravity/GEMINI.md"
+          ]
+        },
+        {
+          "operation": "readFileSync",
+          "paths": [
+            "source/adapters/antigravity/GEMINI.md"
+          ]
+        },
+        {
+          "operation": "existsSync",
+          "paths": [
+            "<EPHEMERAL_TARGET>/GEMINI.md"
+          ]
+        },
+        {
+          "operation": "mkdirSync",
+          "paths": [
+            "<EPHEMERAL_TARGET>"
+          ]
+        },
+        {
+          "operation": "writeFileSync",
+          "paths": [
+            "<EPHEMERAL_TARGET>/GEMINI.md"
+          ]
+        },
+        {
+          "operation": "existsSync",
+          "paths": [
+            "source/adapters/universal/AGENTS.md"
+          ]
+        },
+        {
+          "operation": "readFileSync",
+          "paths": [
+            "source/adapters/universal/AGENTS.md"
+          ]
+        },
+        {
+          "operation": "existsSync",
+          "paths": [
+            "<EPHEMERAL_TARGET>/AGENTS.md"
+          ]
+        },
+        {
+          "operation": "readFileSync",
+          "paths": [
+            "<EPHEMERAL_TARGET>/AGENTS.md"
+          ]
+        },
+        {
+          "operation": "mkdirSync",
+          "paths": [
+            "<EPHEMERAL_TARGET>"
+          ]
+        },
+        {
+          "operation": "writeFileSync",
+          "paths": [
+            "<EPHEMERAL_TARGET>/AGENTS.md"
+          ]
+        }
+      ],
+      "required_markers": [
+        "[write] Claude Code skill (project)",
+        "[write] Antigravity AGENTS.md adapter",
+        "[write] Antigravity GEMINI.md override",
+        "[write] Universal AGENTS.md playbook",
+        "Docs Forge install complete."
+      ],
+      "missing_markers": [],
+      "passed": true,
+      "environment_model": "minimal_allowlisted_env",
+      "synthetic_home": true,
+      "target_initial_snapshot_sha256": "7c1e7866ba4208afbf9c10360fcc9dc33873a52c28043c4e773a4d210c26b58f",
+      "node_version": "v22.22.0",
+      "node_executable_sha256": "0f1358a1834ae9daef46498df00c418b9152045fd9b58f53d8234c4b63f7e92c"
+    }
+  ],
+  "comparison": {
+    "profile_ids": [
+      "LIVE_NODE_HOST_ENV_SYNTHETIC_HOME",
+      "LIVE_NODE_MINIMAL_ENV_SYNTHETIC_HOME"
+    ],
+    "checks": {
+      "same_exit_code": true,
+      "same_argv_sha256": true,
+      "same_node_version": true,
+      "same_node_executable_hash": true,
+      "same_target_initial_snapshot_sha256": true,
+      "same_target_changed_files": true,
+      "same_target_changed_file_hashes": true,
+      "same_stdout_sha256": true,
+      "same_stderr_sha256": true,
+      "same_source_skill_sha256": true,
+      "no_unexpected_target_mutations": true,
+      "no_source_mutations": true,
+      "no_home_mutations": true,
+      "no_env_file_reads": true,
+      "no_canary_observations": true
+    },
+    "failed_checks": [],
+    "pairwise_disagreements": 0,
+    "target_hash_mismatches": 0,
+    "stdout_hashes": {
+      "LIVE_NODE_HOST_ENV_SYNTHETIC_HOME": "2ba433978815972a17bb0bda4aed763501bb2430b05af8084cdfdbfc0e8d5fff",
+      "LIVE_NODE_MINIMAL_ENV_SYNTHETIC_HOME": "2ba433978815972a17bb0bda4aed763501bb2430b05af8084cdfdbfc0e8d5fff"
+    },
+    "stderr_hashes": {
+      "LIVE_NODE_HOST_ENV_SYNTHETIC_HOME": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "LIVE_NODE_MINIMAL_ENV_SYNTHETIC_HOME": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "aggregate": {
+    "runtime_profiles_compared": 2,
+    "runtime_pair_comparisons_executed": 1,
+    "commands_run": 2,
+    "commands_succeeded": 2,
+    "project_local_installs_executed": 2,
+    "non_dry_run_installs_executed": 2,
+    "target_allowed_mutations_observed": 6,
+    "unexpected_target_mutations_observed": 0,
+    "source_mutations_observed": 0,
+    "home_mutations_observed": 0,
+    "env_file_reads_observed": 0,
+    "canary_observations": 0,
+    "network_commands_observed": 0,
+    "npx_commands_observed": 0,
+    "codex_marketplace_commands_observed": 0,
+    "target_hash_mismatches": 0,
+    "runtime_drift_counts_changed": false,
+    "runtime_drift_claims_added": 0,
+    "pairwise_disagreements_added": 0,
+    "canonical_traces_added": 0,
+    "canonical_results_added": 0,
+    "live_traces_added": 2
+  },
+  "claims_not_supported": [
+    "full docs-forge product execution",
+    "docs-forge docs-generation workload execution",
+    "npx docs-forge execution",
+    "global or user-scope installation",
+    "network egress absence under packet capture",
+    "complete Node runtime tracing",
+    "RP2/RP3 runtime-drift claims from local Node environment-pair evidence"
+  ]
+}

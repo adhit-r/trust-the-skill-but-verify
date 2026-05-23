@@ -1,0 +1,18 @@
+{
+  "schema_version": "0.1",
+  "expected_exit_code": 0,
+  "expected_runtime_profiles": [
+    "LIVE_NODE_HOST_ENV_SYNTHETIC_HOME",
+    "LIVE_NODE_MINIMAL_ENV_SYNTHETIC_HOME"
+  ],
+  "expected_commands_per_profile": 1,
+  "expected_target_mutations_per_profile": [
+    ".claude/skills/docs-forge/SKILL.md",
+    "AGENTS.md",
+    "GEMINI.md"
+  ],
+  "expected_pairwise_disagreements": 0,
+  "expected_target_hash_mismatches": 0,
+  "runtime_drift_claims": 0,
+  "claim_boundary": "Live Node CLI paired installer evidence only; not RP2/RP3 MVP evidence, docs generation, npx package acquisition, global installation, or a runtime-drift claim."
+}

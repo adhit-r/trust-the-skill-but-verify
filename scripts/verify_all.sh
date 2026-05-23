@@ -23,6 +23,9 @@ done < <(git ls-files -z '*.json')
 "$PYTHON_BIN" tools/validate_docs_forge_live_installer.py
 "$PYTHON_BIN" tools/validate_docs_forge_live_project_local_install.py
 "$PYTHON_BIN" tools/validate_traces.py results/live/docs-forge-installer/project_local_install_trace.jsonl
+"$PYTHON_BIN" tools/validate_docs_forge_live_runtime_pair.py
+"$PYTHON_BIN" tools/validate_traces.py results/live/docs-forge-installer/project_local_runtime_pair_host_trace.jsonl
+"$PYTHON_BIN" tools/validate_traces.py results/live/docs-forge-installer/project_local_runtime_pair_minimal_env_trace.jsonl
 "$PYTHON_BIN" tools/validate_claim_ledger.py
 "$PYTHON_BIN" tools/check_no_local_paths.py
 "$PYTHON_BIN" tools/validate_traces.py results/raw/*/trace.jsonl

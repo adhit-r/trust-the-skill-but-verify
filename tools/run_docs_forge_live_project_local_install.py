@@ -164,18 +164,26 @@ def verify_source(source_root: Path) -> None:
         )
 
 
-def sanitize(value: str, *, source_root: Path, temp_root: Path, target_root: Path) -> str:
+def sanitize(value: str, *, source_root: Path, temp_root: Path, target_root: Path, home_root: Path | None = None) -> str:
+    sanitized = value.replace(str(source_root), "<DOCS_FORGE_SOURCE_ROOT>").replace(str(target_root), "<EPHEMERAL_TARGET>")
+    if home_root is not None:
+        sanitized = sanitized.replace(str(home_root), "<EPHEMERAL_HOME>")
     return (
-        value.replace(str(source_root), "<DOCS_FORGE_SOURCE_ROOT>")
-        .replace(str(target_root), "<EPHEMERAL_TARGET>")
-        .replace(str(temp_root), "<EPHEMERAL_LIVE_WORKSPACE>")
+        sanitized.replace(str(temp_root), "<EPHEMERAL_LIVE_WORKSPACE>")
         .replace(str(REPO_ROOT), "<REPO_ROOT>")
         .replace(str(Path.home()), "<LOCAL_HOME>")
     )
 
 
-def display_argv(argv: list[str], *, source_root: Path, temp_root: Path, target_root: Path) -> list[str]:
-    return [sanitize(arg, source_root=source_root, temp_root=temp_root, target_root=target_root) for arg in argv]
+def display_argv(
+    argv: list[str],
+    *,
+    source_root: Path,
+    temp_root: Path,
+    target_root: Path,
+    home_root: Path | None = None,
+) -> list[str]:
+    return [sanitize(arg, source_root=source_root, temp_root=temp_root, target_root=target_root, home_root=home_root) for arg in argv]
 
 
 def marker_check(stdout: str, markers: list[str]) -> dict[str, Any]:
@@ -196,7 +204,14 @@ def load_node_fs_events(path: Path) -> list[dict[str, Any]]:
     return events
 
 
-def classify_path(raw_path: str, *, source_root: Path, target_root: Path) -> str:
+def classify_path(
+    raw_path: str,
+    *,
+    source_root: Path,
+    target_root: Path,
+    temp_root: Path | None = None,
+    home_root: Path | None = None,
+) -> str:
     path = Path(raw_path).expanduser()
     try:
         resolved = path.resolve()
@@ -208,10 +223,17 @@ def classify_path(raw_path: str, *, source_root: Path, target_root: Path) -> str
         except ValueError:
             continue
         return f"{label}/{rel.as_posix()}"
+    home_scope = home_root or Path.home()
     try:
-        rel_home = resolved.relative_to(Path.home())
+        rel_home = resolved.relative_to(home_scope)
     except ValueError:
-        return sanitize(raw_path, source_root=source_root, temp_root=target_root.parent, target_root=target_root)
+        return sanitize(
+            raw_path,
+            source_root=source_root,
+            temp_root=temp_root or target_root.parent,
+            target_root=target_root,
+            home_root=home_root,
+        )
     return f"home/{rel_home.as_posix()}"
 
 
@@ -220,10 +242,15 @@ def summarized_fs_events(
     *,
     source_root: Path,
     target_root: Path,
+    temp_root: Path | None = None,
+    home_root: Path | None = None,
 ) -> list[dict[str, Any]]:
     summary: list[dict[str, Any]] = []
     for event in events:
-        paths = [classify_path(path, source_root=source_root, target_root=target_root) for path in event.get("paths", [])]
+        paths = [
+            classify_path(path, source_root=source_root, target_root=target_root, temp_root=temp_root, home_root=home_root)
+            for path in event.get("paths", [])
+        ]
         summary.append(
             {
                 "operation": event.get("operation"),
@@ -264,25 +291,29 @@ def run_project_local_install(
     target_root: Path,
     node_preload_path: Path,
     node_fs_trace_path: Path,
+    runtime_profile: str = "LIVE_NODE_CLI_PROJECT_LOCAL",
+    env_base: dict[str, str] | None = None,
+    home_root: Path | None = None,
 ) -> dict[str, Any]:
     argv = [str(value) for value in case["argv"]]
     argv = [str(target_root) if value == "<EPHEMERAL_TARGET>" else value for value in argv]
+    home_scope = home_root or Path.home()
     source_before = git_status(source_root)
     target_before = snapshot_tree(target_root)
-    home_before = snapshot_tree(Path.home() / ".claude" / "skills" / "docs-forge")
+    home_before = snapshot_tree(home_scope / ".claude" / "skills" / "docs-forge")
 
-    env = os.environ.copy()
+    env = dict(env_base) if env_base is not None else os.environ.copy()
     env["NODE_OPTIONS"] = f"--require={node_preload_path}"
     env["SKILLDIFF_NODE_FS_TRACE"] = str(node_fs_trace_path)
     completed = run(argv, cwd=source_root, env=env)
 
     source_after = git_status(source_root)
     target_after = snapshot_tree(target_root)
-    home_after = snapshot_tree(Path.home() / ".claude" / "skills" / "docs-forge")
-    stdout = sanitize(completed.stdout, source_root=source_root, temp_root=temp_root, target_root=target_root)
-    stderr = sanitize(completed.stderr, source_root=source_root, temp_root=temp_root, target_root=target_root)
+    home_after = snapshot_tree(home_scope / ".claude" / "skills" / "docs-forge")
+    stdout = sanitize(completed.stdout, source_root=source_root, temp_root=temp_root, target_root=target_root, home_root=home_scope)
+    stderr = sanitize(completed.stderr, source_root=source_root, temp_root=temp_root, target_root=target_root, home_root=home_scope)
     raw_fs_events = load_node_fs_events(node_fs_trace_path)
-    fs_events = summarized_fs_events(raw_fs_events, source_root=source_root, target_root=target_root)
+    fs_events = summarized_fs_events(raw_fs_events, source_root=source_root, target_root=target_root, temp_root=temp_root, home_root=home_scope)
 
     target_changes = changed_paths(target_before, target_after)
     expected_mutations = sorted(case["allowed_target_mutations"])
@@ -302,12 +333,20 @@ def run_project_local_install(
     )
     source_skill = source_root / "plugins" / "docs-forge" / "skills" / "docs-forge" / "SKILL.md"
     target_skill = target_root / ".claude" / "skills" / "docs-forge" / "SKILL.md"
+    target_changed_file_hashes = {
+        path: target_after[path]
+        for path in target_changes
+        if path in target_after
+    }
 
     marker_result = marker_check(stdout, expected["required_markers"][case["case_id"]])
     record = {
         "case_id": case["case_id"],
-        "argv": display_argv(argv, source_root=source_root, temp_root=temp_root, target_root=target_root),
-        "argv_sha256": sha256_text(json.dumps(display_argv(argv, source_root=source_root, temp_root=temp_root, target_root=target_root), sort_keys=True)),
+        "runtime_profile": runtime_profile,
+        "argv": display_argv(argv, source_root=source_root, temp_root=temp_root, target_root=target_root, home_root=home_scope),
+        "argv_sha256": sha256_text(
+            json.dumps(display_argv(argv, source_root=source_root, temp_root=temp_root, target_root=target_root, home_root=home_scope), sort_keys=True)
+        ),
         "dry_run": "--dry-run" in argv,
         "expected_exit_code": case["expected_exit_code"],
         "exit_code": completed.returncode,
@@ -320,6 +359,7 @@ def run_project_local_install(
         "stdout_excerpt": stdout[:2000],
         "stderr_excerpt": stderr[:2000],
         "target_changed_files": target_changes,
+        "target_changed_file_hashes": target_changed_file_hashes,
         "expected_target_mutations": expected_mutations,
         "unexpected_target_mutations": unexpected_mutations,
         "missing_expected_target_mutations": missing_expected_mutations,
@@ -396,18 +436,31 @@ def write_markdown(report: dict[str, Any], output_md: Path) -> None:
     output_md.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
-def build_trace(report: dict[str, Any], output_json: Path, output_md: Path, trace_path: Path) -> None:
+def build_trace(
+    report: dict[str, Any],
+    output_json: Path,
+    output_md: Path,
+    trace_path: Path,
+    *,
+    case_index: int = 0,
+    run_id: str = "live-docs-forge-project-local-install",
+    runtime_profile: str = "LIVE_NODE_CLI_PROJECT_LOCAL",
+    result_ref: str = "results/live/docs-forge-installer/project_local_install_result.json",
+    manifest_ref: str = "benchmark/manifests/docs-forge-live-project-local-install.json",
+    task_ref: str = "benchmark/tasks/docs-forge/project-local-install.txt",
+    contract_id: str = "docs-forge-live-project-local-install",
+) -> None:
     sys.path.insert(0, str(REPO_ROOT / "src"))
     from skilldiff.traces.events import TraceBuilder, TraceContext, validate_trace_file
 
-    case = report["cases"][0]
+    case = report["cases"][case_index]
     context = TraceContext(
-        run_id="live-docs-forge-project-local-install",
+        run_id=run_id,
         skill_id="docs-forge",
         task_id="project-local-install",
-        contract_id="docs-forge-live-project-local-install",
-        runtime_profile="LIVE_NODE_CLI_PROJECT_LOCAL",
-        runtime_profile_hash=sha256_text("LIVE_NODE_CLI_PROJECT_LOCAL"),
+        contract_id=contract_id,
+        runtime_profile=runtime_profile,
+        runtime_profile_hash=sha256_text(runtime_profile),
         adapter_id="live_node_cli_runner",
         adapter_version="0.1",
         repeat_id=1,
@@ -419,9 +472,9 @@ def build_trace(report: dict[str, Any], output_json: Path, output_md: Path, trac
         actor="live_node_cli_runner",
         event_status="succeeded",
         target_kind="run",
-        target="live-docs-forge-project-local-install",
+        target=run_id,
         enforcement_outcome="not_applicable",
-        evidence_ref="results/live/docs-forge-installer/project_local_install_result.json",
+        evidence_ref=result_ref,
         metadata={
             "dry_run": False,
             "execution_level": report["execution_level"],
@@ -438,9 +491,9 @@ def build_trace(report: dict[str, Any], output_json: Path, output_md: Path, trac
         actor="live_node_cli_runner",
         event_status="observed",
         target_kind="capability",
-        target="LIVE_NODE_CLI_PROJECT_LOCAL",
+        target=runtime_profile,
         enforcement_outcome="observed",
-        evidence_ref="benchmark/manifests/docs-forge-live-project-local-install.json",
+        evidence_ref=manifest_ref,
         metadata={"node_fs_preload": "enabled", "packet_capture": "not_enabled"},
     )
     builder.add(
@@ -455,7 +508,7 @@ def build_trace(report: dict[str, Any], output_json: Path, output_md: Path, trac
         contract_rule_ids=["SC-ACT-001"],
         matched_allow_rule="SC-ACT-001",
         enforcement_outcome="allowed",
-        evidence_ref="benchmark/tasks/docs-forge/project-local-install.txt",
+        evidence_ref=task_ref,
     )
     approval_id = "approval-docs-forge-project-local-install"
     builder.add(
@@ -469,7 +522,7 @@ def build_trace(report: dict[str, Any], output_json: Path, output_md: Path, trac
         approval_required=True,
         approval_request_id=approval_id,
         enforcement_outcome="observed",
-        evidence_ref="contracts/docs-forge-live-project-local-install.yaml",
+        evidence_ref=report["contract_ref"],
         metadata={"decision_required": "explicit_allow"},
     )
     builder.add(
@@ -483,7 +536,7 @@ def build_trace(report: dict[str, Any], output_json: Path, output_md: Path, trac
         approval_required=True,
         approval_request_id=approval_id,
         enforcement_outcome="observed",
-        evidence_ref="contracts/docs-forge-live-project-local-install.yaml",
+        evidence_ref=report["contract_ref"],
     )
     builder.add(
         "approval.decision",
@@ -496,7 +549,7 @@ def build_trace(report: dict[str, Any], output_json: Path, output_md: Path, trac
         approval_required=True,
         approval_request_id=approval_id,
         enforcement_outcome="allowed",
-        evidence_ref="contracts/docs-forge-live-project-local-install.yaml",
+        evidence_ref=report["contract_ref"],
     )
     builder.add(
         "shell.exec",
@@ -510,7 +563,7 @@ def build_trace(report: dict[str, Any], output_json: Path, output_md: Path, trac
         contract_rule_ids=["SC-SH-001"],
         matched_allow_rule="SC-SH-001",
         enforcement_outcome="allowed",
-        evidence_ref="results/live/docs-forge-installer/project_local_install_result.json",
+        evidence_ref=result_ref,
         metadata={"argv": case["argv"], "cwd": "<DOCS_FORGE_SOURCE_ROOT>", "command_sha256": "sha256:" + case["argv_sha256"]},
     )
     for operation in case["node_fs_operations"]:
@@ -531,7 +584,7 @@ def build_trace(report: dict[str, Any], output_json: Path, output_md: Path, trac
                 contract_rule_ids=["SC-FS-R-001"],
                 matched_allow_rule="SC-FS-R-001",
                 enforcement_outcome="observed",
-                evidence_ref="results/live/docs-forge-installer/project_local_install_result.json",
+                evidence_ref=result_ref,
                 metadata={"instrumentation_model": "node_fs_preload", "node_operation": operation["operation"]},
             )
     for path in case["target_changed_files"]:
@@ -548,7 +601,7 @@ def build_trace(report: dict[str, Any], output_json: Path, output_md: Path, trac
             contract_rule_ids=[rule_id],
             matched_allow_rule=rule_id,
             enforcement_outcome="observed",
-            evidence_ref="results/live/docs-forge-installer/project_local_install_result.json",
+            evidence_ref=result_ref,
             metadata={"instrumentation_model": "target_snapshot_diff"},
         )
     builder.add(
@@ -560,7 +613,7 @@ def build_trace(report: dict[str, Any], output_json: Path, output_md: Path, trac
         target="node",
         operation="exit",
         enforcement_outcome="allowed" if case["exit_code"] == 0 else "failed",
-        evidence_ref="results/live/docs-forge-installer/project_local_install_result.json",
+        evidence_ref=result_ref,
         metadata={"exit_code": case["exit_code"], "adapter_outcome": "completed"},
     )
     for target, sink_type in ((output_json, "local_json"), (output_md, "local_report")):
@@ -588,7 +641,7 @@ def build_trace(report: dict[str, Any], output_json: Path, output_md: Path, trac
         target_kind="cleanup",
         target="temporary_workspace_removed",
         enforcement_outcome="observed",
-        evidence_ref="results/live/docs-forge-installer/project_local_install_result.json",
+        evidence_ref=result_ref,
         metadata={"removed_paths": ["<EPHEMERAL_LIVE_WORKSPACE>"], "leftover_paths": []},
     )
     builder.add(
@@ -597,7 +650,7 @@ def build_trace(report: dict[str, Any], output_json: Path, output_md: Path, trac
         actor="live_node_cli_runner",
         event_status="succeeded" if case["passed"] else "failed",
         target_kind="run",
-        target="live-docs-forge-project-local-install",
+        target=run_id,
         enforcement_outcome="not_applicable",
         evidence_ref=trace_path.relative_to(REPO_ROOT).as_posix(),
         metadata={"exit_code": case["exit_code"], "adapter_outcome": "completed" if case["passed"] else "failed"},

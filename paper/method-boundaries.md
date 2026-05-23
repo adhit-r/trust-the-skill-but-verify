@@ -29,6 +29,9 @@ state. Use it before turning the current evidence artifacts into paper prose.
 - Bounded docs-forge project-local installer execution can be exercised against
   a disposable target while allowing only expected target skill/playbook writes
   and without adding MVP runtime-drift counts.
+- A bounded docs-forge live Node runtime-pair scaffold can compare
+  project-local installer behavior across host-environment and
+  minimal-environment synthetic-home executions without changing MVP counts.
 
 ## What Current Evidence Does Not Prove
 
@@ -37,6 +40,8 @@ state. Use it before turning the current evidence artifacts into paper prose.
 - It does not execute the full docs-forge product or docs-generation workload.
 - It does not execute `npx` package-acquisition behavior.
 - It does not execute user-scope or global docs-forge installation.
+- It does not treat local Node environment-pair evidence as RP2/RP3 drift
+  evidence.
 - It does not execute the full AuditLens product or live connectors.
 - It does not include public-internet testing.
 - It does not include packet capture, DNS tracing, or arbitrary HTTP-client
@@ -59,6 +64,7 @@ state. Use it before turning the current evidence artifacts into paper prose.
 | First-party source provenance | Clean ephemeral clones checked against pinned manifests | Source-provenance evidence for seed realism and artifact reproducibility | Full product execution or runtime-drift evidence |
 | docs-forge live installer dry-run | `node bin/docs-forge.js` help, version, and installer dry-run commands | Partial live CLI dry-run evidence with source/target pre/post checks | Full installer execution, `npx` safety, network absence under packet capture, or runtime-drift evidence |
 | docs-forge project-local installer | One non-dry-run `node bin/docs-forge.js install --agents claude,antigravity,universal --scope project` command against a disposable target | Partial live installer evidence with Node filesystem-call instrumentation and source/target/home pre/post checks | Docs generation, `npx` safety, user/global install behavior, packet-capture network absence, or runtime-drift evidence |
+| docs-forge live runtime-pair scaffold | Host-environment and minimal-environment synthetic-home Node executions of the same project-local installer command | Bounded local Node environment-pair comparison with matching target/output hashes, excluded from MVP counts | RP2/RP3 drift evidence, commercial runtime evidence, docs generation, `npx` package acquisition, or complete Node/runtime tracing |
 
 ## Network Evidence Boundary
 
@@ -95,9 +101,13 @@ live-installer artifact then exercises bounded Node CLI help, version, and
 dry-run installer surfaces against a disposable target. A separate docs-forge
 live project-local installer artifact exercises the pinned Node CLI against a
 disposable target and verifies only expected project-local skill/playbook
-writes. These artifacts do not support claims about `npx` package-acquisition
-behavior, full docs generation, global/user-scope installation, the full
-AuditLens product, connector auth flows, or live SaaS exports.
+writes. The docs-forge live runtime-pair scaffold then compares the same
+project-local installer command under host-environment and minimal-environment
+synthetic-home Node executions, with no target-output disagreement and no
+source/home mutation. These artifacts do not support claims about `npx`
+package-acquisition behavior, full docs generation, global/user-scope
+installation, RP2/RP3 runtime drift, the full AuditLens product, connector auth
+flows, or live SaaS exports.
 
 ## Reviewer-Risky Wording To Avoid
 

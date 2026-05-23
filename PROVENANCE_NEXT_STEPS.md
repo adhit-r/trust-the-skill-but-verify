@@ -54,6 +54,14 @@ benchmark/manifests/docs-forge-live-project-local-install.json
 results/live/docs-forge-installer/project_local_install_result.json
 results/live/docs-forge-installer/project_local_install_report.md
 results/live/docs-forge-installer/project_local_install_trace.jsonl
+tools/run_docs_forge_live_runtime_pair.py
+tools/validate_docs_forge_live_runtime_pair.py
+experiments/docs-forge-live-runtime-pair/reproduce_docs_forge_live_runtime_pair.sh
+benchmark/manifests/docs-forge-live-runtime-pair.json
+results/live/docs-forge-installer/project_local_runtime_pair_result.json
+results/live/docs-forge-installer/project_local_runtime_pair_report.md
+results/live/docs-forge-installer/project_local_runtime_pair_host_trace.jsonl
+results/live/docs-forge-installer/project_local_runtime_pair_minimal_env_trace.jsonl
 ```
 
 ### Boundary
@@ -64,6 +72,9 @@ results/live/docs-forge-installer/project_local_install_trace.jsonl
 - The docs-forge project-local installer evidence executes one non-dry-run
   project-local install command against a disposable target and allows only
   expected target skill/playbook writes.
+- The docs-forge live runtime-pair scaffold executes the same project-local
+  installer command under host-environment and minimal-environment
+  synthetic-home Node profiles and compares output and target mutation hashes.
 - It does not execute `npx`, package acquisition, the Codex marketplace
   command, user-scope/global installation, or docs generation.
 - It does not execute the full AuditLens product, connector auth flows, or live
@@ -76,9 +87,12 @@ results/live/docs-forge-installer/project_local_install_trace.jsonl
 The disposable docs-forge live-installer pilots now run the real Node CLI
 help/version/dry-run surfaces and one project-local non-dry-run install against
 a temporary target workspace. The project-local gate uses Node filesystem-call
-instrumentation plus source, target, and user-home pre/post checks. The next
-gate is a Node-capable runtime-pair harness before real docs-forge evidence can
-support runtime-drift claims.
+instrumentation plus source, target, and synthetic-home pre/post checks. The
+current live-evidence gate also compares host-environment and
+minimal-environment synthetic-home Node project-local installs with matching
+target/output hashes and no source/home mutations. The next gate is a
+Node-capable RP2/RP3 adapter or container image, or an `npx` package-acquisition
+observer, before real docs-forge evidence can support runtime-drift claims.
 
 ## Syscall-Level File-Read Provenance
 

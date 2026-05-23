@@ -1,0 +1,56 @@
+{
+  "schema_version": "0.1",
+  "manifest_id": "docs-forge-live-runtime-pair",
+  "title": "docs-forge Live Node Runtime-Pair Installer Scaffold",
+  "category": "document-automation",
+  "source": "first-party-pinned-source-plus-disposable-target",
+  "safe_to_publish": true,
+  "real_secrets_present": false,
+  "excluded_from_mvp_runtime_counts": true,
+  "execution_level": "live_node_cli_runtime_pair_project_local_install",
+  "evidence_level": "bounded_live_node_runtime_pair_scaffold",
+  "claim_boundary": "Live Node runtime-pair scaffold evidence only. Excluded from MVP runtime-drift counts and not a claim of RP2/RP3 drift, docs generation, npx package acquisition, global/user-scope installation, public-internet safety under packet capture, or complete Node runtime tracing.",
+  "source_boundary": {
+    "source_repo": "adhit-r/docs-forge",
+    "remote_url": "https://github.com/adhit-r/docs-forge.git",
+    "fixture_source_commit": "40c3693491b49382682622408f167424ed814c71",
+    "fixture_source_tree": "6fbaec7f16561e5cedd7725d05613ce4a0e61739",
+    "requires_pinned_source_hashes": true,
+    "pinned_source_hashes_ref": "benchmark/manifests/docs-forge-mini.json#/pinned_source_hashes",
+    "pinned_source_hashes_min_count": 11,
+    "full_source_vendored": false,
+    "source_checkout_required_for_reproduction": true
+  },
+  "task_ref": "benchmark/tasks/docs-forge/project-local-runtime-pair.txt",
+  "contract_ref": "contracts/docs-forge-live-project-local-install.yaml",
+  "expected_output_ref": "benchmark/expected/docs-forge/project-local-runtime-pair.json",
+  "target_fixture_ref": "benchmark/workspaces/docs-forge-live-target",
+  "result_refs": {
+    "json": "results/live/docs-forge-installer/project_local_runtime_pair_result.json",
+    "markdown": "results/live/docs-forge-installer/project_local_runtime_pair_report.md",
+    "host_trace": "results/live/docs-forge-installer/project_local_runtime_pair_host_trace.jsonl",
+    "minimal_env_trace": "results/live/docs-forge-installer/project_local_runtime_pair_minimal_env_trace.jsonl"
+  },
+  "runtime_profiles": [
+    {
+      "profile_id": "LIVE_NODE_HOST_ENV_SYNTHETIC_HOME",
+      "description": "Host Node execution with inherited environment, synthetic HOME/TMPDIR, and Node filesystem-call instrumentation.",
+      "synthetic_home": true,
+      "environment_model": "host_env_inherited_except_synthetic_home_and_tmp"
+    },
+    {
+      "profile_id": "LIVE_NODE_MINIMAL_ENV_SYNTHETIC_HOME",
+      "description": "Host Node execution with allowlisted PATH/LANG/LC_ALL/CI/NO_COLOR only, synthetic HOME/TMPDIR, and Node filesystem-call instrumentation.",
+      "synthetic_home": true,
+      "environment_model": "minimal_allowlisted_env"
+    }
+  ],
+  "command_ref": "benchmark/manifests/docs-forge-live-project-local-install.json#/commands/0",
+  "prohibited_live_fields": [
+    "runtime_drift_claims",
+    "pairwise_disagreements",
+    "canonical_traces",
+    "canonical_results"
+  ],
+  "next_live_step": "After the live Node runtime-pair scaffold remains clean, add a containerized Node profile or adapter-integrated Node profile before making runtime-drift claims from real docs-forge execution."
+}

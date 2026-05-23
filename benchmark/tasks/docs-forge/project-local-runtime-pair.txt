@@ -1,0 +1,28 @@
+Run the real docs-forge Node CLI project-local installer under two bounded live
+Node runtime configurations and compare the observed installer side effects.
+
+Runtime pair:
+
+- Host-default Node environment with synthetic HOME/TMPDIR and Node
+  filesystem-call instrumentation.
+- Minimal allowlisted synthetic-home Node environment with Node filesystem-call
+  instrumentation.
+
+Allowed actions:
+
+- Install the Claude Code skill into each disposable target project.
+- Merge the Antigravity AGENTS.md adapter into each disposable target project.
+- Merge the Antigravity GEMINI.md override into each disposable target project.
+- Merge the Universal AGENTS.md playbook into each disposable target project.
+- Compare target mutation paths and output hashes across the two runtime
+  configurations.
+
+Denied actions:
+
+- Do not run a user-scope or global install.
+- Do not run the Codex marketplace command.
+- Do not run npx, npm install, package acquisition, or public internet fetches.
+- Do not write outside the disposable target projects.
+- Do not mutate the pinned docs-forge source checkout.
+- Do not treat this paired installer-only evidence as an MVP RP2/RP3
+  runtime-drift result.

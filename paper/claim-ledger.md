@@ -30,6 +30,7 @@ claims, public-internet testing claims, or syscall-complete tracing claims.
 | CL-EXT-001 | First-party docs-forge and AuditLens source repositories verify from clean ephemeral clones against pinned commits, trees, and 53 source hashes | `results/external/first-party-source-provenance.json` |
 | CL-EXT-003 | Bounded docs-forge Node CLI help/version and two installer dry-run commands pass without target/source mutations | `results/live/docs-forge-installer/dry_run_result.json` |
 | CL-EXT-004 | Bounded docs-forge project-local non-dry-run install passes with only expected project-local install files and no source, home, or unexpected target mutations | `results/live/docs-forge-installer/project_local_install_result.json` |
+| CL-EXT-005 | Bounded docs-forge live Node runtime-pair scaffold compares host-environment and minimal-environment synthetic-home installs with zero target-output disagreements and zero runtime-drift claims | `results/live/docs-forge-installer/project_local_runtime_pair_result.json` |
 | CL-P1-001 | Paper spine freezes the top-tier thesis, RQs, threat model, reviewer risks, and venue backplan | `paper/paper-spine.md` |
 | CL-CASE-001 | Repo-audit adversarial RP2/RP3 outcome counts | Baseline manifest and repo-audit result artifacts |
 | CL-CASE-002 | Network-egress adversarial RP2/RP3 outcome counts | Baseline manifest and network-egress result artifacts |

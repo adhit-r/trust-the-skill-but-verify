@@ -68,6 +68,12 @@ evidence strength or be removed.
     runs one real project-local installer command against a disposable target,
     verifies only expected target skill/playbook writes, and writes
     `results/live/docs-forge-installer/project_local_install_result.json`.
+13. [x] Add bounded docs-forge live Node runtime-pair scaffold evidence.
+    Done: `experiments/docs-forge-live-runtime-pair/reproduce_docs_forge_live_runtime_pair.sh`
+    runs the same project-local installer command under host-environment and
+    minimal-environment synthetic-home Node profiles, compares output and
+    target mutation hashes, and writes
+    `results/live/docs-forge-installer/project_local_runtime_pair_result.json`.
 
 ## P1: Claim Contract And Paper Spine
 
@@ -254,11 +260,14 @@ evidence strength or be removed.
 P0 and P1 are now implementation-complete for the current evidence and paper
 spine gates. The next concrete implementation sequence is:
 
-1. Close P2/P3 coverage gaps for activation, approval, tool/MCP, persistence,
+1. Promote the docs-forge live scaffold into a true Node-capable RP2/RP3
+   adapter or container image, or add an `npx` package-acquisition observer,
+   before making live docs-forge runtime-drift claims.
+2. Close P2/P3 coverage gaps for activation, approval, tool/MCP, persistence,
    and at least four runtime profiles.
-2. Scale P4 to 40+ skills and 120+ skill-task-contract runs before repeats.
-3. Complete P5/P6 rigor: repeats, uncertainty, utility, adjudication,
+3. Scale P4 to 40+ skills and 120+ skill-task-contract runs before repeats.
+4. Complete P5/P6 rigor: repeats, uncertainty, utility, adjudication,
    reviewer agreement, and mitigation/report-card baselines.
-4. Complete P7 artifact and manuscript packaging for anonymous top-tier review.
+5. Complete P7 artifact and manuscript packaging for anonymous top-tier review.
 
 There is no short-paper fallback in this roadmap.

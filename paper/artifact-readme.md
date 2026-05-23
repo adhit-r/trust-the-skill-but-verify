@@ -54,6 +54,15 @@ DOCS_FORGE_SOURCE_ROOT=/path/to/docs-forge \
   bash experiments/docs-forge-live-project-local-install/reproduce_docs_forge_live_project_local_install.sh
 ```
 
+The bounded docs-forge live runtime-pair scaffold also requires the pinned
+docs-forge source checkout:
+
+```bash
+DOCS_FORGE_SOURCE_ROOT=/path/to/docs-forge \
+  PYTHON_BIN=/tmp/skilldiff-venv/bin/python \
+  bash experiments/docs-forge-live-runtime-pair/reproduce_docs_forge_live_runtime_pair.sh
+```
+
 ## Expected Outputs
 
 | Script | Primary Result |
@@ -65,6 +74,7 @@ DOCS_FORGE_SOURCE_ROOT=/path/to/docs-forge \
 | `experiments/first-party-source-provenance/reproduce_first_party_source_provenance.sh` | `results/external/first-party-source-provenance.md` |
 | `experiments/docs-forge-live-installer/reproduce_docs_forge_live_installer.sh` | `results/live/docs-forge-installer/dry_run_report.md` |
 | `experiments/docs-forge-live-project-local-install/reproduce_docs_forge_live_project_local_install.sh` | `results/live/docs-forge-installer/project_local_install_report.md` |
+| `experiments/docs-forge-live-runtime-pair/reproduce_docs_forge_live_runtime_pair.sh` | `results/live/docs-forge-installer/project_local_runtime_pair_report.md` |
 
 ## Safety Notes
 
@@ -90,6 +100,11 @@ DOCS_FORGE_SOURCE_ROOT=/path/to/docs-forge \
   records one bounded project-local non-dry-run installer command against a
   disposable target. It allows only expected project-local skill/playbook
   writes and is excluded from MVP runtime-drift counts.
+- `results/live/docs-forge-installer/project_local_runtime_pair_result.json`
+  records two bounded project-local installer commands across host-environment
+  and minimal-environment synthetic-home Node executions. It compares target
+  mutation hashes and output hashes, and is excluded from MVP runtime-drift
+  counts.
 
 ## Known Limitations
 
@@ -112,6 +127,9 @@ DOCS_FORGE_SOURCE_ROOT=/path/to/docs-forge \
   new runtime-drift claims by itself.
 - docs-forge live-installer evidence does not prove network absence under
   packet capture or complete Node runtime tracing.
+- docs-forge live runtime-pair evidence is a local Node environment-pair
+  scaffold. It is not RP2/RP3 runtime-drift evidence, `npx`
+  package-acquisition evidence, or full docs-generation evidence.
 
 ## Release Checklist
 

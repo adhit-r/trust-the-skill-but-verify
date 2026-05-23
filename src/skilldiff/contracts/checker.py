@@ -43,6 +43,8 @@ def check_trace_against_contract(
             findings.append(decision["finding"])
         else:
             findings.extend(canary_findings(contract, event))
+    findings.extend(activation_findings(contract, events))
+    findings.extend(approval_required_findings(contract, events))
     findings.extend(expected_output_findings(contract, events, root))
 
     unique_findings = _dedupe_findings(findings)
@@ -58,6 +60,7 @@ def check_trace_against_contract(
     }
     return {
         "contract_id": contract["contract_id"],
+        "evidence_scope": contract.get("metadata", {}).get("runtime_drift_scope", "runtime_evidence"),
         "findings": unique_findings,
         "repeat_id": events[0].get("repeat_id"),
         "run_id": events[0]["run_id"],
@@ -193,6 +196,91 @@ def canary_findings(contract: dict[str, Any], event: dict[str, Any]) -> list[dic
                         "target": event.get("target"),
                     }
                 )
+    return findings
+
+
+def activation_findings(contract: dict[str, Any], events: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    activation = contract.get("activation", {})
+    rules = activation.get("rules", []) if isinstance(activation, dict) else []
+    if not rules:
+        return []
+    findings = []
+    matched_rule_ids = {
+        decision.get("rule_id")
+        for event in events
+        if event.get("event_type", "").startswith("activation.")
+        for decision in [resolve_event(contract, event)]
+        if decision.get("decision") == "allow"
+    }
+    for rule in rules:
+        rule_id = rule.get("id")
+        if rule_id in matched_rule_ids:
+            continue
+        findings.append(
+            {
+                "canary_labels": [],
+                "drift_classes": rule.get("drift_classes", ["D1"]),
+                "event_id": f"activation:{rule_id or 'missing'}",
+                "event_type": rule.get("event_type", "activation.select"),
+                "finding_id": f"F-ACTIVATION-{rule_id or 'MISSING'}",
+                "finding_type": "missing_activation",
+                "reason": f"Required activation evidence was not observed: {rule.get('reason', 'activation rule missing')}",
+                "rule_id": rule_id,
+                "severity": rule.get("severity", "medium"),
+                "target": activation.get("expected_skill_id"),
+            }
+        )
+    return findings
+
+
+def approval_required_findings(contract: dict[str, Any], events: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    findings = []
+    prompt_by_request = {
+        event.get("approval_request_id")
+        for event in events
+        if event.get("event_type") == "approval.prompt" and event.get("approval_request_id")
+    }
+    decision_by_request = {
+        event.get("approval_request_id")
+        for event in events
+        if event.get("event_type") == "approval.decision" and event.get("approval_request_id")
+    }
+    for approval in contract.get("approval_required", []) or []:
+        event_type = approval.get("event_type")
+        match = approval.get("match", {})
+        if not isinstance(event_type, str) or not isinstance(match, dict):
+            continue
+        for event in events:
+            if event.get("event_type") != event_type:
+                continue
+            if not match_rule(match, event_match_payload(event)):
+                continue
+            request_id = event.get("approval_request_id")
+            missing = []
+            if approval.get("required") is True and event.get("approval_required") is not True:
+                missing.append("approval_required flag")
+            if not request_id:
+                missing.append("approval_request_id")
+            if request_id and request_id not in prompt_by_request:
+                missing.append("approval.prompt")
+            if request_id and request_id not in decision_by_request:
+                missing.append("approval.decision")
+            if not missing:
+                continue
+            findings.append(
+                {
+                    "canary_labels": event.get("canary_labels", []),
+                    "drift_classes": approval.get("drift_classes", ["D3"]),
+                    "event_id": event["event_id"],
+                    "event_type": event["event_type"],
+                    "finding_id": f"F-{event['event_id']}-{approval.get('id', 'APPROVAL')}",
+                    "finding_type": violation_type_for_event(event),
+                    "reason": f"Approval-required event is missing {', '.join(missing)}.",
+                    "rule_id": approval.get("id"),
+                    "severity": approval.get("severity_if_bypassed", "medium"),
+                    "target": event.get("normalized_target") or event.get("target"),
+                }
+            )
     return findings
 
 
@@ -347,10 +435,16 @@ def get_rule_bags_for_event(contract: dict[str, Any], event_type: str) -> list[d
         "process.exec": [("shell", None)],
         "network.connect": [("network", None)],
         "network.send": [("network", None), ("sinks", None)],
+        "tool.call": [("tools", None), ("sinks", None)],
         "output.generated": [("sinks", None)],
         "persistence.write": [("persistence", None), ("sinks", None)],
     }
     bags: list[dict[str, Any]] = []
+    if event_type.startswith("activation."):
+        activation = contract.get("activation", {})
+        rules = activation.get("rules", []) if isinstance(activation, dict) else []
+        if rules:
+            bags.append({"allow": rules, "deny": []})
     for surface, child in mapping.get(event_type, []):
         surface_data = access.get(surface)
         if not isinstance(surface_data, dict):
@@ -376,7 +470,13 @@ def event_match_payload(event: dict[str, Any]) -> dict[str, Any]:
         "port": metadata.get("port"),
         "scheme": metadata.get("scheme"),
         "sink_type": event.get("sink_type"),
+        "source_type": metadata.get("source_type"),
+        "store_type": metadata.get("store_type"),
         "target": event.get("normalized_target") or event.get("target"),
+        "tool_name": metadata.get("tool_name") or event.get("target"),
+        "mutation": metadata.get("mutation"),
+        "retention_scope": metadata.get("retention_scope"),
+        "post_cleanup_allowed": metadata.get("post_cleanup_allowed"),
         "may_contain_canary": bool(event.get("canary_observed")),
     }
 
@@ -410,6 +510,18 @@ def match_rule(rule_match: dict[str, Any], event: dict[str, Any]) -> bool:
         if event.get("port") != rule_match["port"]:
             return False
     if "sink_type" in rule_match and event.get("sink_type") != rule_match["sink_type"]:
+        return False
+    if "tool_name" in rule_match and event.get("tool_name") != rule_match["tool_name"]:
+        return False
+    if "mutation" in rule_match and bool(event.get("mutation")) != bool(rule_match["mutation"]):
+        return False
+    if "store_type" in rule_match and event.get("store_type") != rule_match["store_type"]:
+        return False
+    if "retention_scope" in rule_match and event.get("retention_scope") != rule_match["retention_scope"]:
+        return False
+    if "post_cleanup_allowed" in rule_match and bool(event.get("post_cleanup_allowed")) != bool(rule_match["post_cleanup_allowed"]):
+        return False
+    if "source_type" in rule_match and event.get("source_type") != rule_match["source_type"]:
         return False
     if "may_contain_canary" in rule_match and bool(event.get("may_contain_canary")) != bool(rule_match["may_contain_canary"]):
         return False
@@ -484,6 +596,10 @@ def rule_specificity(rule_match: dict[str, Any]) -> tuple[int, int]:
         return (75, len(value))
     if "sink_type" in rule_match and rule_match.get("may_contain_canary"):
         return (95, len(rule_match["sink_type"]))
+    if "tool_name" in rule_match:
+        return (85, len(rule_match["tool_name"]))
+    if "store_type" in rule_match:
+        return (65, len(rule_match["store_type"]))
     if "sink_type" in rule_match:
         return (50, len(rule_match["sink_type"]))
     if "domain_glob" in rule_match:

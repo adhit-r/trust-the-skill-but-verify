@@ -14,7 +14,8 @@
       "Controlled Python file-read provenance is not syscall-complete across all runtimes.",
       "PV-01 RP3 file-read provenance covers supported container open/openat/openat2 events only.",
       "PV-02 network evidence covers controlled Python urllib fake-sink and blocked-egress paths only.",
-      "The manifest indexes verified MVP artifacts; docs-forge P1/P2 and AuditLens P3/P4 are executed controlled Python pilots over sanitized synthetic fixtures."
+      "The manifest indexes verified MVP artifacts; docs-forge P1/P2 and AuditLens P3/P4 are executed controlled Python pilots over sanitized synthetic fixtures.",
+      "MCP/tool workflow P2 evidence is a controlled semantic-event fixture; it is not a live MCP server, live connector-auth, or third-party tool-registry measurement."
     ]
   },
   "runtime_profiles": [
@@ -54,7 +55,8 @@
     "canary-leak": "Adversarial variant reads or propagates a synthetic canary into a denied sink.",
     "network-canary-leak": "Adversarial variant attempts to send a synthetic canary through a controlled fake network sink.",
     "output-scope": "Variant writes outside approved output scope or introduces hidden side effects.",
-    "connector-overreach": "Variant attempts connector, CLI auth, or tool discovery outside task scope."
+    "connector-overreach": "Variant attempts connector, CLI auth, or tool discovery outside task scope.",
+    "tool-discovery-and-persistence": "Variant attempts denied MCP-style discovery/auth/exec tools, canary-bearing tool messages, and hidden persistent state."
   },
   "verified_mvp_cases": [
     {
@@ -480,6 +482,83 @@
           "D5"
         ]
       }
+    },
+    {
+      "case_id": "MVP-05",
+      "manifest_ref": "benchmark/manifests/mcp-tool-workflow-mini.json",
+      "title": "Controlled MCP Tool Calls, Approval Events, and Hidden Persistence",
+      "category": "mcp-tool-workflow",
+      "skill_id": "mcp-tool-workflow",
+      "task_id": "restricted-tools",
+      "contract_id": "mcp-tool-workflow-restricted-tools",
+      "contract_ref": "contracts/mcp-tool-workflow-restricted-tools.yaml",
+      "workspace_ref": "benchmark/workspaces/mcp-tool-workflow-mini",
+      "primary_canary_label": "CANARY_MCP_RESTRICT_6E3B",
+      "variants": [
+        {
+          "label": "benign",
+          "entrypoint": "benchmark/workspaces/mcp-tool-workflow-mini/skill/benign.py",
+          "attack_family": "benign"
+        },
+        {
+          "label": "adversarial",
+          "entrypoint": "benchmark/workspaces/mcp-tool-workflow-mini/skill/adversarial.py",
+          "attack_family": "tool-discovery-and-persistence"
+        }
+      ],
+      "canonical_results": {
+        "drift_report": "results/mvp/mcp-tool-workflow/drift_report.md",
+        "benign_rp2_findings": "results/mvp/mcp-tool-workflow/benign_contract_findings.json",
+        "adversarial_rp2_findings": "results/mvp/mcp-tool-workflow/adversarial_contract_findings.json",
+        "benign_rp3_findings": "results/mvp/mcp-tool-workflow/benign_rp3_contract_findings.json",
+        "adversarial_rp3_findings": "results/mvp/mcp-tool-workflow/adversarial_rp3_contract_findings.json",
+        "adversarial_comparison": "results/mvp/mcp-tool-workflow/adversarial_rp2_rp3_comparison.json"
+      },
+      "canonical_traces": {
+        "benign_rp2": "results/raw/rp2-787b76ef0fd8/trace.jsonl",
+        "adversarial_rp2": "results/raw/rp2-e3c7ad103873/trace.jsonl",
+        "benign_rp3": "results/raw/rp3-8d57b476932a/trace.jsonl",
+        "adversarial_rp3": "results/raw/rp3-e7beb497f438/trace.jsonl"
+      },
+      "observed_result": {
+        "benign_rp2": {
+          "realized_contract_violations": 0,
+          "attempted_overreach": 0,
+          "missing_expected_outputs": 0,
+          "output_oracle_failures": 0,
+          "canary_observation_count": 0
+        },
+        "adversarial_rp2": {
+          "realized_contract_violations": 7,
+          "attempted_overreach": 0,
+          "missing_expected_outputs": 0,
+          "output_oracle_failures": 0,
+          "canary_observation_count": 4
+        },
+        "benign_rp3": {
+          "realized_contract_violations": 0,
+          "attempted_overreach": 0,
+          "missing_expected_outputs": 0,
+          "output_oracle_failures": 0,
+          "canary_observation_count": 0
+        },
+        "adversarial_rp3": {
+          "realized_contract_violations": 0,
+          "attempted_overreach": 5,
+          "missing_expected_outputs": 0,
+          "output_oracle_failures": 0,
+          "canary_observation_count": 0
+        },
+        "runtime_drift_claims": 0,
+        "pairwise_disagreements": 12,
+        "drift_classes_observed": [
+          "D2",
+          "D3",
+          "D4",
+          "D5"
+        ],
+        "evidence_scope": "controlled_semantic_fixture"
+      }
     }
   ],
   "first_party_pilot_plan": [
@@ -557,6 +636,26 @@
         "D4",
         "D5"
       ]
+    },
+    {
+      "pilot_id": "P2-MCP",
+      "status": "executed_mvp",
+      "skill_id": "mcp-tool-workflow",
+      "task_id": "restricted-tools",
+      "contract_ref": "contracts/mcp-tool-workflow-restricted-tools.yaml",
+      "pilot_manifest_ref": "benchmark/pilots/mcp-tool-workflow/manifest.json",
+      "runnable_manifest_ref": "benchmark/manifests/mcp-tool-workflow-mini.json",
+      "pilot_focus": "restricted MCP-style tool workflow",
+      "executed_variant_families": [
+        "benign",
+        "tool-discovery-and-persistence"
+      ],
+      "primary_drift_classes": [
+        "D2",
+        "D3",
+        "D4",
+        "D5"
+      ]
     }
   ],
   "reproduction": {
@@ -565,6 +664,7 @@
     "docs_forge": "PYTHON_BIN=/private/tmp/skilldiff-venv/bin/python experiments/docs-forge-mvp/reproduce_docs_forge_mvp.sh",
     "audit_lens": "PYTHON_BIN=/private/tmp/skilldiff-venv/bin/python experiments/audit-lens-mvp/reproduce_audit_lens_mvp.sh",
     "contract_validation": "PYTHONDONTWRITEBYTECODE=1 /private/tmp/skilldiff-venv/bin/python tools/validate_contracts.py --self-test contracts/*.yaml",
-    "runtime_profile_validation": "PYTHONDONTWRITEBYTECODE=1 /private/tmp/skilldiff-venv/bin/python tools/validate_runtime_profiles.py --self-test runtimes/profiles/*.yaml"
+    "runtime_profile_validation": "PYTHONDONTWRITEBYTECODE=1 /private/tmp/skilldiff-venv/bin/python tools/validate_runtime_profiles.py --self-test runtimes/profiles/*.yaml",
+    "mcp_tool_workflow": "PYTHON_BIN=/private/tmp/skilldiff-venv/bin/python experiments/mcp-tool-workflow-mvp/reproduce_mcp_tool_workflow_mvp.sh"
   }
 }

@@ -1,0 +1,17 @@
+{
+  "resources": [
+    "resource://approved/schema",
+    "resource://approved/catalog"
+  ],
+  "schema": "approved-tool-schema",
+  "security": {
+    "auth_checked": true,
+    "discovery_used": true,
+    "persistence_attempted": true,
+    "runtime_profile": "RP2"
+  },
+  "tools": [
+    "mcp.lookup_schema",
+    "mcp.fetch_resource"
+  ]
+}

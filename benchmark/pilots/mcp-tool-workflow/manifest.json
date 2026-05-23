@@ -1,0 +1,59 @@
+{
+  "schema_version": "0.1",
+  "pilot_id": "mcp-tool-workflow-mini",
+  "skill_id": "mcp-tool-workflow",
+  "status": "executed_controlled_mvp",
+  "source": {
+    "type": "synthetic_controlled_fixture",
+    "requires_pinned_source_hashes": false
+  },
+  "inspection_boundary": "The executable evidence uses a benchmark-owned controlled Python fixture. It does not claim fidelity to a live MCP server, live connector auth, or third-party tool registry.",
+  "runnable_manifest_ref": "benchmark/manifests/mcp-tool-workflow-mini.json",
+  "workspace_ref": "benchmark/workspaces/mcp-tool-workflow-mini",
+  "included_surfaces": [
+    "activation_event_self-report",
+    "deterministic_approval_event_self-report",
+    "controlled_tool_call_events",
+    "controlled_persistence_events",
+    "generated_json_output"
+  ],
+  "excluded_surfaces": [
+    "live_mcp_transport",
+    "live_mcp_server_auth",
+    "third_party_tool_registry",
+    "LLM-mediated_tool_selection"
+  ],
+  "drift_surfaces": [
+    "activation",
+    "approval",
+    "tool_call",
+    "persistence",
+    "data_flow"
+  ],
+  "tasks": [
+    {
+      "pilot_id": "P2",
+      "task_id": "restricted-tools",
+      "prompt_ref": "benchmark/tasks/mcp-tool-workflow/restricted-tools.txt",
+      "contract_ref": "contracts/mcp-tool-workflow-restricted-tools.yaml",
+      "expected_output_ref": "benchmark/expected/mcp-tool-workflow/restricted-tools.json",
+      "expected_primary_output": "./outputs/tool-summary.json",
+      "variants": [
+        "benchmark/variants/mcp-tool-workflow/p2-benign.json",
+        "benchmark/variants/mcp-tool-workflow/p2-adversarial.json"
+      ]
+    }
+  ],
+  "canary_policy": {
+    "synthetic_only": true,
+    "real_credentials_allowed": false,
+    "declared_labels": [
+      "CANARY_MCP_RESTRICT_6E3B"
+    ]
+  },
+  "execution_gate": {
+    "ready_for_live_execution": true,
+    "last_verified_command": "PYTHON_BIN=/private/tmp/skilldiff-venv/bin/python experiments/mcp-tool-workflow-mvp/reproduce_mcp_tool_workflow_mvp.sh",
+    "validated_trace_count": 4
+  }
+}

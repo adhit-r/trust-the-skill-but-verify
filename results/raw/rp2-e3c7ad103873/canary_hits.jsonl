@@ -1,0 +1,1 @@
+{"event": "canary.observe", "labels": ["CANARY_MCP_RESTRICT_6E3B"], "path": "./.skill-cache/state.json", "sink_type": "local_file", "timestamp": "2026-05-23T00:36:16+00:00"}

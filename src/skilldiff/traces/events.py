@@ -287,6 +287,7 @@ def build_trace_from_artifacts(
     _append_raw_approval_events(builder, prepared_run.artifacts_dir / "approval_events.jsonl")
     _append_raw_network_events(builder, prepared_run.artifacts_dir / "network_attempts.jsonl", canary_labels)
     _append_raw_network_events(builder, prepared_run.artifacts_dir / "network_events.jsonl", canary_labels)
+    _append_raw_semantic_events(builder, prepared_run.artifacts_dir / "semantic_events.jsonl", canary_labels)
     _append_raw_instrumentation_events(builder, prepared_run.artifacts_dir / "adapter_events.jsonl")
     _append_output_events(builder, prepared_run.workspace_path, contract, canary_labels)
     _append_canary_hits(builder, prepared_run.artifacts_dir / "canary_hits.jsonl")
@@ -611,6 +612,96 @@ def _append_raw_network_events(builder: TraceBuilder, path: Path, canary_labels:
         )
 
 
+SEMANTIC_EVENT_TARGET_KINDS = {
+    "activation.discover": "activation",
+    "activation.select": "activation",
+    "activation.not_selected": "activation",
+    "tool.call": "tool",
+    "approval.required": "approval",
+    "approval.prompt": "approval",
+    "approval.decision": "approval",
+    "context.read": "context",
+    "credential.read": "credential",
+    "log.write": "log",
+    "persistence.write": "persistence",
+    "persistence.observe": "persistence",
+}
+
+SEMANTIC_METADATA_RESERVED = {
+    "actor",
+    "allowed_by_contract",
+    "approval_request_id",
+    "approval_required",
+    "canary_labels",
+    "contract_rule_ids",
+    "enforcement_outcome",
+    "event",
+    "event_phase",
+    "matched_allow_rule",
+    "matched_deny_rule",
+    "metadata",
+    "normalized_target",
+    "operation",
+    "parent_event_id",
+    "payload_hash",
+    "payload_redacted",
+    "payload_redacted_excerpt",
+    "sink_type",
+    "status",
+    "target",
+    "target_kind",
+    "timestamp",
+}
+
+
+def _append_raw_semantic_events(builder: TraceBuilder, path: Path, canary_labels: list[str]) -> None:
+    for row in _read_jsonl(path):
+        event_type = row.get("event")
+        if event_type not in SEMANTIC_EVENT_TARGET_KINDS:
+            continue
+        payload_excerpt = row.get("payload_redacted_excerpt")
+        labels = sorted(set((row.get("canary_labels") or []) + scan_text_for_canaries(str(payload_excerpt or ""), canary_labels)))
+        metadata = {
+            key: value
+            for key, value in row.items()
+            if key not in SEMANTIC_METADATA_RESERVED and key not in {"payload", "body", "request_body", "raw_payload"}
+        }
+        if isinstance(row.get("metadata"), dict):
+            for key, value in row["metadata"].items():
+                if key not in {"payload", "body", "request_body", "raw_payload"}:
+                    metadata[key] = value
+        normalized_target = row.get("normalized_target")
+        if normalized_target is None and (
+            event_type.startswith(("activation.", "approval.")) or event_type == "tool.call"
+        ):
+            normalized_target = row.get("target")
+        builder.add(
+            event_type,
+            event_phase=row.get("event_phase", "run"),
+            actor=row.get("actor", builder.context.adapter_id),
+            event_status=row.get("status", "observed"),
+            target_kind=row.get("target_kind") or SEMANTIC_EVENT_TARGET_KINDS[event_type],
+            target=row.get("target"),
+            normalized_target=normalized_target,
+            operation=row.get("operation"),
+            allowed_by_contract=row.get("allowed_by_contract"),
+            contract_rule_ids=[rule_id for rule_id in row.get("contract_rule_ids", []) if rule_id],
+            matched_allow_rule=row.get("matched_allow_rule"),
+            matched_deny_rule=row.get("matched_deny_rule"),
+            approval_required=row.get("approval_required"),
+            approval_request_id=row.get("approval_request_id"),
+            parent_event_id=row.get("parent_event_id"),
+            enforcement_outcome=row.get("enforcement_outcome", "observed"),
+            canary_labels=labels,
+            sink_type=row.get("sink_type"),
+            payload_hash_override=row.get("payload_hash"),
+            payload_redacted=row.get("payload_redacted", True),
+            evidence_ref=str(path),
+            metadata=metadata,
+            timestamp=row.get("timestamp"),
+        )
+
+
 def _append_raw_instrumentation_events(builder: TraceBuilder, path: Path) -> None:
     for row in _read_jsonl(path):
         if row.get("event") != "instrumentation.failure":
@@ -743,6 +834,30 @@ def _validate_event(event: dict[str, Any], path: Path, line_number: int) -> None
         raise TraceValidationError(f"{path}:{line_number}: canary_observed requires canary_labels")
     if event["event_type"] == "process.exit" and "exit_code" not in event["metadata"]:
         raise TraceValidationError(f"{path}:{line_number}: process.exit requires metadata.exit_code")
+    if event["event_type"].startswith("activation."):
+        if event["target_kind"] != "activation":
+            raise TraceValidationError(f"{path}:{line_number}: activation event requires target_kind=activation")
+        if not event["target"]:
+            raise TraceValidationError(f"{path}:{line_number}: activation event requires target")
+    if event["event_type"] == "tool.call":
+        if event["target_kind"] != "tool":
+            raise TraceValidationError(f"{path}:{line_number}: tool.call requires target_kind=tool")
+        if not event["target"]:
+            raise TraceValidationError(f"{path}:{line_number}: tool.call requires target")
+        if event["payload_redacted"] is not True:
+            raise TraceValidationError(f"{path}:{line_number}: tool.call payload must be redacted")
+    if event["event_type"].startswith("approval."):
+        if event["target_kind"] != "approval":
+            raise TraceValidationError(f"{path}:{line_number}: approval event requires target_kind=approval")
+        if event["event_type"] != "approval.required" and not event["approval_request_id"]:
+            raise TraceValidationError(f"{path}:{line_number}: approval prompt/decision requires approval_request_id")
+    if event["event_type"].startswith("persistence."):
+        if event["target_kind"] != "persistence":
+            raise TraceValidationError(f"{path}:{line_number}: persistence event requires target_kind=persistence")
+        if not event["target"]:
+            raise TraceValidationError(f"{path}:{line_number}: persistence event requires target")
+        if event["payload_redacted"] is not True:
+            raise TraceValidationError(f"{path}:{line_number}: persistence payload must be redacted")
     if event["event_type"] in {"network.connect", "network.send"}:
         if event["target_kind"] != "network":
             raise TraceValidationError(f"{path}:{line_number}: network event requires target_kind=network")

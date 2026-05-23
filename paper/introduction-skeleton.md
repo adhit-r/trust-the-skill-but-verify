@@ -95,19 +95,20 @@ Operational version:
    commands, sinks, expected outputs, and approval requirements.
 4. Controlled benchmark methodology with benign tasks, adversarial variants,
    synthetic canaries, expected outputs, and safe publication boundaries.
-5. Current baseline evidence over four case families showing five
+5. Current baseline evidence over five case families showing five
    runtime-drift claims across RP2 and RP3, with explicit provenance and
    measurement limits, plus a full-paper target of at least 40 skills and 120
    skill-task-contract runs before repeats.
 
 ## Current Results Paragraph
 
-The current baseline evaluates four controlled case families: repo-audit,
-network-egress, AuditLens P3/P4, and docs-forge P1/P2. Across these cases,
-tracked manifests record five runtime-drift claims and twenty-four pairwise
+The current baseline evaluates five controlled case families: repo-audit,
+network-egress, MCP/tool workflow, AuditLens P3/P4, and docs-forge P1/P2.
+Across these cases, tracked manifests record five runtime-drift claims and thirty-six pairwise
 disagreements under RP2 and RP3. The evidence includes RP2 canary movement into
 generated reports or dashboards, RP3 blocked attempts, missing outputs,
-read-only source-mount failures, and controlled fake-sink network evidence.
+read-only source-mount failures, controlled fake-sink network evidence, and
+controlled semantic events for approval/tool/persistence behavior.
 These results are not prevalence claims; the controlled baseline traces
 demonstrate measurable runtime-conditioned differences and show that
 differential traces can separate realized violations from blocked overreach and

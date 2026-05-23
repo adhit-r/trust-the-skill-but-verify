@@ -66,8 +66,10 @@ AUDIT_LENS_SOURCE_ROOT=/path/to/audit-lens \
   controlled Python commands.
 - RP3 file-read provenance is container-strace MVP coverage for supported
   `open`, `openat`, and `openat2` events.
-- The current artifact does not measure approval prompts, MCP tool calls,
-  connector auth, or complete persistence behavior.
+- The current artifact measures approval, MCP-style tool-call, and persistence
+  surfaces only through a controlled semantic-event fixture. It does not
+  measure live MCP server behavior, connector auth, or complete persistence
+  behavior.
 - docs-forge is represented by a controlled Python docs-forge-style fixture,
   not by real Node installer execution.
 - AuditLens is represented by a sanitized synthetic Acme fixture, not full

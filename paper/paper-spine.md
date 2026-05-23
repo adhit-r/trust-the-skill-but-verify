@@ -58,7 +58,7 @@ the skill package.
 | RQ2 | Which runtime profile features are associated with realized violations, attempted overreach, missing outputs, and canary movement? | Partially supported for filesystem and network policy. | Add feature-level ablations across filesystem, shell, network, approval, tool/MCP, and persistence controls. |
 | RQ3 | Do activation and skill-selection surfaces produce security-relevant drift across hosts? | Not yet answered. | Add activation events and activation-negative-control fixtures. |
 | RQ4 | Can task-conditioned security contracts classify unsafe behavior without collapsing blocked attempts into realized violations? | Supported for the current RP2/RP3 contract evidence. | Validate across the scaled benchmark with manual adjudication for semantic findings. |
-| RQ5 | Are approval prompts and tool/MCP mediation sufficient to preserve task-conditioned security contracts? | Not yet answered. | Add deterministic approval shims and controlled MCP/tool workflows. |
+| RQ5 | Are approval prompts and tool/MCP mediation sufficient to preserve task-conditioned security contracts? | Partially supported only for the controlled MCP/tool semantic-event fixture. | Add deterministic approval shims and live RP4 MCP/tool workflows. |
 | RQ6 | Which mitigations reduce runtime-induced drift while preserving task utility? | Not yet answered. | Add RP6 hardened profile, least-privilege baseline, ablations, and report cards. |
 
 Primary RQ: RQ1 is the paper's main measurement question. RQ2-RQ6 explain
@@ -172,7 +172,7 @@ Reviewer-facing differentiation sentence:
 | "Four current case families are too small." | Critical | Treat current evidence as feasibility only. Full-paper gate remains 40+ skills and 120+ runs before repeats. |
 | "RP2/RP3 is not enough runtime diversity." | Critical | Add at least two more executable profiles or justify an equivalent-depth full-paper scope with deeper instrumentation and mitigations. |
 | "Controlled Python fixtures are artificial." | High | Add full-product or partial real-execution slices and label every evidence level as full product, controlled fixture, or source-only. |
-| "Instrumentation gaps look like false security." | High | Add activation, approval, tool/MCP, persistence, and capability-snapshot events. Count missing observers as instrumentation gaps, not security success. |
+| "Instrumentation gaps look like false security." | High | Controlled activation, approval, tool/MCP, persistence, and capability-snapshot events now exist for one fixture. Count remaining live-MCP and connector gaps as instrumentation gaps, not security success. |
 | "No nondeterminism treatment." | High | Add repeat IDs, three deterministic repeats where promoted, five repeats for model-mediated cases, and per-repeat tables. |
 | "No human validation for semantic findings." | High | Add adjudication forms, blinded sample review, percent agreement, and Cohen's kappa when label counts support it. |
 | "No baseline or mitigation." | High | Add RP6 hardened profile, least-privilege-style baseline, and ablations over runtime controls. |

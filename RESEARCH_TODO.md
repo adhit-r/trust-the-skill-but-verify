@@ -14,7 +14,7 @@ Status key:
 1. [x] [RM-01] Freeze the working title as `Trust the Skill, Verify the Runtime: Differential Security Testing for Portable AI Agent Skills`.
 2. [ ] [RM-01] Rewrite the old DOCX framing so the main contribution is differential runtime testing, not a policy compiler.
 3. [x] [RM-04] Define the five drift classes in one page with examples.
-4. [~] [RM-07] Build the smallest trace harness; MVP captures process launches, Python-level file reads for controlled Python commands, RP3 container-strace MVP file reads for supported container `open`, `openat`, and `openat2` syscalls, writes, outputs, canaries, and PV-02 controlled Python fake-sink plus blocked RP3 egress evidence. Broader syscall/network/tool/approval/persistence completeness remains pending.
+4. [~] [RM-07] Build the smallest trace harness; MVP captures process launches, Python-level file reads for controlled Python commands, RP3 container-strace MVP file reads for supported container `open`, `openat`, and `openat2` syscalls, writes, outputs, canaries, PV-02 controlled Python fake-sink plus blocked RP3 egress evidence, and controlled semantic activation/approval/tool/persistence events for the MCP/tool workflow fixture. Broader syscall/network/live-MCP/approval/persistence completeness remains pending.
 5. [x] [RM-08] Create the MVP repo-audit benign skill and adversarial variant.
 6. [x] [RM-09] Produce the first RP2/RP3 contract-evidence report with an adversarial runtime-drift candidate and MVP Python-level read provenance.
 7. [x] [RM-08] Onboard `adhit-r/docs-forge` as the first realistic documentation-skill case study with a controlled Python fixture, pinned provenance, and RP2/RP3 traces.
@@ -225,9 +225,9 @@ Tasks:
 - [x] [RM-07/PV-02] Emit `network_sink_requests.jsonl` with payload hashes, byte counts, redaction markers, and synthetic canary labels, not raw request bodies.
 - [x] [RM-07/PV-02] Capture RP3 blocked egress under network denial as `network.connect` and `network.send` with `status: failed`.
 - [x] [RM-07/PV-02] Add trace validation that fails on raw payload retention, missing hashes for captured bodies, or `public_internet_contacted: true`.
-- [ ] [RM-07] Capture tool call events.
-- [~] [RM-07] Capture approval prompt and decision event files; live approval shim remains pending.
-- [ ] [RM-07] Capture persistence events.
+- [~] [RM-07] Capture tool call events; controlled `tool.call` events are now emitted for the MCP/tool workflow fixture, while live MCP/tool descriptor/result telemetry remains pending.
+- [~] [RM-07] Capture approval prompt and decision event files; controlled semantic `approval.required`, `approval.prompt`, and `approval.decision` events are emitted for the MCP/tool workflow fixture, while a general live approval shim remains pending.
+- [~] [RM-07] Capture persistence events; controlled `persistence.write` events are emitted for hidden `.skill-cache` behavior, while retained-state and cleanup-leftover semantics remain pending.
 - [x] [RM-07] Capture generated report/output events.
 - [x] [RM-07] Implement canary injection for the MVP `.env` fixture path.
 - [x] [RM-07] Implement canary detection in changed files, generated outputs, stdout, and stderr.
@@ -241,7 +241,7 @@ Tasks:
 Acceptance checks:
 
 - [x] [RM-07] Each supported MVP run emits a trace even if execution is blocked or fails.
-- [~] [RM-07] Trace events include enough fields for MVP contract checking; full RM-09 checker remains pending.
+- [~] [RM-07] Trace events include enough fields for current MVP contract checking, including controlled tool and persistence findings; full cross-runtime semantic coverage remains pending.
 - [x] [RM-07] Canary movement can be detected without real secrets for file/output/log surfaces.
 - [x] [RM-07/PV-02] A fake-sink `POST` produces a normalized `network.send` event with `sink_type: fake_http`, payload hash, redaction marker, and canary labels when present.
 - [x] [RM-07/PV-02] An RP3 network-denied run produces failed `network.connect` and `network.send` events and no successful public-internet event.

@@ -82,32 +82,34 @@ evidence strength or be removed.
 
 ## P2: Instrumentation Coverage Expansion
 
-1. [ ] Add `activation.*` events to the trace schema.
-   Done when discovery, selection, activation, and non-activation can be
-   represented and validated.
-2. [ ] Add activation instrumentation to at least one plugin-style or
+1. [x] Add `activation.*` events to the trace schema.
+   Done: controlled semantic events now represent and validate
+   `activation.discover`, `activation.select`, and `activation.not_selected`.
+2. [~] Add activation instrumentation to at least one plugin-style or
    skill-registry case.
-   Done when D1 is measured in an executable case.
-3. [ ] Add `approval.*` events to the trace schema.
-   Done when requested, decision, bypassed, and not-required actions can be
-   represented and correlated to sensitive events.
-4. [ ] Implement deterministic approval shim support.
-   Done when RP2/RP3/RP6 can deterministically allow or deny approval-required
-   operations for benchmark runs.
-5. [ ] Add `tool.*` and MCP-style events to the trace schema.
-   Done when tool descriptor reads, calls, results, and mutations validate.
-6. [ ] Build one controlled MCP/tool workflow fixture.
-   Done when `contracts/mcp-tool-workflow-restricted-tools.yaml` has a runnable
-   RP profile comparison.
-7. [ ] Add persistence events.
-   Done when hidden cache writes, retained state, and cleanup leftovers are
-   explicit trace events rather than only file diffs.
-8. [ ] Add runtime capability snapshot events.
-   Done when available privilege can be measured separately from exercised
-   privilege.
-9. [ ] Update `paper/method-boundaries.md`.
-   Done when each newly measured surface has precise coverage and non-coverage
-   wording.
+   Partial: the controlled MCP/tool workflow fixture emits activation events;
+   plugin-style discovery and negative-control D1 measurement remain pending.
+3. [x] Add `approval.*` events to the trace schema.
+   Done: semantic trace ingestion validates `approval.required`,
+   `approval.prompt`, and `approval.decision` with request correlation.
+4. [~] Implement deterministic approval shim support.
+   Partial: the MCP/tool fixture emits deterministic approval records, but
+   RP2/RP3/RP6 do not yet enforce a general approval shim.
+5. [~] Add `tool.*` and MCP-style events to the trace schema.
+   Partial: controlled `tool.call` events validate and contract-check; descriptor
+   reads, tool results, and tool mutation events remain pending.
+6. [x] Build one controlled MCP/tool workflow fixture.
+   Done: `contracts/mcp-tool-workflow-restricted-tools.yaml` now has a runnable
+   RP2/RP3 comparison through `tools/run_mcp_tool_workflow_mvp.py`.
+7. [~] Add persistence events.
+   Partial: controlled `persistence.write` events are explicit in traces; retained
+   state and cleanup-leftover semantics remain pending.
+8. [x] Add runtime capability snapshot events.
+   Done: traces emit `capability.snapshot`, and the smoke traces validate it.
+9. [x] Update `paper/method-boundaries.md`.
+   Done: the boundary now separates controlled semantic-event coverage from live
+   MCP server, connector-auth, commercial approval UX, and complete persistence
+   claims.
 
 ## P3: Runtime Profile Expansion
 
@@ -115,11 +117,11 @@ evidence strength or be removed.
    Done when RP1 emits valid traces and a support matrix lists unsupported
    surfaces.
 2. [~] Extend RP2 beyond file/network/output evidence.
-   Done when RP2 emits approval, activation, tool, and persistence events for
-   relevant cases.
+   Partial: RP2 now emits activation, approval, tool-call, and persistence
+   semantic events for the controlled MCP/tool workflow case.
 3. [~] Extend RP3 beyond current file/network/output evidence.
-   Done when RP3 emits blocked write attempts, approval shim events, tool
-   events, and persistence events.
+   Partial: RP3 now emits activation, approval, blocked tool-call, and failed
+   persistence semantic events for the controlled MCP/tool workflow case.
 4. [ ] Make RP4 MCP-connected executable.
    Done when at least one MCP/tool workflow runs with descriptor and tool-call
    traces.
@@ -144,10 +146,12 @@ evidence strength or be removed.
 4. [ ] Add API workflow fixtures.
    Done when mock API tasks cover credential exposure, no-egress policy, and
    approval-required calls.
-5. [ ] Add MCP/tool workflow fixtures.
-   Done when controlled tool descriptors and restricted resources are covered.
-6. [ ] Add persistence/cache fixtures.
-   Done when hidden state, resumable state, and cleanup retention are measured.
+5. [~] Add MCP/tool workflow fixtures.
+   Partial: one controlled restricted-tool workflow fixture now covers approved
+   schema/resource tools plus denied discovery/auth/exec tools.
+6. [~] Add persistence/cache fixtures.
+   Partial: hidden `.skill-cache` writes are measured in the MCP/tool workflow
+   fixture; resumable state and cleanup retention remain pending.
 7. [ ] Add activation-negative-control fixtures.
    Done when skills are tested for non-activation under unrelated tasks.
 8. [ ] Add at least 40 skills for the full-paper benchmark.

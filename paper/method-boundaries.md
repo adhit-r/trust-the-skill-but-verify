@@ -15,6 +15,9 @@ state. Use it before turning the current evidence artifacts into paper prose.
   logs, and changed files.
 - Fake-sink network egress and blocked RP3 network attempts can be measured
   without contacting the public internet.
+- Controlled semantic events can represent activation selection, deterministic
+  approval records, MCP-style tool calls, and hidden persistence attempts for
+  the synthetic MCP/tool workflow fixture.
 - First-party seed repos can be pinned and transformed into publishable
   controlled fixtures without vendoring full source trees.
 
@@ -29,8 +32,8 @@ state. Use it before turning the current evidence artifacts into paper prose.
   interception.
 - It does not provide syscall-complete host tracing.
 - It does not cover commercial hosted runtimes.
-- It does not yet measure MCP tool calls, approval bypass, connector auth, or
-  hidden persistence completely.
+- It does not yet measure live MCP server behavior, live connector auth, or
+  hidden persistence completely across arbitrary runtimes.
 
 ## Provenance Levels
 
@@ -40,6 +43,7 @@ state. Use it before turning the current evidence artifacts into paper prose.
 | RP3 file reads | `container_strace_mvp` | Container `open`, `openat`, and `openat2` evidence for supported runs | Full container or host filesystem telemetry |
 | Writes and outputs | Workspace diff and output manifests | Observed output and mutation evidence | Complete persistence tracing |
 | Network | Fake sink and Docker network denial | Controlled fake-sink and blocked-egress evidence | Packet capture or public-internet measurement |
+| Activation, approvals, and tools | Controlled semantic events in the MCP/tool workflow fixture | Deterministic fixture evidence for event representation and contract checking | Live MCP server telemetry or commercial approval UX measurement |
 | Canaries | Output/log/change scanning | Synthetic canary movement in observed sinks | Real secret exfiltration evidence |
 
 ## Network Evidence Boundary
@@ -50,12 +54,13 @@ RP3 blocked-egress runs record denied destinations and failed or blocked
 network status. Raw request bodies, raw query strings, sensitive headers, and
 real secrets are outside the safe artifact boundary.
 
-## Approval, Tool, and Persistence Gaps
+## Approval, Tool, and Persistence Boundary
 
-Approval prompts, MCP tool calls, connector auth checks, and hidden persistence
-are part of the broader roadmap but are not completed by the current baseline
-evidence. The paper can name them as future measurement axes or planned
-benchmark categories, but current results should not count them as evaluated.
+The MCP/tool workflow pilot evaluates activation, approval, tool-call, and
+persistence representation through controlled semantic events. The paper can
+claim those surfaces are now traceable and contract-checkable for that fixture.
+It should not claim live MCP server coverage, real connector auth, commercial
+approval UX behavior, or complete persistence tracing.
 
 ## Reviewer-Safe Claim
 
@@ -64,7 +69,7 @@ given a skill, task, contract, fixed task prompt, fixed workspace snapshot,
 variant, repeat ID, and runtime profile, the framework executes controlled
 benign and adversarial variants, records normalized traces, and compares
 whether violations are realized, blocked, or converted into missing outputs
-across runtimes. In the current baseline evidence, four controlled case
+across runtimes. In the current baseline evidence, five controlled case
 families produce five runtime-drift claims across RP2 and RP3, while preserving
 explicit boundaries around provenance, network evidence, product execution, and
 safe publication.
@@ -77,4 +82,5 @@ safe publication.
 - "Network exfiltration was observed on the internet."
 - "docs-forge was fully executed."
 - "AuditLens connector behavior was evaluated."
-- "Approval drift is measured in the current baseline evidence."
+- "Live MCP server behavior was evaluated."
+- "Approval drift is measured outside the controlled MCP/tool fixture."

@@ -1,0 +1,26 @@
+{
+  "event_count": 24,
+  "event_types": [
+    "activation.discover",
+    "activation.select",
+    "approval.decision",
+    "approval.prompt",
+    "approval.required",
+    "canary.observe",
+    "capability.snapshot",
+    "cleanup.observe",
+    "filesystem.read",
+    "filesystem.write",
+    "output.generated",
+    "persistence.write",
+    "process.exit",
+    "run.end",
+    "run.start",
+    "shell.exec",
+    "tool.call"
+  ],
+  "run_id": "rp2-e3c7ad103873",
+  "schema_version": "0.1",
+  "trace_path": "<REPO_ROOT>/results/raw/rp2-e3c7ad103873/trace.jsonl",
+  "trace_valid": true
+}

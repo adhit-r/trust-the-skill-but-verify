@@ -136,6 +136,7 @@ class DockerDryRunAdapter(RuntimeAdapter):
         write_jsonl(files["process_events"], [])
         write_jsonl(files["file_read_events"], [])
         write_jsonl(files["file_write_events"], [])
+        write_jsonl(files["semantic_events"], [])
         write_jsonl(files["canary_hits"], [])
         write_jsonl(
             files["file_observations"],
@@ -262,6 +263,7 @@ class DockerDryRunAdapter(RuntimeAdapter):
                 files["process_events"],
                 files["file_read_events"],
                 files["file_write_events"],
+                files["semantic_events"],
                 files["canary_hits"],
             ],
             canary_observations=canary_observations,
@@ -420,6 +422,8 @@ def _build_execution_plan(
                     separator=":",
                 ),
                 "SKILLDIFF_FILE_WRITE_EVENTS": read_provenance["container_write_event_path"],
+                "SKILLDIFF_RUNTIME_PROFILE": runtime_profile["profile_id"],
+                "SKILLDIFF_SEMANTIC_EVENTS": read_provenance["container_semantic_event_path"],
             }
         )
     if read_provenance.get("python_enabled"):
@@ -457,6 +461,7 @@ def _build_execution_plan(
     )
     return {
         "schema_version": "0.1",
+        "profile_id": runtime_profile["profile_id"],
         "command": {
             "argv": command,
             "executable": command[0] if command else None,
@@ -606,6 +611,7 @@ def _run_docker_live(adapter_id: str, prepared_run: PreparedRun) -> RunExecution
     _merge_syscall_read_provenance_events(files, plan)
     _merge_python_read_provenance_events(files, plan)
     _merge_python_write_provenance_events(files, plan)
+    _merge_semantic_events(files, plan)
     _merge_python_network_events(files, plan)
     _merge_python_network_sink_requests(files, plan)
     _record_workspace_diff(files, prepared_run.workspace_path, before, plan["canary_labels"])
@@ -973,6 +979,7 @@ def _is_adapter_instrumentation_path(path: str) -> bool:
     return (
         path == "./.skilldiff_file_read_events.jsonl"
         or path == "./.skilldiff_file_write_events.jsonl"
+        or path == "./.skilldiff_semantic_events.jsonl"
         or path == "./.skilldiff_network_events.jsonl"
         or path == "./.skilldiff_network_sink_requests.jsonl"
         or path == "./.skilldiff_strace_file_reads.log"
@@ -1013,6 +1020,7 @@ def _read_provenance_config(
     host_shim_dir = output_workspace_path / ".skilldiff_provenance"
     host_event_path = output_workspace_path / ".skilldiff_file_read_events.jsonl"
     host_write_event_path = output_workspace_path / ".skilldiff_file_write_events.jsonl"
+    host_semantic_event_path = output_workspace_path / ".skilldiff_semantic_events.jsonl"
     host_network_event_path = output_workspace_path / ".skilldiff_network_events.jsonl"
     host_network_sink_requests_path = output_workspace_path / ".skilldiff_network_sink_requests.jsonl"
     host_strace_log_path = output_workspace_path / ".skilldiff_strace_file_reads.log"
@@ -1030,12 +1038,14 @@ def _read_provenance_config(
         "instrumentation_model": "container_strace_mvp" if syscall_enabled else "python_sitecustomize_wrapper_mvp",
         "host_event_path": str(host_event_path),
         "host_write_event_path": str(host_write_event_path),
+        "host_semantic_event_path": str(host_semantic_event_path),
         "host_network_event_path": str(host_network_event_path),
         "host_network_sink_requests_path": str(host_network_sink_requests_path),
         "host_shim_dir": str(host_shim_dir),
         "host_strace_log_path": str(host_strace_log_path),
         "container_event_path": "/workspace/out/.skilldiff_file_read_events.jsonl",
         "container_write_event_path": "/workspace/out/.skilldiff_file_write_events.jsonl",
+        "container_semantic_event_path": "/workspace/out/.skilldiff_semantic_events.jsonl",
         "container_network_event_path": "/workspace/out/.skilldiff_network_events.jsonl",
         "container_network_sink_requests_path": "/workspace/out/.skilldiff_network_sink_requests.jsonl",
         "container_shim_dir": "/workspace/out/.skilldiff_provenance",
@@ -1199,6 +1209,23 @@ def _merge_python_write_provenance_events(files: dict[str, Path], plan: dict[str
                 translated["path"] = contract_path
         append_jsonl(files["file_write_events"], translated)
         append_jsonl(files["file_observations"], translated)
+
+
+def _merge_semantic_events(files: dict[str, Path], plan: dict[str, Any]) -> None:
+    provenance = plan.get("read_provenance") or {}
+    event_path_value = provenance.get("host_semantic_event_path")
+    if not event_path_value:
+        return
+    event_path = Path(event_path_value)
+    if not event_path.exists():
+        return
+    for row in _read_jsonl(event_path):
+        translated = dict(row)
+        for key in ("target", "normalized_target", "path", "destination"):
+            value = translated.get(key)
+            if isinstance(value, str):
+                translated[key] = _container_path_to_contract_path(value, plan.get("mounts", []))
+        append_jsonl(files["semantic_events"], translated)
 
 
 def _merge_python_network_events(files: dict[str, Path], plan: dict[str, Any]) -> None:

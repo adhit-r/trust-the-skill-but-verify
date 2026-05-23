@@ -16,6 +16,7 @@ done < <(git ls-files -z '*.json')
 "$PYTHON_BIN" tools/validate_contracts.py --self-test contracts/*.yaml
 "$PYTHON_BIN" tools/verify_source_provenance.py --manifest benchmark/manifests/repo-audit-mvp.json
 "$PYTHON_BIN" tools/verify_source_provenance.py --manifest benchmark/manifests/network-egress-mvp.json
+"$PYTHON_BIN" tools/verify_source_provenance.py --manifest benchmark/manifests/mcp-tool-workflow-mini.json
 "$PYTHON_BIN" tools/verify_source_provenance.py --manifest benchmark/manifests/docs-forge-mini.json
 "$PYTHON_BIN" tools/verify_source_provenance.py --manifest benchmark/manifests/audit-lens-acme.json
 "$PYTHON_BIN" tools/validate_claim_ledger.py

@@ -17,14 +17,14 @@ claims, public-internet testing claims, or syscall-complete tracing claims.
 
 | Claim ID | Claim | Evidence |
 | --- | --- | --- |
-| CL-MVP-001 | Four controlled case families | `benchmark/manifests/skilldiff-mvp-baseline.json` |
-| CL-MVP-002 | Twenty-four paper-facing canonical trace files | `benchmark/manifests/skilldiff-mvp-baseline.json` |
-| CL-MVP-003 | Thirty tracked trace files including older smoke traces | `results/raw/*/trace.jsonl` |
+| CL-MVP-001 | Five controlled case families | `benchmark/manifests/skilldiff-mvp-baseline.json` |
+| CL-MVP-002 | Twenty-eight paper-facing canonical trace files | `benchmark/manifests/skilldiff-mvp-baseline.json` |
+| CL-MVP-003 | Thirty-four tracked trace files including older smoke traces | `results/raw/*/trace.jsonl` |
 | CL-MVP-004 | Five runtime-drift claims across RP2/RP3 | `benchmark/manifests/skilldiff-mvp-baseline.json` |
-| CL-MVP-005 | Twenty-four pairwise disagreements across RP2/RP3 | `benchmark/manifests/skilldiff-mvp-baseline.json` |
+| CL-MVP-005 | Thirty-six pairwise disagreements across RP2/RP3 | `benchmark/manifests/skilldiff-mvp-baseline.json` |
 | CL-MVP-007 | Two first-party seed case families: AuditLens and docs-forge | Baseline manifest |
-| CL-MVP-008 | Two controlled synthetic case families: repo-audit and network-egress | Baseline manifest |
-| CL-MVP-009 | Twelve RP2/RP3 comparison JSON files and twenty-four contract-finding JSON files | `results/mvp/*/*.json` |
+| CL-MVP-008 | Three controlled synthetic case families: repo-audit, network-egress, and MCP/tool workflow | Baseline manifest |
+| CL-MVP-009 | Fourteen RP2/RP3 comparison JSON files and twenty-eight contract-finding JSON files | `results/mvp/*/*.json` |
 | CL-MVP-010 | RP2/RP3 comparison artifacts have no unchecked comparator fields | `results/mvp/*/*_rp2_rp3_comparison.json` |
 | CL-MVP-011 | First-party manifests publish verifier-required pinned source hash lists: 11 docs-forge entries and 42 AuditLens entries | First-party source manifests |
 | CL-P1-001 | Paper spine freezes the top-tier thesis, RQs, threat model, reviewer risks, and venue backplan | `paper/paper-spine.md` |
@@ -32,6 +32,7 @@ claims, public-internet testing claims, or syscall-complete tracing claims.
 | CL-CASE-002 | Network-egress adversarial RP2/RP3 outcome counts | Baseline manifest and network-egress result artifacts |
 | CL-CASE-003 | AuditLens contributes one drift claim and seven pairwise disagreements | Baseline manifest |
 | CL-CASE-004 | docs-forge contributes two drift claims and eight pairwise disagreements | Baseline manifest |
+| CL-CASE-005 | MCP/tool workflow adversarial RP2/RP3 outcome counts | Baseline manifest and MCP/tool workflow result artifacts |
 
 ## Boundary Claims
 
@@ -42,7 +43,7 @@ claims, public-internet testing claims, or syscall-complete tracing claims.
 | CL-BOUNDARY-002 | Current baseline does not claim full docs-forge Node installer execution or full AuditLens product/live connector execution. |
 | CL-BOUNDARY-003 | Current baseline does not claim public-internet testing, packet capture, DNS tracing, or syscall-complete host tracing. |
 | CL-BOUNDARY-004 | Publishable artifacts use synthetic canaries only, do not retain raw payloads, and keep public internet contact outside the benchmark boundary. |
-| CL-RQ-001 | Current baseline evidence supports RQ1/RQ4, partially supports RQ2, and does not yet answer RQ3/RQ5/RQ6. |
+| CL-RQ-001 | Current baseline evidence supports RQ1/RQ4, partially supports RQ2, partially supports RQ3/RQ5 only for controlled semantic-event representation, and does not yet answer RQ6. |
 
 ## Design Targets
 

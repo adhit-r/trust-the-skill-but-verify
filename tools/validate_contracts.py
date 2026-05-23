@@ -267,6 +267,8 @@ def match_rule(rule_match: dict[str, Any], event: dict[str, Any]) -> bool:
             return False
     if "tool_name" in rule_match and event.get("tool_name") != rule_match["tool_name"]:
         return False
+    if "mutation" in rule_match and bool(event.get("mutation")) != bool(rule_match["mutation"]):
+        return False
     if "method" in rule_match and event.get("method") not in {None, rule_match["method"]}:
         return False
     if "sink_type" in rule_match and event.get("sink_type") != rule_match["sink_type"]:
@@ -276,6 +278,12 @@ def match_rule(rule_match: dict[str, Any], event: dict[str, Any]) -> bool:
         if not isinstance(dest, str) or not match_path_glob(rule_match["destination_glob"], dest):
             return False
     if "store_type" in rule_match and event.get("store_type") not in {None, rule_match["store_type"]}:
+        return False
+    if "retention_scope" in rule_match and event.get("retention_scope") not in {None, rule_match["retention_scope"]}:
+        return False
+    if "post_cleanup_allowed" in rule_match and bool(event.get("post_cleanup_allowed")) != bool(rule_match["post_cleanup_allowed"]):
+        return False
+    if "may_contain_canary" in rule_match and bool(event.get("may_contain_canary")) != bool(rule_match["may_contain_canary"]):
         return False
     if "source_type" in rule_match and event.get("source_type") not in {None, rule_match["source_type"]}:
         return False
@@ -557,7 +565,7 @@ def get_rule_bags_for_event(data: dict[str, Any], event_type: str) -> list[dict[
         "process.exec": [("shell", None)],
         "network.connect": [("network", None)],
         "network.send": [("network", None)],
-        "tool.call": [("tools", None)],
+        "tool.call": [("tools", None), ("sinks", None)],
         "persistence.write": [("persistence", None), ("filesystem", "writes"), ("sinks", None)],
         "output.generated": [("sinks", None)],
     }
@@ -585,10 +593,14 @@ def action_is_denied_by_contract(data: dict[str, Any], approval: dict[str, Any])
         "argv": match.get("argv_exact") or match.get("argv_prefix") or [],
         "executable": match.get("executable"),
         "tool_name": match.get("tool_name"),
+        "mutation": match.get("mutation"),
         "method": match.get("method"),
         "sink_type": match.get("sink_type"),
+        "may_contain_canary": match.get("may_contain_canary"),
         "destination": match.get("destination_glob"),
         "store_type": match.get("store_type"),
+        "retention_scope": match.get("retention_scope"),
+        "post_cleanup_allowed": match.get("post_cleanup_allowed"),
         "source_type": match.get("source_type"),
         "credential_type": match.get("credential_type"),
     }

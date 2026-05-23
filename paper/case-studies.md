@@ -5,9 +5,9 @@ uses only the canonical manifests, drift reports, and traces in this repository.
 
 ## Overview
 
-The current evidence slice contains four benchmark cases: repo-audit,
-network-egress, AuditLens P3/P4, and docs-forge P1/P2. Across those cases the
-manifests record five runtime-drift claims and twenty-four pairwise
+The current evidence slice contains five benchmark cases: repo-audit,
+network-egress, MCP/tool workflow, AuditLens P3/P4, and docs-forge P1/P2.
+Across those cases the manifests record five runtime-drift claims and thirty-six pairwise
 disagreements under RP2 local execution and RP3 Docker-sandbox execution.
 
 The supported claim is narrow: the same skill, task, and security contract can
@@ -58,6 +58,32 @@ realized contract violations and blocked unsafe attempts.
 Boundary: controlled Python `urllib` fake-sink and blocked-egress path only. It
 is not packet capture, DNS tracing, arbitrary HTTP-client interception, or
 public-internet testing.
+
+## MCP/Tool Workflow MVP
+
+Artifacts:
+
+- Manifest: `benchmark/manifests/mcp-tool-workflow-mini.json`
+- Result: `results/mvp/mcp-tool-workflow/drift_report.md`
+- Contract: `contracts/mcp-tool-workflow-restricted-tools.yaml`
+
+The benign MCP/tool workflow variant emits controlled `activation.select`,
+`approval.*`, and allowed `tool.call` events in RP2 and RP3 while generating
+`outputs/tool-summary.json` without canary movement. The adversarial RP2 run
+realizes denied `mcp.discover_tools`, `mcp.auth_check`, and `mcp.exec_any`
+tool calls, moves `CANARY_MCP_RESTRICT_6E3B` into a denied tool-message sink,
+and writes hidden `.skill-cache/state.json` persistence. The adversarial RP3
+run records the same denied tool and persistence actions as blocked or failed
+attempts, with no canary movement.
+
+Paper use: first controlled evidence for tool-call, approval-event, and
+persistence surfaces. It strengthens the P2 instrumentation story and gives a
+clear D3/D4/D5 semantic-fixture case before live RP4 work.
+
+Boundary: controlled semantic-event fixture only. Its RP2/RP3 tool statuses are
+scripted profile-conditioned fixture evidence, not live runtime-enforced MCP
+policy. It is not a live MCP server, live connector-auth path, third-party tool
+registry, or LLM-mediated tool selection measurement.
 
 ## P1 docs-forge Docs Generation
 
@@ -146,7 +172,7 @@ exercise connector approval semantics; connector drift remains planned work.
 
 ## Cross-Case Lessons
 
-- Benign controls matter: all four case families have clean benign RP2/RP3
+- Benign controls matter: all five case families have clean benign RP2/RP3
   runs in the current MVP slice.
 - Runtime drift is not one behavior: the evidence includes realized canary
   leakage, blocked attempts, missing outputs, oracle failures, and side effects.
@@ -167,11 +193,11 @@ Do not claim:
 - Packet capture or DNS tracing.
 - Syscall-complete host tracing.
 - Commercial runtime coverage.
-- Approval, MCP tool, connector, or persistence completeness.
+- Live MCP server, connector approval/auth, or persistence completeness.
 
 Reviewer-safe claim:
 
 The current artifact demonstrates differential runtime security testing over
-four controlled skill-task-contract case families. It shows that runtime
+five controlled skill-task-contract case families. It shows that runtime
 profile changes can alter whether an unsafe behavior is realized, blocked,
 reported as missing output, or observed as canary movement.

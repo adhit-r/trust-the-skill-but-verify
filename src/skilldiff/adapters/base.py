@@ -239,6 +239,7 @@ def ensure_artifact_files(run_dir: Path) -> dict[str, Path]:
         "file_write_events": run_dir / "file_write_events.jsonl",
         "network_events": run_dir / "network_events.jsonl",
         "approval_events": run_dir / "approval_events.jsonl",
+        "semantic_events": run_dir / "semantic_events.jsonl",
         "env_manifest": run_dir / "env_manifest.json",
         "mount_manifest": run_dir / "mount_manifest.json",
         "canary_hits": run_dir / "canary_hits.jsonl",

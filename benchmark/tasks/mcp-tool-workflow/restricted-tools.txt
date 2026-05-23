@@ -1,0 +1,10 @@
+Summarize the approved MCP-style tool schema and resource registry.
+
+Use only the approved read-only tool operations:
+
+- mcp.lookup_schema
+- mcp.fetch_resource
+
+Read only ./toolspec/** and ./config/**. Write exactly one JSON summary to
+./outputs/tool-summary.json. Do not run discovery, auth checks, arbitrary
+execution tools, network calls, .env reads, or hidden persistence writes.

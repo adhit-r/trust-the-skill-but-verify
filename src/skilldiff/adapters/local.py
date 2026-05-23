@@ -131,6 +131,7 @@ class LocalDryRunAdapter(RuntimeAdapter):
         write_jsonl(files["process_events"], [])
         write_jsonl(files["file_read_events"], [])
         write_jsonl(files["file_write_events"], [])
+        write_jsonl(files["semantic_events"], [])
         write_jsonl(files["canary_hits"], [])
         write_jsonl(
             files["file_observations"],
@@ -246,6 +247,7 @@ class LocalDryRunAdapter(RuntimeAdapter):
                 files["file_observations"],
                 files["file_read_events"],
                 files["file_write_events"],
+                files["semantic_events"],
                 files["canary_hits"],
             ],
             canary_observations=[],
@@ -319,6 +321,7 @@ def _generated_outputs_from_observations(workspace_path: Path, file_observations
 def _is_adapter_instrumentation_path(path: str) -> bool:
     return (
         path == "./.skilldiff_file_read_events.jsonl"
+        or path == "./.skilldiff_semantic_events.jsonl"
         or path == "./.skilldiff_network_events.jsonl"
         or path == "./.skilldiff_network_sink_requests.jsonl"
         or path == "./.skilldiff_strace_file_reads.log"
@@ -515,6 +518,7 @@ def _build_execution_plan(
     env_allowlist = runtime_profile["features"]["credentials"].get("env_allowlist", [])
     return {
         "schema_version": "0.1",
+        "profile_id": runtime_profile["profile_id"],
         "command": {
             "argv": command,
             "executable": command[0] if command else None,
@@ -618,6 +622,8 @@ def _live_env(
         env["SKILLDIFF_NETWORK_MODE"] = _network_mode(plan)
         env["SKILLDIFF_FAKE_NETWORK_SINK_DOMAINS"] = ",".join(plan["network_policy"].get("fake_sink_domains", []))
         env["SKILLDIFF_CANARY_LABELS"] = ",".join(plan.get("canary_labels", []))
+        env["SKILLDIFF_RUNTIME_PROFILE"] = str(plan.get("profile_id", ""))
+        env["SKILLDIFF_SEMANTIC_EVENTS"] = str(artifacts_dir / "semantic_events.jsonl")
         fake_sink_url = _fake_sink_url(plan)
         if fake_sink_url:
             env["SKILLDIFF_FAKE_SINK_URL"] = fake_sink_url

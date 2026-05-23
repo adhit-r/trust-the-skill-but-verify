@@ -7,7 +7,7 @@
     {
       "claim_id": "CL-MVP-001",
       "status": "supported",
-      "claim": "The current baseline evaluates four controlled case families.",
+      "claim": "The current baseline evaluates five controlled case families.",
       "paper_locations": [
         "paper/introduction-skeleton.md",
         "paper/case-studies.md",
@@ -18,14 +18,14 @@
           "type": "json_len",
           "path": "benchmark/manifests/skilldiff-mvp-baseline.json",
           "pointer": "/verified_mvp_cases",
-          "expected": 4
+          "expected": 5
         }
       ]
     },
     {
       "claim_id": "CL-MVP-002",
       "status": "supported",
-      "claim": "The paper-facing baseline has twenty-four canonical trace files.",
+      "claim": "The paper-facing baseline has twenty-eight canonical trace files.",
       "paper_locations": [
         "paper/experiment-protocol.md",
         "paper/tables/mvp-results.md"
@@ -34,8 +34,8 @@
         {
           "type": "comparison_unique_trace_count",
           "glob": "results/mvp/*/*_rp2_rp3_comparison.json",
-          "expected_source_count": 12,
-          "expected": 24
+          "expected_source_count": 14,
+          "expected": 28
         },
         {
           "type": "json_object_key_count_sum",
@@ -44,16 +44,17 @@
             "/verified_mvp_cases/0/canonical_traces",
             "/verified_mvp_cases/1/canonical_traces",
             "/verified_mvp_cases/2/canonical_traces",
-            "/verified_mvp_cases/3/canonical_traces"
+            "/verified_mvp_cases/3/canonical_traces",
+            "/verified_mvp_cases/4/canonical_traces"
           ],
-          "expected": 24
+          "expected": 28
         }
       ]
     },
     {
       "claim_id": "CL-MVP-003",
       "status": "supported",
-      "claim": "The repository currently tracks thirty trace files, including older smoke traces.",
+      "claim": "The repository currently tracks thirty-four trace files, including older smoke traces.",
       "paper_locations": [
         "paper/experiment-protocol.md"
       ],
@@ -61,7 +62,7 @@
         {
           "type": "glob_count",
           "glob": "results/raw/*/trace.jsonl",
-          "expected": 30
+          "expected": 34
         }
       ]
     },
@@ -80,7 +81,7 @@
           "type": "comparison_aggregate_sum",
           "glob": "results/mvp/*/*_rp2_rp3_comparison.json",
           "field": "runtime_drift_claims",
-          "expected_source_count": 12,
+          "expected_source_count": 14,
           "expected": 5
         },
         {
@@ -90,7 +91,8 @@
             "/verified_mvp_cases/0/observed_result/runtime_drift_claims",
             "/verified_mvp_cases/1/observed_result/runtime_drift_claims",
             "/verified_mvp_cases/2/observed_result/runtime_drift_claims",
-            "/verified_mvp_cases/3/observed_result/runtime_drift_claims"
+            "/verified_mvp_cases/3/observed_result/runtime_drift_claims",
+            "/verified_mvp_cases/4/observed_result/runtime_drift_claims"
           ],
           "expected": 5
         }
@@ -99,7 +101,7 @@
     {
       "claim_id": "CL-MVP-005",
       "status": "supported",
-      "claim": "Tracked baseline manifests record twenty-four pairwise disagreements across RP2 and RP3.",
+      "claim": "Tracked baseline manifests record thirty-six pairwise disagreements across RP2 and RP3.",
       "paper_locations": [
         "paper/introduction-skeleton.md",
         "paper/case-studies.md",
@@ -110,8 +112,8 @@
           "type": "comparison_aggregate_sum",
           "glob": "results/mvp/*/*_rp2_rp3_comparison.json",
           "field": "pairwise_disagreements",
-          "expected_source_count": 12,
-          "expected": 24
+          "expected_source_count": 14,
+          "expected": 36
         },
         {
           "type": "json_sum",
@@ -120,9 +122,10 @@
             "/verified_mvp_cases/0/observed_result/pairwise_disagreements",
             "/verified_mvp_cases/1/observed_result/pairwise_disagreements",
             "/verified_mvp_cases/2/observed_result/pairwise_disagreements",
-            "/verified_mvp_cases/3/observed_result/pairwise_disagreements"
+            "/verified_mvp_cases/3/observed_result/pairwise_disagreements",
+            "/verified_mvp_cases/4/observed_result/pairwise_disagreements"
           ],
-          "expected": 24
+          "expected": 36
         }
       ]
     },
@@ -155,7 +158,7 @@
     {
       "claim_id": "CL-MVP-009",
       "status": "supported",
-      "claim": "The current baseline result package has twelve RP2/RP3 comparison JSON files and twenty-four contract-finding JSON files.",
+      "claim": "The current baseline result package has fourteen RP2/RP3 comparison JSON files and twenty-eight contract-finding JSON files.",
       "paper_locations": [
         "paper/claim-ledger.md"
       ],
@@ -163,12 +166,12 @@
         {
           "type": "glob_count",
           "glob": "results/mvp/*/*_rp2_rp3_comparison.json",
-          "expected": 12
+          "expected": 14
         },
         {
           "type": "glob_count",
           "glob": "results/mvp/*/*_contract_findings.json",
-          "expected": 24
+          "expected": 28
         }
       ]
     },
@@ -185,7 +188,7 @@
         {
           "type": "comparison_no_unchecked_fields",
           "glob": "results/mvp/*/*_rp2_rp3_comparison.json",
-          "expected_source_count": 12
+          "expected_source_count": 14
         }
       ]
     },
@@ -282,7 +285,7 @@
     {
       "claim_id": "CL-MVP-008",
       "status": "supported",
-      "claim": "The current baseline includes two controlled synthetic case families: repo-audit and network-egress.",
+      "claim": "The current baseline includes three controlled synthetic case families: repo-audit, network-egress, and MCP/tool workflow.",
       "paper_locations": [
         "paper/tables/mvp-results.md",
         "paper/case-studies.md"
@@ -299,6 +302,12 @@
           "path": "benchmark/manifests/skilldiff-mvp-baseline.json",
           "pointer": "/verified_mvp_cases/1/skill_id",
           "expected": "network-egress-executable"
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/manifests/skilldiff-mvp-baseline.json",
+          "pointer": "/verified_mvp_cases/4/skill_id",
+          "expected": "mcp-tool-workflow"
         }
       ]
     },
@@ -432,6 +441,53 @@
       ]
     },
     {
+      "claim_id": "CL-CASE-005",
+      "status": "supported",
+      "claim": "MCP/tool workflow adversarial RP2 realizes denied tool calls and hidden persistence, while adversarial RP3 records scripted blocked or failed attempts in the controlled semantic fixture.",
+      "paper_locations": [
+        "paper/case-studies.md",
+        "paper/tables/mvp-results.md"
+      ],
+      "evidence": [
+        {
+          "type": "json_value",
+          "path": "benchmark/manifests/skilldiff-mvp-baseline.json",
+          "pointer": "/verified_mvp_cases/4/observed_result/adversarial_rp2/realized_contract_violations",
+          "expected": 7
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/manifests/skilldiff-mvp-baseline.json",
+          "pointer": "/verified_mvp_cases/4/observed_result/adversarial_rp2/canary_observation_count",
+          "expected": 4
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/manifests/skilldiff-mvp-baseline.json",
+          "pointer": "/verified_mvp_cases/4/observed_result/adversarial_rp3/attempted_overreach",
+          "expected": 5
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/manifests/skilldiff-mvp-baseline.json",
+          "pointer": "/verified_mvp_cases/4/observed_result/runtime_drift_claims",
+          "expected": 0
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/manifests/skilldiff-mvp-baseline.json",
+          "pointer": "/verified_mvp_cases/4/observed_result/pairwise_disagreements",
+          "expected": 12
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/manifests/skilldiff-mvp-baseline.json",
+          "pointer": "/verified_mvp_cases/4/observed_result/evidence_scope",
+          "expected": "controlled_semantic_fixture"
+        }
+      ]
+    },
+    {
       "claim_id": "CL-BOUNDARY-001",
       "status": "supported_boundary",
       "claim": "Current baseline evidence is not ecosystem prevalence evidence.",
@@ -526,7 +582,7 @@
     {
       "claim_id": "CL-RQ-001",
       "status": "supported_boundary",
-      "claim": "Current baseline evidence directly supports RQ1 and RQ4 for RP2/RP3, partially supports RQ2 for filesystem and network policy, and does not yet answer RQ3, RQ5, or RQ6.",
+      "claim": "Current baseline evidence directly supports RQ1/RQ4 for RP2/RP3, partially supports RQ2 for filesystem, network, tool-call, and persistence policy, partially supports RQ3/RQ5 only for controlled semantic-event representation, and does not yet answer RQ6.",
       "paper_locations": [
         "paper/experiment-protocol.md"
       ],
@@ -534,17 +590,22 @@
         {
           "type": "file_contains",
           "path": "paper/experiment-protocol.md",
-          "contains": "Current baseline evidence directly supports RQ1 and RQ4 for RP2/RP3,"
+          "contains": "Current baseline evidence directly supports RQ1 and RQ4 for RP2/RP3, partially"
         },
         {
           "type": "file_contains",
           "path": "paper/experiment-protocol.md",
-          "contains": "partially supports RQ2 for filesystem and network policy, and does not yet"
+          "contains": "supports RQ2 for filesystem, network, tool-call, and persistence policy, and"
         },
         {
           "type": "file_contains",
           "path": "paper/experiment-protocol.md",
-          "contains": "answer RQ3, RQ5, or RQ6."
+          "contains": "partially supports RQ3/RQ5 only for controlled semantic-event representation."
+        },
+        {
+          "type": "file_contains",
+          "path": "paper/experiment-protocol.md",
+          "contains": "It does not yet answer RQ6."
         }
       ]
     },

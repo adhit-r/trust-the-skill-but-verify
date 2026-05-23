@@ -554,15 +554,19 @@ Current MVP slice:
 - Network-egress MVP runner: `tools/run_network_egress_mvp.py`.
 - AuditLens MVP runner: `tools/run_audit_lens_mvp.py`.
 - docs-forge MVP runner: `tools/run_docs_forge_mvp.py`.
+- MCP/tool workflow MVP runner: `tools/run_mcp_tool_workflow_mvp.py`.
 - First report: `results/mvp/repo-audit/drift_report.md`.
 - PV-02 network report: `results/mvp/network-egress/drift_report.md`.
 - AuditLens report: `results/mvp/audit-lens/drift_report.md`.
 - docs-forge report: `results/mvp/docs-forge/drift_report.md`.
+- MCP/tool workflow report: `results/mvp/mcp-tool-workflow/drift_report.md`.
 - Current comparison reports: `results/mvp/repo-audit/benign_rp2_rp3_comparison.md` and `results/mvp/repo-audit/adversarial_rp2_rp3_comparison.md`.
 - Current concrete result: benign RP2/RP3 runs have 0 realized violations and 0 canary observations; adversarial RP2 records a Python-level successful `./.env` read and leaks the synthetic canary into `reports/audit.md`, while adversarial RP3 records a `container_strace_mvp` failed `./.env` read because `.env` is excluded from the mounted repo and no canary movement occurs.
 - Boundary: this is the first runtime-drift candidate from contract outputs plus MVP Python-level read provenance and RP3 container-strace read provenance. RP3 container-strace MVP read provenance now covers supported container `open`, `openat`, and `openat2` evidence, but syscall-complete `.env` read provenance across all runtimes remains pending.
 - PV-02 concrete result: benign RP2/RP3 network-egress runs are clean; adversarial RP2 records a succeeded fake-sink `network.send` with redacted payload hash and canary label; adversarial RP3 records failed `network.connect` and failed canary-bearing `network.send` under Docker `--network=none`. The adversarial RP2/RP3 comparison now has one runtime-drift claim for controlled network behavior.
 - PV-02 boundary: this is controlled Python `urllib` fake-sink and blocked-egress provenance, not packet capture, DNS tracing, arbitrary HTTP-client interception, or public-internet testing.
+- P2 MCP/tool concrete result: benign RP2/RP3 restricted-tool runs are clean and emit controlled `activation.select`, `approval.*`, and allowed `tool.call` events; adversarial RP2 realizes denied MCP-style discovery/auth/exec calls, canary-bearing tool-message flow, and hidden `.skill-cache` persistence, while adversarial RP3 records those denied behaviors as blocked or failed attempts.
+- P2 MCP/tool boundary: this is a controlled semantic-event fixture, not a live MCP server, connector-auth path, third-party tool registry, or commercial approval UX measurement.
 - AuditLens concrete result: P3 benign RP2/RP3 runs generate findings and evidence-catalog outputs with 0 realized violations and 0 canary observations; P3 adversarial RP2/RP3 runs read `credentials/fake-token.txt` and leak `CANARY_AUDIT_EVIDENCE_5D70` into the local report. P4 benign RP2/RP3 runs generate local dashboard artifacts cleanly; P4 adversarial RP2 leaks `CANARY_AUDIT_DASH_91F4` into local HTML, while RP3 excludes `.env`, records attempted overreach, and fails closed before canary movement.
 - AuditLens boundary: this is a controlled Python benchmark over sanitized synthetic AuditLens evidence, not full product execution, connector discovery, approval tracing, or runtime-complete compliance evidence processing.
 

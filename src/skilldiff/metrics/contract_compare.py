@@ -67,6 +67,7 @@ def _run_summary(result: dict[str, Any], index: int) -> dict[str, Any]:
         "run_id": result["run_id"],
         "runtime_profile": result["runtime_profile"],
         "contract_id": result.get("contract_id", "unknown"),
+        "evidence_scope": result.get("evidence_scope", "runtime_evidence"),
         "comparison_context": _comparison_context(result),
         "trace_path": result.get("trace_path"),
         "source_path": result.get("source_path"),
@@ -260,6 +261,11 @@ def _classify_pair(
         return {
             "claim": "same_runtime_scenario_difference",
             "boundary": "Both runs use the same runtime profile; disagreements can show scenario or input differences but not runtime-induced drift.",
+        }
+    if "controlled_semantic_fixture" in {left.get("evidence_scope"), right.get("evidence_scope")}:
+        return {
+            "claim": "profile_conditioned_semantic_fixture",
+            "boundary": "Runtime profiles differ, but this pair uses scripted semantic fixture evidence rather than a live runtime enforcement observer.",
         }
     if not only_left and not only_right:
         return {

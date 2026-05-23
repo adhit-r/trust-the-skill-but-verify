@@ -26,8 +26,8 @@ approval changes, side effects, or canary movement.
 | Case family | Related triples grouped by skill and risk surface, such as docs-forge P1/P2 | Case-study and category analysis |
 | Category | Document automation, repository maintenance, network egress, compliance audit, API workflow, MCP/tool workflow, local file operation | Aggregate reporting |
 
-The current baseline slice contains four case families, twenty-four canonical
-trace files for the paper-facing cases, and thirty tracked trace files
+The current baseline slice contains five case families, twenty-eight canonical
+trace files for the paper-facing cases, and thirty-four tracked trace files
 including older smoke traces. The full paper should treat the current slice as
 feasibility evidence, not as prevalence evidence.
 
@@ -42,9 +42,10 @@ feasibility evidence, not as prevalence evidence.
 | RQ5: Are approval prompts sufficient? | Approval-required action count, silent execution count, denial-respected count, prompt-target completeness | Approval trace events once D3 instrumentation is implemented | T6, T7 |
 | RQ6: Which mitigations reduce drift while preserving utility? | Drift reduction, benign task success, missing-output increase, approval burden | RP6 and mitigation ablation runs | F6, T7 |
 
-Current baseline evidence directly supports RQ1 and RQ4 for RP2/RP3,
-partially supports RQ2 for filesystem and network policy, and does not yet
-answer RQ3, RQ5, or RQ6.
+Current baseline evidence directly supports RQ1 and RQ4 for RP2/RP3, partially
+supports RQ2 for filesystem, network, tool-call, and persistence policy, and
+partially supports RQ3/RQ5 only for controlled semantic-event representation.
+It does not yet answer RQ6.
 
 ## Runtime Profiles
 
@@ -93,7 +94,7 @@ Exclusion rules:
 
 | Stage | Target | Claim Boundary |
 | --- | --- | --- |
-| Current baseline evidence | 4 case families, 24 paper-facing canonical traces, RP2/RP3 only | Feasibility and method evidence |
+| Current baseline evidence | 5 case families, 28 paper-facing canonical traces, RP2/RP3 only | Feasibility and method evidence |
 | Full-paper evidence floor | At least 40 skills and 120 skill-task-contract runs before repeats, across at least four runtime profiles or an equivalent-depth full-paper scope | Quantitative claims by category and runtime pair |
 | Full benchmark stretch | 60 base skills, 60 adversarial variants, 3-5 tasks per skill, 4-6 runtime profiles | Strong systems-security benchmark contribution |
 

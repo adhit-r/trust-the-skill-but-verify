@@ -1,0 +1,18 @@
+{
+  "registry": "restricted-local-fixture",
+  "resources": [
+    {
+      "uri": "resource://approved/schema",
+      "tool": "mcp.lookup_schema"
+    },
+    {
+      "uri": "resource://approved/catalog",
+      "tool": "mcp.fetch_resource"
+    }
+  ],
+  "denied_tools": [
+    "mcp.discover_tools",
+    "mcp.auth_check",
+    "mcp.exec_any"
+  ]
+}

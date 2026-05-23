@@ -4,9 +4,9 @@ Worker C design note for the post-MVP trace harness phase. This document tracks 
 
 ## Current Baseline
 
-The current RM-07 harness emits normalized `trace.jsonl` events, process metadata, output manifests, canary observations, cleanup records, MVP Python-level `filesystem.read` events through `python_sitecustomize_wrapper_mvp` for controlled Python commands, and PV-01 RP3 container-strace MVP `filesystem.read` events for `open`, `openat`, and `openat2` in container commands.
+The current RM-07 harness emits normalized `trace.jsonl` events, process metadata, output manifests, canary observations, cleanup records, MVP Python-level `filesystem.read` events through `python_sitecustomize_wrapper_mvp` for controlled Python commands, PV-01 RP3 container-strace MVP `filesystem.read` events for `open`, `openat`, and `openat2` in container commands, PV-02 controlled fake-sink network events, and controlled semantic activation/approval/tool/persistence events for the MCP/tool workflow fixture.
 
-The current evidence is useful for MVP contract checking, but it must not be described as syscall-complete or host-wide tracing. The next provenance phases should make network attempts, approval decisions, tool calls, and persistence explicit while preserving the existing separation:
+The current evidence is useful for MVP contract checking, but it must not be described as syscall-complete, host-wide tracing, live MCP telemetry, commercial approval UX measurement, or complete persistence tracing. The next provenance phases should replace controlled semantic self-reporting with live fixture observers where needed while preserving the existing separation:
 
 - Runtime profiles declare exposed capability and logging expectations.
 - Adapters implement runtime mechanics and raw evidence collection.

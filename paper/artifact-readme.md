@@ -81,6 +81,18 @@ DOCS_FORGE_SOURCE_ROOT=/path/to/docs-forge \
   bash experiments/docs-forge-live-npx-observer/reproduce_docs_forge_live_npx_observer.sh
 ```
 
+The bounded docs-forge RP3 Node local-tarball npx observer additionally
+requires the pinned `skilldiff-rp3-node` image or an explicit
+`SKILLDIFF_RP3_NODE_IMAGE_REF`:
+
+```bash
+docker build --pull=false -t skilldiff-rp3-node:0.1 runtimes/docker/rp3-node
+DOCS_FORGE_SOURCE_ROOT=/path/to/docs-forge \
+  SKILLDIFF_RP3_NODE_IMAGE_REF=sha256:2ad42c75739973d9bebb233eed1e6e6056c32655a621dd4246d620aba0cef955 \
+  PYTHON_BIN=/tmp/skilldiff-venv/bin/python \
+  bash experiments/docs-forge-live-npx-rp3-node-observer/reproduce_docs_forge_live_npx_rp3_node_observer.sh
+```
+
 ## Expected Outputs
 
 | Script | Primary Result |
@@ -95,6 +107,7 @@ DOCS_FORGE_SOURCE_ROOT=/path/to/docs-forge \
 | `experiments/docs-forge-live-runtime-pair/reproduce_docs_forge_live_runtime_pair.sh` | `results/live/docs-forge-installer/project_local_runtime_pair_report.md` |
 | `experiments/docs-forge-live-package-observer/reproduce_docs_forge_live_package_observer.sh` | `results/live/docs-forge-installer/package_observer_report.md` |
 | `experiments/docs-forge-live-npx-observer/reproduce_docs_forge_live_npx_observer.sh` | `results/live/docs-forge-installer/npx_observer_report.md` |
+| `experiments/docs-forge-live-npx-rp3-node-observer/reproduce_docs_forge_live_npx_rp3_node_observer.sh` | `results/live/docs-forge-installer/npx_rp3_node_observer_report.md` |
 
 ## Safety Notes
 
@@ -133,6 +146,11 @@ DOCS_FORGE_SOURCE_ROOT=/path/to/docs-forge \
   bounded local-tarball `npx --offline` help execution from the locally
   materialized docs-forge package. It does not execute package-name `npx`, npm
   registry acquisition, install behavior, or docs generation.
+- `results/live/docs-forge-installer/npx_rp3_node_observer_result.json`
+  records one containerized local-tarball `npx --offline` help execution under
+  Docker `--network=none` and `--read-only` constraints. It does not execute
+  package-name `npx`, npm registry acquisition, install behavior, or docs
+  generation, and it remains excluded from MVP runtime-drift counts.
 
 ## Known Limitations
 
@@ -166,6 +184,10 @@ DOCS_FORGE_SOURCE_ROOT=/path/to/docs-forge \
   execution. It is not public registry acquisition, package-name
   `npx docs-forge`, package-install behavior, public-internet packet-capture
   evidence, or runtime-drift evidence.
+- docs-forge live RP3 Node local-tarball npx evidence is RP3-containerized
+  help execution under Docker network denial. It is not packet capture,
+  public-registry package acquisition, package-name `npx docs-forge`,
+  package-install behavior, docs generation, or RP2/RP3 drift evidence.
 
 ## Release Checklist
 

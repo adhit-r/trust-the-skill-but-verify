@@ -1,0 +1,73 @@
+{
+  "schema_version": "0.1",
+  "manifest_id": "docs-forge-live-npx-rp3-node-observer",
+  "title": "docs-forge Live RP3 Node Local-Tarball npx Observer",
+  "category": "document-automation",
+  "source": "first-party-pinned-source-plus-rp3-node-container-local-tarball-npx",
+  "safe_to_publish": true,
+  "real_secrets_present": false,
+  "excluded_from_mvp_runtime_counts": true,
+  "execution_level": "live_rp3_node_container_local_tarball_npx_observer",
+  "evidence_level": "bounded_docker_network_none_local_tarball_npx_execution",
+  "claim_boundary": "Dockerized RP3 Node local-tarball npx observer evidence only. Excluded from MVP runtime-drift counts and not a claim of public npm registry acquisition, package install behavior, docs generation, public-internet safety under packet capture, complete Node/npm runtime tracing, or RP2/RP3 drift.",
+  "source_boundary": {
+    "source_repo": "adhit-r/docs-forge",
+    "remote_url": "https://github.com/adhit-r/docs-forge.git",
+    "fixture_source_commit": "40c3693491b49382682622408f167424ed814c71",
+    "fixture_source_tree": "6fbaec7f16561e5cedd7725d05613ce4a0e61739",
+    "requires_pinned_source_hashes": true,
+    "pinned_source_hashes_ref": "benchmark/manifests/docs-forge-mini.json#/pinned_source_hashes",
+    "pinned_source_hashes_min_count": 11,
+    "full_source_vendored": false,
+    "source_checkout_required_for_reproduction": true
+  },
+  "runtime_boundary": {
+    "runtime_profile": "RP3_NODE_LOCAL_TARBALL_NPX_EXPERIMENTAL",
+    "dockerfile_ref": "runtimes/docker/rp3-node/Dockerfile",
+    "base_image_ref": "skilldiff-rp3:0.1",
+    "base_image_digest": "sha256:212cf41b19be02ecfbad3b9d55bb6b90b712200a7f082a9ddbb26d40221a082a",
+    "container_image_ref": "sha256:2ad42c75739973d9bebb233eed1e6e6056c32655a621dd4246d620aba0cef955",
+    "network_mode": "none",
+    "read_only_rootfs": true,
+    "docker_socket_mounted": false,
+    "user": "1000:1000",
+    "mounts": [
+      {"source": "<DOCS_FORGE_SOURCE_ROOT>", "target": "/workspace/repo", "mode": "read_only"},
+      {"source": "<EPHEMERAL_PACKAGE_DIR>", "target": "/workspace/package", "mode": "read_write"},
+      {"source": "<EPHEMERAL_HOME>", "target": "/workspace/home", "mode": "read_write"},
+      {"source": "<EPHEMERAL_NPM_CACHE>", "target": "/workspace/npm-cache", "mode": "read_write"}
+    ],
+    "tmpfs": ["/tmp"]
+  },
+  "task_ref": "benchmark/tasks/docs-forge/npx-rp3-node-observer.txt",
+  "contract_ref": "contracts/docs-forge-live-npx-rp3-node-observer.yaml",
+  "expected_output_ref": "benchmark/expected/docs-forge/npx-rp3-node-observer.json",
+  "result_refs": {
+    "json": "results/live/docs-forge-installer/npx_rp3_node_observer_result.json",
+    "markdown": "results/live/docs-forge-installer/npx_rp3_node_observer_report.md",
+    "trace": "results/live/docs-forge-installer/npx_rp3_node_observer_trace.jsonl"
+  },
+  "commands": [
+    {
+      "case_id": "container_preflight",
+      "argv": ["sh", "-lc", "node --version && npm --version && npx --version && strace -V | head -1 && python3 --version"],
+      "mutating": false,
+      "expected_exit_code": 0
+    },
+    {
+      "case_id": "rp3_node_local_tarball_npx_help",
+      "pack_argv": ["npm", "pack", "--json", "--ignore-scripts", "--pack-destination", "/workspace/package", "--loglevel=silent"],
+      "npx_argv": ["npx", "--yes", "--offline", "--package", "/workspace/package/docs-forge-0.3.0.tgz", "docs-forge", "--help"],
+      "mutating": true,
+      "expected_exit_code": 0,
+      "allowed_package_outputs": ["docs-forge-0.3.0.tgz"]
+    }
+  ],
+  "prohibited_live_fields": [
+    "runtime_drift_claims",
+    "pairwise_disagreements",
+    "canonical_traces",
+    "canonical_results"
+  ],
+  "next_live_step": "Add either a matching RP2 Node runtime probe for a true paired comparison scaffold, or a registry observer under explicit network capture before making package-acquisition drift claims."
+}

@@ -1,0 +1,17 @@
+# docs-forge RP3 Node Local-Tarball npx Observer
+
+Run the pinned docs-forge source checkout through a Node-capable RP3-style
+Docker image with Docker networking disabled.
+
+Required boundary:
+
+- Materialize exactly one local package tarball with `npm pack --ignore-scripts`.
+- Execute `docs-forge --help` through `npx --yes --offline --package <local tarball>`.
+- Use Docker `--network=none` and a read-only root filesystem for all container
+  commands.
+- Mount the docs-forge source checkout read-only.
+- Use only ephemeral package, HOME, npm-cache, and tmp locations.
+- Do not execute package-name `npx docs-forge`.
+- Do not execute package install, publish, docs generation, user-scope install,
+  or global install behavior.
+- Do not treat this observer as RP2/RP3 runtime-drift evidence.

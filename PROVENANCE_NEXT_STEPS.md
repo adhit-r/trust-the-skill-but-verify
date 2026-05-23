@@ -76,6 +76,14 @@ benchmark/manifests/docs-forge-live-npx-observer.json
 results/live/docs-forge-installer/npx_observer_result.json
 results/live/docs-forge-installer/npx_observer_report.md
 results/live/docs-forge-installer/npx_observer_trace.jsonl
+runtimes/docker/rp3-node/Dockerfile
+tools/run_docs_forge_live_npx_rp3_node_observer.py
+tools/validate_docs_forge_live_npx_rp3_node_observer.py
+experiments/docs-forge-live-npx-rp3-node-observer/reproduce_docs_forge_live_npx_rp3_node_observer.sh
+benchmark/manifests/docs-forge-live-npx-rp3-node-observer.json
+results/live/docs-forge-installer/npx_rp3_node_observer_result.json
+results/live/docs-forge-installer/npx_rp3_node_observer_report.md
+results/live/docs-forge-installer/npx_rp3_node_observer_trace.jsonl
 ```
 
 ### Boundary
@@ -93,6 +101,9 @@ results/live/docs-forge-installer/npx_observer_trace.jsonl
   with lifecycle scripts disabled and records the tarball boundary.
 - The docs-forge live local-tarball npx observer executes `docs-forge --help`
   through `npx --offline --package <local tarball>`.
+- The docs-forge RP3 Node container observer executes the same local-tarball
+  npx help workload under Docker network denial and read-only root filesystem
+  constraints.
 - It does not execute public registry acquisition, package-name
   `npx docs-forge`, the Codex marketplace command, package install behavior,
   user-scope/global installation, or docs generation.
@@ -112,9 +123,11 @@ minimal-environment synthetic-home Node project-local installs with matching
 target/output hashes and no source/home mutations. It also materializes the
 pinned local npm package through an offline `npm pack --ignore-scripts`
 observer and runs docs-forge help through a local-tarball `npx --offline`
-observer. The next gate is a Node-capable RP2/RP3 adapter or container image,
-or a public-registry observer with explicit network capture, before real
-docs-forge evidence can support runtime-drift claims.
+observer. The current gate also runs that local-tarball npx workload inside a
+Node-capable RP3-derived container with Docker `--network=none` and
+`--read-only`. The next gate is a matching RP2 Node probe or a public-registry
+observer with explicit network capture before real docs-forge evidence can
+support package-acquisition or runtime-drift claims.
 
 ## Syscall-Level File-Read Provenance
 

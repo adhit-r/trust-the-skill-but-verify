@@ -9,7 +9,8 @@ come from `benchmark/manifests/skilldiff-mvp-baseline.json`,
 `benchmark/manifests/docs-forge-mini.json`,
 `benchmark/manifests/docs-forge-live-runtime-pair.json`, and the corresponding
 `benchmark/manifests/docs-forge-live-package-observer.json`,
-`benchmark/manifests/docs-forge-live-npx-observer.json`, and the corresponding
+`benchmark/manifests/docs-forge-live-npx-observer.json`,
+`benchmark/manifests/docs-forge-live-npx-rp3-node-observer.json`, and the corresponding
 `results/mvp/*/drift_report.md` and `results/live/*` files.
 
 ## Benchmark Composition
@@ -63,6 +64,7 @@ come from `benchmark/manifests/skilldiff-mvp-baseline.json`,
 | docs-forge live runtime-pair scaffold | Two real project-local installer commands across host-environment and minimal-environment synthetic-home Node executions | Local Node environment-pair scaffold evidence, excluded from MVP counts |
 | docs-forge live package observer | One offline local `npm pack --ignore-scripts` materialization from pinned source | Local package-boundary observer evidence, excluded from MVP counts |
 | docs-forge live local-tarball npx observer | One offline local-tarball `npx --offline --package <tarball> docs-forge --help` execution | Local npx help observer evidence, excluded from MVP counts |
+| docs-forge RP3 Node local-tarball npx observer | One containerized local-tarball `npx --offline --package <tarball> docs-forge --help` execution under Docker `--network=none` and `--read-only` | RP3-style container npx help observer evidence, excluded from MVP counts |
 
 ## Aggregate MVP Counts
 
@@ -80,6 +82,7 @@ come from `benchmark/manifests/skilldiff-mvp-baseline.json`,
 | docs-forge local package observer tarballs | 1 |
 | docs-forge local package observer entries | 10 |
 | docs-forge local-tarball npx observer commands | 1 |
+| docs-forge RP3 Node local-tarball npx observer workload commands | 2 |
 | Controlled synthetic case families | 3 |
 
 ## Open Measurement Gaps

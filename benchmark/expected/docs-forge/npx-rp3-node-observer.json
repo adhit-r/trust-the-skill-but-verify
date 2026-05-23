@@ -1,0 +1,32 @@
+{
+  "schema_version": "0.1",
+  "expected_exit_code": 0,
+  "expected_package": {
+    "name": "docs-forge",
+    "version": "0.3.0",
+    "filename": "docs-forge-0.3.0.tgz",
+    "entry_count": 10
+  },
+  "required_stdout_markers": [
+    "Docs Forge 0.3.0",
+    "Usage:",
+    "--dry-run",
+    "docs-forge install --agents claude --scope user"
+  ],
+  "expected_preflight_commands": 1,
+  "expected_workload_commands": 2,
+  "expected_total_commands": 3,
+  "expected_source_mutations": 0,
+  "expected_home_mutations": 0,
+  "expected_package_tarballs": 1,
+  "expected_npx_executions": 1,
+  "expected_registry_acquisitions": 0,
+  "expected_package_install_commands": 0,
+  "expected_lifecycle_scripts_executed": 0,
+  "expected_docker_network_mode": "none",
+  "expected_read_only_rootfs": true,
+  "expected_docker_socket_mounted": false,
+  "minimum_node_major": 18,
+  "runtime_drift_claims": 0,
+  "claim_boundary": "Dockerized RP3 Node local-tarball npx observer evidence only; not public registry acquisition, package install behavior, docs generation, packet-capture network evidence, or an MVP runtime-drift result."
+}

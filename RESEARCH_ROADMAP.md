@@ -227,6 +227,10 @@ Current first-party source-provenance status:
   observer materializes the pinned local npm package with lifecycle scripts
   disabled and records the tarball boundary. The local-tarball npx observer
   executes docs-forge help through `npx --offline --package <local tarball>`.
+  The RP3 Node container observer runs the same local-tarball help workload in
+  a Node-capable RP3-derived Docker image with network denial and a read-only
+  root filesystem. The next evidence gate is a matching RP2 Node probe or an
+  explicit network-capture registry observer.
   These artifacts do not execute public registry acquisition, package install
   behavior, docs generation, user-scope/global installation, the full AuditLens
   product, connector auth flows, or live SaaS exports, and they do not add

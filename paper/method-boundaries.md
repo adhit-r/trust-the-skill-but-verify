@@ -38,6 +38,9 @@ state. Use it before turning the current evidence artifacts into paper prose.
 - A bounded docs-forge live local-tarball `npx` observer can execute
   `docs-forge --help` through `npx --offline --package <local tarball>` without
   public registry acquisition or install behavior.
+- A bounded docs-forge RP3 Node container observer can execute the same
+  local-tarball `npx` help workload under Docker network denial and read-only
+  root filesystem constraints without changing MVP runtime-drift counts.
 
 ## What Current Evidence Does Not Prove
 
@@ -73,6 +76,7 @@ state. Use it before turning the current evidence artifacts into paper prose.
 | docs-forge live runtime-pair scaffold | Host-environment and minimal-environment synthetic-home Node executions of the same project-local installer command | Bounded local Node environment-pair comparison with matching target/output hashes, excluded from MVP counts | RP2/RP3 drift evidence, commercial runtime evidence, docs generation, `npx` package acquisition, or complete Node/runtime tracing |
 | docs-forge live package observer | Local `npm pack --ignore-scripts` materialization of the pinned source package into an ephemeral package directory | Offline package-boundary evidence for the tarball and expected entry list, excluded from MVP counts | `npx` execution, registry acquisition, install behavior, public-internet safety under packet capture, or runtime-drift evidence |
 | docs-forge live local-tarball npx observer | Local `npx --yes --offline --package <tarball> docs-forge --help` after local package materialization | Bounded offline local-tarball npx help evidence, excluded from MVP counts | Public registry acquisition, package-name `npx docs-forge`, install behavior, docs generation, packet-capture network evidence, or runtime-drift evidence |
+| docs-forge RP3 Node local-tarball npx observer | Containerized `npx --yes --offline --package <tarball> docs-forge --help` in `skilldiff-rp3-node` with Docker `--network=none` and `--read-only` | Bounded RP3-style container npx help evidence, excluded from MVP counts | Packet capture, public registry acquisition, package-name `npx docs-forge`, install behavior, docs generation, or RP2/RP3 drift evidence |
 
 ## Network Evidence Boundary
 
@@ -116,6 +120,9 @@ source/home mutation. The docs-forge live package observer materializes the
 local npm package from pinned source with lifecycle scripts disabled and records
 the expected tarball boundary. The docs-forge local-tarball npx observer then
 executes `docs-forge --help` through `npx --offline --package <local tarball>`.
+The docs-forge RP3 Node container observer runs the same local-tarball help
+workload in a Node-capable RP3-derived image with Docker network denial and a
+read-only root filesystem.
 These artifacts do not support claims about public registry package
 acquisition, package-name `npx docs-forge`, full docs generation,
 global/user-scope installation, RP2/RP3 runtime drift, the full AuditLens

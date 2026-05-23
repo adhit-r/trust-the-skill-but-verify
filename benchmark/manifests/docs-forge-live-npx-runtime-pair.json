@@ -1,0 +1,85 @@
+{
+  "schema_version": "0.1",
+  "manifest_id": "docs-forge-live-npx-runtime-pair",
+  "title": "docs-forge Live npx Runtime-Pair Scaffold",
+  "category": "document-automation",
+  "source": "first-party-pinned-source-plus-local-tarball-npx-runtime-pair",
+  "safe_to_publish": true,
+  "real_secrets_present": false,
+  "excluded_from_mvp_runtime_counts": true,
+  "execution_level": "live_node_cli_local_tarball_npx_runtime_pair_scaffold",
+  "evidence_level": "bounded_local_tarball_npx_pair_comparison",
+  "claim_boundary": "Live local-tarball npx runtime-pair scaffold evidence only. Excluded from MVP runtime-drift counts and not a claim of public npm registry acquisition, package install behavior, docs generation, public-internet safety under packet capture, complete Node/npm runtime tracing, or RP2/RP3 drift.",
+  "source_boundary": {
+    "source_repo": "adhit-r/docs-forge",
+    "remote_url": "https://github.com/adhit-r/docs-forge.git",
+    "fixture_source_commit": "40c3693491b49382682622408f167424ed814c71",
+    "fixture_source_tree": "6fbaec7f16561e5cedd7725d05613ce4a0e61739",
+    "requires_pinned_source_hashes": true,
+    "pinned_source_hashes_ref": "benchmark/manifests/docs-forge-mini.json#/pinned_source_hashes",
+    "pinned_source_hashes_min_count": 11,
+    "full_source_vendored": false,
+    "source_checkout_required_for_reproduction": true
+  },
+  "runtime_profiles": [
+    {
+      "profile_id": "LIVE_NODE_NPX_LOCAL_TARBALL_SYNTHETIC_HOME",
+      "source_manifest_ref": "benchmark/manifests/docs-forge-live-npx-observer.json"
+    },
+    {
+      "profile_id": "RP3_NODE_LOCAL_TARBALL_NPX_EXPERIMENTAL",
+      "source_manifest_ref": "benchmark/manifests/docs-forge-live-npx-rp3-node-observer.json",
+      "container_image_ref": "sha256:2ad42c75739973d9bebb233eed1e6e6056c32655a621dd4246d620aba0cef955"
+    }
+  ],
+  "task_ref": "benchmark/tasks/docs-forge/npx-runtime-pair.txt",
+  "contract_ref": "contracts/docs-forge-live-npx-runtime-pair.yaml",
+  "expected_output_ref": "benchmark/expected/docs-forge/npx-runtime-pair.json",
+  "child_result_refs": {
+    "LIVE_NODE_NPX_LOCAL_TARBALL_SYNTHETIC_HOME": {
+      "json": "results/live/docs-forge-installer/npx_runtime_pair_rp2_result.json",
+      "markdown": "results/live/docs-forge-installer/npx_runtime_pair_rp2_report.md",
+      "trace": "results/live/docs-forge-installer/npx_runtime_pair_rp2_trace.jsonl"
+    },
+    "RP3_NODE_LOCAL_TARBALL_NPX_EXPERIMENTAL": {
+      "json": "results/live/docs-forge-installer/npx_runtime_pair_rp3_result.json",
+      "markdown": "results/live/docs-forge-installer/npx_runtime_pair_rp3_report.md",
+      "trace": "results/live/docs-forge-installer/npx_runtime_pair_rp3_trace.jsonl"
+    }
+  },
+  "result_refs": {
+    "json": "results/live/docs-forge-installer/npx_runtime_pair_result.json",
+    "markdown": "results/live/docs-forge-installer/npx_runtime_pair_report.md"
+  },
+  "required_pair_checks": [
+    "both_child_results_passed",
+    "same_exit_code",
+    "same_package_identity",
+    "same_package_entry_count",
+    "same_package_file_list",
+    "same_npx_stdout_sha256",
+    "no_missing_stdout_markers",
+    "no_source_mutations",
+    "no_home_mutations",
+    "no_registry_acquisitions",
+    "no_package_install_commands",
+    "no_lifecycle_scripts",
+    "no_network_events",
+    "no_runtime_drift_claims_added"
+  ],
+  "informational_difference_fields": [
+    "node_version",
+    "npm_version",
+    "npx_version",
+    "npm_cache_mutation_count",
+    "tarball_sha256",
+    "pack_stdout_sha256"
+  ],
+  "prohibited_live_fields": [
+    "runtime_drift_claims",
+    "pairwise_disagreements",
+    "canonical_traces",
+    "canonical_results"
+  ],
+  "next_live_step": "Add an explicit-network registry observer or promote the pair into a runtime-drift candidate only after adversarial npx/package-acquisition variants and comparison invariants are defined."
+}

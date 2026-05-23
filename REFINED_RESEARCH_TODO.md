@@ -89,6 +89,11 @@ evidence strength or be removed.
     runs the local-tarball npx help workload in a Node-capable RP3-derived
     Docker image with `--network=none` and `--read-only`, and writes
     `results/live/docs-forge-installer/npx_rp3_node_observer_result.json`.
+17. [x] Add bounded docs-forge live npx runtime-pair scaffold evidence.
+    Done: `experiments/docs-forge-live-npx-runtime-pair/reproduce_docs_forge_live_npx_runtime_pair.sh`
+    compares host Node synthetic-home and RP3 Node container local-tarball npx
+    observers, verifies zero required pair-check failures, and writes
+    `results/live/docs-forge-installer/npx_runtime_pair_result.json`.
 
 ## P1: Claim Contract And Paper Spine
 
@@ -275,9 +280,9 @@ evidence strength or be removed.
 P0 and P1 are now implementation-complete for the current evidence and paper
 spine gates. The next concrete implementation sequence is:
 
-1. Add a matching RP2 Node probe for a true paired live comparison scaffold, or
-   add a public-registry observer with explicit network capture, before making
-   live docs-forge package-acquisition or runtime-drift claims.
+1. Add a public-registry observer with explicit network capture, or add
+   adversarial npx/package-acquisition variants, before making live docs-forge
+   package-acquisition or runtime-drift claims.
 2. Close P2/P3 coverage gaps for activation, approval, tool/MCP, persistence,
    and at least four runtime profiles.
 3. Scale P4 to 40+ skills and 120+ skill-task-contract runs before repeats.

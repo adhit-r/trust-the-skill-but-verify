@@ -32,6 +32,18 @@ done < <(git ls-files -z '*.json')
 "$PYTHON_BIN" tools/validate_traces.py results/live/docs-forge-installer/npx_observer_trace.jsonl
 "$PYTHON_BIN" tools/validate_docs_forge_live_npx_rp3_node_observer.py
 "$PYTHON_BIN" tools/validate_traces.py results/live/docs-forge-installer/npx_rp3_node_observer_trace.jsonl
+"$PYTHON_BIN" tools/validate_docs_forge_live_npx_observer.py \
+  --result results/live/docs-forge-installer/npx_runtime_pair_rp2_result.json \
+  --report results/live/docs-forge-installer/npx_runtime_pair_rp2_report.md \
+  --trace results/live/docs-forge-installer/npx_runtime_pair_rp2_trace.jsonl
+"$PYTHON_BIN" tools/validate_docs_forge_live_npx_rp3_node_observer.py \
+  --result results/live/docs-forge-installer/npx_runtime_pair_rp3_result.json \
+  --report results/live/docs-forge-installer/npx_runtime_pair_rp3_report.md \
+  --trace results/live/docs-forge-installer/npx_runtime_pair_rp3_trace.jsonl
+"$PYTHON_BIN" tools/validate_docs_forge_live_npx_runtime_pair.py
+"$PYTHON_BIN" tools/validate_traces.py \
+  results/live/docs-forge-installer/npx_runtime_pair_rp2_trace.jsonl \
+  results/live/docs-forge-installer/npx_runtime_pair_rp3_trace.jsonl
 "$PYTHON_BIN" tools/validate_claim_ledger.py
 "$PYTHON_BIN" tools/check_no_local_paths.py
 "$PYTHON_BIN" tools/validate_traces.py results/raw/*/trace.jsonl

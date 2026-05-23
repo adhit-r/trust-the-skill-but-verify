@@ -93,6 +93,16 @@ DOCS_FORGE_SOURCE_ROOT=/path/to/docs-forge \
   bash experiments/docs-forge-live-npx-rp3-node-observer/reproduce_docs_forge_live_npx_rp3_node_observer.sh
 ```
 
+The bounded docs-forge live npx runtime-pair scaffold also requires the pinned
+docs-forge source checkout and RP3 Node image:
+
+```bash
+DOCS_FORGE_SOURCE_ROOT=/path/to/docs-forge \
+  SKILLDIFF_RP3_NODE_IMAGE_REF=sha256:2ad42c75739973d9bebb233eed1e6e6056c32655a621dd4246d620aba0cef955 \
+  PYTHON_BIN=/tmp/skilldiff-venv/bin/python \
+  bash experiments/docs-forge-live-npx-runtime-pair/reproduce_docs_forge_live_npx_runtime_pair.sh
+```
+
 ## Expected Outputs
 
 | Script | Primary Result |
@@ -108,6 +118,7 @@ DOCS_FORGE_SOURCE_ROOT=/path/to/docs-forge \
 | `experiments/docs-forge-live-package-observer/reproduce_docs_forge_live_package_observer.sh` | `results/live/docs-forge-installer/package_observer_report.md` |
 | `experiments/docs-forge-live-npx-observer/reproduce_docs_forge_live_npx_observer.sh` | `results/live/docs-forge-installer/npx_observer_report.md` |
 | `experiments/docs-forge-live-npx-rp3-node-observer/reproduce_docs_forge_live_npx_rp3_node_observer.sh` | `results/live/docs-forge-installer/npx_rp3_node_observer_report.md` |
+| `experiments/docs-forge-live-npx-runtime-pair/reproduce_docs_forge_live_npx_runtime_pair.sh` | `results/live/docs-forge-installer/npx_runtime_pair_report.md` |
 
 ## Safety Notes
 
@@ -151,6 +162,11 @@ DOCS_FORGE_SOURCE_ROOT=/path/to/docs-forge \
   Docker `--network=none` and `--read-only` constraints. It does not execute
   package-name `npx`, npm registry acquisition, install behavior, or docs
   generation, and it remains excluded from MVP runtime-drift counts.
+- `results/live/docs-forge-installer/npx_runtime_pair_result.json` records a
+  bounded comparison between the host Node synthetic-home npx observer and the
+  RP3 Node container npx observer. Required pair checks pass, informational
+  Node/npm/cache/tarball differences are not treated as drift, and the result
+  remains excluded from MVP runtime-drift counts.
 
 ## Known Limitations
 
@@ -188,6 +204,10 @@ DOCS_FORGE_SOURCE_ROOT=/path/to/docs-forge \
   help execution under Docker network denial. It is not packet capture,
   public-registry package acquisition, package-name `npx docs-forge`,
   package-install behavior, docs generation, or RP2/RP3 drift evidence.
+- docs-forge live npx runtime-pair evidence is a scaffold comparing benign
+  local-tarball help behavior only. It is not an adversarial npx/package
+  acquisition study, public-registry evidence, packet-capture evidence, or
+  runtime-drift evidence.
 
 ## Release Checklist
 

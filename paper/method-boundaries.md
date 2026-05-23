@@ -41,6 +41,10 @@ state. Use it before turning the current evidence artifacts into paper prose.
 - A bounded docs-forge RP3 Node container observer can execute the same
   local-tarball `npx` help workload under Docker network denial and read-only
   root filesystem constraints without changing MVP runtime-drift counts.
+- A bounded docs-forge live npx runtime-pair scaffold can compare the host Node
+  synthetic-home observer and RP3 Node container observer on required safety
+  invariants for the benign help workload, while keeping Node/npm/cache/tarball
+  differences informational.
 
 ## What Current Evidence Does Not Prove
 
@@ -77,6 +81,7 @@ state. Use it before turning the current evidence artifacts into paper prose.
 | docs-forge live package observer | Local `npm pack --ignore-scripts` materialization of the pinned source package into an ephemeral package directory | Offline package-boundary evidence for the tarball and expected entry list, excluded from MVP counts | `npx` execution, registry acquisition, install behavior, public-internet safety under packet capture, or runtime-drift evidence |
 | docs-forge live local-tarball npx observer | Local `npx --yes --offline --package <tarball> docs-forge --help` after local package materialization | Bounded offline local-tarball npx help evidence, excluded from MVP counts | Public registry acquisition, package-name `npx docs-forge`, install behavior, docs generation, packet-capture network evidence, or runtime-drift evidence |
 | docs-forge RP3 Node local-tarball npx observer | Containerized `npx --yes --offline --package <tarball> docs-forge --help` in `skilldiff-rp3-node` with Docker `--network=none` and `--read-only` | Bounded RP3-style container npx help evidence, excluded from MVP counts | Packet capture, public registry acquisition, package-name `npx docs-forge`, install behavior, docs generation, or RP2/RP3 drift evidence |
+| docs-forge live npx runtime-pair scaffold | Host Node synthetic-home and RP3 Node container executions of local-tarball `npx --offline` help | Bounded pair comparison for benign help workload safety invariants, excluded from MVP counts | Runtime-drift claim, adversarial npx/package-acquisition study, public registry evidence, or packet-capture evidence |
 
 ## Network Evidence Boundary
 
@@ -122,7 +127,10 @@ the expected tarball boundary. The docs-forge local-tarball npx observer then
 executes `docs-forge --help` through `npx --offline --package <local tarball>`.
 The docs-forge RP3 Node container observer runs the same local-tarball help
 workload in a Node-capable RP3-derived image with Docker network denial and a
-read-only root filesystem.
+read-only root filesystem. The docs-forge live npx runtime-pair scaffold then
+compares the host Node and RP3 Node observer outputs and required safety
+invariants without treating informational Node/npm/cache/tarball differences
+as drift.
 These artifacts do not support claims about public registry package
 acquisition, package-name `npx docs-forge`, full docs generation,
 global/user-scope installation, RP2/RP3 runtime drift, the full AuditLens

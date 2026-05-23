@@ -84,6 +84,14 @@ benchmark/manifests/docs-forge-live-npx-rp3-node-observer.json
 results/live/docs-forge-installer/npx_rp3_node_observer_result.json
 results/live/docs-forge-installer/npx_rp3_node_observer_report.md
 results/live/docs-forge-installer/npx_rp3_node_observer_trace.jsonl
+tools/run_docs_forge_live_npx_runtime_pair.py
+tools/validate_docs_forge_live_npx_runtime_pair.py
+experiments/docs-forge-live-npx-runtime-pair/reproduce_docs_forge_live_npx_runtime_pair.sh
+benchmark/manifests/docs-forge-live-npx-runtime-pair.json
+results/live/docs-forge-installer/npx_runtime_pair_result.json
+results/live/docs-forge-installer/npx_runtime_pair_report.md
+results/live/docs-forge-installer/npx_runtime_pair_rp2_trace.jsonl
+results/live/docs-forge-installer/npx_runtime_pair_rp3_trace.jsonl
 ```
 
 ### Boundary
@@ -104,6 +112,9 @@ results/live/docs-forge-installer/npx_rp3_node_observer_trace.jsonl
 - The docs-forge RP3 Node container observer executes the same local-tarball
   npx help workload under Docker network denial and read-only root filesystem
   constraints.
+- The docs-forge live npx runtime-pair scaffold compares the host Node
+  synthetic-home observer and RP3 Node container observer on required safety
+  invariants for the benign help workload.
 - It does not execute public registry acquisition, package-name
   `npx docs-forge`, the Codex marketplace command, package install behavior,
   user-scope/global installation, or docs generation.
@@ -125,9 +136,11 @@ pinned local npm package through an offline `npm pack --ignore-scripts`
 observer and runs docs-forge help through a local-tarball `npx --offline`
 observer. The current gate also runs that local-tarball npx workload inside a
 Node-capable RP3-derived container with Docker `--network=none` and
-`--read-only`. The next gate is a matching RP2 Node probe or a public-registry
-observer with explicit network capture before real docs-forge evidence can
-support package-acquisition or runtime-drift claims.
+`--read-only`, then compares host Node and RP3 Node local-tarball npx evidence
+with zero required pair-check failures. The next gate is a public-registry
+observer with explicit network capture, or adversarial npx/package-acquisition
+variants, before real docs-forge evidence can support package-acquisition or
+runtime-drift claims.
 
 ## Syscall-Level File-Read Provenance
 

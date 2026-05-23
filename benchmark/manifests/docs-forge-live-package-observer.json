@@ -44,5 +44,5 @@
     "canonical_traces",
     "canonical_results"
   ],
-  "next_live_step": "After local package, local-tarball npx, and RP3 Node container observer evidence remain clean, add a matching RP2 Node probe or a registry observer under explicit network capture before making package-acquisition drift claims."
+  "next_live_step": "After local package, local-tarball npx, RP3 Node container observer, and npx runtime-pair scaffold evidence remain clean, add a registry observer under explicit network capture or adversarial npx/package-acquisition variants before making package-acquisition drift claims."
 }

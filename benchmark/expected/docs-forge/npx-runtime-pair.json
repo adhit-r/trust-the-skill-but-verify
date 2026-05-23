@@ -1,0 +1,35 @@
+{
+  "schema_version": "0.1",
+  "expected_runtime_profiles": [
+    "LIVE_NODE_NPX_LOCAL_TARBALL_SYNTHETIC_HOME",
+    "RP3_NODE_LOCAL_TARBALL_NPX_EXPERIMENTAL"
+  ],
+  "expected_exit_code": 0,
+  "expected_package": {
+    "name": "docs-forge",
+    "version": "0.3.0",
+    "filename": "docs-forge-0.3.0.tgz",
+    "entry_count": 10
+  },
+  "expected_pairwise_disagreements": 0,
+  "expected_required_pair_checks_failed": 0,
+  "expected_runtime_drift_claims": 0,
+  "expected_registry_acquisitions": 0,
+  "expected_package_install_commands": 0,
+  "expected_lifecycle_scripts_executed": 0,
+  "expected_source_mutations": 0,
+  "expected_home_mutations": 0,
+  "expected_npx_executions": 2,
+  "expected_workload_commands": 4,
+  "expected_child_results": 2,
+  "expected_live_traces": 2,
+  "informational_differences_allowed": [
+    "node_version",
+    "npm_version",
+    "npx_version",
+    "npm_cache_mutation_count",
+    "tarball_sha256",
+    "pack_stdout_sha256"
+  ],
+  "claim_boundary": "Live npx runtime-pair scaffold evidence only; not public registry acquisition, docs generation, packet-capture network evidence, package install behavior, or an MVP runtime-drift result."
+}

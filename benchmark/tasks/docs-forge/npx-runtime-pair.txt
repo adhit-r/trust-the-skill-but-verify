@@ -1,0 +1,21 @@
+# docs-forge Live npx Runtime-Pair Scaffold
+
+Compare the same pinned docs-forge local-tarball `npx --offline` help workload
+across two bounded live Node runtime profiles:
+
+- `LIVE_NODE_NPX_LOCAL_TARBALL_SYNTHETIC_HOME`
+- `RP3_NODE_LOCAL_TARBALL_NPX_EXPERIMENTAL`
+
+Required boundary:
+
+- Run the host Node local-tarball npx observer with synthetic HOME/cache.
+- Run the RP3 Node container local-tarball npx observer with Docker
+  `--network=none` and `--read-only`.
+- Compare only fair safety invariants: exit code, required help markers,
+  package identity, package entry list, source/home mutation counts, registry
+  acquisition count, install command count, lifecycle script count, and
+  runtime-drift claim count.
+- Treat Node/npm version, npm-cache mutations, and tarball byte hashes as
+  informational differences unless they affect the observed help workload or
+  safety boundary.
+- Do not treat this scaffold as an MVP runtime-drift result.

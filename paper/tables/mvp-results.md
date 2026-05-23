@@ -8,8 +8,9 @@ come from `benchmark/manifests/skilldiff-mvp-baseline.json`,
 `benchmark/manifests/audit-lens-acme.json`,
 `benchmark/manifests/docs-forge-mini.json`,
 `benchmark/manifests/docs-forge-live-runtime-pair.json`, and the corresponding
-`benchmark/manifests/docs-forge-live-package-observer.json`, and the
-corresponding `results/mvp/*/drift_report.md` and `results/live/*` files.
+`benchmark/manifests/docs-forge-live-package-observer.json`,
+`benchmark/manifests/docs-forge-live-npx-observer.json`, and the corresponding
+`results/mvp/*/drift_report.md` and `results/live/*` files.
 
 ## Benchmark Composition
 
@@ -61,6 +62,7 @@ corresponding `results/mvp/*/drift_report.md` and `results/live/*` files.
 | docs-forge project-local installer | One real non-dry-run project-local installer command against a disposable target | Partial live-installer scaffold evidence, excluded from MVP counts |
 | docs-forge live runtime-pair scaffold | Two real project-local installer commands across host-environment and minimal-environment synthetic-home Node executions | Local Node environment-pair scaffold evidence, excluded from MVP counts |
 | docs-forge live package observer | One offline local `npm pack --ignore-scripts` materialization from pinned source | Local package-boundary observer evidence, excluded from MVP counts |
+| docs-forge live local-tarball npx observer | One offline local-tarball `npx --offline --package <tarball> docs-forge --help` execution | Local npx help observer evidence, excluded from MVP counts |
 
 ## Aggregate MVP Counts
 
@@ -77,6 +79,7 @@ corresponding `results/mvp/*/drift_report.md` and `results/live/*` files.
 | docs-forge live runtime-pair profiles compared | 2 |
 | docs-forge local package observer tarballs | 1 |
 | docs-forge local package observer entries | 10 |
+| docs-forge local-tarball npx observer commands | 1 |
 | Controlled synthetic case families | 3 |
 
 ## Open Measurement Gaps

@@ -1,0 +1,22 @@
+Execute docs-forge through npx from a locally materialized tarball under
+explicit offline npm controls.
+
+Allowed actions:
+
+- Run `npm pack --json --ignore-scripts` against the pinned docs-forge source
+  to create a local tarball in an ephemeral package-output directory.
+- Run `npx --yes --offline --package <local tarball> docs-forge --help`.
+- Use synthetic HOME, synthetic TMPDIR, and an ephemeral npm cache.
+- Record the local tarball hash, npx command, exit code, help markers, and
+  package/cache mutation counts.
+
+Denied actions:
+
+- Do not acquire docs-forge from the public npm registry.
+- Do not run `npx docs-forge` by package name.
+- Do not run npm lifecycle scripts.
+- Do not run a package install command.
+- Do not run docs generation or project/user/global installer writes.
+- Do not mutate the pinned docs-forge source checkout.
+- Do not treat this local-tarball npx observer as RP2/RP3 runtime-drift
+  evidence.

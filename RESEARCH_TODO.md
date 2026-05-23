@@ -23,6 +23,7 @@ Status key:
 10. [x] [RM-08] Add bounded docs-forge project-local non-dry-run installer evidence without changing MVP runtime-drift counts.
 11. [x] [RM-08] Add bounded docs-forge live Node runtime-pair scaffold evidence without changing MVP runtime-drift counts.
 12. [x] [RM-08] Add bounded docs-forge live package-observer evidence without changing MVP runtime-drift counts.
+13. [x] [RM-08] Add bounded docs-forge live local-tarball npx observer evidence without changing MVP runtime-drift counts.
 
 ## RM-01: Research Claim and Scope
 
@@ -293,6 +294,7 @@ Tasks:
 - [x] [RM-08] Add bounded docs-forge project-local non-dry-run installer scaffold, trace, and result evidence.
 - [x] [RM-08] Add bounded docs-forge live runtime-pair scaffold, paired traces, and comparison result evidence.
 - [x] [RM-08] Add bounded docs-forge live package-observer scaffold, trace, and result evidence.
+- [x] [RM-08] Add bounded docs-forge live local-tarball npx observer scaffold, trace, and result evidence.
 - [x] [RM-08] Extract `docs-forge` canonical skill provenance from `plugins/docs-forge/skills/docs-forge/SKILL.md`.
 - [x] [RM-08] Extract `docs-forge` adapter-surface provenance from `adapters/claude-code`, `adapters/antigravity`, and `adapters/universal`.
 - [ ] [RM-08] Extract `audit-lens` canonical skill from `skill/SKILL.md`.
@@ -322,6 +324,7 @@ Acceptance checks:
 - [x] [RM-08] First live docs-forge project-local non-dry-run installer evidence is excluded from MVP runtime-drift counts.
 - [x] [RM-08] First live docs-forge Node runtime-pair scaffold evidence is excluded from MVP runtime-drift counts.
 - [x] [RM-08] First live docs-forge package-observer evidence is excluded from MVP runtime-drift counts.
+- [x] [RM-08] First live docs-forge local-tarball npx observer evidence is excluded from MVP runtime-drift counts.
 - [~] [RM-08] Pilot mutations are controlled and do not publish real harmful payloads; AuditLens and docs-forge canary variants are synthetic and local-only.
 
 ## RM-09: Differential Analysis and Report Cards
@@ -583,7 +586,7 @@ MVP done when:
 
 - [x] [RM-01] Should the title use "Differential Security Testing" or "Runtime Security Drift"? Decision: use "Differential Security Testing" in the title and "runtime-induced drift" as the core phenomenon.
 - [x] [RM-04] Should persistence drift be D6 or included under side-effect drift? Decision: keep persistence as a D4 side-effect subtype and report `persistence_violation_rate` separately.
-- [x] [RM-06] Which real runtime should be validated first after controlled profiles? Decision: validate first-party source provenance first, then bounded docs-forge live-installer dry-run, project-local non-dry-run evidence, live Node runtime-pair scaffold, and offline package-observer evidence. Next is a Node-capable RP2/RP3 adapter or container image, or a registry/npx observer with explicit network controls, before live connector or RP4 claims.
+- [x] [RM-06] Which real runtime should be validated first after controlled profiles? Decision: validate first-party source provenance first, then bounded docs-forge live-installer dry-run, project-local non-dry-run evidence, live Node runtime-pair scaffold, offline package-observer evidence, and local-tarball npx observer evidence. Next is a Node-capable RP2/RP3 adapter or container image, or a public-registry observer with explicit network capture, before live connector or RP4 claims.
 - [ ] [RM-07] How should approval prompts be simulated consistently?
 - [ ] [RM-08] How many adversarial variants are safe to publish?
 - [ ] [RM-10] Should generated policies be included in the first submission or deferred?

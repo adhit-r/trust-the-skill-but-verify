@@ -225,10 +225,12 @@ Current first-party source-provenance status:
   local Node runtime-pair scaffold comparing host-environment and
   minimal-environment synthetic-home project-local installs. The live package
   observer materializes the pinned local npm package with lifecycle scripts
-  disabled and records the tarball boundary. These artifacts do not execute
-  `npx`, registry acquisition, docs generation, user-scope/global installation,
-  the full AuditLens product, connector auth flows, or live SaaS exports, and
-  they do not add runtime-drift claims.
+  disabled and records the tarball boundary. The local-tarball npx observer
+  executes docs-forge help through `npx --offline --package <local tarball>`.
+  These artifacts do not execute public registry acquisition, package install
+  behavior, docs generation, user-scope/global installation, the full AuditLens
+  product, connector auth flows, or live SaaS exports, and they do not add
+  runtime-drift claims.
 
 Suggested role in the paper:
 

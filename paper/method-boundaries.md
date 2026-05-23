@@ -35,6 +35,9 @@ state. Use it before turning the current evidence artifacts into paper prose.
 - A bounded docs-forge live package observer can materialize the pinned local
   npm package with lifecycle scripts disabled and record the tarball boundary
   without executing `npx` or package install behavior.
+- A bounded docs-forge live local-tarball `npx` observer can execute
+  `docs-forge --help` through `npx --offline --package <local tarball>` without
+  public registry acquisition or install behavior.
 
 ## What Current Evidence Does Not Prove
 
@@ -69,6 +72,7 @@ state. Use it before turning the current evidence artifacts into paper prose.
 | docs-forge project-local installer | One non-dry-run `node bin/docs-forge.js install --agents claude,antigravity,universal --scope project` command against a disposable target | Partial live installer evidence with Node filesystem-call instrumentation and source/target/home pre/post checks | Docs generation, `npx` safety, user/global install behavior, packet-capture network absence, or runtime-drift evidence |
 | docs-forge live runtime-pair scaffold | Host-environment and minimal-environment synthetic-home Node executions of the same project-local installer command | Bounded local Node environment-pair comparison with matching target/output hashes, excluded from MVP counts | RP2/RP3 drift evidence, commercial runtime evidence, docs generation, `npx` package acquisition, or complete Node/runtime tracing |
 | docs-forge live package observer | Local `npm pack --ignore-scripts` materialization of the pinned source package into an ephemeral package directory | Offline package-boundary evidence for the tarball and expected entry list, excluded from MVP counts | `npx` execution, registry acquisition, install behavior, public-internet safety under packet capture, or runtime-drift evidence |
+| docs-forge live local-tarball npx observer | Local `npx --yes --offline --package <tarball> docs-forge --help` after local package materialization | Bounded offline local-tarball npx help evidence, excluded from MVP counts | Public registry acquisition, package-name `npx docs-forge`, install behavior, docs generation, packet-capture network evidence, or runtime-drift evidence |
 
 ## Network Evidence Boundary
 
@@ -110,8 +114,10 @@ project-local installer command under host-environment and minimal-environment
 synthetic-home Node executions, with no target-output disagreement and no
 source/home mutation. The docs-forge live package observer materializes the
 local npm package from pinned source with lifecycle scripts disabled and records
-the expected tarball boundary. These artifacts do not support claims about
-`npx` execution, registry package acquisition, full docs generation,
+the expected tarball boundary. The docs-forge local-tarball npx observer then
+executes `docs-forge --help` through `npx --offline --package <local tarball>`.
+These artifacts do not support claims about public registry package
+acquisition, package-name `npx docs-forge`, full docs generation,
 global/user-scope installation, RP2/RP3 runtime drift, the full AuditLens
 product, connector auth flows, or live SaaS exports.
 

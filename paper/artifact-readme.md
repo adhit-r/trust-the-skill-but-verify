@@ -72,6 +72,15 @@ DOCS_FORGE_SOURCE_ROOT=/path/to/docs-forge \
   bash experiments/docs-forge-live-package-observer/reproduce_docs_forge_live_package_observer.sh
 ```
 
+The bounded docs-forge live local-tarball npx observer also requires the pinned
+docs-forge source checkout:
+
+```bash
+DOCS_FORGE_SOURCE_ROOT=/path/to/docs-forge \
+  PYTHON_BIN=/tmp/skilldiff-venv/bin/python \
+  bash experiments/docs-forge-live-npx-observer/reproduce_docs_forge_live_npx_observer.sh
+```
+
 ## Expected Outputs
 
 | Script | Primary Result |
@@ -85,6 +94,7 @@ DOCS_FORGE_SOURCE_ROOT=/path/to/docs-forge \
 | `experiments/docs-forge-live-project-local-install/reproduce_docs_forge_live_project_local_install.sh` | `results/live/docs-forge-installer/project_local_install_report.md` |
 | `experiments/docs-forge-live-runtime-pair/reproduce_docs_forge_live_runtime_pair.sh` | `results/live/docs-forge-installer/project_local_runtime_pair_report.md` |
 | `experiments/docs-forge-live-package-observer/reproduce_docs_forge_live_package_observer.sh` | `results/live/docs-forge-installer/package_observer_report.md` |
+| `experiments/docs-forge-live-npx-observer/reproduce_docs_forge_live_npx_observer.sh` | `results/live/docs-forge-installer/npx_observer_report.md` |
 
 ## Safety Notes
 
@@ -119,6 +129,10 @@ DOCS_FORGE_SOURCE_ROOT=/path/to/docs-forge \
   bounded offline local `npm pack --ignore-scripts` package materialization
   into an ephemeral package directory. It records tarball and expected package
   entry evidence, and is excluded from MVP runtime-drift counts.
+- `results/live/docs-forge-installer/npx_observer_result.json` records one
+  bounded local-tarball `npx --offline` help execution from the locally
+  materialized docs-forge package. It does not execute package-name `npx`, npm
+  registry acquisition, install behavior, or docs generation.
 
 ## Known Limitations
 
@@ -148,6 +162,10 @@ DOCS_FORGE_SOURCE_ROOT=/path/to/docs-forge \
   materialization. It is not `npx` execution, npm registry acquisition,
   package-install behavior, public-internet packet-capture evidence, or
   runtime-drift evidence.
+- docs-forge live local-tarball npx evidence is offline local-tarball help
+  execution. It is not public registry acquisition, package-name
+  `npx docs-forge`, package-install behavior, public-internet packet-capture
+  evidence, or runtime-drift evidence.
 
 ## Release Checklist
 

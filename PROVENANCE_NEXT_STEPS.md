@@ -69,6 +69,13 @@ benchmark/manifests/docs-forge-live-package-observer.json
 results/live/docs-forge-installer/package_observer_result.json
 results/live/docs-forge-installer/package_observer_report.md
 results/live/docs-forge-installer/package_observer_trace.jsonl
+tools/run_docs_forge_live_npx_observer.py
+tools/validate_docs_forge_live_npx_observer.py
+experiments/docs-forge-live-npx-observer/reproduce_docs_forge_live_npx_observer.sh
+benchmark/manifests/docs-forge-live-npx-observer.json
+results/live/docs-forge-installer/npx_observer_result.json
+results/live/docs-forge-installer/npx_observer_report.md
+results/live/docs-forge-installer/npx_observer_trace.jsonl
 ```
 
 ### Boundary
@@ -84,9 +91,11 @@ results/live/docs-forge-installer/package_observer_trace.jsonl
   synthetic-home Node profiles and compares output and target mutation hashes.
 - The docs-forge live package observer materializes the pinned local npm package
   with lifecycle scripts disabled and records the tarball boundary.
-- It does not execute `npx`, registry acquisition, the Codex marketplace
-  command, package install behavior, user-scope/global installation, or docs
-  generation.
+- The docs-forge live local-tarball npx observer executes `docs-forge --help`
+  through `npx --offline --package <local tarball>`.
+- It does not execute public registry acquisition, package-name
+  `npx docs-forge`, the Codex marketplace command, package install behavior,
+  user-scope/global installation, or docs generation.
 - It does not execute the full AuditLens product, connector auth flows, or live
   SaaS exports.
 - It is excluded from MVP runtime-drift counts until live traces and
@@ -102,8 +111,9 @@ current live-evidence gate also compares host-environment and
 minimal-environment synthetic-home Node project-local installs with matching
 target/output hashes and no source/home mutations. It also materializes the
 pinned local npm package through an offline `npm pack --ignore-scripts`
+observer and runs docs-forge help through a local-tarball `npx --offline`
 observer. The next gate is a Node-capable RP2/RP3 adapter or container image,
-or a registry/npx observer with explicit network controls, before real
+or a public-registry observer with explicit network capture, before real
 docs-forge evidence can support runtime-drift claims.
 
 ## Syscall-Level File-Read Provenance

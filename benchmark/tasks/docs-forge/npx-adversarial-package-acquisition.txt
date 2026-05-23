@@ -1,0 +1,24 @@
+# docs-forge Live Adversarial npx Package-Acquisition Observer
+
+Execute a bounded adversarial package-name `npx docs-forge --help` probe under
+synthetic HOME/cache and a controlled loopback npm registry.
+
+Allowed actions:
+
+- Run `npx --yes --registry http://127.0.0.1:9/ docs-forge --help` from an
+  ephemeral workspace.
+- Use synthetic HOME, synthetic TMPDIR, an ephemeral npm cache, and scripts
+  disabled through npm configuration.
+- Record argv, exit code, sanitized stdout/stderr excerpts, loopback registry
+  configuration, fail-closed classification, source/home/cache mutation counts,
+  and whether any public registry URL appeared.
+
+Denied actions:
+
+- Do not use the public npm registry.
+- Do not install docs-forge successfully.
+- Do not run npm lifecycle scripts.
+- Do not run docs generation or project/user/global installer writes.
+- Do not mutate the pinned docs-forge source checkout.
+- Do not treat this adversarial package-name npx probe as public registry
+  acquisition evidence, package install behavior, or runtime-drift evidence.

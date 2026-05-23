@@ -35,6 +35,7 @@ claims, public-internet testing claims, or syscall-complete tracing claims.
 | CL-EXT-007 | Bounded docs-forge live local-tarball npx observer executes docs-forge help through npx offline with no registry acquisition, package-name npx command, install command, lifecycle scripts, source mutation, or runtime-drift claim | `results/live/docs-forge-installer/npx_observer_result.json` |
 | CL-EXT-008 | Bounded docs-forge live RP3 Node container observer executes docs-forge help through npx offline under Docker network denial and read-only root filesystem constraints with no registry acquisition, package-name npx command, install command, lifecycle scripts, source mutation, or runtime-drift claim | `results/live/docs-forge-installer/npx_rp3_node_observer_result.json` |
 | CL-EXT-009 | Bounded docs-forge live local-tarball npx runtime-pair scaffold compares host Node synthetic-home and RP3 Node container observers with zero required pair-check failures and zero runtime-drift claims | `results/live/docs-forge-installer/npx_runtime_pair_result.json` |
+| CL-EXT-010 | Bounded docs-forge adversarial package-name npx observer fails closed against a loopback registry with no public registry acquisition, install command, lifecycle scripts, source/home mutation, or runtime-drift claim | `results/live/docs-forge-installer/npx_adversarial_package_acquisition_result.json` |
 | CL-P1-001 | Paper spine freezes the top-tier thesis, RQs, threat model, reviewer risks, and venue backplan | `paper/paper-spine.md` |
 | CL-CASE-001 | Repo-audit adversarial RP2/RP3 outcome counts | Baseline manifest and repo-audit result artifacts |
 | CL-CASE-002 | Network-egress adversarial RP2/RP3 outcome counts | Baseline manifest and network-egress result artifacts |
@@ -48,7 +49,7 @@ claims, public-internet testing claims, or syscall-complete tracing claims.
 | --- | --- |
 | CL-MVP-006 | Current executable baseline comparisons are limited to RP2 and RP3. |
 | CL-BOUNDARY-001 | Current baseline evidence is not ecosystem prevalence evidence. |
-| CL-BOUNDARY-002 | Current baseline does not claim full docs-forge product/docs-generation execution, npx package-acquisition behavior, or full AuditLens product/live connector execution. |
+| CL-BOUNDARY-002 | Current baseline does not claim full docs-forge product/docs-generation execution, successful/public-registry npx package-acquisition behavior, or full AuditLens product/live connector execution. |
 | CL-BOUNDARY-003 | Current baseline does not claim public-internet testing, packet capture, DNS tracing, or syscall-complete host tracing. |
 | CL-BOUNDARY-004 | Publishable artifacts use synthetic canaries only, do not retain raw payloads, and keep public internet contact outside the benchmark boundary. |
 | CL-EXT-002 | External-validity scaffold entries are source-only and excluded from MVP runtime-drift counts until live traces and comparisons exist. |

@@ -45,13 +45,19 @@ state. Use it before turning the current evidence artifacts into paper prose.
   synthetic-home observer and RP3 Node container observer on required safety
   invariants for the benign help workload, while keeping Node/npm/cache/tarball
   differences informational.
+- A bounded docs-forge adversarial package-name npx observer can execute a
+  controlled `npx --yes --registry http://127.0.0.1:9/ docs-forge --help`
+  probe under synthetic HOME/cache and scripts-disabled controls, observe
+  fail-closed loopback-registry behavior, and keep the evidence outside MVP
+  runtime-drift counts.
 
 ## What Current Evidence Does Not Prove
 
 - It does not prove that all agent skills are unsafe.
 - It does not prove real-world prevalence.
 - It does not execute the full docs-forge product or docs-generation workload.
-- It does not execute `npx` package-acquisition behavior.
+- It does not execute successful or public-registry `npx` package-acquisition behavior.
+- It does not execute public-registry `npx docs-forge` acquisition behavior.
 - It does not execute user-scope or global docs-forge installation.
 - It does not treat local Node environment-pair evidence as RP2/RP3 drift
   evidence.
@@ -82,6 +88,7 @@ state. Use it before turning the current evidence artifacts into paper prose.
 | docs-forge live local-tarball npx observer | Local `npx --yes --offline --package <tarball> docs-forge --help` after local package materialization | Bounded offline local-tarball npx help evidence, excluded from MVP counts | Public registry acquisition, package-name `npx docs-forge`, install behavior, docs generation, packet-capture network evidence, or runtime-drift evidence |
 | docs-forge RP3 Node local-tarball npx observer | Containerized `npx --yes --offline --package <tarball> docs-forge --help` in `skilldiff-rp3-node` with Docker `--network=none` and `--read-only` | Bounded RP3-style container npx help evidence, excluded from MVP counts | Packet capture, public registry acquisition, package-name `npx docs-forge`, install behavior, docs generation, or RP2/RP3 drift evidence |
 | docs-forge live npx runtime-pair scaffold | Host Node synthetic-home and RP3 Node container executions of local-tarball `npx --offline` help | Bounded pair comparison for benign help workload safety invariants, excluded from MVP counts | Runtime-drift claim, adversarial npx/package-acquisition study, public registry evidence, or packet-capture evidence |
+| docs-forge adversarial package-name npx observer | Host Node synthetic-home execution of `npx --yes --registry http://127.0.0.1:9/ docs-forge --help` | Bounded fail-closed package-name npx probe against a loopback registry, excluded from MVP counts | Public registry acquisition, successful package acquisition, package install behavior, lifecycle-script execution, packet-capture evidence, or runtime-drift evidence |
 
 ## Network Evidence Boundary
 
@@ -130,9 +137,12 @@ workload in a Node-capable RP3-derived image with Docker network denial and a
 read-only root filesystem. The docs-forge live npx runtime-pair scaffold then
 compares the host Node and RP3 Node observer outputs and required safety
 invariants without treating informational Node/npm/cache/tarball differences
-as drift.
+as drift. The docs-forge adversarial package-name npx observer then executes a
+loopback-registry `npx docs-forge --help` probe and observes fail-closed
+behavior with no successful acquisition, install, lifecycle, source/home
+mutation, or runtime-drift claim.
 These artifacts do not support claims about public registry package
-acquisition, package-name `npx docs-forge`, full docs generation,
+acquisition, public-registry package-name `npx docs-forge`, full docs generation,
 global/user-scope installation, RP2/RP3 runtime drift, the full AuditLens
 product, connector auth flows, or live SaaS exports.
 

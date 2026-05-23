@@ -92,6 +92,13 @@ results/live/docs-forge-installer/npx_runtime_pair_result.json
 results/live/docs-forge-installer/npx_runtime_pair_report.md
 results/live/docs-forge-installer/npx_runtime_pair_rp2_trace.jsonl
 results/live/docs-forge-installer/npx_runtime_pair_rp3_trace.jsonl
+tools/run_docs_forge_live_npx_adversarial_package_acquisition.py
+tools/validate_docs_forge_live_npx_adversarial_package_acquisition.py
+experiments/docs-forge-live-npx-adversarial-package-acquisition/reproduce_docs_forge_live_npx_adversarial_package_acquisition.sh
+benchmark/manifests/docs-forge-live-npx-adversarial-package-acquisition.json
+results/live/docs-forge-installer/npx_adversarial_package_acquisition_result.json
+results/live/docs-forge-installer/npx_adversarial_package_acquisition_report.md
+results/live/docs-forge-installer/npx_adversarial_package_acquisition_trace.jsonl
 ```
 
 ### Boundary
@@ -115,9 +122,15 @@ results/live/docs-forge-installer/npx_runtime_pair_rp3_trace.jsonl
 - The docs-forge live npx runtime-pair scaffold compares the host Node
   synthetic-home observer and RP3 Node container observer on required safety
   invariants for the benign help workload.
+- The docs-forge adversarial package-name npx observer executes a controlled
+  `npx --yes --registry http://127.0.0.1:9/ docs-forge --help` probe under
+  synthetic HOME/cache and scripts-disabled controls, observes fail-closed
+  loopback registry behavior, and records no public registry acquisition,
+  package install behavior, lifecycle scripts, source/home mutation, or drift
+  claim.
 - It does not execute public registry acquisition, package-name
-  `npx docs-forge`, the Codex marketplace command, package install behavior,
-  user-scope/global installation, or docs generation.
+  `npx docs-forge` against the public registry, the Codex marketplace command,
+  package install behavior, user-scope/global installation, or docs generation.
 - It does not execute the full AuditLens product, connector auth flows, or live
   SaaS exports.
 - It is excluded from MVP runtime-drift counts until live traces and
@@ -138,9 +151,9 @@ observer. The current gate also runs that local-tarball npx workload inside a
 Node-capable RP3-derived container with Docker `--network=none` and
 `--read-only`, then compares host Node and RP3 Node local-tarball npx evidence
 with zero required pair-check failures. The next gate is a public-registry
-observer with explicit network capture, or adversarial npx/package-acquisition
-variants, before real docs-forge evidence can support package-acquisition or
-runtime-drift claims.
+observer with explicit network capture, or an RP3 Node adversarial package-name
+npx pair, before real docs-forge evidence can support public package-acquisition
+or runtime-drift claims.
 
 ## Syscall-Level File-Read Provenance
 

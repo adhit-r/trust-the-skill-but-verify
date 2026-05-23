@@ -26,6 +26,7 @@ Status key:
 13. [x] [RM-08] Add bounded docs-forge live local-tarball npx observer evidence without changing MVP runtime-drift counts.
 14. [x] [RM-08] Add bounded docs-forge RP3 Node container local-tarball npx observer evidence without changing MVP runtime-drift counts.
 15. [x] [RM-08] Add bounded docs-forge live npx runtime-pair scaffold evidence without changing MVP runtime-drift counts.
+16. [x] [RM-08] Add bounded docs-forge adversarial package-name npx fail-closed observer evidence without changing MVP runtime-drift counts.
 
 ## RM-01: Research Claim and Scope
 
@@ -592,7 +593,7 @@ MVP done when:
 
 - [x] [RM-01] Should the title use "Differential Security Testing" or "Runtime Security Drift"? Decision: use "Differential Security Testing" in the title and "runtime-induced drift" as the core phenomenon.
 - [x] [RM-04] Should persistence drift be D6 or included under side-effect drift? Decision: keep persistence as a D4 side-effect subtype and report `persistence_violation_rate` separately.
-- [x] [RM-06] Which real runtime should be validated first after controlled profiles? Decision: validate first-party source provenance first, then bounded docs-forge live-installer dry-run, project-local non-dry-run evidence, live Node runtime-pair scaffold, offline package-observer evidence, local-tarball npx observer evidence, an RP3 Node container observer, and a live npx runtime-pair scaffold. Next is a public-registry observer with explicit network capture or adversarial npx/package-acquisition variants, before live connector or RP4 claims.
+- [x] [RM-06] Which real runtime should be validated first after controlled profiles? Decision: validate first-party source provenance first, then bounded docs-forge live-installer dry-run, project-local non-dry-run evidence, live Node runtime-pair scaffold, offline package-observer evidence, local-tarball npx observer evidence, an RP3 Node container observer, live npx runtime-pair scaffold, and adversarial package-name npx fail-closed evidence. Next is an RP3 Node adversarial package-name npx pair or public-registry observer with explicit network capture, before live connector or RP4 claims.
 - [ ] [RM-07] How should approval prompts be simulated consistently?
 - [ ] [RM-08] How many adversarial variants are safe to publish?
 - [ ] [RM-10] Should generated policies be included in the first submission or deferred?

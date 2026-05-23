@@ -103,6 +103,15 @@ DOCS_FORGE_SOURCE_ROOT=/path/to/docs-forge \
   bash experiments/docs-forge-live-npx-runtime-pair/reproduce_docs_forge_live_npx_runtime_pair.sh
 ```
 
+The bounded docs-forge adversarial package-name npx observer also requires the
+pinned docs-forge source checkout:
+
+```bash
+DOCS_FORGE_SOURCE_ROOT=/path/to/docs-forge \
+  PYTHON_BIN=/tmp/skilldiff-venv/bin/python \
+  bash experiments/docs-forge-live-npx-adversarial-package-acquisition/reproduce_docs_forge_live_npx_adversarial_package_acquisition.sh
+```
+
 ## Expected Outputs
 
 | Script | Primary Result |
@@ -119,6 +128,7 @@ DOCS_FORGE_SOURCE_ROOT=/path/to/docs-forge \
 | `experiments/docs-forge-live-npx-observer/reproduce_docs_forge_live_npx_observer.sh` | `results/live/docs-forge-installer/npx_observer_report.md` |
 | `experiments/docs-forge-live-npx-rp3-node-observer/reproduce_docs_forge_live_npx_rp3_node_observer.sh` | `results/live/docs-forge-installer/npx_rp3_node_observer_report.md` |
 | `experiments/docs-forge-live-npx-runtime-pair/reproduce_docs_forge_live_npx_runtime_pair.sh` | `results/live/docs-forge-installer/npx_runtime_pair_report.md` |
+| `experiments/docs-forge-live-npx-adversarial-package-acquisition/reproduce_docs_forge_live_npx_adversarial_package_acquisition.sh` | `results/live/docs-forge-installer/npx_adversarial_package_acquisition_report.md` |
 
 ## Safety Notes
 
@@ -167,6 +177,10 @@ DOCS_FORGE_SOURCE_ROOT=/path/to/docs-forge \
   RP3 Node container npx observer. Required pair checks pass, informational
   Node/npm/cache/tarball differences are not treated as drift, and the result
   remains excluded from MVP runtime-drift counts.
+- `results/live/docs-forge-installer/npx_adversarial_package_acquisition_result.json`
+  records one bounded package-name `npx docs-forge --help` probe against a
+  controlled loopback registry. It observes fail-closed behavior and remains
+  excluded from MVP runtime-drift counts.
 
 ## Known Limitations
 
@@ -208,6 +222,10 @@ DOCS_FORGE_SOURCE_ROOT=/path/to/docs-forge \
   local-tarball help behavior only. It is not an adversarial npx/package
   acquisition study, public-registry evidence, packet-capture evidence, or
   runtime-drift evidence.
+- docs-forge adversarial package-name npx evidence is a fail-closed loopback
+  registry probe. It is not successful package acquisition, public-registry
+  evidence, package-install behavior, lifecycle-script execution,
+  packet-capture evidence, docs generation, or runtime-drift evidence.
 
 ## Release Checklist
 

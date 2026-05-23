@@ -230,9 +230,14 @@ Current first-party source-provenance status:
   The RP3 Node container observer runs the same local-tarball help workload in
   a Node-capable RP3-derived Docker image with network denial and a read-only
   root filesystem. The live npx runtime-pair scaffold compares the host Node
-  and RP3 Node observers with zero required pair-check failures. The next
-  evidence gate is an explicit network-capture registry observer or
-  adversarial npx/package-acquisition variants.
+  and RP3 Node observers with zero required pair-check failures. The
+  adversarial package-name npx observer now executes `npx --yes --registry
+  http://127.0.0.1:9/ docs-forge --help` under synthetic HOME/cache and
+  scripts-disabled controls, observing fail-closed loopback-registry behavior
+  without public registry acquisition, package install behavior, lifecycle
+  scripts, source/home mutation, or drift claims. The next evidence gate is an
+  RP3 Node adversarial package-name npx pair or explicit network-capture
+  public-registry observer.
   These artifacts do not execute public registry acquisition, package install
   behavior, docs generation, user-scope/global installation, the full AuditLens
   product, connector auth flows, or live SaaS exports, and they do not add

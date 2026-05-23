@@ -784,6 +784,115 @@
       ]
     },
     {
+      "claim_id": "CL-EXT-010",
+      "status": "supported_live_npx_adversarial_package_acquisition",
+      "claim": "Bounded docs-forge adversarial package-name npx observer evidence executes a fail-closed loopback-registry package acquisition probe with no public registry acquisition, successful package acquisition, install command, lifecycle scripts, source or home mutation, or runtime-drift claim.",
+      "paper_locations": [
+        "paper/claim-ledger.md",
+        "paper/artifact-readme.md",
+        "paper/method-boundaries.md",
+        "paper/tables/mvp-results.md"
+      ],
+      "evidence": [
+        {
+          "type": "json_value",
+          "path": "results/live/docs-forge-installer/npx_adversarial_package_acquisition_result.json",
+          "pointer": "/aggregate/commands_run",
+          "expected": 1
+        },
+        {
+          "type": "json_value",
+          "path": "results/live/docs-forge-installer/npx_adversarial_package_acquisition_result.json",
+          "pointer": "/aggregate/commands_succeeded",
+          "expected": 0
+        },
+        {
+          "type": "json_value",
+          "path": "results/live/docs-forge-installer/npx_adversarial_package_acquisition_result.json",
+          "pointer": "/aggregate/commands_failed_closed",
+          "expected": 1
+        },
+        {
+          "type": "json_value",
+          "path": "results/live/docs-forge-installer/npx_adversarial_package_acquisition_result.json",
+          "pointer": "/aggregate/npx_package_name_commands_executed",
+          "expected": 1
+        },
+        {
+          "type": "json_value",
+          "path": "results/live/docs-forge-installer/npx_adversarial_package_acquisition_result.json",
+          "pointer": "/aggregate/npx_local_tarball_commands_executed",
+          "expected": 0
+        },
+        {
+          "type": "json_value",
+          "path": "results/live/docs-forge-installer/npx_adversarial_package_acquisition_result.json",
+          "pointer": "/aggregate/registry_acquisition_attempts_observed",
+          "expected": 1
+        },
+        {
+          "type": "json_value",
+          "path": "results/live/docs-forge-installer/npx_adversarial_package_acquisition_result.json",
+          "pointer": "/aggregate/registry_acquisitions_observed",
+          "expected": 0
+        },
+        {
+          "type": "json_value",
+          "path": "results/live/docs-forge-installer/npx_adversarial_package_acquisition_result.json",
+          "pointer": "/aggregate/public_registry_acquisitions_observed",
+          "expected": 0
+        },
+        {
+          "type": "json_value",
+          "path": "results/live/docs-forge-installer/npx_adversarial_package_acquisition_result.json",
+          "pointer": "/aggregate/package_install_commands_executed",
+          "expected": 0
+        },
+        {
+          "type": "json_value",
+          "path": "results/live/docs-forge-installer/npx_adversarial_package_acquisition_result.json",
+          "pointer": "/aggregate/lifecycle_scripts_executed",
+          "expected": 0
+        },
+        {
+          "type": "json_value",
+          "path": "results/live/docs-forge-installer/npx_adversarial_package_acquisition_result.json",
+          "pointer": "/aggregate/source_mutations_observed",
+          "expected": 0
+        },
+        {
+          "type": "json_value",
+          "path": "results/live/docs-forge-installer/npx_adversarial_package_acquisition_result.json",
+          "pointer": "/aggregate/synthetic_home_mutations_observed",
+          "expected": 0
+        },
+        {
+          "type": "json_value",
+          "path": "results/live/docs-forge-installer/npx_adversarial_package_acquisition_result.json",
+          "pointer": "/aggregate/loopback_registry_events_observed",
+          "expected": 1
+        },
+        {
+          "type": "json_value",
+          "path": "results/live/docs-forge-installer/npx_adversarial_package_acquisition_result.json",
+          "pointer": "/aggregate/public_internet_contact_observed",
+          "expected": false
+        },
+        {
+          "type": "json_value",
+          "path": "results/live/docs-forge-installer/npx_adversarial_package_acquisition_result.json",
+          "pointer": "/aggregate/runtime_drift_claims_added",
+          "expected": 0
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/manifests/docs-forge-live-npx-adversarial-package-acquisition.json",
+          "pointer": "/excluded_from_mvp_runtime_counts",
+          "expected": true
+        }
+      ]
+    },
+    {
       "claim_id": "CL-P1-001",
       "status": "paper_spine",
       "claim": "The paper spine freezes the top-tier full-paper thesis, research questions, threat model, reviewer-risk table, and venue backplan.",
@@ -1167,7 +1276,7 @@
     {
       "claim_id": "CL-BOUNDARY-002",
       "status": "supported_boundary",
-      "claim": "The current baseline does not claim full docs-forge product/docs-generation execution, npx package-acquisition behavior, or full AuditLens product/live connector execution.",
+      "claim": "The current baseline does not claim full docs-forge product/docs-generation execution, successful or public-registry npx package-acquisition behavior, or full AuditLens product/live connector execution.",
       "paper_locations": [
         "paper/case-studies.md",
         "paper/method-boundaries.md"
@@ -1181,7 +1290,7 @@
         {
           "type": "file_contains",
           "path": "paper/method-boundaries.md",
-          "contains": "It does not execute `npx` package-acquisition behavior."
+          "contains": "It does not execute successful or public-registry `npx` package-acquisition behavior."
         },
         {
           "type": "file_contains",

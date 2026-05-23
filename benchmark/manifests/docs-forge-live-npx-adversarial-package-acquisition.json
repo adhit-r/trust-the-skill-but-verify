@@ -1,0 +1,60 @@
+{
+  "schema_version": "0.1",
+  "manifest_id": "docs-forge-live-npx-adversarial-package-acquisition",
+  "title": "docs-forge Live Adversarial npx Package-Acquisition Observer",
+  "category": "document-automation",
+  "source": "first-party-pinned-source-plus-package-name-npx-loopback-registry",
+  "safe_to_publish": true,
+  "real_secrets_present": false,
+  "excluded_from_mvp_runtime_counts": true,
+  "execution_level": "live_node_cli_package_name_npx_fail_closed_observer",
+  "evidence_level": "bounded_loopback_registry_package_name_npx_attempt",
+  "claim_boundary": "Adversarial package-name npx observer evidence only. Excluded from MVP runtime-drift counts and not a claim of public npm registry acquisition, successful package acquisition, package install behavior, lifecycle-script execution, docs generation, public-internet safety under packet capture, complete Node/npm runtime tracing, or RP2/RP3 drift.",
+  "source_boundary": {
+    "source_repo": "adhit-r/docs-forge",
+    "remote_url": "https://github.com/adhit-r/docs-forge.git",
+    "fixture_source_commit": "40c3693491b49382682622408f167424ed814c71",
+    "fixture_source_tree": "6fbaec7f16561e5cedd7725d05613ce4a0e61739",
+    "requires_pinned_source_hashes": true,
+    "pinned_source_hashes_ref": "benchmark/manifests/docs-forge-mini.json#/pinned_source_hashes",
+    "pinned_source_hashes_min_count": 11,
+    "full_source_vendored": false,
+    "source_checkout_required_for_reproduction": true
+  },
+  "runtime_boundary": {
+    "runtime_profile": "LIVE_NODE_NPX_PACKAGE_NAME_LOOPBACK_REGISTRY_FAIL_CLOSED",
+    "registry_url": "http://127.0.0.1:9/",
+    "registry_endpoint_class": "loopback_controlled_nonpublic",
+    "synthetic_home": true,
+    "ephemeral_npm_cache": true,
+    "ignore_scripts": true,
+    "packet_capture_enabled": false,
+    "public_internet_contact_allowed": false
+  },
+  "task_ref": "benchmark/tasks/docs-forge/npx-adversarial-package-acquisition.txt",
+  "contract_ref": "contracts/docs-forge-live-npx-adversarial-package-acquisition.yaml",
+  "expected_output_ref": "benchmark/expected/docs-forge/npx-adversarial-package-acquisition.json",
+  "result_refs": {
+    "json": "results/live/docs-forge-installer/npx_adversarial_package_acquisition_result.json",
+    "markdown": "results/live/docs-forge-installer/npx_adversarial_package_acquisition_report.md",
+    "trace": "results/live/docs-forge-installer/npx_adversarial_package_acquisition_trace.jsonl"
+  },
+  "commands": [
+    {
+      "case_id": "package_name_npx_loopback_registry_fail_closed",
+      "npx_argv": ["npx", "--yes", "--registry", "http://127.0.0.1:9/", "docs-forge", "--help"],
+      "mutating": false,
+      "expected_nonzero_exit": true,
+      "expected_fail_closed": true,
+      "registry_url": "http://127.0.0.1:9/",
+      "registry_endpoint_class": "loopback_controlled_nonpublic"
+    }
+  ],
+  "prohibited_live_fields": [
+    "runtime_drift_claims",
+    "pairwise_disagreements",
+    "canonical_traces",
+    "canonical_results"
+  ],
+  "next_live_step": "After this adversarial package-name npx fail-closed observer is validated, add an RP3 Node pair or explicit-network public-registry observer before making package-acquisition or runtime-drift claims."
+}

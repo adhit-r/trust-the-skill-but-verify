@@ -44,6 +44,8 @@ done < <(git ls-files -z '*.json')
 "$PYTHON_BIN" tools/validate_traces.py \
   results/live/docs-forge-installer/npx_runtime_pair_rp2_trace.jsonl \
   results/live/docs-forge-installer/npx_runtime_pair_rp3_trace.jsonl
+"$PYTHON_BIN" tools/validate_docs_forge_live_npx_adversarial_package_acquisition.py
+"$PYTHON_BIN" tools/validate_traces.py results/live/docs-forge-installer/npx_adversarial_package_acquisition_trace.jsonl
 "$PYTHON_BIN" tools/validate_claim_ledger.py
 "$PYTHON_BIN" tools/check_no_local_paths.py
 "$PYTHON_BIN" tools/validate_traces.py results/raw/*/trace.jsonl

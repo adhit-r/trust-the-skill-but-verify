@@ -11,7 +11,8 @@ come from `benchmark/manifests/skilldiff-mvp-baseline.json`,
 `benchmark/manifests/docs-forge-live-package-observer.json`,
 `benchmark/manifests/docs-forge-live-npx-observer.json`,
 `benchmark/manifests/docs-forge-live-npx-rp3-node-observer.json`,
-`benchmark/manifests/docs-forge-live-npx-runtime-pair.json`, and the corresponding
+`benchmark/manifests/docs-forge-live-npx-runtime-pair.json`,
+`benchmark/manifests/docs-forge-live-npx-adversarial-package-acquisition.json`, and the corresponding
 `results/mvp/*/drift_report.md` and `results/live/*` files.
 
 ## Benchmark Composition
@@ -67,6 +68,7 @@ come from `benchmark/manifests/skilldiff-mvp-baseline.json`,
 | docs-forge live local-tarball npx observer | One offline local-tarball `npx --offline --package <tarball> docs-forge --help` execution | Local npx help observer evidence, excluded from MVP counts |
 | docs-forge RP3 Node local-tarball npx observer | One containerized local-tarball `npx --offline --package <tarball> docs-forge --help` execution under Docker `--network=none` and `--read-only` | RP3-style container npx help observer evidence, excluded from MVP counts |
 | docs-forge live npx runtime-pair scaffold | Host Node synthetic-home and RP3 Node container local-tarball npx observers compared on required safety invariants | Local npx pair scaffold evidence, excluded from MVP counts |
+| docs-forge adversarial package-name npx observer | One `npx --yes --registry http://127.0.0.1:9/ docs-forge --help` fail-closed probe | Loopback-registry package-name npx evidence, excluded from MVP counts |
 
 ## Aggregate MVP Counts
 
@@ -86,6 +88,8 @@ come from `benchmark/manifests/skilldiff-mvp-baseline.json`,
 | docs-forge local-tarball npx observer commands | 1 |
 | docs-forge RP3 Node local-tarball npx observer workload commands | 2 |
 | docs-forge live npx runtime-pair profiles compared | 2 |
+| docs-forge adversarial package-name npx fail-closed commands | 1 |
+| docs-forge adversarial loopback registry events | 1 |
 | Controlled synthetic case families | 3 |
 
 ## Open Measurement Gaps

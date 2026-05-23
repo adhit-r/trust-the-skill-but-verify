@@ -94,6 +94,13 @@ evidence strength or be removed.
     compares host Node synthetic-home and RP3 Node container local-tarball npx
     observers, verifies zero required pair-check failures, and writes
     `results/live/docs-forge-installer/npx_runtime_pair_result.json`.
+18. [x] Add bounded docs-forge adversarial package-name npx fail-closed evidence.
+    Done: `experiments/docs-forge-live-npx-adversarial-package-acquisition/reproduce_docs_forge_live_npx_adversarial_package_acquisition.sh`
+    executes `npx --yes --registry http://127.0.0.1:9/ docs-forge --help`
+    with synthetic HOME/cache and scripts disabled, records one failed
+    loopback registry connection, and writes
+    `results/live/docs-forge-installer/npx_adversarial_package_acquisition_result.json`
+    without changing MVP runtime-drift counts.
 
 ## P1: Claim Contract And Paper Spine
 
@@ -280,8 +287,8 @@ evidence strength or be removed.
 P0 and P1 are now implementation-complete for the current evidence and paper
 spine gates. The next concrete implementation sequence is:
 
-1. Add a public-registry observer with explicit network capture, or add
-   adversarial npx/package-acquisition variants, before making live docs-forge
+1. Add an RP3 Node adversarial package-name npx pair or a public-registry
+   observer with explicit network capture before making live docs-forge
    package-acquisition or runtime-drift claims.
 2. Close P2/P3 coverage gaps for activation, approval, tool/MCP, persistence,
    and at least four runtime profiles.

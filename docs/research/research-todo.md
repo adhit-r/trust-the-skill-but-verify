@@ -18,6 +18,58 @@ Current target order:
 4. Repeats, statistics, and adjudication before top-tier submission.
 5. Artifact safety and anonymity before any external review package.
 
+## Current Non-Human Full-Paper TODO Snapshot
+
+This section is the short execution checklist for the remaining non-human work
+after the Gate 5 review-infrastructure branch. Human/manual review is tracked
+separately under S4.3 and is intentionally excluded from this snapshot.
+
+1. [ ] Clear GitHub CI for the draft PR.
+   Done when the GitHub `make verify` check passes on
+   `codex/gate5-review-infra`; local clean-checkout verification has already
+   passed, and GitGuardian has already passed.
+2. [ ] Scale from 20 skills / 60 triples to 40 skills / 120 triples.
+   Add 20 more promoted skills and 60 more tracked skill-task-contract triples
+   before repeats. Keep the no-prevalence and no-source-mix-completion
+   boundary until the manifest and scale-gap report support those claims.
+3. [ ] Fix the source-mix weakness before calling the benchmark full-paper
+   credible.
+   Current mix is 1 first-party, 1 public, and 18 synthetic skills. The
+   full-paper source-mix gap is 8 first-party and 16 public skills; synthetic
+   coverage should not grow faster than real first-party/public coverage.
+4. [ ] Finish repeat and statistics infrastructure beyond the bounded fixture
+   slices.
+   Add repeat support to remaining runners, run three repeats for every
+   deterministic promoted fixture, run five repeats for nondeterministic or
+   model-mediated cases, report max severity beside majority/median outcomes,
+   and add Wilson, bootstrap, hierarchical bootstrap, and McNemar-style paired
+   analysis only where sample size supports them.
+5. [ ] Promote runtime report cards and evidence-boundary tables into the
+   manuscript.
+   Add a paper table that separates current evidence, promoted evidence, and
+   future work, while keeping simulator, fixture, bounded-live, and source-only
+   evidence labels visible.
+6. [ ] Rewrite the manuscript introduction around the invariant.
+   The introduction should state: fixed skill, task, contract, workspace,
+   prompt, variant, and repeat; varied runtime profile; measured conformance
+   changes.
+7. [ ] Add the core paper figures.
+   Required figures: architecture, trace lifecycle, runtime matrix, drift
+   outcomes, runtime report cards, and artifact flow.
+8. [ ] Refresh related work with current primary sources before any
+   submission-facing claim.
+   Cover Semia, SkillSafetyBench, HarmfulSkillBench, RouteGuard, MCPShield,
+   remote MCP authentication measurement, OWASP MCP Top 10, and OWASP Agentic
+   Skills Top 10.
+9. [ ] Build the clean artifact-release bundle.
+   Produce a clean-checkout artifact package, document one command that
+   reproduces the main paper tables, and keep raw stdout/stderr/workspace
+   directories either ignored, local-only, or explicitly documented as
+   non-release scratch.
+10. [ ] Keep the claim ledger synchronized with every paper-facing number.
+    Done when `python3 tools/validate_claim_ledger.py` passes after each
+    manuscript or table update.
+
 ## S0: Steering And Claim Hygiene
 
 Goal: keep the project pointed at runtime conformance rather than generic

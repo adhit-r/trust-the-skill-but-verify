@@ -24,10 +24,10 @@ This section is the short execution checklist for the remaining non-human work
 after the Gate 5 review-infrastructure branch. Human/manual review is tracked
 separately under S4.3 and is intentionally excluded from this snapshot.
 
-1. [ ] Clear GitHub CI for the draft PR.
-   Done when the GitHub `make verify` check passes on
-   `codex/gate5-review-infra`; local clean-checkout verification has already
-   passed, and GitGuardian has already passed.
+1. [x] Clear GitHub CI for the draft PR.
+   GitHub `make verify` passed on `codex/gate5-review-infra` in PR #1 on
+   2026-05-26; local clean-checkout verification and GitGuardian had already
+   passed.
 2. [ ] Scale from 20 skills / 60 triples to 40 skills / 120 triples.
    Add 20 more promoted skills and 60 more tracked skill-task-contract triples
    before repeats. Keep the no-prevalence and no-source-mix-completion

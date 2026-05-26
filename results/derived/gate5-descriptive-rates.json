@@ -1,0 +1,338 @@
+{
+  "aggregate": {
+    "case_status_counts": {
+      "current_mvp": 2,
+      "current_pilot": 58
+    },
+    "cases_with_paired_summary_group": 50,
+    "cases_without_paired_summary_group": 10,
+    "category_case_counts": {
+      "API workflow": 9,
+      "MCP/tool workflow": 6,
+      "compliance/audit": 9,
+      "data extraction": 9,
+      "document automation": 9,
+      "local file operations": 6,
+      "repository maintenance": 12
+    },
+    "evidence_stage_counts": {
+      "mvp": 2,
+      "pilot": 58
+    },
+    "excluded_case_count": 0,
+    "frozen_case_count": 60,
+    "included_case_count": 60,
+    "included_pair_count": 50,
+    "included_paired_group_count": 50,
+    "runtime_profile_case_counts": {
+      "RP2": 57,
+      "RP3": 57,
+      "RP5": 3
+    },
+    "source_mix_case_counts": {
+      "first_party": 3,
+      "public": 3,
+      "synthetic": 54
+    },
+    "source_mix_skill_counts": {
+      "first_party": 1,
+      "public": 1,
+      "synthetic": 18
+    },
+    "unique_skill_count": 20
+  },
+  "analysis_script": "tools/build_gate5_descriptive_rates.py",
+  "boundary": "Raw descriptive denominator and rate artifact built from the frozen Gate 5 inclusion table; not completed statistics, not confidence intervals, not hypothesis tests, not reviewer agreement, not prevalence, not source-mix completion, and not paper-grade completion evidence.",
+  "claim_boundary": {
+    "completed_statistics_claimed": false,
+    "confidence_intervals_claimed": false,
+    "hypothesis_tests_claimed": false,
+    "paper_grade_completion_claimed": false,
+    "prevalence_claim": false,
+    "raw_descriptive_rates_only": true,
+    "reviewer_agreement_claimed": false,
+    "source_mix_completion_claimed": false
+  },
+  "exclusions": [],
+  "frozen_inclusion_table_ref": "benchmark/manifests/gate5-paper-inclusion.json",
+  "input_manifest_refs": [
+    "benchmark/manifests/benchmark-cases-current.json",
+    "results/derived/paired-runtime-summary.json"
+  ],
+  "next_dependencies": [
+    "Add manual review queue and completed two-reviewer records before reviewer agreement claims.",
+    "Add public and additional first-party skills before claiming source-mix completion.",
+    "Add repeat-backed analysis before Wilson, bootstrap, McNemar, or other statistical claims.",
+    "Keep 40/120 full-paper completion blocked until the manifest reaches that floor."
+  ],
+  "paired_summary_ref": "results/derived/paired-runtime-summary.json",
+  "rates": [
+    {
+      "boundary": "raw_descriptive_rate_only_no_statistics",
+      "denominator": 60,
+      "metric_id": "included_case_share",
+      "numerator": 60,
+      "slice": {
+        "dimension": "all",
+        "value": "all"
+      },
+      "unit": "case_share",
+      "value": 1.0
+    },
+    {
+      "boundary": "raw_descriptive_rate_only_no_statistics",
+      "denominator": 60,
+      "metric_id": "paired_summary_mapped_case_share",
+      "numerator": 50,
+      "slice": {
+        "dimension": "all",
+        "value": "all"
+      },
+      "unit": "case_share",
+      "value": 0.833333
+    },
+    {
+      "boundary": "raw_descriptive_rate_only_no_statistics",
+      "denominator": 60,
+      "metric_id": "source_mix_case_share",
+      "numerator": 3,
+      "slice": {
+        "dimension": "source_mix_label",
+        "value": "first_party"
+      },
+      "unit": "case_share",
+      "value": 0.05
+    },
+    {
+      "boundary": "raw_descriptive_rate_only_no_statistics",
+      "denominator": 20,
+      "metric_id": "source_mix_skill_share",
+      "numerator": 1,
+      "slice": {
+        "dimension": "source_mix_label",
+        "value": "first_party"
+      },
+      "unit": "skill_share",
+      "value": 0.05
+    },
+    {
+      "boundary": "raw_descriptive_rate_only_no_statistics",
+      "denominator": 60,
+      "metric_id": "source_mix_case_share",
+      "numerator": 3,
+      "slice": {
+        "dimension": "source_mix_label",
+        "value": "public"
+      },
+      "unit": "case_share",
+      "value": 0.05
+    },
+    {
+      "boundary": "raw_descriptive_rate_only_no_statistics",
+      "denominator": 20,
+      "metric_id": "source_mix_skill_share",
+      "numerator": 1,
+      "slice": {
+        "dimension": "source_mix_label",
+        "value": "public"
+      },
+      "unit": "skill_share",
+      "value": 0.05
+    },
+    {
+      "boundary": "raw_descriptive_rate_only_no_statistics",
+      "denominator": 60,
+      "metric_id": "source_mix_case_share",
+      "numerator": 54,
+      "slice": {
+        "dimension": "source_mix_label",
+        "value": "synthetic"
+      },
+      "unit": "case_share",
+      "value": 0.9
+    },
+    {
+      "boundary": "raw_descriptive_rate_only_no_statistics",
+      "denominator": 20,
+      "metric_id": "source_mix_skill_share",
+      "numerator": 18,
+      "slice": {
+        "dimension": "source_mix_label",
+        "value": "synthetic"
+      },
+      "unit": "skill_share",
+      "value": 0.9
+    },
+    {
+      "boundary": "raw_descriptive_rate_only_no_statistics",
+      "denominator": 60,
+      "metric_id": "category_case_share",
+      "numerator": 9,
+      "slice": {
+        "dimension": "category",
+        "value": "API workflow"
+      },
+      "unit": "case_share",
+      "value": 0.15
+    },
+    {
+      "boundary": "raw_descriptive_rate_only_no_statistics",
+      "denominator": 60,
+      "metric_id": "category_case_share",
+      "numerator": 6,
+      "slice": {
+        "dimension": "category",
+        "value": "MCP/tool workflow"
+      },
+      "unit": "case_share",
+      "value": 0.1
+    },
+    {
+      "boundary": "raw_descriptive_rate_only_no_statistics",
+      "denominator": 60,
+      "metric_id": "category_case_share",
+      "numerator": 9,
+      "slice": {
+        "dimension": "category",
+        "value": "compliance/audit"
+      },
+      "unit": "case_share",
+      "value": 0.15
+    },
+    {
+      "boundary": "raw_descriptive_rate_only_no_statistics",
+      "denominator": 60,
+      "metric_id": "category_case_share",
+      "numerator": 9,
+      "slice": {
+        "dimension": "category",
+        "value": "data extraction"
+      },
+      "unit": "case_share",
+      "value": 0.15
+    },
+    {
+      "boundary": "raw_descriptive_rate_only_no_statistics",
+      "denominator": 60,
+      "metric_id": "category_case_share",
+      "numerator": 9,
+      "slice": {
+        "dimension": "category",
+        "value": "document automation"
+      },
+      "unit": "case_share",
+      "value": 0.15
+    },
+    {
+      "boundary": "raw_descriptive_rate_only_no_statistics",
+      "denominator": 60,
+      "metric_id": "category_case_share",
+      "numerator": 6,
+      "slice": {
+        "dimension": "category",
+        "value": "local file operations"
+      },
+      "unit": "case_share",
+      "value": 0.1
+    },
+    {
+      "boundary": "raw_descriptive_rate_only_no_statistics",
+      "denominator": 60,
+      "metric_id": "category_case_share",
+      "numerator": 12,
+      "slice": {
+        "dimension": "category",
+        "value": "repository maintenance"
+      },
+      "unit": "case_share",
+      "value": 0.2
+    },
+    {
+      "boundary": "raw_descriptive_rate_only_no_statistics",
+      "denominator": 60,
+      "metric_id": "case_status_share",
+      "numerator": 2,
+      "slice": {
+        "dimension": "case_status",
+        "value": "current_mvp"
+      },
+      "unit": "case_share",
+      "value": 0.033333
+    },
+    {
+      "boundary": "raw_descriptive_rate_only_no_statistics",
+      "denominator": 60,
+      "metric_id": "case_status_share",
+      "numerator": 58,
+      "slice": {
+        "dimension": "case_status",
+        "value": "current_pilot"
+      },
+      "unit": "case_share",
+      "value": 0.966667
+    },
+    {
+      "boundary": "raw_descriptive_rate_only_no_statistics",
+      "denominator": 60,
+      "metric_id": "evidence_stage_share",
+      "numerator": 2,
+      "slice": {
+        "dimension": "evidence_stage",
+        "value": "mvp"
+      },
+      "unit": "case_share",
+      "value": 0.033333
+    },
+    {
+      "boundary": "raw_descriptive_rate_only_no_statistics",
+      "denominator": 60,
+      "metric_id": "evidence_stage_share",
+      "numerator": 58,
+      "slice": {
+        "dimension": "evidence_stage",
+        "value": "pilot"
+      },
+      "unit": "case_share",
+      "value": 0.966667
+    },
+    {
+      "boundary": "raw_descriptive_rate_only_no_statistics",
+      "denominator": 60,
+      "metric_id": "runtime_profile_case_coverage_share",
+      "numerator": 57,
+      "slice": {
+        "dimension": "runtime_profile",
+        "value": "RP2"
+      },
+      "unit": "case_share",
+      "value": 0.95
+    },
+    {
+      "boundary": "raw_descriptive_rate_only_no_statistics",
+      "denominator": 60,
+      "metric_id": "runtime_profile_case_coverage_share",
+      "numerator": 57,
+      "slice": {
+        "dimension": "runtime_profile",
+        "value": "RP3"
+      },
+      "unit": "case_share",
+      "value": 0.95
+    },
+    {
+      "boundary": "raw_descriptive_rate_only_no_statistics",
+      "denominator": 60,
+      "metric_id": "runtime_profile_case_coverage_share",
+      "numerator": 3,
+      "slice": {
+        "dimension": "runtime_profile",
+        "value": "RP5"
+      },
+      "unit": "case_share",
+      "value": 0.05
+    }
+  ],
+  "report_type": "gate5_descriptive_rates",
+  "schema_version": "0.1",
+  "status": "computed_from_frozen_inclusion_table_no_statistics"
+}

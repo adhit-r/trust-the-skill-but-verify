@@ -1,0 +1,395 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/trust-the-skill/gate5_blinded_packet_bundle.schema.json",
+  "title": "Gate 5 Blinded Packet Bundle",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "bundle_id",
+    "status",
+    "analysis_script",
+    "boundary",
+    "input_refs",
+    "bundle_lock",
+    "claim_boundary",
+    "aggregate",
+    "packets",
+    "next_dependencies"
+  ],
+  "properties": {
+    "schema_version": { "enum": ["0.1"] },
+    "bundle_id": { "enum": ["gate5-blinded-packet-bundle"] },
+    "status": { "enum": ["blinded_packet_bundle_ready_no_completed_reviews"] },
+    "analysis_script": { "enum": ["tools/build_gate5_blinded_packet_bundle.py"] },
+    "boundary": { "type": "string", "minLength": 1 },
+    "input_refs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "review_packet_index_ref",
+        "review_queue_ref",
+        "adjudication_form_ref"
+      ],
+      "properties": {
+        "review_packet_index_ref": { "type": "string", "minLength": 1 },
+        "review_queue_ref": { "type": "string", "minLength": 1 },
+        "adjudication_form_ref": { "type": "string", "minLength": 1 }
+      }
+    },
+    "bundle_lock": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "lock_id",
+        "locked_at_utc",
+        "git_head",
+        "git_tree",
+        "input_hashes"
+      ],
+      "properties": {
+        "lock_id": { "enum": ["gate5-blinded-packet-bundle-current-60-v1"] },
+        "locked_at_utc": { "enum": ["2026-05-26T00:00:00Z"] },
+        "git_head": { "type": "string", "pattern": "^[0-9a-f]{40}$" },
+        "git_tree": { "type": "string", "pattern": "^[0-9a-f]{40}$" },
+        "input_hashes": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "review_packet_index_sha256",
+            "review_queue_sha256",
+            "adjudication_form_sha256"
+          ],
+          "properties": {
+            "review_packet_index_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+            "review_queue_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+            "adjudication_form_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+          }
+        }
+      }
+    },
+    "claim_boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "blinded_packet_bundle_only",
+        "first_pass_runtime_labels_blinded",
+        "raw_trace_content_included",
+        "runtime_evidence_paths_in_review_packets",
+        "completed_reviews_claimed",
+        "reviewer_agreement_claimed",
+        "adjudication_claimed",
+        "completed_statistics_claimed",
+        "prevalence_claim",
+        "paper_grade_completion_claimed"
+      ],
+      "properties": {
+        "blinded_packet_bundle_only": { "const": true },
+        "first_pass_runtime_labels_blinded": { "const": true },
+        "raw_trace_content_included": { "const": false },
+        "runtime_evidence_paths_in_review_packets": { "const": false },
+        "completed_reviews_claimed": { "const": false },
+        "reviewer_agreement_claimed": { "const": false },
+        "adjudication_claimed": { "const": false },
+        "completed_statistics_claimed": { "const": false },
+        "prevalence_claim": { "const": false },
+        "paper_grade_completion_claimed": { "const": false }
+      }
+    },
+    "aggregate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_packet_count",
+        "exported_packet_count",
+        "blocked_packet_count",
+        "opaque_comparison_ref_count",
+        "opaque_finding_artifact_ref_count",
+        "opaque_trace_artifact_ref_count",
+        "runtime_slot_count",
+        "pair_review_unit_count",
+        "finding_review_unit_count",
+        "raw_trace_payload_count",
+        "completed_review_count",
+        "reviewer_identity_count",
+        "packet_status_counts"
+      ],
+      "properties": {
+        "source_packet_count": { "type": "integer", "minimum": 0 },
+        "exported_packet_count": { "type": "integer", "minimum": 0 },
+        "blocked_packet_count": { "type": "integer", "minimum": 0 },
+        "opaque_comparison_ref_count": { "type": "integer", "minimum": 0 },
+        "opaque_finding_artifact_ref_count": { "type": "integer", "minimum": 0 },
+        "opaque_trace_artifact_ref_count": { "type": "integer", "minimum": 0 },
+        "runtime_slot_count": { "type": "integer", "minimum": 0 },
+        "pair_review_unit_count": { "type": "integer", "minimum": 0 },
+        "finding_review_unit_count": { "type": "integer", "minimum": 0 },
+        "raw_trace_payload_count": { "const": 0 },
+        "completed_review_count": { "const": 0 },
+        "reviewer_identity_count": { "const": 0 },
+        "packet_status_counts": {
+          "type": "object",
+          "additionalProperties": { "type": "integer", "minimum": 0 }
+        }
+      }
+    },
+    "packets": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/packet" }
+    },
+    "next_dependencies": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    }
+  },
+  "$defs": {
+    "packet": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "packet_id",
+        "review_item_id",
+        "source_queue_pointer",
+        "case_id",
+        "variant_id",
+        "sample_batch_id",
+        "category",
+        "source_mix_label",
+        "evidence_stage",
+        "bundle_status",
+        "review_mode",
+        "blocked_reason",
+        "runtime_profile_blinding",
+        "agreement_scope",
+        "base_refs",
+        "blinded_evidence",
+        "pair_review_units",
+        "finding_review_units",
+        "packet_checks"
+      ],
+      "properties": {
+        "packet_id": { "type": "string", "minLength": 1 },
+        "review_item_id": { "type": "string", "minLength": 1 },
+        "source_queue_pointer": { "type": "string", "pattern": "^/review_items/[0-9]+$" },
+        "case_id": { "type": "string", "minLength": 1 },
+        "variant_id": { "type": "string", "minLength": 1 },
+        "sample_batch_id": { "enum": ["gate5-current-60-case-review-queue"] },
+        "category": { "type": "string", "minLength": 1 },
+        "source_mix_label": { "enum": ["first_party", "public", "synthetic"] },
+        "evidence_stage": { "enum": ["pilot", "mvp", "planned"] },
+        "bundle_status": {
+          "enum": [
+            "blinded_first_pass_ready",
+            "blocked_metadata_only_unmapped"
+          ]
+        },
+        "review_mode": {
+          "enum": [
+            "first_pass_blinded_pair_review",
+            "metadata_only_unmapped_blocker"
+          ]
+        },
+        "blocked_reason": { "type": ["string", "null"] },
+        "runtime_profile_blinding": {
+          "enum": [
+            "eligible_for_first_pass_blinding",
+            "not_applicable_single_runtime_or_unmapped"
+          ]
+        },
+        "agreement_scope": {
+          "enum": [
+            "requires_two_independent_human_reviews_before_agreement",
+            "metadata_only_until_paired_summary_mapping_exists"
+          ]
+        },
+        "base_refs": { "$ref": "#/$defs/baseRefs" },
+        "blinded_evidence": { "$ref": "#/$defs/blindedEvidence" },
+        "pair_review_units": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/pairReviewUnit" }
+        },
+        "finding_review_units": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/findingReviewUnit" }
+        },
+        "packet_checks": { "$ref": "#/$defs/packetChecks" }
+      }
+    },
+    "baseRefs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "manifest_ref",
+        "prompt_ref",
+        "contract_ref",
+        "workspace_ref",
+        "expected_output_ref",
+        "adjudication_form_ref"
+      ],
+      "properties": {
+        "manifest_ref": { "type": "string", "minLength": 1 },
+        "prompt_ref": { "type": "string", "minLength": 1 },
+        "contract_ref": { "type": "string", "minLength": 1 },
+        "workspace_ref": { "type": "string", "minLength": 1 },
+        "expected_output_ref": { "type": ["string", "null"] },
+        "adjudication_form_ref": { "type": "string", "minLength": 1 }
+      }
+    },
+    "blindedEvidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_packet_ref",
+        "comparison_refs",
+        "runtime_slots"
+      ],
+      "properties": {
+        "source_packet_ref": { "enum": ["gate5-review-packet-index"] },
+        "comparison_refs": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/opaqueComparisonRef" }
+        },
+        "runtime_slots": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/runtimeSlot" }
+        }
+      }
+    },
+    "opaqueComparisonRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "comparison_ref_id",
+        "source_ref_hidden",
+        "comparison_sha256",
+        "run_count",
+        "pair_count"
+      ],
+      "properties": {
+        "comparison_ref_id": { "type": "string", "minLength": 1 },
+        "source_ref_hidden": { "const": true },
+        "comparison_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "run_count": { "type": "integer", "minimum": 0 },
+        "pair_count": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "runtimeSlot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "slot_id",
+        "slot_label",
+        "run_pointer",
+        "repeat_id",
+        "source_run_id_hidden",
+        "runtime_profile_hidden",
+        "source_ref_hidden",
+        "finding_artifact_ref_id",
+        "finding_sha256",
+        "trace_artifact_ref_id",
+        "trace_sha256",
+        "trace_valid",
+        "trace_event_count",
+        "finding_count"
+      ],
+      "properties": {
+        "slot_id": { "type": "string", "minLength": 1 },
+        "slot_label": { "type": "string", "pattern": "^runtime_slot_[a-z]+$" },
+        "run_pointer": { "type": "string", "pattern": "^/runs/[0-9]+$" },
+        "repeat_id": { "type": "integer", "minimum": 0 },
+        "source_run_id_hidden": { "const": true },
+        "runtime_profile_hidden": { "const": true },
+        "source_ref_hidden": { "const": true },
+        "finding_artifact_ref_id": { "type": "string", "minLength": 1 },
+        "finding_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "trace_artifact_ref_id": { "type": "string", "minLength": 1 },
+        "trace_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "trace_valid": { "type": "boolean" },
+        "trace_event_count": { "type": "integer", "minimum": 0 },
+        "finding_count": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "pairReviewUnit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "unit_id",
+        "unit_type",
+        "unit_status",
+        "claim_boundary",
+        "comparison_ref_id",
+        "pair_pointer",
+        "left_slot_id",
+        "right_slot_id",
+        "runtime_labels_hidden",
+        "machine_classification_hidden",
+        "source_ref_hidden",
+        "completed_review_included"
+      ],
+      "properties": {
+        "unit_id": { "type": "string", "minLength": 1 },
+        "unit_type": { "enum": ["runtime_pair_comparison"] },
+        "unit_status": { "enum": ["pending_manual_review"] },
+        "claim_boundary": { "enum": ["not_human_reviewed"] },
+        "comparison_ref_id": { "type": "string", "minLength": 1 },
+        "pair_pointer": { "type": "string", "pattern": "^/pairs/[0-9]+$" },
+        "left_slot_id": { "type": "string", "minLength": 1 },
+        "right_slot_id": { "type": "string", "minLength": 1 },
+        "runtime_labels_hidden": { "const": true },
+        "machine_classification_hidden": { "const": true },
+        "source_ref_hidden": { "const": true },
+        "completed_review_included": { "const": false }
+      }
+    },
+    "findingReviewUnit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "unit_id",
+        "unit_type",
+        "unit_status",
+        "claim_boundary",
+        "runtime_labels_hidden",
+        "source_ref_hidden",
+        "completed_review_included"
+      ],
+      "properties": {
+        "unit_id": { "type": "string", "minLength": 1 },
+        "unit_type": { "enum": ["contract_finding"] },
+        "unit_status": { "enum": ["pending_manual_review"] },
+        "claim_boundary": { "enum": ["not_human_reviewed"] },
+        "runtime_labels_hidden": { "const": true },
+        "source_ref_hidden": { "const": true },
+        "completed_review_included": { "const": false }
+      }
+    },
+    "packetChecks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "raw_trace_content_included",
+        "local_path_content_included",
+        "source_paths_in_review_packet",
+        "runtime_evidence_paths_in_review_packet",
+        "runtime_profile_labels_included",
+        "source_run_ids_included",
+        "machine_classification_included",
+        "completed_review_included",
+        "reviewer_fields_included",
+        "blinded_packet_exported"
+      ],
+      "properties": {
+        "raw_trace_content_included": { "const": false },
+        "local_path_content_included": { "const": false },
+        "source_paths_in_review_packet": { "const": false },
+        "runtime_evidence_paths_in_review_packet": { "const": false },
+        "runtime_profile_labels_included": { "const": false },
+        "source_run_ids_included": { "const": false },
+        "machine_classification_included": { "const": false },
+        "completed_review_included": { "const": false },
+        "reviewer_fields_included": { "const": false },
+        "blinded_packet_exported": { "type": "boolean" }
+      }
+    }
+  }
+}

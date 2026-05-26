@@ -95,7 +95,7 @@ The harness executes that triple under runtime profiles such as RP2 local coding
 | `results/planned-inclusion/` | Controlled single-repeat fixture evidence for formerly planned benchmark entries. |
 | `results/fixtures/` | Supplemental bounded fixture/report-card evidence excluded from RP2/RP3 MVP aggregate counts. |
 | `results/live/` | Bounded live-installer scaffold evidence. |
-| `results/raw/` | Raw local run artifacts and trace files; raw generated Markdown is ignored. |
+| `results/raw/` | Raw local run artifacts and trace files; generated sidecars and scratch workspaces are ignored. |
 | `paper/` | Paper-facing claim ledger, protocol, case-study notes, and result tables. |
 | `docs/research/` | Stable research notes moved out of the repository root. |
 | `docs/assets/` | Rendered diagrams used by this README. |

@@ -18,6 +18,7 @@ The existing reproduction scripts also accept `PYTHON_BIN`:
 ```bash
 PYTHON_BIN=/tmp/skilldiff-venv/bin/python bash experiments/repo-audit-mvp/reproduce_repo_audit_mvp.sh
 PYTHON_BIN=/tmp/skilldiff-venv/bin/python bash experiments/network-egress-mvp/reproduce_network_egress_mvp.sh
+PYTHON_BIN=/tmp/skilldiff-venv/bin/python bash experiments/mcp-tool-workflow-mvp/reproduce_mcp_tool_workflow_mvp.sh
 PYTHON_BIN=/tmp/skilldiff-venv/bin/python bash experiments/audit-lens-mvp/reproduce_audit_lens_mvp.sh
 PYTHON_BIN=/tmp/skilldiff-venv/bin/python bash experiments/docs-forge-mvp/reproduce_docs_forge_mvp.sh
 PYTHON_BIN=/tmp/skilldiff-venv/bin/python bash experiments/first-party-source-provenance/reproduce_first_party_source_provenance.sh
@@ -319,5 +320,7 @@ PYTHON_BIN=/tmp/skilldiff-venv/bin/python \
 - [x] Preserve synthetic canary labels for reproducible detection.
 - [x] Maintain a validated paper claim ledger.
 - [x] Complete published pinned-source hash lists for first-party seed repos.
-- [ ] Add a top-level `SECURITY.md`.
-- [ ] Add final license and citation metadata.
+- [x] Add a top-level `SECURITY.md`.
+- [ ] Finalize license and citation metadata.
+  Current `CITATION.cff` exists, but release URL and license fields remain
+  placeholder/incomplete until the artifact bundle is finalized.

@@ -51,6 +51,11 @@ Concrete profile files:
 | RP5 | `runtimes/profiles/RP5_plugin_style.yaml` | `plugin_fixture_adapter` |
 | RP6 | `runtimes/profiles/RP6_policy_hardened.yaml` | `hardened_policy_adapter` |
 
+Current per-surface support status is tracked in
+`docs/research/adapter-support-matrix.md`. Treat that matrix as the source of
+truth for which runtime surfaces are implemented, simulated, fixture-only,
+unavailable, or intentionally unsupported before making paper claims.
+
 Every profile includes these feature blocks, even when a feature is disabled:
 
 | Feature Block | Purpose | Drift Surface |
@@ -80,7 +85,18 @@ Every profile includes these feature blocks, even when a feature is disabled:
 | RP5 plugin-style | Plugin discovery, activation metadata, install hooks, host API fixtures, plugin storage |
 | RP6 policy-hardened | Contract-derived allowlists, strict cleanup, no ambient credentials, taint-aware sink restrictions |
 
-RP2 and RP3 are the MVP execution pair. RP1, RP4, RP5, and RP6 are controlled profiles for later matrix expansion.
+RP2 and RP3 are the MVP execution pair. RP4 now has bounded S1.2 local MCP
+fixture evidence, but it is not external MCP server, connector-auth, or
+commercial-client evidence. RP6 now has a current-case report-card pilot through
+`hardened_policy_adapter`, but it remains controlled Python and controlled
+semantic-fixture evidence excluded from RP2/RP3 MVP aggregate counts. Its
+comparison reports label RP6-vs-RP2/RP3 pairs as mitigation-report-card
+contrasts, and the report card includes a supplemental network-denial policy
+probe for direct blocked-connect/send evidence. RP1 now has deterministic
+restricted-hosted simulator evidence for the upload-oriented current subset,
+but it is not real hosted-provider, commercial assistant, live MCP/plugin, or
+public-network evidence. RP5 remains a controlled profile for later matrix
+expansion.
 
 ## Adapter Interface
 

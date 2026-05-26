@@ -8,8 +8,8 @@ equivalent venue.
 
 ## Working Title
 
-**Trust the Skill, Verify the Runtime: Differential Security Testing for
-Portable AI Agent Skills**
+**SkillDiff: Differential Runtime Conformance Testing for Portable AI Agent
+Skills**
 
 ## Primary Abstract
 
@@ -22,21 +22,22 @@ skill, task, and instruction text can execute with different filesystem scope,
 network policy, approval mediation, tool exposure, and persistence semantics
 depending on the runtime that loads it.
 
-This paper introduces differential runtime security testing for portable agent
-skills. The method fixes a skill, task, workspace, task-conditioned security
-contract, adversarial variant, and repeat identity, then varies the runtime
-profile. Each run emits normalized traces over file, process, network, output,
-canary-flow, and, in the full paper, activation, approval, tool/MCP, cleanup,
-and persistence events. Contract checking separates realized violations,
-attempted overreach, missing expected outputs, oracle failures, and
-runtime-pair disagreements.
+This paper introduces SkillDiff, a differential runtime conformance testing
+method for portable agent skills. The method fixes a skill, task, workspace,
+task-conditioned security contract, task prompt, adversarial variant, and
+repeat identity, then varies the runtime profile. Each run emits normalized
+traces over file, process, network, output, canary-flow, and, where supported
+by the runtime profile, activation, approval, tool/MCP, cleanup, and
+persistence events. Contract checking separates realized violations, attempted
+overreach, missing expected outputs, oracle failures, instrumentation failures,
+and runtime-pair disagreements.
 
-The current evidence package demonstrates feasibility across controlled
-repository-audit, network-egress, compliance-audit, and document-automation
-case families, with pinned provenance, scrubbed artifacts, CI validation, and
-machine-checked claim references. The full paper will scale this into a
-top-tier benchmark with at least 40 skills, 120 skill-task-contract runs before
-repeats, four or more runtime profiles, repeat-run statistics, manual
+The current evidence package demonstrates feasibility across controlled case
+families with pinned provenance, scrubbed artifacts, CI validation, runtime
+report-card infrastructure, benchmark inclusion checks, and machine-checked
+claim references. The full-paper floor remains a future evidence gate: at
+least 40 skills, 120 skill-task-contract triples before repeats, four or more
+runtime profiles on the promoted subset, repeat-run statistics, manual
 adjudication, and mitigation report cards. The central claim is that skill
 security portability is a runtime-conformance problem: a portable skill is not
 secure merely because its artifact is unchanged; it is secure only when host
@@ -54,12 +55,12 @@ the skill package.
 
 | ID | Research Question | Current Evidence State | Full-Paper Gate |
 | --- | --- | --- | --- |
-| RQ1 | How often does a skill's security behavior change across runtime profiles when skill, task, workspace, contract, variant, prompt hash, and repeat ID are fixed? | Supported for RP2/RP3 baseline evidence. | Report runtime-pair disagreement rates over at least 120 skill-task-contract runs before repeats. |
+| RQ1 | How often does a skill's security behavior change across runtime profiles when skill, task, workspace, contract, variant, prompt hash, and repeat ID are fixed? | Supported for RP2/RP3 baseline evidence; RP1 adds simulator-backed comparison evidence only and does not make the benchmark live across hosted assistants. | Report runtime-pair disagreement rates over at least 120 skill-task-contract triples before repeats. |
 | RQ2 | Which runtime profile features are associated with realized violations, attempted overreach, missing outputs, and canary movement? | Partially supported for filesystem and network policy. | Add feature-level ablations across filesystem, shell, network, approval, tool/MCP, and persistence controls. |
-| RQ3 | Do activation and skill-selection surfaces produce security-relevant drift across hosts? | Not yet answered. | Add activation events and activation-negative-control fixtures. |
+| RQ3 | Do activation and skill-selection surfaces produce security-relevant drift across hosts? | RP1 emits deterministic activation-selection events for simulator runs; RP5 adds one fixture-backed activation negative control. Neither is live host activation drift. | Add profile-specific non-activation evidence beyond local fixtures before claiming host activation drift. |
 | RQ4 | Can task-conditioned security contracts classify unsafe behavior without collapsing blocked attempts into realized violations? | Supported for the current RP2/RP3 contract evidence. | Validate across the scaled benchmark with manual adjudication for semantic findings. |
-| RQ5 | Are approval prompts and tool/MCP mediation sufficient to preserve task-conditioned security contracts? | Partially supported only for the controlled MCP/tool semantic-event fixture. | Add deterministic approval shims and live RP4 MCP/tool workflows. |
-| RQ6 | Which mitigations reduce runtime-induced drift while preserving task utility? | Not yet answered. | Add RP6 hardened profile, least-privilege baseline, ablations, and report cards. |
+| RQ5 | Are approval prompts and tool/MCP mediation sufficient to preserve task-conditioned security contracts? | Partially supported for controlled MCP/tool/plugin semantic-event fixtures, including the bounded RP4 local fixture and RP5 plugin-style fixture. | Promote beyond fixture evidence only with external MCP/client or plugin workflows that preserve the no-real-credential and no-public-network boundary. |
+| RQ6 | Which mitigations reduce runtime-induced drift while preserving task utility? | Bounded RP6 current-case report-card pilot plus contract-derived least-privilege baseline, coarse mitigation ladder, minimal RP6 contrast matrix, bounded component ablations across six controls, and bounded deterministic RP6 repeat stability across repeat IDs 1, 2, and 3. | Scale component ablations and utility checks beyond controlled fixtures before claiming defense success; add broader repeats before statistical or model-mediated stability claims. |
 
 Primary RQ: RQ1 is the paper's main measurement question. RQ2-RQ6 explain
 causes, coverage, validation, tool/approval boundaries, and mitigations.
@@ -76,13 +77,16 @@ causes, coverage, validation, tool/approval boundaries, and mitigations.
 4. A benchmark methodology for benign and adversarial skill-task-contract
    triples with synthetic canaries, source provenance, and safe publication
    boundaries.
-5. A scaled empirical study target of at least 40 skills and 120
-   skill-task-contract runs before repeats across four or more runtime
-   profiles.
+5. A full-paper benchmark target of at least 40 skills and 120
+   skill-task-contract triples before repeats across four or more runtime
+   profiles, clearly separated from current pilot evidence until executed.
 6. A rigor layer with repeats, utility metrics, uncertainty estimates, manual
-   adjudication, and two-reviewer agreement.
+   adjudication, and two-reviewer agreement; current Gate 5 materials are
+   scaffolds until review and statistics are actually run.
 7. Mitigation report cards that compare hardened runtime profiles and
-   least-privilege-style baselines by drift reduction and utility cost.
+   least-privilege-style baselines by realized violations, attempted overreach,
+   utility cost, approval burden, and evidence coverage without claiming
+   product-scale defense success.
 
 ## Threat Model
 
@@ -151,11 +155,11 @@ Safety boundary:
 | Line Of Work | Closest Examples | Difference From This Paper |
 | --- | --- | --- |
 | Skill vulnerability and malicious-skill measurement | Agent Skills in the Wild; Malicious Agent Skills in the Wild; HarmfulSkillBench | Those works classify skills or malicious skill behavior. This paper fixes the skill-task-contract triple and varies the runtime to measure security conformance drift. |
-| Skill-file prompt injection and registry manipulation | Skill-Inject; Under the Hood of SKILL.md | Those works study compromised skill text, discovery, selection, and governance. This paper starts after selection and asks whether runtime execution preserves security semantics. |
+| Skill-file prompt injection, routing, and registry manipulation | Skill-Inject; Under the Hood of SKILL.md; SkillRouter; RouteGuard | Those works study compromised skill text, discovery, routing, selection, detection, and governance. This paper starts after selection and asks whether runtime execution preserves security semantics. |
 | Task-conditioned least privilege | SkillScope and related policy-constraining work | Least privilege is a baseline or mitigation here, not the main measurement question. The independent variable is runtime profile disagreement. |
 | Cross-framework skill compilation | SkCC and skill intermediate-representation work | Compilation improves functional portability before execution. This paper tests security behavior after deployment under different host policies. |
 | MCP and tool security | MCP protocol and tool-poisoning studies; ClawGuard-style guardrails | Those works focus on descriptors, authorization, client validation, and tool-call boundaries. This paper uses MCP/tool surfaces as runtime-profile dimensions and measures drift with controlled skill and tool conditions. |
-| Agent prompt-injection benchmarks | AgentDojo, InjecAgent, and related tool-agent benchmarks | Those works evaluate attack success and defenses in tool-using agents. This paper's unit is runtime-pair conformance for portable skills. |
+| Agent security and prompt-injection benchmarks | Agent Security Bench, AgentDojo, InjecAgent, and related tool-agent benchmarks | Those works evaluate attack success and defenses in tool-using agents. This paper's unit is runtime-pair conformance for portable skills. |
 
 Reviewer-facing differentiation sentence:
 
@@ -169,13 +173,13 @@ Reviewer-facing differentiation sentence:
 | Reviewer Objection | Risk | Evidence Answer Or Required Work |
 | --- | --- | --- |
 | "This is just another skill-safety benchmark." | Critical | Lead with runtime-pair conformance as the unit of analysis. Keep attack success secondary to cross-runtime disagreement under fixed invariants. |
-| "Four current case families are too small." | Critical | Treat current evidence as feasibility only. Full-paper gate remains 40+ skills and 120+ runs before repeats. |
+| "Four current case families are too small." | Critical | Treat current evidence as feasibility only. Full-paper gate remains 40+ skills and 120+ skill-task-contract triples before repeats. |
 | "RP2/RP3 is not enough runtime diversity." | Critical | Add at least two more executable profiles or justify an equivalent-depth full-paper scope with deeper instrumentation and mitigations. |
 | "Controlled Python fixtures are artificial." | High | Add full-product or partial real-execution slices and label every evidence level as full product, controlled fixture, or source-only. |
 | "Instrumentation gaps look like false security." | High | Controlled activation, approval, tool/MCP, persistence, and capability-snapshot events now exist for one fixture. Count remaining live-MCP and connector gaps as instrumentation gaps, not security success. |
-| "No nondeterminism treatment." | High | Add repeat IDs, three deterministic repeats where promoted, five repeats for model-mediated cases, and per-repeat tables. |
+| "No nondeterminism treatment." | High | RP6 now has a bounded three-repeat deterministic fixture check; still add five repeats for model-mediated cases, uncertainty treatment, and per-repeat tables before broader stability claims. |
 | "No human validation for semantic findings." | High | Add adjudication forms, blinded sample review, percent agreement, and Cohen's kappa when label counts support it. |
-| "No baseline or mitigation." | High | Add RP6 hardened profile, least-privilege-style baseline, and ablations over runtime controls. |
+| "No baseline or mitigation." | High | Use the RP6 current-case report card, least-privilege baseline, coarse mitigation ladder, and bounded component ablations as pilot evidence; still avoid defense-success claims until scaled utility-preserving mitigation evidence exists. |
 | "Artifact may leak private data." | High | Keep CI path-scrub, synthetic-only canaries, no public internet contact, no real secrets, and anonymous artifact checklist. |
 | "Why not just use least privilege?" | Medium | Position least privilege as one mitigation baseline; the paper measures whether runtimes preserve contracts before and after mitigation. |
 | "Docker blocks more but hurts utility." | Medium | Report missing outputs and benign task success beside realized violations and attempted overreach. |
@@ -183,7 +187,7 @@ Reviewer-facing differentiation sentence:
 
 ## Venue Backplan
 
-As of 2026-05-23, the top-tier target plan is:
+As of 2026-05-26, the top-tier target plan is:
 
 | Target | Role | Paper-State Requirement |
 | --- | --- | --- |
@@ -197,7 +201,7 @@ the evidence does not meet the full-paper gate for the earliest venue, the work
 moves to the next top-tier deadline rather than downshifting to a workshop or
 short-paper target.
 
-Official venue sources checked on 2026-05-23:
+Official venue sources checked on 2026-05-26:
 
 - NDSS 2027 call for papers:
   `https://www.ndss-symposium.org/ndss2027/submissions/call-for-papers/`

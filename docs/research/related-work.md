@@ -10,6 +10,9 @@ Recent work has studied several adjacent layers:
 - **Injected-skill benchmarks:** whether agents follow malicious skill-file instructions.
 - **Task-conditioned least privilege:** whether a skill action exceeds what the user task requires.
 - **Registry discovery and governance:** whether `SKILL.md` metadata manipulates discovery, selection, or admission.
+- **Skill routing and pre-execution selection:** whether routers, internal
+  selection signals, or detector layers select the right skill before any
+  runtime action executes.
 - **Cross-framework skill compilation:** whether skills can be transformed across framework formats.
 - **MCP/tool security:** whether tools, descriptors, authorization, sampling, or cross-server flows are safe.
 - **Runtime guardrails for tool-using agents:** whether tool calls align with the user's task under indirect prompt injection.
@@ -40,9 +43,11 @@ These works should be cited in a full paper to avoid looking selective. They are
 | --- | --- | --- | --- |
 | [HarmfulSkillBench](https://arxiv.org/abs/2604.15415) | Harmful-skill measurement and safety benchmark | Measures harmful skills across large registries and evaluates how pre-installed skills can lower refusal rates. | Studies harmful skill capabilities and model safety outcomes, not cross-runtime security conformance for a fixed skill-task-contract triple. |
 | [BadSkill](https://arxiv.org/abs/2604.09378) | Model-in-skill supply-chain attack | Shows model-bearing skills can hide backdoors in bundled learned artifacts. | Focuses on poisoned skill internals; runtime drift can occur even when skill artifacts are fixed and non-poisoned. |
+| [SkillRouter](https://arxiv.org/abs/2603.22455) | Skill selection and routing | Studies routing and selection of skills at scale. | Useful for activation and selection surfaces, but not a runtime conformance test after a fixed skill-task-contract triple has been selected. |
+| [RouteGuard](https://arxiv.org/abs/2604.22888) | Pre-execution skill-poison detection | Uses internal selection signals to detect poisoned skill routing before execution. | A detector baseline for selection poisoning; SkillDiff measures post-selection runtime behavior under fixed inputs. |
 | [ClawGuard](https://arxiv.org/abs/2604.11790) | Runtime tool-call boundary defense | Enforces user-confirmed rules at tool-call boundaries across web, local, MCP, and skill channels. | A strong mitigation baseline; this paper measures whether runtimes differ before and after such guardrails are applied. |
 | [Task Shield](https://arxiv.org/abs/2412.16682) | Task-alignment defense for indirect prompt injection | Verifies whether instructions and tool calls contribute to user-specified goals. | Related to authorization and alignment of actions, but not a differential portability benchmark for skills. |
-| [InjecAgent](https://arxiv.org/abs/2403.02691) and [AgentDojo](https://agentdojo.spylab.ai/) | Indirect prompt-injection benchmarks for tool-integrated agents | Provide benchmark design patterns for tool-using agents under adversarial external content. | They focus on prompt-injection vulnerability and defenses, not whether identical skills have stable security behavior across host runtimes. |
+| [Agent Security Bench](https://arxiv.org/abs/2410.02644), [InjecAgent](https://arxiv.org/abs/2403.02691), and [AgentDojo](https://agentdojo.spylab.ai/) | Agent attack and indirect prompt-injection benchmarks | Provide benchmark design patterns for tool-using agents under adversarial external content. | They focus on broader attack success and defenses, not whether identical skills have stable security behavior across host runtimes. |
 
 ## Why Static Scanning Is Not Enough
 

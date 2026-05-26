@@ -19,7 +19,7 @@ claims, public-internet testing claims, or syscall-complete tracing claims.
 | --- | --- | --- |
 | CL-MVP-001 | Five controlled case families | `benchmark/manifests/skilldiff-mvp-baseline.json` |
 | CL-MVP-002 | Twenty-eight paper-facing canonical trace files | `benchmark/manifests/skilldiff-mvp-baseline.json` |
-| CL-MVP-003 | Fifty tracked trace files including older smoke traces, bounded RP4 fixture traces, and RP6 current-case report-card traces | `results/raw/*/trace.jsonl` |
+| CL-MVP-003 | 234 tracked raw trace files including older smoke traces, expanded runtime fixtures, bounded RP4 fixture traces, and RP6 current-case report-card traces | `results/raw/*/trace.jsonl` |
 | CL-MVP-004 | Five runtime-drift claims across RP2/RP3 | `benchmark/manifests/skilldiff-mvp-baseline.json` |
 | CL-MVP-005 | Thirty-six pairwise disagreements across RP2/RP3 | `benchmark/manifests/skilldiff-mvp-baseline.json` |
 | CL-MVP-007 | Two first-party seed case families: AuditLens and docs-forge | Baseline manifest |

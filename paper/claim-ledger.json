@@ -58,7 +58,7 @@
     {
       "claim_id": "CL-MVP-003",
       "status": "supported",
-      "claim": "The repository currently tracks fifty trace files, including older smoke traces, bounded RP4 fixture traces, and RP6 current-case report-card traces.",
+      "claim": "The repository currently tracks 234 raw trace files, including older smoke traces, expanded runtime fixtures, bounded RP4 fixture traces, and RP6 current-case report-card traces.",
       "paper_locations": [
         "paper/experiment-protocol.md"
       ],
@@ -66,7 +66,7 @@
         {
           "type": "git_tracked_glob_count",
           "glob": "results/raw/*/trace.jsonl",
-          "expected": 50
+          "expected": 234
         }
       ]
     },

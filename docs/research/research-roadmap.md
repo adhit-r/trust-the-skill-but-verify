@@ -1,14 +1,56 @@
-# Trust the Skill, Verify the Runtime
+# SkillDiff: Differential Runtime Conformance Testing
+
+## Steering Status
+
+This document is the high-level steering roadmap for the paper and artifact. If
+older roadmap notes, scratch strategy files, or root-level TODO files disagree
+with this document, follow this document and `docs/research/research-todo.md`.
+
+Current strategic target:
+
+- Primary realistic target: **USENIX Security 2027 Cycle 2**.
+- Aggressive targets: **NDSS 2027 Fall** and **IEEE S&P 2027 second deadline**.
+- Backup top-tier target: **ACM CCS next full cycle**.
+- Journal route: **IEEE TDSC** after the systems-security contribution is
+  experimentally mature.
+
+Current evidence boundary:
+
+- The repository has a verified pilot artifact, not a full-paper benchmark.
+- Current claims are limited to controlled feasibility and method evidence.
+- Executable runtime-drift aggregate evidence remains RP2/RP3. RP1 adds
+  promoted deterministic simulator evidence; RP4, RP5, and RP6 remain bounded
+  fixture/report-card evidence. These auxiliary profiles do not add
+  commercial-runtime, live-hosted, or prevalence claims.
+- The paper must not claim ecosystem prevalence, commercial-runtime behavior,
+  live connector authorization, public-internet exfiltration, syscall-complete
+  tracing, or full product behavior until those claims have direct evidence.
+
+Non-negotiable experimental invariant:
+
+> Hold skill, task, task prompt, workspace snapshot, security contract,
+> variant, and repeat identity fixed; vary only the runtime profile; then
+> measure realized violations, blocked attempts, missing outputs, approvals,
+> tool behavior, side effects, and canary movement.
+
+The strongest paper form is:
+
+**SkillDiff: Differential Runtime Conformance Testing for Portable AI Agent
+Skills**
+
+The phrase **runtime conformance** should lead the paper. Canary leaks, harmful
+skills, least privilege, and MCP attacks are supporting surfaces, not the core
+claim.
 
 ## High-Level Research Roadmap
 
 Working title:
 
-**Trust the Skill, Verify the Runtime: Differential Security Testing for Portable AI Agent Skills**
+**SkillDiff: Differential Runtime Conformance Testing for Portable AI Agent Skills**
 
 Short title:
 
-**Trust the Skill, Verify the Runtime**
+**SkillDiff**
 
 Core angle:
 
@@ -18,7 +60,7 @@ Portable AI agent skills should not be treated as secure or insecure in isolatio
 
 AI agents increasingly use reusable skills: portable packages that combine natural-language operating instructions, activation metadata, executable scripts, resources, dependencies, and tool-use procedures. These skills are often expected to move across hosted assistant environments, local coding agents, plugin ecosystems, and MCP-connected clients. However, existing portability is mostly syntactic. The same skill can exhibit materially different security behavior across runtimes because each host grants different filesystem access, shell execution rights, network egress, credential visibility, approval gates, persistence, and tool composition semantics.
 
-This paper develops **Trust the Skill, Verify the Runtime**, a differential security testing framework for portable AI agent skills. The framework is designed to execute the same skill-task pairs across multiple instrumented runtime profiles and compare observed traces against task-conditioned security contracts. It measures five classes of runtime-induced drift: activation drift, privilege drift, approval drift, side-effect drift, and data-flow drift. The framework records file, process, network, tool, approval, persistence, and canary-flow events, then produces runtime security report cards that identify where a skill becomes over-privileged, silently activated, approval-bypassing, or exfiltration-capable.
+This paper develops **SkillDiff**, a differential runtime conformance testing framework for portable AI agent skills. The framework is designed to execute the same skill-task pairs across multiple instrumented runtime profiles and compare observed traces against task-conditioned security contracts. It measures five classes of runtime-induced drift: activation drift, privilege drift, approval drift, side-effect drift, and data-flow drift. The framework records file, process, network, tool, approval, persistence, and canary-flow events, then produces runtime report cards that identify where a skill becomes over-privileged, silently activated, approval-bypassing, or exfiltration-capable.
 
 The benchmark plan combines benign skills, adversarial skill variants, synthetic secrets, controlled task prompts, and expected security contracts across document automation, repository maintenance, data extraction, API workflows, MCP/tool workflows, and local file operations. Unlike prior work that primarily scans skill repositories, enforces least privilege, or compiles skills across frameworks, this work asks whether security behavior is preserved when the same skill is moved across runtimes. The intended result is a reproducible benchmark, trace schema, metric suite, and conformance-testing methodology for safer portable agent skill ecosystems.
 
@@ -100,16 +142,60 @@ Use **runtime-induced drift** as the main phrase. It is more precise than **sema
 | C6 | Metric suite and runtime report cards | Drift scores, attack success rates, benign utility, approval burden, and per-runtime risk profiles |
 | C7 | Mitigation study | Optional evaluation of restrictions such as allowlists, sandboxing, approvals, taint guards, and generated policies |
 
+## Current High-Impact Roadmap
+
+The older RM-01 to RM-12 sequence below remains useful as historical structure,
+but the top-tier paper is now steered by five evidence phases.
+
+| Phase | Goal | Required Evidence | Done When |
+| --- | --- | --- | --- |
+| S1: Make the runtime variable unignorable | Move beyond RP2/RP3 pilots into at least four executable or explicitly simulated runtime profiles | RP1/RP4/RP5/RP6 traces or support-matrix-backed simulations, `adapter-support-matrix.md`, instrumentation-failure accounting | At least four profiles run on a promoted subset or bounded fixture slice, with unsupported surfaces counted separately from clean behavior |
+| S2: Scale the benchmark without losing control | Expand from feasibility cases to a credible systems-security benchmark | 40+ skills, 120+ skill-task-contract triples before repeats, seven normalized categories, provenance and execution-level labels | Aggregate tables can be reported by category, runtime pair, and attack family |
+| S3: Add baselines reviewers expect | Show why runtime conformance testing is not replaced by static audit, least privilege, or guardrails | Static scanner baseline, reachability-inspired static approximation clearly labeled non-equivalent to Semia, SkillScope-style least privilege, ClawGuard/Task Shield-style guard, RP6 hardened profile, bounded RP6 component ablations over six controls | Report cards compare violation reduction, attempted-overreach conversion, task success, missing outputs, approval burden, component-disabled regressions, and coverage |
+| S4: Add statistical and human-review rigor | Make the evaluation acceptable for USENIX/NDSS/S&P/CCS | Repeat-run support, 3 deterministic repeats, 5 model-mediated repeats, Wilson intervals, bootstrap intervals, adjudication forms, two-reviewer agreement | Main tables include uncertainty and semantic findings have review evidence |
+| S5: Promote from pilot artifact to paper artifact | Make the release safe, anonymous, and reproducible | `SECURITY.md`, `CITATION.cff`, data card, license clarity, anonymity checklist, AI-use disclosure, one-command reproduction path, claim ledger for every number | A clean checkout can reproduce main tables and no unsupported claim remains in the manuscript |
+
+Near-term dependency order:
+
+1. Keep `docs/research/adapter-support-matrix.md` current before promoting any
+   runtime-surface claim.
+2. Treat RP1 as deterministic simulator evidence only; do not fold it into
+   RP2/RP3 executable runtime-drift aggregate counts.
+3. Promote RP4 beyond the S1.2 local fixture only when external MCP
+   descriptor, tool-result, approval, and authorization traces can be captured
+   without real credentials or public-network exposure.
+4. Treat RP5 evidence as bounded local plugin fixture evidence; do not claim
+   commercial plugin-store, live host API, external MCP/server, or public-network
+   behavior.
+5. Treat RP6 evidence as bounded report-card, baseline, component-ablation, and
+   repeat-stability evidence until it scales beyond controlled fixtures.
+6. Keep runtime report-card schema, renderer, generated artifacts, and verify check mode current.
+7. Add contract-derived least-privilege baseline.
+8. Keep the machine-readable benchmark inclusion checklist current as cases are promoted.
+9. Add repeat-run support to the runners.
+10. Add the next 15 promoted skills only after the profile/baseline surfaces are
+   stable.
+
+Stop rules:
+
+- Do not add more one-off docs-forge observer pilots unless they close a named
+  runtime-profile, category, baseline, or instrumentation gap.
+- Do not call blocked behavior a security success without reporting utility
+  and missing-output cost.
+- Do not use current pilot counts as prevalence evidence.
+- Do not frame the paper as another skill security benchmark; frame it as a
+  runtime-conformance systems study.
+
 ## Research Questions
 
 | ID | Question | Expected Answer |
 | --- | --- | --- |
 | RQ1 | How often does a skill's effective security behavior change across runtime profiles? | Quantitative drift rates by runtime pair, skill category, and task type |
-| RQ2 | Which runtime profiles and features are associated with higher observed skill risk? | Ranked analysis of shell, filesystem, network, MCP tools, persistence, context inheritance, and approval semantics, with causal claims deferred to controlled ablations |
+| RQ2 | Which runtime profiles and features are associated with higher observed skill risk? | Ranked analysis of shell, filesystem, network, MCP tools, persistence, context inheritance, and approval semantics, with current RP6 fixture ablations kept separate from product-scale causal claims |
 | RQ3 | Do activation metadata and SKILL.md instructions produce different activation behavior across hosts? | Evidence that skill documentation is operational control text, not passive documentation |
 | RQ4 | Can task-conditioned security contracts predict unsafe behavior across runtimes? | Contract-violation rates and false-positive analysis |
 | RQ5 | Are approval prompts sufficient to prevent unsafe skill behavior? | Evidence on approval bypass, approval fatigue, and sensitive actions hidden inside routine tasks |
-| RQ6 | Which mitigation combinations reduce drift while preserving benign task success? | Comparative study of sandboxing, allowlists, approvals, and taint-aware sink restrictions |
+| RQ6 | Which mitigation combinations reduce drift while preserving benign task success? | Comparative study of sandboxing, allowlists, approvals, taint-aware sink restrictions, and bounded component-disabled regressions |
 
 ## Terminology
 
@@ -655,7 +741,7 @@ Current protocol status:
 - Current MVP is treated as feasibility and motivating evidence, not prevalence
   evidence.
 - The full-paper minimum is at least 40 skills and 120 skill-task-contract
-  runs, with the roadmap target remaining 60 base skills, 60 adversarial
+  triples, with the roadmap target remaining 60 base skills, 60 adversarial
   variants, 3-5 tasks per skill, and 3-6 runtime profiles.
 - Deterministic full-paper fixtures should run at least three repeats per
   skill-task-profile; nondeterministic model-mediated runs should run at least
@@ -806,7 +892,7 @@ Preferred paper shape:
 This research direction is ready for serious paper drafting when:
 
 - The MVP shows one real differential result end to end.
-- The benchmark has at least 40 skills and 120 skill-task runs.
+- The benchmark has at least 40 skills and 120 skill-task-contract triples.
 - Traces are stable and machine-checkable.
 - Drift metrics produce interpretable results.
 - Related work differentiation is crisp.

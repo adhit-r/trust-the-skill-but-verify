@@ -9,6 +9,12 @@ RM-07 currently provides a core MVP trace path:
 - `skilldiff run` prepares one run, executes the supported adapter path, collects raw evidence, and emits `trace.jsonl`.
 - RP2 supports controlled local live execution through a copied workspace and one concrete `argv`.
 - RP3 has a controlled Docker live path for pinned-image runs; when declared syscall tracing is unavailable because Docker, the image, or the strace log is unavailable, trace validation fails instead of treating that run as evidence.
+- RP6 has a current-case report-card path through `hardened_policy_adapter` for
+  controlled Python fixtures. It stages contract-allowed inputs, applies
+  wrapper-level file/network policy, and normalizes controlled semantic
+  fixture tool events; it is not syscall-complete hardening. A supplemental
+  RP6 policy probe directly records blocked `network.connect` and
+  `network.send` events for the fake-sink network contract.
 - Trace events are normalized into `schemas/trace_event.schema.json`.
 - Trace validation checks required fields, event vocabulary, one run ID, unique event IDs, and terminal `run.start` / `run.end`.
 - Controlled Python commands emit MVP `filesystem.read` events through a `sitecustomize` wrapper that records succeeded and failed Python file-open attempts.
@@ -16,7 +22,7 @@ RM-07 currently provides a core MVP trace path:
 - PV-02 controlled Python network evidence records fake-sink `network.send` events, `network_sink_requests.jsonl`, and RP3 blocked or failed egress attempts without contacting the public internet.
 - Canary scanning covers generated outputs, changed files, stdout, and stderr.
 
-This is not syscall-complete tracing. PV-01 is Linux-container syscall evidence for RP3 container commands, not host-wide tracing, commercial runtime coverage, or complete file-read provenance across every runtime. PV-02 is a controlled Python `urllib` shim plus Docker `--network=none` assertion path, not packet capture, DNS tracing, arbitrary library interception, or public-internet testing. The harness does not yet prove production-grade Docker isolation, MCP tool tracing, persistence tracing, or aggregate drift classification. RM-09 owns contract decisions and drift classification.
+This is not syscall-complete tracing. PV-01 is Linux-container syscall evidence for RP3 container commands, not host-wide tracing, commercial runtime coverage, or complete file-read provenance across every runtime. PV-02 is a controlled Python `urllib` shim plus Docker `--network=none` assertion path, not packet capture, DNS tracing, arbitrary library interception, or public-internet testing. RP6 is a mitigation report-card pilot and does not prove production-grade hardening; RP6-vs-RP2/RP3 comparisons are mitigation contrasts, not runtime-drift claims. The harness does not yet prove production-grade Docker isolation, external MCP tool tracing, persistence tracing, or aggregate drift classification. RM-09 owns contract decisions and drift classification.
 
 ## Commands
 
@@ -76,7 +82,7 @@ outputs_manifest.json
 cleanup.json
 ```
 
-`file_read_events.jsonl` contains MVP Python wrapper-level read events for controlled Python commands. RP3 runs may also emit normalized `container_strace_mvp` `filesystem.read` events for supported `open`, `openat`, and `openat2` container syscalls. `network_events.jsonl` and `network_sink_requests.jsonl` contain PV-02 controlled Python network evidence for the fake-sink benchmark path. `network_policy.json` and live approval event capture remain planned layout items, not complete provenance sources yet.
+`file_read_events.jsonl` contains MVP Python wrapper-level read events for controlled Python commands. RP3 runs may also emit normalized `container_strace_mvp` `filesystem.read` events for supported `open`, `openat`, and `openat2` container syscalls. RP6 uses a stricter wrapper that blocks denied workspace file opens and records deterministic approval events for configured write/shell approvals. `network_events.jsonl` and `network_sink_requests.jsonl` contain PV-02 controlled Python network evidence for the fake-sink benchmark path and RP6 disabled-network assertions where a controlled Python command reaches the network shim. `network_policy.json` remains a planned layout item, not a complete provenance source.
 
 ## PV-02 Network Evidence
 

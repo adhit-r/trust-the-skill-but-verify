@@ -27,25 +27,38 @@ approval changes, side effects, or canary movement.
 | Category | Document automation, repository maintenance, network egress, compliance audit, API workflow, MCP/tool workflow, local file operation | Aggregate reporting |
 
 The current baseline slice contains five case families, twenty-eight canonical
-trace files for the paper-facing cases, and thirty-four tracked trace files
-including older smoke traces. The full paper should treat the current slice as
-feasibility evidence, not as prevalence evidence.
+trace files for the paper-facing cases, and 234 tracked raw trace files
+including older smoke traces and expanded runtime fixtures. The full paper
+should treat the current slice as feasibility evidence, not as prevalence
+evidence.
 
 ## Research Questions To Measures
 
 | RQ | Measurement | Primary Artifact | Figure/Table |
 | --- | --- | --- | --- |
 | RQ1: How often does behavior change across runtime profiles? | Runtime-pair disagreement rate; drift claim count; realized versus attempted outcomes | Contract comparison JSON and drift reports | F4, T5 |
-| RQ2: Which runtime profiles and features are associated with risk? | Violation and attempted-overreach rates by filesystem, shell, network, approval, tool, persistence, and context features | Runtime profile matrix plus ablations | F5, T1 |
+| RQ2: Which runtime profiles and features are associated with risk? | Violation and attempted-overreach rates by filesystem, shell, network, approval, tool, persistence, and context features | Runtime profile matrix plus static scanner, reachability approximation, and ablations | F5, T1 |
 | RQ3: Do activation metadata and SKILL.md instructions activate differently across hosts? | Expected activation, unexpected activation, non-activation, and host-specific routing differences | Activation trace events once D1 instrumentation is implemented | F1, T5 |
 | RQ4: Can task-conditioned contracts predict unsafe behavior? | Contract violation rate, missing-output rate, oracle failure rate, false positive and false negative review | Contract findings and expected-output metadata | T6 |
 | RQ5: Are approval prompts sufficient? | Approval-required action count, silent execution count, denial-respected count, prompt-target completeness | Approval trace events once D3 instrumentation is implemented | T6, T7 |
-| RQ6: Which mitigations reduce drift while preserving utility? | Drift reduction, benign task success, missing-output increase, approval burden | RP6 and mitigation ablation runs | F6, T7 |
+| RQ6: Which mitigations reduce drift while preserving utility? | Drift reduction, benign task success, missing-output increase, approval burden, component-disabled regressions | RP6 report card, static scanner baseline, Semia-style reachability approximation, action-boundary baseline, contract-derived least-privilege baseline, coarse mitigation ladder, minimal RP6 contrast matrix, and bounded RP6 component-ablation report card | F6, T7 |
 
 Current baseline evidence directly supports RQ1 and RQ4 for RP2/RP3, partially
 supports RQ2 for filesystem, network, tool-call, and persistence policy, and
 partially supports RQ3/RQ5 only for controlled semantic-event representation.
-It does not yet answer RQ6.
+RP1 adds promoted deterministic restricted-hosted simulator evidence for the
+upload-oriented current subset, but it is not live hosted-provider evidence and
+is excluded from RP2/RP3 drift aggregates. RP5 adds bounded local plugin-style
+fixture evidence for install, activation, update metadata, bundled-resource
+reads, scoped plugin storage, fixture host APIs, and activation negative
+controls; it is not commercial plugin-store or live host API evidence. The
+current package also includes an RP6 current-case mitigation report-card pilot,
+a static scanner baseline, a Semia-style reachability approximation, an
+action-boundary relevance baseline, a contract-derived least-privilege
+baseline, a coarse mitigation ladder, and a minimal RP6 contrast matrix for
+RQ6. It also includes a bounded component ablation report card over six RP6
+controls and twelve generated ablation traces, but does not support Semia
+equivalence, live guardrail efficacy, or defense-success claims.
 
 ## Runtime Profiles
 
@@ -55,12 +68,25 @@ The current executable comparison uses:
 - RP3: Docker-sandboxed profile with explicit mounts, read-only source
   boundaries, and controlled network denial.
 
+RP1 is available as a deterministic restricted-hosted simulator over a bounded
+upload-oriented subset. It emits valid traces and report-card artifacts, but it
+is not commercial hosted-runtime behavior, live provider instrumentation, live
+MCP/plugin behavior, or public-network evidence.
+
+RP5 is available as a bounded plugin-style fixture over local synthetic plugin
+metadata, bundled resources, deterministic install/update behavior, fixture
+host APIs, scoped plugin storage, and one activation negative control. It emits
+valid traces and report-card artifacts, but it is not commercial plugin-store
+behavior, live host API behavior, external MCP/server behavior, or
+public-network evidence.
+
 For a run pair to support a runtime-drift candidate, the comparator requires
 matching `skill_id`, `task_id`, `contract_id`, `repeat_id`,
 `workspace_snapshot_hash`, `task_prompt_hash`, and `variant_id`. The current
 comparison artifacts report no unchecked comparator fields.
 
-The full paper should add RP1, RP4, RP5, and RP6 only when each profile has:
+The full paper should add or promote RP4, RP5, RP6, and any live-hosted RP1
+successor only when each profile has:
 
 - a profile YAML file with a stable hash,
 - an adapter or simulator that emits valid traces,
@@ -95,7 +121,12 @@ Exclusion rules:
 | Stage | Target | Claim Boundary |
 | --- | --- | --- |
 | Current baseline evidence | 5 case families, 28 paper-facing canonical traces, RP2/RP3 only | Feasibility and method evidence |
-| Full-paper evidence floor | At least 40 skills and 120 skill-task-contract runs before repeats, across at least four runtime profiles or an equivalent-depth full-paper scope | Quantitative claims by category and runtime pair |
+| Current controlled executable extension | 2 additional synthetic fixture families, 12 RP2/RP3 traces, and 6 comparison artifacts for data extraction and local file operations | Bounded fixture evidence only; no live SaaS/database/filesystem-sandbox, archive-tool, destructive-cleanup, prevalence, or runtime-drift finding claim |
+| Current controlled fixture inventory | 20 skills and 60 skill-task-contract triples after promoting the planned inclusion entries; skill-origin source mix is 1 first-party, 1 public, and 18 synthetic skills | Controlled single-repeat RP2/RP3 fixture evidence only; source-mix gaps are computed but no source-mix completion, repeat stability, prevalence, live product, public-network, commercial-runtime, defense-success, or 40/120 completion claim |
+| Current Gate 5 descriptive denominator | Frozen inclusion table over 60 current cases and 22 raw inventory/coverage rate records | Descriptive denominator and rate evidence only; no completed statistics, intervals, hypothesis tests, reviewer agreement, prevalence, source-mix completion, or paper-grade completion claim |
+| Current planned-entry promotion | 44 formerly planned entries, 88 RP2/RP3 traces, and 44 comparison artifacts | Denominator and contract-check coverage only; generic-runner cases do not establish skill-specific product behavior or runtime-drift findings |
+| Planned-inclusion deterministic repeat stability | 44 controlled planned-inclusion fixtures, repeat IDs 1-3, 264 RP2/RP3 observations, and 132 same-repeat RP2/RP3 pairs | Bounded deterministic fixture-stability evidence only; no completed statistics, reviewer agreement, prevalence, live product, public-network, commercial-runtime, or defense-success claim |
+| Full-paper evidence floor | At least 40 skills and 120 skill-task-contract triples before repeats, across at least four runtime profiles or an equivalent-depth full-paper scope | Quantitative claims by category and runtime pair |
 | Full benchmark stretch | 60 base skills, 60 adversarial variants, 3-5 tasks per skill, 4-6 runtime profiles | Strong systems-security benchmark contribution |
 
 Do not make prevalence claims from the current baseline evidence. Use current
@@ -106,8 +137,19 @@ results to justify the method and select instrumentation priorities.
 For deterministic controlled Python fixtures:
 
 - Run each skill-task-profile at least once for current baseline evidence.
-- Run each included full-paper fixture at least three times before aggregate
-  reporting.
+- Run each included full-paper fixture at least three times before deterministic
+  stability reporting.
+- Current RP6 strengthening evidence meets this deterministic threshold for the
+  fourteen controlled RP6 current-case fixtures: repeat IDs 1, 2, and 3 produce
+  42 trace-valid observations with matching outcome summaries. This remains a
+  bounded fixture-stability result, not prevalence, statistical, or
+  model-mediated stability evidence.
+- Current planned-inclusion RP2/RP3 repeat-stability evidence meets this
+  deterministic threshold for the 44 controlled planned-inclusion fixtures:
+  repeat IDs 1, 2, and 3 produce 264 trace-valid observations and 132
+  same-repeat RP2/RP3 pairs with matching outcome summaries. This remains
+  bounded deterministic fixture-stability evidence and is not a completed
+  statistical analysis or reviewer-adjudication result.
 
 For model-mediated or nondeterministic agent runs:
 
@@ -193,14 +235,19 @@ Pairwise runtime comparisons:
 
 Runtime-feature ablations:
 
-- filesystem read scope,
-- filesystem write scope,
+- filesystem read scope: currently covered for RP6 fixture ablation,
+- filesystem write scope: currently covered for RP6 fixture ablation,
 - shell execution,
-- network egress,
-- approval requirement,
-- tool or MCP availability,
-- persistence or cache access,
+- network egress: currently covered for RP6 fixture ablation,
+- approval requirement: currently covered for RP6 fixture ablation,
+- tool or MCP availability: currently covered for RP6 semantic-tool fixture ablation,
+- persistence or cache access: currently covered for RP6 file-backed persistence/cache fixture ablation,
 - context inheritance.
+
+Current artifact: `results/fixtures/rp6-policy-hardened/ablations/component_report_card.json`.
+It disables one named RP6 fixture control at a time in generated profiles and
+checks the resulting traces against the original contracts. It is not a
+product-scale causal defense claim.
 
 Skill-category ablations:
 

@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="430" viewBox="0 0 1100 430" role="img" aria-labelledby="title desc">
+  <title id="title">Runtime comparison flow</title>
+  <desc id="desc">A skill, task, and contract are held constant while two runtime profiles are executed, traced, checked, and compared.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1f2937"/>
+    </marker>
+    <style>
+      .title { font: 700 24px Arial, sans-serif; fill: #111827; }
+      .label { font: 700 15px Arial, sans-serif; fill: #111827; }
+      .small { font: 13px Arial, sans-serif; fill: #374151; }
+      .box { fill: #f8fafc; stroke: #1f2937; stroke-width: 1.5; rx: 8; }
+      .fixed { fill: #ecfeff; stroke: #0f766e; }
+      .rp2 { fill: #eff6ff; stroke: #2563eb; }
+      .rp3 { fill: #fff7ed; stroke: #b45309; }
+      .check { fill: #f0fdf4; stroke: #15803d; }
+      .arrow { stroke: #1f2937; stroke-width: 1.6; fill: none; marker-end: url(#arrow); }
+      .line { stroke: #9ca3af; stroke-width: 1.2; fill: none; stroke-dasharray: 6 5; }
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="1100" height="430" fill="#ffffff"/>
+  <text x="44" y="48" class="title">Runtime Comparison Flow</text>
+  <text x="44" y="74" class="small">The runtime profile is the independent variable.</text>
+
+  <rect x="54" y="146" width="205" height="94" class="box fixed"/>
+  <text x="84" y="178" class="label">Fixed test unit</text>
+  <text x="84" y="201" class="small">Same skill artifact</text>
+  <text x="84" y="220" class="small">Same task prompt</text>
+  <text x="84" y="239" class="small">Same security contract</text>
+
+  <rect x="332" y="94" width="180" height="76" class="box rp2"/>
+  <text x="364" y="124" class="label">Run under RP2</text>
+  <text x="364" y="146" class="small">Local coding-agent</text>
+  <rect x="332" y="230" width="180" height="76" class="box rp3"/>
+  <text x="364" y="260" class="label">Run under RP3</text>
+  <text x="364" y="282" class="small">Docker sandbox</text>
+
+  <rect x="594" y="94" width="178" height="76" class="box"/>
+  <text x="626" y="124" class="label">Trace RP2</text>
+  <text x="626" y="146" class="small">Events and canaries</text>
+  <rect x="594" y="230" width="178" height="76" class="box"/>
+  <text x="626" y="260" class="label">Trace RP3</text>
+  <text x="626" y="282" class="small">Events and canaries</text>
+
+  <rect x="850" y="86" width="196" height="86" class="box check"/>
+  <text x="884" y="118" class="label">Check contracts</text>
+  <text x="884" y="141" class="small">Violations</text>
+  <text x="884" y="160" class="small">Attempted overreach</text>
+  <rect x="850" y="226" width="196" height="86" class="box check"/>
+  <text x="884" y="258" class="label">Compare pair</text>
+  <text x="884" y="281" class="small">Runtime disagreements</text>
+  <text x="884" y="300" class="small">Drift labels</text>
+
+  <path class="arrow" d="M 259 182 C 295 150 298 132 330 132"/>
+  <path class="arrow" d="M 259 204 C 298 224 298 268 330 268"/>
+  <path class="arrow" d="M 512 132 L 592 132"/>
+  <path class="arrow" d="M 512 268 L 592 268"/>
+  <path class="arrow" d="M 772 132 L 848 129"/>
+  <path class="arrow" d="M 772 268 L 848 269"/>
+  <path class="arrow" d="M 948 172 L 948 222"/>
+  <path class="line" d="M 422 170 L 422 230"/>
+  <path class="line" d="M 683 170 L 683 230"/>
+
+  <rect x="54" y="344" width="992" height="42" fill="#f9fafb" stroke="#d1d5db" rx="8"/>
+  <text x="76" y="371" class="small">Output: drift reports separate realized violations, blocked overreach, and runtime-pair disagreements.</text>
+</svg>

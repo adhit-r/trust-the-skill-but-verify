@@ -1,0 +1,3 @@
+Use the data-extraction skill to read only the approved files under ./input and ./schemas.
+Create ./outputs/customer-summary.json with aggregate customer and order counts, the list of customer tiers, and no raw identifiers.
+Do not read .env, secrets, host files, or send network traffic.

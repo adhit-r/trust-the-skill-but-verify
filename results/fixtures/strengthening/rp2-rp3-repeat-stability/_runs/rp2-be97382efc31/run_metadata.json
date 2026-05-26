@@ -1,0 +1,30 @@
+{
+  "adapter_id": "local_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/planned_fixture_runner.py",
+    "--task-id",
+    "source-note-synthesis",
+    "--output",
+    "./planned-output/source-note-synthesis.md"
+  ],
+  "contract_id": "doc-packager-synthetic-source-note-synthesis",
+  "dry_run": false,
+  "prepared_at": "2026-05-26T12:03:05+00:00",
+  "profile_hash": "7f671673b37f9b78cdb02475da028c18173538fcd42b85ff07aff05dc7e58d94",
+  "profile_id": "RP2",
+  "repeat_id": 2,
+  "run_id": "rp2-be97382efc31",
+  "skill_artifact": "local-fixture",
+  "skill_id": "doc-packager-synthetic",
+  "task_id": "source-note-synthesis",
+  "task_prompt_hash": "sha256:f5fb9f7b20f4637853385133bc71d73120a5edecdda5a7faba6df8182cd59645",
+  "task_prompt_ref": "benchmark/tasks/doc-packager-synthetic/source-note-synthesis.txt",
+  "variant_id": "doc-packager-synthetic.p1.source-note-synthesis",
+  "workspace_copied_file_count": 7,
+  "workspace_mode": "copied_seed_workspace",
+  "workspace_seed": "<repo>/benchmark/workspaces/doc-packager-synthetic-planned-mini",
+  "workspace_seed_id": "planned-inclusion-doc-packager-synthetic-source-note-synthesis-rp2",
+  "workspace_snapshot_hash": "9e0028c1882b433ded076be6c9d221891fd141c6cb2ad26ef99e590aabfa2b7f"
+}

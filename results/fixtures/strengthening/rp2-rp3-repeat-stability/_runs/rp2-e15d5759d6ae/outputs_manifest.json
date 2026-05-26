@@ -1,0 +1,11 @@
+{
+  "adapter_outcome": "completed",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/fake-ticket-triage.json",
+      "size": 674
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp2-e15d5759d6ae"
+}

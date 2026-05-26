@@ -1,0 +1,23 @@
+{
+  "claim_boundary": "Controlled single-repeat RP2/RP3 synthetic fixture materialization only; no live product, ecosystem prevalence, commercial runtime, public-network, defense-success, or repeat-stability claim.",
+  "fixture_type": "controlled_single_repeat_planned_materializer",
+  "schema_version": "0.1",
+  "skill_id": "ticket-api-synthetic",
+  "tasks": {
+    "credentialed-call-negative-control": {
+      "case_id": "ticket-api-synthetic.p3.credentialed-call-negative-control",
+      "contract_ref": "contracts/ticket-api-synthetic-credentialed-call-negative-control.yaml",
+      "output": "./planned-output/credentialed-call-refusal.json"
+    },
+    "fake-ticket-triage": {
+      "case_id": "ticket-api-synthetic.p1.fake-ticket-triage",
+      "contract_ref": "contracts/ticket-api-synthetic-fake-ticket-triage.yaml",
+      "output": "./planned-output/fake-ticket-triage.json"
+    },
+    "mock-update-plan": {
+      "case_id": "ticket-api-synthetic.p2.mock-update-plan",
+      "contract_ref": "contracts/ticket-api-synthetic-mock-update-plan.yaml",
+      "output": "./planned-output/mock-update-plan.md"
+    }
+  }
+}

@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import subprocess
 import sys
 from pathlib import Path
 from typing import Any
@@ -60,11 +61,43 @@ def expect_equal(actual: Any, expected: Any, label: str) -> None:
         raise AssertionError(f"{label}: expected {expected!r}, observed {actual!r}")
 
 
-def comparison_files(pattern: str) -> list[Path]:
+def glob_matches(pattern: str, exclude_globs: list[str] | None = None) -> list[Path]:
     files = sorted(REPO_ROOT.glob(pattern))
+    excluded: set[Path] = set()
+    for exclude_glob in exclude_globs or []:
+        excluded.update(REPO_ROOT.glob(exclude_glob))
+    if excluded:
+        files = [path for path in files if path not in excluded]
+    return files
+
+
+def evidence_exclude_globs(evidence: dict[str, Any]) -> list[str] | None:
+    exclude_globs = evidence.get("exclude_globs")
+    if exclude_globs is None:
+        return None
+    if not isinstance(exclude_globs, list) or not all(isinstance(item, str) for item in exclude_globs):
+        raise ValueError("exclude_globs must be a list of strings")
+    return exclude_globs
+
+
+def comparison_files(pattern: str, exclude_globs: list[str] | None = None) -> list[Path]:
+    files = glob_matches(pattern, exclude_globs)
     if not files:
         raise FileNotFoundError(f"no comparison files matched {pattern!r}")
     return files
+
+
+def git_tracked_files(pattern: str) -> list[str]:
+    completed = subprocess.run(
+        ["git", "ls-files", "--", pattern],
+        cwd=REPO_ROOT,
+        text=True,
+        capture_output=True,
+        check=False,
+    )
+    if completed.returncode != 0:
+        raise RuntimeError(f"git ls-files failed for {pattern!r}: {completed.stderr.strip()}")
+    return sorted(line for line in completed.stdout.splitlines() if line.strip())
 
 
 def nonblank_line_count(path: Path) -> int:
@@ -169,8 +202,16 @@ def validate_evidence(evidence: dict[str, Any]) -> None:
         pattern = evidence.get("glob")
         if not isinstance(pattern, str) or not pattern:
             raise ValueError("glob_count evidence requires glob")
-        matches = sorted(REPO_ROOT.glob(pattern))
+        matches = glob_matches(pattern, evidence_exclude_globs(evidence))
         expect_equal(len(matches), evidence.get("expected"), pattern)
+        return
+
+    if evidence_type == "git_tracked_glob_count":
+        pattern = evidence.get("glob")
+        if not isinstance(pattern, str) or not pattern:
+            raise ValueError("git_tracked_glob_count evidence requires glob")
+        matches = git_tracked_files(pattern)
+        expect_equal(len(matches), evidence.get("expected"), f"git ls-files {pattern}")
         return
 
     if evidence_type == "comparison_aggregate_sum":
@@ -178,7 +219,7 @@ def validate_evidence(evidence: dict[str, Any]) -> None:
         field = evidence.get("field")
         if not isinstance(pattern, str) or not isinstance(field, str):
             raise ValueError("comparison_aggregate_sum evidence requires glob and field")
-        files = comparison_files(pattern)
+        files = comparison_files(pattern, evidence_exclude_globs(evidence))
         if "expected_source_count" in evidence:
             expect_equal(len(files), evidence["expected_source_count"], f"{pattern}: source count")
         total = sum(validate_comparison_file(path).get("aggregate", {}).get(field, 0) for path in files)
@@ -189,7 +230,7 @@ def validate_evidence(evidence: dict[str, Any]) -> None:
         pattern = evidence.get("glob")
         if not isinstance(pattern, str):
             raise ValueError("comparison_unique_trace_count evidence requires glob")
-        files = comparison_files(pattern)
+        files = comparison_files(pattern, evidence_exclude_globs(evidence))
         if "expected_source_count" in evidence:
             expect_equal(len(files), evidence["expected_source_count"], f"{pattern}: source count")
         trace_paths = {
@@ -204,7 +245,7 @@ def validate_evidence(evidence: dict[str, Any]) -> None:
         pattern = evidence.get("glob")
         if not isinstance(pattern, str):
             raise ValueError("comparison_no_unchecked_fields evidence requires glob")
-        files = comparison_files(pattern)
+        files = comparison_files(pattern, evidence_exclude_globs(evidence))
         if "expected_source_count" in evidence:
             expect_equal(len(files), evidence["expected_source_count"], f"{pattern}: source count")
         for path in files:

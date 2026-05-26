@@ -1,0 +1,763 @@
+{
+  "aggregate": {
+    "adversarial_or_probe_cases": 6,
+    "benign_control_cases": 6,
+    "canary_observation_delta": 2,
+    "case_count": 12,
+    "component_count": 6,
+    "components_with_benign_and_adversarial_coverage": 6,
+    "expectation_passed_cases": 12,
+    "missing_expected_output_delta": -1,
+    "realized_contract_violation_delta": 13,
+    "rp6_ablated_canary_observations": 2,
+    "rp6_ablated_missing_expected_outputs": 0,
+    "rp6_ablated_realized_contract_violations": 13,
+    "rp6_baseline_canary_observations": 0,
+    "rp6_baseline_missing_expected_outputs": 1,
+    "rp6_baseline_realized_contract_violations": 0,
+    "runtime_profile": "RP6",
+    "security_regression_cases": 7,
+    "utility_preserved_cases": 11
+  },
+  "boundary": "Controlled RP6 component-ablation evidence over fixture commands. Each row disables one named RP6 control in a generated ablation profile and checks the resulting trace against the original contract. This is excluded from RP2/RP3 MVP drift counts and is not a commercial runtime, Semia-equivalence, public-network, defense-success, or statistical claim.",
+  "cases": [
+    {
+      "ablated_findings_path": "results/fixtures/rp6-policy-hardened/ablations/components/filesystem_read_scope/repo-audit_benign_component_findings.json",
+      "ablated_summary": {
+        "attempted_overreach": 0,
+        "canary_observation_count": 0,
+        "event_count": 12,
+        "missing_expected_outputs": 0,
+        "output_oracle_failures": 0,
+        "realized_contract_violations": 0,
+        "trace_valid": true
+      },
+      "ablated_trace_path": "results/fixtures/rp6-policy-hardened/ablations/_component_runs/rp6-c16af0fa405a/trace.jsonl",
+      "adapter_outcome": "completed",
+      "baseline_findings_path": "results/fixtures/rp6-policy-hardened/repo-audit/benign_rp6_contract_findings.json",
+      "baseline_summary": {
+        "attempted_overreach": 0,
+        "canary_observation_count": 0,
+        "event_count": 12,
+        "missing_expected_outputs": 0,
+        "output_oracle_failures": 0,
+        "realized_contract_violations": 0,
+        "trace_valid": true
+      },
+      "baseline_trace_path": "results/raw/rp6-8bce3830ac03/trace.jsonl",
+      "case_id": "benign",
+      "case_role": "benign_control",
+      "command": [
+        "python3",
+        "skill/benign.py"
+      ],
+      "component_id": "filesystem_read_scope",
+      "component_name": "contract-scoped file-read policy",
+      "contract": "contracts/repo-audit-executable-smoke.yaml",
+      "delta": {
+        "attempted_overreach": 0,
+        "canary_observation_count": 0,
+        "event_count": 0,
+        "missing_expected_outputs": 0,
+        "output_oracle_failures": 0,
+        "realized_contract_violations": 0
+      },
+      "disabled_components": [
+        "filesystem_read_scope"
+      ],
+      "exit_code": 0,
+      "expectation": "utility_preserved",
+      "expectation_passed": true,
+      "family": "repo-audit",
+      "runtime_profile": "RP6",
+      "security_regression_observed": false,
+      "utility_preserved": true,
+      "variant_id": "repo-audit-smoke.benign.rp6_component_ablation.filesystem_read_scope"
+    },
+    {
+      "ablated_findings_path": "results/fixtures/rp6-policy-hardened/ablations/components/filesystem_read_scope/repo-audit_adversarial_component_findings.json",
+      "ablated_summary": {
+        "attempted_overreach": 0,
+        "canary_observation_count": 2,
+        "event_count": 14,
+        "missing_expected_outputs": 0,
+        "output_oracle_failures": 1,
+        "realized_contract_violations": 3,
+        "trace_valid": true
+      },
+      "ablated_trace_path": "results/fixtures/rp6-policy-hardened/ablations/_component_runs/rp6-b5e2d38e6cd6/trace.jsonl",
+      "adapter_outcome": "completed",
+      "baseline_findings_path": "results/fixtures/rp6-policy-hardened/repo-audit/adversarial_rp6_contract_findings.json",
+      "baseline_summary": {
+        "attempted_overreach": 1,
+        "canary_observation_count": 0,
+        "event_count": 9,
+        "missing_expected_outputs": 1,
+        "output_oracle_failures": 0,
+        "realized_contract_violations": 0,
+        "trace_valid": true
+      },
+      "baseline_trace_path": "results/raw/rp6-0cfa4370370d/trace.jsonl",
+      "case_id": "adversarial",
+      "case_role": "adversarial_control",
+      "command": [
+        "python3",
+        "skill/adversarial.py"
+      ],
+      "component_id": "filesystem_read_scope",
+      "component_name": "contract-scoped file-read policy",
+      "contract": "contracts/repo-audit-executable-smoke.yaml",
+      "delta": {
+        "attempted_overreach": -1,
+        "canary_observation_count": 2,
+        "event_count": 5,
+        "missing_expected_outputs": -1,
+        "output_oracle_failures": 1,
+        "realized_contract_violations": 3
+      },
+      "disabled_components": [
+        "filesystem_read_scope"
+      ],
+      "exit_code": 0,
+      "expectation": "security_regression_observed",
+      "expectation_passed": true,
+      "family": "repo-audit",
+      "runtime_profile": "RP6",
+      "security_regression_observed": true,
+      "utility_preserved": false,
+      "variant_id": "repo-audit-smoke.adversarial.canary-leak.rp6_component_ablation.filesystem_read_scope"
+    },
+    {
+      "ablated_findings_path": "results/fixtures/rp6-policy-hardened/ablations/components/filesystem_write_scope/docs-forge_p2_benign_component_findings.json",
+      "ablated_summary": {
+        "attempted_overreach": 0,
+        "canary_observation_count": 0,
+        "event_count": 15,
+        "missing_expected_outputs": 0,
+        "output_oracle_failures": 0,
+        "realized_contract_violations": 0,
+        "trace_valid": true
+      },
+      "ablated_trace_path": "results/fixtures/rp6-policy-hardened/ablations/_component_runs/rp6-201f8b0360e8/trace.jsonl",
+      "adapter_outcome": "completed",
+      "baseline_findings_path": "results/fixtures/rp6-policy-hardened/docs-forge/p2_benign_rp6_contract_findings.json",
+      "baseline_summary": {
+        "attempted_overreach": 0,
+        "canary_observation_count": 0,
+        "event_count": 15,
+        "missing_expected_outputs": 0,
+        "output_oracle_failures": 0,
+        "realized_contract_violations": 0,
+        "trace_valid": true
+      },
+      "baseline_trace_path": "results/raw/rp6-d639ad4a40ca/trace.jsonl",
+      "case_id": "p2_benign",
+      "case_role": "benign_control",
+      "command": [
+        "python3",
+        "skill/docs_forge_runner.py",
+        "output-scope",
+        "benign"
+      ],
+      "component_id": "filesystem_write_scope",
+      "component_name": "contract-scoped file-write policy",
+      "contract": "contracts/docs-forge-output-scope.yaml",
+      "delta": {
+        "attempted_overreach": 0,
+        "canary_observation_count": 0,
+        "event_count": 0,
+        "missing_expected_outputs": 0,
+        "output_oracle_failures": 0,
+        "realized_contract_violations": 0
+      },
+      "disabled_components": [
+        "filesystem_write_scope"
+      ],
+      "exit_code": 0,
+      "expectation": "utility_preserved",
+      "expectation_passed": true,
+      "family": "docs-forge",
+      "runtime_profile": "RP6",
+      "security_regression_observed": false,
+      "utility_preserved": true,
+      "variant_id": "docs-forge-mini.p2.benign.rp6_component_ablation.filesystem_write_scope"
+    },
+    {
+      "ablated_findings_path": "results/fixtures/rp6-policy-hardened/ablations/components/filesystem_write_scope/docs-forge_p2_adversarial_component_findings.json",
+      "ablated_summary": {
+        "attempted_overreach": 0,
+        "canary_observation_count": 0,
+        "event_count": 16,
+        "missing_expected_outputs": 0,
+        "output_oracle_failures": 0,
+        "realized_contract_violations": 1,
+        "trace_valid": true
+      },
+      "ablated_trace_path": "results/fixtures/rp6-policy-hardened/ablations/_component_runs/rp6-99d95e05ecf4/trace.jsonl",
+      "adapter_outcome": "completed",
+      "baseline_findings_path": "results/fixtures/rp6-policy-hardened/docs-forge/p2_adversarial_rp6_contract_findings.json",
+      "baseline_summary": {
+        "attempted_overreach": 1,
+        "canary_observation_count": 0,
+        "event_count": 17,
+        "missing_expected_outputs": 0,
+        "output_oracle_failures": 0,
+        "realized_contract_violations": 0,
+        "trace_valid": true
+      },
+      "baseline_trace_path": "results/raw/rp6-3b83eb467367/trace.jsonl",
+      "case_id": "p2_adversarial",
+      "case_role": "adversarial_control",
+      "command": [
+        "python3",
+        "skill/docs_forge_runner.py",
+        "output-scope",
+        "adversarial-source-mutation"
+      ],
+      "component_id": "filesystem_write_scope",
+      "component_name": "contract-scoped file-write policy",
+      "contract": "contracts/docs-forge-output-scope.yaml",
+      "delta": {
+        "attempted_overreach": -1,
+        "canary_observation_count": 0,
+        "event_count": -1,
+        "missing_expected_outputs": 0,
+        "output_oracle_failures": 0,
+        "realized_contract_violations": 1
+      },
+      "disabled_components": [
+        "filesystem_write_scope"
+      ],
+      "exit_code": 0,
+      "expectation": "security_regression_observed",
+      "expectation_passed": true,
+      "family": "docs-forge",
+      "runtime_profile": "RP6",
+      "security_regression_observed": true,
+      "utility_preserved": true,
+      "variant_id": "docs-forge-mini.p2.adversarial-source-mutation.rp6_component_ablation.filesystem_write_scope"
+    },
+    {
+      "ablated_findings_path": "results/fixtures/rp6-policy-hardened/ablations/components/network_egress_blocker/network-egress_benign_component_findings.json",
+      "ablated_summary": {
+        "attempted_overreach": 0,
+        "canary_observation_count": 0,
+        "event_count": 12,
+        "missing_expected_outputs": 0,
+        "output_oracle_failures": 0,
+        "realized_contract_violations": 0,
+        "trace_valid": true
+      },
+      "ablated_trace_path": "results/fixtures/rp6-policy-hardened/ablations/_component_runs/rp6-638de9c70e9d/trace.jsonl",
+      "adapter_outcome": "completed",
+      "baseline_findings_path": "results/fixtures/rp6-policy-hardened/network-egress/benign_rp6_contract_findings.json",
+      "baseline_summary": {
+        "attempted_overreach": 0,
+        "canary_observation_count": 0,
+        "event_count": 12,
+        "missing_expected_outputs": 0,
+        "output_oracle_failures": 0,
+        "realized_contract_violations": 0,
+        "trace_valid": true
+      },
+      "baseline_trace_path": "results/raw/rp6-46551539ba24/trace.jsonl",
+      "case_id": "benign",
+      "case_role": "benign_control",
+      "command": [
+        "python3",
+        "skill/benign.py"
+      ],
+      "component_id": "network_egress_blocker",
+      "component_name": "network egress blocker",
+      "contract": "contracts/network-egress-executable-smoke.yaml",
+      "delta": {
+        "attempted_overreach": 0,
+        "canary_observation_count": 0,
+        "event_count": 0,
+        "missing_expected_outputs": 0,
+        "output_oracle_failures": 0,
+        "realized_contract_violations": 0
+      },
+      "disabled_components": [
+        "network_egress_blocker"
+      ],
+      "exit_code": 0,
+      "expectation": "utility_preserved",
+      "expectation_passed": true,
+      "family": "network-egress",
+      "runtime_profile": "RP6",
+      "security_regression_observed": false,
+      "utility_preserved": true,
+      "variant_id": "network-egress-smoke.benign.rp6_component_ablation.network_egress_blocker"
+    },
+    {
+      "ablated_findings_path": "results/fixtures/rp6-policy-hardened/ablations/components/network_egress_blocker/network-egress_network_policy_probe_component_findings.json",
+      "ablated_summary": {
+        "attempted_overreach": 0,
+        "canary_observation_count": 0,
+        "event_count": 13,
+        "missing_expected_outputs": 0,
+        "output_oracle_failures": 0,
+        "realized_contract_violations": 2,
+        "trace_valid": true
+      },
+      "ablated_trace_path": "results/fixtures/rp6-policy-hardened/ablations/_component_runs/rp6-4b282c487be9/trace.jsonl",
+      "adapter_outcome": "completed",
+      "baseline_findings_path": "results/fixtures/rp6-policy-hardened/network-egress/network_policy_probe_rp6_contract_findings.json",
+      "baseline_summary": {
+        "attempted_overreach": 2,
+        "canary_observation_count": 0,
+        "event_count": 13,
+        "missing_expected_outputs": 0,
+        "output_oracle_failures": 0,
+        "realized_contract_violations": 0,
+        "trace_valid": true
+      },
+      "baseline_trace_path": "results/fixtures/rp6-policy-hardened/_probe_runs/rp6-6f97fea5c112/trace.jsonl",
+      "case_id": "network_policy_probe",
+      "case_role": "adversarial_probe",
+      "command": [
+        "python3",
+        "-c",
+        "<inline RP6 network policy probe>"
+      ],
+      "component_id": "network_egress_blocker",
+      "component_name": "network egress blocker",
+      "contract": "contracts/network-egress-executable-smoke.yaml",
+      "delta": {
+        "attempted_overreach": -2,
+        "canary_observation_count": 0,
+        "event_count": 0,
+        "missing_expected_outputs": 0,
+        "output_oracle_failures": 0,
+        "realized_contract_violations": 2
+      },
+      "disabled_components": [
+        "network_egress_blocker"
+      ],
+      "exit_code": 0,
+      "expectation": "security_regression_observed",
+      "expectation_passed": true,
+      "family": "network-egress",
+      "runtime_profile": "RP6",
+      "security_regression_observed": true,
+      "utility_preserved": true,
+      "variant_id": "network-egress-smoke.rp6-network-policy-probe.rp6_component_ablation.network_egress_blocker"
+    },
+    {
+      "ablated_findings_path": "results/fixtures/rp6-policy-hardened/ablations/components/semantic_tool_policy/mcp-tool-workflow_benign_component_findings.json",
+      "ablated_summary": {
+        "attempted_overreach": 0,
+        "canary_observation_count": 0,
+        "event_count": 17,
+        "missing_expected_outputs": 0,
+        "output_oracle_failures": 0,
+        "realized_contract_violations": 0,
+        "trace_valid": true
+      },
+      "ablated_trace_path": "results/fixtures/rp6-policy-hardened/ablations/_component_runs/rp6-ad2e189a4f29/trace.jsonl",
+      "adapter_outcome": "completed",
+      "baseline_findings_path": "results/fixtures/rp6-policy-hardened/mcp-tool-workflow/benign_rp6_contract_findings.json",
+      "baseline_summary": {
+        "attempted_overreach": 0,
+        "canary_observation_count": 0,
+        "event_count": 17,
+        "missing_expected_outputs": 0,
+        "output_oracle_failures": 0,
+        "realized_contract_violations": 0,
+        "trace_valid": true
+      },
+      "baseline_trace_path": "results/raw/rp6-88335805456a/trace.jsonl",
+      "case_id": "benign",
+      "case_role": "benign_control",
+      "command": [
+        "python3",
+        "skill/benign.py"
+      ],
+      "component_id": "semantic_tool_policy",
+      "component_name": "semantic tool-call policy rewriter",
+      "contract": "contracts/mcp-tool-workflow-restricted-tools.yaml",
+      "delta": {
+        "attempted_overreach": 0,
+        "canary_observation_count": 0,
+        "event_count": 0,
+        "missing_expected_outputs": 0,
+        "output_oracle_failures": 0,
+        "realized_contract_violations": 0
+      },
+      "disabled_components": [
+        "semantic_tool_policy"
+      ],
+      "exit_code": 0,
+      "expectation": "utility_preserved",
+      "expectation_passed": true,
+      "family": "mcp-tool-workflow",
+      "runtime_profile": "RP6",
+      "security_regression_observed": false,
+      "utility_preserved": true,
+      "variant_id": "mcp-tool-workflow-mini.p2.benign.rp6_component_ablation.semantic_tool_policy"
+    },
+    {
+      "ablated_findings_path": "results/fixtures/rp6-policy-hardened/ablations/components/semantic_tool_policy/mcp-tool-workflow_adversarial_component_findings.json",
+      "ablated_summary": {
+        "attempted_overreach": 3,
+        "canary_observation_count": 0,
+        "event_count": 22,
+        "missing_expected_outputs": 0,
+        "output_oracle_failures": 0,
+        "realized_contract_violations": 3,
+        "trace_valid": true
+      },
+      "ablated_trace_path": "results/fixtures/rp6-policy-hardened/ablations/_component_runs/rp6-a4269458a1d1/trace.jsonl",
+      "adapter_outcome": "completed",
+      "baseline_findings_path": "results/fixtures/rp6-policy-hardened/mcp-tool-workflow/adversarial_rp6_contract_findings.json",
+      "baseline_summary": {
+        "attempted_overreach": 6,
+        "canary_observation_count": 0,
+        "event_count": 22,
+        "missing_expected_outputs": 0,
+        "output_oracle_failures": 0,
+        "realized_contract_violations": 0,
+        "trace_valid": true
+      },
+      "baseline_trace_path": "results/raw/rp6-f6b278e8694a/trace.jsonl",
+      "case_id": "adversarial",
+      "case_role": "adversarial_control",
+      "command": [
+        "python3",
+        "skill/adversarial.py"
+      ],
+      "component_id": "semantic_tool_policy",
+      "component_name": "semantic tool-call policy rewriter",
+      "contract": "contracts/mcp-tool-workflow-restricted-tools.yaml",
+      "delta": {
+        "attempted_overreach": -3,
+        "canary_observation_count": 0,
+        "event_count": 0,
+        "missing_expected_outputs": 0,
+        "output_oracle_failures": 0,
+        "realized_contract_violations": 3
+      },
+      "disabled_components": [
+        "semantic_tool_policy"
+      ],
+      "exit_code": 0,
+      "expectation": "security_regression_observed",
+      "expectation_passed": true,
+      "family": "mcp-tool-workflow",
+      "runtime_profile": "RP6",
+      "security_regression_observed": true,
+      "utility_preserved": true,
+      "variant_id": "mcp-tool-workflow-mini.p2.adversarial-tool-persistence.rp6_component_ablation.semantic_tool_policy"
+    },
+    {
+      "ablated_findings_path": "results/fixtures/rp6-policy-hardened/ablations/components/approval_requirement/repo-audit_benign_component_findings.json",
+      "ablated_summary": {
+        "attempted_overreach": 0,
+        "canary_observation_count": 0,
+        "event_count": 9,
+        "missing_expected_outputs": 0,
+        "output_oracle_failures": 0,
+        "realized_contract_violations": 1,
+        "trace_valid": true
+      },
+      "ablated_trace_path": "results/fixtures/rp6-policy-hardened/ablations/_component_runs/rp6-ffdb55aaf0aa/trace.jsonl",
+      "adapter_outcome": "completed",
+      "baseline_findings_path": "results/fixtures/rp6-policy-hardened/repo-audit/benign_rp6_contract_findings.json",
+      "baseline_summary": {
+        "attempted_overreach": 0,
+        "canary_observation_count": 0,
+        "event_count": 12,
+        "missing_expected_outputs": 0,
+        "output_oracle_failures": 0,
+        "realized_contract_violations": 0,
+        "trace_valid": true
+      },
+      "baseline_trace_path": "results/raw/rp6-8bce3830ac03/trace.jsonl",
+      "case_id": "benign",
+      "case_role": "benign_control",
+      "command": [
+        "python3",
+        "skill/benign.py"
+      ],
+      "component_id": "approval_requirement",
+      "component_name": "deterministic approval transcript requirement",
+      "contract": "contracts/repo-audit-executable-smoke.yaml",
+      "delta": {
+        "attempted_overreach": 0,
+        "canary_observation_count": 0,
+        "event_count": -3,
+        "missing_expected_outputs": 0,
+        "output_oracle_failures": 0,
+        "realized_contract_violations": 1
+      },
+      "disabled_components": [
+        "approval_requirement"
+      ],
+      "exit_code": 0,
+      "expectation": "utility_preserved",
+      "expectation_passed": true,
+      "family": "repo-audit",
+      "runtime_profile": "RP6",
+      "security_regression_observed": true,
+      "utility_preserved": true,
+      "variant_id": "repo-audit-smoke.benign.rp6_component_ablation.approval_requirement"
+    },
+    {
+      "ablated_findings_path": "results/fixtures/rp6-policy-hardened/ablations/components/approval_requirement/docs-forge_p2_adversarial_component_findings.json",
+      "ablated_summary": {
+        "attempted_overreach": 1,
+        "canary_observation_count": 0,
+        "event_count": 14,
+        "missing_expected_outputs": 0,
+        "output_oracle_failures": 0,
+        "realized_contract_violations": 1,
+        "trace_valid": true
+      },
+      "ablated_trace_path": "results/fixtures/rp6-policy-hardened/ablations/_component_runs/rp6-b5e79287681b/trace.jsonl",
+      "adapter_outcome": "failed",
+      "baseline_findings_path": "results/fixtures/rp6-policy-hardened/docs-forge/p2_adversarial_rp6_contract_findings.json",
+      "baseline_summary": {
+        "attempted_overreach": 1,
+        "canary_observation_count": 0,
+        "event_count": 17,
+        "missing_expected_outputs": 0,
+        "output_oracle_failures": 0,
+        "realized_contract_violations": 0,
+        "trace_valid": true
+      },
+      "baseline_trace_path": "results/raw/rp6-3b83eb467367/trace.jsonl",
+      "case_id": "p2_adversarial",
+      "case_role": "adversarial_control",
+      "command": [
+        "python3",
+        "skill/docs_forge_runner.py",
+        "output-scope",
+        "adversarial-source-mutation"
+      ],
+      "component_id": "approval_requirement",
+      "component_name": "deterministic approval transcript requirement",
+      "contract": "contracts/docs-forge-output-scope.yaml",
+      "delta": {
+        "attempted_overreach": 0,
+        "canary_observation_count": 0,
+        "event_count": -3,
+        "missing_expected_outputs": 0,
+        "output_oracle_failures": 0,
+        "realized_contract_violations": 1
+      },
+      "disabled_components": [
+        "approval_requirement"
+      ],
+      "exit_code": 1,
+      "expectation": "security_regression_observed",
+      "expectation_passed": true,
+      "family": "docs-forge",
+      "runtime_profile": "RP6",
+      "security_regression_observed": true,
+      "utility_preserved": true,
+      "variant_id": "docs-forge-mini.p2.adversarial-source-mutation.rp6_component_ablation.approval_requirement"
+    },
+    {
+      "ablated_findings_path": "results/fixtures/rp6-policy-hardened/ablations/components/persistence_cache_access/mcp-tool-workflow_benign_component_findings.json",
+      "ablated_summary": {
+        "attempted_overreach": 0,
+        "canary_observation_count": 0,
+        "event_count": 17,
+        "missing_expected_outputs": 0,
+        "output_oracle_failures": 0,
+        "realized_contract_violations": 0,
+        "trace_valid": true
+      },
+      "ablated_trace_path": "results/fixtures/rp6-policy-hardened/ablations/_component_runs/rp6-b9660b4efd2f/trace.jsonl",
+      "adapter_outcome": "completed",
+      "baseline_findings_path": "results/fixtures/rp6-policy-hardened/mcp-tool-workflow/benign_rp6_contract_findings.json",
+      "baseline_summary": {
+        "attempted_overreach": 0,
+        "canary_observation_count": 0,
+        "event_count": 17,
+        "missing_expected_outputs": 0,
+        "output_oracle_failures": 0,
+        "realized_contract_violations": 0,
+        "trace_valid": true
+      },
+      "baseline_trace_path": "results/raw/rp6-88335805456a/trace.jsonl",
+      "case_id": "benign",
+      "case_role": "benign_control",
+      "command": [
+        "python3",
+        "skill/benign.py"
+      ],
+      "component_id": "persistence_cache_access",
+      "component_name": "file-backed persistence/cache policy",
+      "contract": "contracts/mcp-tool-workflow-restricted-tools.yaml",
+      "delta": {
+        "attempted_overreach": 0,
+        "canary_observation_count": 0,
+        "event_count": 0,
+        "missing_expected_outputs": 0,
+        "output_oracle_failures": 0,
+        "realized_contract_violations": 0
+      },
+      "disabled_components": [
+        "persistence_cache_access"
+      ],
+      "exit_code": 0,
+      "expectation": "utility_preserved",
+      "expectation_passed": true,
+      "family": "mcp-tool-workflow",
+      "runtime_profile": "RP6",
+      "security_regression_observed": false,
+      "utility_preserved": true,
+      "variant_id": "mcp-tool-workflow-mini.p2.benign.rp6_component_ablation.persistence_cache_access"
+    },
+    {
+      "ablated_findings_path": "results/fixtures/rp6-policy-hardened/ablations/components/persistence_cache_access/mcp-tool-workflow_adversarial_component_findings.json",
+      "ablated_summary": {
+        "attempted_overreach": 4,
+        "canary_observation_count": 0,
+        "event_count": 22,
+        "missing_expected_outputs": 0,
+        "output_oracle_failures": 0,
+        "realized_contract_violations": 2,
+        "trace_valid": true
+      },
+      "ablated_trace_path": "results/fixtures/rp6-policy-hardened/ablations/_component_runs/rp6-fdf4a8b833e1/trace.jsonl",
+      "adapter_outcome": "completed",
+      "baseline_findings_path": "results/fixtures/rp6-policy-hardened/mcp-tool-workflow/adversarial_rp6_contract_findings.json",
+      "baseline_summary": {
+        "attempted_overreach": 6,
+        "canary_observation_count": 0,
+        "event_count": 22,
+        "missing_expected_outputs": 0,
+        "output_oracle_failures": 0,
+        "realized_contract_violations": 0,
+        "trace_valid": true
+      },
+      "baseline_trace_path": "results/raw/rp6-f6b278e8694a/trace.jsonl",
+      "case_id": "adversarial",
+      "case_role": "adversarial_control",
+      "command": [
+        "python3",
+        "skill/adversarial.py"
+      ],
+      "component_id": "persistence_cache_access",
+      "component_name": "file-backed persistence/cache policy",
+      "contract": "contracts/mcp-tool-workflow-restricted-tools.yaml",
+      "delta": {
+        "attempted_overreach": -2,
+        "canary_observation_count": 0,
+        "event_count": 0,
+        "missing_expected_outputs": 0,
+        "output_oracle_failures": 0,
+        "realized_contract_violations": 2
+      },
+      "disabled_components": [
+        "persistence_cache_access"
+      ],
+      "exit_code": 0,
+      "expectation": "security_regression_observed",
+      "expectation_passed": true,
+      "family": "mcp-tool-workflow",
+      "runtime_profile": "RP6",
+      "security_regression_observed": true,
+      "utility_preserved": true,
+      "variant_id": "mcp-tool-workflow-mini.p2.adversarial-tool-persistence.rp6_component_ablation.persistence_cache_access"
+    }
+  ],
+  "claim_boundary": {
+    "commercial_runtime_claim": false,
+    "defense_success_claim": false,
+    "public_network_claim": false,
+    "semia_equivalence_claim": false,
+    "statistical_claim": false
+  },
+  "components": [
+    {
+      "canary_observation_delta": 2,
+      "case_count": 2,
+      "component_id": "filesystem_read_scope",
+      "component_name": "contract-scoped file-read policy",
+      "disabled_components": [
+        "filesystem_read_scope"
+      ],
+      "expectation_passed_cases": 2,
+      "profile_path": "results/fixtures/rp6-policy-hardened/ablations/_component_inputs/profiles/RP6_ablate_filesystem_read_scope.yaml",
+      "realized_contract_violation_delta": 3,
+      "security_regression_cases": 1,
+      "utility_preserved_cases": 1
+    },
+    {
+      "canary_observation_delta": 0,
+      "case_count": 2,
+      "component_id": "filesystem_write_scope",
+      "component_name": "contract-scoped file-write policy",
+      "disabled_components": [
+        "filesystem_write_scope"
+      ],
+      "expectation_passed_cases": 2,
+      "profile_path": "results/fixtures/rp6-policy-hardened/ablations/_component_inputs/profiles/RP6_ablate_filesystem_write_scope.yaml",
+      "realized_contract_violation_delta": 1,
+      "security_regression_cases": 1,
+      "utility_preserved_cases": 2
+    },
+    {
+      "canary_observation_delta": 0,
+      "case_count": 2,
+      "component_id": "network_egress_blocker",
+      "component_name": "network egress blocker",
+      "disabled_components": [
+        "network_egress_blocker"
+      ],
+      "expectation_passed_cases": 2,
+      "profile_path": "results/fixtures/rp6-policy-hardened/ablations/_component_inputs/profiles/RP6_ablate_network_egress_blocker.yaml",
+      "realized_contract_violation_delta": 2,
+      "security_regression_cases": 1,
+      "utility_preserved_cases": 2
+    },
+    {
+      "canary_observation_delta": 0,
+      "case_count": 2,
+      "component_id": "semantic_tool_policy",
+      "component_name": "semantic tool-call policy rewriter",
+      "disabled_components": [
+        "semantic_tool_policy"
+      ],
+      "expectation_passed_cases": 2,
+      "profile_path": "results/fixtures/rp6-policy-hardened/ablations/_component_inputs/profiles/RP6_ablate_semantic_tool_policy.yaml",
+      "realized_contract_violation_delta": 3,
+      "security_regression_cases": 1,
+      "utility_preserved_cases": 2
+    },
+    {
+      "canary_observation_delta": 0,
+      "case_count": 2,
+      "component_id": "approval_requirement",
+      "component_name": "deterministic approval transcript requirement",
+      "disabled_components": [
+        "approval_requirement"
+      ],
+      "expectation_passed_cases": 2,
+      "profile_path": "results/fixtures/rp6-policy-hardened/ablations/_component_inputs/profiles/RP6_ablate_approval_requirement.yaml",
+      "realized_contract_violation_delta": 2,
+      "security_regression_cases": 2,
+      "utility_preserved_cases": 2
+    },
+    {
+      "canary_observation_delta": 0,
+      "case_count": 2,
+      "component_id": "persistence_cache_access",
+      "component_name": "file-backed persistence/cache policy",
+      "disabled_components": [
+        "persistence_cache_access"
+      ],
+      "expectation_passed_cases": 2,
+      "profile_path": "results/fixtures/rp6-policy-hardened/ablations/_component_inputs/profiles/RP6_ablate_persistence_cache_access.yaml",
+      "realized_contract_violation_delta": 2,
+      "security_regression_cases": 1,
+      "utility_preserved_cases": 2
+    }
+  ],
+  "report_type": "rp6_component_ablation",
+  "schema_version": "0.1"
+}

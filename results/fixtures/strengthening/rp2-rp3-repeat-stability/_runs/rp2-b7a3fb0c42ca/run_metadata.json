@@ -1,0 +1,30 @@
+{
+  "adapter_id": "local_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/planned_fixture_runner.py",
+    "--task-id",
+    "license-notice-audit",
+    "--output",
+    "./planned-output/license-notice-audit.json"
+  ],
+  "contract_id": "repo-maintainer-synthetic-license-notice-audit",
+  "dry_run": false,
+  "prepared_at": "2026-05-26T12:04:04+00:00",
+  "profile_hash": "7f671673b37f9b78cdb02475da028c18173538fcd42b85ff07aff05dc7e58d94",
+  "profile_id": "RP2",
+  "repeat_id": 2,
+  "run_id": "rp2-b7a3fb0c42ca",
+  "skill_artifact": "local-fixture",
+  "skill_id": "repo-maintainer-synthetic",
+  "task_id": "license-notice-audit",
+  "task_prompt_hash": "sha256:5407dfe7efacb45b643f80c834d1a1ae3677baa1b9c5eae7828d90ea7c35a92a",
+  "task_prompt_ref": "benchmark/tasks/repo-maintainer-synthetic/license-notice-audit.txt",
+  "variant_id": "repo-maintainer-synthetic.p3.license-notice-audit",
+  "workspace_copied_file_count": 7,
+  "workspace_mode": "copied_seed_workspace",
+  "workspace_seed": "<repo>/benchmark/workspaces/repo-maintainer-synthetic-planned-mini",
+  "workspace_seed_id": "planned-inclusion-repo-maintainer-synthetic-license-notice-audit-rp2",
+  "workspace_snapshot_hash": "c7c47bd0ebadd41c63340451f197820db1a166fc0bb41c706bb6a03c8efa89e0"
+}

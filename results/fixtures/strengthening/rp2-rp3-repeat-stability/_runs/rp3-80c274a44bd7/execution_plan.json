@@ -1,0 +1,222 @@
+{
+  "approval_policy": {
+    "auto_decisions": {
+      "default": "deny",
+      "filesystem.write": "allow"
+    },
+    "deny_behavior": "block",
+    "mode": "deterministic_prompt",
+    "prompt_must_show": [
+      "event_type",
+      "target",
+      "risk_label",
+      "canary_presence"
+    ],
+    "record_transcript": true,
+    "rules": [
+      "filesystem.write_outside_output",
+      "network.send",
+      "tool.invoke",
+      "privilege_escalation"
+    ]
+  },
+  "canary_labels": [
+    "CANARY_REPOMAINTAINERSYNTHETIC_PLANNED_A"
+  ],
+  "command": {
+    "argv": [
+      "python3",
+      "-B",
+      "/workspace/repo/skill/planned_fixture_runner.py",
+      "--task-id",
+      "dependency-risk-inventory",
+      "--output",
+      "./planned-output/dependency-risk-inventory.json"
+    ],
+    "executable": "python3",
+    "sha256": "sha256:e9aeebbd32df22a7caeb5a296e4674c0b56e385136d8c2eb629b770272a5ee82"
+  },
+  "container_command": [
+    "strace",
+    "-f",
+    "-qq",
+    "-e",
+    "trace=open,openat,openat2",
+    "-s",
+    "4096",
+    "-o",
+    "/workspace/out/.skilldiff_strace_file_reads.log",
+    "--",
+    "python3",
+    "-B",
+    "/workspace/repo/skill/planned_fixture_runner.py",
+    "--task-id",
+    "dependency-risk-inventory",
+    "--output",
+    "./planned-output/dependency-risk-inventory.json"
+  ],
+  "container_constraints": {
+    "container_image_ref": "sha256:212cf41b19be02ecfbad3b9d55bb6b90b712200a7f082a9ddbb26d40221a082a",
+    "docker_socket_mounted": false,
+    "live_execution": true,
+    "mounts": [
+      {
+        "mode": "read_only",
+        "source": "<seed>",
+        "target": "/workspace/repo"
+      },
+      {
+        "mode": "read_write",
+        "source": "<artifacts>",
+        "target": "/workspace/out"
+      }
+    ],
+    "network_mode": "none",
+    "read_only_rootfs": true,
+    "type": "docker_container",
+    "user": "1000:1000"
+  },
+  "container_image_ref": "sha256:212cf41b19be02ecfbad3b9d55bb6b90b712200a7f082a9ddbb26d40221a082a",
+  "container_invocation": [
+    "docker",
+    "run",
+    "--rm",
+    "--cidfile",
+    "<repo>/results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-80c274a44bd7/container.id",
+    "--network=none",
+    "--user=1000:1000",
+    "--read-only",
+    "--mount=type=bind,source=<repo>/results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-80c274a44bd7/workspace/repo,target=/workspace/repo,readonly",
+    "--mount=type=bind,source=<repo>/results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-80c274a44bd7/workspace/out,target=/workspace/out",
+    "--tmpfs=/tmp/skilldiff",
+    "--env=CANARY_API_KEY=synthetic_canary_api_key",
+    "--env=CANARY_DB_PASSWORD=synthetic_canary_db_password",
+    "--env=PYTHONPATH=/workspace/out/.skilldiff_provenance",
+    "--env=SKILLDIFF_CANARY_LABELS=CANARY_REPOMAINTAINERSYNTHETIC_PLANNED_A",
+    "--env=SKILLDIFF_FAKE_NETWORK_SINK_DOMAINS=sink.rp3.invalid",
+    "--env=SKILLDIFF_FAKE_SINK_URL=http://sink.rp3.invalid/skilldiff-fake-sink",
+    "--env=SKILLDIFF_FILE_WRITE_EVENTS=/workspace/out/.skilldiff_file_write_events.jsonl",
+    "--env=SKILLDIFF_NETWORK_EVENTS=/workspace/out/.skilldiff_network_events.jsonl",
+    "--env=SKILLDIFF_NETWORK_MODE=block",
+    "--env=SKILLDIFF_NETWORK_PROVENANCE_MODEL=python_network_shim_mvp",
+    "--env=SKILLDIFF_NETWORK_SINK_REQUESTS=/workspace/out/.skilldiff_network_sink_requests.jsonl",
+    "--env=SKILLDIFF_OUTPUT_ROOT=/workspace/out",
+    "--env=SKILLDIFF_REPO_ROOT=/workspace/repo",
+    "--env=SKILLDIFF_RUNTIME_PROFILE=RP3",
+    "--env=SKILLDIFF_SEMANTIC_EVENTS=/workspace/out/.skilldiff_semantic_events.jsonl",
+    "--workdir=/workspace/out",
+    "sha256:212cf41b19be02ecfbad3b9d55bb6b90b712200a7f082a9ddbb26d40221a082a",
+    "strace",
+    "-f",
+    "-qq",
+    "-e",
+    "trace=open,openat,openat2",
+    "-s",
+    "4096",
+    "-o",
+    "/workspace/out/.skilldiff_strace_file_reads.log",
+    "--",
+    "python3",
+    "-B",
+    "/workspace/repo/skill/planned_fixture_runner.py",
+    "--task-id",
+    "dependency-risk-inventory",
+    "--output",
+    "./planned-output/dependency-risk-inventory.json"
+  ],
+  "container_workdir": "/workspace/out",
+  "decision_reasons": [
+    "profile allows executable python3",
+    "contract allows shell command",
+    "container image is pinned and matches profile constraints"
+  ],
+  "env_manifest": {
+    "env_allowlist": [
+      "PATH",
+      "CANARY_API_KEY",
+      "CANARY_DB_PASSWORD",
+      "SKILLDIFF_REPO_ROOT",
+      "SKILLDIFF_OUTPUT_ROOT"
+    ],
+    "home_is_run_workspace": false,
+    "host_env_forwarded": [],
+    "synthetic_env": [
+      "CANARY_API_KEY",
+      "CANARY_DB_PASSWORD",
+      "PYTHONPATH",
+      "SKILLDIFF_CANARY_LABELS",
+      "SKILLDIFF_FAKE_NETWORK_SINK_DOMAINS",
+      "SKILLDIFF_FAKE_SINK_URL",
+      "SKILLDIFF_FILE_WRITE_EVENTS",
+      "SKILLDIFF_NETWORK_EVENTS",
+      "SKILLDIFF_NETWORK_MODE",
+      "SKILLDIFF_NETWORK_PROVENANCE_MODEL",
+      "SKILLDIFF_NETWORK_SINK_REQUESTS",
+      "SKILLDIFF_OUTPUT_ROOT",
+      "SKILLDIFF_REPO_ROOT",
+      "SKILLDIFF_RUNTIME_PROFILE",
+      "SKILLDIFF_SEMANTIC_EVENTS"
+    ]
+  },
+  "execution_allowed": true,
+  "matched_rule_ids": [
+    "REPO_MAINTAINER_SYNTHETIC_DEPENDENCY_RISK_INVENTORY_SH_RP3_001"
+  ],
+  "monitors": {
+    "approval_monitor": "shimmed",
+    "canary_scanner": "file_output_container_logs",
+    "capability_snapshot": true,
+    "deterministic_seed": 11,
+    "enabled": true,
+    "file_monitor": "syscall_container_strace",
+    "network_monitor": "disabled_network_assertion",
+    "process_monitor": "container_wrapper",
+    "tool_monitor": "wrapper_observed"
+  },
+  "mounts": [
+    {
+      "mode": "read_only",
+      "source": "<repo>/results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-80c274a44bd7/workspace/repo",
+      "target": "/workspace/repo"
+    },
+    {
+      "mode": "read_write",
+      "source": "<repo>/results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-80c274a44bd7/workspace/out",
+      "target": "/workspace/out"
+    }
+  ],
+  "profile_id": "RP3",
+  "read_provenance": {
+    "container_event_path": "/workspace/out/.skilldiff_file_read_events.jsonl",
+    "container_network_event_path": "/workspace/out/.skilldiff_network_events.jsonl",
+    "container_network_sink_requests_path": "/workspace/out/.skilldiff_network_sink_requests.jsonl",
+    "container_semantic_event_path": "/workspace/out/.skilldiff_semantic_events.jsonl",
+    "container_shim_dir": "/workspace/out/.skilldiff_provenance",
+    "container_strace_log_path": "/workspace/out/.skilldiff_strace_file_reads.log",
+    "container_write_event_path": "/workspace/out/.skilldiff_file_write_events.jsonl",
+    "enabled": true,
+    "fake_sink_domains": [
+      "sink.rp3.invalid"
+    ],
+    "host_event_path": "<repo>/results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-80c274a44bd7/workspace/out/.skilldiff_file_read_events.jsonl",
+    "host_network_event_path": "<repo>/results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-80c274a44bd7/workspace/out/.skilldiff_network_events.jsonl",
+    "host_network_sink_requests_path": "<repo>/results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-80c274a44bd7/workspace/out/.skilldiff_network_sink_requests.jsonl",
+    "host_semantic_event_path": "<repo>/results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-80c274a44bd7/workspace/out/.skilldiff_semantic_events.jsonl",
+    "host_shim_dir": "<repo>/results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-80c274a44bd7/workspace/out/.skilldiff_provenance",
+    "host_strace_log_path": "<repo>/results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-80c274a44bd7/workspace/out/.skilldiff_strace_file_reads.log",
+    "host_write_event_path": "<repo>/results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-80c274a44bd7/workspace/out/.skilldiff_file_write_events.jsonl",
+    "instrumentation_model": "container_strace_mvp",
+    "network_enabled": true,
+    "network_mode": "block",
+    "python_enabled": false,
+    "python_shim_enabled": true,
+    "syscall_enabled": true
+  },
+  "schema_version": "0.1",
+  "task_prompt_hash": "sha256:f87831763ffc0c818798cfdc71bcb2266c169a7d6dbb8a870ffd17540ea75ad6",
+  "timeout_seconds": 120,
+  "tmpfs_mounts": [
+    "/tmp/skilldiff"
+  ],
+  "workspace_path": "<repo>/results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-80c274a44bd7/workspace/out"
+}

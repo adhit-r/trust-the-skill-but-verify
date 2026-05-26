@@ -14,6 +14,9 @@ import yaml
 from skilldiff.adapters import RunSpec
 from skilldiff.adapters.docker import DockerDryRunAdapter
 from skilldiff.adapters.local import LocalDryRunAdapter
+from skilldiff.adapters.policy import HardenedPolicyAdapter
+from skilldiff.adapters.plugin_fixture import PluginFixtureAdapter
+from skilldiff.adapters.restricted_hosted import RestrictedHostedSimAdapter
 from skilldiff.traces import TraceValidationError, validate_trace_file
 from skilldiff.traces.events import build_trace_from_artifacts
 
@@ -31,10 +34,16 @@ def load_yaml(path: Path) -> dict[str, Any]:
 
 def choose_adapter(profile: dict[str, Any]) -> Any:
     adapter_id = profile["adapter"]["adapter_id"]
+    if adapter_id == "restricted_hosted_sim":
+        return RestrictedHostedSimAdapter()
+    if adapter_id == "plugin_fixture_adapter":
+        return PluginFixtureAdapter()
     if adapter_id == "local_adapter":
         return LocalDryRunAdapter()
     if adapter_id == "docker_adapter":
         return DockerDryRunAdapter()
+    if adapter_id == "hardened_policy_adapter":
+        return HardenedPolicyAdapter()
     raise ValueError(f"no RM-07 adapter implementation for {adapter_id}")
 
 

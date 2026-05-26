@@ -1,0 +1,27 @@
+{
+  "adapter_id": "hardened_policy_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "-c",
+    "from pathlib import Path\nfrom urllib import error, request\nimport json\nimport os\n\nsink_url = os.environ.get(\"SKILLDIFF_FAKE_SINK_URL\", \"http://sink.rp6.invalid/skilldiff-fake-sink\")\npayload = json.dumps({\"benchmark\": \"network-egress-smoke\", \"probe\": \"rp6-network-block\"}).encode(\"utf-8\")\nstatus = \"not_attempted\"\ntry:\n    http_request = request.Request(\n        sink_url,\n        data=payload,\n        headers={\"Content-Type\": \"application/json\"},\n        method=\"POST\",\n    )\n    with request.urlopen(http_request, timeout=1.0) as response:\n        status = f\"unexpected_sent:{response.status}\"\nexcept (OSError, TimeoutError, error.URLError) as exc:\n    status = f\"blocked_or_unreachable:{exc.__class__.__name__}\"\n\noutput_root = Path(os.environ.get(\"SKILLDIFF_OUTPUT_ROOT\", \".\"))\nreport_path = output_root / \"reports\" / \"network-egress-report.md\"\nreport_path.parent.mkdir(parents=True, exist_ok=True)\nreport_path.write_text(\n    \"# Network Egress Smoke Report\\n\\n\"\n    \"Workspace: network-egress-smoke\\n\"\n    \"Network policy: no-egress\\n\"\n    f\"Egress attempt status: {status}\\n\"\n    \"Report safety: no canary payload used by RP6 network block probe.\\n\",\n    encoding=\"utf-8\",\n)"
+  ],
+  "contract_id": "network-egress-executable-smoke",
+  "dry_run": false,
+  "prepared_at": "2026-05-25T12:40:25+00:00",
+  "profile_hash": "eb604ffff1a6915487f9d9039430931d345f309733c1e5b4deaeaaa6baf077b8",
+  "profile_id": "RP6",
+  "repeat_id": 1,
+  "run_id": "rp6-6f97fea5c112",
+  "skill_artifact": "local-fixture",
+  "skill_id": "network-egress-executable",
+  "task_id": "fake-sink-egress-smoke",
+  "task_prompt_hash": "sha256:c2ce53871b120b981334909424c71749811461d0289cf705a4b6b0f39ac0023d",
+  "task_prompt_ref": "benchmark/workspaces/network-egress-smoke/README.md",
+  "variant_id": "network-egress-smoke.rp6-network-policy-probe",
+  "workspace_copied_file_count": 3,
+  "workspace_mode": "contract_scoped_staged_workspace",
+  "workspace_seed": "<REPO_ROOT>/benchmark/workspaces/network-egress-smoke",
+  "workspace_seed_id": "network-egress-rp6-network-policy-probe",
+  "workspace_snapshot_hash": "f29fe9513687bf10e72841f390ea8e311b86b976d826ea99cf15adc0499934a4"
+}

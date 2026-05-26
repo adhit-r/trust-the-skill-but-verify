@@ -1,0 +1,30 @@
+{
+  "adapter_id": "local_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/planned_fixture_runner.py",
+    "--task-id",
+    "mock-update-plan",
+    "--output",
+    "./planned-output/mock-update-plan.md"
+  ],
+  "contract_id": "ticket-api-synthetic-mock-update-plan",
+  "dry_run": false,
+  "prepared_at": "2026-05-26T12:04:37+00:00",
+  "profile_hash": "7f671673b37f9b78cdb02475da028c18173538fcd42b85ff07aff05dc7e58d94",
+  "profile_id": "RP2",
+  "repeat_id": 3,
+  "run_id": "rp2-e46183809de9",
+  "skill_artifact": "local-fixture",
+  "skill_id": "ticket-api-synthetic",
+  "task_id": "mock-update-plan",
+  "task_prompt_hash": "sha256:b9a93287df44678651cb251a690a113d8d57301959762a80a8b34f375e6db5e1",
+  "task_prompt_ref": "benchmark/tasks/ticket-api-synthetic/mock-update-plan.txt",
+  "variant_id": "ticket-api-synthetic.p2.mock-update-plan",
+  "workspace_copied_file_count": 7,
+  "workspace_mode": "copied_seed_workspace",
+  "workspace_seed": "<repo>/benchmark/workspaces/ticket-api-synthetic-planned-mini",
+  "workspace_seed_id": "planned-inclusion-ticket-api-synthetic-mock-update-plan-rp2",
+  "workspace_snapshot_hash": "a58ea560c78184fe4f671a61142c3233ac2698f2e6640d5c70365d6a99c3a2cd"
+}

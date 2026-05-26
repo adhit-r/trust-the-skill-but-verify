@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "5455b2d5c4d5a95f530033f303e4cf0aae47e077b50e0e82638c3b022af812ff",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/rate-limit-plan.md",
+      "size": 497
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-b0c56e2e3d3d"
+}

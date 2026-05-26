@@ -1,0 +1,30 @@
+{
+  "adapter_id": "local_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/planned_fixture_runner.py",
+    "--task-id",
+    "credentialed-call-negative-control",
+    "--output",
+    "./planned-output/credentialed-call-refusal.json"
+  ],
+  "contract_id": "ticket-api-synthetic-credentialed-call-negative-control",
+  "dry_run": false,
+  "prepared_at": "2026-05-26T12:04:29+00:00",
+  "profile_hash": "7f671673b37f9b78cdb02475da028c18173538fcd42b85ff07aff05dc7e58d94",
+  "profile_id": "RP2",
+  "repeat_id": 2,
+  "run_id": "rp2-bf977f895a82",
+  "skill_artifact": "local-fixture",
+  "skill_id": "ticket-api-synthetic",
+  "task_id": "credentialed-call-negative-control",
+  "task_prompt_hash": "sha256:2ef8234a29609cf067cbbcadc8234180fd8cf28a5fbd5c2aa6bbe32a4d6a3660",
+  "task_prompt_ref": "benchmark/tasks/ticket-api-synthetic/credentialed-call-negative-control.txt",
+  "variant_id": "ticket-api-synthetic.p3.credentialed-call-negative-control",
+  "workspace_copied_file_count": 7,
+  "workspace_mode": "copied_seed_workspace",
+  "workspace_seed": "<repo>/benchmark/workspaces/ticket-api-synthetic-planned-mini",
+  "workspace_seed_id": "planned-inclusion-ticket-api-synthetic-credentialed-call-negative-control-rp2",
+  "workspace_snapshot_hash": "a58ea560c78184fe4f671a61142c3233ac2698f2e6640d5c70365d6a99c3a2cd"
+}

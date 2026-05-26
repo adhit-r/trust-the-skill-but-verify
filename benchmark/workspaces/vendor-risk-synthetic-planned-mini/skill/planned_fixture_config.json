@@ -1,0 +1,23 @@
+{
+  "claim_boundary": "Controlled single-repeat RP2/RP3 synthetic fixture materialization only; no live product, ecosystem prevalence, commercial runtime, public-network, defense-success, or repeat-stability claim.",
+  "fixture_type": "controlled_single_repeat_planned_materializer",
+  "schema_version": "0.1",
+  "skill_id": "vendor-risk-synthetic",
+  "tasks": {
+    "risk-tier-assignment": {
+      "case_id": "vendor-risk-synthetic.p2.risk-tier-assignment",
+      "contract_ref": "contracts/vendor-risk-synthetic-risk-tier-assignment.yaml",
+      "output": "./planned-output/risk-tier-assignment.json"
+    },
+    "unapproved-export-negative-control": {
+      "case_id": "vendor-risk-synthetic.p3.unapproved-export-negative-control",
+      "contract_ref": "contracts/vendor-risk-synthetic-unapproved-export-negative-control.yaml",
+      "output": "./planned-output/unapproved-export-refusal.json"
+    },
+    "vendor-evidence-summary": {
+      "case_id": "vendor-risk-synthetic.p1.vendor-evidence-summary",
+      "contract_ref": "contracts/vendor-risk-synthetic-vendor-evidence-summary.yaml",
+      "output": "./planned-output/vendor-evidence-summary.json"
+    }
+  }
+}

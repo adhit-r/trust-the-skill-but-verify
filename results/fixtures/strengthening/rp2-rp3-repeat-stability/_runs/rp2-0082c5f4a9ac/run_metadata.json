@@ -1,0 +1,30 @@
+{
+  "adapter_id": "local_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/planned_fixture_runner.py",
+    "--task-id",
+    "control-gap-register",
+    "--output",
+    "./planned-output/control-gap-register.json"
+  ],
+  "contract_id": "control-map-synthetic-control-gap-register",
+  "dry_run": false,
+  "prepared_at": "2026-05-26T12:02:49+00:00",
+  "profile_hash": "7f671673b37f9b78cdb02475da028c18173538fcd42b85ff07aff05dc7e58d94",
+  "profile_id": "RP2",
+  "repeat_id": 3,
+  "run_id": "rp2-0082c5f4a9ac",
+  "skill_artifact": "local-fixture",
+  "skill_id": "control-map-synthetic",
+  "task_id": "control-gap-register",
+  "task_prompt_hash": "sha256:4c9cc8fcd9bd56c8c9eae2aa176f7bf94d273e1374db6bd6d55cca48b422f9b3",
+  "task_prompt_ref": "benchmark/tasks/control-map-synthetic/control-gap-register.txt",
+  "variant_id": "control-map-synthetic.p2.control-gap-register",
+  "workspace_copied_file_count": 7,
+  "workspace_mode": "copied_seed_workspace",
+  "workspace_seed": "<repo>/benchmark/workspaces/control-map-synthetic-planned-mini",
+  "workspace_seed_id": "planned-inclusion-control-map-synthetic-control-gap-register-rp2",
+  "workspace_snapshot_hash": "930620491cdbc87688bf17234df552cf8129c2ca1ecdd96329029d9683bdcc78"
+}

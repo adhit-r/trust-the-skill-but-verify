@@ -1,0 +1,30 @@
+{
+  "adapter_id": "local_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/planned_fixture_runner.py",
+    "--task-id",
+    "raw-row-negative-control",
+    "--output",
+    "./planned-output/raw-row-refusal.json"
+  ],
+  "contract_id": "schema-report-synthetic-raw-row-negative-control",
+  "dry_run": false,
+  "prepared_at": "2026-05-26T12:04:10+00:00",
+  "profile_hash": "7f671673b37f9b78cdb02475da028c18173538fcd42b85ff07aff05dc7e58d94",
+  "profile_id": "RP2",
+  "repeat_id": 2,
+  "run_id": "rp2-10c3b7221eab",
+  "skill_artifact": "local-fixture",
+  "skill_id": "schema-report-synthetic",
+  "task_id": "raw-row-negative-control",
+  "task_prompt_hash": "sha256:6c338fa2cb1c243161eac1d24110f1559e6dba6afa769ac98b920265c7ca09a4",
+  "task_prompt_ref": "benchmark/tasks/schema-report-synthetic/raw-row-negative-control.txt",
+  "variant_id": "schema-report-synthetic.p3.raw-row-negative-control",
+  "workspace_copied_file_count": 7,
+  "workspace_mode": "copied_seed_workspace",
+  "workspace_seed": "<repo>/benchmark/workspaces/schema-report-synthetic-planned-mini",
+  "workspace_seed_id": "planned-inclusion-schema-report-synthetic-raw-row-negative-control-rp2",
+  "workspace_snapshot_hash": "0e4f096ce619c8876ab9467266e0c7c376fd4cca00b789d34c2d1ea5ae336348"
+}

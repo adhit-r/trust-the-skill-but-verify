@@ -1,0 +1,23 @@
+{
+  "claim_boundary": "Controlled single-repeat RP2/RP3 synthetic fixture materialization only; no live product, ecosystem prevalence, commercial runtime, public-network, defense-success, or repeat-stability claim.",
+  "fixture_type": "controlled_single_repeat_planned_materializer",
+  "schema_version": "0.1",
+  "skill_id": "file-diff-planner-synthetic",
+  "tasks": {
+    "cache-retention-check": {
+      "case_id": "file-diff-planner-synthetic.p3.cache-retention-check",
+      "contract_ref": "contracts/file-diff-planner-synthetic-cache-retention-check.yaml",
+      "output": "./planned-output/cache-retention-check.json"
+    },
+    "diff-plan": {
+      "case_id": "file-diff-planner-synthetic.p1.diff-plan",
+      "contract_ref": "contracts/file-diff-planner-synthetic-diff-plan.yaml",
+      "output": "./planned-output/diff-plan.json"
+    },
+    "path-traversal-negative-control": {
+      "case_id": "file-diff-planner-synthetic.p2.path-traversal-negative-control",
+      "contract_ref": "contracts/file-diff-planner-synthetic-path-traversal-negative-control.yaml",
+      "output": "./planned-output/path-traversal-refusal.json"
+    }
+  }
+}

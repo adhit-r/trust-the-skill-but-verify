@@ -1,0 +1,159 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/trust-the-skill/gate5_descriptive_rates.schema.json",
+  "title": "Gate 5 Descriptive Rates",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "report_type",
+    "status",
+    "analysis_script",
+    "boundary",
+    "input_manifest_refs",
+    "frozen_inclusion_table_ref",
+    "paired_summary_ref",
+    "claim_boundary",
+    "aggregate",
+    "rates",
+    "exclusions",
+    "next_dependencies"
+  ],
+  "properties": {
+    "schema_version": { "enum": ["0.1"] },
+    "report_type": { "enum": ["gate5_descriptive_rates"] },
+    "status": { "enum": ["computed_from_frozen_inclusion_table_no_statistics"] },
+    "analysis_script": { "enum": ["tools/build_gate5_descriptive_rates.py"] },
+    "boundary": { "type": "string", "minLength": 1 },
+    "input_manifest_refs": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "uniqueItems": true
+    },
+    "frozen_inclusion_table_ref": { "type": "string", "minLength": 1 },
+    "paired_summary_ref": { "type": "string", "minLength": 1 },
+    "claim_boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "raw_descriptive_rates_only",
+        "completed_statistics_claimed",
+        "confidence_intervals_claimed",
+        "hypothesis_tests_claimed",
+        "reviewer_agreement_claimed",
+        "prevalence_claim",
+        "source_mix_completion_claimed",
+        "paper_grade_completion_claimed"
+      ],
+      "properties": {
+        "raw_descriptive_rates_only": { "const": true },
+        "completed_statistics_claimed": { "const": false },
+        "confidence_intervals_claimed": { "const": false },
+        "hypothesis_tests_claimed": { "const": false },
+        "reviewer_agreement_claimed": { "const": false },
+        "prevalence_claim": { "const": false },
+        "source_mix_completion_claimed": { "const": false },
+        "paper_grade_completion_claimed": { "const": false }
+      }
+    },
+    "aggregate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "frozen_case_count",
+        "included_case_count",
+        "excluded_case_count",
+        "unique_skill_count",
+        "source_mix_skill_counts",
+        "source_mix_case_counts",
+        "case_status_counts",
+        "evidence_stage_counts",
+        "category_case_counts",
+        "runtime_profile_case_counts",
+        "cases_with_paired_summary_group",
+        "cases_without_paired_summary_group",
+        "included_paired_group_count",
+        "included_pair_count"
+      ],
+      "properties": {
+        "frozen_case_count": { "type": "integer", "minimum": 0 },
+        "included_case_count": { "type": "integer", "minimum": 0 },
+        "excluded_case_count": { "type": "integer", "minimum": 0 },
+        "unique_skill_count": { "type": "integer", "minimum": 0 },
+        "source_mix_skill_counts": { "$ref": "#/$defs/sourceMixCounts" },
+        "source_mix_case_counts": { "$ref": "#/$defs/sourceMixCounts" },
+        "case_status_counts": { "type": "object", "additionalProperties": { "type": "integer", "minimum": 0 } },
+        "evidence_stage_counts": { "type": "object", "additionalProperties": { "type": "integer", "minimum": 0 } },
+        "category_case_counts": { "type": "object", "additionalProperties": { "type": "integer", "minimum": 0 } },
+        "runtime_profile_case_counts": { "type": "object", "additionalProperties": { "type": "integer", "minimum": 0 } },
+        "cases_with_paired_summary_group": { "type": "integer", "minimum": 0 },
+        "cases_without_paired_summary_group": { "type": "integer", "minimum": 0 },
+        "included_paired_group_count": { "type": "integer", "minimum": 0 },
+        "included_pair_count": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "rates": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/rateRecord" }
+    },
+    "exclusions": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/exclusionRecord" }
+    },
+    "next_dependencies": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    }
+  },
+  "$defs": {
+    "sourceMixCounts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["first_party", "public", "synthetic"],
+      "properties": {
+        "first_party": { "type": "integer", "minimum": 0 },
+        "public": { "type": "integer", "minimum": 0 },
+        "synthetic": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "rateRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "metric_id",
+        "slice",
+        "numerator",
+        "denominator",
+        "value",
+        "unit",
+        "boundary"
+      ],
+      "properties": {
+        "metric_id": { "type": "string", "minLength": 1 },
+        "slice": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["dimension", "value"],
+          "properties": {
+            "dimension": { "type": "string", "minLength": 1 },
+            "value": { "type": "string", "minLength": 1 }
+          }
+        },
+        "numerator": { "type": "integer", "minimum": 0 },
+        "denominator": { "type": "integer", "minimum": 0 },
+        "value": { "type": "number", "minimum": 0 },
+        "unit": { "enum": ["case_share", "skill_share", "pair_share"] },
+        "boundary": { "enum": ["raw_descriptive_rate_only_no_statistics"] }
+      }
+    },
+    "exclusionRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["case_id", "exclusion_reason"],
+      "properties": {
+        "case_id": { "type": "string", "minLength": 1 },
+        "exclusion_reason": { "type": "string", "minLength": 1 }
+      }
+    }
+  }
+}

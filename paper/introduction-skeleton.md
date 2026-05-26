@@ -98,7 +98,7 @@ Operational version:
 5. Current baseline evidence over five case families showing five
    runtime-drift claims across RP2 and RP3, with explicit provenance and
    measurement limits, plus a full-paper target of at least 40 skills and 120
-   skill-task-contract runs before repeats.
+   skill-task-contract triples before repeats.
 
 ## Current Results Paragraph
 

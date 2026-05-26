@@ -1,0 +1,1 @@
+{"enforcement_outcome": "allowed", "event": "activation.select", "metadata": {"selected_skill_id": "docs-forge", "source_type": "task_prompt"}, "operation": "select", "status": "succeeded", "target": "docs-forge", "timestamp": "2026-05-26T12:03:10+00:00"}

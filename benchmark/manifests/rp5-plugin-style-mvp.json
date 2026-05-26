@@ -1,0 +1,37 @@
+{
+  "schema_version": "0.1",
+  "manifest_id": "rp5-plugin-style-mvp",
+  "title": "RP5 Plugin-Style Fixture Report Card",
+  "category": "runtime-plugin-fixture-report-card",
+  "source": "synthetic",
+  "safe_to_publish": true,
+  "real_secrets_present": false,
+  "excluded_from_mvp_runtime_counts": true,
+  "runtime_profile": {
+    "profile_id": "RP5",
+    "profile_ref": "runtimes/profiles/RP5_plugin_style.yaml",
+    "adapter_id": "plugin_fixture_adapter"
+  },
+  "workspaces": [
+    {
+      "workspace_ref": "benchmark/workspaces/rp5-plugin-style-mini",
+      "workspace_snapshot_sha256": "67e8b74d29aed9ba6488a966c14aa9bcc3847f40ccb74d9b7abdf8a0fa72ca4f"
+    }
+  ],
+  "case_families": [
+    "plugin-style"
+  ],
+  "case_count": 3,
+  "contracts": [
+    "contracts/rp5-plugin-install-activation.yaml",
+    "contracts/rp5-plugin-update-metadata.yaml",
+    "contracts/rp5-plugin-negative-control.yaml"
+  ],
+  "report_card": {
+    "result_ref": "results/fixtures/rp5-plugin-style/report_card.json",
+    "matrix_ref": "results/fixtures/rp5-plugin-style/drift_matrix.md",
+    "case_count": 3,
+    "activation_negative_control_count": 1
+  },
+  "claim_boundary": "RP5 is fixture-backed plugin-style evidence over local synthetic plugin metadata, bundled resources, fixture host APIs, scoped run storage, and activation negative controls. It is excluded from RP2/RP3 MVP aggregate counts and is not commercial plugin-store behavior, live host API behavior, external MCP/server behavior, public-network evidence, or a defense-success claim."
+}

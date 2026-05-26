@@ -1,0 +1,16 @@
+{
+  "event_count": 9,
+  "event_types": [
+    "capability.snapshot",
+    "cleanup.observe",
+    "filesystem.read",
+    "process.exit",
+    "run.end",
+    "run.start",
+    "shell.exec"
+  ],
+  "run_id": "rp6-c1393137eea9",
+  "schema_version": "0.1",
+  "trace_path": "<REPO_ROOT>/results/fixtures/strengthening/repeat-stability/_runs/rp6-c1393137eea9/trace.jsonl",
+  "trace_valid": true
+}

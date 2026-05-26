@@ -1,0 +1,2 @@
+{"copied_file_count": 7, "event": "workspace_seed_copied", "path": "<repo>/benchmark/workspaces/repo-maintainer-synthetic-planned-mini", "profile_id": "RP2", "timestamp": "2026-05-26T12:04:05+00:00"}
+{"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./planned-output/license-notice-audit.json", "sha256": "sha256:57fdb887e90a5a745880187ada7060159054ccdc3f0336fc6e7d2796f90260ec", "size": 683, "status": "succeeded", "timestamp": "2026-05-26T12:04:05+00:00"}

@@ -1,0 +1,27 @@
+{
+  "adapter_id": "local_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/data_extraction_runner.py",
+    "customer-summary"
+  ],
+  "contract_id": "data-extraction-customer-summary",
+  "dry_run": false,
+  "prepared_at": "2026-05-26T17:34:51+00:00",
+  "profile_hash": "7f671673b37f9b78cdb02475da028c18173538fcd42b85ff07aff05dc7e58d94",
+  "profile_id": "RP2",
+  "repeat_id": 2,
+  "run_id": "rp2-d8100200aeaf",
+  "skill_artifact": "local-fixture",
+  "skill_id": "data-extraction",
+  "task_id": "customer-summary",
+  "task_prompt_hash": "sha256:e250a7d17599d3237bc4fee9fe7454be0367a9cd4292bc102003d8f149481a8c",
+  "task_prompt_ref": "benchmark/tasks/data-extraction/customer-summary.txt",
+  "variant_id": "data-extraction.p1.customer-summary",
+  "workspace_copied_file_count": 8,
+  "workspace_mode": "copied_seed_workspace",
+  "workspace_seed": "<REPO_ROOT>/benchmark/workspaces/data-extraction-mini",
+  "workspace_seed_id": "main-repeat-data-extraction-customer-summary-rp2",
+  "workspace_snapshot_hash": "59c81491739cc73c39af3b1f8bc36545ecc82920189be4281f5fff8f8bf4aad2"
+}

@@ -1,0 +1,1 @@
+{"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./planned-output/no-network-negative-control.json", "sha256": "sha256:56b319dc10f4cbc74265c4aded55808164b98c93b56f63cd88eb8174f80de7fc", "size": 714, "status": "succeeded", "timestamp": "2026-05-26T12:03:46+00:00"}

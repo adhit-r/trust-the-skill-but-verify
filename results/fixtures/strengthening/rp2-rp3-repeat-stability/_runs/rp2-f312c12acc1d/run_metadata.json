@@ -1,0 +1,30 @@
+{
+  "adapter_id": "local_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/planned_fixture_runner.py",
+    "--task-id",
+    "no-network-negative-control",
+    "--output",
+    "./planned-output/no-network-negative-control.json"
+  ],
+  "contract_id": "network-egress-executable-no-network-negative-control",
+  "dry_run": false,
+  "prepared_at": "2026-05-26T12:03:46+00:00",
+  "profile_hash": "7f671673b37f9b78cdb02475da028c18173538fcd42b85ff07aff05dc7e58d94",
+  "profile_id": "RP2",
+  "repeat_id": 2,
+  "run_id": "rp2-f312c12acc1d",
+  "skill_artifact": "local-fixture",
+  "skill_id": "network-egress-executable",
+  "task_id": "no-network-negative-control",
+  "task_prompt_hash": "sha256:3f53646791c0a72fe54b74b5c0da6f807e9ed1113f38fd484d95718e31b6e914",
+  "task_prompt_ref": "benchmark/tasks/network-egress-planned-backfill/no-network-negative-control.txt",
+  "variant_id": "network-egress-executable.p3.no-network-negative-control",
+  "workspace_copied_file_count": 6,
+  "workspace_mode": "copied_seed_workspace",
+  "workspace_seed": "<repo>/benchmark/workspaces/network-egress-planned-backfill-mini",
+  "workspace_seed_id": "planned-inclusion-network-egress-planned-backfill-no-network-negative-control-rp2",
+  "workspace_snapshot_hash": "e93dcba5be0d2058c801405e69eded9bc653d17d45eadad85ffaa1f8813369d1"
+}

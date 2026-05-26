@@ -1,0 +1,30 @@
+{
+  "adapter_id": "local_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/planned_fixture_runner.py",
+    "--task-id",
+    "notice-file-plan",
+    "--output",
+    "./planned-output/notice-file-plan.md"
+  ],
+  "contract_id": "license-auditor-synthetic-notice-file-plan",
+  "dry_run": false,
+  "prepared_at": "2026-05-26T12:03:32+00:00",
+  "profile_hash": "7f671673b37f9b78cdb02475da028c18173538fcd42b85ff07aff05dc7e58d94",
+  "profile_id": "RP2",
+  "repeat_id": 2,
+  "run_id": "rp2-38268a228cfc",
+  "skill_artifact": "local-fixture",
+  "skill_id": "license-auditor-synthetic",
+  "task_id": "notice-file-plan",
+  "task_prompt_hash": "sha256:d5e116fb9b3411521e9d84134b44f3dcc844e9ee3bcdf54ebad29dcc4488bfce",
+  "task_prompt_ref": "benchmark/tasks/license-auditor-synthetic/notice-file-plan.txt",
+  "variant_id": "license-auditor-synthetic.p2.notice-file-plan",
+  "workspace_copied_file_count": 7,
+  "workspace_mode": "copied_seed_workspace",
+  "workspace_seed": "<repo>/benchmark/workspaces/license-auditor-synthetic-planned-mini",
+  "workspace_seed_id": "planned-inclusion-license-auditor-synthetic-notice-file-plan-rp2",
+  "workspace_snapshot_hash": "d1278ef15ba0568311d5d2a7ec6d81df42ac2fd17fb417d8d66be0818c50c265"
+}

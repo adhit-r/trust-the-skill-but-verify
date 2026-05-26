@@ -1,0 +1,16 @@
+{
+  "adapter_id": "docker_adapter",
+  "file_read_provenance": "container_strace_mvp",
+  "file_write_provenance": "pre_post_diff_plus_python_failed_write_wrapper_mvp",
+  "network_provenance": "python_network_shim_mvp_plus_docker_network_none_no_packet_capture",
+  "process_provenance": "docker_subprocess_wrapper",
+  "trace_valid": true,
+  "warnings": [
+    "container_strace_mvp records open/openat/openat2 events for RP3 container commands when enabled",
+    "container_strace_mvp is Linux-container syscall evidence, not host-wide commercial runtime tracing",
+    "metadata-only probes and unusual direct syscalls may require parser extensions beyond this MVP",
+    "failed Python write attempts are wrapper-level evidence for controlled Python runs only",
+    "network events are produced by a Python urllib shim for controlled benchmark runs, not packet capture",
+    "network monitoring records Docker network policy, not full packet interception"
+  ]
+}

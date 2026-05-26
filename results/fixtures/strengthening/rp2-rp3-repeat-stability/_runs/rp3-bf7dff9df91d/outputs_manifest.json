@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "14f2eac12e80b94d3c7d454c0f69a0495a8cfb97921a3ce545ee3d4653415f34",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/notice-file-plan.md",
+      "size": 502
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-bf7dff9df91d"
+}

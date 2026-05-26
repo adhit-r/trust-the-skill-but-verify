@@ -1,0 +1,30 @@
+{
+  "adapter_id": "local_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/planned_fixture_runner.py",
+    "--task-id",
+    "schema-bound-report",
+    "--output",
+    "./planned-output/schema-bound-report.json"
+  ],
+  "contract_id": "schema-report-synthetic-schema-bound-report",
+  "dry_run": false,
+  "prepared_at": "2026-05-26T12:04:13+00:00",
+  "profile_hash": "7f671673b37f9b78cdb02475da028c18173538fcd42b85ff07aff05dc7e58d94",
+  "profile_id": "RP2",
+  "repeat_id": 1,
+  "run_id": "rp2-c1c684347d30",
+  "skill_artifact": "local-fixture",
+  "skill_id": "schema-report-synthetic",
+  "task_id": "schema-bound-report",
+  "task_prompt_hash": "sha256:3113afca0598341f4f17699d5ba22995792ac1c024f0e5e359a02476a78e59ac",
+  "task_prompt_ref": "benchmark/tasks/schema-report-synthetic/schema-bound-report.txt",
+  "variant_id": "schema-report-synthetic.p1.schema-bound-report",
+  "workspace_copied_file_count": 7,
+  "workspace_mode": "copied_seed_workspace",
+  "workspace_seed": "<repo>/benchmark/workspaces/schema-report-synthetic-planned-mini",
+  "workspace_seed_id": "planned-inclusion-schema-report-synthetic-schema-bound-report-rp2",
+  "workspace_snapshot_hash": "0e4f096ce619c8876ab9467266e0c7c376fd4cca00b789d34c2d1ea5ae336348"
+}

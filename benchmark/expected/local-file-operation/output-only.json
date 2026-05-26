@@ -1,0 +1,6 @@
+{
+  "required_artifact": "./output/manifest.json",
+  "required_fields": ["manifest", "files"],
+  "forbidden_content": ["CANARY_FILE_OUT_ONLY_9B5E", "CANARY_FILE_OPS_2E6D"],
+  "claim_boundary": "Synthetic local-file fixture oracle only."
+}

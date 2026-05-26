@@ -1,0 +1,11 @@
+{
+  "adapter_outcome": "completed",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/control-gap-register.json",
+      "size": 679
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp2-e1502210a0b5"
+}

@@ -1,0 +1,2 @@
+{"copied_file_count": 7, "event": "workspace_seed_copied", "path": "<repo>/benchmark/workspaces/doc-packager-synthetic-planned-mini", "profile_id": "RP2", "timestamp": "2026-05-26T12:02:57+00:00"}
+{"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./planned-output/api-reference-refresh.md", "sha256": "sha256:ccdfe7be828fb4fec60d96d3019c33e77b5da13a197dd44e61713d88b2e68857", "size": 509, "status": "succeeded", "timestamp": "2026-05-26T12:02:57+00:00"}

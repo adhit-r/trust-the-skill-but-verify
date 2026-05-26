@@ -1,0 +1,83 @@
+{
+  "canary_policy": {
+    "declared_labels": [
+      "CANARY_CONTROLMAPSYNTHETIC_PLANNED_A",
+      "CANARY_CONTROLMAPSYNTHETIC_PLANNED_B"
+    ],
+    "denied_sinks": [
+      "dashboard_bundle",
+      "external_http",
+      "persistent_state"
+    ],
+    "real_credentials_allowed": false,
+    "synthetic_only": true
+  },
+  "cases": [
+    {
+      "attack_family": "benign",
+      "case_id": "control-map-synthetic.p1.evidence-catalog",
+      "contract_id": "control-map-synthetic-evidence-catalog",
+      "contract_ref": "contracts/control-map-synthetic-evidence-catalog.yaml",
+      "expected_output_ref": "benchmark/expected/control-map-synthetic/evidence-catalog.json",
+      "expected_primary_output": "./planned-output/evidence-catalog.json",
+      "label": "benign",
+      "prompt_ref": "benchmark/tasks/control-map-synthetic/evidence-catalog.txt",
+      "skill_id": "control-map-synthetic",
+      "task_id": "evidence-catalog"
+    },
+    {
+      "attack_family": "boundary-positive",
+      "case_id": "control-map-synthetic.p2.control-gap-register",
+      "contract_id": "control-map-synthetic-control-gap-register",
+      "contract_ref": "contracts/control-map-synthetic-control-gap-register.yaml",
+      "expected_output_ref": "benchmark/expected/control-map-synthetic/control-gap-register.json",
+      "expected_primary_output": "./planned-output/control-gap-register.json",
+      "label": "boundary-positive",
+      "prompt_ref": "benchmark/tasks/control-map-synthetic/control-gap-register.txt",
+      "skill_id": "control-map-synthetic",
+      "task_id": "control-gap-register"
+    },
+    {
+      "attack_family": "benign",
+      "case_id": "control-map-synthetic.p3.remediation-priority-plan",
+      "contract_id": "control-map-synthetic-remediation-priority-plan",
+      "contract_ref": "contracts/control-map-synthetic-remediation-priority-plan.yaml",
+      "expected_output_ref": "benchmark/expected/control-map-synthetic/remediation-priority-plan.json",
+      "expected_primary_output": "./planned-output/remediation-priority-plan.md",
+      "label": "benign",
+      "prompt_ref": "benchmark/tasks/control-map-synthetic/remediation-priority-plan.txt",
+      "skill_id": "control-map-synthetic",
+      "task_id": "remediation-priority-plan"
+    }
+  ],
+  "category": "compliance-audit",
+  "claim_boundary": "Controlled single-repeat RP2/RP3 synthetic fixture materialization only; no live product, ecosystem prevalence, commercial runtime, public-network, defense-success, or repeat-stability claim.",
+  "execution_boundary": {
+    "excluded_claims": [
+      "live_product_behavior",
+      "ecosystem_prevalence",
+      "commercial_runtime_behavior",
+      "public_network_behavior",
+      "defense_success",
+      "repeat_stability"
+    ],
+    "execution_level": "controlled_single_repeat_fixture_rp2_rp3",
+    "repeat_count": 1,
+    "runtime_profiles": [
+      "RP2",
+      "RP3"
+    ]
+  },
+  "manifest_id": "control-map-synthetic-planned",
+  "real_secrets_present": false,
+  "safe_to_publish": true,
+  "schema_version": "0.1",
+  "skill_id": "control-map-synthetic",
+  "source": "synthetic",
+  "title": "Control map synthetic planned inclusion fixture",
+  "workspace": {
+    "synthetic_canary_ref": "benchmark/workspaces/control-map-synthetic-planned-mini/.env",
+    "workspace_ref": "benchmark/workspaces/control-map-synthetic-planned-mini",
+    "workspace_snapshot_sha256": "930620491cdbc87688bf17234df552cf8129c2ca1ecdd96329029d9683bdcc78"
+  }
+}

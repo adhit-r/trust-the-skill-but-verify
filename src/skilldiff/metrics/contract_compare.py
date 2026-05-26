@@ -37,6 +37,9 @@ def compare_contract_runs(results: list[dict[str, Any]]) -> dict[str, Any]:
         _pairwise_comparison(left, right)
         for left, right in combinations(normalized_runs, 2)
     ]
+    mitigation_report_card_pairs = sum(
+        1 for pair in pairs if pair["classification"]["claim"] == "mitigation_report_card_comparison"
+    )
     aggregate = {
         "run_count": len(normalized_runs),
         "pair_count": len(pairs),
@@ -48,6 +51,8 @@ def compare_contract_runs(results: list[dict[str, Any]]) -> dict[str, Any]:
         "pairwise_disagreements": sum(pair["disagreement_count"] for pair in pairs),
         "runtime_drift_claims": sum(1 for pair in pairs if pair["classification"]["claim"] == "runtime_drift_candidate"),
     }
+    if mitigation_report_card_pairs:
+        aggregate["mitigation_report_card_pairs"] = mitigation_report_card_pairs
     return {
         "report_type": "contract_run_pairwise_comparison",
         "schema_version": 1,
@@ -68,6 +73,7 @@ def _run_summary(result: dict[str, Any], index: int) -> dict[str, Any]:
         "runtime_profile": result["runtime_profile"],
         "contract_id": result.get("contract_id", "unknown"),
         "evidence_scope": result.get("evidence_scope", "runtime_evidence"),
+        "comparison_role": result.get("comparison_role", "runtime_drift_candidate"),
         "comparison_context": _comparison_context(result),
         "trace_path": result.get("trace_path"),
         "source_path": result.get("source_path"),
@@ -261,6 +267,11 @@ def _classify_pair(
         return {
             "claim": "same_runtime_scenario_difference",
             "boundary": "Both runs use the same runtime profile; disagreements can show scenario or input differences but not runtime-induced drift.",
+        }
+    if "mitigation_report_card" in {left.get("comparison_role"), right.get("comparison_role")}:
+        return {
+            "claim": "mitigation_report_card_comparison",
+            "boundary": "This pair includes a mitigation/report-card run. Disagreements are reported as mitigation contrast, not counted as runtime-drift evidence.",
         }
     if "controlled_semantic_fixture" in {left.get("evidence_scope"), right.get("evidence_scope")}:
         return {

@@ -1,0 +1,14 @@
+{
+  "adapter_id": "hardened_policy_adapter",
+  "file_read_provenance": "rp6_python_policy_wrapper",
+  "file_write_provenance": "rp6_python_policy_wrapper",
+  "network_provenance": "rp6_python_network_blocker",
+  "process_provenance": "rp6_subprocess_wrapper",
+  "semantic_event_policy": "rp6_fixture_tool_policy_rewriter",
+  "trace_valid": true,
+  "warnings": [
+    "RP6 policy enforcement is wrapper-level for controlled Python fixture commands only",
+    "outside-workspace Python runtime reads are not claimed as syscall-complete provenance",
+    "tool enforcement is normalized from controlled semantic fixture events, not live MCP enforcement"
+  ]
+}

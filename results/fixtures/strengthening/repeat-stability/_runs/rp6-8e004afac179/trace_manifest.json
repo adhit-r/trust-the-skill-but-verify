@@ -1,0 +1,21 @@
+{
+  "event_count": 12,
+  "event_types": [
+    "approval.decision",
+    "approval.prompt",
+    "approval.required",
+    "capability.snapshot",
+    "cleanup.observe",
+    "filesystem.read",
+    "filesystem.write",
+    "output.generated",
+    "process.exit",
+    "run.end",
+    "run.start",
+    "shell.exec"
+  ],
+  "run_id": "rp6-8e004afac179",
+  "schema_version": "0.1",
+  "trace_path": "<REPO_ROOT>/results/fixtures/strengthening/repeat-stability/_runs/rp6-8e004afac179/trace.jsonl",
+  "trace_valid": true
+}

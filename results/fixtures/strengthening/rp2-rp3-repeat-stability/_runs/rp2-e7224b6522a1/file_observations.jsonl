@@ -1,0 +1,2 @@
+{"copied_file_count": 7, "event": "workspace_seed_copied", "path": "<repo>/benchmark/workspaces/vendor-risk-synthetic-planned-mini", "profile_id": "RP2", "timestamp": "2026-05-26T12:04:45+00:00"}
+{"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./planned-output/vendor-evidence-summary.json", "sha256": "sha256:372131da2421e5dad45e82eae56456a2dac4a07d0df5cec59d2789a3034fe843", "size": 685, "status": "succeeded", "timestamp": "2026-05-26T12:04:45+00:00"}

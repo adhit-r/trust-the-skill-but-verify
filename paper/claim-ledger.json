@@ -34,6 +34,10 @@
         {
           "type": "comparison_unique_trace_count",
           "glob": "results/mvp/*/*_rp2_rp3_comparison.json",
+          "exclude_globs": [
+            "results/mvp/data-extraction/*_rp2_rp3_comparison.json",
+            "results/mvp/local-file-operation/*_rp2_rp3_comparison.json"
+          ],
           "expected_source_count": 14,
           "expected": 28
         },
@@ -54,15 +58,15 @@
     {
       "claim_id": "CL-MVP-003",
       "status": "supported",
-      "claim": "The repository currently tracks thirty-four trace files, including older smoke traces.",
+      "claim": "The repository currently tracks 234 raw trace files, including older smoke traces, expanded runtime fixtures, bounded RP4 fixture traces, and RP6 current-case report-card traces.",
       "paper_locations": [
         "paper/experiment-protocol.md"
       ],
       "evidence": [
         {
-          "type": "glob_count",
+          "type": "git_tracked_glob_count",
           "glob": "results/raw/*/trace.jsonl",
-          "expected": 34
+          "expected": 234
         }
       ]
     },
@@ -80,6 +84,10 @@
         {
           "type": "comparison_aggregate_sum",
           "glob": "results/mvp/*/*_rp2_rp3_comparison.json",
+          "exclude_globs": [
+            "results/mvp/data-extraction/*_rp2_rp3_comparison.json",
+            "results/mvp/local-file-operation/*_rp2_rp3_comparison.json"
+          ],
           "field": "runtime_drift_claims",
           "expected_source_count": 14,
           "expected": 5
@@ -111,6 +119,10 @@
         {
           "type": "comparison_aggregate_sum",
           "glob": "results/mvp/*/*_rp2_rp3_comparison.json",
+          "exclude_globs": [
+            "results/mvp/data-extraction/*_rp2_rp3_comparison.json",
+            "results/mvp/local-file-operation/*_rp2_rp3_comparison.json"
+          ],
           "field": "pairwise_disagreements",
           "expected_source_count": 14,
           "expected": 36
@@ -131,8 +143,8 @@
     },
     {
       "claim_id": "CL-MVP-006",
-      "status": "supported",
-      "claim": "Current executable baseline comparisons are limited to RP2 and RP3.",
+      "status": "supported_boundary",
+      "claim": "Current executable baseline runtime-drift comparisons are limited to RP2 and RP3; RP1 simulator and RP6 report-card artifacts are excluded from those aggregate counts.",
       "paper_locations": [
         "paper/experiment-protocol.md",
         "paper/tables/mvp-results.md"
@@ -152,6 +164,11 @@
           "type": "file_contains",
           "path": "paper/experiment-protocol.md",
           "contains": "RP3: Docker-sandboxed profile"
+        },
+        {
+          "type": "file_contains",
+          "path": "paper/experiment-protocol.md",
+          "contains": "RP1 is available as a deterministic restricted-hosted simulator"
         }
       ]
     },
@@ -166,11 +183,19 @@
         {
           "type": "glob_count",
           "glob": "results/mvp/*/*_rp2_rp3_comparison.json",
+          "exclude_globs": [
+            "results/mvp/data-extraction/*_rp2_rp3_comparison.json",
+            "results/mvp/local-file-operation/*_rp2_rp3_comparison.json"
+          ],
           "expected": 14
         },
         {
           "type": "glob_count",
           "glob": "results/mvp/*/*_contract_findings.json",
+          "exclude_globs": [
+            "results/mvp/data-extraction/*_contract_findings.json",
+            "results/mvp/local-file-operation/*_contract_findings.json"
+          ],
           "expected": 28
         }
       ]
@@ -188,6 +213,10 @@
         {
           "type": "comparison_no_unchecked_fields",
           "glob": "results/mvp/*/*_rp2_rp3_comparison.json",
+          "exclude_globs": [
+            "results/mvp/data-extraction/*_rp2_rp3_comparison.json",
+            "results/mvp/local-file-operation/*_rp2_rp3_comparison.json"
+          ],
           "expected_source_count": 14
         }
       ]
@@ -225,6 +254,794 @@
           "path": "benchmark/manifests/audit-lens-acme.json",
           "pointer": "/pinned_source_hashes",
           "minimum": 42
+        }
+      ]
+    },
+    {
+      "claim_id": "CL-RP6-001",
+      "status": "supported_report_card_pilot",
+      "claim": "The RP6 policy-hardened current-case report card covers fourteen existing case variants across five families, with zero realized contract violations, twelve blocked attempted-overreach findings, seven missing expected outputs, and zero canary observations; it includes a supplemental network-denial policy probe and is excluded from RP2/RP3 MVP aggregate counts.",
+      "paper_locations": [
+        "paper/claim-ledger.md",
+        "paper/method-boundaries.md",
+        "paper/tables/mvp-results.md"
+      ],
+      "evidence": [
+        {
+          "type": "json_value",
+          "path": "benchmark/manifests/rp6-policy-hardened-mvp.json",
+          "pointer": "/excluded_from_mvp_runtime_counts",
+          "expected": true
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/manifests/rp6-policy-hardened-mvp.json",
+          "pointer": "/report_card/policy_probe_count",
+          "expected": 1
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/rp6-policy-hardened/report_card.json",
+          "pointer": "/aggregate/case_count",
+          "expected": 14
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/rp6-policy-hardened/report_card.json",
+          "pointer": "/aggregate/rp6_realized_contract_violations",
+          "expected": 0
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/rp6-policy-hardened/report_card.json",
+          "pointer": "/aggregate/rp6_attempted_overreach",
+          "expected": 12
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/rp6-policy-hardened/report_card.json",
+          "pointer": "/aggregate/rp6_missing_expected_outputs",
+          "expected": 7
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/rp6-policy-hardened/report_card.json",
+          "pointer": "/aggregate/rp6_canary_observations",
+          "expected": 0
+        },
+        {
+          "type": "json_len",
+          "path": "results/fixtures/rp6-policy-hardened/report_card.json",
+          "pointer": "/policy_probes",
+          "expected": 1
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/rp6-policy-hardened/report_card.json",
+          "pointer": "/policy_probes/0/summary/attempted_overreach",
+          "expected": 2
+        },
+        {
+          "type": "comparison_no_unchecked_fields",
+          "glob": "results/fixtures/rp6-policy-hardened/*/*_rp2_rp3_rp6_comparison.json",
+          "expected_source_count": 14
+        },
+        {
+          "type": "comparison_aggregate_sum",
+          "glob": "results/fixtures/rp6-policy-hardened/*/*_rp2_rp3_rp6_comparison.json",
+          "field": "mitigation_report_card_pairs",
+          "expected_source_count": 14,
+          "expected": 28
+        }
+      ]
+    },
+    {
+      "claim_id": "CL-RP1-001",
+      "status": "supported_simulator_boundary",
+      "claim": "The RP1 restricted-hosted deterministic simulator emits valid normalized evidence for twelve upload-oriented current-subset variants under upload-only files, no shell, denied network/MCP/plugin surfaces, deterministic approvals, ephemeral state, cleanup scanning, and synthetic-only canary observation. This is simulator-backed evidence and not a real hosted-provider measurement.",
+      "paper_locations": [
+        "docs/research/adapter-support-matrix.md",
+        "paper/tables/mvp-results.md",
+        "paper/experiment-protocol.md"
+      ],
+      "evidence": [
+        {
+          "type": "json_value",
+          "path": "benchmark/manifests/rp1-restricted-hosted-mvp.json",
+          "pointer": "/excluded_from_mvp_runtime_counts",
+          "expected": true
+        },
+        {
+          "type": "file_contains",
+          "path": "runtimes/profiles/RP1_restricted_hosted.yaml",
+          "contains": "evidence_level: promoted_deterministic_simulator"
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/rp1-restricted-hosted/report_card.json",
+          "pointer": "/aggregate/case_count",
+          "expected": 12
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/rp1-restricted-hosted/report_card.json",
+          "pointer": "/aggregate/rp1_completed_cases",
+          "expected": 12
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/rp1-restricted-hosted/report_card.json",
+          "pointer": "/aggregate/rp1_realized_contract_violations",
+          "expected": 0
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/rp1-restricted-hosted/report_card.json",
+          "pointer": "/aggregate/rp1_attempted_overreach",
+          "expected": 2
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/rp1-restricted-hosted/report_card.json",
+          "pointer": "/aggregate/rp1_missing_expected_outputs",
+          "expected": 16
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/rp1-restricted-hosted/report_card.json",
+          "pointer": "/aggregate/rp1_canary_observations",
+          "expected": 0
+        },
+        {
+          "type": "comparison_no_unchecked_fields",
+          "glob": "results/fixtures/rp1-restricted-hosted/*/*_rp2_rp3_rp1_comparison.json",
+          "expected_source_count": 12
+        },
+        {
+          "type": "file_contains",
+          "path": "docs/research/adapter-support-matrix.md",
+          "contains": "simulator-backed evidence only"
+        }
+      ]
+    },
+    {
+      "claim_id": "CL-RP5-001",
+      "status": "supported_fixture_boundary",
+      "claim": "The RP5 plugin-style fixture emits valid normalized evidence for three local plugin lifecycle cases covering install activation, update metadata, and one activation negative control, with three completed cases, zero realized contract violations, one blocked attempted-overreach finding, zero missing expected outputs, and zero canary observations. This is fixture-backed evidence and not commercial plugin-store or live host API behavior.",
+      "paper_locations": [
+        "docs/research/adapter-support-matrix.md",
+        "paper/method-boundaries.md",
+        "paper/tables/mvp-results.md"
+      ],
+      "evidence": [
+        {
+          "type": "json_value",
+          "path": "benchmark/manifests/rp5-plugin-style-mvp.json",
+          "pointer": "/excluded_from_mvp_runtime_counts",
+          "expected": true
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/rp5-plugin-style/report_card.json",
+          "pointer": "/aggregate/case_count",
+          "expected": 3
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/rp5-plugin-style/report_card.json",
+          "pointer": "/aggregate/rp5_completed_cases",
+          "expected": 3
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/rp5-plugin-style/report_card.json",
+          "pointer": "/aggregate/rp5_activation_negative_controls",
+          "expected": 1
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/rp5-plugin-style/report_card.json",
+          "pointer": "/aggregate/rp5_realized_contract_violations",
+          "expected": 0
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/rp5-plugin-style/report_card.json",
+          "pointer": "/aggregate/rp5_attempted_overreach",
+          "expected": 1
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/rp5-plugin-style/report_card.json",
+          "pointer": "/aggregate/rp5_missing_expected_outputs",
+          "expected": 0
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/rp5-plugin-style/report_card.json",
+          "pointer": "/aggregate/rp5_canary_observations",
+          "expected": 0
+        },
+        {
+          "type": "file_contains",
+          "path": "docs/research/adapter-support-matrix.md",
+          "contains": "commercial plugin-store behavior"
+        },
+        {
+          "type": "file_contains",
+          "path": "results/fixtures/rp5-plugin-style/report_card.json",
+          "contains": "not commercial plugin-store behavior"
+        }
+      ]
+    },
+    {
+      "claim_id": "CL-SCAN-001",
+      "status": "supported_static_scanner_baseline",
+      "claim": "The static scanner baseline covers fourteen current-case variants and forty-eight controlled fixture skill or README source files, producing eighty-eight source-only static findings across all fourteen cases. This is static/source-only comparator evidence, not runtime evidence, a vulnerability proof, a prevalence claim, or a defense-success claim.",
+      "paper_locations": [
+        "paper/claim-ledger.md",
+        "paper/method-boundaries.md",
+        "paper/tables/mvp-results.md"
+      ],
+      "evidence": [
+        {
+          "type": "json_value",
+          "path": "results/fixtures/strengthening/static_scanner_baseline.json",
+          "pointer": "/aggregate/case_count",
+          "expected": 14
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/strengthening/static_scanner_baseline.json",
+          "pointer": "/aggregate/scanned_file_count",
+          "expected": 48
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/strengthening/static_scanner_baseline.json",
+          "pointer": "/aggregate/static_finding_count",
+          "expected": 88
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/strengthening/static_scanner_baseline.json",
+          "pointer": "/aggregate/cases_with_static_findings",
+          "expected": 14
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/strengthening/static_scanner_baseline.json",
+          "pointer": "/claim_boundary/runtime_behavior_claim",
+          "expected": false
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/strengthening/static_scanner_baseline.json",
+          "pointer": "/claim_boundary/prevalence_claim",
+          "expected": false
+        }
+      ]
+    },
+    {
+      "claim_id": "CL-REACH-001",
+      "status": "supported_reachability_approximation_boundary",
+      "claim": "The Semia-style reachability approximation covers fourteen current-case variants and eighty-eight bounded static-signal-plus-contract-deny candidates, while supporting zero Semia equivalence, Semia reproduction, or runtime-confirmation claims.",
+      "paper_locations": [
+        "paper/claim-ledger.md",
+        "paper/method-boundaries.md",
+        "paper/tables/mvp-results.md"
+      ],
+      "evidence": [
+        {
+          "type": "json_value",
+          "path": "results/fixtures/strengthening/reachability_approximation.json",
+          "pointer": "/aggregate/case_count",
+          "expected": 14
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/strengthening/reachability_approximation.json",
+          "pointer": "/aggregate/static_findings_considered",
+          "expected": 88
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/strengthening/reachability_approximation.json",
+          "pointer": "/aggregate/candidate_count",
+          "expected": 88
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/strengthening/reachability_approximation.json",
+          "pointer": "/aggregate/semia_equivalence_claims_supported",
+          "expected": 0
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/strengthening/reachability_approximation.json",
+          "pointer": "/aggregate/semia_reproduction_claims_supported",
+          "expected": 0
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/strengthening/reachability_approximation.json",
+          "pointer": "/aggregate/runtime_confirmation_claims_supported",
+          "expected": 0
+        }
+      ]
+    },
+    {
+      "claim_id": "CL-ACT-001",
+      "status": "supported_action_boundary_baseline",
+      "claim": "The ClawGuard/Task Shield-style action-boundary baseline checks fourteen controlled fixture commands against contract shell allow rules and fixture scope; all fourteen commands are contract-allowed and fixture-scoped, zero review flags are raised, and zero ClawGuard or Task Shield reproduction claims are supported.",
+      "paper_locations": [
+        "paper/claim-ledger.md",
+        "paper/method-boundaries.md",
+        "paper/tables/mvp-results.md"
+      ],
+      "evidence": [
+        {
+          "type": "json_value",
+          "path": "results/fixtures/strengthening/action_boundary_baseline.json",
+          "pointer": "/aggregate/case_count",
+          "expected": 14
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/strengthening/action_boundary_baseline.json",
+          "pointer": "/aggregate/command_actions_checked",
+          "expected": 14
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/strengthening/action_boundary_baseline.json",
+          "pointer": "/aggregate/command_actions_contract_allowed",
+          "expected": 14
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/strengthening/action_boundary_baseline.json",
+          "pointer": "/aggregate/commands_relevant_by_fixture_scope",
+          "expected": 14
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/strengthening/action_boundary_baseline.json",
+          "pointer": "/aggregate/review_flags",
+          "expected": 0
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/strengthening/action_boundary_baseline.json",
+          "pointer": "/aggregate/clawguard_reproduction_claims_supported",
+          "expected": 0
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/strengthening/action_boundary_baseline.json",
+          "pointer": "/aggregate/task_shield_reproduction_claims_supported",
+          "expected": 0
+        }
+      ]
+    },
+    {
+      "claim_id": "CL-LP-001",
+      "status": "supported_static_baseline",
+      "claim": "The contract-derived least-privilege baseline covers fourteen current-case variants and seven unique contracts, with all seven benign expectations and all seven adversarial fail-closed expectations passing against the RP6 report-card outcomes.",
+      "paper_locations": [
+        "paper/claim-ledger.md",
+        "paper/method-boundaries.md",
+        "paper/tables/mvp-results.md"
+      ],
+      "evidence": [
+        {
+          "type": "json_value",
+          "path": "results/fixtures/strengthening/least_privilege_baseline.json",
+          "pointer": "/aggregate/case_count",
+          "expected": 14
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/strengthening/least_privilege_baseline.json",
+          "pointer": "/aggregate/unique_contracts",
+          "expected": 7
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/strengthening/least_privilege_baseline.json",
+          "pointer": "/aggregate/benign_expectation_passes",
+          "expected": 7
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/strengthening/least_privilege_baseline.json",
+          "pointer": "/aggregate/adversarial_expectation_passes",
+          "expected": 7
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/strengthening/least_privilege_baseline.json",
+          "pointer": "/aggregate/rp6_realized_contract_violations",
+          "expected": 0
+        }
+      ]
+    },
+    {
+      "claim_id": "CL-MIT-001",
+      "status": "supported_mitigation_ladder",
+      "claim": "The coarse RP2/RP3/RP6 mitigation ladder over fourteen current-case variants observes lower RP6 realized-violation and canary-observation counts than RP2, while surfacing seven additional RP6 missing expected outputs relative to RP2; the minimal RP6 contrast matrix covers eight selected variants plus the network policy probe.",
+      "paper_locations": [
+        "paper/claim-ledger.md",
+        "paper/method-boundaries.md",
+        "paper/tables/mvp-results.md"
+      ],
+      "evidence": [
+        {
+          "type": "json_value",
+          "path": "results/fixtures/strengthening/rp6_mitigation_ladder.json",
+          "pointer": "/aggregate/case_count",
+          "expected": 14
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/strengthening/rp6_mitigation_ladder.json",
+          "pointer": "/aggregate/rp2_to_rp6_realized_reduction",
+          "expected": 22
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/strengthening/rp6_mitigation_ladder.json",
+          "pointer": "/aggregate/rp2_to_rp6_canary_reduction",
+          "expected": 25
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/strengthening/rp6_mitigation_ladder.json",
+          "pointer": "/aggregate/rp6_missing_output_increase_vs_rp2",
+          "expected": 7
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/rp6-policy-hardened/ablations/minimal_report_card.json",
+          "pointer": "/aggregate/case_count",
+          "expected": 8
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/rp6-policy-hardened/ablations/minimal_report_card.json",
+          "pointer": "/aggregate/policy_probe_count",
+          "expected": 1
+        }
+      ]
+    },
+    {
+      "claim_id": "CL-ABL-001",
+      "status": "supported_bounded_component_ablation",
+      "claim": "The bounded RP6 component-ablation report card covers six named RP6 controls across twelve generated RP6 ablation traces, with benign and adversarial/probe coverage for every component; all twelve row expectations pass, and disabling controls produces thirteen additional realized contract violations and two additional canary observations relative to the corresponding fully enforced RP6 baselines. This is component-level fixture evidence, not a defense-success, commercial-runtime, public-network, Semia-equivalence, or statistical claim.",
+      "paper_locations": [
+        "paper/claim-ledger.md",
+        "paper/experiment-protocol.md",
+        "paper/method-boundaries.md",
+        "paper/tables/mvp-results.md"
+      ],
+      "evidence": [
+        {
+          "type": "json_value",
+          "path": "results/fixtures/rp6-policy-hardened/ablations/component_report_card.json",
+          "pointer": "/report_type",
+          "expected": "rp6_component_ablation"
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/rp6-policy-hardened/ablations/component_report_card.json",
+          "pointer": "/aggregate/component_count",
+          "expected": 6
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/rp6-policy-hardened/ablations/component_report_card.json",
+          "pointer": "/aggregate/case_count",
+          "expected": 12
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/rp6-policy-hardened/ablations/component_report_card.json",
+          "pointer": "/aggregate/components_with_benign_and_adversarial_coverage",
+          "expected": 6
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/rp6-policy-hardened/ablations/component_report_card.json",
+          "pointer": "/aggregate/expectation_passed_cases",
+          "expected": 12
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/rp6-policy-hardened/ablations/component_report_card.json",
+          "pointer": "/aggregate/realized_contract_violation_delta",
+          "expected": 13
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/rp6-policy-hardened/ablations/component_report_card.json",
+          "pointer": "/aggregate/canary_observation_delta",
+          "expected": 2
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/rp6-policy-hardened/ablations/component_report_card.json",
+          "pointer": "/claim_boundary/defense_success_claim",
+          "expected": false
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/rp6-policy-hardened/ablations/component_report_card.json",
+          "pointer": "/claim_boundary/public_network_claim",
+          "expected": false
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/rp6-policy-hardened/ablations/component_report_card.json",
+          "pointer": "/claim_boundary/statistical_claim",
+          "expected": false
+        }
+      ]
+    },
+    {
+      "claim_id": "CL-REP-001",
+      "status": "supported_bounded_deterministic_repeat_stability",
+      "claim": "The bounded RP6 repeat-stability artifact covers fourteen current-case variants across repeat IDs 1, 2, and 3, for forty-two RP6 observations total; all fourteen variants match outcome summaries including and excluding event count. This supports bounded deterministic stability for the current controlled RP6 fixtures, while supporting zero statistical, prevalence, or model-mediated repeat-stability claims.",
+      "paper_locations": [
+        "paper/claim-ledger.md",
+        "paper/experiment-protocol.md",
+        "paper/tables/mvp-results.md"
+      ],
+      "evidence": [
+        {
+          "type": "json_value",
+          "path": "results/fixtures/strengthening/repeat-stability/repeat_stability.json",
+          "pointer": "/aggregate/case_count",
+          "expected": 14
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/strengthening/repeat-stability/repeat_stability.json",
+          "pointer": "/aggregate/repeat_ids",
+          "expected": [
+            "1",
+            "2",
+            "3"
+          ]
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/strengthening/repeat-stability/repeat_stability.json",
+          "pointer": "/aggregate/repeat_observation_count",
+          "expected": 42
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/strengthening/repeat-stability/repeat_stability.json",
+          "pointer": "/aggregate/minimum_repeats_for_deterministic_stability_claim",
+          "expected": 3
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/strengthening/repeat-stability/repeat_stability.json",
+          "pointer": "/aggregate/deterministic_stability_claims_supported",
+          "expected": 14
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/strengthening/repeat-stability/repeat_stability.json",
+          "pointer": "/aggregate/summary_match_count_excluding_event_count",
+          "expected": 14
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/strengthening/repeat-stability/repeat_stability.json",
+          "pointer": "/aggregate/summary_match_count_including_event_count",
+          "expected": 14
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/strengthening/repeat-stability/repeat_stability.json",
+          "pointer": "/aggregate/trace_valid_count",
+          "expected": 42
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/strengthening/repeat-stability/repeat_stability.json",
+          "pointer": "/aggregate/statistical_repeat_stability_claims_supported",
+          "expected": 0
+        }
+      ]
+    },
+    {
+      "claim_id": "CL-REP-002",
+      "status": "supported_bounded_deterministic_repeat_stability",
+      "claim": "The planned-inclusion RP2/RP3 repeat-stability artifact covers forty-four controlled fixtures across repeat IDs 1, 2, and 3, for two hundred sixty-four trace-valid observations and one hundred thirty-two same-repeat RP2/RP3 pairs; all eighty-eight case-runtime units match outcome summaries including and excluding event count. This supports bounded deterministic fixture stability only, while supporting zero statistical, prevalence, reviewer-agreement, live-product, public-network, commercial-runtime, or defense-success claims.",
+      "paper_locations": [
+        "paper/claim-ledger.md",
+        "paper/experiment-protocol.md",
+        "results/README.md"
+      ],
+      "evidence": [
+        {
+          "type": "json_value",
+          "path": "results/fixtures/strengthening/rp2-rp3-repeat-stability/repeat_stability.json",
+          "pointer": "/aggregate/case_count",
+          "expected": 44
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/strengthening/rp2-rp3-repeat-stability/repeat_stability.json",
+          "pointer": "/aggregate/repeat_ids",
+          "expected": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/strengthening/rp2-rp3-repeat-stability/repeat_stability.json",
+          "pointer": "/aggregate/runtime_observation_count",
+          "expected": 264
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/strengthening/rp2-rp3-repeat-stability/repeat_stability.json",
+          "pointer": "/aggregate/findings_file_count",
+          "expected": 264
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/strengthening/rp2-rp3-repeat-stability/repeat_stability.json",
+          "pointer": "/aggregate/trace_valid_count",
+          "expected": 264
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/strengthening/rp2-rp3-repeat-stability/repeat_stability.json",
+          "pointer": "/aggregate/same_repeat_pair_count",
+          "expected": 132
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/strengthening/rp2-rp3-repeat-stability/repeat_stability.json",
+          "pointer": "/aggregate/pairwise_disagreement_count",
+          "expected": 0
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/strengthening/rp2-rp3-repeat-stability/repeat_stability.json",
+          "pointer": "/aggregate/runtime_drift_claim_count",
+          "expected": 0
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/strengthening/rp2-rp3-repeat-stability/repeat_stability.json",
+          "pointer": "/aggregate/summary_match_count_excluding_event_count",
+          "expected": 88
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/strengthening/rp2-rp3-repeat-stability/repeat_stability.json",
+          "pointer": "/aggregate/summary_match_count_including_event_count",
+          "expected": 88
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/strengthening/rp2-rp3-repeat-stability/repeat_stability.json",
+          "pointer": "/aggregate/statistical_repeat_stability_claims_supported",
+          "expected": 0
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/strengthening/rp2-rp3-repeat-stability/repeat_stability.json",
+          "pointer": "/claim_boundary/completed_statistics_claimed",
+          "expected": false
+        }
+      ]
+    },
+    {
+      "claim_id": "CL-REP-003",
+      "status": "supported_bounded_deterministic_repeat_stability",
+      "claim": "The current main RP2/RP3 repeat-stability artifact covers thirteen controlled fixtures across repeat IDs 1, 2, and 3, for seventy-eight trace-valid observations and thirty-nine same-repeat RP2/RP3 pairs; all twenty-six case-runtime units match outcome summaries including and excluding event count. This supports bounded deterministic fixture stability only, while supporting zero statistical, prevalence, reviewer-agreement, live-product, public-network, commercial-runtime, or defense-success claims.",
+      "paper_locations": [
+        "README.md",
+        "paper/claim-ledger.md",
+        "docs/research/research-todo.md"
+      ],
+      "evidence": [
+        {
+          "type": "json_value",
+          "path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/repeat_stability.json",
+          "pointer": "/aggregate/case_count",
+          "expected": 13
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/repeat_stability.json",
+          "pointer": "/aggregate/repeat_ids",
+          "expected": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/repeat_stability.json",
+          "pointer": "/aggregate/runtime_observation_count",
+          "expected": 78
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/repeat_stability.json",
+          "pointer": "/aggregate/findings_file_count",
+          "expected": 78
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/repeat_stability.json",
+          "pointer": "/aggregate/trace_valid_count",
+          "expected": 78
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/repeat_stability.json",
+          "pointer": "/aggregate/same_repeat_pair_count",
+          "expected": 39
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/repeat_stability.json",
+          "pointer": "/aggregate/pairwise_disagreement_count",
+          "expected": 21
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/repeat_stability.json",
+          "pointer": "/aggregate/runtime_drift_claim_count",
+          "expected": 9
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/repeat_stability.json",
+          "pointer": "/aggregate/summary_match_count_excluding_event_count",
+          "expected": 26
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/repeat_stability.json",
+          "pointer": "/aggregate/summary_match_count_including_event_count",
+          "expected": 26
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/repeat_stability.json",
+          "pointer": "/aggregate/statistical_repeat_stability_claims_supported",
+          "expected": 0
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/repeat_stability.json",
+          "pointer": "/claim_boundary/completed_statistics_claimed",
+          "expected": false
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/repeat_stability.json",
+          "pointer": "/claim_boundary/prevalence_claim",
+          "expected": false
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/repeat_stability.json",
+          "pointer": "/claim_boundary/defense_success_claim",
+          "expected": false
         }
       ]
     },
@@ -893,12 +1710,241 @@
       ]
     },
     {
+      "claim_id": "CL-EXT-011",
+      "status": "supported_live_rp3_node_npx_adversarial_package_acquisition",
+      "claim": "Bounded docs-forge RP3 Node adversarial package-name npx observer evidence executes a fail-closed package-name npx probe against a controlled nonpublic registry target inside a Node-capable RP3-derived container, with no public registry acquisition, successful package acquisition, install command, lifecycle scripts, source or home mutation, packet-capture claim, or runtime-drift claim.",
+      "paper_locations": [
+        "paper/claim-ledger.md",
+        "paper/artifact-readme.md",
+        "paper/method-boundaries.md",
+        "paper/tables/mvp-results.md"
+      ],
+      "evidence": [
+        {
+          "type": "json_value",
+          "path": "results/live/docs-forge-installer/npx_rp3_node_adversarial_package_acquisition_result.json",
+          "pointer": "/aggregate/commands_run",
+          "expected": 2
+        },
+        {
+          "type": "json_value",
+          "path": "results/live/docs-forge-installer/npx_rp3_node_adversarial_package_acquisition_result.json",
+          "pointer": "/aggregate/commands_succeeded",
+          "expected": 1
+        },
+        {
+          "type": "json_value",
+          "path": "results/live/docs-forge-installer/npx_rp3_node_adversarial_package_acquisition_result.json",
+          "pointer": "/aggregate/commands_failed_closed",
+          "expected": 1
+        },
+        {
+          "type": "json_value",
+          "path": "results/live/docs-forge-installer/npx_rp3_node_adversarial_package_acquisition_result.json",
+          "pointer": "/aggregate/docker_network_none_commands_run",
+          "expected": 2
+        },
+        {
+          "type": "json_value",
+          "path": "results/live/docs-forge-installer/npx_rp3_node_adversarial_package_acquisition_result.json",
+          "pointer": "/aggregate/docker_read_only_rootfs_commands_run",
+          "expected": 2
+        },
+        {
+          "type": "json_value",
+          "path": "results/live/docs-forge-installer/npx_rp3_node_adversarial_package_acquisition_result.json",
+          "pointer": "/aggregate/npx_package_name_commands_executed",
+          "expected": 1
+        },
+        {
+          "type": "json_value",
+          "path": "results/live/docs-forge-installer/npx_rp3_node_adversarial_package_acquisition_result.json",
+          "pointer": "/aggregate/registry_acquisition_attempts_observed",
+          "expected": 1
+        },
+        {
+          "type": "json_value",
+          "path": "results/live/docs-forge-installer/npx_rp3_node_adversarial_package_acquisition_result.json",
+          "pointer": "/aggregate/registry_acquisitions_observed",
+          "expected": 0
+        },
+        {
+          "type": "json_value",
+          "path": "results/live/docs-forge-installer/npx_rp3_node_adversarial_package_acquisition_result.json",
+          "pointer": "/aggregate/public_registry_acquisitions_observed",
+          "expected": 0
+        },
+        {
+          "type": "json_value",
+          "path": "results/live/docs-forge-installer/npx_rp3_node_adversarial_package_acquisition_result.json",
+          "pointer": "/aggregate/package_install_commands_executed",
+          "expected": 0
+        },
+        {
+          "type": "json_value",
+          "path": "results/live/docs-forge-installer/npx_rp3_node_adversarial_package_acquisition_result.json",
+          "pointer": "/aggregate/lifecycle_scripts_executed",
+          "expected": 0
+        },
+        {
+          "type": "json_value",
+          "path": "results/live/docs-forge-installer/npx_rp3_node_adversarial_package_acquisition_result.json",
+          "pointer": "/aggregate/source_mutations_observed",
+          "expected": 0
+        },
+        {
+          "type": "json_value",
+          "path": "results/live/docs-forge-installer/npx_rp3_node_adversarial_package_acquisition_result.json",
+          "pointer": "/aggregate/synthetic_home_mutations_observed",
+          "expected": 0
+        },
+        {
+          "type": "json_value",
+          "path": "results/live/docs-forge-installer/npx_rp3_node_adversarial_package_acquisition_result.json",
+          "pointer": "/aggregate/loopback_registry_events_observed",
+          "expected": 1
+        },
+        {
+          "type": "json_value",
+          "path": "results/live/docs-forge-installer/npx_rp3_node_adversarial_package_acquisition_result.json",
+          "pointer": "/aggregate/public_internet_contact_observed",
+          "expected": false
+        },
+        {
+          "type": "json_value",
+          "path": "results/live/docs-forge-installer/npx_rp3_node_adversarial_package_acquisition_result.json",
+          "pointer": "/aggregate/runtime_drift_claims_added",
+          "expected": 0
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/manifests/docs-forge-live-npx-rp3-node-adversarial-package-acquisition.json",
+          "pointer": "/excluded_from_mvp_runtime_counts",
+          "expected": true
+        }
+      ]
+    },
+    {
+      "claim_id": "CL-EXT-012",
+      "status": "supported_live_npx_adversarial_package_acquisition_runtime_pair_scaffold",
+      "claim": "Bounded docs-forge adversarial host-vs-RP3 runtime-pair scaffold compares host Node synthetic-home and RP3 Node container package-name npx fail-closed observers on required safety invariants, with zero required pair-check failures and no public npm acquisition, successful install behavior, packet-capture coverage, or added runtime-drift finding.",
+      "paper_locations": [
+        "paper/claim-ledger.md",
+        "paper/artifact-readme.md",
+        "paper/method-boundaries.md",
+        "paper/tables/mvp-results.md"
+      ],
+      "evidence": [
+        {
+          "type": "json_value",
+          "path": "results/live/docs-forge-installer/npx_adversarial_package_acquisition_runtime_pair_result.json",
+          "pointer": "/aggregate/runtime_profiles_compared",
+          "expected": 2
+        },
+        {
+          "type": "json_value",
+          "path": "results/live/docs-forge-installer/npx_adversarial_package_acquisition_runtime_pair_result.json",
+          "pointer": "/aggregate/commands_run",
+          "expected": 3
+        },
+        {
+          "type": "json_value",
+          "path": "results/live/docs-forge-installer/npx_adversarial_package_acquisition_runtime_pair_result.json",
+          "pointer": "/aggregate/commands_succeeded",
+          "expected": 1
+        },
+        {
+          "type": "json_value",
+          "path": "results/live/docs-forge-installer/npx_adversarial_package_acquisition_runtime_pair_result.json",
+          "pointer": "/aggregate/commands_failed_closed",
+          "expected": 2
+        },
+        {
+          "type": "json_value",
+          "path": "results/live/docs-forge-installer/npx_adversarial_package_acquisition_runtime_pair_result.json",
+          "pointer": "/aggregate/npx_package_name_commands_executed",
+          "expected": 2
+        },
+        {
+          "type": "json_value",
+          "path": "results/live/docs-forge-installer/npx_adversarial_package_acquisition_runtime_pair_result.json",
+          "pointer": "/aggregate/registry_acquisition_attempts_observed",
+          "expected": 2
+        },
+        {
+          "type": "json_value",
+          "path": "results/live/docs-forge-installer/npx_adversarial_package_acquisition_runtime_pair_result.json",
+          "pointer": "/aggregate/registry_acquisitions_observed",
+          "expected": 0
+        },
+        {
+          "type": "json_value",
+          "path": "results/live/docs-forge-installer/npx_adversarial_package_acquisition_runtime_pair_result.json",
+          "pointer": "/aggregate/public_registry_acquisitions_observed",
+          "expected": 0
+        },
+        {
+          "type": "json_value",
+          "path": "results/live/docs-forge-installer/npx_adversarial_package_acquisition_runtime_pair_result.json",
+          "pointer": "/aggregate/package_install_commands_executed",
+          "expected": 0
+        },
+        {
+          "type": "json_value",
+          "path": "results/live/docs-forge-installer/npx_adversarial_package_acquisition_runtime_pair_result.json",
+          "pointer": "/aggregate/lifecycle_scripts_executed",
+          "expected": 0
+        },
+        {
+          "type": "json_value",
+          "path": "results/live/docs-forge-installer/npx_adversarial_package_acquisition_runtime_pair_result.json",
+          "pointer": "/aggregate/source_mutations_observed",
+          "expected": 0
+        },
+        {
+          "type": "json_value",
+          "path": "results/live/docs-forge-installer/npx_adversarial_package_acquisition_runtime_pair_result.json",
+          "pointer": "/aggregate/synthetic_home_mutations_observed",
+          "expected": 0
+        },
+        {
+          "type": "json_value",
+          "path": "results/live/docs-forge-installer/npx_adversarial_package_acquisition_runtime_pair_result.json",
+          "pointer": "/aggregate/loopback_registry_events_observed",
+          "expected": 2
+        },
+        {
+          "type": "json_value",
+          "path": "results/live/docs-forge-installer/npx_adversarial_package_acquisition_runtime_pair_result.json",
+          "pointer": "/aggregate/required_pair_checks_failed",
+          "expected": 0
+        },
+        {
+          "type": "json_value",
+          "path": "results/live/docs-forge-installer/npx_adversarial_package_acquisition_runtime_pair_result.json",
+          "pointer": "/aggregate/runtime_drift_claims_added",
+          "expected": 0
+        },
+        {
+          "type": "json_value",
+          "path": "results/live/docs-forge-installer/npx_adversarial_package_acquisition_runtime_pair_result.json",
+          "pointer": "/comparison/pairwise_disagreements",
+          "expected": 0
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/manifests/docs-forge-live-npx-adversarial-package-acquisition-runtime-pair.json",
+          "pointer": "/excluded_from_mvp_runtime_counts",
+          "expected": true
+        }
+      ]
+    },
+    {
       "claim_id": "CL-P1-001",
       "status": "paper_spine",
       "claim": "The paper spine freezes the top-tier full-paper thesis, research questions, threat model, reviewer-risk table, and venue backplan.",
       "paper_locations": [
-        "paper/paper-spine.md",
-        "REFINED_RESEARCH_TODO.md"
+        "paper/paper-spine.md"
       ],
       "evidence": [
         {
@@ -1204,9 +2250,41 @@
       ]
     },
     {
+      "claim_id": "CL-BOUNDARY-005",
+      "status": "supported_boundary",
+      "claim": "Static scanner, reachability approximation, and action-boundary baseline artifacts are bounded comparator or mitigation evidence only; they are excluded from MVP runtime-drift counts and do not imply Semia equivalence, live guardrail efficacy, ClawGuard reproduction, or Task Shield reproduction.",
+      "paper_locations": [
+        "paper/claim-ledger.md",
+        "paper/method-boundaries.md",
+        "paper/tables/mvp-results.md"
+      ],
+      "evidence": [
+        {
+          "type": "file_contains",
+          "path": "paper/method-boundaries.md",
+          "contains": "It does not treat static scanner, reachability approximation, or"
+        },
+        {
+          "type": "file_contains",
+          "path": "paper/method-boundaries.md",
+          "contains": "It does not claim Semia equivalence or Semia reproduction."
+        },
+        {
+          "type": "file_contains",
+          "path": "paper/method-boundaries.md",
+          "contains": "It does not claim live command/tool guardrail UX efficacy, ClawGuard"
+        },
+        {
+          "type": "file_contains",
+          "path": "paper/tables/mvp-results.md",
+          "contains": "These artifacts are outside the RP2/RP3 MVP aggregate counts and do not create"
+        }
+      ]
+    },
+    {
       "claim_id": "CL-TARGET-001",
       "status": "design_target",
-      "claim": "The full-paper evidence floor is at least 40 skills and 120 skill-task-contract runs before repeats.",
+      "claim": "The full-paper evidence floor is at least 40 skills and 120 skill-task-contract triples before repeats.",
       "paper_locations": [
         "paper/experiment-protocol.md"
       ],
@@ -1214,7 +2292,7 @@
         {
           "type": "file_contains",
           "path": "paper/experiment-protocol.md",
-          "contains": "Full-paper evidence floor | At least 40 skills and 120 skill-task-contract runs before repeats"
+          "contains": "Full-paper evidence floor | At least 40 skills and 120 skill-task-contract triples before repeats"
         },
         {
           "type": "file_contains",
@@ -1246,7 +2324,7 @@
     {
       "claim_id": "CL-RQ-001",
       "status": "supported_boundary",
-      "claim": "Current baseline evidence directly supports RQ1/RQ4 for RP2/RP3, partially supports RQ2 for filesystem, network, tool-call, and persistence policy, partially supports RQ3/RQ5 only for controlled semantic-event representation, and does not yet answer RQ6.",
+      "claim": "Current baseline evidence directly supports RQ1/RQ4 for RP2/RP3, partially supports RQ2 for filesystem, network, tool-call, and persistence policy, partially supports RQ3/RQ5 only for controlled semantic-event representation, adds RP1 deterministic simulator evidence and RP5 plugin-style fixture evidence outside RP2/RP3 drift aggregates, and includes RP6 current-case mitigation, static scanner, Semia-style reachability approximation, action-boundary relevance, least-privilege, coarse mitigation-ladder, minimal contrast, and bounded component-ablation evidence for RQ6 without supporting Semia equivalence, live guardrail efficacy, or defense-success claims.",
       "paper_locations": [
         "paper/experiment-protocol.md"
       ],
@@ -1269,7 +2347,1043 @@
         {
           "type": "file_contains",
           "path": "paper/experiment-protocol.md",
-          "contains": "It does not yet answer RQ6."
+          "contains": "RP1 adds promoted deterministic restricted-hosted simulator evidence"
+        },
+        {
+          "type": "file_contains",
+          "path": "paper/experiment-protocol.md",
+          "contains": "is excluded from RP2/RP3 drift aggregates"
+        },
+        {
+          "type": "file_contains",
+          "path": "paper/experiment-protocol.md",
+          "contains": "RP5 adds bounded local plugin-style"
+        },
+        {
+          "type": "file_contains",
+          "path": "paper/experiment-protocol.md",
+          "contains": "current package also includes an RP6 current-case mitigation report-card pilot,"
+        },
+        {
+          "type": "file_contains",
+          "path": "paper/experiment-protocol.md",
+          "contains": "a static scanner baseline, a Semia-style reachability approximation, an"
+        },
+        {
+          "type": "file_contains",
+          "path": "paper/experiment-protocol.md",
+          "contains": "action-boundary relevance baseline, a contract-derived least-privilege"
+        },
+        {
+          "type": "file_contains",
+          "path": "paper/experiment-protocol.md",
+          "contains": "does not support Semia"
+        }
+      ]
+    },
+    {
+      "claim_id": "CL-GATE3-001",
+      "status": "supported_boundary",
+      "claim": "The current benchmark manifest records twenty skills and sixty skill-task-contract triples after promoting the planned synthetic entries to controlled single-repeat RP2/RP3 fixture evidence, while explicitly not claiming source-mix completion, repeat stability, prevalence, live product behavior, or the 40/120 full-paper floor.",
+      "paper_locations": [
+        "benchmark/manifests/benchmark-cases-current.json",
+        "docs/research/research-todo.md"
+      ],
+      "evidence": [
+        {
+          "type": "json_value",
+          "path": "benchmark/manifests/benchmark-cases-current.json",
+          "pointer": "/declared_case_count",
+          "expected": 60
+        },
+        {
+          "type": "json_len",
+          "path": "benchmark/manifests/benchmark-cases-current.json",
+          "pointer": "/cases",
+          "expected": 60
+        },
+        {
+          "type": "json_value",
+          "path": "results/derived/benchmark-scale-gap.json",
+          "pointer": "/current/unique_skill_count",
+          "expected": 20
+        },
+        {
+          "type": "json_value",
+          "path": "results/derived/benchmark-scale-gap.json",
+          "pointer": "/current/unique_skill_task_contract_triple_count",
+          "expected": 60
+        },
+        {
+          "type": "file_contains",
+          "path": "benchmark/manifests/benchmark-cases-current.json",
+          "contains": "not a 40/120 benchmark census"
+        }
+      ]
+    },
+    {
+      "claim_id": "CL-GATE3-003",
+      "status": "supported_boundary",
+      "claim": "The benchmark scale-gap report shows the current inventory has zero numeric shortfall against the 20/60 inventory target and remains twenty skills and sixty triples short of the 40/120 full-paper floor; it computes skill-origin source-mix gaps of four first-party and seven public skills for the mid-scale target and eight first-party and sixteen public skills for the full-paper target, while making no prevalence, source-mix-completion, repeat-stability, statistical, or full-paper-completion claim.",
+      "paper_locations": [
+        "docs/research/research-todo.md",
+        "results/derived/benchmark-scale-gap.json",
+        "results/derived/benchmark-scale-gap.md"
+      ],
+      "evidence": [
+        {
+          "type": "json_value",
+          "path": "results/derived/benchmark-scale-gap.json",
+          "pointer": "/current/unique_skill_count",
+          "expected": 20
+        },
+        {
+          "type": "json_value",
+          "path": "results/derived/benchmark-scale-gap.json",
+          "pointer": "/current/unique_skill_task_contract_triple_count",
+          "expected": 60
+        },
+        {
+          "type": "json_value",
+          "path": "results/derived/benchmark-scale-gap.json",
+          "pointer": "/current/source_mix_skill_counts",
+          "expected": {
+            "first_party": 1,
+            "public": 1,
+            "synthetic": 18
+          }
+        },
+        {
+          "type": "json_value",
+          "path": "results/derived/benchmark-scale-gap.json",
+          "pointer": "/current/multi_source_mix_skills",
+          "expected": []
+        },
+        {
+          "type": "json_value",
+          "path": "results/derived/benchmark-scale-gap.json",
+          "pointer": "/targets/mid_scale_20_60/skill_shortfall",
+          "expected": 0
+        },
+        {
+          "type": "json_value",
+          "path": "results/derived/benchmark-scale-gap.json",
+          "pointer": "/targets/mid_scale_20_60/triple_shortfall",
+          "expected": 0
+        },
+        {
+          "type": "json_value",
+          "path": "results/derived/benchmark-scale-gap.json",
+          "pointer": "/targets/mid_scale_20_60/source_mix_skill_gaps",
+          "expected": {
+            "first_party": 4,
+            "public": 7,
+            "synthetic": 0
+          }
+        },
+        {
+          "type": "json_value",
+          "path": "results/derived/benchmark-scale-gap.json",
+          "pointer": "/targets/mid_scale_20_60/source_mix_skill_shortfall",
+          "expected": 11
+        },
+        {
+          "type": "json_value",
+          "path": "results/derived/benchmark-scale-gap.json",
+          "pointer": "/targets/full_paper_40_120/skill_shortfall",
+          "expected": 20
+        },
+        {
+          "type": "json_value",
+          "path": "results/derived/benchmark-scale-gap.json",
+          "pointer": "/targets/full_paper_40_120/triple_shortfall",
+          "expected": 60
+        },
+        {
+          "type": "json_value",
+          "path": "results/derived/benchmark-scale-gap.json",
+          "pointer": "/targets/full_paper_40_120/source_mix_skill_gaps",
+          "expected": {
+            "first_party": 8,
+            "public": 16,
+            "synthetic": 0
+          }
+        },
+        {
+          "type": "json_value",
+          "path": "results/derived/benchmark-scale-gap.json",
+          "pointer": "/targets/full_paper_40_120/source_mix_skill_shortfall",
+          "expected": 24
+        },
+        {
+          "type": "json_value",
+          "path": "results/derived/benchmark-scale-gap.json",
+          "pointer": "/claim_boundary/source_mix_gap_computed",
+          "expected": true
+        },
+        {
+          "type": "json_value",
+          "path": "results/derived/benchmark-scale-gap.json",
+          "pointer": "/claim_boundary/source_mix_completion_claimed",
+          "expected": false
+        },
+        {
+          "type": "file_contains",
+          "path": "results/derived/benchmark-scale-gap.md",
+          "contains": "Source-mix gaps are computed from explicit manifest labels, but source-mix completion is not claimed."
+        }
+      ]
+    },
+    {
+      "claim_id": "CL-GATE3-004",
+      "status": "supported_boundary",
+      "claim": "The controlled executable extension adds two synthetic fixture families for data extraction and local file operations, with six RP2/RP3 comparison artifacts referencing twelve unique traces and zero runtime-drift claims or pairwise disagreements; it remains bounded fixture evidence without live SaaS/database, host filesystem sandbox, archive-tool, destructive-cleanup, prevalence, or defense-success claims.",
+      "paper_locations": [
+        "paper/experiment-protocol.md",
+        "docs/research/research-todo.md",
+        "results/mvp/data-extraction/drift_report.md",
+        "results/mvp/local-file-operation/drift_report.md"
+      ],
+      "evidence": [
+        {
+          "type": "file_contains",
+          "path": "paper/experiment-protocol.md",
+          "contains": "2 additional synthetic fixture families, 12 RP2/RP3 traces, and 6 comparison artifacts"
+        },
+        {
+          "type": "glob_count",
+          "glob": "results/mvp/data-extraction/*_rp2_rp3_comparison.json",
+          "expected": 3
+        },
+        {
+          "type": "glob_count",
+          "glob": "results/mvp/local-file-operation/*_rp2_rp3_comparison.json",
+          "expected": 3
+        },
+        {
+          "type": "comparison_unique_trace_count",
+          "glob": "results/mvp/data-extraction/*_rp2_rp3_comparison.json",
+          "expected_source_count": 3,
+          "expected": 6
+        },
+        {
+          "type": "comparison_unique_trace_count",
+          "glob": "results/mvp/local-file-operation/*_rp2_rp3_comparison.json",
+          "expected_source_count": 3,
+          "expected": 6
+        },
+        {
+          "type": "comparison_aggregate_sum",
+          "glob": "results/mvp/data-extraction/*_rp2_rp3_comparison.json",
+          "field": "runtime_drift_claims",
+          "expected_source_count": 3,
+          "expected": 0
+        },
+        {
+          "type": "comparison_aggregate_sum",
+          "glob": "results/mvp/local-file-operation/*_rp2_rp3_comparison.json",
+          "field": "runtime_drift_claims",
+          "expected_source_count": 3,
+          "expected": 0
+        },
+        {
+          "type": "comparison_aggregate_sum",
+          "glob": "results/mvp/data-extraction/*_rp2_rp3_comparison.json",
+          "field": "pairwise_disagreements",
+          "expected_source_count": 3,
+          "expected": 0
+        },
+        {
+          "type": "comparison_aggregate_sum",
+          "glob": "results/mvp/local-file-operation/*_rp2_rp3_comparison.json",
+          "field": "pairwise_disagreements",
+          "expected_source_count": 3,
+          "expected": 0
+        }
+      ]
+    },
+    {
+      "claim_id": "CL-GATE3-006",
+      "status": "supported_boundary",
+      "claim": "The formerly planned inclusion batch now contributes forty-four controlled single-repeat RP2/RP3 synthetic fixture comparisons, eighty-eight contract-finding files, and eighty-eight unique traces, with zero runtime-drift claims and zero pairwise disagreements; this is denominator and contract-check coverage only, not live product, source-mix, prevalence, defense-success, or repeat-stability evidence.",
+      "paper_locations": [
+        "paper/experiment-protocol.md",
+        "results/planned-inclusion/doc-packager-synthetic/drift_report.md",
+        "results/derived/paired-runtime-summary.json"
+      ],
+      "evidence": [
+        {
+          "type": "file_contains",
+          "path": "paper/experiment-protocol.md",
+          "contains": "44 formerly planned entries, 88 RP2/RP3 traces, and 44 comparison artifacts"
+        },
+        {
+          "type": "glob_count",
+          "glob": "results/planned-inclusion/*/*_rp2_rp3_comparison.json",
+          "expected": 44
+        },
+        {
+          "type": "glob_count",
+          "glob": "results/planned-inclusion/*/*_contract_findings.json",
+          "expected": 88
+        },
+        {
+          "type": "comparison_unique_trace_count",
+          "glob": "results/planned-inclusion/*/*_rp2_rp3_comparison.json",
+          "expected_source_count": 44,
+          "expected": 88
+        },
+        {
+          "type": "comparison_aggregate_sum",
+          "glob": "results/planned-inclusion/*/*_rp2_rp3_comparison.json",
+          "field": "runtime_drift_claims",
+          "expected_source_count": 44,
+          "expected": 0
+        },
+        {
+          "type": "comparison_aggregate_sum",
+          "glob": "results/planned-inclusion/*/*_rp2_rp3_comparison.json",
+          "field": "pairwise_disagreements",
+          "expected_source_count": 44,
+          "expected": 0
+        }
+      ]
+    },
+    {
+      "claim_id": "CL-GATE5-001",
+      "status": "supported_boundary",
+      "claim": "The paired-runtime summary aggregates ninety existing comparison artifacts into a denominator layer with one hundred forty-two pair records, while explicitly making no completed statistics, reviewer-adjudication, prevalence, or defense-success claim.",
+      "paper_locations": [
+        "paper/gate5-statistics-plan.md",
+        "docs/research/research-todo.md",
+        "results/derived/paired-runtime-summary.json",
+        "results/derived/paired-runtime-summary.md"
+      ],
+      "evidence": [
+        {
+          "type": "json_value",
+          "path": "results/derived/paired-runtime-summary.json",
+          "pointer": "/aggregate/comparison_file_count",
+          "expected": 90
+        },
+        {
+          "type": "json_value",
+          "path": "results/derived/paired-runtime-summary.json",
+          "pointer": "/aggregate/pair_count",
+          "expected": 142
+        },
+        {
+          "type": "json_value",
+          "path": "results/derived/paired-runtime-summary.json",
+          "pointer": "/claim_boundary/completed_statistics_claimed",
+          "expected": false
+        },
+        {
+          "type": "json_value",
+          "path": "results/derived/paired-runtime-summary.json",
+          "pointer": "/claim_boundary/reviewer_adjudication_claimed",
+          "expected": false
+        },
+        {
+          "type": "json_value",
+          "path": "results/derived/paired-runtime-summary.json",
+          "pointer": "/claim_boundary/prevalence_claim",
+          "expected": false
+        },
+        {
+          "type": "json_value",
+          "path": "results/derived/paired-runtime-summary.json",
+          "pointer": "/claim_boundary/defense_success_claim",
+          "expected": false
+        },
+        {
+          "type": "file_contains",
+          "path": "paper/gate5-statistics-plan.md",
+          "contains": "does not compute Wilson intervals, bootstrap intervals"
+        }
+      ]
+    },
+    {
+      "claim_id": "CL-GATE5-002",
+      "status": "supported_boundary",
+      "claim": "The Gate 5 frozen inclusion table includes sixty current benchmark cases and the descriptive-rate artifact reports twenty-two raw inventory and coverage rate records, while explicitly making no completed-statistics, confidence-interval, hypothesis-test, reviewer-agreement, prevalence, source-mix-completion, or paper-grade-completion claim.",
+      "paper_locations": [
+        "paper/experiment-protocol.md",
+        "docs/research/research-todo.md",
+        "benchmark/manifests/gate5-paper-inclusion.json",
+        "results/derived/gate5-descriptive-rates.json",
+        "results/derived/gate5-descriptive-rates.md"
+      ],
+      "evidence": [
+        {
+          "type": "json_value",
+          "path": "benchmark/manifests/gate5-paper-inclusion.json",
+          "pointer": "/declared_case_count",
+          "expected": 60
+        },
+        {
+          "type": "json_len",
+          "path": "benchmark/manifests/gate5-paper-inclusion.json",
+          "pointer": "/entries",
+          "expected": 60
+        },
+        {
+          "type": "json_value",
+          "path": "results/derived/gate5-descriptive-rates.json",
+          "pointer": "/aggregate/included_case_count",
+          "expected": 60
+        },
+        {
+          "type": "json_value",
+          "path": "results/derived/gate5-descriptive-rates.json",
+          "pointer": "/aggregate/excluded_case_count",
+          "expected": 0
+        },
+        {
+          "type": "json_len",
+          "path": "results/derived/gate5-descriptive-rates.json",
+          "pointer": "/rates",
+          "expected": 22
+        },
+        {
+          "type": "json_value",
+          "path": "results/derived/gate5-descriptive-rates.json",
+          "pointer": "/aggregate/source_mix_skill_counts",
+          "expected": {
+            "first_party": 1,
+            "public": 1,
+            "synthetic": 18
+          }
+        },
+        {
+          "type": "json_value",
+          "path": "results/derived/gate5-descriptive-rates.json",
+          "pointer": "/aggregate/cases_with_paired_summary_group",
+          "expected": 50
+        },
+        {
+          "type": "json_value",
+          "path": "results/derived/gate5-descriptive-rates.json",
+          "pointer": "/claim_boundary/raw_descriptive_rates_only",
+          "expected": true
+        },
+        {
+          "type": "json_value",
+          "path": "results/derived/gate5-descriptive-rates.json",
+          "pointer": "/claim_boundary/completed_statistics_claimed",
+          "expected": false
+        },
+        {
+          "type": "json_value",
+          "path": "results/derived/gate5-descriptive-rates.json",
+          "pointer": "/claim_boundary/confidence_intervals_claimed",
+          "expected": false
+        },
+        {
+          "type": "json_value",
+          "path": "results/derived/gate5-descriptive-rates.json",
+          "pointer": "/claim_boundary/hypothesis_tests_claimed",
+          "expected": false
+        },
+        {
+          "type": "json_value",
+          "path": "results/derived/gate5-descriptive-rates.json",
+          "pointer": "/claim_boundary/reviewer_agreement_claimed",
+          "expected": false
+        },
+        {
+          "type": "json_value",
+          "path": "results/derived/gate5-descriptive-rates.json",
+          "pointer": "/claim_boundary/prevalence_claim",
+          "expected": false
+        },
+        {
+          "type": "file_contains",
+          "path": "results/derived/gate5-descriptive-rates.md",
+          "contains": "This artifact reports raw descriptive rates only."
+        }
+      ]
+    },
+    {
+      "claim_id": "CL-GATE5-003",
+      "status": "supported_boundary",
+      "claim": "The Gate 5 manual review queue enumerates sixty queued case-level review items from the frozen inclusion table, including fifty paired-summary mapped and first-pass blinding-eligible items plus ten metadata-only unmapped items, while explicitly making no completed-review, reviewer-agreement, adjudication, completed-statistics, prevalence, or paper-grade-completion claim.",
+      "paper_locations": [
+        "paper/gate5-statistics-plan.md",
+        "docs/research/research-todo.md",
+        "benchmark/review/gate5-review-queue.json",
+        "benchmark/review/gate5-review-queue.md"
+      ],
+      "evidence": [
+        {
+          "type": "json_value",
+          "path": "benchmark/review/gate5-review-queue.json",
+          "pointer": "/aggregate/queued_item_count",
+          "expected": 60
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/review/gate5-review-queue.json",
+          "pointer": "/aggregate/paired_summary_mapped_item_count",
+          "expected": 50
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/review/gate5-review-queue.json",
+          "pointer": "/aggregate/paired_summary_unmapped_item_count",
+          "expected": 10
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/review/gate5-review-queue.json",
+          "pointer": "/aggregate/blinding_eligible_item_count",
+          "expected": 50
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/review/gate5-review-queue.json",
+          "pointer": "/aggregate/review_status_counts",
+          "expected": {
+            "queued_not_reviewed": 60
+          }
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/review/gate5-review-queue.json",
+          "pointer": "/claim_boundary/review_queue_only",
+          "expected": true
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/review/gate5-review-queue.json",
+          "pointer": "/claim_boundary/completed_reviews_claimed",
+          "expected": false
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/review/gate5-review-queue.json",
+          "pointer": "/claim_boundary/reviewer_agreement_claimed",
+          "expected": false
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/review/gate5-review-queue.json",
+          "pointer": "/claim_boundary/adjudication_claimed",
+          "expected": false
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/review/gate5-review-queue.json",
+          "pointer": "/claim_boundary/completed_statistics_claimed",
+          "expected": false
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/review/gate5-review-queue.json",
+          "pointer": "/claim_boundary/prevalence_claim",
+          "expected": false
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/review/gate5-review-queue.json",
+          "pointer": "/claim_boundary/paper_grade_completion_claimed",
+          "expected": false
+        },
+        {
+          "type": "file_contains",
+          "path": "benchmark/review/gate5-review-queue.md",
+          "contains": "This artifact is a queue only."
+        }
+      ]
+    },
+    {
+      "claim_id": "CL-GATE5-004",
+      "status": "supported_boundary",
+      "claim": "The Gate 5 review-packet index expands the manual review queue into sixty packet-index records with fifty comparison references, one hundred run/finding-file references, one hundred trace references, fifty runtime-pair review units, and ten metadata-only blocked packets, while explicitly making no raw-trace-content, completed-review, reviewer-agreement, adjudication, completed-statistics, prevalence, or paper-grade-completion claim.",
+      "paper_locations": [
+        "paper/gate5-statistics-plan.md",
+        "docs/research/research-todo.md",
+        "benchmark/review/gate5-review-packet-index.json",
+        "benchmark/review/gate5-review-packet-index.md"
+      ],
+      "evidence": [
+        {
+          "type": "json_value",
+          "path": "benchmark/review/gate5-review-packet-index.json",
+          "pointer": "/aggregate/packet_count",
+          "expected": 60
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/review/gate5-review-packet-index.json",
+          "pointer": "/aggregate/indexed_packet_count",
+          "expected": 50
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/review/gate5-review-packet-index.json",
+          "pointer": "/aggregate/blocked_packet_count",
+          "expected": 10
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/review/gate5-review-packet-index.json",
+          "pointer": "/aggregate/comparison_ref_count",
+          "expected": 50
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/review/gate5-review-packet-index.json",
+          "pointer": "/aggregate/run_ref_count",
+          "expected": 100
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/review/gate5-review-packet-index.json",
+          "pointer": "/aggregate/trace_ref_count",
+          "expected": 100
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/review/gate5-review-packet-index.json",
+          "pointer": "/aggregate/pair_ref_count",
+          "expected": 50
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/review/gate5-review-packet-index.json",
+          "pointer": "/aggregate/semantic_review_unit_count",
+          "expected": 50
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/review/gate5-review-packet-index.json",
+          "pointer": "/aggregate/finding_ref_count",
+          "expected": 0
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/review/gate5-review-packet-index.json",
+          "pointer": "/claim_boundary/packet_index_only",
+          "expected": true
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/review/gate5-review-packet-index.json",
+          "pointer": "/claim_boundary/raw_trace_content_included",
+          "expected": false
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/review/gate5-review-packet-index.json",
+          "pointer": "/claim_boundary/completed_reviews_claimed",
+          "expected": false
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/review/gate5-review-packet-index.json",
+          "pointer": "/claim_boundary/reviewer_agreement_claimed",
+          "expected": false
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/review/gate5-review-packet-index.json",
+          "pointer": "/claim_boundary/adjudication_claimed",
+          "expected": false
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/review/gate5-review-packet-index.json",
+          "pointer": "/claim_boundary/completed_statistics_claimed",
+          "expected": false
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/review/gate5-review-packet-index.json",
+          "pointer": "/claim_boundary/prevalence_claim",
+          "expected": false
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/review/gate5-review-packet-index.json",
+          "pointer": "/claim_boundary/paper_grade_completion_claimed",
+          "expected": false
+        },
+        {
+          "type": "file_contains",
+          "path": "benchmark/review/gate5-review-packet-index.md",
+          "contains": "This artifact is an index only."
+        }
+      ]
+    },
+    {
+      "claim_id": "CL-GATE5-005",
+      "status": "supported_boundary",
+      "claim": "The Gate 5 blinded review-packet bundle derives from the frozen review-packet index and exports fifty first-pass runtime-label-blinded pair-review packets while keeping ten unmapped cases blocked as metadata-only records, while explicitly making no raw-trace-content, completed-review, reviewer-agreement, adjudication, completed-statistics, prevalence, commercial-runtime-behavior, or paper-grade-completion claim.",
+      "paper_locations": [
+        "paper/gate5-statistics-plan.md",
+        "docs/research/research-todo.md",
+        "benchmark/review/gate5-blinded-packet-bundle.json",
+        "benchmark/review/gate5-blinded-packet-bundle.md"
+      ],
+      "evidence": [
+        {
+          "type": "json_value",
+          "path": "benchmark/review/gate5-blinded-packet-bundle.json",
+          "pointer": "/status",
+          "expected": "blinded_packet_bundle_ready_no_completed_reviews"
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/review/gate5-blinded-packet-bundle.json",
+          "pointer": "/input_refs/review_packet_index_ref",
+          "expected": "benchmark/review/gate5-review-packet-index.json"
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/review/gate5-blinded-packet-bundle.json",
+          "pointer": "/aggregate/source_packet_count",
+          "expected": 60
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/review/gate5-blinded-packet-bundle.json",
+          "pointer": "/aggregate/exported_packet_count",
+          "expected": 50
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/review/gate5-blinded-packet-bundle.json",
+          "pointer": "/aggregate/blocked_packet_count",
+          "expected": 10
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/review/gate5-blinded-packet-bundle.json",
+          "pointer": "/aggregate/runtime_slot_count",
+          "expected": 100
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/review/gate5-blinded-packet-bundle.json",
+          "pointer": "/aggregate/pair_review_unit_count",
+          "expected": 50
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/review/gate5-blinded-packet-bundle.json",
+          "pointer": "/aggregate/finding_review_unit_count",
+          "expected": 0
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/review/gate5-blinded-packet-bundle.json",
+          "pointer": "/aggregate/raw_trace_payload_count",
+          "expected": 0
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/review/gate5-blinded-packet-bundle.json",
+          "pointer": "/aggregate/completed_review_count",
+          "expected": 0
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/review/gate5-blinded-packet-bundle.json",
+          "pointer": "/aggregate/reviewer_identity_count",
+          "expected": 0
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/review/gate5-blinded-packet-bundle.json",
+          "pointer": "/aggregate/packet_status_counts",
+          "expected": {
+            "blinded_first_pass_ready": 50,
+            "blocked_metadata_only_unmapped": 10
+          }
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/review/gate5-blinded-packet-bundle.json",
+          "pointer": "/claim_boundary/blinded_packet_bundle_only",
+          "expected": true
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/review/gate5-blinded-packet-bundle.json",
+          "pointer": "/claim_boundary/first_pass_runtime_labels_blinded",
+          "expected": true
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/review/gate5-blinded-packet-bundle.json",
+          "pointer": "/claim_boundary/raw_trace_content_included",
+          "expected": false
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/review/gate5-blinded-packet-bundle.json",
+          "pointer": "/claim_boundary/runtime_evidence_paths_in_review_packets",
+          "expected": false
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/review/gate5-blinded-packet-bundle.json",
+          "pointer": "/claim_boundary/completed_reviews_claimed",
+          "expected": false
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/review/gate5-blinded-packet-bundle.json",
+          "pointer": "/claim_boundary/reviewer_agreement_claimed",
+          "expected": false
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/review/gate5-blinded-packet-bundle.json",
+          "pointer": "/claim_boundary/adjudication_claimed",
+          "expected": false
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/review/gate5-blinded-packet-bundle.json",
+          "pointer": "/claim_boundary/completed_statistics_claimed",
+          "expected": false
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/review/gate5-blinded-packet-bundle.json",
+          "pointer": "/claim_boundary/prevalence_claim",
+          "expected": false
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/review/gate5-blinded-packet-bundle.json",
+          "pointer": "/claim_boundary/paper_grade_completion_claimed",
+          "expected": false
+        },
+        {
+          "type": "file_contains",
+          "path": "benchmark/review/gate5-blinded-packet-bundle.md",
+          "contains": "This artifact is a blinded packet bundle only."
+        }
+      ]
+    },
+    {
+      "claim_id": "CL-GATE5-006",
+      "status": "supported_boundary",
+      "claim": "The Gate 5 review export template package creates two blank first-pass human-review templates over the same fifty blinded pair-review units while keeping ten unmapped packets blocked, while explicitly making no completed-human-review, human-reviewer-identity, Codex-assisted-human-review-substitution, reviewer-agreement, adjudication, completed-statistics, prevalence, or paper-grade-completion claim.",
+      "paper_locations": [
+        "paper/gate5-statistics-plan.md",
+        "docs/research/research-todo.md",
+        "benchmark/review/gate5-review-export-templates.json",
+        "benchmark/review/gate5-review-export-templates.md"
+      ],
+      "evidence": [
+        {
+          "type": "json_value",
+          "path": "benchmark/review/gate5-review-export-templates.json",
+          "pointer": "/status",
+          "expected": "review_export_templates_ready_no_completed_reviews"
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/review/gate5-review-export-templates.json",
+          "pointer": "/input_refs/blinded_packet_bundle_ref",
+          "expected": "benchmark/review/gate5-blinded-packet-bundle.json"
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/review/gate5-review-export-templates.json",
+          "pointer": "/aggregate/template_count",
+          "expected": 2
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/review/gate5-review-export-templates.json",
+          "pointer": "/aggregate/source_packet_count",
+          "expected": 60
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/review/gate5-review-export-templates.json",
+          "pointer": "/aggregate/assigned_packet_count_per_template",
+          "expected": 50
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/review/gate5-review-export-templates.json",
+          "pointer": "/aggregate/blocked_packet_count",
+          "expected": 10
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/review/gate5-review-export-templates.json",
+          "pointer": "/aggregate/assigned_pair_review_unit_count_per_template",
+          "expected": 50
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/review/gate5-review-export-templates.json",
+          "pointer": "/aggregate/assigned_finding_review_unit_count_per_template",
+          "expected": 0
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/review/gate5-review-export-templates.json",
+          "pointer": "/aggregate/completed_review_export_count",
+          "expected": 0
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/review/gate5-review-export-templates.json",
+          "pointer": "/aggregate/completed_pair_review_unit_count",
+          "expected": 0
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/review/gate5-review-export-templates.json",
+          "pointer": "/aggregate/human_reviewer_identity_count",
+          "expected": 0
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/review/gate5-review-export-templates.json",
+          "pointer": "/aggregate/agreement_metric_count",
+          "expected": 0
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/review/gate5-review-export-templates.json",
+          "pointer": "/aggregate/adjudication_record_count",
+          "expected": 0
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/review/gate5-review-export-templates.json",
+          "pointer": "/aggregate/template_status_counts",
+          "expected": {
+            "not_started": 2
+          }
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/review/gate5-review-export-templates.json",
+          "pointer": "/claim_boundary/review_export_templates_only",
+          "expected": true
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/review/gate5-review-export-templates.json",
+          "pointer": "/claim_boundary/completed_human_reviews_claimed",
+          "expected": false
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/review/gate5-review-export-templates.json",
+          "pointer": "/claim_boundary/human_reviewer_identity_claimed",
+          "expected": false
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/review/gate5-review-export-templates.json",
+          "pointer": "/claim_boundary/reviewer_agreement_claimed",
+          "expected": false
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/review/gate5-review-export-templates.json",
+          "pointer": "/claim_boundary/adjudication_claimed",
+          "expected": false
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/review/gate5-review-export-templates.json",
+          "pointer": "/claim_boundary/completed_statistics_claimed",
+          "expected": false
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/review/gate5-review-export-templates.json",
+          "pointer": "/claim_boundary/prevalence_claim",
+          "expected": false
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/review/gate5-review-export-templates.json",
+          "pointer": "/claim_boundary/paper_grade_completion_claimed",
+          "expected": false
+        },
+        {
+          "type": "json_value",
+          "path": "benchmark/review/gate5-review-export-templates.json",
+          "pointer": "/claim_boundary/codex_assisted_review_counted_as_human",
+          "expected": false
+        },
+        {
+          "type": "file_contains",
+          "path": "benchmark/review/gate5-review-export-templates.md",
+          "contains": "This artifact is a review-template package only."
+        }
+      ]
+    },
+    {
+      "claim_id": "CL-GATE3-002",
+      "status": "supported_boundary",
+      "claim": "The derived runtime report-card package currently contains deterministic report cards for RP1, RP2, RP3, RP5, and RP6, with RP1 labeled simulator-backed and RP5 labeled fixture-backed; both are excluded from commercial-runtime claims.",
+      "paper_locations": [
+        "docs/research/research-todo.md",
+        "results/derived/runtime-report-cards/rp1_report_card.json",
+        "results/derived/runtime-report-cards/rp2_report_card.json",
+        "results/derived/runtime-report-cards/rp3_report_card.json",
+        "results/derived/runtime-report-cards/rp5_report_card.json",
+        "results/derived/runtime-report-cards/rp6_report_card.json"
+      ],
+      "evidence": [
+        {
+          "type": "glob_count",
+          "glob": "results/derived/runtime-report-cards/*_report_card.json",
+          "expected": 5
+        },
+        {
+          "type": "json_value",
+          "path": "results/derived/runtime-report-cards/rp1_report_card.json",
+          "pointer": "/runtime_profile",
+          "expected": "RP1"
+        },
+        {
+          "type": "file_contains",
+          "path": "results/derived/runtime-report-cards/rp1_report_card.json",
+          "contains": "deterministic restricted-hosted simulator evidence only"
+        },
+        {
+          "type": "json_value",
+          "path": "results/derived/runtime-report-cards/rp2_report_card.json",
+          "pointer": "/runtime_profile",
+          "expected": "RP2"
+        },
+        {
+          "type": "json_value",
+          "path": "results/derived/runtime-report-cards/rp3_report_card.json",
+          "pointer": "/runtime_profile",
+          "expected": "RP3"
+        },
+        {
+          "type": "json_value",
+          "path": "results/derived/runtime-report-cards/rp5_report_card.json",
+          "pointer": "/runtime_profile",
+          "expected": "RP5"
+        },
+        {
+          "type": "file_contains",
+          "path": "results/derived/runtime-report-cards/rp5_report_card.json",
+          "contains": "fixture-backed plugin-style evidence only"
+        },
+        {
+          "type": "json_value",
+          "path": "results/derived/runtime-report-cards/rp6_report_card.json",
+          "pointer": "/runtime_profile",
+          "expected": "RP6"
         }
       ]
     },

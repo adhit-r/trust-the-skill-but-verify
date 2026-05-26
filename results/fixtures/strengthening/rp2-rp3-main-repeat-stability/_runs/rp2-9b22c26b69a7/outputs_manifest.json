@@ -1,0 +1,11 @@
+{
+  "adapter_outcome": "completed",
+  "generated_outputs": [
+    {
+      "path": "./output/manifest.json",
+      "size": 330
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp2-9b22c26b69a7"
+}

@@ -1,0 +1,10 @@
+{
+  "container_id": "4c3befd51ab977a1658be9e8b98a33a6cddbd0d543b2169268953ebcca3ce4c2",
+  "leftover_paths": [
+    "<repo>/results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-1fcc4fdb3ade"
+  ],
+  "removed_paths": [],
+  "run_id": "rp3-1fcc4fdb3ade",
+  "status": "recorded_container_removed_by_docker_rm",
+  "timestamp": "2026-05-26T12:04:00+00:00"
+}

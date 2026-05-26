@@ -1,0 +1,9 @@
+{
+  "mounts": [
+    {
+      "mode": "contract_scoped_read_write",
+      "source": "<REPO_ROOT>/results/fixtures/rp6-policy-hardened/ablations/_component_runs/rp6-b5e79287681b/workspace",
+      "target": "<REPO_ROOT>/results/fixtures/rp6-policy-hardened/ablations/_component_runs/rp6-b5e79287681b/workspace"
+    }
+  ]
+}

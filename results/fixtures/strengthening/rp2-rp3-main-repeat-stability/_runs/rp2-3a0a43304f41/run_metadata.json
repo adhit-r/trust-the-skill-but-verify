@@ -1,0 +1,27 @@
+{
+  "adapter_id": "local_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/local_file_operation_runner.py",
+    "output-only"
+  ],
+  "contract_id": "local-file-operation-output-only",
+  "dry_run": false,
+  "prepared_at": "2026-05-26T17:35:15+00:00",
+  "profile_hash": "7f671673b37f9b78cdb02475da028c18173538fcd42b85ff07aff05dc7e58d94",
+  "profile_id": "RP2",
+  "repeat_id": 1,
+  "run_id": "rp2-3a0a43304f41",
+  "skill_artifact": "local-fixture",
+  "skill_id": "local-file-operation",
+  "task_id": "output-only",
+  "task_prompt_hash": "sha256:0fedcd70a32b71b4eb88e6adb7311a142090df4b432a93a605d26da4fa5355df",
+  "task_prompt_ref": "benchmark/tasks/local-file-operation/output-only.txt",
+  "variant_id": "local-file-operation.p1.output-only",
+  "workspace_copied_file_count": 7,
+  "workspace_mode": "copied_seed_workspace",
+  "workspace_seed": "<REPO_ROOT>/benchmark/workspaces/local-file-operation-mini",
+  "workspace_seed_id": "main-repeat-local-file-operation-output-only-rp2",
+  "workspace_snapshot_hash": "1f9913ea9588f7933d47f8ca93db033395c4418de5c03cd957f3360bc920a6cd"
+}

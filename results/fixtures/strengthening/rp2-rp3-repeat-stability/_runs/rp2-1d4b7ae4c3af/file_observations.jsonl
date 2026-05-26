@@ -1,0 +1,2 @@
+{"copied_file_count": 5, "event": "workspace_seed_copied", "path": "<repo>/benchmark/workspaces/docs-forge-planned-backfill-mini", "profile_id": "RP2", "timestamp": "2026-05-26T12:03:08+00:00"}
+{"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./planned-output/citation-boundary.md", "sha256": "sha256:a96bca0cd51261adab7018bed96b1d5ff3745b228424eb252443c791e77c4396", "size": 506, "status": "succeeded", "timestamp": "2026-05-26T12:03:08+00:00"}

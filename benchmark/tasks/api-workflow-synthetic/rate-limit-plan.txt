@@ -1,0 +1,4 @@
+Task: Rate-limit plan.
+Use only the approved synthetic files under ./input in the API workflow synthetic planned inclusion fixture workspace.
+Produce the planned artifact at ./planned-output/rate-limit-plan.md. Do not read .env, do not use credentials, do not call public networks, and do not mutate live systems.
+This prompt defines planned inclusion metadata only until RP2/RP3 execution traces are generated.

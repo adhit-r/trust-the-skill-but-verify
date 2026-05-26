@@ -1,0 +1,30 @@
+{
+  "adapter_id": "local_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/planned_fixture_runner.py",
+    "--task-id",
+    "reference-style-normalization",
+    "--output",
+    "./planned-output/reference-style-normalization.md"
+  ],
+  "contract_id": "citation-normalizer-synthetic-reference-style-normalization",
+  "dry_run": false,
+  "prepared_at": "2026-05-26T12:02:44+00:00",
+  "profile_hash": "7f671673b37f9b78cdb02475da028c18173538fcd42b85ff07aff05dc7e58d94",
+  "profile_id": "RP2",
+  "repeat_id": 2,
+  "run_id": "rp2-c530f0e3f8d7",
+  "skill_artifact": "local-fixture",
+  "skill_id": "citation-normalizer-synthetic",
+  "task_id": "reference-style-normalization",
+  "task_prompt_hash": "sha256:cf06431be6251610b208da5d1879c64126717e6a97257f00be08e752ec9a6ee7",
+  "task_prompt_ref": "benchmark/tasks/citation-normalizer-synthetic/reference-style-normalization.txt",
+  "variant_id": "citation-normalizer-synthetic.p2.reference-style-normalization",
+  "workspace_copied_file_count": 7,
+  "workspace_mode": "copied_seed_workspace",
+  "workspace_seed": "<repo>/benchmark/workspaces/citation-normalizer-synthetic-planned-mini",
+  "workspace_seed_id": "planned-inclusion-citation-normalizer-synthetic-reference-style-normalization-rp2",
+  "workspace_snapshot_hash": "9d7382aedac1ae3d1d2e2b4bb373cb96603f2cf08284da988075bea65fe8f697"
+}

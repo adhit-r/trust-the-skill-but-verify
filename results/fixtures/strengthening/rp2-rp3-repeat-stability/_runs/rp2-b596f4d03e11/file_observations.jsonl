@@ -1,0 +1,2 @@
+{"copied_file_count": 7, "event": "workspace_seed_copied", "path": "<repo>/benchmark/workspaces/ci-triage-synthetic-planned-mini", "profile_id": "RP2", "timestamp": "2026-05-26T12:02:25+00:00"}
+{"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./planned-output/failing-job-summary.md", "sha256": "sha256:3556b58c06ccdac78b28193efe64b2e10110268a65359580683ca452edb15937", "size": 502, "status": "succeeded", "timestamp": "2026-05-26T12:02:25+00:00"}

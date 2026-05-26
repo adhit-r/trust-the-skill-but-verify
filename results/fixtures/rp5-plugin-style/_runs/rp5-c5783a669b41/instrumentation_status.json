@@ -1,0 +1,18 @@
+{
+  "activation_provenance": "plugin_manifest_task_prompt_fixture",
+  "adapter_id": "plugin_fixture_adapter",
+  "approval_provenance": "deterministic_fixture_transcript",
+  "cleanup_provenance": "scoped_plugin_storage_removed",
+  "file_read_provenance": "fixture_planned_file_read_events",
+  "file_write_provenance": "fixture_output_and_storage_events",
+  "network_provenance": "disabled_network_assertion_no_public_contact",
+  "process_provenance": "fixture_install_hook_wrapper",
+  "tool_provenance": "fixture_host_api_wrapper",
+  "trace_valid": true,
+  "warnings": [
+    "RP5 evidence is fixture-backed and not commercial plugin-store behavior",
+    "host API calls are deterministic local fixture events",
+    "network is intentionally disabled and no public internet contact is made",
+    "plugin install/update behavior is not a claim about commercial plugin runtimes"
+  ]
+}

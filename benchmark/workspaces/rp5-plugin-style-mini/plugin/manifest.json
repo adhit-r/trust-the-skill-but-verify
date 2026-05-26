@@ -1,0 +1,13 @@
+{
+  "id": "rp5.plugin.demo",
+  "name": "RP5 Demo Plugin",
+  "version": "1.0.0",
+  "activation": {
+    "keywords": ["plugin", "compliance", "export"],
+    "negative_keywords": ["unrelated", "gardening", "meeting-notes"]
+  },
+  "host_apis": ["plugin.host_api", "plugin.update_check", "plugin.metadata_read"],
+  "install_hook": "plugin/install.sh",
+  "bundled_resources": ["plugin/resources/policy-template.md"],
+  "storage_scope": "plugin-storage"
+}

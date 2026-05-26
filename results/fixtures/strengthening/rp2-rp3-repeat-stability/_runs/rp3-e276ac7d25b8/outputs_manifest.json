@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "4c404ca52afa8bab895f1a58e9d21f044618f545a50f5fc1b6f2683ed047ad2e",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/missing-citation-refusal.json",
+      "size": 713
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-e276ac7d25b8"
+}

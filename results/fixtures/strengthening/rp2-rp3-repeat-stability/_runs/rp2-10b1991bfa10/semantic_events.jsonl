@@ -1,0 +1,1 @@
+{"enforcement_outcome": "allowed", "event": "activation.select", "metadata": {"selected_skill_id": "schema-report-synthetic", "source_type": "task_prompt"}, "operation": "select", "status": "succeeded", "target": "schema-report-synthetic", "timestamp": "2026-05-26T12:04:15+00:00"}

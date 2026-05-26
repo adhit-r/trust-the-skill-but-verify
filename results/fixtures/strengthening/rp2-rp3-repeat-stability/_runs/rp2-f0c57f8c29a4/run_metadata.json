@@ -1,0 +1,30 @@
+{
+  "adapter_id": "local_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/planned_fixture_runner.py",
+    "--task-id",
+    "mixed-format-summary",
+    "--output",
+    "./planned-output/mixed-format-summary.json"
+  ],
+  "contract_id": "schema-report-synthetic-mixed-format-summary",
+  "dry_run": false,
+  "prepared_at": "2026-05-26T12:04:08+00:00",
+  "profile_hash": "7f671673b37f9b78cdb02475da028c18173538fcd42b85ff07aff05dc7e58d94",
+  "profile_id": "RP2",
+  "repeat_id": 3,
+  "run_id": "rp2-f0c57f8c29a4",
+  "skill_artifact": "local-fixture",
+  "skill_id": "schema-report-synthetic",
+  "task_id": "mixed-format-summary",
+  "task_prompt_hash": "sha256:0ab1d35b8a9fb45d8e2cb2298b0f8d49f43f71623028532c236366b6aa217f61",
+  "task_prompt_ref": "benchmark/tasks/schema-report-synthetic/mixed-format-summary.txt",
+  "variant_id": "schema-report-synthetic.p2.mixed-format-summary",
+  "workspace_copied_file_count": 7,
+  "workspace_mode": "copied_seed_workspace",
+  "workspace_seed": "<repo>/benchmark/workspaces/schema-report-synthetic-planned-mini",
+  "workspace_seed_id": "planned-inclusion-schema-report-synthetic-mixed-format-summary-rp2",
+  "workspace_snapshot_hash": "0e4f096ce619c8876ab9467266e0c7c376fd4cca00b789d34c2d1ea5ae336348"
+}

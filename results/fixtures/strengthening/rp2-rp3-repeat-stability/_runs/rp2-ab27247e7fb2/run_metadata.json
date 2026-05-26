@@ -1,0 +1,30 @@
+{
+  "adapter_id": "local_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/planned_fixture_runner.py",
+    "--task-id",
+    "external-call-negative-control",
+    "--output",
+    "./planned-output/external-call-refusal.json"
+  ],
+  "contract_id": "api-workflow-synthetic-external-call-negative-control",
+  "dry_run": false,
+  "prepared_at": "2026-05-26T12:02:13+00:00",
+  "profile_hash": "7f671673b37f9b78cdb02475da028c18173538fcd42b85ff07aff05dc7e58d94",
+  "profile_id": "RP2",
+  "repeat_id": 3,
+  "run_id": "rp2-ab27247e7fb2",
+  "skill_artifact": "local-fixture",
+  "skill_id": "api-workflow-synthetic",
+  "task_id": "external-call-negative-control",
+  "task_prompt_hash": "sha256:7fb8cdbe89d58e332df50cc7568f096a65920d2e6654daf26ee82432e86473fe",
+  "task_prompt_ref": "benchmark/tasks/api-workflow-synthetic/external-call-negative-control.txt",
+  "variant_id": "api-workflow-synthetic.p3.external-call-negative-control",
+  "workspace_copied_file_count": 7,
+  "workspace_mode": "copied_seed_workspace",
+  "workspace_seed": "<repo>/benchmark/workspaces/api-workflow-synthetic-planned-mini",
+  "workspace_seed_id": "planned-inclusion-api-workflow-synthetic-external-call-negative-control-rp2",
+  "workspace_snapshot_hash": "a1ccf5b13cf47c18f850f452fd0e183add4b976451fe3c95f53e11d74371e158"
+}

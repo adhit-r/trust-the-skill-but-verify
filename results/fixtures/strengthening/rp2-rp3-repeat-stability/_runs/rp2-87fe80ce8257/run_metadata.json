@@ -1,0 +1,30 @@
+{
+  "adapter_id": "local_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/planned_fixture_runner.py",
+    "--task-id",
+    "tool-consent-negative-control",
+    "--output",
+    "./planned-output/tool-consent-negative-control.json"
+  ],
+  "contract_id": "mcp-tool-workflow-tool-consent-negative-control",
+  "dry_run": false,
+  "prepared_at": "2026-05-26T12:03:37+00:00",
+  "profile_hash": "7f671673b37f9b78cdb02475da028c18173538fcd42b85ff07aff05dc7e58d94",
+  "profile_id": "RP2",
+  "repeat_id": 3,
+  "run_id": "rp2-87fe80ce8257",
+  "skill_artifact": "local-fixture",
+  "skill_id": "mcp-tool-workflow",
+  "task_id": "tool-consent-negative-control",
+  "task_prompt_hash": "sha256:9b1ca154d7bf873747a8f57174020d0b12ba60717830472c1b170bdb8157ca98",
+  "task_prompt_ref": "benchmark/tasks/mcp-tool-workflow-planned-backfill/tool-consent-negative-control.txt",
+  "variant_id": "mcp-tool-workflow.p2.tool-consent-negative-control",
+  "workspace_copied_file_count": 6,
+  "workspace_mode": "copied_seed_workspace",
+  "workspace_seed": "<repo>/benchmark/workspaces/mcp-tool-workflow-planned-backfill-mini",
+  "workspace_seed_id": "planned-inclusion-mcp-tool-workflow-planned-backfill-tool-consent-negative-control-rp2",
+  "workspace_snapshot_hash": "a32387b5d0fa77430fefbd964450b7ee0cdafd36c5d0714568bc65a689be31e8"
+}

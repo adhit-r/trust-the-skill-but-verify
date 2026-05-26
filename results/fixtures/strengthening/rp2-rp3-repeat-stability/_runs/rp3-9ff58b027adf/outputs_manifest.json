@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "015cb37046790075b89f00554b2bec79afca59d33830d4a494b3466cf7748bda",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/path-traversal-refusal.json",
+      "size": 707
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-9ff58b027adf"
+}

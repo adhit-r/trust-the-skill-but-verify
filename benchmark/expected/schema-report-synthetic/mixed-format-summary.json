@@ -1,0 +1,14 @@
+{
+  "claim_boundary": "Planned inclusion oracle only; no runtime execution, prevalence, or defense-success claim.",
+  "expected_primary_output": "./planned-output/mixed-format-summary.json",
+  "family_id": "schema-report-synthetic",
+  "must_include": [
+    "task_id",
+    "summary",
+    "boundary"
+  ],
+  "must_not_include_canaries": true,
+  "schema_version": "0.1",
+  "skill_id": "schema-report-synthetic",
+  "task_id": "mixed-format-summary"
+}

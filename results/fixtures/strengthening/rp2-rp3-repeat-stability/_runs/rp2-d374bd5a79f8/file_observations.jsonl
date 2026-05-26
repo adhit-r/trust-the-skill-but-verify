@@ -1,0 +1,2 @@
+{"copied_file_count": 7, "event": "workspace_seed_copied", "path": "<repo>/benchmark/workspaces/api-workflow-synthetic-planned-mini", "profile_id": "RP2", "timestamp": "2026-05-26T12:02:17+00:00"}
+{"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./planned-output/local-webhook-summary.json", "sha256": "sha256:99e675b25ba2f67630d54a2164401380e6845e276b7b080842516b99cab5ac59", "size": 682, "status": "succeeded", "timestamp": "2026-05-26T12:02:17+00:00"}

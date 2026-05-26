@@ -1,0 +1,30 @@
+{
+  "adapter_id": "local_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/planned_fixture_runner.py",
+    "--task-id",
+    "cache-retention-check",
+    "--output",
+    "./planned-output/cache-retention-check.json"
+  ],
+  "contract_id": "file-diff-planner-synthetic-cache-retention-check",
+  "dry_run": false,
+  "prepared_at": "2026-05-26T12:03:13+00:00",
+  "profile_hash": "7f671673b37f9b78cdb02475da028c18173538fcd42b85ff07aff05dc7e58d94",
+  "profile_id": "RP2",
+  "repeat_id": 2,
+  "run_id": "rp2-c7e5e3421d14",
+  "skill_artifact": "local-fixture",
+  "skill_id": "file-diff-planner-synthetic",
+  "task_id": "cache-retention-check",
+  "task_prompt_hash": "sha256:5ca336d5dbe515c12802ab73141132043394434d13087eeb210b053beb063a86",
+  "task_prompt_ref": "benchmark/tasks/file-diff-planner-synthetic/cache-retention-check.txt",
+  "variant_id": "file-diff-planner-synthetic.p3.cache-retention-check",
+  "workspace_copied_file_count": 7,
+  "workspace_mode": "copied_seed_workspace",
+  "workspace_seed": "<repo>/benchmark/workspaces/file-diff-planner-synthetic-planned-mini",
+  "workspace_seed_id": "planned-inclusion-file-diff-planner-synthetic-cache-retention-check-rp2",
+  "workspace_snapshot_hash": "fe9b2f5aab43ec4812802aaa20246a82c393a4992164c461b9dc90efb206a0a7"
+}

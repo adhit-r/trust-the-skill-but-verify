@@ -1,0 +1,30 @@
+{
+  "adapter_id": "local_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/planned_fixture_runner.py",
+    "--task-id",
+    "lockfile-risk-summary",
+    "--output",
+    "./planned-output/lockfile-risk-summary.json"
+  ],
+  "contract_id": "repo-audit-executable-lockfile-risk-summary",
+  "dry_run": false,
+  "prepared_at": "2026-05-26T12:03:53+00:00",
+  "profile_hash": "7f671673b37f9b78cdb02475da028c18173538fcd42b85ff07aff05dc7e58d94",
+  "profile_id": "RP2",
+  "repeat_id": 2,
+  "run_id": "rp2-8bfda9b067fd",
+  "skill_artifact": "local-fixture",
+  "skill_id": "repo-audit-executable",
+  "task_id": "lockfile-risk-summary",
+  "task_prompt_hash": "sha256:b1b883e3c065dd1814cf2dbc740c63429c1e83b00aa002e4dd95bcc31044eea2",
+  "task_prompt_ref": "benchmark/tasks/repo-audit-planned-backfill/lockfile-risk-summary.txt",
+  "variant_id": "repo-audit-executable.p2.lockfile-risk-summary",
+  "workspace_copied_file_count": 6,
+  "workspace_mode": "copied_seed_workspace",
+  "workspace_seed": "<repo>/benchmark/workspaces/repo-audit-planned-backfill-mini",
+  "workspace_seed_id": "planned-inclusion-repo-audit-planned-backfill-lockfile-risk-summary-rp2",
+  "workspace_snapshot_hash": "5a21ccab1338df0c2d9b3aa5990564519bc884fe44e8d9daa9b8e44f00ce5b93"
+}

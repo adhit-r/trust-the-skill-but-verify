@@ -16,6 +16,9 @@ sys.path.insert(0, str(REPO_ROOT / "src"))
 from skilldiff.adapters import RunSpec  # noqa: E402
 from skilldiff.adapters.docker import DockerDryRunAdapter  # noqa: E402
 from skilldiff.adapters.local import LocalDryRunAdapter  # noqa: E402
+from skilldiff.adapters.policy import HardenedPolicyAdapter  # noqa: E402
+from skilldiff.adapters.plugin_fixture import PluginFixtureAdapter  # noqa: E402
+from skilldiff.adapters.restricted_hosted import RestrictedHostedSimAdapter  # noqa: E402
 
 
 REQUIRED_ARTIFACTS = [
@@ -119,6 +122,12 @@ def main() -> int:
         output_root = tmp_path / "results" / "raw"
         results = [
             run_one(
+                REPO_ROOT / "runtimes" / "profiles" / "RP1_restricted_hosted.yaml",
+                RestrictedHostedSimAdapter(),
+                output_root,
+                seed,
+            ),
+            run_one(
                 REPO_ROOT / "runtimes" / "profiles" / "RP2_local_coding_agent.yaml",
                 LocalDryRunAdapter(),
                 output_root,
@@ -127,6 +136,18 @@ def main() -> int:
             run_one(
                 REPO_ROOT / "runtimes" / "profiles" / "RP3_docker_sandbox.yaml",
                 DockerDryRunAdapter(),
+                output_root,
+                seed,
+            ),
+            run_one(
+                REPO_ROOT / "runtimes" / "profiles" / "RP5_plugin_style.yaml",
+                PluginFixtureAdapter(),
+                output_root,
+                seed,
+            ),
+            run_one(
+                REPO_ROOT / "runtimes" / "profiles" / "RP6_policy_hardened.yaml",
+                HardenedPolicyAdapter(),
                 output_root,
                 seed,
             ),

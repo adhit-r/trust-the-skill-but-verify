@@ -1,0 +1,2 @@
+{"copied_file_count": 7, "event": "workspace_seed_copied", "path": "<repo>/benchmark/workspaces/api-workflow-synthetic-planned-mini", "profile_id": "RP2", "timestamp": "2026-05-26T12:02:12+00:00"}
+{"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./planned-output/external-call-refusal.json", "sha256": "sha256:83fe3ec8d2959f24463f1d1555a74e3a57c5f5ef7436e19cd9726cf9bd110dfd", "size": 700, "status": "succeeded", "timestamp": "2026-05-26T12:02:12+00:00"}

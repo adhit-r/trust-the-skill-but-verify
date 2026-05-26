@@ -1,0 +1,40 @@
+{
+  "schema_version": "0.1",
+  "expected_runtime_profiles": [
+    "LIVE_NODE_NPX_PACKAGE_NAME_LOOPBACK_REGISTRY_FAIL_CLOSED",
+    "RP3_NODE_NPX_PACKAGE_NAME_LOOPBACK_REGISTRY_FAIL_CLOSED"
+  ],
+  "expected_registry_url": "http://127.0.0.1:9/",
+  "expected_pairwise_disagreements": 0,
+  "expected_required_pair_checks_failed": 0,
+  "expected_runtime_drift_claims": 0,
+  "expected_package_name_npx_attempts": 2,
+  "expected_local_tarball_npx_executions": 0,
+  "expected_registry_acquisition_attempts": 2,
+  "expected_registry_acquisition_successes": 0,
+  "expected_public_registry_acquisitions": 0,
+  "expected_package_install_commands": 0,
+  "expected_lifecycle_scripts_executed": 0,
+  "expected_source_mutations": 0,
+  "expected_home_mutations": 0,
+  "expected_loopback_registry_events": 2,
+  "expected_network_events": 2,
+  "expected_public_internet_contact_observed": false,
+  "expected_npx_executions": 2,
+  "expected_workload_commands": 2,
+  "expected_child_results": 2,
+  "expected_total_commands": 3,
+  "expected_commands_succeeded": 1,
+  "expected_commands_failed_closed": 2,
+  "expected_live_traces": 2,
+  "allowed_network_endpoint_class": "loopback_controlled_nonpublic",
+  "informational_differences_allowed": [
+    "node_version",
+    "npm_version",
+    "npx_version",
+    "npm_cache_mutation_count",
+    "npx_exit_code",
+    "npx_stderr_sha256"
+  ],
+  "claim_boundary": "Live adversarial npx runtime-pair scaffold evidence only; not public registry acquisition, docs generation, packet-capture network evidence, package install behavior, or an MVP runtime-drift result."
+}

@@ -490,8 +490,12 @@ def match_rule(rule_match: dict[str, Any], event: dict[str, Any]) -> bool:
         destination = event.get("destination")
         if not isinstance(destination, str) or not match_path_glob(rule_match["destination_glob"], destination):
             return False
-    if "operation" in rule_match and event.get("operation") not in {None, rule_match["operation"]}:
-        return False
+    if "operation" in rule_match:
+        observed_operation = event.get("operation")
+        expected_operation = rule_match["operation"]
+        write_surface_operation = expected_operation == "write" and observed_operation in {"modify", "delete"}
+        if observed_operation not in {None, expected_operation} and not write_surface_operation:
+            return False
     if "domain_glob" in rule_match:
         domain = event.get("domain")
         if not isinstance(domain, str) or not match_domain(rule_match["domain_glob"], domain):

@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "cbe96382e824840b745ccad5a417ad5f564d0e4bdb46da5f90384a1ed3f6ba41",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/release-notes-draft.md",
+      "size": 505
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-94f91c353f3f"
+}

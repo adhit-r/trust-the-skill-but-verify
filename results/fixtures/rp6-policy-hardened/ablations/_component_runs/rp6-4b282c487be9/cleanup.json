@@ -1,0 +1,9 @@
+{
+  "leftover_paths": [
+    "<REPO_ROOT>/results/fixtures/rp6-policy-hardened/ablations/_component_runs/rp6-4b282c487be9"
+  ],
+  "removed_paths": [],
+  "run_id": "rp6-4b282c487be9",
+  "status": "recorded_contract_workspace_preserved_for_evidence",
+  "timestamp": "2026-05-26T03:24:16+00:00"
+}

@@ -1,0 +1,1 @@
+{"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./planned-output/tool-consent-negative-control.json", "sha256": "sha256:71647f4e687fed4fc2dfac4df4541a751476fdd810520837ec21b520c67877c2", "size": 710, "status": "succeeded", "timestamp": "2026-05-26T12:03:36+00:00"}

@@ -1,0 +1,11 @@
+{
+  "adapter_outcome": "completed",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/ci-failure-triage.md",
+      "size": 504
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp2-42b3e25351ac"
+}

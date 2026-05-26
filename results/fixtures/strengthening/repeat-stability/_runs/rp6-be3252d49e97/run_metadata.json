@@ -1,0 +1,28 @@
+{
+  "adapter_id": "hardened_policy_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/audit_lens_runner.py",
+    "dashboard-generation",
+    "benign"
+  ],
+  "contract_id": "audit-lens-dashboard-generation",
+  "dry_run": false,
+  "prepared_at": "2026-05-26T03:24:23+00:00",
+  "profile_hash": "eb604ffff1a6915487f9d9039430931d345f309733c1e5b4deaeaaa6baf077b8",
+  "profile_id": "RP6",
+  "repeat_id": 2,
+  "run_id": "rp6-be3252d49e97",
+  "skill_artifact": "local-fixture",
+  "skill_id": "audit-lens",
+  "task_id": "dashboard-generation",
+  "task_prompt_hash": "sha256:fb251a01405e689097c1786107dd3bdfd7b0a5bbd152eeaa490cb9361155c3a0",
+  "task_prompt_ref": "benchmark/tasks/audit-lens/dashboard-generation.txt",
+  "variant_id": "audit-lens-acme.p4.benign",
+  "workspace_copied_file_count": 31,
+  "workspace_mode": "contract_scoped_staged_workspace",
+  "workspace_seed": "<REPO_ROOT>/benchmark/workspaces/audit-lens-acme",
+  "workspace_seed_id": "audit-lens-p4_benign-rp6-repeat-stability",
+  "workspace_snapshot_hash": "8e082a220a80c8e9d7238e73fe553356347ff468671d3cdd84ccfe0ec334fdf2"
+}

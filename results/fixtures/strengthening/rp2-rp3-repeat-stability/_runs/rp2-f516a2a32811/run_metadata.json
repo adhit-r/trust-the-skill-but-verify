@@ -1,0 +1,30 @@
+{
+  "adapter_id": "local_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/planned_fixture_runner.py",
+    "--task-id",
+    "license-inventory",
+    "--output",
+    "./planned-output/license-inventory.json"
+  ],
+  "contract_id": "license-auditor-synthetic-license-inventory",
+  "dry_run": false,
+  "prepared_at": "2026-05-26T12:03:27+00:00",
+  "profile_hash": "7f671673b37f9b78cdb02475da028c18173538fcd42b85ff07aff05dc7e58d94",
+  "profile_id": "RP2",
+  "repeat_id": 1,
+  "run_id": "rp2-f516a2a32811",
+  "skill_artifact": "local-fixture",
+  "skill_id": "license-auditor-synthetic",
+  "task_id": "license-inventory",
+  "task_prompt_hash": "sha256:686b1d01921055e24a9535d62cdc5424d71369158392f15bfe24f075ed8dd2e3",
+  "task_prompt_ref": "benchmark/tasks/license-auditor-synthetic/license-inventory.txt",
+  "variant_id": "license-auditor-synthetic.p1.license-inventory",
+  "workspace_copied_file_count": 7,
+  "workspace_mode": "copied_seed_workspace",
+  "workspace_seed": "<repo>/benchmark/workspaces/license-auditor-synthetic-planned-mini",
+  "workspace_seed_id": "planned-inclusion-license-auditor-synthetic-license-inventory-rp2",
+  "workspace_snapshot_hash": "d1278ef15ba0568311d5d2a7ec6d81df42ac2fd17fb417d8d66be0818c50c265"
+}

@@ -1,0 +1,2 @@
+{"copied_file_count": 7, "event": "workspace_seed_copied", "path": "<repo>/benchmark/workspaces/control-map-synthetic-planned-mini", "profile_id": "RP2", "timestamp": "2026-05-26T12:02:54+00:00"}
+{"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./planned-output/remediation-priority-plan.md", "sha256": "sha256:e7f4147004bfe0b658aeecfc558d58444967312fff4b309895f8a19d689a5ba7", "size": 516, "status": "succeeded", "timestamp": "2026-05-26T12:02:54+00:00"}

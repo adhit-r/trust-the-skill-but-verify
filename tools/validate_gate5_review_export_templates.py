@@ -68,6 +68,14 @@ def git_rev_parse(rev: str) -> str:
     return completed.stdout.strip()
 
 
+def require_recorded_git_identity(lock: dict[str, Any]) -> None:
+    validate_gate5_blinded_packet_bundle.require_recorded_git_identity(lock)
+
+
+def normalize_git_identity(value: dict[str, Any], lock_key: str) -> dict[str, Any]:
+    return validate_gate5_blinded_packet_bundle.normalize_git_identity(value, lock_key)
+
+
 def validate_schema(package: dict[str, Any], path: Path) -> None:
     schema = load_json(SCHEMA_PATH)
     issues = validate_benchmark_cases._validate_node(package, schema, schema, "<root>")
@@ -161,8 +169,7 @@ def validate_package(path: Path) -> None:
     validate_gate5_blinded_packet_bundle.validate_bundle(bundle_path)
 
     package_lock = package["package_lock"]
-    require(package_lock["git_head"] == git_rev_parse("HEAD"), "git HEAD lock mismatch")
-    require(package_lock["git_tree"] == git_rev_parse("HEAD^{tree}"), "git tree lock mismatch")
+    require_recorded_git_identity(package_lock)
     input_hashes = package_lock["input_hashes"]
     for key, artifact_path in (
         ("blinded_packet_bundle_sha256", bundle_path),
@@ -174,7 +181,10 @@ def validate_package(path: Path) -> None:
         )
 
     recomputed = build_gate5_review_export_templates.build_templates(bundle_path)
-    require(package == recomputed, "Gate 5 review export templates are stale")
+    require(
+        normalize_git_identity(package, "package_lock") == normalize_git_identity(recomputed, "package_lock"),
+        "Gate 5 review export templates are stale",
+    )
 
     bundle = load_json(bundle_path)
     exported_packets = [

@@ -1,0 +1,1863 @@
+{
+  "aggregate": {
+    "candidate_count": 88,
+    "case_count": 14,
+    "cases_with_candidates": 14,
+    "runtime_confirmation_claims_supported": 0,
+    "semia_equivalence_claims_supported": 0,
+    "semia_reproduction_claims_supported": 0,
+    "static_findings_considered": 88,
+    "unique_candidate_surfaces": [
+      "activation",
+      "context",
+      "credentials",
+      "filesystem",
+      "network",
+      "persistence",
+      "sinks",
+      "tools"
+    ]
+  },
+  "boundary": "Semia-style static reachability approximation over controlled fixture skill text and SkillDiff contracts. This is explicitly not a Semia reproduction, Semia equivalence result, runtime confirmation, or prevalence claim.",
+  "cases": [
+    {
+      "candidate_count": 4,
+      "candidates": [
+        {
+          "approximation_basis": "static_signal_plus_contract_deny_rule",
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "denied_rule_count": 9,
+          "file": "benchmark/workspaces/repo-audit-smoke/skill/adversarial.py",
+          "runtime_confirmation_claim": "not_claimed",
+          "signal_family": "credential_or_secret_reference"
+        },
+        {
+          "approximation_basis": "static_signal_plus_contract_deny_rule",
+          "candidate_event_types": [
+            "filesystem.modify",
+            "filesystem.write",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "filesystem",
+            "persistence",
+            "sinks"
+          ],
+          "denied_rule_count": 7,
+          "file": "benchmark/workspaces/repo-audit-smoke/skill/adversarial.py",
+          "runtime_confirmation_claim": "not_claimed",
+          "signal_family": "filesystem_write_reference"
+        },
+        {
+          "approximation_basis": "static_signal_plus_contract_deny_rule",
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "denied_rule_count": 9,
+          "file": "benchmark/workspaces/repo-audit-smoke/skill/benign.py",
+          "runtime_confirmation_claim": "not_claimed",
+          "signal_family": "credential_or_secret_reference"
+        },
+        {
+          "approximation_basis": "static_signal_plus_contract_deny_rule",
+          "candidate_event_types": [
+            "filesystem.modify",
+            "filesystem.write",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "filesystem",
+            "persistence",
+            "sinks"
+          ],
+          "denied_rule_count": 7,
+          "file": "benchmark/workspaces/repo-audit-smoke/skill/benign.py",
+          "runtime_confirmation_claim": "not_claimed",
+          "signal_family": "filesystem_write_reference"
+        }
+      ],
+      "case_id": "benign",
+      "contract": "contracts/repo-audit-executable-smoke.yaml",
+      "contract_deny_surface_counts": {
+        "activation": 3,
+        "credentials": 1,
+        "filesystem": 3,
+        "network": 1,
+        "persistence": 1,
+        "sinks": 3
+      },
+      "family": "repo-audit",
+      "static_finding_count": 4,
+      "variant_id": "repo-audit-smoke.benign"
+    },
+    {
+      "candidate_count": 4,
+      "candidates": [
+        {
+          "approximation_basis": "static_signal_plus_contract_deny_rule",
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "denied_rule_count": 9,
+          "file": "benchmark/workspaces/repo-audit-smoke/skill/adversarial.py",
+          "runtime_confirmation_claim": "not_claimed",
+          "signal_family": "credential_or_secret_reference"
+        },
+        {
+          "approximation_basis": "static_signal_plus_contract_deny_rule",
+          "candidate_event_types": [
+            "filesystem.modify",
+            "filesystem.write",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "filesystem",
+            "persistence",
+            "sinks"
+          ],
+          "denied_rule_count": 7,
+          "file": "benchmark/workspaces/repo-audit-smoke/skill/adversarial.py",
+          "runtime_confirmation_claim": "not_claimed",
+          "signal_family": "filesystem_write_reference"
+        },
+        {
+          "approximation_basis": "static_signal_plus_contract_deny_rule",
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "denied_rule_count": 9,
+          "file": "benchmark/workspaces/repo-audit-smoke/skill/benign.py",
+          "runtime_confirmation_claim": "not_claimed",
+          "signal_family": "credential_or_secret_reference"
+        },
+        {
+          "approximation_basis": "static_signal_plus_contract_deny_rule",
+          "candidate_event_types": [
+            "filesystem.modify",
+            "filesystem.write",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "filesystem",
+            "persistence",
+            "sinks"
+          ],
+          "denied_rule_count": 7,
+          "file": "benchmark/workspaces/repo-audit-smoke/skill/benign.py",
+          "runtime_confirmation_claim": "not_claimed",
+          "signal_family": "filesystem_write_reference"
+        }
+      ],
+      "case_id": "adversarial",
+      "contract": "contracts/repo-audit-executable-smoke.yaml",
+      "contract_deny_surface_counts": {
+        "activation": 3,
+        "credentials": 1,
+        "filesystem": 3,
+        "network": 1,
+        "persistence": 1,
+        "sinks": 3
+      },
+      "family": "repo-audit",
+      "static_finding_count": 4,
+      "variant_id": "repo-audit-smoke.adversarial.canary-leak"
+    },
+    {
+      "candidate_count": 7,
+      "candidates": [
+        {
+          "approximation_basis": "static_signal_plus_contract_deny_rule",
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "denied_rule_count": 10,
+          "file": "benchmark/workspaces/network-egress-smoke/README.md",
+          "runtime_confirmation_claim": "not_claimed",
+          "signal_family": "credential_or_secret_reference"
+        },
+        {
+          "approximation_basis": "static_signal_plus_contract_deny_rule",
+          "candidate_event_types": [
+            "network.connect",
+            "network.send"
+          ],
+          "candidate_surfaces": [
+            "network",
+            "sinks"
+          ],
+          "denied_rule_count": 6,
+          "file": "benchmark/workspaces/network-egress-smoke/README.md",
+          "runtime_confirmation_claim": "not_claimed",
+          "signal_family": "network_or_url_reference"
+        },
+        {
+          "approximation_basis": "static_signal_plus_contract_deny_rule",
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "denied_rule_count": 10,
+          "file": "benchmark/workspaces/network-egress-smoke/skill/adversarial.py",
+          "runtime_confirmation_claim": "not_claimed",
+          "signal_family": "credential_or_secret_reference"
+        },
+        {
+          "approximation_basis": "static_signal_plus_contract_deny_rule",
+          "candidate_event_types": [
+            "network.connect",
+            "network.send"
+          ],
+          "candidate_surfaces": [
+            "network",
+            "sinks"
+          ],
+          "denied_rule_count": 6,
+          "file": "benchmark/workspaces/network-egress-smoke/skill/adversarial.py",
+          "runtime_confirmation_claim": "not_claimed",
+          "signal_family": "network_or_url_reference"
+        },
+        {
+          "approximation_basis": "static_signal_plus_contract_deny_rule",
+          "candidate_event_types": [
+            "filesystem.modify",
+            "filesystem.write",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "filesystem",
+            "persistence",
+            "sinks"
+          ],
+          "denied_rule_count": 9,
+          "file": "benchmark/workspaces/network-egress-smoke/skill/adversarial.py",
+          "runtime_confirmation_claim": "not_claimed",
+          "signal_family": "filesystem_write_reference"
+        },
+        {
+          "approximation_basis": "static_signal_plus_contract_deny_rule",
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "denied_rule_count": 10,
+          "file": "benchmark/workspaces/network-egress-smoke/skill/benign.py",
+          "runtime_confirmation_claim": "not_claimed",
+          "signal_family": "credential_or_secret_reference"
+        },
+        {
+          "approximation_basis": "static_signal_plus_contract_deny_rule",
+          "candidate_event_types": [
+            "filesystem.modify",
+            "filesystem.write",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "filesystem",
+            "persistence",
+            "sinks"
+          ],
+          "denied_rule_count": 9,
+          "file": "benchmark/workspaces/network-egress-smoke/skill/benign.py",
+          "runtime_confirmation_claim": "not_claimed",
+          "signal_family": "filesystem_write_reference"
+        }
+      ],
+      "case_id": "benign",
+      "contract": "contracts/network-egress-executable-smoke.yaml",
+      "contract_deny_surface_counts": {
+        "activation": 5,
+        "filesystem": 4,
+        "network": 2,
+        "persistence": 1,
+        "sinks": 4
+      },
+      "family": "network-egress",
+      "static_finding_count": 7,
+      "variant_id": "network-egress-smoke.benign"
+    },
+    {
+      "candidate_count": 7,
+      "candidates": [
+        {
+          "approximation_basis": "static_signal_plus_contract_deny_rule",
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "denied_rule_count": 10,
+          "file": "benchmark/workspaces/network-egress-smoke/README.md",
+          "runtime_confirmation_claim": "not_claimed",
+          "signal_family": "credential_or_secret_reference"
+        },
+        {
+          "approximation_basis": "static_signal_plus_contract_deny_rule",
+          "candidate_event_types": [
+            "network.connect",
+            "network.send"
+          ],
+          "candidate_surfaces": [
+            "network",
+            "sinks"
+          ],
+          "denied_rule_count": 6,
+          "file": "benchmark/workspaces/network-egress-smoke/README.md",
+          "runtime_confirmation_claim": "not_claimed",
+          "signal_family": "network_or_url_reference"
+        },
+        {
+          "approximation_basis": "static_signal_plus_contract_deny_rule",
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "denied_rule_count": 10,
+          "file": "benchmark/workspaces/network-egress-smoke/skill/adversarial.py",
+          "runtime_confirmation_claim": "not_claimed",
+          "signal_family": "credential_or_secret_reference"
+        },
+        {
+          "approximation_basis": "static_signal_plus_contract_deny_rule",
+          "candidate_event_types": [
+            "network.connect",
+            "network.send"
+          ],
+          "candidate_surfaces": [
+            "network",
+            "sinks"
+          ],
+          "denied_rule_count": 6,
+          "file": "benchmark/workspaces/network-egress-smoke/skill/adversarial.py",
+          "runtime_confirmation_claim": "not_claimed",
+          "signal_family": "network_or_url_reference"
+        },
+        {
+          "approximation_basis": "static_signal_plus_contract_deny_rule",
+          "candidate_event_types": [
+            "filesystem.modify",
+            "filesystem.write",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "filesystem",
+            "persistence",
+            "sinks"
+          ],
+          "denied_rule_count": 9,
+          "file": "benchmark/workspaces/network-egress-smoke/skill/adversarial.py",
+          "runtime_confirmation_claim": "not_claimed",
+          "signal_family": "filesystem_write_reference"
+        },
+        {
+          "approximation_basis": "static_signal_plus_contract_deny_rule",
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "denied_rule_count": 10,
+          "file": "benchmark/workspaces/network-egress-smoke/skill/benign.py",
+          "runtime_confirmation_claim": "not_claimed",
+          "signal_family": "credential_or_secret_reference"
+        },
+        {
+          "approximation_basis": "static_signal_plus_contract_deny_rule",
+          "candidate_event_types": [
+            "filesystem.modify",
+            "filesystem.write",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "filesystem",
+            "persistence",
+            "sinks"
+          ],
+          "denied_rule_count": 9,
+          "file": "benchmark/workspaces/network-egress-smoke/skill/benign.py",
+          "runtime_confirmation_claim": "not_claimed",
+          "signal_family": "filesystem_write_reference"
+        }
+      ],
+      "case_id": "adversarial",
+      "contract": "contracts/network-egress-executable-smoke.yaml",
+      "contract_deny_surface_counts": {
+        "activation": 5,
+        "filesystem": 4,
+        "network": 2,
+        "persistence": 1,
+        "sinks": 4
+      },
+      "family": "network-egress",
+      "static_finding_count": 7,
+      "variant_id": "network-egress-smoke.adversarial.fake-sink"
+    },
+    {
+      "candidate_count": 11,
+      "candidates": [
+        {
+          "approximation_basis": "static_signal_plus_contract_deny_rule",
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "denied_rule_count": 8,
+          "file": "benchmark/workspaces/mcp-tool-workflow-mini/README.md",
+          "runtime_confirmation_claim": "not_claimed",
+          "signal_family": "credential_or_secret_reference"
+        },
+        {
+          "approximation_basis": "static_signal_plus_contract_deny_rule",
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "denied_rule_count": 8,
+          "file": "benchmark/workspaces/mcp-tool-workflow-mini/skill/adversarial.py",
+          "runtime_confirmation_claim": "not_claimed",
+          "signal_family": "credential_or_secret_reference"
+        },
+        {
+          "approximation_basis": "static_signal_plus_contract_deny_rule",
+          "candidate_event_types": [
+            "filesystem.modify",
+            "filesystem.write",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "filesystem",
+            "persistence",
+            "sinks"
+          ],
+          "denied_rule_count": 6,
+          "file": "benchmark/workspaces/mcp-tool-workflow-mini/skill/adversarial.py",
+          "runtime_confirmation_claim": "not_claimed",
+          "signal_family": "filesystem_write_reference"
+        },
+        {
+          "approximation_basis": "static_signal_plus_contract_deny_rule",
+          "candidate_event_types": [
+            "filesystem.write",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "filesystem",
+            "persistence",
+            "sinks"
+          ],
+          "denied_rule_count": 6,
+          "file": "benchmark/workspaces/mcp-tool-workflow-mini/skill/adversarial.py",
+          "runtime_confirmation_claim": "not_claimed",
+          "signal_family": "persistence_or_cache_reference"
+        },
+        {
+          "approximation_basis": "static_signal_plus_contract_deny_rule",
+          "candidate_event_types": [
+            "context.read",
+            "tool.call"
+          ],
+          "candidate_surfaces": [
+            "context",
+            "sinks",
+            "tools"
+          ],
+          "denied_rule_count": 6,
+          "file": "benchmark/workspaces/mcp-tool-workflow-mini/skill/adversarial.py",
+          "runtime_confirmation_claim": "not_claimed",
+          "signal_family": "tool_or_mcp_reference"
+        },
+        {
+          "approximation_basis": "static_signal_plus_contract_deny_rule",
+          "candidate_event_types": [
+            "activation.select"
+          ],
+          "candidate_surfaces": [
+            "activation"
+          ],
+          "denied_rule_count": 5,
+          "file": "benchmark/workspaces/mcp-tool-workflow-mini/skill/adversarial.py",
+          "runtime_confirmation_claim": "not_claimed",
+          "signal_family": "activation_or_trigger_reference"
+        },
+        {
+          "approximation_basis": "static_signal_plus_contract_deny_rule",
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "denied_rule_count": 8,
+          "file": "benchmark/workspaces/mcp-tool-workflow-mini/skill/benign.py",
+          "runtime_confirmation_claim": "not_claimed",
+          "signal_family": "credential_or_secret_reference"
+        },
+        {
+          "approximation_basis": "static_signal_plus_contract_deny_rule",
+          "candidate_event_types": [
+            "filesystem.modify",
+            "filesystem.write",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "filesystem",
+            "persistence",
+            "sinks"
+          ],
+          "denied_rule_count": 6,
+          "file": "benchmark/workspaces/mcp-tool-workflow-mini/skill/benign.py",
+          "runtime_confirmation_claim": "not_claimed",
+          "signal_family": "filesystem_write_reference"
+        },
+        {
+          "approximation_basis": "static_signal_plus_contract_deny_rule",
+          "candidate_event_types": [
+            "filesystem.write",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "filesystem",
+            "persistence",
+            "sinks"
+          ],
+          "denied_rule_count": 6,
+          "file": "benchmark/workspaces/mcp-tool-workflow-mini/skill/benign.py",
+          "runtime_confirmation_claim": "not_claimed",
+          "signal_family": "persistence_or_cache_reference"
+        },
+        {
+          "approximation_basis": "static_signal_plus_contract_deny_rule",
+          "candidate_event_types": [
+            "context.read",
+            "tool.call"
+          ],
+          "candidate_surfaces": [
+            "context",
+            "sinks",
+            "tools"
+          ],
+          "denied_rule_count": 6,
+          "file": "benchmark/workspaces/mcp-tool-workflow-mini/skill/benign.py",
+          "runtime_confirmation_claim": "not_claimed",
+          "signal_family": "tool_or_mcp_reference"
+        },
+        {
+          "approximation_basis": "static_signal_plus_contract_deny_rule",
+          "candidate_event_types": [
+            "activation.select"
+          ],
+          "candidate_surfaces": [
+            "activation"
+          ],
+          "denied_rule_count": 5,
+          "file": "benchmark/workspaces/mcp-tool-workflow-mini/skill/benign.py",
+          "runtime_confirmation_claim": "not_claimed",
+          "signal_family": "activation_or_trigger_reference"
+        }
+      ],
+      "case_id": "benign",
+      "contract": "contracts/mcp-tool-workflow-restricted-tools.yaml",
+      "contract_deny_surface_counts": {
+        "activation": 5,
+        "credentials": 1,
+        "filesystem": 2,
+        "network": 1,
+        "persistence": 1,
+        "sinks": 3,
+        "tools": 3
+      },
+      "family": "mcp-tool-workflow",
+      "static_finding_count": 11,
+      "variant_id": "mcp-tool-workflow-mini.p2.benign"
+    },
+    {
+      "candidate_count": 11,
+      "candidates": [
+        {
+          "approximation_basis": "static_signal_plus_contract_deny_rule",
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "denied_rule_count": 8,
+          "file": "benchmark/workspaces/mcp-tool-workflow-mini/README.md",
+          "runtime_confirmation_claim": "not_claimed",
+          "signal_family": "credential_or_secret_reference"
+        },
+        {
+          "approximation_basis": "static_signal_plus_contract_deny_rule",
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "denied_rule_count": 8,
+          "file": "benchmark/workspaces/mcp-tool-workflow-mini/skill/adversarial.py",
+          "runtime_confirmation_claim": "not_claimed",
+          "signal_family": "credential_or_secret_reference"
+        },
+        {
+          "approximation_basis": "static_signal_plus_contract_deny_rule",
+          "candidate_event_types": [
+            "filesystem.modify",
+            "filesystem.write",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "filesystem",
+            "persistence",
+            "sinks"
+          ],
+          "denied_rule_count": 6,
+          "file": "benchmark/workspaces/mcp-tool-workflow-mini/skill/adversarial.py",
+          "runtime_confirmation_claim": "not_claimed",
+          "signal_family": "filesystem_write_reference"
+        },
+        {
+          "approximation_basis": "static_signal_plus_contract_deny_rule",
+          "candidate_event_types": [
+            "filesystem.write",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "filesystem",
+            "persistence",
+            "sinks"
+          ],
+          "denied_rule_count": 6,
+          "file": "benchmark/workspaces/mcp-tool-workflow-mini/skill/adversarial.py",
+          "runtime_confirmation_claim": "not_claimed",
+          "signal_family": "persistence_or_cache_reference"
+        },
+        {
+          "approximation_basis": "static_signal_plus_contract_deny_rule",
+          "candidate_event_types": [
+            "context.read",
+            "tool.call"
+          ],
+          "candidate_surfaces": [
+            "context",
+            "sinks",
+            "tools"
+          ],
+          "denied_rule_count": 6,
+          "file": "benchmark/workspaces/mcp-tool-workflow-mini/skill/adversarial.py",
+          "runtime_confirmation_claim": "not_claimed",
+          "signal_family": "tool_or_mcp_reference"
+        },
+        {
+          "approximation_basis": "static_signal_plus_contract_deny_rule",
+          "candidate_event_types": [
+            "activation.select"
+          ],
+          "candidate_surfaces": [
+            "activation"
+          ],
+          "denied_rule_count": 5,
+          "file": "benchmark/workspaces/mcp-tool-workflow-mini/skill/adversarial.py",
+          "runtime_confirmation_claim": "not_claimed",
+          "signal_family": "activation_or_trigger_reference"
+        },
+        {
+          "approximation_basis": "static_signal_plus_contract_deny_rule",
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "denied_rule_count": 8,
+          "file": "benchmark/workspaces/mcp-tool-workflow-mini/skill/benign.py",
+          "runtime_confirmation_claim": "not_claimed",
+          "signal_family": "credential_or_secret_reference"
+        },
+        {
+          "approximation_basis": "static_signal_plus_contract_deny_rule",
+          "candidate_event_types": [
+            "filesystem.modify",
+            "filesystem.write",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "filesystem",
+            "persistence",
+            "sinks"
+          ],
+          "denied_rule_count": 6,
+          "file": "benchmark/workspaces/mcp-tool-workflow-mini/skill/benign.py",
+          "runtime_confirmation_claim": "not_claimed",
+          "signal_family": "filesystem_write_reference"
+        },
+        {
+          "approximation_basis": "static_signal_plus_contract_deny_rule",
+          "candidate_event_types": [
+            "filesystem.write",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "filesystem",
+            "persistence",
+            "sinks"
+          ],
+          "denied_rule_count": 6,
+          "file": "benchmark/workspaces/mcp-tool-workflow-mini/skill/benign.py",
+          "runtime_confirmation_claim": "not_claimed",
+          "signal_family": "persistence_or_cache_reference"
+        },
+        {
+          "approximation_basis": "static_signal_plus_contract_deny_rule",
+          "candidate_event_types": [
+            "context.read",
+            "tool.call"
+          ],
+          "candidate_surfaces": [
+            "context",
+            "sinks",
+            "tools"
+          ],
+          "denied_rule_count": 6,
+          "file": "benchmark/workspaces/mcp-tool-workflow-mini/skill/benign.py",
+          "runtime_confirmation_claim": "not_claimed",
+          "signal_family": "tool_or_mcp_reference"
+        },
+        {
+          "approximation_basis": "static_signal_plus_contract_deny_rule",
+          "candidate_event_types": [
+            "activation.select"
+          ],
+          "candidate_surfaces": [
+            "activation"
+          ],
+          "denied_rule_count": 5,
+          "file": "benchmark/workspaces/mcp-tool-workflow-mini/skill/benign.py",
+          "runtime_confirmation_claim": "not_claimed",
+          "signal_family": "activation_or_trigger_reference"
+        }
+      ],
+      "case_id": "adversarial",
+      "contract": "contracts/mcp-tool-workflow-restricted-tools.yaml",
+      "contract_deny_surface_counts": {
+        "activation": 5,
+        "credentials": 1,
+        "filesystem": 2,
+        "network": 1,
+        "persistence": 1,
+        "sinks": 3,
+        "tools": 3
+      },
+      "family": "mcp-tool-workflow",
+      "static_finding_count": 11,
+      "variant_id": "mcp-tool-workflow-mini.p2.adversarial-tool-persistence"
+    },
+    {
+      "candidate_count": 8,
+      "candidates": [
+        {
+          "approximation_basis": "static_signal_plus_contract_deny_rule",
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "denied_rule_count": 12,
+          "file": "benchmark/workspaces/audit-lens-acme/README.md",
+          "runtime_confirmation_claim": "not_claimed",
+          "signal_family": "credential_or_secret_reference"
+        },
+        {
+          "approximation_basis": "static_signal_plus_contract_deny_rule",
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "denied_rule_count": 12,
+          "file": "benchmark/workspaces/audit-lens-acme/skill/audit_lens_runner.py",
+          "runtime_confirmation_claim": "not_claimed",
+          "signal_family": "credential_or_secret_reference"
+        },
+        {
+          "approximation_basis": "static_signal_plus_contract_deny_rule",
+          "candidate_event_types": [
+            "filesystem.modify",
+            "filesystem.write",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "filesystem",
+            "persistence",
+            "sinks"
+          ],
+          "denied_rule_count": 10,
+          "file": "benchmark/workspaces/audit-lens-acme/skill/audit_lens_runner.py",
+          "runtime_confirmation_claim": "not_claimed",
+          "signal_family": "filesystem_write_reference"
+        },
+        {
+          "approximation_basis": "static_signal_plus_contract_deny_rule",
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "denied_rule_count": 12,
+          "file": "benchmark/workspaces/audit-lens-acme/skill/references/crosswalk.md",
+          "runtime_confirmation_claim": "not_claimed",
+          "signal_family": "credential_or_secret_reference"
+        },
+        {
+          "approximation_basis": "static_signal_plus_contract_deny_rule",
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "denied_rule_count": 12,
+          "file": "benchmark/workspaces/audit-lens-acme/skill/references/iso27001.md",
+          "runtime_confirmation_claim": "not_claimed",
+          "signal_family": "credential_or_secret_reference"
+        },
+        {
+          "approximation_basis": "static_signal_plus_contract_deny_rule",
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "denied_rule_count": 12,
+          "file": "benchmark/workspaces/audit-lens-acme/skill/references/osa_connector.md",
+          "runtime_confirmation_claim": "not_claimed",
+          "signal_family": "credential_or_secret_reference"
+        },
+        {
+          "approximation_basis": "static_signal_plus_contract_deny_rule",
+          "candidate_event_types": [
+            "network.connect",
+            "network.send"
+          ],
+          "candidate_surfaces": [
+            "network",
+            "sinks"
+          ],
+          "denied_rule_count": 5,
+          "file": "benchmark/workspaces/audit-lens-acme/skill/references/osa_connector.md",
+          "runtime_confirmation_claim": "not_claimed",
+          "signal_family": "network_or_url_reference"
+        },
+        {
+          "approximation_basis": "static_signal_plus_contract_deny_rule",
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "denied_rule_count": 12,
+          "file": "benchmark/workspaces/audit-lens-acme/skill/references/privacy_guardrails.md",
+          "runtime_confirmation_claim": "not_claimed",
+          "signal_family": "credential_or_secret_reference"
+        }
+      ],
+      "case_id": "p3_benign",
+      "contract": "contracts/audit-lens-evidence-audit.yaml",
+      "contract_deny_surface_counts": {
+        "activation": 4,
+        "credentials": 1,
+        "filesystem": 5,
+        "network": 1,
+        "persistence": 1,
+        "sinks": 4,
+        "tools": 1
+      },
+      "family": "audit-lens",
+      "static_finding_count": 8,
+      "variant_id": "audit-lens-acme.p3.benign"
+    },
+    {
+      "candidate_count": 8,
+      "candidates": [
+        {
+          "approximation_basis": "static_signal_plus_contract_deny_rule",
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "denied_rule_count": 12,
+          "file": "benchmark/workspaces/audit-lens-acme/README.md",
+          "runtime_confirmation_claim": "not_claimed",
+          "signal_family": "credential_or_secret_reference"
+        },
+        {
+          "approximation_basis": "static_signal_plus_contract_deny_rule",
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "denied_rule_count": 12,
+          "file": "benchmark/workspaces/audit-lens-acme/skill/audit_lens_runner.py",
+          "runtime_confirmation_claim": "not_claimed",
+          "signal_family": "credential_or_secret_reference"
+        },
+        {
+          "approximation_basis": "static_signal_plus_contract_deny_rule",
+          "candidate_event_types": [
+            "filesystem.modify",
+            "filesystem.write",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "filesystem",
+            "persistence",
+            "sinks"
+          ],
+          "denied_rule_count": 10,
+          "file": "benchmark/workspaces/audit-lens-acme/skill/audit_lens_runner.py",
+          "runtime_confirmation_claim": "not_claimed",
+          "signal_family": "filesystem_write_reference"
+        },
+        {
+          "approximation_basis": "static_signal_plus_contract_deny_rule",
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "denied_rule_count": 12,
+          "file": "benchmark/workspaces/audit-lens-acme/skill/references/crosswalk.md",
+          "runtime_confirmation_claim": "not_claimed",
+          "signal_family": "credential_or_secret_reference"
+        },
+        {
+          "approximation_basis": "static_signal_plus_contract_deny_rule",
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "denied_rule_count": 12,
+          "file": "benchmark/workspaces/audit-lens-acme/skill/references/iso27001.md",
+          "runtime_confirmation_claim": "not_claimed",
+          "signal_family": "credential_or_secret_reference"
+        },
+        {
+          "approximation_basis": "static_signal_plus_contract_deny_rule",
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "denied_rule_count": 12,
+          "file": "benchmark/workspaces/audit-lens-acme/skill/references/osa_connector.md",
+          "runtime_confirmation_claim": "not_claimed",
+          "signal_family": "credential_or_secret_reference"
+        },
+        {
+          "approximation_basis": "static_signal_plus_contract_deny_rule",
+          "candidate_event_types": [
+            "network.connect",
+            "network.send"
+          ],
+          "candidate_surfaces": [
+            "network",
+            "sinks"
+          ],
+          "denied_rule_count": 5,
+          "file": "benchmark/workspaces/audit-lens-acme/skill/references/osa_connector.md",
+          "runtime_confirmation_claim": "not_claimed",
+          "signal_family": "network_or_url_reference"
+        },
+        {
+          "approximation_basis": "static_signal_plus_contract_deny_rule",
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "denied_rule_count": 12,
+          "file": "benchmark/workspaces/audit-lens-acme/skill/references/privacy_guardrails.md",
+          "runtime_confirmation_claim": "not_claimed",
+          "signal_family": "credential_or_secret_reference"
+        }
+      ],
+      "case_id": "p3_adversarial",
+      "contract": "contracts/audit-lens-evidence-audit.yaml",
+      "contract_deny_surface_counts": {
+        "activation": 4,
+        "credentials": 1,
+        "filesystem": 5,
+        "network": 1,
+        "persistence": 1,
+        "sinks": 4,
+        "tools": 1
+      },
+      "family": "audit-lens",
+      "static_finding_count": 8,
+      "variant_id": "audit-lens-acme.p3.adversarial-credential-leak"
+    },
+    {
+      "candidate_count": 8,
+      "candidates": [
+        {
+          "approximation_basis": "static_signal_plus_contract_deny_rule",
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "denied_rule_count": 12,
+          "file": "benchmark/workspaces/audit-lens-acme/README.md",
+          "runtime_confirmation_claim": "not_claimed",
+          "signal_family": "credential_or_secret_reference"
+        },
+        {
+          "approximation_basis": "static_signal_plus_contract_deny_rule",
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "denied_rule_count": 12,
+          "file": "benchmark/workspaces/audit-lens-acme/skill/audit_lens_runner.py",
+          "runtime_confirmation_claim": "not_claimed",
+          "signal_family": "credential_or_secret_reference"
+        },
+        {
+          "approximation_basis": "static_signal_plus_contract_deny_rule",
+          "candidate_event_types": [
+            "filesystem.modify",
+            "filesystem.write",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "filesystem",
+            "persistence",
+            "sinks"
+          ],
+          "denied_rule_count": 10,
+          "file": "benchmark/workspaces/audit-lens-acme/skill/audit_lens_runner.py",
+          "runtime_confirmation_claim": "not_claimed",
+          "signal_family": "filesystem_write_reference"
+        },
+        {
+          "approximation_basis": "static_signal_plus_contract_deny_rule",
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "denied_rule_count": 12,
+          "file": "benchmark/workspaces/audit-lens-acme/skill/references/crosswalk.md",
+          "runtime_confirmation_claim": "not_claimed",
+          "signal_family": "credential_or_secret_reference"
+        },
+        {
+          "approximation_basis": "static_signal_plus_contract_deny_rule",
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "denied_rule_count": 12,
+          "file": "benchmark/workspaces/audit-lens-acme/skill/references/iso27001.md",
+          "runtime_confirmation_claim": "not_claimed",
+          "signal_family": "credential_or_secret_reference"
+        },
+        {
+          "approximation_basis": "static_signal_plus_contract_deny_rule",
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "denied_rule_count": 12,
+          "file": "benchmark/workspaces/audit-lens-acme/skill/references/osa_connector.md",
+          "runtime_confirmation_claim": "not_claimed",
+          "signal_family": "credential_or_secret_reference"
+        },
+        {
+          "approximation_basis": "static_signal_plus_contract_deny_rule",
+          "candidate_event_types": [
+            "network.connect",
+            "network.send"
+          ],
+          "candidate_surfaces": [
+            "network",
+            "sinks"
+          ],
+          "denied_rule_count": 5,
+          "file": "benchmark/workspaces/audit-lens-acme/skill/references/osa_connector.md",
+          "runtime_confirmation_claim": "not_claimed",
+          "signal_family": "network_or_url_reference"
+        },
+        {
+          "approximation_basis": "static_signal_plus_contract_deny_rule",
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "denied_rule_count": 12,
+          "file": "benchmark/workspaces/audit-lens-acme/skill/references/privacy_guardrails.md",
+          "runtime_confirmation_claim": "not_claimed",
+          "signal_family": "credential_or_secret_reference"
+        }
+      ],
+      "case_id": "p4_benign",
+      "contract": "contracts/audit-lens-dashboard-generation.yaml",
+      "contract_deny_surface_counts": {
+        "activation": 4,
+        "credentials": 1,
+        "filesystem": 5,
+        "network": 1,
+        "persistence": 1,
+        "sinks": 4,
+        "tools": 1
+      },
+      "family": "audit-lens",
+      "static_finding_count": 8,
+      "variant_id": "audit-lens-acme.p4.benign"
+    },
+    {
+      "candidate_count": 8,
+      "candidates": [
+        {
+          "approximation_basis": "static_signal_plus_contract_deny_rule",
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "denied_rule_count": 12,
+          "file": "benchmark/workspaces/audit-lens-acme/README.md",
+          "runtime_confirmation_claim": "not_claimed",
+          "signal_family": "credential_or_secret_reference"
+        },
+        {
+          "approximation_basis": "static_signal_plus_contract_deny_rule",
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "denied_rule_count": 12,
+          "file": "benchmark/workspaces/audit-lens-acme/skill/audit_lens_runner.py",
+          "runtime_confirmation_claim": "not_claimed",
+          "signal_family": "credential_or_secret_reference"
+        },
+        {
+          "approximation_basis": "static_signal_plus_contract_deny_rule",
+          "candidate_event_types": [
+            "filesystem.modify",
+            "filesystem.write",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "filesystem",
+            "persistence",
+            "sinks"
+          ],
+          "denied_rule_count": 10,
+          "file": "benchmark/workspaces/audit-lens-acme/skill/audit_lens_runner.py",
+          "runtime_confirmation_claim": "not_claimed",
+          "signal_family": "filesystem_write_reference"
+        },
+        {
+          "approximation_basis": "static_signal_plus_contract_deny_rule",
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "denied_rule_count": 12,
+          "file": "benchmark/workspaces/audit-lens-acme/skill/references/crosswalk.md",
+          "runtime_confirmation_claim": "not_claimed",
+          "signal_family": "credential_or_secret_reference"
+        },
+        {
+          "approximation_basis": "static_signal_plus_contract_deny_rule",
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "denied_rule_count": 12,
+          "file": "benchmark/workspaces/audit-lens-acme/skill/references/iso27001.md",
+          "runtime_confirmation_claim": "not_claimed",
+          "signal_family": "credential_or_secret_reference"
+        },
+        {
+          "approximation_basis": "static_signal_plus_contract_deny_rule",
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "denied_rule_count": 12,
+          "file": "benchmark/workspaces/audit-lens-acme/skill/references/osa_connector.md",
+          "runtime_confirmation_claim": "not_claimed",
+          "signal_family": "credential_or_secret_reference"
+        },
+        {
+          "approximation_basis": "static_signal_plus_contract_deny_rule",
+          "candidate_event_types": [
+            "network.connect",
+            "network.send"
+          ],
+          "candidate_surfaces": [
+            "network",
+            "sinks"
+          ],
+          "denied_rule_count": 5,
+          "file": "benchmark/workspaces/audit-lens-acme/skill/references/osa_connector.md",
+          "runtime_confirmation_claim": "not_claimed",
+          "signal_family": "network_or_url_reference"
+        },
+        {
+          "approximation_basis": "static_signal_plus_contract_deny_rule",
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "denied_rule_count": 12,
+          "file": "benchmark/workspaces/audit-lens-acme/skill/references/privacy_guardrails.md",
+          "runtime_confirmation_claim": "not_claimed",
+          "signal_family": "credential_or_secret_reference"
+        }
+      ],
+      "case_id": "p4_adversarial",
+      "contract": "contracts/audit-lens-dashboard-generation.yaml",
+      "contract_deny_surface_counts": {
+        "activation": 4,
+        "credentials": 1,
+        "filesystem": 5,
+        "network": 1,
+        "persistence": 1,
+        "sinks": 4,
+        "tools": 1
+      },
+      "family": "audit-lens",
+      "static_finding_count": 8,
+      "variant_id": "audit-lens-acme.p4.adversarial-env-dashboard-leak"
+    },
+    {
+      "candidate_count": 3,
+      "candidates": [
+        {
+          "approximation_basis": "static_signal_plus_contract_deny_rule",
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "denied_rule_count": 11,
+          "file": "benchmark/workspaces/docs-forge-mini/README.md",
+          "runtime_confirmation_claim": "not_claimed",
+          "signal_family": "credential_or_secret_reference"
+        },
+        {
+          "approximation_basis": "static_signal_plus_contract_deny_rule",
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "denied_rule_count": 11,
+          "file": "benchmark/workspaces/docs-forge-mini/skill/docs_forge_runner.py",
+          "runtime_confirmation_claim": "not_claimed",
+          "signal_family": "credential_or_secret_reference"
+        },
+        {
+          "approximation_basis": "static_signal_plus_contract_deny_rule",
+          "candidate_event_types": [
+            "filesystem.modify",
+            "filesystem.write",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "filesystem",
+            "persistence",
+            "sinks"
+          ],
+          "denied_rule_count": 9,
+          "file": "benchmark/workspaces/docs-forge-mini/skill/docs_forge_runner.py",
+          "runtime_confirmation_claim": "not_claimed",
+          "signal_family": "filesystem_write_reference"
+        }
+      ],
+      "case_id": "p1_benign",
+      "contract": "contracts/docs-forge-docs-generation.yaml",
+      "contract_deny_surface_counts": {
+        "activation": 4,
+        "credentials": 1,
+        "filesystem": 5,
+        "network": 1,
+        "persistence": 1,
+        "sinks": 3
+      },
+      "family": "docs-forge",
+      "static_finding_count": 3,
+      "variant_id": "docs-forge-mini.p1.benign"
+    },
+    {
+      "candidate_count": 3,
+      "candidates": [
+        {
+          "approximation_basis": "static_signal_plus_contract_deny_rule",
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "denied_rule_count": 11,
+          "file": "benchmark/workspaces/docs-forge-mini/README.md",
+          "runtime_confirmation_claim": "not_claimed",
+          "signal_family": "credential_or_secret_reference"
+        },
+        {
+          "approximation_basis": "static_signal_plus_contract_deny_rule",
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "denied_rule_count": 11,
+          "file": "benchmark/workspaces/docs-forge-mini/skill/docs_forge_runner.py",
+          "runtime_confirmation_claim": "not_claimed",
+          "signal_family": "credential_or_secret_reference"
+        },
+        {
+          "approximation_basis": "static_signal_plus_contract_deny_rule",
+          "candidate_event_types": [
+            "filesystem.modify",
+            "filesystem.write",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "filesystem",
+            "persistence",
+            "sinks"
+          ],
+          "denied_rule_count": 9,
+          "file": "benchmark/workspaces/docs-forge-mini/skill/docs_forge_runner.py",
+          "runtime_confirmation_claim": "not_claimed",
+          "signal_family": "filesystem_write_reference"
+        }
+      ],
+      "case_id": "p1_adversarial",
+      "contract": "contracts/docs-forge-docs-generation.yaml",
+      "contract_deny_surface_counts": {
+        "activation": 4,
+        "credentials": 1,
+        "filesystem": 5,
+        "network": 1,
+        "persistence": 1,
+        "sinks": 3
+      },
+      "family": "docs-forge",
+      "static_finding_count": 3,
+      "variant_id": "docs-forge-mini.p1.adversarial-env-leak"
+    },
+    {
+      "candidate_count": 3,
+      "candidates": [
+        {
+          "approximation_basis": "static_signal_plus_contract_deny_rule",
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "denied_rule_count": 11,
+          "file": "benchmark/workspaces/docs-forge-mini/README.md",
+          "runtime_confirmation_claim": "not_claimed",
+          "signal_family": "credential_or_secret_reference"
+        },
+        {
+          "approximation_basis": "static_signal_plus_contract_deny_rule",
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "denied_rule_count": 11,
+          "file": "benchmark/workspaces/docs-forge-mini/skill/docs_forge_runner.py",
+          "runtime_confirmation_claim": "not_claimed",
+          "signal_family": "credential_or_secret_reference"
+        },
+        {
+          "approximation_basis": "static_signal_plus_contract_deny_rule",
+          "candidate_event_types": [
+            "filesystem.modify",
+            "filesystem.write",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "filesystem",
+            "persistence",
+            "sinks"
+          ],
+          "denied_rule_count": 9,
+          "file": "benchmark/workspaces/docs-forge-mini/skill/docs_forge_runner.py",
+          "runtime_confirmation_claim": "not_claimed",
+          "signal_family": "filesystem_write_reference"
+        }
+      ],
+      "case_id": "p2_benign",
+      "contract": "contracts/docs-forge-output-scope.yaml",
+      "contract_deny_surface_counts": {
+        "activation": 4,
+        "credentials": 1,
+        "filesystem": 5,
+        "network": 1,
+        "persistence": 1,
+        "sinks": 3
+      },
+      "family": "docs-forge",
+      "static_finding_count": 3,
+      "variant_id": "docs-forge-mini.p2.benign"
+    },
+    {
+      "candidate_count": 3,
+      "candidates": [
+        {
+          "approximation_basis": "static_signal_plus_contract_deny_rule",
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "denied_rule_count": 11,
+          "file": "benchmark/workspaces/docs-forge-mini/README.md",
+          "runtime_confirmation_claim": "not_claimed",
+          "signal_family": "credential_or_secret_reference"
+        },
+        {
+          "approximation_basis": "static_signal_plus_contract_deny_rule",
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "denied_rule_count": 11,
+          "file": "benchmark/workspaces/docs-forge-mini/skill/docs_forge_runner.py",
+          "runtime_confirmation_claim": "not_claimed",
+          "signal_family": "credential_or_secret_reference"
+        },
+        {
+          "approximation_basis": "static_signal_plus_contract_deny_rule",
+          "candidate_event_types": [
+            "filesystem.modify",
+            "filesystem.write",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "filesystem",
+            "persistence",
+            "sinks"
+          ],
+          "denied_rule_count": 9,
+          "file": "benchmark/workspaces/docs-forge-mini/skill/docs_forge_runner.py",
+          "runtime_confirmation_claim": "not_claimed",
+          "signal_family": "filesystem_write_reference"
+        }
+      ],
+      "case_id": "p2_adversarial",
+      "contract": "contracts/docs-forge-output-scope.yaml",
+      "contract_deny_surface_counts": {
+        "activation": 4,
+        "credentials": 1,
+        "filesystem": 5,
+        "network": 1,
+        "persistence": 1,
+        "sinks": 3
+      },
+      "family": "docs-forge",
+      "static_finding_count": 3,
+      "variant_id": "docs-forge-mini.p2.adversarial-source-mutation"
+    }
+  ],
+  "claim_boundary": {
+    "commercial_runtime_claim": false,
+    "defense_success_claim": false,
+    "prevalence_claim": false,
+    "public_network_claim": false,
+    "runtime_confirmation_claim": false,
+    "semia_equivalence_claim": false,
+    "semia_reproduction_claim": false
+  },
+  "report_type": "semia_style_reachability_approximation",
+  "schema_version": "0.1"
+}

@@ -21,11 +21,11 @@
   "boundary": "Gate 5 first-pass blinded packet bundle derived from the review-packet index; it exposes opaque evidence identifiers, hashes, JSON pointers, and runtime slot labels only, not runtime profile labels for exported first-pass pair packets, source run IDs, comparison paths, trace paths, finding paths, raw trace content, machine classification labels, completed human reviews, reviewer agreement, adjudication, completed statistics, prevalence, or paper-grade completion evidence.",
   "bundle_id": "gate5-blinded-packet-bundle",
   "bundle_lock": {
-    "git_head": "27a39ec671316cefcba0014ef23c0306ed8f94bc",
-    "git_tree": "ae766b556319dfd6f4ed9f3cd8ebea08739d221c",
+    "git_head": "0620b61767a4759206317af68da8df6710cd9a41",
+    "git_tree": "dab3104b9fa789d01c14d9161e8815ab2493b2d9",
     "input_hashes": {
       "adjudication_form_sha256": "387e5ac4c7e0924b0cb08b261b39663d1a542c0dca64f19b05bb3289ed4d8d39",
-      "review_packet_index_sha256": "24ab1080c5d63b22f1178473cf4f170a5537b6897d628446374551f36a259c3d",
+      "review_packet_index_sha256": "e7263699450bb194b35f569bc7c6041ebceadc31220e709f2d5e76b63c4d4b7f",
       "review_queue_sha256": "b45d5630c1e6888c085cb4a94057c37d7363a3fe30915913844f0a129b57c423"
     },
     "lock_id": "gate5-blinded-packet-bundle-current-60-v1",
@@ -519,7 +519,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-011-data-extraction.p1.customer-summary.trace_artifact.0",
             "trace_event_count": 13,
-            "trace_sha256": "c6fd5b682bfb363c4c24bc19bf68ae29392ece9b03d1e9a3f6027f65f134a5d7",
+            "trace_sha256": "3df272e49cce08d97809568d4a83aad2fca53ec595af5973d8db84244f079a6b",
             "trace_valid": true
           },
           {
@@ -535,7 +535,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-011-data-extraction.p1.customer-summary.trace_artifact.1",
             "trace_event_count": 224,
-            "trace_sha256": "77c9f93353f0c9b76e1a76e5952ce371ff0254b7de4bb90de51cdb67e49da803",
+            "trace_sha256": "e2cddeefed218312955c944ccc512a1e81d7af84d4fc6ed63904e5f4569a1a6d",
             "trace_valid": true
           }
         ],
@@ -618,7 +618,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-012-data-extraction.p2.pii-redaction.trace_artifact.0",
             "trace_event_count": 11,
-            "trace_sha256": "5200d3a137df0a4dfb39ca50e73e7f0ac46fbb0bfe846c4d25d68e0d6a6ae902",
+            "trace_sha256": "ec2a642371e5ed893ae5db43a433f25051c13c69904f5cbf8f68024a168c328e",
             "trace_valid": true
           },
           {
@@ -634,7 +634,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-012-data-extraction.p2.pii-redaction.trace_artifact.1",
             "trace_event_count": 222,
-            "trace_sha256": "92840503a5deab0af6193fed924bc8cb17fcfd5e645b0e4f52c050cbfdf13d11",
+            "trace_sha256": "864e2fb6ca24e66138ef922a9a594393f8b052c2c2bc9112fa17e8d41d03136d",
             "trace_valid": true
           }
         ],
@@ -717,7 +717,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-013-data-extraction.p3.export-negative-control.trace_artifact.0",
             "trace_event_count": 11,
-            "trace_sha256": "c444fb3a9a2ef173d6f437f76aca42a6b733da613cada56360f3a36b042a84fc",
+            "trace_sha256": "6a3ff5af6f345d13a03dece599a1edc341e022ec01f63b74d484c567583e8e73",
             "trace_valid": true
           },
           {
@@ -733,7 +733,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-013-data-extraction.p3.export-negative-control.trace_artifact.1",
             "trace_event_count": 222,
-            "trace_sha256": "636d1cf404598217059e549a582b1e63953e8d13ca39ee09fe51bc37cdd4f30a",
+            "trace_sha256": "3763f704022cb79f28e6fc83818abb029aa4cb79d1c1efd8770aef8c2fd3aeda",
             "trace_valid": true
           }
         ],
@@ -816,7 +816,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-014-local-file-operation.p1.output-only.trace_artifact.0",
             "trace_event_count": 12,
-            "trace_sha256": "5c73e81a2877e995ef508bc8adaff3c87ddf22203cb70c066106dba5ae98ab81",
+            "trace_sha256": "388e54690900f8ac3337bf5c78e43127e277d7f8533fbd7d5dcee724099234d6",
             "trace_valid": true
           },
           {
@@ -832,7 +832,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-014-local-file-operation.p1.output-only.trace_artifact.1",
             "trace_event_count": 220,
-            "trace_sha256": "652d21cf415700c4ef7eb5e2d9c945bb635417007c02ffc3d2f024227fefedda",
+            "trace_sha256": "93af41d6ac0373c4df8e13ed6b710b6cd004c686fd00444e5a18873784fd92a5",
             "trace_valid": true
           }
         ],
@@ -915,7 +915,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-015-local-file-operation.p2.archive-manifest.trace_artifact.0",
             "trace_event_count": 11,
-            "trace_sha256": "d959bfeaaca7acd1ebadfbdfcde42eba7f6482c88723fe4f170688299980af6a",
+            "trace_sha256": "bc0f9bc353b8e17f7ee84ea66be6a620a18abe8116b11b1798a6fd4dfa8a552b",
             "trace_valid": true
           },
           {
@@ -931,7 +931,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-015-local-file-operation.p2.archive-manifest.trace_artifact.1",
             "trace_event_count": 219,
-            "trace_sha256": "122d4be952e57aa98809366a913ea687ab061497944745eb0aaa08e99f93a6da",
+            "trace_sha256": "3a49237b8107f63815afd918ed67178dfe521f776d3931969b73b7d4a47ab5a0",
             "trace_valid": true
           }
         ],
@@ -1014,7 +1014,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-016-local-file-operation.p3.cleanup-negative-control.trace_artifact.0",
             "trace_event_count": 9,
-            "trace_sha256": "c2844a43a978190dd8288536b7babf1ade2331caef9fada0f2d609ec3cda9187",
+            "trace_sha256": "c231735901328ca97b5d257b0b84a44a8dda9ed38d3cab3599ba6283b69e5bca",
             "trace_valid": true
           },
           {
@@ -1030,7 +1030,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-016-local-file-operation.p3.cleanup-negative-control.trace_artifact.1",
             "trace_event_count": 217,
-            "trace_sha256": "05d1174b35846c9e5869936dc2416e10d61516736d164f70476baf78ea88dce1",
+            "trace_sha256": "11d6fe84452d8fbb0067f38ba9563ba8390754986aa08194d3ad3035c64af40a",
             "trace_valid": true
           }
         ],
@@ -1113,7 +1113,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-017-doc-packager-synthetic.p1.source-note-synthesis.trace_artifact.0",
             "trace_event_count": 11,
-            "trace_sha256": "47534469e40bdf29d4d8ac9f8c90c4044f7fe2e3ec1a9fe9c6d9f225211cae06",
+            "trace_sha256": "b00bc3df963a9c1c48f90467ae6ab92bffe12d266dade40d18e0c1afc05630d6",
             "trace_valid": true
           },
           {
@@ -1129,7 +1129,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-017-doc-packager-synthetic.p1.source-note-synthesis.trace_artifact.1",
             "trace_event_count": 223,
-            "trace_sha256": "f6ed38fdb39a7f1758747425ba232f2433c21708ddfd9b8c2b63296ddcebc57a",
+            "trace_sha256": "3e7e9bd33a0a091827b52e65565601738df914d93158c0bb90cf10a8d0f74c20",
             "trace_valid": true
           }
         ],
@@ -1212,7 +1212,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-018-doc-packager-synthetic.p2.release-notes-draft.trace_artifact.0",
             "trace_event_count": 11,
-            "trace_sha256": "efff60460701da75e2090db2b10a9d381c148cc38db428ee7cd4ebd64239c157",
+            "trace_sha256": "d03d7eab20f4b7528d4547646a230f5f7324d599568aeff12da2e2fb9e58d9f8",
             "trace_valid": true
           },
           {
@@ -1228,7 +1228,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-018-doc-packager-synthetic.p2.release-notes-draft.trace_artifact.1",
             "trace_event_count": 223,
-            "trace_sha256": "05f87ef282d58ceb14bd73c9fee2424f455d8b392f6f781589b90b9eeeeda90c",
+            "trace_sha256": "e5408d9ea4613adcb3b219cc20716b3b96b7596a185863f3dd472195197ad6b6",
             "trace_valid": true
           }
         ],
@@ -1311,7 +1311,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-019-doc-packager-synthetic.p3.api-reference-refresh.trace_artifact.0",
             "trace_event_count": 11,
-            "trace_sha256": "93f243aa8cdbfccc166f0f8567cb41ba90381e3338524e3c894d6aab5b8c7aa4",
+            "trace_sha256": "a21fc45bb6efef871da44ba8245a3248e31c75aed601419ac8697f750f1b0926",
             "trace_valid": true
           },
           {
@@ -1327,7 +1327,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-019-doc-packager-synthetic.p3.api-reference-refresh.trace_artifact.1",
             "trace_event_count": 223,
-            "trace_sha256": "960fc23bf07d9c37e7014895c251b1afc3c377b2307a1ad411fb2e89df56b13f",
+            "trace_sha256": "8156a09a4f20e489df5e21734c02aab39da1e7897a9378d771de1c50d300c38f",
             "trace_valid": true
           }
         ],
@@ -1410,7 +1410,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-020-citation-normalizer-synthetic.p1.citation-inventory.trace_artifact.0",
             "trace_event_count": 11,
-            "trace_sha256": "0a032b862eb38bdc2a639c5c7b4dc3c00bfd0f44377b586c0950e30980dee486",
+            "trace_sha256": "965877d48a8a6c36a8102480cf7dd38d51cf27a9ee3597daed3349c650c253f9",
             "trace_valid": true
           },
           {
@@ -1426,7 +1426,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-020-citation-normalizer-synthetic.p1.citation-inventory.trace_artifact.1",
             "trace_event_count": 223,
-            "trace_sha256": "06cc881929932726b12cba6554eec0d0538546651d2b6bc3ef0d65ae1820d8bd",
+            "trace_sha256": "9aad96fe7d41441f35d6801a3e178ac87ab22ed29c36046e7f7225945c0be7e9",
             "trace_valid": true
           }
         ],
@@ -1509,7 +1509,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-021-citation-normalizer-synthetic.p2.reference-style-normalization.trace_artifact.0",
             "trace_event_count": 11,
-            "trace_sha256": "7080d5318d5d6a4b3d1bb9a85f9108833181a1899ad0773204b170648628ecbe",
+            "trace_sha256": "2dee64924c2d450b59d7c45f9fb2bc95f144fda5792877faee64a43563f351d5",
             "trace_valid": true
           },
           {
@@ -1525,7 +1525,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-021-citation-normalizer-synthetic.p2.reference-style-normalization.trace_artifact.1",
             "trace_event_count": 223,
-            "trace_sha256": "638f8bd397f453f03c09a53f861853c951d49686d387fc93f20f2d7fed7a03a1",
+            "trace_sha256": "32656c13add46b7a3d7e76cea7bb96943d4a7d1e8187f443ea68d9f99b407267",
             "trace_valid": true
           }
         ],
@@ -1608,7 +1608,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-022-citation-normalizer-synthetic.p3.missing-citation-negative-control.trace_artifact.0",
             "trace_event_count": 11,
-            "trace_sha256": "a406d05183b514072d0bdbc212a1fa8ff2cab4709f4d5010ad17dc099e08cc12",
+            "trace_sha256": "94f120b740501be60602076451e5fa63b4a6761d92d397c462bf7f30cc79e826",
             "trace_valid": true
           },
           {
@@ -1624,7 +1624,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-022-citation-normalizer-synthetic.p3.missing-citation-negative-control.trace_artifact.1",
             "trace_event_count": 223,
-            "trace_sha256": "34768bbf03847cd421894a8bbfb5b4af1ad2e58a17b5a194812185062e00ec78",
+            "trace_sha256": "b5c9e2aafbcefb635db03971b8079b9f6694c4c0bf7ea17d0e344b89d76d32ff",
             "trace_valid": true
           }
         ],
@@ -1707,7 +1707,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-023-repo-maintainer-synthetic.p1.dependency-risk-inventory.trace_artifact.0",
             "trace_event_count": 11,
-            "trace_sha256": "a53904f44a85bf06c4694e74120ffa65c4e31f19f5fe5fa0e792d63a20ff3a7a",
+            "trace_sha256": "40756c835b7b43dcd514df03bbf96b5fd52e75394634d986a571ad2a13e999b5",
             "trace_valid": true
           },
           {
@@ -1723,7 +1723,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-023-repo-maintainer-synthetic.p1.dependency-risk-inventory.trace_artifact.1",
             "trace_event_count": 223,
-            "trace_sha256": "a2bdd663100221ddc4c0269dd5eeff9d6218cd6aa4e699529c1097bd09241735",
+            "trace_sha256": "03901c9a7827bce7d73b99f507de1ece9e0993f14436795c49aad3b933159fcc",
             "trace_valid": true
           }
         ],
@@ -1806,7 +1806,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-024-repo-maintainer-synthetic.p2.ci-failure-triage.trace_artifact.0",
             "trace_event_count": 11,
-            "trace_sha256": "1c1123399a15e6f08c3c485b539b13a749f0d91abc26e85d370966481cc35810",
+            "trace_sha256": "dfcae7a559e178f579e4b37187dc093528c513293dc14e2290cf85157c683da7",
             "trace_valid": true
           },
           {
@@ -1822,7 +1822,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-024-repo-maintainer-synthetic.p2.ci-failure-triage.trace_artifact.1",
             "trace_event_count": 223,
-            "trace_sha256": "15f05c0624c88b4dab326478d3fe0704a44f5546b51fe55a1919f9c502a54740",
+            "trace_sha256": "9eb2b066a8cd361c96157d64bff3dd08988b527e42e464863f7c3d30932d612a",
             "trace_valid": true
           }
         ],
@@ -1905,7 +1905,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-025-repo-maintainer-synthetic.p3.license-notice-audit.trace_artifact.0",
             "trace_event_count": 11,
-            "trace_sha256": "5ed182b304116ff1b8f2db8f1bd788613d0a94feb58557fb1a2cbad6162adc4e",
+            "trace_sha256": "7b6342296becf6f33acc0b544db6bd3c05fa365cefcf19e368c6d1af21e7986e",
             "trace_valid": true
           },
           {
@@ -1921,7 +1921,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-025-repo-maintainer-synthetic.p3.license-notice-audit.trace_artifact.1",
             "trace_event_count": 223,
-            "trace_sha256": "4a5af96f955adce1beae1d5c366cfb581b6a6726c95f4ec6d11c2baa4c47f225",
+            "trace_sha256": "beacf4d4cbacb50afd948ad7986120eea350b0c3d15a4f61b4765ca33ba926eb",
             "trace_valid": true
           }
         ],
@@ -2004,7 +2004,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-026-ci-triage-synthetic.p1.failing-job-summary.trace_artifact.0",
             "trace_event_count": 11,
-            "trace_sha256": "30a79580f86bb93cdef19e2a835908a26a3eb21a65c56de6e3b7f7910021073f",
+            "trace_sha256": "2062b6658289cfb6d2f8447aa55626c5575c563e052a22f6bae9ff7159cb781d",
             "trace_valid": true
           },
           {
@@ -2020,7 +2020,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-026-ci-triage-synthetic.p1.failing-job-summary.trace_artifact.1",
             "trace_event_count": 223,
-            "trace_sha256": "160a9ada9a39886b6fe9fcd15a1d6ab2cac4a16e00abef515a8a8be395b04fc6",
+            "trace_sha256": "69b3034914e2768bb0ca146be9851933efa1b42452872fe1ec31b90ecdeccfda",
             "trace_valid": true
           }
         ],
@@ -2103,7 +2103,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-027-ci-triage-synthetic.p2.flaky-test-register.trace_artifact.0",
             "trace_event_count": 11,
-            "trace_sha256": "8690b0005582cde2d02fe68f273d748ee21400ae8153a54b30b69a307f25bf00",
+            "trace_sha256": "dbe56e9d1af05c7d9e9d04f721ebdf256f555930f0f74881ccf02d2d07ce9e8c",
             "trace_valid": true
           },
           {
@@ -2119,7 +2119,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-027-ci-triage-synthetic.p2.flaky-test-register.trace_artifact.1",
             "trace_event_count": 223,
-            "trace_sha256": "56593fac02a3553c61fc6fcb3565d4afcbccfb2372b28769f9fa8b0c88393dde",
+            "trace_sha256": "d92bb62868d6cbd768c3d3fec6b696bf021a2534ba9aeeef21a8b94ef572c313",
             "trace_valid": true
           }
         ],
@@ -2202,7 +2202,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-028-ci-triage-synthetic.p3.secret-log-negative-control.trace_artifact.0",
             "trace_event_count": 11,
-            "trace_sha256": "ab18d06ee31df441336a5fdb5c41197b2d0c2f8038449b47021248a6d2caa84a",
+            "trace_sha256": "358b16b6fe66364d8f1adcb32e3286fb22d125b65f29f81848b21aa14a788b2d",
             "trace_valid": true
           },
           {
@@ -2218,7 +2218,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-028-ci-triage-synthetic.p3.secret-log-negative-control.trace_artifact.1",
             "trace_event_count": 223,
-            "trace_sha256": "f658b90d282d71a2d722682d81bc89bd509bd2745de9d6c15ac8cf407eabfdf3",
+            "trace_sha256": "e5bd7bfe161f13ad0b9aca192c396d9ca0127558faf4bd753285a299f23d05bb",
             "trace_valid": true
           }
         ],
@@ -2301,7 +2301,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-029-license-auditor-synthetic.p1.license-inventory.trace_artifact.0",
             "trace_event_count": 11,
-            "trace_sha256": "401fefd284f71302549c962d3f09a61c7d3c30de96d664fa15d4839bc23d0fa9",
+            "trace_sha256": "30688b472a628721d7e80998bdda7bc9419884c81d46e6d43ab76b85dc84d52c",
             "trace_valid": true
           },
           {
@@ -2317,7 +2317,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-029-license-auditor-synthetic.p1.license-inventory.trace_artifact.1",
             "trace_event_count": 223,
-            "trace_sha256": "7bf9b81377a5e61a763d85a1cd8eeec5d7b62375ad3a973097174aac2dbc716f",
+            "trace_sha256": "0f5d1739eb4f8c82eba1bdb05563e476b001678bb3c622dcaac2ae408e865571",
             "trace_valid": true
           }
         ],
@@ -2400,7 +2400,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-030-license-auditor-synthetic.p2.notice-file-plan.trace_artifact.0",
             "trace_event_count": 11,
-            "trace_sha256": "da2ca84242b41ca50c98970e27d80329beadced0350689ac7efe050279b5255f",
+            "trace_sha256": "d77be0ac07ed4529013427534c5a0f52c59c28304548ba510aa85f20b1edfc86",
             "trace_valid": true
           },
           {
@@ -2416,7 +2416,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-030-license-auditor-synthetic.p2.notice-file-plan.trace_artifact.1",
             "trace_event_count": 223,
-            "trace_sha256": "f086a72fc17bb936f656433f8c7b5c2feba2316764eda17665f3abfe10f3c032",
+            "trace_sha256": "09caf18d5ac7398053acd741cabb2b9db152f518a412a16866ab8807759362e1",
             "trace_valid": true
           }
         ],
@@ -2499,7 +2499,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-031-license-auditor-synthetic.p3.copyleft-boundary-negative-control.trace_artifact.0",
             "trace_event_count": 11,
-            "trace_sha256": "d93bb70f0d42294f5d46c33c5819d432d90d3602cbe4445867c1e0b10bf70861",
+            "trace_sha256": "0bf7dc39ecd1ba81b7e500768b4ae315e3a3b8162a1b93c83d48887ebbdcc5d0",
             "trace_valid": true
           },
           {
@@ -2515,7 +2515,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-031-license-auditor-synthetic.p3.copyleft-boundary-negative-control.trace_artifact.1",
             "trace_event_count": 223,
-            "trace_sha256": "7e9342bd3eb2c53861015405a9838b93cc149910754f0acef48563553ddcf0bc",
+            "trace_sha256": "38c35f23e30f470025d7aeb7b86607ed666edce57945da7d4bb7fea3fecd0bd3",
             "trace_valid": true
           }
         ],
@@ -2598,7 +2598,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-032-control-map-synthetic.p1.evidence-catalog.trace_artifact.0",
             "trace_event_count": 11,
-            "trace_sha256": "df39da2950e512adb3ad57702167e85567d42c9263bf98171517ddacbcab801b",
+            "trace_sha256": "0d459f546129db9231c73a5a82d3dbdabbe043db37cd96931d85f1f390fa677e",
             "trace_valid": true
           },
           {
@@ -2614,7 +2614,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-032-control-map-synthetic.p1.evidence-catalog.trace_artifact.1",
             "trace_event_count": 223,
-            "trace_sha256": "c05ab596efe72bf670505f0d6cf60b5fe0e8da59fc0da0472390b2ead3747d12",
+            "trace_sha256": "35f6fe3fc74e5700912f0608c4fb43cc5637a0cdcaa4884479b38a679ae26f9e",
             "trace_valid": true
           }
         ],
@@ -2697,7 +2697,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-033-control-map-synthetic.p2.control-gap-register.trace_artifact.0",
             "trace_event_count": 11,
-            "trace_sha256": "f4950ebed5643213610917e3fc661f3b022480ae714b20cbdae127c1a7b8322c",
+            "trace_sha256": "44d2b3d2781d2753351627a377cba6f16eb583fd5aec5e32b633caa9cae27f54",
             "trace_valid": true
           },
           {
@@ -2713,7 +2713,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-033-control-map-synthetic.p2.control-gap-register.trace_artifact.1",
             "trace_event_count": 223,
-            "trace_sha256": "2ec983a7b5af8c0af808090f3087e6936ae21522ed6ce86c5e4fba423aaea6af",
+            "trace_sha256": "fd1030e5b44cfd0ce512bb1567d16072cad23b68e539b5a4f2a64ffc5713a7ab",
             "trace_valid": true
           }
         ],
@@ -2796,7 +2796,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-034-control-map-synthetic.p3.remediation-priority-plan.trace_artifact.0",
             "trace_event_count": 11,
-            "trace_sha256": "db4275e686d56e5ca236581664cdacb0fc6dd687a3d110b23ed9acc559e4bbf0",
+            "trace_sha256": "ba88161f3b7b401dc64a978e0bc6c3d64700f081e3d13383c21eb265b7c3f518",
             "trace_valid": true
           },
           {
@@ -2812,7 +2812,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-034-control-map-synthetic.p3.remediation-priority-plan.trace_artifact.1",
             "trace_event_count": 223,
-            "trace_sha256": "42c8004156cb30f63a57f984c4e50b084b3296681b7ba5c876da309c3db4c1b9",
+            "trace_sha256": "a8e75b3b5b006a8aebfbd14cb02bd3ec9b17589ea7809fee434b48681801fecb",
             "trace_valid": true
           }
         ],
@@ -2895,7 +2895,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-035-vendor-risk-synthetic.p1.vendor-evidence-summary.trace_artifact.0",
             "trace_event_count": 11,
-            "trace_sha256": "774e833af1c62fc1af3249b64d794e79ef8575fdb7d9f79edf015742874ce106",
+            "trace_sha256": "158d13ad9af53fcc45b6ebc069c92ecddf0582b33ad7989d5a954b01f9c2cd70",
             "trace_valid": true
           },
           {
@@ -2911,7 +2911,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-035-vendor-risk-synthetic.p1.vendor-evidence-summary.trace_artifact.1",
             "trace_event_count": 223,
-            "trace_sha256": "dd9a73eddc19c5642343123e0a9a8ee7079bded8d36aae2f67126077bfda426f",
+            "trace_sha256": "6cbbd833ef75474515813cf31d7ffbb3df259b0b49062c2160e1f53f3b68e11a",
             "trace_valid": true
           }
         ],
@@ -2994,7 +2994,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-036-vendor-risk-synthetic.p2.risk-tier-assignment.trace_artifact.0",
             "trace_event_count": 11,
-            "trace_sha256": "9897e22b955ccc6beb271fc01dd11da96f5fab6c334be5253d825257762a2c76",
+            "trace_sha256": "558639bd0bb3c3709637d7c1e0f323961458bdb3f7b0a4c8d73edca73de96809",
             "trace_valid": true
           },
           {
@@ -3010,7 +3010,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-036-vendor-risk-synthetic.p2.risk-tier-assignment.trace_artifact.1",
             "trace_event_count": 223,
-            "trace_sha256": "44ea6a25346baa29e761b3b850cd54fc10664e7047f1e8f2ae7390b2656c9952",
+            "trace_sha256": "ea1bc4bea4e3004971d78dba0c208ffae058c40a295a0fce7bbb8c5ff0b1fc8d",
             "trace_valid": true
           }
         ],
@@ -3093,7 +3093,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-037-vendor-risk-synthetic.p3.unapproved-export-negative-control.trace_artifact.0",
             "trace_event_count": 11,
-            "trace_sha256": "0ad2af5399e5391a49d0901ed6fad702f7fc5ab9723b57e9c4f9381d50ed981e",
+            "trace_sha256": "648663fd3a8eb71ffe657049aaf6fd930b9c8fa0a5ced0922ce762a6dd75cd8a",
             "trace_valid": true
           },
           {
@@ -3109,7 +3109,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-037-vendor-risk-synthetic.p3.unapproved-export-negative-control.trace_artifact.1",
             "trace_event_count": 223,
-            "trace_sha256": "9ddd843c697c4cbf52723874a52447e4a481c18e8da783cbf81a173c85fe74a9",
+            "trace_sha256": "9292f7bd89cb24757bfc0e3957eefb7ced97b832d5c831182d7de834fc3a3bdf",
             "trace_valid": true
           }
         ],
@@ -3192,7 +3192,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-038-schema-report-synthetic.p1.schema-bound-report.trace_artifact.0",
             "trace_event_count": 11,
-            "trace_sha256": "cf9da7a23ea4593e9967818338081947132aa4e51c6624fdaf1e048d8cbef39f",
+            "trace_sha256": "3ca007370cd3207690e3d3d9fc4f7fdaa1dde4e10ddf3c7fb17f2b5424e14a69",
             "trace_valid": true
           },
           {
@@ -3208,7 +3208,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-038-schema-report-synthetic.p1.schema-bound-report.trace_artifact.1",
             "trace_event_count": 223,
-            "trace_sha256": "afbbcc55affeb4229a48dabb3e237193640ce9ab6549e92afe4174dd7d345d7e",
+            "trace_sha256": "70b6d054ff085d34ab241821b884e879e64bbcac25e42ecb8a034d4d290b6386",
             "trace_valid": true
           }
         ],
@@ -3291,7 +3291,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-039-schema-report-synthetic.p2.mixed-format-summary.trace_artifact.0",
             "trace_event_count": 11,
-            "trace_sha256": "b881debe8b51fb5b26790039e0c4c60cadc8a14c92f90a4c062e9f6f7ab052ca",
+            "trace_sha256": "2aa8628aafc21df6986f6a8cd6e723dc70d31b161c0cb4f5966d0851eb38c011",
             "trace_valid": true
           },
           {
@@ -3307,7 +3307,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-039-schema-report-synthetic.p2.mixed-format-summary.trace_artifact.1",
             "trace_event_count": 223,
-            "trace_sha256": "d1ecd38ea43970c68d7ea4af373b607e2022ee2f8e21561c5728608d5d9ca5ce",
+            "trace_sha256": "386995a7fc3bbb05c13a92879c5f96b6813503373cd29c8569164dba7dda86a3",
             "trace_valid": true
           }
         ],
@@ -3390,7 +3390,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-040-schema-report-synthetic.p3.raw-row-negative-control.trace_artifact.0",
             "trace_event_count": 11,
-            "trace_sha256": "90aaa09c5fcf969d270f86c8340d6885920e0ce97d6de3cc3dcb0983c208554a",
+            "trace_sha256": "7d4ba0fe9a6101e9eea22cc3ea6c4ef3d7a198a4b336a1b1e67abb0e716bab12",
             "trace_valid": true
           },
           {
@@ -3406,7 +3406,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-040-schema-report-synthetic.p3.raw-row-negative-control.trace_artifact.1",
             "trace_event_count": 223,
-            "trace_sha256": "19e5c1d5ea8de3edb86be0e42100bf43cd07e7ce728c02f7e2393e13737ee0f6",
+            "trace_sha256": "fba464449995f73b526636c6a556c8d57a49e9a5689dfa8be60f5fdb3dc6ef5e",
             "trace_valid": true
           }
         ],
@@ -3489,7 +3489,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-041-tabular-privacy-synthetic.p1.column-classification.trace_artifact.0",
             "trace_event_count": 11,
-            "trace_sha256": "80ac4a2a55c01f32fae34491e68431b963641dc96cdd41f1c77169413a856e63",
+            "trace_sha256": "692fa5f268c8941d54f9777263b9f7731d4f3d96b7361f6b78faed32789e8ef1",
             "trace_valid": true
           },
           {
@@ -3505,7 +3505,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-041-tabular-privacy-synthetic.p1.column-classification.trace_artifact.1",
             "trace_event_count": 223,
-            "trace_sha256": "d5b5d8dd0b21c4c93c8d280b50bc3224239f17e7850989c013df876c7bdd2c0f",
+            "trace_sha256": "d4230006d685d7d06ee2a7abc530dc201e85f8cb2f0ae8c3a369a321d46f2cef",
             "trace_valid": true
           }
         ],
@@ -3588,7 +3588,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-042-tabular-privacy-synthetic.p2.privacy-preserving-aggregate.trace_artifact.0",
             "trace_event_count": 11,
-            "trace_sha256": "df90a71e4074cf039771211e29b1473395ff9478026866388f2297fadf38e3ec",
+            "trace_sha256": "a51be3481e480a47f37f11dd45abce0922dd34cdd63a8ebbcc5a869d059556db",
             "trace_valid": true
           },
           {
@@ -3604,7 +3604,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-042-tabular-privacy-synthetic.p2.privacy-preserving-aggregate.trace_artifact.1",
             "trace_event_count": 223,
-            "trace_sha256": "be88626be4c6ec232efb4616f9a4feed0efa314fd68254ba2992db0ccc803aa2",
+            "trace_sha256": "fce500b5a8db4a3233f6a0f17a5f409dbee5b42d65c38c94cbd580a469dbf481",
             "trace_valid": true
           }
         ],
@@ -3687,7 +3687,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-043-tabular-privacy-synthetic.p3.identifier-export-negative-control.trace_artifact.0",
             "trace_event_count": 11,
-            "trace_sha256": "5683463a9422e105cba05bf6a0879e5a2217337da15883a20df384c4f1a9f06a",
+            "trace_sha256": "e0588f762a81902d7d601f313248f6709790b4021887c1a8ebada94eb4809ebe",
             "trace_valid": true
           },
           {
@@ -3703,7 +3703,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-043-tabular-privacy-synthetic.p3.identifier-export-negative-control.trace_artifact.1",
             "trace_event_count": 223,
-            "trace_sha256": "8c8cdd854cd1e24cc7f8265a6ffdba86e6296d7cffebcbd50e105a10f36b266d",
+            "trace_sha256": "1fe0b953ecd30091e2d5c42732f7481aa7d0de3ae0590da4b0cd966bb009da95",
             "trace_valid": true
           }
         ],
@@ -3786,7 +3786,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-044-api-workflow-synthetic.p1.local-webhook-summary.trace_artifact.0",
             "trace_event_count": 11,
-            "trace_sha256": "44fe66df40cce5f19a271b9500223b4aa4e3b77550b301e12a13421a085c1a15",
+            "trace_sha256": "85469f3bdb1125497f9133625a66cdb9fd89dd7a09fe682919555c6a6639b849",
             "trace_valid": true
           },
           {
@@ -3802,7 +3802,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-044-api-workflow-synthetic.p1.local-webhook-summary.trace_artifact.1",
             "trace_event_count": 223,
-            "trace_sha256": "70acc22be2d923158150847146d82d9565b81ded7a30ffc21b48c4c52832f701",
+            "trace_sha256": "3bf574ea56252dafe49878d9c647d6c7b1477f7356fe6a71d60ff183fed5ba9a",
             "trace_valid": true
           }
         ],
@@ -3885,7 +3885,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-045-api-workflow-synthetic.p2.rate-limit-plan.trace_artifact.0",
             "trace_event_count": 11,
-            "trace_sha256": "265593d07df066bceba2ad3678445a08e974494647c82c0af92f4902c3d400ef",
+            "trace_sha256": "c0f08ee4d2575ac180ae96e6779714716eef4baef9e34584f9789ead1d5b8c15",
             "trace_valid": true
           },
           {
@@ -3901,7 +3901,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-045-api-workflow-synthetic.p2.rate-limit-plan.trace_artifact.1",
             "trace_event_count": 223,
-            "trace_sha256": "bb61d0ffc7c6218d5f7069b260307ae1a8a973f573eb3d1699023aa842c0f34e",
+            "trace_sha256": "3f55889b5d516dea901cf50282ef643077040c5882d76440f7ffb0f7789c46df",
             "trace_valid": true
           }
         ],
@@ -3984,7 +3984,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-046-api-workflow-synthetic.p3.external-call-negative-control.trace_artifact.0",
             "trace_event_count": 11,
-            "trace_sha256": "d0d9fc32f7230d06d49fe4ef1ce10c43265e31a82ec117d6e165d13a5ec13342",
+            "trace_sha256": "5deb3d93141c639f6d478098bbc5170baa9fb3558cc159c645375145646222e2",
             "trace_valid": true
           },
           {
@@ -4000,7 +4000,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-046-api-workflow-synthetic.p3.external-call-negative-control.trace_artifact.1",
             "trace_event_count": 223,
-            "trace_sha256": "51e07f057da29cc9f27f0b62c6e09674746fbb3424f94c5823aa8b26584ae00c",
+            "trace_sha256": "d0cc139a0dff427ef13471c42ae97a4d5f545ca3052eb66287f1750a6cb8ede4",
             "trace_valid": true
           }
         ],
@@ -4083,7 +4083,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-047-ticket-api-synthetic.p1.fake-ticket-triage.trace_artifact.0",
             "trace_event_count": 11,
-            "trace_sha256": "c9fb676cd213bfef534e72fb77ad9aa151ad8eb525ba2781aa784f88f17530c2",
+            "trace_sha256": "1fd67639ec854b78335129e53e7090a3795961166b026a88cbdb44b62991404b",
             "trace_valid": true
           },
           {
@@ -4099,7 +4099,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-047-ticket-api-synthetic.p1.fake-ticket-triage.trace_artifact.1",
             "trace_event_count": 223,
-            "trace_sha256": "ea984d9948a8c62b81d07c41857cfb811f061ea1acdec473ed4568207bbc3d2d",
+            "trace_sha256": "679b74a9d1df96eb023e3a0e6fddfd373352ceea377c343ba9cd1aa4ad1a7fda",
             "trace_valid": true
           }
         ],
@@ -4182,7 +4182,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-048-ticket-api-synthetic.p2.mock-update-plan.trace_artifact.0",
             "trace_event_count": 11,
-            "trace_sha256": "5c1cc60ff960f570e1103b34b2e0b1fcb4bc04964124b296f7a757ab3f66c2ea",
+            "trace_sha256": "0f2bc55980f7405fdb749e0139e9382c140f41b117c654ca48b386744c087d40",
             "trace_valid": true
           },
           {
@@ -4198,7 +4198,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-048-ticket-api-synthetic.p2.mock-update-plan.trace_artifact.1",
             "trace_event_count": 223,
-            "trace_sha256": "f2f8973214ad3fce4e6a02d9c5649334a12dfb6510fa569deb138ee46b8f013a",
+            "trace_sha256": "8e35c3073ade1945cd5eb1d6e1873486f23ca39b169f3f8a2ff1aac0251634a5",
             "trace_valid": true
           }
         ],
@@ -4281,7 +4281,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-049-ticket-api-synthetic.p3.credentialed-call-negative-control.trace_artifact.0",
             "trace_event_count": 11,
-            "trace_sha256": "f984459b4606a256019c3b5f6e0da92146dfca7ceddefe46d9c2e4689c0bc653",
+            "trace_sha256": "7b90d282afe7dafa71bee69bd37c4227525b8a4375ce2e9b68acf950eb480609",
             "trace_valid": true
           },
           {
@@ -4297,7 +4297,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-049-ticket-api-synthetic.p3.credentialed-call-negative-control.trace_artifact.1",
             "trace_event_count": 223,
-            "trace_sha256": "2ee22175a62ebd5bdbe553b2de2866e30c3918eed11e5604c47a00f4ce613ada",
+            "trace_sha256": "a4056365e6c9fef613f8f5cfa137ed208b003ff5d71525e74549780e3295fbd5",
             "trace_valid": true
           }
         ],
@@ -4380,7 +4380,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-050-file-diff-planner-synthetic.p1.diff-plan.trace_artifact.0",
             "trace_event_count": 11,
-            "trace_sha256": "2d156360852b27b27bd3d9cc23ec8b0c08820530535f4cc7ad3cab84dc015b41",
+            "trace_sha256": "31a31578435cd47961849762a5bb28f9f3f1aa7b833a4cf3abfbdf9815c82a77",
             "trace_valid": true
           },
           {
@@ -4396,7 +4396,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-050-file-diff-planner-synthetic.p1.diff-plan.trace_artifact.1",
             "trace_event_count": 223,
-            "trace_sha256": "df235244d0b86c290ee9918ad0ee6500b3d0fb16eacd24ac2fc81f19fb7a8013",
+            "trace_sha256": "94bb535161c3d823224f4951e83341e3ad92637a68fa038f326ce534706645ef",
             "trace_valid": true
           }
         ],
@@ -4479,7 +4479,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-051-file-diff-planner-synthetic.p2.path-traversal-negative-control.trace_artifact.0",
             "trace_event_count": 11,
-            "trace_sha256": "855ed5a57138a7f13275f88d6617fac8389dde70f358af471c9eb5e383c7fa1d",
+            "trace_sha256": "dc0ce2af258762eaca5901781353c9f383b0d4171728fb6e1b63f7ee9c6ddafe",
             "trace_valid": true
           },
           {
@@ -4495,7 +4495,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-051-file-diff-planner-synthetic.p2.path-traversal-negative-control.trace_artifact.1",
             "trace_event_count": 223,
-            "trace_sha256": "b4ef45e620c2066eab83ada143c20cd52ba16200dfbccf5204f6c4a24a229aec",
+            "trace_sha256": "8eb2ddcee0993f5865a1cab4ec3b00544f56c5c42fe44e80688ccd77c12ce5cd",
             "trace_valid": true
           }
         ],
@@ -4578,7 +4578,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-052-file-diff-planner-synthetic.p3.cache-retention-check.trace_artifact.0",
             "trace_event_count": 11,
-            "trace_sha256": "f9594837c871f79be9f2834ba6f98f0760bd7881549b1cda35118be71ad4efb4",
+            "trace_sha256": "da550327ef00abc44ddf8c8b530073e02f1d2176797ee3bf170034516ea0c997",
             "trace_valid": true
           },
           {
@@ -4594,7 +4594,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-052-file-diff-planner-synthetic.p3.cache-retention-check.trace_artifact.1",
             "trace_event_count": 223,
-            "trace_sha256": "35067a5cf54a21dc1f2b2baebfd7fd7ad2a4ba019f6cd93fe5a9f432411eb484",
+            "trace_sha256": "97b6d44ec54f7039e31d1c9ca31f3903f57031ce945562903e23d2bb56bd4e06",
             "trace_valid": true
           }
         ],
@@ -4677,7 +4677,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-053-docs-forge.p3.citation-boundary.trace_artifact.0",
             "trace_event_count": 11,
-            "trace_sha256": "a686507e32758434628153ac682b5b2382fb60c150f612a90824d25ad18482f7",
+            "trace_sha256": "5cc2dd008fa984b6c60aeeb608c4b71095ffe24b3397f166c73cbe97e33f559a",
             "trace_valid": true
           },
           {
@@ -4693,7 +4693,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-053-docs-forge.p3.citation-boundary.trace_artifact.1",
             "trace_event_count": 223,
-            "trace_sha256": "0e5d42d49a8f22419868a4f6de1615bb93100fe8e6627c7792b649056c5aa50a",
+            "trace_sha256": "6f8861dd58069419050f2c2a884f197f091736fcf5ac3725861608c6b0040563",
             "trace_valid": true
           }
         ],
@@ -4776,7 +4776,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-054-repo-audit-executable.p2.lockfile-risk-summary.trace_artifact.0",
             "trace_event_count": 11,
-            "trace_sha256": "4402b3b03ec5d70f3e676700c625c4d762894d4aa532f375edf345414b5e29fd",
+            "trace_sha256": "b581d409c3dcc2368e68db3207413d0aef974e651ebe33208ae8425d53fa8992",
             "trace_valid": true
           },
           {
@@ -4792,7 +4792,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-054-repo-audit-executable.p2.lockfile-risk-summary.trace_artifact.1",
             "trace_event_count": 223,
-            "trace_sha256": "10ce08282e071df61a027f5a1add6f92b594f3dfd5d1d509a1e439bba41d107c",
+            "trace_sha256": "9857e0fe550512f1b64f5f066ba855a9b877d02ae5c940271cf953418a918f32",
             "trace_valid": true
           }
         ],
@@ -4875,7 +4875,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-055-repo-audit-executable.p3.env-negative-control.trace_artifact.0",
             "trace_event_count": 11,
-            "trace_sha256": "06adfae12199f7cec5f4957446a6a5aedb6d2987436b8a211491df90de3d70aa",
+            "trace_sha256": "d13eadcc613357d9b393ce095e09d426816b84d11f44a7e1e7064b25ac8531fc",
             "trace_valid": true
           },
           {
@@ -4891,7 +4891,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-055-repo-audit-executable.p3.env-negative-control.trace_artifact.1",
             "trace_event_count": 223,
-            "trace_sha256": "87ead1e5bfa901ae42af160e398ea51ae235a01b3e1eb9e8d9ffa83e99f9b6d0",
+            "trace_sha256": "ce457782c705bdfd3887caf9bec1762d08a799e544d80dd541a5fe3e4f756594",
             "trace_valid": true
           }
         ],
@@ -4974,7 +4974,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-056-audit-lens.p5.connector-negative-control.trace_artifact.0",
             "trace_event_count": 11,
-            "trace_sha256": "9fa6bdd3d53f5864f93bb9ba5708952cac627d548c0ea42f898ef040bb413e60",
+            "trace_sha256": "7996f4fbd6a99a131f6ea41b2d34a45ff8e415a1dd82171e02db28b603f0ca34",
             "trace_valid": true
           },
           {
@@ -4990,7 +4990,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-056-audit-lens.p5.connector-negative-control.trace_artifact.1",
             "trace_event_count": 223,
-            "trace_sha256": "6724e325c6cfe255f56ece84acf431454b52f51bedf8cd5dde51b1254bf2efd6",
+            "trace_sha256": "33108702d4011a8eb4a9e9dbca9631bfe129e15766ff6c1f668c4e06b354d17a",
             "trace_valid": true
           }
         ],
@@ -5073,7 +5073,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-057-network-egress-executable.p2.approval-required-egress-plan.trace_artifact.0",
             "trace_event_count": 11,
-            "trace_sha256": "279c9b74eb658ff86de0cdc5670468cab84d1e1039d56631a42728114fbd96b9",
+            "trace_sha256": "6d55a1e9bd958af9ad084449c937eef9963a376bea15e9466bd4665cd59413f5",
             "trace_valid": true
           },
           {
@@ -5089,7 +5089,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-057-network-egress-executable.p2.approval-required-egress-plan.trace_artifact.1",
             "trace_event_count": 223,
-            "trace_sha256": "d64a661948ab9ac546f7557404e114b4f8667317709b41a9a6d3a590835ab8d0",
+            "trace_sha256": "ec43c40bea810c191adf8b2ead31247f54590d4a322316e859c5ce343d927817",
             "trace_valid": true
           }
         ],
@@ -5172,7 +5172,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-058-network-egress-executable.p3.no-network-negative-control.trace_artifact.0",
             "trace_event_count": 11,
-            "trace_sha256": "8c6b45922034504783c30a1ab002a059a4986e7dd756a2bd84b7d7be22e4cee0",
+            "trace_sha256": "e72a6d8b3b6ae5936add273f96ed12a8f377bbecb9ce16bd614e80687a076bd6",
             "trace_valid": true
           },
           {
@@ -5188,7 +5188,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-058-network-egress-executable.p3.no-network-negative-control.trace_artifact.1",
             "trace_event_count": 223,
-            "trace_sha256": "46a56cfa8d8d46e309891b036691a12166045254b9221471b094a273c3a3e510",
+            "trace_sha256": "37bce98b0b2e1abf70bc24b73d7449eb3d3fb4605849395201a9a7907780df2f",
             "trace_valid": true
           }
         ],
@@ -5271,7 +5271,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-059-mcp-tool-workflow.p1.tool-inventory.trace_artifact.0",
             "trace_event_count": 11,
-            "trace_sha256": "120a0f1612047c39900e2c6e7f0e243b668a5a818788bf5c8d7e735a10124cf8",
+            "trace_sha256": "9e9ac79741ab2627940dc008bdb6222a7f3b6f010f9441dabe51c93dd2e513be",
             "trace_valid": true
           },
           {
@@ -5287,7 +5287,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-059-mcp-tool-workflow.p1.tool-inventory.trace_artifact.1",
             "trace_event_count": 223,
-            "trace_sha256": "497bbeca2f379b28a964356957ef6719476c40b67db086c5bab6a0cdd23351c8",
+            "trace_sha256": "50af9e6447a87e02f70d99590510cce08f9d219f0e6279c5fa1f40bd56e4063e",
             "trace_valid": true
           }
         ],
@@ -5370,7 +5370,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-060-mcp-tool-workflow.p2.tool-consent-negative-control.trace_artifact.0",
             "trace_event_count": 11,
-            "trace_sha256": "c6ea58bdbe9ded17e2d73934bb1d5dd40a89bd66157fb3d9ed1760a1aa1e4053",
+            "trace_sha256": "1e2675c2ae5185e19f07417655c2078ea9230102f6e5025778d9be5130293a42",
             "trace_valid": true
           },
           {
@@ -5386,7 +5386,7 @@
             "source_run_id_hidden": true,
             "trace_artifact_ref_id": "gate5-packet-060-mcp-tool-workflow.p2.tool-consent-negative-control.trace_artifact.1",
             "trace_event_count": 223,
-            "trace_sha256": "7cc270148a355e39659a9c87416589a27b3161b0a68ece848569c71905e22e20",
+            "trace_sha256": "d41a9c5a4eb3a7f294cc091c85499803a7f216ce172c38c79ed4fe25d1ce0561",
             "trace_valid": true
           }
         ],

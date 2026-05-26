@@ -7,3 +7,16 @@ __pycache__/
 /.env
 /.env.*
 !/.env.example
+
+# Local research scratch and draft material that should not be published.
+/research/
+/RESEARCH_TODO.md
+/REFINED_RESEARCH_*.md
+/TOP_TIER_RESEARCH_REVIEW.md
+/PROVENANCE_NEXT_STEPS.md
+/agent_skills_security_research_plan.docx
+
+# Raw run workspaces can contain generated prose from benchmark executions.
+# Keep canonical trace/result artifacts tracked, but do not publish raw Markdown
+# copies from scratch workspaces.
+/results/raw/**/*.md

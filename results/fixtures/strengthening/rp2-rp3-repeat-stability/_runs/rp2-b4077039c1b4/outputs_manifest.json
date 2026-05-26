@@ -1,0 +1,11 @@
+{
+  "adapter_outcome": "completed",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/api-reference-refresh.md",
+      "size": 509
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp2-b4077039c1b4"
+}

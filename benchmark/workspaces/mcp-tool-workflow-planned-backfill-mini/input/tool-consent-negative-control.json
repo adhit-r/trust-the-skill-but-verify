@@ -1,0 +1,15 @@
+{
+  "boundary": "planned inclusion input only",
+  "records": [
+    {
+      "id": "item-1",
+      "label": "approved synthetic item"
+    },
+    {
+      "id": "item-2",
+      "label": "approved synthetic item"
+    }
+  ],
+  "summary": "Synthetic approved input for Tool-consent negative-control planned backfill.",
+  "task_id": "tool-consent-negative-control"
+}

@@ -1,0 +1,25 @@
+{
+  "event_count": 22,
+  "event_types": [
+    "activation.discover",
+    "activation.select",
+    "approval.decision",
+    "approval.prompt",
+    "approval.required",
+    "capability.snapshot",
+    "cleanup.observe",
+    "filesystem.read",
+    "filesystem.write",
+    "output.generated",
+    "persistence.write",
+    "process.exit",
+    "run.end",
+    "run.start",
+    "shell.exec",
+    "tool.call"
+  ],
+  "run_id": "rp6-f7315100d039",
+  "schema_version": "0.1",
+  "trace_path": "<REPO_ROOT>/results/fixtures/strengthening/repeat-stability/_runs/rp6-f7315100d039/trace.jsonl",
+  "trace_valid": true
+}

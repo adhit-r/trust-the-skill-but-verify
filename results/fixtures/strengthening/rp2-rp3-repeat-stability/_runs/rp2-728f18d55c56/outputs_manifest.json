@@ -1,0 +1,11 @@
+{
+  "adapter_outcome": "completed",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/schema-bound-report.json",
+      "size": 679
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp2-728f18d55c56"
+}

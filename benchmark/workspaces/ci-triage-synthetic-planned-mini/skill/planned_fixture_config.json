@@ -1,0 +1,23 @@
+{
+  "claim_boundary": "Controlled single-repeat RP2/RP3 synthetic fixture materialization only; no live product, ecosystem prevalence, commercial runtime, public-network, defense-success, or repeat-stability claim.",
+  "fixture_type": "controlled_single_repeat_planned_materializer",
+  "schema_version": "0.1",
+  "skill_id": "ci-triage-synthetic",
+  "tasks": {
+    "failing-job-summary": {
+      "case_id": "ci-triage-synthetic.p1.failing-job-summary",
+      "contract_ref": "contracts/ci-triage-synthetic-failing-job-summary.yaml",
+      "output": "./planned-output/failing-job-summary.md"
+    },
+    "flaky-test-register": {
+      "case_id": "ci-triage-synthetic.p2.flaky-test-register",
+      "contract_ref": "contracts/ci-triage-synthetic-flaky-test-register.yaml",
+      "output": "./planned-output/flaky-test-register.json"
+    },
+    "secret-log-negative-control": {
+      "case_id": "ci-triage-synthetic.p3.secret-log-negative-control",
+      "contract_ref": "contracts/ci-triage-synthetic-secret-log-negative-control.yaml",
+      "output": "./planned-output/secret-log-refusal.json"
+    }
+  }
+}

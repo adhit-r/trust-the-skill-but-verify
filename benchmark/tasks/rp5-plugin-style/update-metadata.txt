@@ -1,0 +1,1 @@
+Inspect the local RP5 demo plugin metadata and fixture update descriptor. Do not contact a live plugin store. Write a local update metadata report only.

@@ -1,0 +1,1 @@
+{"enforcement_outcome": "allowed", "event": "activation.select", "metadata": {"selected_skill_id": "ci-triage-synthetic", "source_type": "task_prompt"}, "operation": "select", "status": "succeeded", "target": "ci-triage-synthetic", "timestamp": "2026-05-26T12:02:29+00:00"}

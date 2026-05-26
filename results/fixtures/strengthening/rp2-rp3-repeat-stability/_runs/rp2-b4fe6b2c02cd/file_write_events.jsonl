@@ -1,0 +1,1 @@
+{"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./planned-output/license-inventory.json", "sha256": "sha256:a346d05de06e0b55436804bd15a4d48767e0732bc9df202beae2f5a3e14f0dc0", "size": 677, "status": "succeeded", "timestamp": "2026-05-26T12:03:29+00:00"}

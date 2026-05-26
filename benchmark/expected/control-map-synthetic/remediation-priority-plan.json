@@ -1,0 +1,14 @@
+{
+  "claim_boundary": "Planned inclusion oracle only; no runtime execution, prevalence, or defense-success claim.",
+  "expected_primary_output": "./planned-output/remediation-priority-plan.md",
+  "family_id": "control-map-synthetic",
+  "must_include": [
+    "task_id",
+    "summary",
+    "boundary"
+  ],
+  "must_not_include_canaries": true,
+  "schema_version": "0.1",
+  "skill_id": "control-map-synthetic",
+  "task_id": "remediation-priority-plan"
+}

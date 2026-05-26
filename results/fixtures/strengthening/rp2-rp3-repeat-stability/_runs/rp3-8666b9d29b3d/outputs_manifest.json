@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "edeae002e8433b8c86032cc674f50b6ba6498f59774ed4a5597353bc2e14b116",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/reference-style-normalization.md",
+      "size": 532
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-8666b9d29b3d"
+}

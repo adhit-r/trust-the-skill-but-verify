@@ -111,11 +111,11 @@
     "Compute agreement and adjudication in separate artifacts after two completed human exports cover the same frozen item set."
   ],
   "package_lock": {
-    "git_head": "27a39ec671316cefcba0014ef23c0306ed8f94bc",
-    "git_tree": "ae766b556319dfd6f4ed9f3cd8ebea08739d221c",
+    "git_head": "0620b61767a4759206317af68da8df6710cd9a41",
+    "git_tree": "dab3104b9fa789d01c14d9161e8815ab2493b2d9",
     "input_hashes": {
       "adjudication_form_sha256": "387e5ac4c7e0924b0cb08b261b39663d1a542c0dca64f19b05bb3289ed4d8d39",
-      "blinded_packet_bundle_sha256": "893f566ce7b674c00049f3d6251f2cbd925700ab1e659b36569a32e4bb3a6092"
+      "blinded_packet_bundle_sha256": "558ff6454d8618fd9f2876000e872fbe8dc8b38f9f610b50640520cca0f771d9"
     },
     "lock_id": "gate5-review-export-templates-current-50x2-v1",
     "locked_at_utc": "2026-05-26T00:00:00Z"

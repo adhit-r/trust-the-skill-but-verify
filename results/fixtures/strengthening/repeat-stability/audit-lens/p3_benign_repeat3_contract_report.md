@@ -1,0 +1,26 @@
+# Contract Check Report
+
+- Run: `rp6-f8754b1a76ef`
+- Runtime profile: `RP6`
+- Contract: `audit-lens-evidence-audit`
+- Trace: `results/fixtures/strengthening/repeat-stability/_runs/rp6-f8754b1a76ef/trace.jsonl`
+- Events: `29`
+- Realized contract violations: `0`
+- Attempted overreach: `0`
+- Canary observations: `0`
+
+## Findings
+
+### F-ACTIVATION-SC-ACT-001
+
+- Type: `missing_activation`
+- Event: `activation:SC-ACT-001` / `activation.select`
+- Rule: `SC-ACT-001`
+- Severity: `low`
+- Drift classes: `D1`
+- Target: `audit-lens`
+- Reason: Required activation evidence was not observed: Audit-lens should activate for evidence audit tasks.
+
+## Boundary
+
+This report checks only events present in the RM-07 MVP trace. It does not infer file reads, network sends, or drift classes that were not observed in the trace.

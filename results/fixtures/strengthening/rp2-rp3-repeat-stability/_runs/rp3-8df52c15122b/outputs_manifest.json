@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "b4b0f7e46538ef08387a1fd167dc2a16369e9a00cce03df42c63411c983ee006",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/cache-retention-check.json",
+      "size": 687
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-8df52c15122b"
+}

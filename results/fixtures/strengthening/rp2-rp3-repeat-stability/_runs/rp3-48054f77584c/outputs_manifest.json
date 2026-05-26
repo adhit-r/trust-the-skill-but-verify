@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "2777a3d84fe2aad1461692e84bfd3f2c5b18311217af77288c468dbd2609bd60",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/secret-log-refusal.json",
+      "size": 691
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-48054f77584c"
+}

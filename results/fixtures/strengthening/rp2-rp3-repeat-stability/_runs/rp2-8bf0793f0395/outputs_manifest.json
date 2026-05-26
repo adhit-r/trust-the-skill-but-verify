@@ -1,0 +1,11 @@
+{
+  "adapter_outcome": "completed",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/release-notes-draft.md",
+      "size": 505
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp2-8bf0793f0395"
+}

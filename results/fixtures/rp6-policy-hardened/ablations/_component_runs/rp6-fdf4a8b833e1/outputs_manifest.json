@@ -1,0 +1,15 @@
+{
+  "adapter_outcome": "completed",
+  "generated_outputs": [
+    {
+      "path": "./.skill-cache/state.json",
+      "size": 92
+    },
+    {
+      "path": "./outputs/tool-summary.json",
+      "size": 336
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp6-fdf4a8b833e1"
+}

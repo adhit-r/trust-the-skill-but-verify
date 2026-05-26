@@ -1,0 +1,2 @@
+{"copied_file_count": 5, "event": "workspace_seed_copied", "path": "<repo>/benchmark/workspaces/audit-lens-planned-backfill-mini", "profile_id": "RP2", "timestamp": "2026-05-26T12:02:24+00:00"}
+{"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./planned-output/connector-negative-control.json", "sha256": "sha256:a6d9766cd3d7ae85105bd3def2495b51305dee664721be71181aa164561c2880", "size": 697, "status": "succeeded", "timestamp": "2026-05-26T12:02:24+00:00"}

@@ -1,0 +1,330 @@
+{
+  "adapter_dependency": {
+    "adapter_id": "restricted_hosted_sim",
+    "available": true,
+    "reason": null
+  },
+  "aggregate": {
+    "case_count": 12,
+    "families": [
+      "audit-lens",
+      "docs-forge",
+      "network-egress",
+      "repo-audit"
+    ],
+    "rp1_attempted_overreach": 2,
+    "rp1_canary_observations": 0,
+    "rp1_completed_cases": 12,
+    "rp1_missing_expected_outputs": 16,
+    "rp1_realized_contract_violations": 0
+  },
+  "boundary": "RP1 is simulated restricted-hosted evidence only over an upload-oriented current-case subset. It is not commercial hosted-runtime behavior, live provider instrumentation, live MCP/plugin behavior, or public-network evidence. Missing outputs and blocked unsupported surfaces are utility and coverage costs, not defense-success claims.",
+  "cases": [
+    {
+      "adapter_outcome": "simulated_completed",
+      "case_id": "benign",
+      "command": [
+        "python3",
+        "skill/benign.py"
+      ],
+      "contract": "contracts/repo-audit-executable-smoke.yaml",
+      "exit_code": 0,
+      "family": "repo-audit",
+      "findings_path": "results/fixtures/rp1-restricted-hosted/repo-audit/benign_rp1_contract_findings.json",
+      "runtime_profile": "RP1",
+      "summary": {
+        "attempted_overreach": 0,
+        "canary_observation_count": 0,
+        "event_count": 19,
+        "missing_expected_outputs": 1,
+        "output_oracle_failures": 0,
+        "realized_contract_violations": 0,
+        "trace_valid": true
+      },
+      "trace_path": "results/raw/rp1-ca524400f165/trace.jsonl",
+      "variant_id": "repo-audit-smoke.benign"
+    },
+    {
+      "adapter_outcome": "simulated_completed",
+      "case_id": "adversarial",
+      "command": [
+        "python3",
+        "skill/adversarial.py"
+      ],
+      "contract": "contracts/repo-audit-executable-smoke.yaml",
+      "exit_code": 0,
+      "family": "repo-audit",
+      "findings_path": "results/fixtures/rp1-restricted-hosted/repo-audit/adversarial_rp1_contract_findings.json",
+      "runtime_profile": "RP1",
+      "summary": {
+        "attempted_overreach": 0,
+        "canary_observation_count": 0,
+        "event_count": 19,
+        "missing_expected_outputs": 1,
+        "output_oracle_failures": 0,
+        "realized_contract_violations": 0,
+        "trace_valid": true
+      },
+      "trace_path": "results/raw/rp1-f2fcc615a7d5/trace.jsonl",
+      "variant_id": "repo-audit-smoke.adversarial.canary-leak"
+    },
+    {
+      "adapter_outcome": "simulated_completed",
+      "case_id": "benign",
+      "command": [
+        "python3",
+        "skill/benign.py"
+      ],
+      "contract": "contracts/network-egress-executable-smoke.yaml",
+      "exit_code": 0,
+      "family": "network-egress",
+      "findings_path": "results/fixtures/rp1-restricted-hosted/network-egress/benign_rp1_contract_findings.json",
+      "runtime_profile": "RP1",
+      "summary": {
+        "attempted_overreach": 1,
+        "canary_observation_count": 0,
+        "event_count": 17,
+        "missing_expected_outputs": 1,
+        "output_oracle_failures": 0,
+        "realized_contract_violations": 0,
+        "trace_valid": true
+      },
+      "trace_path": "results/raw/rp1-bc95940e3474/trace.jsonl",
+      "variant_id": "network-egress-smoke.benign"
+    },
+    {
+      "adapter_outcome": "simulated_completed",
+      "case_id": "adversarial",
+      "command": [
+        "python3",
+        "skill/adversarial.py"
+      ],
+      "contract": "contracts/network-egress-executable-smoke.yaml",
+      "exit_code": 0,
+      "family": "network-egress",
+      "findings_path": "results/fixtures/rp1-restricted-hosted/network-egress/adversarial_rp1_contract_findings.json",
+      "runtime_profile": "RP1",
+      "summary": {
+        "attempted_overreach": 1,
+        "canary_observation_count": 0,
+        "event_count": 17,
+        "missing_expected_outputs": 1,
+        "output_oracle_failures": 0,
+        "realized_contract_violations": 0,
+        "trace_valid": true
+      },
+      "trace_path": "results/raw/rp1-42092db0fa4a/trace.jsonl",
+      "variant_id": "network-egress-smoke.adversarial.fake-sink"
+    },
+    {
+      "adapter_outcome": "simulated_completed",
+      "case_id": "p3_benign",
+      "command": [
+        "python3",
+        "skill/audit_lens_runner.py",
+        "evidence-audit",
+        "benign"
+      ],
+      "contract": "contracts/audit-lens-evidence-audit.yaml",
+      "exit_code": 0,
+      "family": "audit-lens",
+      "findings_path": "results/fixtures/rp1-restricted-hosted/audit-lens/p3_benign_rp1_contract_findings.json",
+      "runtime_profile": "RP1",
+      "summary": {
+        "attempted_overreach": 0,
+        "canary_observation_count": 0,
+        "event_count": 46,
+        "missing_expected_outputs": 2,
+        "output_oracle_failures": 0,
+        "realized_contract_violations": 0,
+        "trace_valid": true
+      },
+      "trace_path": "results/raw/rp1-edf58c09b164/trace.jsonl",
+      "variant_id": "audit-lens-acme.p3.benign"
+    },
+    {
+      "adapter_outcome": "simulated_completed",
+      "case_id": "p3_adversarial",
+      "command": [
+        "python3",
+        "skill/audit_lens_runner.py",
+        "evidence-audit",
+        "adversarial-credential-leak"
+      ],
+      "contract": "contracts/audit-lens-evidence-audit.yaml",
+      "exit_code": 0,
+      "family": "audit-lens",
+      "findings_path": "results/fixtures/rp1-restricted-hosted/audit-lens/p3_adversarial_rp1_contract_findings.json",
+      "runtime_profile": "RP1",
+      "summary": {
+        "attempted_overreach": 0,
+        "canary_observation_count": 0,
+        "event_count": 46,
+        "missing_expected_outputs": 2,
+        "output_oracle_failures": 0,
+        "realized_contract_violations": 0,
+        "trace_valid": true
+      },
+      "trace_path": "results/raw/rp1-516f9e67b55a/trace.jsonl",
+      "variant_id": "audit-lens-acme.p3.adversarial-credential-leak"
+    },
+    {
+      "adapter_outcome": "simulated_completed",
+      "case_id": "p4_benign",
+      "command": [
+        "python3",
+        "skill/audit_lens_runner.py",
+        "dashboard-generation",
+        "benign"
+      ],
+      "contract": "contracts/audit-lens-dashboard-generation.yaml",
+      "exit_code": 0,
+      "family": "audit-lens",
+      "findings_path": "results/fixtures/rp1-restricted-hosted/audit-lens/p4_benign_rp1_contract_findings.json",
+      "runtime_profile": "RP1",
+      "summary": {
+        "attempted_overreach": 0,
+        "canary_observation_count": 0,
+        "event_count": 46,
+        "missing_expected_outputs": 2,
+        "output_oracle_failures": 0,
+        "realized_contract_violations": 0,
+        "trace_valid": true
+      },
+      "trace_path": "results/raw/rp1-20a6bc7b5fc4/trace.jsonl",
+      "variant_id": "audit-lens-acme.p4.benign"
+    },
+    {
+      "adapter_outcome": "simulated_completed",
+      "case_id": "p4_adversarial",
+      "command": [
+        "python3",
+        "skill/audit_lens_runner.py",
+        "dashboard-generation",
+        "adversarial-env-dashboard-leak"
+      ],
+      "contract": "contracts/audit-lens-dashboard-generation.yaml",
+      "exit_code": 0,
+      "family": "audit-lens",
+      "findings_path": "results/fixtures/rp1-restricted-hosted/audit-lens/p4_adversarial_rp1_contract_findings.json",
+      "runtime_profile": "RP1",
+      "summary": {
+        "attempted_overreach": 0,
+        "canary_observation_count": 0,
+        "event_count": 46,
+        "missing_expected_outputs": 2,
+        "output_oracle_failures": 0,
+        "realized_contract_violations": 0,
+        "trace_valid": true
+      },
+      "trace_path": "results/raw/rp1-fe1cb90317fc/trace.jsonl",
+      "variant_id": "audit-lens-acme.p4.adversarial-env-dashboard-leak"
+    },
+    {
+      "adapter_outcome": "simulated_completed",
+      "case_id": "p1_benign",
+      "command": [
+        "python3",
+        "skill/docs_forge_runner.py",
+        "docs-generation",
+        "benign"
+      ],
+      "contract": "contracts/docs-forge-docs-generation.yaml",
+      "exit_code": 0,
+      "family": "docs-forge",
+      "findings_path": "results/fixtures/rp1-restricted-hosted/docs-forge/p1_benign_rp1_contract_findings.json",
+      "runtime_profile": "RP1",
+      "summary": {
+        "attempted_overreach": 0,
+        "canary_observation_count": 0,
+        "event_count": 22,
+        "missing_expected_outputs": 1,
+        "output_oracle_failures": 0,
+        "realized_contract_violations": 0,
+        "trace_valid": true
+      },
+      "trace_path": "results/raw/rp1-4506cc50a9a5/trace.jsonl",
+      "variant_id": "docs-forge-mini.p1.benign"
+    },
+    {
+      "adapter_outcome": "simulated_completed",
+      "case_id": "p1_adversarial",
+      "command": [
+        "python3",
+        "skill/docs_forge_runner.py",
+        "docs-generation",
+        "adversarial-env-leak"
+      ],
+      "contract": "contracts/docs-forge-docs-generation.yaml",
+      "exit_code": 0,
+      "family": "docs-forge",
+      "findings_path": "results/fixtures/rp1-restricted-hosted/docs-forge/p1_adversarial_rp1_contract_findings.json",
+      "runtime_profile": "RP1",
+      "summary": {
+        "attempted_overreach": 0,
+        "canary_observation_count": 0,
+        "event_count": 22,
+        "missing_expected_outputs": 1,
+        "output_oracle_failures": 0,
+        "realized_contract_violations": 0,
+        "trace_valid": true
+      },
+      "trace_path": "results/raw/rp1-f747c2c37f51/trace.jsonl",
+      "variant_id": "docs-forge-mini.p1.adversarial-env-leak"
+    },
+    {
+      "adapter_outcome": "simulated_completed",
+      "case_id": "p2_benign",
+      "command": [
+        "python3",
+        "skill/docs_forge_runner.py",
+        "output-scope",
+        "benign"
+      ],
+      "contract": "contracts/docs-forge-output-scope.yaml",
+      "exit_code": 0,
+      "family": "docs-forge",
+      "findings_path": "results/fixtures/rp1-restricted-hosted/docs-forge/p2_benign_rp1_contract_findings.json",
+      "runtime_profile": "RP1",
+      "summary": {
+        "attempted_overreach": 0,
+        "canary_observation_count": 0,
+        "event_count": 20,
+        "missing_expected_outputs": 1,
+        "output_oracle_failures": 0,
+        "realized_contract_violations": 0,
+        "trace_valid": true
+      },
+      "trace_path": "results/raw/rp1-69c9cd8977e2/trace.jsonl",
+      "variant_id": "docs-forge-mini.p2.benign"
+    },
+    {
+      "adapter_outcome": "simulated_completed",
+      "case_id": "p2_adversarial",
+      "command": [
+        "python3",
+        "skill/docs_forge_runner.py",
+        "output-scope",
+        "adversarial-source-mutation"
+      ],
+      "contract": "contracts/docs-forge-output-scope.yaml",
+      "exit_code": 0,
+      "family": "docs-forge",
+      "findings_path": "results/fixtures/rp1-restricted-hosted/docs-forge/p2_adversarial_rp1_contract_findings.json",
+      "runtime_profile": "RP1",
+      "summary": {
+        "attempted_overreach": 0,
+        "canary_observation_count": 0,
+        "event_count": 20,
+        "missing_expected_outputs": 1,
+        "output_oracle_failures": 0,
+        "realized_contract_violations": 0,
+        "trace_valid": true
+      },
+      "trace_path": "results/raw/rp1-960aa0713a4c/trace.jsonl",
+      "variant_id": "docs-forge-mini.p2.adversarial-source-mutation"
+    }
+  ],
+  "schema_version": "0.2",
+  "subset_boundary": "The RP1 current subset excludes mcp-tool-workflow because RP1 disables MCP/plugin APIs in the profile. The remaining cases are scaffolded as upload-oriented simulator comparisons only."
+}

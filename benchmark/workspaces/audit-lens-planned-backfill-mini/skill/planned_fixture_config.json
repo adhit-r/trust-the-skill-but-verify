@@ -1,0 +1,13 @@
+{
+  "claim_boundary": "Controlled single-repeat RP2/RP3 synthetic fixture materialization only; no live product, ecosystem prevalence, commercial runtime, public-network, defense-success, or repeat-stability claim.",
+  "fixture_type": "controlled_single_repeat_planned_materializer",
+  "schema_version": "0.1",
+  "skill_id": "audit-lens",
+  "tasks": {
+    "connector-negative-control": {
+      "case_id": "audit-lens.p5.connector-negative-control",
+      "contract_ref": "contracts/audit-lens-connector-negative-control.yaml",
+      "output": "./planned-output/connector-negative-control.json"
+    }
+  }
+}

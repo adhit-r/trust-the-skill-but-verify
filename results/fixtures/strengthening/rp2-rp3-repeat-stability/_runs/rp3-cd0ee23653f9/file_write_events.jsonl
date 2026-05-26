@@ -1,0 +1,1 @@
+{"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./planned-output/lockfile-risk-summary.json", "sha256": "sha256:be01f5707d609605d06673b9597c4ae19950076f34cc59d1a21d8ed173ca097d", "size": 698, "status": "succeeded", "timestamp": "2026-05-26T12:03:55+00:00"}

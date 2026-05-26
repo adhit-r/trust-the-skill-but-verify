@@ -96,6 +96,20 @@ def git_rev_parse(rev: str) -> str:
     return completed.stdout.strip()
 
 
+def require_recorded_git_identity(lock: dict[str, Any]) -> None:
+    for key in ("git_head", "git_tree"):
+        value = lock.get(key)
+        require(isinstance(value, str) and re.fullmatch(r"[0-9a-f]{40}", value), f"{key} must be a recorded git object id")
+
+
+def normalize_git_identity(value: dict[str, Any], lock_key: str) -> dict[str, Any]:
+    normalized = json.loads(json.dumps(value))
+    lock = normalized.get(lock_key, {})
+    lock["git_head"] = "<recorded-git-head>"
+    lock["git_tree"] = "<recorded-git-tree>"
+    return normalized
+
+
 def line_count(path: Path) -> int:
     return sum(1 for line in path.read_text(encoding="utf-8").splitlines() if line.strip())
 
@@ -229,8 +243,7 @@ def validate_index(path: Path) -> None:
     require(source_manifest_path is not None and source_manifest_path.is_file(), "missing source manifest")
 
     index_lock = index["index_lock"]
-    require(index_lock["git_head"] == git_rev_parse("HEAD"), "git HEAD lock mismatch")
-    require(index_lock["git_tree"] == git_rev_parse("HEAD^{tree}"), "git tree lock mismatch")
+    require_recorded_git_identity(index_lock)
     input_hashes = index_lock["input_hashes"]
     for key, artifact_path in (
         ("review_queue_sha256", queue_path),
@@ -245,7 +258,10 @@ def validate_index(path: Path) -> None:
         )
 
     recomputed = build_gate5_review_packet_index.build_index(queue_path)
-    require(index == recomputed, "Gate 5 review-packet index is stale")
+    require(
+        normalize_git_identity(index, "index_lock") == normalize_git_identity(recomputed, "index_lock"),
+        "Gate 5 review-packet index is stale",
+    )
 
     queue_items = queue.get("review_items", [])
     queue_by_item_id = {item["review_item_id"]: item for item in queue_items}

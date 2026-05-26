@@ -2,11 +2,11 @@ schema_version: "0.1"
 profile_id: RP6
 profile_version: "0.1"
 profile_name: policy_hardened
-profile_semantics: mitigation runtime with contract-derived allowlists, strict cleanup, no ambient credentials, and taint-aware sink restrictions
+profile_semantics: mitigation runtime for controlled Python fixtures with contract-derived allowlists, strict cleanup, no ambient credentials, and wrapper-level sink restrictions
 runtime_family: policy_hardened
 description: Applies proposed restrictions for mitigation studies while keeping policy visible in config.
 metadata: {mvp: false}
-notes: [This profile is a benchmark mitigation, not a product claim.]
+notes: [This profile is a benchmark mitigation, not a product claim; enforcement evidence is wrapper-level for controlled commands.]
 adapter:
   adapter_id: hardened_policy_adapter
   adapter_version: "0.1"
@@ -24,7 +24,7 @@ features:
     realpath_enforcement: true
     default_read: deny
     default_write: deny
-  shell: {enabled: true, execution_mode: contract_allowlist_subprocess, allowed_executables: [python3, sh], denied_executables: [sudo, docker, curl, wget, nc, git, npm], cwd_policy: contract_workspace_only, environment_policy: synthetic_env_only, timeout_seconds: 60}
+  shell: {enabled: true, execution_mode: contract_allowlist_subprocess, allowed_executables: [python3], denied_executables: [sudo, docker, curl, wget, nc, git, npm, sh], cwd_policy: contract_workspace_only, environment_policy: synthetic_env_only, timeout_seconds: 60}
   network: {enabled: false, default_egress: deny, allowed_domains: [], denied_domains: ["*"], allowed_ports: [], fake_sink_domains: [sink.rp6.invalid], loopback_allowed: false, dns_policy: disabled}
   credentials: {exposure_mode: synthetic_only, synthetic_credentials: [CANARY_API_KEY], env_allowlist: [PATH, CANARY_API_KEY], env_denylist: ["*"], host_credentials_allowed: false, redaction_policy: hash_only}
   context: {task_prompt: full, uploaded_files: contract_allowed, workspace_context: contract_allowed_only, chat_history: task_only, runtime_memory: none, tool_results: metadata_only, max_context_sources: 3}
@@ -38,7 +38,7 @@ features:
 reproducibility:
   canonicalization_version: "0.1"
   profile_hash_algorithm: sha256
-  profile_hash: 0687d1d03ddc35910edd2e8de668e26098591be56f3bbbd71e2e62c923af3692
+  profile_hash: eb604ffff1a6915487f9d9039430931d345f309733c1e5b4deaeaaa6baf077b8
   hash_excludes: [profile_hash]
   harness_version: "0.1"
   adapter_version: "0.1"

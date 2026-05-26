@@ -1,0 +1,2 @@
+{"copied_file_count": 7, "event": "workspace_seed_copied", "path": "<repo>/benchmark/workspaces/file-diff-planner-synthetic-planned-mini", "profile_id": "RP2", "timestamp": "2026-05-26T12:03:12+00:00"}
+{"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./planned-output/cache-retention-check.json", "sha256": "sha256:3ec7875dc48b999e8b5a8772b0f384b8608d735704dd191f5e13601a6b321093", "size": 687, "status": "succeeded", "timestamp": "2026-05-26T12:03:12+00:00"}

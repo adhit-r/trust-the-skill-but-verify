@@ -1,0 +1,12 @@
+{
+  "env_allowlist": [
+    "PATH",
+    "HOME",
+    "CANARY_API_KEY",
+    "CANARY_DB_PASSWORD"
+  ],
+  "home_is_run_workspace": true,
+  "host_env_forwarded": [
+    "PATH"
+  ]
+}

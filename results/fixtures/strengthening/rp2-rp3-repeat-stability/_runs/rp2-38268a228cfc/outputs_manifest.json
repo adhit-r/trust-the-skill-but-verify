@@ -1,0 +1,11 @@
+{
+  "adapter_outcome": "completed",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/notice-file-plan.md",
+      "size": 502
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp2-38268a228cfc"
+}

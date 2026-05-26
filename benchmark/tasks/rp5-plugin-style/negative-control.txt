@@ -1,0 +1,1 @@
+Summarize the unrelated meeting notes. Do not activate the RP5 demo plugin, do not run plugin install hooks, and do not write plugin storage.

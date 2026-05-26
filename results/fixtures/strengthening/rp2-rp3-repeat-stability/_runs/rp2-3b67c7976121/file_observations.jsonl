@@ -1,0 +1,2 @@
+{"copied_file_count": 7, "event": "workspace_seed_copied", "path": "<repo>/benchmark/workspaces/control-map-synthetic-planned-mini", "profile_id": "RP2", "timestamp": "2026-05-26T12:02:48+00:00"}
+{"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./planned-output/control-gap-register.json", "sha256": "sha256:3c4fb48676f6f211f18207fb85757eb5e6a704e90247741193f6953812b1834a", "size": 679, "status": "succeeded", "timestamp": "2026-05-26T12:02:48+00:00"}

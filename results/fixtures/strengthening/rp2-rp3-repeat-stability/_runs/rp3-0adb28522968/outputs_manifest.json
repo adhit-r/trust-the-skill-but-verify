@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "c78ede3a6fb692be743f4b6e5ae13eac2586f6f79b794b7aa537742be99e6507",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/failing-job-summary.md",
+      "size": 502
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-0adb28522968"
+}

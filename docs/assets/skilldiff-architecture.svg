@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="560" viewBox="0 0 1100 560" role="img" aria-labelledby="title desc">
+  <title id="title">SkillDiff architecture</title>
+  <desc id="desc">The architecture holds a skill, task, contract, and runtime profile fixed, executes them through runtime adapters, normalizes traces, checks contracts, and emits reports.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1f2937"/>
+    </marker>
+    <style>
+      .title { font: 700 24px Arial, sans-serif; fill: #111827; }
+      .label { font: 700 15px Arial, sans-serif; fill: #111827; }
+      .small { font: 13px Arial, sans-serif; fill: #374151; }
+      .box { fill: #f8fafc; stroke: #1f2937; stroke-width: 1.5; rx: 8; }
+      .input { fill: #ecfeff; stroke: #0f766e; }
+      .runtime { fill: #eff6ff; stroke: #2563eb; }
+      .evidence { fill: #fff7ed; stroke: #b45309; }
+      .output { fill: #f0fdf4; stroke: #15803d; }
+      .arrow { stroke: #1f2937; stroke-width: 1.6; fill: none; marker-end: url(#arrow); }
+      .lane { fill: #ffffff; stroke: #d1d5db; stroke-width: 1; rx: 10; }
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="1100" height="560" fill="#ffffff"/>
+  <text x="44" y="48" class="title">SkillDiff Architecture</text>
+  <text x="44" y="74" class="small">Differential security testing for portable agent skills</text>
+
+  <rect x="38" y="104" width="238" height="370" class="lane"/>
+  <text x="62" y="134" class="label">Controlled inputs</text>
+  <rect x="62" y="158" width="190" height="58" class="box input"/>
+  <text x="82" y="184" class="label">Skill artifact</text>
+  <text x="82" y="203" class="small">Instructions, scripts, resources</text>
+  <rect x="62" y="236" width="190" height="58" class="box input"/>
+  <text x="82" y="262" class="label">Task prompt</text>
+  <text x="82" y="281" class="small">Benign or adversarial task</text>
+  <rect x="62" y="314" width="190" height="58" class="box input"/>
+  <text x="82" y="340" class="label">Security contract</text>
+  <text x="82" y="359" class="small">Allowed and denied behavior</text>
+  <rect x="62" y="392" width="190" height="58" class="box input"/>
+  <text x="82" y="418" class="label">Runtime profile</text>
+  <text x="82" y="437" class="small">Host policy and capability</text>
+
+  <rect x="346" y="128" width="190" height="82" class="box runtime"/>
+  <text x="374" y="160" class="label">Adapter runner</text>
+  <text x="374" y="181" class="small">Prepare, execute, collect, clean</text>
+  <text x="374" y="200" class="small">Deterministic run metadata</text>
+
+  <rect x="348" y="260" width="186" height="72" class="box runtime"/>
+  <text x="378" y="288" class="label">RP2</text>
+  <text x="378" y="309" class="small">Local coding-agent profile</text>
+  <rect x="348" y="366" width="186" height="72" class="box runtime"/>
+  <text x="378" y="394" class="label">RP3</text>
+  <text x="378" y="415" class="small">Docker sandbox profile</text>
+
+  <rect x="606" y="168" width="198" height="74" class="box evidence"/>
+  <text x="636" y="197" class="label">Raw evidence</text>
+  <text x="636" y="218" class="small">Files, process, network, canaries</text>
+  <rect x="606" y="296" width="198" height="74" class="box evidence"/>
+  <text x="636" y="325" class="label">Normalized traces</text>
+  <text x="636" y="346" class="small">Canonical trace.jsonl events</text>
+
+  <rect x="864" y="154" width="194" height="74" class="box output"/>
+  <text x="894" y="183" class="label">Contract checker</text>
+  <text x="894" y="204" class="small">Violation and overreach labels</text>
+  <rect x="864" y="270" width="194" height="74" class="box output"/>
+  <text x="894" y="299" class="label">Runtime comparison</text>
+  <text x="894" y="320" class="small">Pairwise drift signals</text>
+  <rect x="864" y="386" width="194" height="74" class="box output"/>
+  <text x="894" y="415" class="label">Reports and ledger</text>
+  <text x="894" y="436" class="small">Drift reports, claim evidence</text>
+
+  <path class="arrow" d="M 252 187 C 296 187 300 169 344 169"/>
+  <path class="arrow" d="M 252 265 C 300 265 302 194 344 188"/>
+  <path class="arrow" d="M 252 343 C 302 343 302 203 344 195"/>
+  <path class="arrow" d="M 252 421 C 302 421 302 210 344 202"/>
+  <path class="arrow" d="M 441 210 L 441 256"/>
+  <path class="arrow" d="M 441 210 C 560 210 558 205 604 205"/>
+  <path class="arrow" d="M 441 332 L 441 362"/>
+  <path class="arrow" d="M 534 296 C 568 296 568 318 604 318"/>
+  <path class="arrow" d="M 534 402 C 568 402 568 348 604 348"/>
+  <path class="arrow" d="M 804 205 L 862 191"/>
+  <path class="arrow" d="M 804 333 L 862 307"/>
+  <path class="arrow" d="M 961 228 L 961 266"/>
+  <path class="arrow" d="M 961 344 L 961 382"/>
+</svg>

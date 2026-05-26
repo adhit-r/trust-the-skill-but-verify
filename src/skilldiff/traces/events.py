@@ -491,9 +491,32 @@ def _append_raw_file_observations(builder: TraceBuilder, path: Path, canary_labe
             target=target,
             operation=row.get("operation"),
             enforcement_outcome=_file_write_enforcement_outcome(row.get("status", "observed")),
+            allowed_by_contract=row.get("allowed_by_contract"),
+            contract_rule_ids=[rule_id for rule_id in row.get("matched_rule_ids", []) if rule_id],
+            matched_allow_rule=row.get("matched_allow_rule"),
+            matched_deny_rule=row.get("matched_deny_rule"),
+            approval_required=row.get("approval_required"),
+            approval_request_id=row.get("approval_request_id"),
             canary_labels=labels,
             evidence_ref=str(path),
-            metadata={key: value for key, value in row.items() if key not in {"event", "path", "operation", "status", "canary_labels"}},
+            metadata={
+                key: value
+                for key, value in row.items()
+                if key
+                not in {
+                    "event",
+                    "path",
+                    "operation",
+                    "status",
+                    "canary_labels",
+                    "allowed_by_contract",
+                    "matched_rule_ids",
+                    "matched_allow_rule",
+                    "matched_deny_rule",
+                    "approval_required",
+                    "approval_request_id",
+                }
+            },
             timestamp=row.get("timestamp"),
         )
 
@@ -515,9 +538,32 @@ def _append_raw_file_read_events(builder: TraceBuilder, path: Path, canary_label
             target=target,
             operation=row.get("operation", "read"),
             enforcement_outcome=_file_read_enforcement_outcome(status),
+            allowed_by_contract=row.get("allowed_by_contract"),
+            contract_rule_ids=[rule_id for rule_id in row.get("matched_rule_ids", []) if rule_id],
+            matched_allow_rule=row.get("matched_allow_rule"),
+            matched_deny_rule=row.get("matched_deny_rule"),
+            approval_required=row.get("approval_required"),
+            approval_request_id=row.get("approval_request_id"),
             canary_labels=labels,
             evidence_ref=str(path),
-            metadata={key: value for key, value in row.items() if key not in {"event", "path", "operation", "status", "canary_labels"}},
+            metadata={
+                key: value
+                for key, value in row.items()
+                if key
+                not in {
+                    "event",
+                    "path",
+                    "operation",
+                    "status",
+                    "canary_labels",
+                    "allowed_by_contract",
+                    "matched_rule_ids",
+                    "matched_allow_rule",
+                    "matched_deny_rule",
+                    "approval_required",
+                    "approval_request_id",
+                }
+            },
             timestamp=row.get("timestamp"),
         )
 
@@ -557,9 +603,29 @@ def _append_raw_process_events(builder: TraceBuilder, path: Path) -> None:
             target=row.get("target"),
             operation=row.get("operation", "exec"),
             enforcement_outcome="blocked" if status == "blocked" else "allowed",
+            allowed_by_contract=row.get("allowed_by_contract"),
             contract_rule_ids=[rule_id for rule_id in row.get("matched_rule_ids", []) if rule_id],
+            matched_allow_rule=row.get("matched_allow_rule"),
+            matched_deny_rule=row.get("matched_deny_rule"),
+            approval_required=row.get("approval_required"),
+            approval_request_id=row.get("approval_request_id"),
             evidence_ref=str(path),
-            metadata={key: value for key, value in row.items() if key not in {"event", "target", "operation", "status"}},
+            metadata={
+                key: value
+                for key, value in row.items()
+                if key
+                not in {
+                    "event",
+                    "target",
+                    "operation",
+                    "status",
+                    "allowed_by_contract",
+                    "matched_allow_rule",
+                    "matched_deny_rule",
+                    "approval_required",
+                    "approval_request_id",
+                }
+            },
         )
 
 
@@ -602,6 +668,12 @@ def _append_raw_network_events(builder: TraceBuilder, path: Path, canary_labels:
             normalized_target=row.get("domain") or row.get("url"),
             operation=row.get("operation", "connect"),
             enforcement_outcome=row.get("enforcement_outcome", "unknown"),
+            allowed_by_contract=row.get("allowed_by_contract"),
+            contract_rule_ids=[rule_id for rule_id in row.get("matched_rule_ids", []) if rule_id],
+            matched_allow_rule=row.get("matched_allow_rule"),
+            matched_deny_rule=row.get("matched_deny_rule"),
+            approval_required=row.get("approval_required"),
+            approval_request_id=row.get("approval_request_id"),
             canary_labels=labels,
             sink_type=row.get("sink_type", "external_http"),
             payload=None,

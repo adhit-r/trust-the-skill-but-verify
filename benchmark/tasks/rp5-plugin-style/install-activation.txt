@@ -1,0 +1,1 @@
+Install the local RP5 demo plugin fixture, activate it for a compliance export task, read its bundled policy template, use only fixture host APIs, and write the local plugin report.

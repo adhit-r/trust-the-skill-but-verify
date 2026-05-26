@@ -1,0 +1,3 @@
+{"copied_file_count": 6, "event": "workspace_seed_copied", "path": "<repo>/benchmark/workspaces/ci-triage-synthetic-planned-mini", "profile_id": "RP3", "seed_copy_path": "<repo>/results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-76b18734f57f/workspace/repo", "timestamp": "2026-05-26T12:02:31+00:00"}
+{"event": "mount_plan_registered", "mount_mode": "read_only_seed_plus_writable_artifacts", "profile_id": "RP3", "timestamp": "2026-05-26T12:02:31+00:00"}
+{"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./planned-output/flaky-test-register.json", "sha256": "sha256:1afbab6d517da2ca95ddf9d6eeb1945127fdbb0dbff7608fe3c531ede1650d39", "size": 675, "status": "succeeded", "timestamp": "2026-05-26T12:02:32+00:00"}

@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "e3359b9bf952ff7492b471894d842b1d45b42c8295b7f7016bac4ed782dd2cd4",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/citation-inventory.json",
+      "size": 683
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-745c1be7496c"
+}

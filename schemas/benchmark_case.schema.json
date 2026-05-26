@@ -1,0 +1,272 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/trust-the-skill/benchmark_case.schema.json",
+  "title": "Benchmark Case Inventory",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "manifest_id",
+    "title",
+    "inventory_scope",
+    "scope_note",
+    "declared_case_count",
+    "cases"
+  ],
+  "properties": {
+    "schema_version": { "type": "string", "minLength": 1 },
+    "manifest_id": { "enum": ["benchmark-cases-current"] },
+    "title": { "type": "string", "minLength": 1 },
+    "inventory_scope": { "enum": ["current_existing_case_families_only"] },
+    "scope_note": { "type": "string", "minLength": 1 },
+    "declared_case_count": { "type": "integer", "minimum": 1 },
+    "notes": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "cases": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/benchmarkCase" }
+    }
+  },
+  "$defs": {
+    "benchmarkCase": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "case_id",
+        "family_id",
+        "case_status",
+        "category",
+        "title",
+        "task_prompt",
+        "contract",
+        "workspace",
+        "provenance",
+        "execution",
+        "expected_output",
+        "canary_policy",
+        "publication_boundary",
+        "safety_status"
+      ],
+      "properties": {
+        "case_id": { "type": "string", "minLength": 1 },
+        "family_id": { "type": "string", "minLength": 1 },
+        "case_status": { "enum": ["current_pilot", "current_mvp", "planned_inclusion"] },
+        "category": {
+          "enum": [
+            "document automation",
+            "repository maintenance",
+            "compliance/audit",
+            "data extraction",
+            "API workflow",
+            "MCP/tool workflow",
+            "local file operations"
+          ]
+        },
+        "title": { "type": "string", "minLength": 1 },
+        "task_prompt": { "$ref": "#/$defs/taskPrompt" },
+        "contract": { "$ref": "#/$defs/contractRef" },
+        "workspace": { "$ref": "#/$defs/workspaceRef" },
+        "notes": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "provenance": { "$ref": "#/$defs/provenance" },
+        "execution": { "$ref": "#/$defs/execution" },
+        "expected_output": { "$ref": "#/$defs/expectedOutput" },
+        "canary_policy": { "$ref": "#/$defs/canaryPolicy" },
+        "publication_boundary": { "$ref": "#/$defs/publicationBoundary" },
+        "safety_status": { "$ref": "#/$defs/safetyStatus" }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_kind",
+        "source_mix",
+        "provenance_level",
+        "source_manifest_ref",
+        "source_case_pointer",
+        "skill_id",
+        "task_id",
+        "contract_ref",
+        "workspace_ref",
+        "provenance_note"
+      ],
+      "properties": {
+        "source_kind": {
+          "enum": [
+            "synthetic_fixture",
+            "controlled_fixture_plus_local_inspection",
+            "first_party_snapshot_plus_sanitized_fixture"
+          ]
+        },
+        "source_mix": {
+          "type": "object",
+          "description": "Skill-origin source-mix accounting label. Case-level evidence remains represented by source_kind and provenance_level.",
+          "additionalProperties": false,
+          "required": [
+            "label",
+            "label_note"
+          ],
+          "properties": {
+            "label": {
+              "enum": [
+                "first_party",
+                "public",
+                "synthetic"
+              ]
+            },
+            "label_note": { "type": "string", "minLength": 1 }
+          }
+        },
+        "provenance_level": {
+          "enum": [
+            "synthetic",
+            "local_inspection_plus_controlled_fixture",
+            "first_party_sanitized_fixture"
+          ]
+        },
+        "source_manifest_ref": { "type": "string", "minLength": 1 },
+        "source_case_pointer": { "type": "string" },
+        "skill_id": { "type": "string", "minLength": 1 },
+        "task_id": { "type": "string", "minLength": 1 },
+        "contract_ref": { "type": "string", "minLength": 1 },
+        "workspace_ref": { "type": "string", "minLength": 1 },
+        "provenance_note": { "type": "string", "minLength": 1 }
+      }
+    },
+    "taskPrompt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "prompt_ref",
+        "prompt_sha256"
+      ],
+      "properties": {
+        "prompt_ref": { "type": "string", "minLength": 1 },
+        "prompt_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+      }
+    },
+    "contractRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract_id",
+        "contract_ref"
+      ],
+      "properties": {
+        "contract_id": { "type": "string", "minLength": 1 },
+        "contract_ref": { "type": "string", "minLength": 1 }
+      }
+    },
+    "workspaceRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "workspace_ref",
+        "workspace_snapshot_sha256"
+      ],
+      "properties": {
+        "workspace_ref": { "type": "string", "minLength": 1 },
+        "workspace_snapshot_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+      }
+    },
+    "execution": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "execution_level",
+        "evidence_stage",
+        "runtime_profiles",
+        "runnable_manifest_ref",
+        "execution_note"
+      ],
+      "properties": {
+        "execution_level": { "type": "string", "minLength": 1 },
+        "evidence_stage": { "enum": ["pilot", "mvp", "planned"] },
+        "runtime_profiles": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "uniqueItems": true
+        },
+        "runnable_manifest_ref": { "type": "string", "minLength": 1 },
+        "execution_note": { "type": "string", "minLength": 1 }
+      }
+    },
+    "expectedOutput": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "primary_artifact"
+      ],
+      "properties": {
+        "primary_artifact": { "type": "string", "minLength": 1 },
+        "oracle_ref": { "type": ["string", "null"] }
+      }
+    },
+    "canaryPolicy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "synthetic_only",
+        "real_secrets_allowed",
+        "declared_labels",
+        "denied_sinks",
+        "canary_source_ref"
+      ],
+      "properties": {
+        "synthetic_only": { "type": "boolean" },
+        "real_secrets_allowed": { "type": "boolean" },
+        "declared_labels": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "denied_sinks": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "canary_source_ref": { "type": "string", "minLength": 1 }
+      }
+    },
+    "publicationBoundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "safe_to_publish",
+        "boundary_note",
+        "excluded_claims"
+      ],
+      "properties": {
+        "safe_to_publish": { "type": "boolean" },
+        "boundary_note": { "type": "string", "minLength": 1 },
+        "excluded_claims": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "safetyStatus": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "real_secrets_present",
+        "safety_note"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "synthetic_only_publishable",
+            "publishable_with_claim_limits",
+            "blocked"
+          ]
+        },
+        "real_secrets_present": { "type": "boolean" },
+        "safety_note": { "type": "string", "minLength": 1 }
+      }
+    }
+  }
+}

@@ -1,0 +1,1 @@
+{"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./planned-output/citation-inventory.json", "sha256": "sha256:fa9bc5ec7ac8a4305e189a48a6f8e300c98b73c50d0788c73eb6c428931d9a02", "size": 683, "status": "succeeded", "timestamp": "2026-05-26T12:02:37+00:00"}

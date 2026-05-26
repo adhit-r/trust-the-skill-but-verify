@@ -1,0 +1,30 @@
+{
+  "adapter_id": "local_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/planned_fixture_runner.py",
+    "--task-id",
+    "approval-required-egress-plan",
+    "--output",
+    "./planned-output/approval-required-egress-plan.json"
+  ],
+  "contract_id": "network-egress-executable-approval-required-egress-plan",
+  "dry_run": false,
+  "prepared_at": "2026-05-26T12:03:41+00:00",
+  "profile_hash": "7f671673b37f9b78cdb02475da028c18173538fcd42b85ff07aff05dc7e58d94",
+  "profile_id": "RP2",
+  "repeat_id": 1,
+  "run_id": "rp2-117bdb68392f",
+  "skill_artifact": "local-fixture",
+  "skill_id": "network-egress-executable",
+  "task_id": "approval-required-egress-plan",
+  "task_prompt_hash": "sha256:4d94f06bc041929ccb41aa32ef281fe06239128378d16562188b3c70efb13a2c",
+  "task_prompt_ref": "benchmark/tasks/network-egress-planned-backfill/approval-required-egress-plan.txt",
+  "variant_id": "network-egress-executable.p2.approval-required-egress-plan",
+  "workspace_copied_file_count": 6,
+  "workspace_mode": "copied_seed_workspace",
+  "workspace_seed": "<repo>/benchmark/workspaces/network-egress-planned-backfill-mini",
+  "workspace_seed_id": "planned-inclusion-network-egress-planned-backfill-approval-required-egress-plan-rp2",
+  "workspace_snapshot_hash": "e93dcba5be0d2058c801405e69eded9bc653d17d45eadad85ffaa1f8813369d1"
+}

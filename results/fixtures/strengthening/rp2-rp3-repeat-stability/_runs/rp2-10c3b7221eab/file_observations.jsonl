@@ -1,0 +1,2 @@
+{"copied_file_count": 7, "event": "workspace_seed_copied", "path": "<repo>/benchmark/workspaces/schema-report-synthetic-planned-mini", "profile_id": "RP2", "timestamp": "2026-05-26T12:04:10+00:00"}
+{"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./planned-output/raw-row-refusal.json", "sha256": "sha256:fb4800f2a0d44f8c80e7fd2cd0e5285b1d9db1d007edd957351ce3d2f5b7130a", "size": 689, "status": "succeeded", "timestamp": "2026-05-26T12:04:11+00:00"}

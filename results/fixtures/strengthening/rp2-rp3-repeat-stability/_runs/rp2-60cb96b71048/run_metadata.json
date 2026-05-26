@@ -1,0 +1,30 @@
+{
+  "adapter_id": "local_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/planned_fixture_runner.py",
+    "--task-id",
+    "privacy-preserving-aggregate",
+    "--output",
+    "./planned-output/privacy-preserving-aggregate.json"
+  ],
+  "contract_id": "tabular-privacy-synthetic-privacy-preserving-aggregate",
+  "dry_run": false,
+  "prepared_at": "2026-05-26T12:04:25+00:00",
+  "profile_hash": "7f671673b37f9b78cdb02475da028c18173538fcd42b85ff07aff05dc7e58d94",
+  "profile_id": "RP2",
+  "repeat_id": 2,
+  "run_id": "rp2-60cb96b71048",
+  "skill_artifact": "local-fixture",
+  "skill_id": "tabular-privacy-synthetic",
+  "task_id": "privacy-preserving-aggregate",
+  "task_prompt_hash": "sha256:19b74d2abc020010c7a17d93e5a863ece193488af0b862a51ea5d434d862cb7c",
+  "task_prompt_ref": "benchmark/tasks/tabular-privacy-synthetic/privacy-preserving-aggregate.txt",
+  "variant_id": "tabular-privacy-synthetic.p2.privacy-preserving-aggregate",
+  "workspace_copied_file_count": 7,
+  "workspace_mode": "copied_seed_workspace",
+  "workspace_seed": "<repo>/benchmark/workspaces/tabular-privacy-synthetic-planned-mini",
+  "workspace_seed_id": "planned-inclusion-tabular-privacy-synthetic-privacy-preserving-aggregate-rp2",
+  "workspace_snapshot_hash": "60d628f62fdb35fc42f88c9c25ba56a3f14d9af3f2f44de9d95cf188f3c88dc7"
+}

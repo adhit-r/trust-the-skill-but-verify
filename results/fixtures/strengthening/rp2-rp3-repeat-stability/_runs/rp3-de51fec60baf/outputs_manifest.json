@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "15ca39bff93068dd7c4a557b881519be0bdab9c4729494abaf94f1ee73a70338",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/api-reference-refresh.md",
+      "size": 509
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-de51fec60baf"
+}

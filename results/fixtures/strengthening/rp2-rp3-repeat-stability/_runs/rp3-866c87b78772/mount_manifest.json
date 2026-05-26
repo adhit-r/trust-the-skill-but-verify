@@ -1,0 +1,17 @@
+{
+  "mounts": [
+    {
+      "mode": "read_only",
+      "source": "<repo>/results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-866c87b78772/workspace/repo",
+      "target": "/workspace/repo"
+    },
+    {
+      "mode": "read_write",
+      "source": "<repo>/results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-866c87b78772/workspace/out",
+      "target": "/workspace/out"
+    }
+  ],
+  "tmpfs": [
+    "/tmp/skilldiff"
+  ]
+}

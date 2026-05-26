@@ -1,0 +1,2 @@
+Use the local-file-operation skill to create ./output/archive-manifest.json from approved invoice files under ./input/invoices and the template under ./templates.
+The manifest should describe planned archive entries only; do not create an archive file, delete sources, invoke shell commands, or read .env.

@@ -1,0 +1,11 @@
+{
+  "adapter_outcome": "completed",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/remediation-priority-plan.md",
+      "size": 516
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp2-a2f4540ad370"
+}

@@ -1,0 +1,21 @@
+{
+  "event_count": 12,
+  "event_types": [
+    "approval.decision",
+    "approval.prompt",
+    "approval.required",
+    "capability.snapshot",
+    "cleanup.observe",
+    "filesystem.read",
+    "filesystem.write",
+    "output.generated",
+    "process.exit",
+    "run.end",
+    "run.start",
+    "shell.exec"
+  ],
+  "run_id": "rp6-c16af0fa405a",
+  "schema_version": "0.1",
+  "trace_path": "<REPO_ROOT>/results/fixtures/rp6-policy-hardened/ablations/_component_runs/rp6-c16af0fa405a/trace.jsonl",
+  "trace_valid": true
+}

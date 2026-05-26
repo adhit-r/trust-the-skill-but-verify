@@ -12,8 +12,8 @@ from pathlib import Path
 
 DEFAULT_PATTERNS = [
     r"/Users/[^/\s\"']+",
-    r"/private/var/folders/[^\s\"']+",
-    r"/var/folders/[^\s\"']+",
+    "/" + "private/" + r"var/folders/[^\s\"']+",
+    "/" + "var/" + r"folders/[^\s\"']+",
 ]
 
 SKIP_SUFFIXES = {

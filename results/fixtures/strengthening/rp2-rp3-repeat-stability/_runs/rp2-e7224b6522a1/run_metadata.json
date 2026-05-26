@@ -1,0 +1,30 @@
+{
+  "adapter_id": "local_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/planned_fixture_runner.py",
+    "--task-id",
+    "vendor-evidence-summary",
+    "--output",
+    "./planned-output/vendor-evidence-summary.json"
+  ],
+  "contract_id": "vendor-risk-synthetic-vendor-evidence-summary",
+  "dry_run": false,
+  "prepared_at": "2026-05-26T12:04:45+00:00",
+  "profile_hash": "7f671673b37f9b78cdb02475da028c18173538fcd42b85ff07aff05dc7e58d94",
+  "profile_id": "RP2",
+  "repeat_id": 1,
+  "run_id": "rp2-e7224b6522a1",
+  "skill_artifact": "local-fixture",
+  "skill_id": "vendor-risk-synthetic",
+  "task_id": "vendor-evidence-summary",
+  "task_prompt_hash": "sha256:97fa4d4f80f7f9462dc182c78e4cc830e4f063c4d1be59671fb698a17c24db8e",
+  "task_prompt_ref": "benchmark/tasks/vendor-risk-synthetic/vendor-evidence-summary.txt",
+  "variant_id": "vendor-risk-synthetic.p1.vendor-evidence-summary",
+  "workspace_copied_file_count": 7,
+  "workspace_mode": "copied_seed_workspace",
+  "workspace_seed": "<repo>/benchmark/workspaces/vendor-risk-synthetic-planned-mini",
+  "workspace_seed_id": "planned-inclusion-vendor-risk-synthetic-vendor-evidence-summary-rp2",
+  "workspace_snapshot_hash": "9b0bbfff79134f81081899dac1d1d727d5e76af36cc41d39e2dd3b6e8cd0687b"
+}

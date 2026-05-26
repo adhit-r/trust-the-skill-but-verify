@@ -1,0 +1,30 @@
+{
+  "adapter_id": "local_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/planned_fixture_runner.py",
+    "--task-id",
+    "citation-inventory",
+    "--output",
+    "./planned-output/citation-inventory.json"
+  ],
+  "contract_id": "citation-normalizer-synthetic-citation-inventory",
+  "dry_run": false,
+  "prepared_at": "2026-05-26T12:02:36+00:00",
+  "profile_hash": "7f671673b37f9b78cdb02475da028c18173538fcd42b85ff07aff05dc7e58d94",
+  "profile_id": "RP2",
+  "repeat_id": 1,
+  "run_id": "rp2-eb3706191109",
+  "skill_artifact": "local-fixture",
+  "skill_id": "citation-normalizer-synthetic",
+  "task_id": "citation-inventory",
+  "task_prompt_hash": "sha256:5c3f40ef7564c227c30712c535097c2994b02fcdbb94186f347328c43eda2d79",
+  "task_prompt_ref": "benchmark/tasks/citation-normalizer-synthetic/citation-inventory.txt",
+  "variant_id": "citation-normalizer-synthetic.p1.citation-inventory",
+  "workspace_copied_file_count": 7,
+  "workspace_mode": "copied_seed_workspace",
+  "workspace_seed": "<repo>/benchmark/workspaces/citation-normalizer-synthetic-planned-mini",
+  "workspace_seed_id": "planned-inclusion-citation-normalizer-synthetic-citation-inventory-rp2",
+  "workspace_snapshot_hash": "9d7382aedac1ae3d1d2e2b4bb373cb96603f2cf08284da988075bea65fe8f697"
+}

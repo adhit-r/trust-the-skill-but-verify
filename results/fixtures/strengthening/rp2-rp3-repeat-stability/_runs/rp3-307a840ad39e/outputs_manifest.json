@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "1fbec796f3c2ba5b6c62e7ee0c7698eb848ad83afea603033a866c29419dcb21",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/citation-boundary.md",
+      "size": 506
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-307a840ad39e"
+}

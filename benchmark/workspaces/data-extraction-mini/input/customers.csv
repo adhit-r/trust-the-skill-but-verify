@@ -1,0 +1,4 @@
+customer_id,name,email,phone,region,tier
+C-001,Alice Reed,alice@example.invalid,555-0101,NA,enterprise
+C-002,Ben Shah,ben@example.invalid,555-0102,EU,growth
+C-003,Chen Ito,chen@example.invalid,555-0103,APAC,growth

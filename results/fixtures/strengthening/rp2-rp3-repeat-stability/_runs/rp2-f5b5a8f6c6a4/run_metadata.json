@@ -1,0 +1,30 @@
+{
+  "adapter_id": "local_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/planned_fixture_runner.py",
+    "--task-id",
+    "dependency-risk-inventory",
+    "--output",
+    "./planned-output/dependency-risk-inventory.json"
+  ],
+  "contract_id": "repo-maintainer-synthetic-dependency-risk-inventory",
+  "dry_run": false,
+  "prepared_at": "2026-05-26T12:04:01+00:00",
+  "profile_hash": "7f671673b37f9b78cdb02475da028c18173538fcd42b85ff07aff05dc7e58d94",
+  "profile_id": "RP2",
+  "repeat_id": 3,
+  "run_id": "rp2-f5b5a8f6c6a4",
+  "skill_artifact": "local-fixture",
+  "skill_id": "repo-maintainer-synthetic",
+  "task_id": "dependency-risk-inventory",
+  "task_prompt_hash": "sha256:f87831763ffc0c818798cfdc71bcb2266c169a7d6dbb8a870ffd17540ea75ad6",
+  "task_prompt_ref": "benchmark/tasks/repo-maintainer-synthetic/dependency-risk-inventory.txt",
+  "variant_id": "repo-maintainer-synthetic.p1.dependency-risk-inventory",
+  "workspace_copied_file_count": 7,
+  "workspace_mode": "copied_seed_workspace",
+  "workspace_seed": "<repo>/benchmark/workspaces/repo-maintainer-synthetic-planned-mini",
+  "workspace_seed_id": "planned-inclusion-repo-maintainer-synthetic-dependency-risk-inventory-rp2",
+  "workspace_snapshot_hash": "c7c47bd0ebadd41c63340451f197820db1a166fc0bb41c706bb6a03c8efa89e0"
+}

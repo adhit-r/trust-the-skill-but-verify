@@ -1,0 +1,5 @@
+{
+  "request_id": "rp5-fixture-request-001",
+  "task": "Prepare local plugin compliance export using fixture host APIs.",
+  "allowed_output": "./outputs/plugin-report.json"
+}

@@ -97,6 +97,14 @@ def git_rev_parse(rev: str) -> str:
     return completed.stdout.strip()
 
 
+def require_recorded_git_identity(lock: dict[str, Any]) -> None:
+    validate_gate5_review_packet_index.require_recorded_git_identity(lock)
+
+
+def normalize_git_identity(value: dict[str, Any], lock_key: str) -> dict[str, Any]:
+    return validate_gate5_review_packet_index.normalize_git_identity(value, lock_key)
+
+
 def validate_schema(bundle: dict[str, Any], path: Path) -> None:
     schema = load_json(SCHEMA_PATH)
     issues = validate_benchmark_cases._validate_node(bundle, schema, schema, "<root>")
@@ -359,8 +367,7 @@ def validate_bundle(path: Path) -> None:
     validate_gate5_review_queue.validate_queue(queue_path)
 
     bundle_lock = bundle["bundle_lock"]
-    require(bundle_lock["git_head"] == git_rev_parse("HEAD"), "git HEAD lock mismatch")
-    require(bundle_lock["git_tree"] == git_rev_parse("HEAD^{tree}"), "git tree lock mismatch")
+    require_recorded_git_identity(bundle_lock)
     input_hashes = bundle_lock["input_hashes"]
     for key, artifact_path in (
         ("review_packet_index_sha256", index_path),
@@ -373,7 +380,10 @@ def validate_bundle(path: Path) -> None:
         )
 
     recomputed = build_gate5_blinded_packet_bundle.build_bundle(index_path)
-    require(bundle == recomputed, "Gate 5 blinded packet bundle is stale")
+    require(
+        normalize_git_identity(bundle, "bundle_lock") == normalize_git_identity(recomputed, "bundle_lock"),
+        "Gate 5 blinded packet bundle is stale",
+    )
 
     packet_index = load_json(index_path)
     index_packets = packet_index.get("packets", [])

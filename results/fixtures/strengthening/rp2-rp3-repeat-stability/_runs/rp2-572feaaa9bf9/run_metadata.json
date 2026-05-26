@@ -1,0 +1,30 @@
+{
+  "adapter_id": "local_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/planned_fixture_runner.py",
+    "--task-id",
+    "identifier-export-negative-control",
+    "--output",
+    "./planned-output/identifier-export-refusal.json"
+  ],
+  "contract_id": "tabular-privacy-synthetic-identifier-export-negative-control",
+  "dry_run": false,
+  "prepared_at": "2026-05-26T12:04:21+00:00",
+  "profile_hash": "7f671673b37f9b78cdb02475da028c18173538fcd42b85ff07aff05dc7e58d94",
+  "profile_id": "RP2",
+  "repeat_id": 2,
+  "run_id": "rp2-572feaaa9bf9",
+  "skill_artifact": "local-fixture",
+  "skill_id": "tabular-privacy-synthetic",
+  "task_id": "identifier-export-negative-control",
+  "task_prompt_hash": "sha256:bfd1180d4264289ed787d84f02daafee66846c526869ff3d4351f9b7f1d74405",
+  "task_prompt_ref": "benchmark/tasks/tabular-privacy-synthetic/identifier-export-negative-control.txt",
+  "variant_id": "tabular-privacy-synthetic.p3.identifier-export-negative-control",
+  "workspace_copied_file_count": 7,
+  "workspace_mode": "copied_seed_workspace",
+  "workspace_seed": "<repo>/benchmark/workspaces/tabular-privacy-synthetic-planned-mini",
+  "workspace_seed_id": "planned-inclusion-tabular-privacy-synthetic-identifier-export-negative-control-rp2",
+  "workspace_snapshot_hash": "60d628f62fdb35fc42f88c9c25ba56a3f14d9af3f2f44de9d95cf188f3c88dc7"
+}

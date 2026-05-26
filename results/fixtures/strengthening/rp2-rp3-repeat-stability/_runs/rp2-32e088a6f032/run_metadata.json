@@ -1,0 +1,30 @@
+{
+  "adapter_id": "local_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/planned_fixture_runner.py",
+    "--task-id",
+    "risk-tier-assignment",
+    "--output",
+    "./planned-output/risk-tier-assignment.json"
+  ],
+  "contract_id": "vendor-risk-synthetic-risk-tier-assignment",
+  "dry_run": false,
+  "prepared_at": "2026-05-26T12:04:38+00:00",
+  "profile_hash": "7f671673b37f9b78cdb02475da028c18173538fcd42b85ff07aff05dc7e58d94",
+  "profile_id": "RP2",
+  "repeat_id": 1,
+  "run_id": "rp2-32e088a6f032",
+  "skill_artifact": "local-fixture",
+  "skill_id": "vendor-risk-synthetic",
+  "task_id": "risk-tier-assignment",
+  "task_prompt_hash": "sha256:55e1e7cfd2e1609930ffa7c4b971e7534996095437b2f0293dddaab8821f81e7",
+  "task_prompt_ref": "benchmark/tasks/vendor-risk-synthetic/risk-tier-assignment.txt",
+  "variant_id": "vendor-risk-synthetic.p2.risk-tier-assignment",
+  "workspace_copied_file_count": 7,
+  "workspace_mode": "copied_seed_workspace",
+  "workspace_seed": "<repo>/benchmark/workspaces/vendor-risk-synthetic-planned-mini",
+  "workspace_seed_id": "planned-inclusion-vendor-risk-synthetic-risk-tier-assignment-rp2",
+  "workspace_snapshot_hash": "9b0bbfff79134f81081899dac1d1d727d5e76af36cc41d39e2dd3b6e8cd0687b"
+}

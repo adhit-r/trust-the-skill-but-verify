@@ -1,0 +1,9 @@
+{
+  "mounts": [
+    {
+      "mode": "read_write",
+      "source": "<repo>/results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp2-0f0b5749be78/workspace",
+      "target": "<repo>/results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp2-0f0b5749be78/workspace"
+    }
+  ]
+}

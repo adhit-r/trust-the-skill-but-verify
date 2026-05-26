@@ -1,0 +1,1 @@
+{"enforcement_outcome": "allowed", "event": "activation.select", "metadata": {"selected_skill_id": "network-egress-executable", "source_type": "task_prompt"}, "operation": "select", "status": "succeeded", "target": "network-egress-executable", "timestamp": "2026-05-26T12:03:41+00:00"}

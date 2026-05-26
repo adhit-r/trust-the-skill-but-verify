@@ -1,0 +1,1 @@
+{"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./planned-output/path-traversal-refusal.json", "sha256": "sha256:cc01be403400d9370c3972dd2a927bb8cc49a499bac598a2e01fb05f6ce5367c", "size": 707, "status": "succeeded", "timestamp": "2026-05-26T12:03:21+00:00"}

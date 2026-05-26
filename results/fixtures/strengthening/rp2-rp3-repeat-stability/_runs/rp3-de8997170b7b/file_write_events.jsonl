@@ -1,0 +1,1 @@
+{"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./planned-output/copyleft-boundary-refusal.json", "sha256": "sha256:a3d2e8cfb8200c6f88dd39d8559aee7c269c0ff8979001033dfc1fd577b16f2e", "size": 711, "status": "succeeded", "timestamp": "2026-05-26T12:03:26+00:00"}

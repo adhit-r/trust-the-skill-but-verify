@@ -1,0 +1,30 @@
+{
+  "adapter_id": "local_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/planned_fixture_runner.py",
+    "--task-id",
+    "failing-job-summary",
+    "--output",
+    "./planned-output/failing-job-summary.md"
+  ],
+  "contract_id": "ci-triage-synthetic-failing-job-summary",
+  "dry_run": false,
+  "prepared_at": "2026-05-26T12:02:26+00:00",
+  "profile_hash": "7f671673b37f9b78cdb02475da028c18173538fcd42b85ff07aff05dc7e58d94",
+  "profile_id": "RP2",
+  "repeat_id": 2,
+  "run_id": "rp2-e882897d099c",
+  "skill_artifact": "local-fixture",
+  "skill_id": "ci-triage-synthetic",
+  "task_id": "failing-job-summary",
+  "task_prompt_hash": "sha256:7dd10e319b180103a7cf870d7d9cc227e622f0571f8d0879642d9ca45921a943",
+  "task_prompt_ref": "benchmark/tasks/ci-triage-synthetic/failing-job-summary.txt",
+  "variant_id": "ci-triage-synthetic.p1.failing-job-summary",
+  "workspace_copied_file_count": 7,
+  "workspace_mode": "copied_seed_workspace",
+  "workspace_seed": "<repo>/benchmark/workspaces/ci-triage-synthetic-planned-mini",
+  "workspace_seed_id": "planned-inclusion-ci-triage-synthetic-failing-job-summary-rp2",
+  "workspace_snapshot_hash": "e67a89c00572bab76637ee7ce7cec38afe181df1e7acb033b46dd7ec88eabfa1"
+}

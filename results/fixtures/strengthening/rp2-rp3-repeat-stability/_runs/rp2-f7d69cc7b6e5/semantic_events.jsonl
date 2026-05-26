@@ -1,0 +1,1 @@
+{"enforcement_outcome": "allowed", "event": "activation.select", "metadata": {"selected_skill_id": "doc-packager-synthetic", "source_type": "task_prompt"}, "operation": "select", "status": "succeeded", "target": "doc-packager-synthetic", "timestamp": "2026-05-26T12:03:04+00:00"}

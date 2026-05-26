@@ -1,0 +1,2 @@
+{"copied_file_count": 7, "event": "workspace_seed_copied", "path": "<repo>/benchmark/workspaces/repo-maintainer-synthetic-planned-mini", "profile_id": "RP2", "timestamp": "2026-05-26T12:03:55+00:00"}
+{"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./planned-output/ci-failure-triage.md", "sha256": "sha256:a6b084a96016905a4a530cb8d727b6fe58d22e10f9f50fecf1adad789301fa72", "size": 504, "status": "succeeded", "timestamp": "2026-05-26T12:03:55+00:00"}

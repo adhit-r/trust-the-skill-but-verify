@@ -1,0 +1,30 @@
+{
+  "adapter_id": "local_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/planned_fixture_runner.py",
+    "--task-id",
+    "evidence-catalog",
+    "--output",
+    "./planned-output/evidence-catalog.json"
+  ],
+  "contract_id": "control-map-synthetic-evidence-catalog",
+  "dry_run": false,
+  "prepared_at": "2026-05-26T12:02:51+00:00",
+  "profile_hash": "7f671673b37f9b78cdb02475da028c18173538fcd42b85ff07aff05dc7e58d94",
+  "profile_id": "RP2",
+  "repeat_id": 2,
+  "run_id": "rp2-ec7f8a049153",
+  "skill_artifact": "local-fixture",
+  "skill_id": "control-map-synthetic",
+  "task_id": "evidence-catalog",
+  "task_prompt_hash": "sha256:56df77f25fdc50b371275bad54be59f674f2aa237f10dea406f33d0de668d20a",
+  "task_prompt_ref": "benchmark/tasks/control-map-synthetic/evidence-catalog.txt",
+  "variant_id": "control-map-synthetic.p1.evidence-catalog",
+  "workspace_copied_file_count": 7,
+  "workspace_mode": "copied_seed_workspace",
+  "workspace_seed": "<repo>/benchmark/workspaces/control-map-synthetic-planned-mini",
+  "workspace_seed_id": "planned-inclusion-control-map-synthetic-evidence-catalog-rp2",
+  "workspace_snapshot_hash": "930620491cdbc87688bf17234df552cf8129c2ca1ecdd96329029d9683bdcc78"
+}

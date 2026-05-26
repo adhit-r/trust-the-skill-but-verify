@@ -1,0 +1,1 @@
+{"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./planned-output/tool-inventory.json", "sha256": "sha256:55a537b92ccab9e25bc1cc22dbf40366f576c8e3a9a80bda6eafd9f9d3f41f77", "size": 680, "status": "succeeded", "timestamp": "2026-05-26T12:03:41+00:00"}

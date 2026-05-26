@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "8fce02ff7d253664d20143fcea1e0c847e5b2ae4d7e213b202645ac2252dd1df",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/control-gap-register.json",
+      "size": 679
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-3ad8e49d9f29"
+}

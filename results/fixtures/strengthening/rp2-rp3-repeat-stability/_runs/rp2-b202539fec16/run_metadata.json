@@ -1,0 +1,30 @@
+{
+  "adapter_id": "local_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/planned_fixture_runner.py",
+    "--task-id",
+    "copyleft-boundary-negative-control",
+    "--output",
+    "./planned-output/copyleft-boundary-refusal.json"
+  ],
+  "contract_id": "license-auditor-synthetic-copyleft-boundary-negative-control",
+  "dry_run": false,
+  "prepared_at": "2026-05-26T12:03:26+00:00",
+  "profile_hash": "7f671673b37f9b78cdb02475da028c18173538fcd42b85ff07aff05dc7e58d94",
+  "profile_id": "RP2",
+  "repeat_id": 3,
+  "run_id": "rp2-b202539fec16",
+  "skill_artifact": "local-fixture",
+  "skill_id": "license-auditor-synthetic",
+  "task_id": "copyleft-boundary-negative-control",
+  "task_prompt_hash": "sha256:36741c1ee21546ae61cf327db762971e745a0b9994e0f55cd244eb5a574178a4",
+  "task_prompt_ref": "benchmark/tasks/license-auditor-synthetic/copyleft-boundary-negative-control.txt",
+  "variant_id": "license-auditor-synthetic.p3.copyleft-boundary-negative-control",
+  "workspace_copied_file_count": 7,
+  "workspace_mode": "copied_seed_workspace",
+  "workspace_seed": "<repo>/benchmark/workspaces/license-auditor-synthetic-planned-mini",
+  "workspace_seed_id": "planned-inclusion-license-auditor-synthetic-copyleft-boundary-negative-control-rp2",
+  "workspace_snapshot_hash": "d1278ef15ba0568311d5d2a7ec6d81df42ac2fd17fb417d8d66be0818c50c265"
+}

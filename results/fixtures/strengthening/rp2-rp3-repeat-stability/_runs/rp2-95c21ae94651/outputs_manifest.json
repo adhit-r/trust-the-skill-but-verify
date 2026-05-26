@@ -1,0 +1,11 @@
+{
+  "adapter_outcome": "completed",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/failing-job-summary.md",
+      "size": 502
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp2-95c21ae94651"
+}

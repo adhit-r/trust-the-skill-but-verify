@@ -1,0 +1,1 @@
+{"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./planned-output/connector-negative-control.json", "sha256": "sha256:a6d9766cd3d7ae85105bd3def2495b51305dee664721be71181aa164561c2880", "size": 697, "status": "succeeded", "timestamp": "2026-05-26T12:02:25+00:00"}

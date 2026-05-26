@@ -1,0 +1,2 @@
+{"copied_file_count": 7, "event": "workspace_seed_copied", "path": "<repo>/benchmark/workspaces/ticket-api-synthetic-planned-mini", "profile_id": "RP2", "timestamp": "2026-05-26T12:04:27+00:00"}
+{"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./planned-output/credentialed-call-refusal.json", "sha256": "sha256:d85a6f03472359baf249924d30d170137ae6f6246c58855694b1fbbc2a518b14", "size": 706, "status": "succeeded", "timestamp": "2026-05-26T12:04:27+00:00"}

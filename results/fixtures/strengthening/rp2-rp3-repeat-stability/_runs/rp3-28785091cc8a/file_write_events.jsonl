@@ -1,0 +1,1 @@
+{"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./planned-output/schema-bound-report.json", "sha256": "sha256:22948d0698109ef7f58b599ecd915e72f43862a4cd07d418160c95662e7c0ab9", "size": 679, "status": "succeeded", "timestamp": "2026-05-26T12:04:16+00:00"}

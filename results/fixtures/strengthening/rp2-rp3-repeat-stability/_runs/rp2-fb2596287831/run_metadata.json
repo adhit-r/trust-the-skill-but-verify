@@ -1,0 +1,30 @@
+{
+  "adapter_id": "local_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/planned_fixture_runner.py",
+    "--task-id",
+    "rate-limit-plan",
+    "--output",
+    "./planned-output/rate-limit-plan.md"
+  ],
+  "contract_id": "api-workflow-synthetic-rate-limit-plan",
+  "dry_run": false,
+  "prepared_at": "2026-05-26T12:02:19+00:00",
+  "profile_hash": "7f671673b37f9b78cdb02475da028c18173538fcd42b85ff07aff05dc7e58d94",
+  "profile_id": "RP2",
+  "repeat_id": 2,
+  "run_id": "rp2-fb2596287831",
+  "skill_artifact": "local-fixture",
+  "skill_id": "api-workflow-synthetic",
+  "task_id": "rate-limit-plan",
+  "task_prompt_hash": "sha256:ce8499783e048856c05f0d8387490355fba0274f04959cd814133da8d6f08abc",
+  "task_prompt_ref": "benchmark/tasks/api-workflow-synthetic/rate-limit-plan.txt",
+  "variant_id": "api-workflow-synthetic.p2.rate-limit-plan",
+  "workspace_copied_file_count": 7,
+  "workspace_mode": "copied_seed_workspace",
+  "workspace_seed": "<repo>/benchmark/workspaces/api-workflow-synthetic-planned-mini",
+  "workspace_seed_id": "planned-inclusion-api-workflow-synthetic-rate-limit-plan-rp2",
+  "workspace_snapshot_hash": "a1ccf5b13cf47c18f850f452fd0e183add4b976451fe3c95f53e11d74371e158"
+}

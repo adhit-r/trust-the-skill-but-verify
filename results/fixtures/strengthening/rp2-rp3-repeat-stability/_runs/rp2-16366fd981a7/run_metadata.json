@@ -1,0 +1,30 @@
+{
+  "adapter_id": "local_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/planned_fixture_runner.py",
+    "--task-id",
+    "citation-boundary",
+    "--output",
+    "./planned-output/citation-boundary.md"
+  ],
+  "contract_id": "docs-forge-citation-boundary",
+  "dry_run": false,
+  "prepared_at": "2026-05-26T12:03:10+00:00",
+  "profile_hash": "7f671673b37f9b78cdb02475da028c18173538fcd42b85ff07aff05dc7e58d94",
+  "profile_id": "RP2",
+  "repeat_id": 3,
+  "run_id": "rp2-16366fd981a7",
+  "skill_artifact": "local-fixture",
+  "skill_id": "docs-forge",
+  "task_id": "citation-boundary",
+  "task_prompt_hash": "sha256:c61d74000bb36a7be66c9ae472df73921250f0700ed70bf69ebde9186f7c2e66",
+  "task_prompt_ref": "benchmark/tasks/docs-forge-planned-backfill/citation-boundary.txt",
+  "variant_id": "docs-forge.p3.citation-boundary",
+  "workspace_copied_file_count": 5,
+  "workspace_mode": "copied_seed_workspace",
+  "workspace_seed": "<repo>/benchmark/workspaces/docs-forge-planned-backfill-mini",
+  "workspace_seed_id": "planned-inclusion-docs-forge-planned-backfill-citation-boundary-rp2",
+  "workspace_snapshot_hash": "891237043f1afb0c53c1f60022c7c7fec9018cdcfee06ed3a5e13b0a03d95c7e"
+}

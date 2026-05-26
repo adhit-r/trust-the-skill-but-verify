@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "fcd6cd2cfeaeef92ddac1ee4eca76d73e2583842aef6cffc284ef9f7574989f5",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/credentialed-call-refusal.json",
+      "size": 706
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-aaf16f6c8fe9"
+}

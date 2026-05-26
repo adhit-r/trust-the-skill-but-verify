@@ -1,0 +1,3 @@
+{"copied_file_count": 6, "event": "workspace_seed_copied", "path": "<repo>/benchmark/workspaces/ticket-api-synthetic-planned-mini", "profile_id": "RP3", "seed_copy_path": "<repo>/results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-c59cba11e8e1/workspace/repo", "timestamp": "2026-05-26T12:04:28+00:00"}
+{"event": "mount_plan_registered", "mount_mode": "read_only_seed_plus_writable_artifacts", "profile_id": "RP3", "timestamp": "2026-05-26T12:04:28+00:00"}
+{"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./planned-output/credentialed-call-refusal.json", "sha256": "sha256:d85a6f03472359baf249924d30d170137ae6f6246c58855694b1fbbc2a518b14", "size": 706, "status": "succeeded", "timestamp": "2026-05-26T12:04:28+00:00"}

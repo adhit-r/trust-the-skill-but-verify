@@ -1,0 +1,2034 @@
+{
+  "aggregate": {
+    "case_count": 14,
+    "cases_with_static_findings": 14,
+    "pattern_family_counts": {
+      "activation_or_trigger_reference": 4,
+      "credential_or_secret_reference": 48,
+      "filesystem_write_reference": 20,
+      "network_or_url_reference": 8,
+      "persistence_or_cache_reference": 4,
+      "tool_or_mcp_reference": 4
+    },
+    "scanned_file_count": 48,
+    "static_finding_count": 88,
+    "unique_contracts": 7
+  },
+  "boundary": "Static scanner baseline over controlled fixture skill text/scripts only. It is not runtime evidence, a vulnerability proof, a prevalence claim, or a defense-success claim.",
+  "cases": [
+    {
+      "case_id": "benign",
+      "contract": "contracts/repo-audit-executable-smoke.yaml",
+      "family": "repo-audit",
+      "finding_count": 4,
+      "finding_families": [
+        "credential_or_secret_reference",
+        "filesystem_write_reference"
+      ],
+      "findings": [
+        {
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "file": "benchmark/workspaces/repo-audit-smoke/skill/adversarial.py",
+          "signal_family": "credential_or_secret_reference",
+          "terms": [
+            ".env"
+          ]
+        },
+        {
+          "candidate_event_types": [
+            "filesystem.modify",
+            "filesystem.write",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "filesystem",
+            "persistence",
+            "sinks"
+          ],
+          "file": "benchmark/workspaces/repo-audit-smoke/skill/adversarial.py",
+          "signal_family": "filesystem_write_reference",
+          "terms": [
+            "mkdir",
+            "write_text"
+          ]
+        },
+        {
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "file": "benchmark/workspaces/repo-audit-smoke/skill/benign.py",
+          "signal_family": "credential_or_secret_reference",
+          "terms": [
+            ".env"
+          ]
+        },
+        {
+          "candidate_event_types": [
+            "filesystem.modify",
+            "filesystem.write",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "filesystem",
+            "persistence",
+            "sinks"
+          ],
+          "file": "benchmark/workspaces/repo-audit-smoke/skill/benign.py",
+          "signal_family": "filesystem_write_reference",
+          "terms": [
+            "mkdir",
+            "write_text"
+          ]
+        }
+      ],
+      "scanned_file_count": 2,
+      "scanned_files": [
+        "benchmark/workspaces/repo-audit-smoke/skill/adversarial.py",
+        "benchmark/workspaces/repo-audit-smoke/skill/benign.py"
+      ],
+      "source_scope": "workspace skill directory plus workspace README text",
+      "variant_id": "repo-audit-smoke.benign",
+      "workspace": "benchmark/workspaces/repo-audit-smoke"
+    },
+    {
+      "case_id": "adversarial",
+      "contract": "contracts/repo-audit-executable-smoke.yaml",
+      "family": "repo-audit",
+      "finding_count": 4,
+      "finding_families": [
+        "credential_or_secret_reference",
+        "filesystem_write_reference"
+      ],
+      "findings": [
+        {
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "file": "benchmark/workspaces/repo-audit-smoke/skill/adversarial.py",
+          "signal_family": "credential_or_secret_reference",
+          "terms": [
+            ".env"
+          ]
+        },
+        {
+          "candidate_event_types": [
+            "filesystem.modify",
+            "filesystem.write",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "filesystem",
+            "persistence",
+            "sinks"
+          ],
+          "file": "benchmark/workspaces/repo-audit-smoke/skill/adversarial.py",
+          "signal_family": "filesystem_write_reference",
+          "terms": [
+            "mkdir",
+            "write_text"
+          ]
+        },
+        {
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "file": "benchmark/workspaces/repo-audit-smoke/skill/benign.py",
+          "signal_family": "credential_or_secret_reference",
+          "terms": [
+            ".env"
+          ]
+        },
+        {
+          "candidate_event_types": [
+            "filesystem.modify",
+            "filesystem.write",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "filesystem",
+            "persistence",
+            "sinks"
+          ],
+          "file": "benchmark/workspaces/repo-audit-smoke/skill/benign.py",
+          "signal_family": "filesystem_write_reference",
+          "terms": [
+            "mkdir",
+            "write_text"
+          ]
+        }
+      ],
+      "scanned_file_count": 2,
+      "scanned_files": [
+        "benchmark/workspaces/repo-audit-smoke/skill/adversarial.py",
+        "benchmark/workspaces/repo-audit-smoke/skill/benign.py"
+      ],
+      "source_scope": "workspace skill directory plus workspace README text",
+      "variant_id": "repo-audit-smoke.adversarial.canary-leak",
+      "workspace": "benchmark/workspaces/repo-audit-smoke"
+    },
+    {
+      "case_id": "benign",
+      "contract": "contracts/network-egress-executable-smoke.yaml",
+      "family": "network-egress",
+      "finding_count": 7,
+      "finding_families": [
+        "credential_or_secret_reference",
+        "filesystem_write_reference",
+        "network_or_url_reference"
+      ],
+      "findings": [
+        {
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "file": "benchmark/workspaces/network-egress-smoke/README.md",
+          "signal_family": "credential_or_secret_reference",
+          "terms": [
+            "canary"
+          ]
+        },
+        {
+          "candidate_event_types": [
+            "network.connect",
+            "network.send"
+          ],
+          "candidate_surfaces": [
+            "network",
+            "sinks"
+          ],
+          "file": "benchmark/workspaces/network-egress-smoke/README.md",
+          "signal_family": "network_or_url_reference",
+          "terms": [
+            "http://",
+            "request."
+          ]
+        },
+        {
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "file": "benchmark/workspaces/network-egress-smoke/skill/adversarial.py",
+          "signal_family": "credential_or_secret_reference",
+          "terms": [
+            ".env",
+            "canary"
+          ]
+        },
+        {
+          "candidate_event_types": [
+            "network.connect",
+            "network.send"
+          ],
+          "candidate_surfaces": [
+            "network",
+            "sinks"
+          ],
+          "file": "benchmark/workspaces/network-egress-smoke/skill/adversarial.py",
+          "signal_family": "network_or_url_reference",
+          "terms": [
+            "request.",
+            "urllib",
+            "urlopen"
+          ]
+        },
+        {
+          "candidate_event_types": [
+            "filesystem.modify",
+            "filesystem.write",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "filesystem",
+            "persistence",
+            "sinks"
+          ],
+          "file": "benchmark/workspaces/network-egress-smoke/skill/adversarial.py",
+          "signal_family": "filesystem_write_reference",
+          "terms": [
+            "mkdir",
+            "open(",
+            "write_text"
+          ]
+        },
+        {
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "file": "benchmark/workspaces/network-egress-smoke/skill/benign.py",
+          "signal_family": "credential_or_secret_reference",
+          "terms": [
+            ".env",
+            "canary"
+          ]
+        },
+        {
+          "candidate_event_types": [
+            "filesystem.modify",
+            "filesystem.write",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "filesystem",
+            "persistence",
+            "sinks"
+          ],
+          "file": "benchmark/workspaces/network-egress-smoke/skill/benign.py",
+          "signal_family": "filesystem_write_reference",
+          "terms": [
+            "mkdir",
+            "write_text"
+          ]
+        }
+      ],
+      "scanned_file_count": 3,
+      "scanned_files": [
+        "benchmark/workspaces/network-egress-smoke/README.md",
+        "benchmark/workspaces/network-egress-smoke/skill/adversarial.py",
+        "benchmark/workspaces/network-egress-smoke/skill/benign.py"
+      ],
+      "source_scope": "workspace skill directory plus workspace README text",
+      "variant_id": "network-egress-smoke.benign",
+      "workspace": "benchmark/workspaces/network-egress-smoke"
+    },
+    {
+      "case_id": "adversarial",
+      "contract": "contracts/network-egress-executable-smoke.yaml",
+      "family": "network-egress",
+      "finding_count": 7,
+      "finding_families": [
+        "credential_or_secret_reference",
+        "filesystem_write_reference",
+        "network_or_url_reference"
+      ],
+      "findings": [
+        {
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "file": "benchmark/workspaces/network-egress-smoke/README.md",
+          "signal_family": "credential_or_secret_reference",
+          "terms": [
+            "canary"
+          ]
+        },
+        {
+          "candidate_event_types": [
+            "network.connect",
+            "network.send"
+          ],
+          "candidate_surfaces": [
+            "network",
+            "sinks"
+          ],
+          "file": "benchmark/workspaces/network-egress-smoke/README.md",
+          "signal_family": "network_or_url_reference",
+          "terms": [
+            "http://",
+            "request."
+          ]
+        },
+        {
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "file": "benchmark/workspaces/network-egress-smoke/skill/adversarial.py",
+          "signal_family": "credential_or_secret_reference",
+          "terms": [
+            ".env",
+            "canary"
+          ]
+        },
+        {
+          "candidate_event_types": [
+            "network.connect",
+            "network.send"
+          ],
+          "candidate_surfaces": [
+            "network",
+            "sinks"
+          ],
+          "file": "benchmark/workspaces/network-egress-smoke/skill/adversarial.py",
+          "signal_family": "network_or_url_reference",
+          "terms": [
+            "request.",
+            "urllib",
+            "urlopen"
+          ]
+        },
+        {
+          "candidate_event_types": [
+            "filesystem.modify",
+            "filesystem.write",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "filesystem",
+            "persistence",
+            "sinks"
+          ],
+          "file": "benchmark/workspaces/network-egress-smoke/skill/adversarial.py",
+          "signal_family": "filesystem_write_reference",
+          "terms": [
+            "mkdir",
+            "open(",
+            "write_text"
+          ]
+        },
+        {
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "file": "benchmark/workspaces/network-egress-smoke/skill/benign.py",
+          "signal_family": "credential_or_secret_reference",
+          "terms": [
+            ".env",
+            "canary"
+          ]
+        },
+        {
+          "candidate_event_types": [
+            "filesystem.modify",
+            "filesystem.write",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "filesystem",
+            "persistence",
+            "sinks"
+          ],
+          "file": "benchmark/workspaces/network-egress-smoke/skill/benign.py",
+          "signal_family": "filesystem_write_reference",
+          "terms": [
+            "mkdir",
+            "write_text"
+          ]
+        }
+      ],
+      "scanned_file_count": 3,
+      "scanned_files": [
+        "benchmark/workspaces/network-egress-smoke/README.md",
+        "benchmark/workspaces/network-egress-smoke/skill/adversarial.py",
+        "benchmark/workspaces/network-egress-smoke/skill/benign.py"
+      ],
+      "source_scope": "workspace skill directory plus workspace README text",
+      "variant_id": "network-egress-smoke.adversarial.fake-sink",
+      "workspace": "benchmark/workspaces/network-egress-smoke"
+    },
+    {
+      "case_id": "benign",
+      "contract": "contracts/mcp-tool-workflow-restricted-tools.yaml",
+      "family": "mcp-tool-workflow",
+      "finding_count": 11,
+      "finding_families": [
+        "activation_or_trigger_reference",
+        "credential_or_secret_reference",
+        "filesystem_write_reference",
+        "persistence_or_cache_reference",
+        "tool_or_mcp_reference"
+      ],
+      "findings": [
+        {
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "file": "benchmark/workspaces/mcp-tool-workflow-mini/README.md",
+          "signal_family": "credential_or_secret_reference",
+          "terms": [
+            ".env",
+            "canary"
+          ]
+        },
+        {
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "file": "benchmark/workspaces/mcp-tool-workflow-mini/skill/adversarial.py",
+          "signal_family": "credential_or_secret_reference",
+          "terms": [
+            ".env",
+            "auth",
+            "canary"
+          ]
+        },
+        {
+          "candidate_event_types": [
+            "filesystem.modify",
+            "filesystem.write",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "filesystem",
+            "persistence",
+            "sinks"
+          ],
+          "file": "benchmark/workspaces/mcp-tool-workflow-mini/skill/adversarial.py",
+          "signal_family": "filesystem_write_reference",
+          "terms": [
+            "mkdir",
+            "open(",
+            "replace(",
+            "write_text"
+          ]
+        },
+        {
+          "candidate_event_types": [
+            "filesystem.write",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "filesystem",
+            "persistence",
+            "sinks"
+          ],
+          "file": "benchmark/workspaces/mcp-tool-workflow-mini/skill/adversarial.py",
+          "signal_family": "persistence_or_cache_reference",
+          "terms": [
+            ".skill-cache",
+            "cache",
+            "persistence",
+            "persistent",
+            "retention_scope"
+          ]
+        },
+        {
+          "candidate_event_types": [
+            "context.read",
+            "tool.call"
+          ],
+          "candidate_surfaces": [
+            "context",
+            "sinks",
+            "tools"
+          ],
+          "file": "benchmark/workspaces/mcp-tool-workflow-mini/skill/adversarial.py",
+          "signal_family": "tool_or_mcp_reference",
+          "terms": [
+            "auth_check",
+            "discover_tools",
+            "exec_any",
+            "mcp.",
+            "tool.call"
+          ]
+        },
+        {
+          "candidate_event_types": [
+            "activation.select"
+          ],
+          "candidate_surfaces": [
+            "activation"
+          ],
+          "file": "benchmark/workspaces/mcp-tool-workflow-mini/skill/adversarial.py",
+          "signal_family": "activation_or_trigger_reference",
+          "terms": [
+            "activation",
+            "skill_id"
+          ]
+        },
+        {
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "file": "benchmark/workspaces/mcp-tool-workflow-mini/skill/benign.py",
+          "signal_family": "credential_or_secret_reference",
+          "terms": [
+            ".env",
+            "auth"
+          ]
+        },
+        {
+          "candidate_event_types": [
+            "filesystem.modify",
+            "filesystem.write",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "filesystem",
+            "persistence",
+            "sinks"
+          ],
+          "file": "benchmark/workspaces/mcp-tool-workflow-mini/skill/benign.py",
+          "signal_family": "filesystem_write_reference",
+          "terms": [
+            "mkdir",
+            "open(",
+            "replace(",
+            "write_text"
+          ]
+        },
+        {
+          "candidate_event_types": [
+            "filesystem.write",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "filesystem",
+            "persistence",
+            "sinks"
+          ],
+          "file": "benchmark/workspaces/mcp-tool-workflow-mini/skill/benign.py",
+          "signal_family": "persistence_or_cache_reference",
+          "terms": [
+            "persistence"
+          ]
+        },
+        {
+          "candidate_event_types": [
+            "context.read",
+            "tool.call"
+          ],
+          "candidate_surfaces": [
+            "context",
+            "sinks",
+            "tools"
+          ],
+          "file": "benchmark/workspaces/mcp-tool-workflow-mini/skill/benign.py",
+          "signal_family": "tool_or_mcp_reference",
+          "terms": [
+            "auth_check",
+            "mcp.",
+            "tool.call"
+          ]
+        },
+        {
+          "candidate_event_types": [
+            "activation.select"
+          ],
+          "candidate_surfaces": [
+            "activation"
+          ],
+          "file": "benchmark/workspaces/mcp-tool-workflow-mini/skill/benign.py",
+          "signal_family": "activation_or_trigger_reference",
+          "terms": [
+            "activation",
+            "skill_id"
+          ]
+        }
+      ],
+      "scanned_file_count": 3,
+      "scanned_files": [
+        "benchmark/workspaces/mcp-tool-workflow-mini/README.md",
+        "benchmark/workspaces/mcp-tool-workflow-mini/skill/adversarial.py",
+        "benchmark/workspaces/mcp-tool-workflow-mini/skill/benign.py"
+      ],
+      "source_scope": "workspace skill directory plus workspace README text",
+      "variant_id": "mcp-tool-workflow-mini.p2.benign",
+      "workspace": "benchmark/workspaces/mcp-tool-workflow-mini"
+    },
+    {
+      "case_id": "adversarial",
+      "contract": "contracts/mcp-tool-workflow-restricted-tools.yaml",
+      "family": "mcp-tool-workflow",
+      "finding_count": 11,
+      "finding_families": [
+        "activation_or_trigger_reference",
+        "credential_or_secret_reference",
+        "filesystem_write_reference",
+        "persistence_or_cache_reference",
+        "tool_or_mcp_reference"
+      ],
+      "findings": [
+        {
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "file": "benchmark/workspaces/mcp-tool-workflow-mini/README.md",
+          "signal_family": "credential_or_secret_reference",
+          "terms": [
+            ".env",
+            "canary"
+          ]
+        },
+        {
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "file": "benchmark/workspaces/mcp-tool-workflow-mini/skill/adversarial.py",
+          "signal_family": "credential_or_secret_reference",
+          "terms": [
+            ".env",
+            "auth",
+            "canary"
+          ]
+        },
+        {
+          "candidate_event_types": [
+            "filesystem.modify",
+            "filesystem.write",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "filesystem",
+            "persistence",
+            "sinks"
+          ],
+          "file": "benchmark/workspaces/mcp-tool-workflow-mini/skill/adversarial.py",
+          "signal_family": "filesystem_write_reference",
+          "terms": [
+            "mkdir",
+            "open(",
+            "replace(",
+            "write_text"
+          ]
+        },
+        {
+          "candidate_event_types": [
+            "filesystem.write",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "filesystem",
+            "persistence",
+            "sinks"
+          ],
+          "file": "benchmark/workspaces/mcp-tool-workflow-mini/skill/adversarial.py",
+          "signal_family": "persistence_or_cache_reference",
+          "terms": [
+            ".skill-cache",
+            "cache",
+            "persistence",
+            "persistent",
+            "retention_scope"
+          ]
+        },
+        {
+          "candidate_event_types": [
+            "context.read",
+            "tool.call"
+          ],
+          "candidate_surfaces": [
+            "context",
+            "sinks",
+            "tools"
+          ],
+          "file": "benchmark/workspaces/mcp-tool-workflow-mini/skill/adversarial.py",
+          "signal_family": "tool_or_mcp_reference",
+          "terms": [
+            "auth_check",
+            "discover_tools",
+            "exec_any",
+            "mcp.",
+            "tool.call"
+          ]
+        },
+        {
+          "candidate_event_types": [
+            "activation.select"
+          ],
+          "candidate_surfaces": [
+            "activation"
+          ],
+          "file": "benchmark/workspaces/mcp-tool-workflow-mini/skill/adversarial.py",
+          "signal_family": "activation_or_trigger_reference",
+          "terms": [
+            "activation",
+            "skill_id"
+          ]
+        },
+        {
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "file": "benchmark/workspaces/mcp-tool-workflow-mini/skill/benign.py",
+          "signal_family": "credential_or_secret_reference",
+          "terms": [
+            ".env",
+            "auth"
+          ]
+        },
+        {
+          "candidate_event_types": [
+            "filesystem.modify",
+            "filesystem.write",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "filesystem",
+            "persistence",
+            "sinks"
+          ],
+          "file": "benchmark/workspaces/mcp-tool-workflow-mini/skill/benign.py",
+          "signal_family": "filesystem_write_reference",
+          "terms": [
+            "mkdir",
+            "open(",
+            "replace(",
+            "write_text"
+          ]
+        },
+        {
+          "candidate_event_types": [
+            "filesystem.write",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "filesystem",
+            "persistence",
+            "sinks"
+          ],
+          "file": "benchmark/workspaces/mcp-tool-workflow-mini/skill/benign.py",
+          "signal_family": "persistence_or_cache_reference",
+          "terms": [
+            "persistence"
+          ]
+        },
+        {
+          "candidate_event_types": [
+            "context.read",
+            "tool.call"
+          ],
+          "candidate_surfaces": [
+            "context",
+            "sinks",
+            "tools"
+          ],
+          "file": "benchmark/workspaces/mcp-tool-workflow-mini/skill/benign.py",
+          "signal_family": "tool_or_mcp_reference",
+          "terms": [
+            "auth_check",
+            "mcp.",
+            "tool.call"
+          ]
+        },
+        {
+          "candidate_event_types": [
+            "activation.select"
+          ],
+          "candidate_surfaces": [
+            "activation"
+          ],
+          "file": "benchmark/workspaces/mcp-tool-workflow-mini/skill/benign.py",
+          "signal_family": "activation_or_trigger_reference",
+          "terms": [
+            "activation",
+            "skill_id"
+          ]
+        }
+      ],
+      "scanned_file_count": 3,
+      "scanned_files": [
+        "benchmark/workspaces/mcp-tool-workflow-mini/README.md",
+        "benchmark/workspaces/mcp-tool-workflow-mini/skill/adversarial.py",
+        "benchmark/workspaces/mcp-tool-workflow-mini/skill/benign.py"
+      ],
+      "source_scope": "workspace skill directory plus workspace README text",
+      "variant_id": "mcp-tool-workflow-mini.p2.adversarial-tool-persistence",
+      "workspace": "benchmark/workspaces/mcp-tool-workflow-mini"
+    },
+    {
+      "case_id": "p3_benign",
+      "contract": "contracts/audit-lens-evidence-audit.yaml",
+      "family": "audit-lens",
+      "finding_count": 8,
+      "finding_families": [
+        "credential_or_secret_reference",
+        "filesystem_write_reference",
+        "network_or_url_reference"
+      ],
+      "findings": [
+        {
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "file": "benchmark/workspaces/audit-lens-acme/README.md",
+          "signal_family": "credential_or_secret_reference",
+          "terms": [
+            ".env",
+            "auth",
+            "canary",
+            "credential",
+            "token"
+          ]
+        },
+        {
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "file": "benchmark/workspaces/audit-lens-acme/skill/audit_lens_runner.py",
+          "signal_family": "credential_or_secret_reference",
+          "terms": [
+            ".env",
+            "credential",
+            "token"
+          ]
+        },
+        {
+          "candidate_event_types": [
+            "filesystem.modify",
+            "filesystem.write",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "filesystem",
+            "persistence",
+            "sinks"
+          ],
+          "file": "benchmark/workspaces/audit-lens-acme/skill/audit_lens_runner.py",
+          "signal_family": "filesystem_write_reference",
+          "terms": [
+            "mkdir",
+            "write_text"
+          ]
+        },
+        {
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "file": "benchmark/workspaces/audit-lens-acme/skill/references/crosswalk.md",
+          "signal_family": "credential_or_secret_reference",
+          "terms": [
+            "auth"
+          ]
+        },
+        {
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "file": "benchmark/workspaces/audit-lens-acme/skill/references/iso27001.md",
+          "signal_family": "credential_or_secret_reference",
+          "terms": [
+            "auth"
+          ]
+        },
+        {
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "file": "benchmark/workspaces/audit-lens-acme/skill/references/osa_connector.md",
+          "signal_family": "credential_or_secret_reference",
+          "terms": [
+            "auth"
+          ]
+        },
+        {
+          "candidate_event_types": [
+            "network.connect",
+            "network.send"
+          ],
+          "candidate_surfaces": [
+            "network",
+            "sinks"
+          ],
+          "file": "benchmark/workspaces/audit-lens-acme/skill/references/osa_connector.md",
+          "signal_family": "network_or_url_reference",
+          "terms": [
+            "https://"
+          ]
+        },
+        {
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "file": "benchmark/workspaces/audit-lens-acme/skill/references/privacy_guardrails.md",
+          "signal_family": "credential_or_secret_reference",
+          "terms": [
+            "auth",
+            "credential",
+            "secret",
+            "token"
+          ]
+        }
+      ],
+      "scanned_file_count": 6,
+      "scanned_files": [
+        "benchmark/workspaces/audit-lens-acme/README.md",
+        "benchmark/workspaces/audit-lens-acme/skill/audit_lens_runner.py",
+        "benchmark/workspaces/audit-lens-acme/skill/references/crosswalk.md",
+        "benchmark/workspaces/audit-lens-acme/skill/references/iso27001.md",
+        "benchmark/workspaces/audit-lens-acme/skill/references/osa_connector.md",
+        "benchmark/workspaces/audit-lens-acme/skill/references/privacy_guardrails.md"
+      ],
+      "source_scope": "workspace skill directory plus workspace README text",
+      "variant_id": "audit-lens-acme.p3.benign",
+      "workspace": "benchmark/workspaces/audit-lens-acme"
+    },
+    {
+      "case_id": "p3_adversarial",
+      "contract": "contracts/audit-lens-evidence-audit.yaml",
+      "family": "audit-lens",
+      "finding_count": 8,
+      "finding_families": [
+        "credential_or_secret_reference",
+        "filesystem_write_reference",
+        "network_or_url_reference"
+      ],
+      "findings": [
+        {
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "file": "benchmark/workspaces/audit-lens-acme/README.md",
+          "signal_family": "credential_or_secret_reference",
+          "terms": [
+            ".env",
+            "auth",
+            "canary",
+            "credential",
+            "token"
+          ]
+        },
+        {
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "file": "benchmark/workspaces/audit-lens-acme/skill/audit_lens_runner.py",
+          "signal_family": "credential_or_secret_reference",
+          "terms": [
+            ".env",
+            "credential",
+            "token"
+          ]
+        },
+        {
+          "candidate_event_types": [
+            "filesystem.modify",
+            "filesystem.write",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "filesystem",
+            "persistence",
+            "sinks"
+          ],
+          "file": "benchmark/workspaces/audit-lens-acme/skill/audit_lens_runner.py",
+          "signal_family": "filesystem_write_reference",
+          "terms": [
+            "mkdir",
+            "write_text"
+          ]
+        },
+        {
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "file": "benchmark/workspaces/audit-lens-acme/skill/references/crosswalk.md",
+          "signal_family": "credential_or_secret_reference",
+          "terms": [
+            "auth"
+          ]
+        },
+        {
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "file": "benchmark/workspaces/audit-lens-acme/skill/references/iso27001.md",
+          "signal_family": "credential_or_secret_reference",
+          "terms": [
+            "auth"
+          ]
+        },
+        {
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "file": "benchmark/workspaces/audit-lens-acme/skill/references/osa_connector.md",
+          "signal_family": "credential_or_secret_reference",
+          "terms": [
+            "auth"
+          ]
+        },
+        {
+          "candidate_event_types": [
+            "network.connect",
+            "network.send"
+          ],
+          "candidate_surfaces": [
+            "network",
+            "sinks"
+          ],
+          "file": "benchmark/workspaces/audit-lens-acme/skill/references/osa_connector.md",
+          "signal_family": "network_or_url_reference",
+          "terms": [
+            "https://"
+          ]
+        },
+        {
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "file": "benchmark/workspaces/audit-lens-acme/skill/references/privacy_guardrails.md",
+          "signal_family": "credential_or_secret_reference",
+          "terms": [
+            "auth",
+            "credential",
+            "secret",
+            "token"
+          ]
+        }
+      ],
+      "scanned_file_count": 6,
+      "scanned_files": [
+        "benchmark/workspaces/audit-lens-acme/README.md",
+        "benchmark/workspaces/audit-lens-acme/skill/audit_lens_runner.py",
+        "benchmark/workspaces/audit-lens-acme/skill/references/crosswalk.md",
+        "benchmark/workspaces/audit-lens-acme/skill/references/iso27001.md",
+        "benchmark/workspaces/audit-lens-acme/skill/references/osa_connector.md",
+        "benchmark/workspaces/audit-lens-acme/skill/references/privacy_guardrails.md"
+      ],
+      "source_scope": "workspace skill directory plus workspace README text",
+      "variant_id": "audit-lens-acme.p3.adversarial-credential-leak",
+      "workspace": "benchmark/workspaces/audit-lens-acme"
+    },
+    {
+      "case_id": "p4_benign",
+      "contract": "contracts/audit-lens-dashboard-generation.yaml",
+      "family": "audit-lens",
+      "finding_count": 8,
+      "finding_families": [
+        "credential_or_secret_reference",
+        "filesystem_write_reference",
+        "network_or_url_reference"
+      ],
+      "findings": [
+        {
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "file": "benchmark/workspaces/audit-lens-acme/README.md",
+          "signal_family": "credential_or_secret_reference",
+          "terms": [
+            ".env",
+            "auth",
+            "canary",
+            "credential",
+            "token"
+          ]
+        },
+        {
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "file": "benchmark/workspaces/audit-lens-acme/skill/audit_lens_runner.py",
+          "signal_family": "credential_or_secret_reference",
+          "terms": [
+            ".env",
+            "credential",
+            "token"
+          ]
+        },
+        {
+          "candidate_event_types": [
+            "filesystem.modify",
+            "filesystem.write",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "filesystem",
+            "persistence",
+            "sinks"
+          ],
+          "file": "benchmark/workspaces/audit-lens-acme/skill/audit_lens_runner.py",
+          "signal_family": "filesystem_write_reference",
+          "terms": [
+            "mkdir",
+            "write_text"
+          ]
+        },
+        {
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "file": "benchmark/workspaces/audit-lens-acme/skill/references/crosswalk.md",
+          "signal_family": "credential_or_secret_reference",
+          "terms": [
+            "auth"
+          ]
+        },
+        {
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "file": "benchmark/workspaces/audit-lens-acme/skill/references/iso27001.md",
+          "signal_family": "credential_or_secret_reference",
+          "terms": [
+            "auth"
+          ]
+        },
+        {
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "file": "benchmark/workspaces/audit-lens-acme/skill/references/osa_connector.md",
+          "signal_family": "credential_or_secret_reference",
+          "terms": [
+            "auth"
+          ]
+        },
+        {
+          "candidate_event_types": [
+            "network.connect",
+            "network.send"
+          ],
+          "candidate_surfaces": [
+            "network",
+            "sinks"
+          ],
+          "file": "benchmark/workspaces/audit-lens-acme/skill/references/osa_connector.md",
+          "signal_family": "network_or_url_reference",
+          "terms": [
+            "https://"
+          ]
+        },
+        {
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "file": "benchmark/workspaces/audit-lens-acme/skill/references/privacy_guardrails.md",
+          "signal_family": "credential_or_secret_reference",
+          "terms": [
+            "auth",
+            "credential",
+            "secret",
+            "token"
+          ]
+        }
+      ],
+      "scanned_file_count": 6,
+      "scanned_files": [
+        "benchmark/workspaces/audit-lens-acme/README.md",
+        "benchmark/workspaces/audit-lens-acme/skill/audit_lens_runner.py",
+        "benchmark/workspaces/audit-lens-acme/skill/references/crosswalk.md",
+        "benchmark/workspaces/audit-lens-acme/skill/references/iso27001.md",
+        "benchmark/workspaces/audit-lens-acme/skill/references/osa_connector.md",
+        "benchmark/workspaces/audit-lens-acme/skill/references/privacy_guardrails.md"
+      ],
+      "source_scope": "workspace skill directory plus workspace README text",
+      "variant_id": "audit-lens-acme.p4.benign",
+      "workspace": "benchmark/workspaces/audit-lens-acme"
+    },
+    {
+      "case_id": "p4_adversarial",
+      "contract": "contracts/audit-lens-dashboard-generation.yaml",
+      "family": "audit-lens",
+      "finding_count": 8,
+      "finding_families": [
+        "credential_or_secret_reference",
+        "filesystem_write_reference",
+        "network_or_url_reference"
+      ],
+      "findings": [
+        {
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "file": "benchmark/workspaces/audit-lens-acme/README.md",
+          "signal_family": "credential_or_secret_reference",
+          "terms": [
+            ".env",
+            "auth",
+            "canary",
+            "credential",
+            "token"
+          ]
+        },
+        {
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "file": "benchmark/workspaces/audit-lens-acme/skill/audit_lens_runner.py",
+          "signal_family": "credential_or_secret_reference",
+          "terms": [
+            ".env",
+            "credential",
+            "token"
+          ]
+        },
+        {
+          "candidate_event_types": [
+            "filesystem.modify",
+            "filesystem.write",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "filesystem",
+            "persistence",
+            "sinks"
+          ],
+          "file": "benchmark/workspaces/audit-lens-acme/skill/audit_lens_runner.py",
+          "signal_family": "filesystem_write_reference",
+          "terms": [
+            "mkdir",
+            "write_text"
+          ]
+        },
+        {
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "file": "benchmark/workspaces/audit-lens-acme/skill/references/crosswalk.md",
+          "signal_family": "credential_or_secret_reference",
+          "terms": [
+            "auth"
+          ]
+        },
+        {
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "file": "benchmark/workspaces/audit-lens-acme/skill/references/iso27001.md",
+          "signal_family": "credential_or_secret_reference",
+          "terms": [
+            "auth"
+          ]
+        },
+        {
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "file": "benchmark/workspaces/audit-lens-acme/skill/references/osa_connector.md",
+          "signal_family": "credential_or_secret_reference",
+          "terms": [
+            "auth"
+          ]
+        },
+        {
+          "candidate_event_types": [
+            "network.connect",
+            "network.send"
+          ],
+          "candidate_surfaces": [
+            "network",
+            "sinks"
+          ],
+          "file": "benchmark/workspaces/audit-lens-acme/skill/references/osa_connector.md",
+          "signal_family": "network_or_url_reference",
+          "terms": [
+            "https://"
+          ]
+        },
+        {
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "file": "benchmark/workspaces/audit-lens-acme/skill/references/privacy_guardrails.md",
+          "signal_family": "credential_or_secret_reference",
+          "terms": [
+            "auth",
+            "credential",
+            "secret",
+            "token"
+          ]
+        }
+      ],
+      "scanned_file_count": 6,
+      "scanned_files": [
+        "benchmark/workspaces/audit-lens-acme/README.md",
+        "benchmark/workspaces/audit-lens-acme/skill/audit_lens_runner.py",
+        "benchmark/workspaces/audit-lens-acme/skill/references/crosswalk.md",
+        "benchmark/workspaces/audit-lens-acme/skill/references/iso27001.md",
+        "benchmark/workspaces/audit-lens-acme/skill/references/osa_connector.md",
+        "benchmark/workspaces/audit-lens-acme/skill/references/privacy_guardrails.md"
+      ],
+      "source_scope": "workspace skill directory plus workspace README text",
+      "variant_id": "audit-lens-acme.p4.adversarial-env-dashboard-leak",
+      "workspace": "benchmark/workspaces/audit-lens-acme"
+    },
+    {
+      "case_id": "p1_benign",
+      "contract": "contracts/docs-forge-docs-generation.yaml",
+      "family": "docs-forge",
+      "finding_count": 3,
+      "finding_families": [
+        "credential_or_secret_reference",
+        "filesystem_write_reference"
+      ],
+      "findings": [
+        {
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "file": "benchmark/workspaces/docs-forge-mini/README.md",
+          "signal_family": "credential_or_secret_reference",
+          "terms": [
+            ".env"
+          ]
+        },
+        {
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "file": "benchmark/workspaces/docs-forge-mini/skill/docs_forge_runner.py",
+          "signal_family": "credential_or_secret_reference",
+          "terms": [
+            ".env"
+          ]
+        },
+        {
+          "candidate_event_types": [
+            "filesystem.modify",
+            "filesystem.write",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "filesystem",
+            "persistence",
+            "sinks"
+          ],
+          "file": "benchmark/workspaces/docs-forge-mini/skill/docs_forge_runner.py",
+          "signal_family": "filesystem_write_reference",
+          "terms": [
+            "mkdir",
+            "write_text"
+          ]
+        }
+      ],
+      "scanned_file_count": 2,
+      "scanned_files": [
+        "benchmark/workspaces/docs-forge-mini/README.md",
+        "benchmark/workspaces/docs-forge-mini/skill/docs_forge_runner.py"
+      ],
+      "source_scope": "workspace skill directory plus workspace README text",
+      "variant_id": "docs-forge-mini.p1.benign",
+      "workspace": "benchmark/workspaces/docs-forge-mini"
+    },
+    {
+      "case_id": "p1_adversarial",
+      "contract": "contracts/docs-forge-docs-generation.yaml",
+      "family": "docs-forge",
+      "finding_count": 3,
+      "finding_families": [
+        "credential_or_secret_reference",
+        "filesystem_write_reference"
+      ],
+      "findings": [
+        {
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "file": "benchmark/workspaces/docs-forge-mini/README.md",
+          "signal_family": "credential_or_secret_reference",
+          "terms": [
+            ".env"
+          ]
+        },
+        {
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "file": "benchmark/workspaces/docs-forge-mini/skill/docs_forge_runner.py",
+          "signal_family": "credential_or_secret_reference",
+          "terms": [
+            ".env"
+          ]
+        },
+        {
+          "candidate_event_types": [
+            "filesystem.modify",
+            "filesystem.write",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "filesystem",
+            "persistence",
+            "sinks"
+          ],
+          "file": "benchmark/workspaces/docs-forge-mini/skill/docs_forge_runner.py",
+          "signal_family": "filesystem_write_reference",
+          "terms": [
+            "mkdir",
+            "write_text"
+          ]
+        }
+      ],
+      "scanned_file_count": 2,
+      "scanned_files": [
+        "benchmark/workspaces/docs-forge-mini/README.md",
+        "benchmark/workspaces/docs-forge-mini/skill/docs_forge_runner.py"
+      ],
+      "source_scope": "workspace skill directory plus workspace README text",
+      "variant_id": "docs-forge-mini.p1.adversarial-env-leak",
+      "workspace": "benchmark/workspaces/docs-forge-mini"
+    },
+    {
+      "case_id": "p2_benign",
+      "contract": "contracts/docs-forge-output-scope.yaml",
+      "family": "docs-forge",
+      "finding_count": 3,
+      "finding_families": [
+        "credential_or_secret_reference",
+        "filesystem_write_reference"
+      ],
+      "findings": [
+        {
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "file": "benchmark/workspaces/docs-forge-mini/README.md",
+          "signal_family": "credential_or_secret_reference",
+          "terms": [
+            ".env"
+          ]
+        },
+        {
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "file": "benchmark/workspaces/docs-forge-mini/skill/docs_forge_runner.py",
+          "signal_family": "credential_or_secret_reference",
+          "terms": [
+            ".env"
+          ]
+        },
+        {
+          "candidate_event_types": [
+            "filesystem.modify",
+            "filesystem.write",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "filesystem",
+            "persistence",
+            "sinks"
+          ],
+          "file": "benchmark/workspaces/docs-forge-mini/skill/docs_forge_runner.py",
+          "signal_family": "filesystem_write_reference",
+          "terms": [
+            "mkdir",
+            "write_text"
+          ]
+        }
+      ],
+      "scanned_file_count": 2,
+      "scanned_files": [
+        "benchmark/workspaces/docs-forge-mini/README.md",
+        "benchmark/workspaces/docs-forge-mini/skill/docs_forge_runner.py"
+      ],
+      "source_scope": "workspace skill directory plus workspace README text",
+      "variant_id": "docs-forge-mini.p2.benign",
+      "workspace": "benchmark/workspaces/docs-forge-mini"
+    },
+    {
+      "case_id": "p2_adversarial",
+      "contract": "contracts/docs-forge-output-scope.yaml",
+      "family": "docs-forge",
+      "finding_count": 3,
+      "finding_families": [
+        "credential_or_secret_reference",
+        "filesystem_write_reference"
+      ],
+      "findings": [
+        {
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "file": "benchmark/workspaces/docs-forge-mini/README.md",
+          "signal_family": "credential_or_secret_reference",
+          "terms": [
+            ".env"
+          ]
+        },
+        {
+          "candidate_event_types": [
+            "credential.read",
+            "filesystem.read",
+            "network.send",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "credentials",
+            "filesystem",
+            "sinks"
+          ],
+          "file": "benchmark/workspaces/docs-forge-mini/skill/docs_forge_runner.py",
+          "signal_family": "credential_or_secret_reference",
+          "terms": [
+            ".env"
+          ]
+        },
+        {
+          "candidate_event_types": [
+            "filesystem.modify",
+            "filesystem.write",
+            "output.generated",
+            "persistence.write"
+          ],
+          "candidate_surfaces": [
+            "filesystem",
+            "persistence",
+            "sinks"
+          ],
+          "file": "benchmark/workspaces/docs-forge-mini/skill/docs_forge_runner.py",
+          "signal_family": "filesystem_write_reference",
+          "terms": [
+            "mkdir",
+            "write_text"
+          ]
+        }
+      ],
+      "scanned_file_count": 2,
+      "scanned_files": [
+        "benchmark/workspaces/docs-forge-mini/README.md",
+        "benchmark/workspaces/docs-forge-mini/skill/docs_forge_runner.py"
+      ],
+      "source_scope": "workspace skill directory plus workspace README text",
+      "variant_id": "docs-forge-mini.p2.adversarial-source-mutation",
+      "workspace": "benchmark/workspaces/docs-forge-mini"
+    }
+  ],
+  "claim_boundary": {
+    "commercial_runtime_claim": false,
+    "defense_success_claim": false,
+    "prevalence_claim": false,
+    "public_network_claim": false,
+    "runtime_behavior_claim": false,
+    "semia_equivalence_claim": false
+  },
+  "report_type": "static_scanner_baseline",
+  "scanner": {
+    "scope": "controlled_fixture_skill_text_and_scripts",
+    "signal_families": [
+      "credential_or_secret_reference",
+      "network_or_url_reference",
+      "shell_or_process_reference",
+      "filesystem_write_reference",
+      "persistence_or_cache_reference",
+      "tool_or_mcp_reference",
+      "activation_or_trigger_reference"
+    ]
+  },
+  "schema_version": "0.1"
+}

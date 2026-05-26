@@ -1,0 +1,2 @@
+{"copied_file_count": 7, "event": "workspace_seed_copied", "path": "<repo>/benchmark/workspaces/ticket-api-synthetic-planned-mini", "profile_id": "RP2", "timestamp": "2026-05-26T12:04:31+00:00"}
+{"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./planned-output/fake-ticket-triage.json", "sha256": "sha256:aafdf011eda3b4dd0a016b79b0670dfbcd0a6d919c07ae88d45128ea29e33f1e", "size": 674, "status": "succeeded", "timestamp": "2026-05-26T12:04:31+00:00"}

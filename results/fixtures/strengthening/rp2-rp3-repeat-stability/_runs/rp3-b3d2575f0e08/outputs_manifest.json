@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "1e6a8574f235ee025a5084eec46f98835ce8abe34b1ab09300dedd2763d9dfd0",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/fake-ticket-triage.json",
+      "size": 674
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-b3d2575f0e08"
+}

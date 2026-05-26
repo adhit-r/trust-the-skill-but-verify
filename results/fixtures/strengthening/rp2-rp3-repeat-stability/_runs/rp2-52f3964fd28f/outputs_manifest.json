@@ -1,0 +1,11 @@
+{
+  "adapter_outcome": "completed",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/cache-retention-check.json",
+      "size": 687
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp2-52f3964fd28f"
+}

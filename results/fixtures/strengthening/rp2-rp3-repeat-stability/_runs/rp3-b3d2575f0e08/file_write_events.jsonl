@@ -1,0 +1,1 @@
+{"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./planned-output/fake-ticket-triage.json", "sha256": "sha256:aafdf011eda3b4dd0a016b79b0670dfbcd0a6d919c07ae88d45128ea29e33f1e", "size": 674, "status": "succeeded", "timestamp": "2026-05-26T12:04:33+00:00"}

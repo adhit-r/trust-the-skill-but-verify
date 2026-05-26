@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "75d788ece4b0781460450b5375d1a1424b80f95d4f8d3bacaab1db2e6388907a",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/mock-update-plan.md",
+      "size": 497
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-02389011b082"
+}

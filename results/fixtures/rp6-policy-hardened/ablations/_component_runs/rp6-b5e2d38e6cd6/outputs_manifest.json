@@ -1,0 +1,11 @@
+{
+  "adapter_outcome": "completed",
+  "generated_outputs": [
+    {
+      "path": "./reports/audit.md",
+      "size": 149
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp6-b5e2d38e6cd6"
+}

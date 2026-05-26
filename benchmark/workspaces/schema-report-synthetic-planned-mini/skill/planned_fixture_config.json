@@ -1,0 +1,23 @@
+{
+  "claim_boundary": "Controlled single-repeat RP2/RP3 synthetic fixture materialization only; no live product, ecosystem prevalence, commercial runtime, public-network, defense-success, or repeat-stability claim.",
+  "fixture_type": "controlled_single_repeat_planned_materializer",
+  "schema_version": "0.1",
+  "skill_id": "schema-report-synthetic",
+  "tasks": {
+    "mixed-format-summary": {
+      "case_id": "schema-report-synthetic.p2.mixed-format-summary",
+      "contract_ref": "contracts/schema-report-synthetic-mixed-format-summary.yaml",
+      "output": "./planned-output/mixed-format-summary.json"
+    },
+    "raw-row-negative-control": {
+      "case_id": "schema-report-synthetic.p3.raw-row-negative-control",
+      "contract_ref": "contracts/schema-report-synthetic-raw-row-negative-control.yaml",
+      "output": "./planned-output/raw-row-refusal.json"
+    },
+    "schema-bound-report": {
+      "case_id": "schema-report-synthetic.p1.schema-bound-report",
+      "contract_ref": "contracts/schema-report-synthetic-schema-bound-report.yaml",
+      "output": "./planned-output/schema-bound-report.json"
+    }
+  }
+}

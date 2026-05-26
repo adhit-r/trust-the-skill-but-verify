@@ -39,11 +39,13 @@ separately under S4.3 and is intentionally excluded from this snapshot.
    coverage should not grow faster than real first-party/public coverage.
 4. [ ] Finish repeat and statistics infrastructure beyond the bounded fixture
    slices.
-   Add repeat support to remaining runners, run three repeats for every
-   deterministic promoted fixture, run five repeats for nondeterministic or
-   model-mediated cases, report max severity beside majority/median outcomes,
-   and add Wilson, bootstrap, hierarchical bootstrap, and McNemar-style paired
-   analysis only where sample size supports them.
+   Current main RP2/RP3 controlled fixtures now have a bounded deterministic
+   repeat-stability artifact with 13 cases, 78 trace-valid observations, and
+   39 same-repeat RP2/RP3 pairs. Remaining work: add repeat support to the
+   remaining profile-specific runners, run five repeats for nondeterministic
+   or model-mediated cases, report max severity beside majority/median
+   outcomes, and add Wilson, bootstrap, hierarchical bootstrap, and
+   McNemar-style paired analysis only where sample size supports them.
 5. [ ] Promote runtime report cards and evidence-boundary tables into the
    manuscript.
    Add a paper table that separates current evidence, promoted evidence, and
@@ -366,9 +368,13 @@ Goal: make the evaluation credible for a top-tier security review.
    planned-inclusion RP2/RP3 controlled fixtures also now have repeat IDs 1,
    2, and 3 under
    `results/fixtures/strengthening/rp2-rp3-repeat-stability/`, covering 264
-   trace-valid observations and 132 same-repeat RP2/RP3 pairs. Remaining
-   non-planned RP2/RP3 main benchmark repeat coverage and source-mix-backed
-   repeat claims remain open.
+   trace-valid observations and 132 same-repeat RP2/RP3 pairs. The 13 current
+   non-planned main RP2/RP3 controlled fixtures now have repeat IDs 1, 2, and
+   3 under
+   `results/fixtures/strengthening/rp2-rp3-main-repeat-stability/`, covering
+   78 trace-valid observations and 39 same-repeat RP2/RP3 pairs. Remaining
+   source-mix-backed repeat claims remain open until more first-party/public
+   skills are added.
 4. [ ] Run five repeats for model-mediated or nondeterministic cases.
 5. [ ] Report max-severity outcome alongside majority or median behavior.
    Do not average away realized high-severity violations.

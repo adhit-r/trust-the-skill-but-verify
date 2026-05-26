@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "5b372d1fa439bb26fd05204258be3844984112cc30f2d1216ace93a26d0b8c20",
+  "generated_outputs": [
+    {
+      "path": "./reports/network-egress-report.md",
+      "size": 265
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-3c7e20df7f9a"
+}

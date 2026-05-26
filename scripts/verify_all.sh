@@ -34,6 +34,8 @@ done < <(find benchmark/manifests -maxdepth 1 -name '*-planned*.json' -print0 | 
 "$PYTHON_BIN" tools/validate_planned_inclusion_mvp.py
 "$PYTHON_BIN" tools/validate_planned_inclusion_repeat_stability.py
 "$PYTHON_BIN" tools/validate_traces.py results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp*/trace.jsonl
+"$PYTHON_BIN" tools/validate_main_rp2_rp3_repeat_stability.py
+"$PYTHON_BIN" tools/validate_traces.py results/fixtures/strengthening/rp2-rp3-main-repeat-stability/_runs/rp*/trace.jsonl
 "$PYTHON_BIN" tools/validate_data_extraction_mvp.py
 "$PYTHON_BIN" tools/validate_traces.py \
   results/raw/rp2-a4fa2e1ac41c/trace.jsonl \

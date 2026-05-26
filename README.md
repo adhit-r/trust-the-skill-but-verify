@@ -37,6 +37,7 @@ These are feasibility and method claims, not ecosystem prevalence claims.
 | Gate 5 review export templates | 2 blank reviewer templates / 50 assigned pair-review units each | `benchmark/review/gate5-review-export-templates.json` |
 | Formerly planned entries promoted to controlled fixture evidence | 44 | `results/planned-inclusion/` |
 | Planned-inclusion deterministic repeat observations | 264 | `results/fixtures/strengthening/rp2-rp3-repeat-stability/` |
+| Current main deterministic repeat observations | 78 | `results/fixtures/strengthening/rp2-rp3-main-repeat-stability/` |
 
 `results/derived/benchmark-scale-gap.json` computes source-mix gaps from
 explicit manifest labels. The current inventory is still short of the
@@ -54,6 +55,12 @@ fixtures across repeat IDs 1, 2, and 3 under RP2 and RP3. It supports bounded
 deterministic fixture stability only, not statistical, prevalence,
 reviewer-agreement, live-product, commercial-runtime, public-network, or
 defense-success claims.
+
+The current main RP2/RP3 repeat-stability artifact runs 13 controlled fixtures
+across repeat IDs 1, 2, and 3. It supports bounded deterministic fixture
+stability only and keeps statistical, prevalence, reviewer-agreement,
+live-product, commercial-runtime, public-network, and defense-success claims
+unsupported.
 
 S1.2 also adds a bounded RP4 local MCP fixture under
 `results/fixtures/rp4-mcp-connected/`. It validates MCP descriptor/resource/tool,

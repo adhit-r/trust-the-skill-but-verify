@@ -946,6 +946,106 @@
       ]
     },
     {
+      "claim_id": "CL-REP-003",
+      "status": "supported_bounded_deterministic_repeat_stability",
+      "claim": "The current main RP2/RP3 repeat-stability artifact covers thirteen controlled fixtures across repeat IDs 1, 2, and 3, for seventy-eight trace-valid observations and thirty-nine same-repeat RP2/RP3 pairs; all twenty-six case-runtime units match outcome summaries including and excluding event count. This supports bounded deterministic fixture stability only, while supporting zero statistical, prevalence, reviewer-agreement, live-product, public-network, commercial-runtime, or defense-success claims.",
+      "paper_locations": [
+        "README.md",
+        "paper/claim-ledger.md",
+        "docs/research/research-todo.md"
+      ],
+      "evidence": [
+        {
+          "type": "json_value",
+          "path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/repeat_stability.json",
+          "pointer": "/aggregate/case_count",
+          "expected": 13
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/repeat_stability.json",
+          "pointer": "/aggregate/repeat_ids",
+          "expected": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/repeat_stability.json",
+          "pointer": "/aggregate/runtime_observation_count",
+          "expected": 78
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/repeat_stability.json",
+          "pointer": "/aggregate/findings_file_count",
+          "expected": 78
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/repeat_stability.json",
+          "pointer": "/aggregate/trace_valid_count",
+          "expected": 78
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/repeat_stability.json",
+          "pointer": "/aggregate/same_repeat_pair_count",
+          "expected": 39
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/repeat_stability.json",
+          "pointer": "/aggregate/pairwise_disagreement_count",
+          "expected": 21
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/repeat_stability.json",
+          "pointer": "/aggregate/runtime_drift_claim_count",
+          "expected": 9
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/repeat_stability.json",
+          "pointer": "/aggregate/summary_match_count_excluding_event_count",
+          "expected": 26
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/repeat_stability.json",
+          "pointer": "/aggregate/summary_match_count_including_event_count",
+          "expected": 26
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/repeat_stability.json",
+          "pointer": "/aggregate/statistical_repeat_stability_claims_supported",
+          "expected": 0
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/repeat_stability.json",
+          "pointer": "/claim_boundary/completed_statistics_claimed",
+          "expected": false
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/repeat_stability.json",
+          "pointer": "/claim_boundary/prevalence_claim",
+          "expected": false
+        },
+        {
+          "type": "json_value",
+          "path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/repeat_stability.json",
+          "pointer": "/claim_boundary/defense_success_claim",
+          "expected": false
+        }
+      ]
+    },
+    {
       "claim_id": "CL-EXT-001",
       "status": "supported_source_provenance",
       "claim": "The first-party docs-forge and AuditLens source repositories verify from clean ephemeral clones against their pinned commits, trees, and 53 published source hashes.",

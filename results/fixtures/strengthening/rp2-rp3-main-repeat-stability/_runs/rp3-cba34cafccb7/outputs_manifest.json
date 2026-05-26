@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "7aa4f430646ab85adb9643b4b8b95a4d7e10b34e1cdc7c3b3d0336bfa92c84fb",
+  "generated_outputs": [
+    {
+      "path": "./output/archive-manifest.json",
+      "size": 333
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-cba34cafccb7"
+}

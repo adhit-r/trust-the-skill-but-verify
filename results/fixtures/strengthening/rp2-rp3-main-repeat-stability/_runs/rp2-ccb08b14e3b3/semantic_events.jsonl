@@ -1,0 +1,1 @@
+{"enforcement_outcome": "allowed", "event": "activation.select", "metadata": {"selected_skill_id": "local-file-operation", "source_type": "task_prompt"}, "operation": "select", "status": "succeeded", "target": "local-file-operation", "timestamp": "2026-05-26T17:35:08+00:00"}

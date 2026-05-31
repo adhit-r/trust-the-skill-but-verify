@@ -399,3 +399,9 @@ PYTHON_BIN=/tmp/skilldiff-venv/bin/python make validate-artifact-release-bundle
   been selected. The local release bundle includes the `NOASSERTION`
   license-boundary note; any double-blind venue package must replace or omit
   deanonymizing repository metadata according to that venue's policy.
+- [x] Add selected packaging-profile validation.
+  `anonymous_review` and `public_archive` candidate metadata are generated and
+  validated as local packaging profiles. The anonymous-review candidate overlays
+  an anonymous `CITATION.cff`; neither profile claims actual external
+  submission, public release, completed human review, reviewer agreement, or
+  acceptance by any venue.

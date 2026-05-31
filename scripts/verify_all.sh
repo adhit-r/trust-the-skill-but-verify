@@ -123,6 +123,12 @@ bash -n experiments/ripgrep-public-live-local-binary/reproduce_ripgrep_public_li
 bash -n experiments/source-mix-rp6-repeat-stability/reproduce_source_mix_rp6_repeat_stability.sh
 "$PYTHON_BIN" tools/build_artifact_release_bundle.py --output-dir "$ARTIFACT_BUNDLE_VERIFY_ROOT/bundle"
 "$PYTHON_BIN" tools/validate_artifact_release_bundle.py --bundle-dir "$ARTIFACT_BUNDLE_VERIFY_ROOT/bundle"
+"$PYTHON_BIN" tools/build_venue_package_metadata.py --output-dir "$ARTIFACT_BUNDLE_VERIFY_ROOT/venue-metadata"
+"$PYTHON_BIN" tools/validate_venue_package_metadata.py --bundle-dir "$ARTIFACT_BUNDLE_VERIFY_ROOT/venue-metadata"
+"$PYTHON_BIN" tools/build_artifact_release_bundle.py --packaging-profile anonymous_review --output-dir "$ARTIFACT_BUNDLE_VERIFY_ROOT/bundle-anonymous-review"
+"$PYTHON_BIN" tools/validate_artifact_release_bundle.py --packaging-profile anonymous_review --bundle-dir "$ARTIFACT_BUNDLE_VERIFY_ROOT/bundle-anonymous-review"
+"$PYTHON_BIN" tools/build_artifact_release_bundle.py --packaging-profile public_archive --output-dir "$ARTIFACT_BUNDLE_VERIFY_ROOT/bundle-public-archive"
+"$PYTHON_BIN" tools/validate_artifact_release_bundle.py --packaging-profile public_archive --bundle-dir "$ARTIFACT_BUNDLE_VERIFY_ROOT/bundle-public-archive"
 "$PYTHON_BIN" tools/validate_gate5_scaffolds.py
 "$PYTHON_BIN" tools/validate_paired_runtime_summary.py
 "$PYTHON_BIN" tools/validate_gate5_inclusion_table.py

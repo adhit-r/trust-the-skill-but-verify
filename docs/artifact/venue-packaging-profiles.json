@@ -1,0 +1,42 @@
+{
+  "schema_version": "0.1",
+  "status": "packaging_profiles_ready_no_external_submission",
+  "selected_profile_for_next_external_review": "anonymous_review",
+  "actual_external_submission_claimed": false,
+  "profiles": [
+    {
+      "profile_id": "anonymous_review",
+      "profile_kind": "double_blind_review_metadata",
+      "audience": "external_reviewers_before_deanonymization",
+      "citation_policy": {
+        "repository_code": "omit",
+        "author_identity": "anonymous_artifact_authors",
+        "license": "omit_until_real_spdx_license_selected"
+      },
+      "claim_boundary": {
+        "external_submission_claimed": false,
+        "completed_human_review_claimed": false,
+        "public_release_claimed": false,
+        "deanonymizing_repository_metadata_included": false,
+        "noassertion_boundary_documented_outside_cff": true
+      }
+    },
+    {
+      "profile_id": "public_archive",
+      "profile_kind": "deanonymized_post_acceptance_metadata",
+      "audience": "public_archive_after_deanonymization",
+      "citation_policy": {
+        "repository_code": "https://github.com/adhit-r/trust-the-skill-but-verify",
+        "author_identity": "artifact_authors_or_final_author_list",
+        "license": "omit_until_real_spdx_license_selected"
+      },
+      "claim_boundary": {
+        "external_submission_claimed": false,
+        "completed_human_review_claimed": false,
+        "public_release_claimed": false,
+        "deanonymizing_repository_metadata_included": true,
+        "noassertion_boundary_documented_outside_cff": true
+      }
+    }
+  ]
+}

@@ -14,8 +14,20 @@ Status: local machine-only bundle path available; no completed human review.
   bundle source.
 - `python3 tools/build_artifact_release_bundle.py --replace --output-dir tmp/artifact-release-bundle`
 - `python3 tools/validate_artifact_release_bundle.py --bundle-dir tmp/artifact-release-bundle`
+- `python3 tools/build_venue_package_metadata.py --replace --output-dir tmp/venue-package-metadata`
+- `python3 tools/validate_venue_package_metadata.py --bundle-dir tmp/venue-package-metadata`
+- Anonymous review candidate:
+  `python3 tools/build_artifact_release_bundle.py --replace --packaging-profile anonymous_review --output-dir tmp/artifact-release-bundle-anonymous-review`
+- Validate anonymous review candidate:
+  `python3 tools/validate_artifact_release_bundle.py --packaging-profile anonymous_review --bundle-dir tmp/artifact-release-bundle-anonymous-review`
+- Public archive candidate:
+  `python3 tools/build_artifact_release_bundle.py --replace --packaging-profile public_archive --output-dir tmp/artifact-release-bundle-public-archive`
+- Validate public archive candidate:
+  `python3 tools/validate_artifact_release_bundle.py --packaging-profile public_archive --bundle-dir tmp/artifact-release-bundle-public-archive`
 - `PYTHON_BIN=python3 make artifact-release-bundle`
 - `PYTHON_BIN=python3 make validate-artifact-release-bundle`
+- `PYTHON_BIN=python3 make venue-package-metadata`
+- `PYTHON_BIN=python3 make validate-venue-package-metadata`
 - `python3 tools/validate_benchmark_cases.py --self-test benchmark/manifests/benchmark-cases-current.json`
 - `python3 tools/build_runtime_report_cards.py --check --output-dir results/derived/runtime-report-cards`
 - `python3 tools/validate_gate5_scaffolds.py`
@@ -42,6 +54,9 @@ Status: local machine-only bundle path available; no completed human review.
 ## Evidence Boundaries
 
 - Current evidence, promoted full-paper evidence, and future work are separated.
+- The selected packaging-profile pass validates `anonymous_review` and
+  `public_archive` candidate metadata without claiming actual external
+  submission, public release, completed human review, or reviewer agreement.
 - The machine-only release bundle contains paper-facing derived artifacts,
   aggregate repeat-stability reports, the claim ledger, method boundaries,
   release manifests, and checksums only.

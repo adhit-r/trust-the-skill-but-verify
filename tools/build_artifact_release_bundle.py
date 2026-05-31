@@ -12,12 +12,19 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
+import yaml
+
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_OUTPUT_DIR = REPO_ROOT / "tmp" / "artifact-release-bundle"
 SOURCE_MANIFEST_NAME = "source-manifest.json"
 RELEASE_MANIFEST_NAME = "release-manifest.json"
 CHECKSUMS_NAME = "checksums.sha256"
+VENUE_PACKAGING_MANIFEST_NAME = "venue-packaging-manifest.json"
+LOCAL_MACHINE_PROFILE = "local_machine"
+ANONYMOUS_REVIEW_PROFILE = "anonymous_review"
+PUBLIC_ARCHIVE_PROFILE = "public_archive"
+PACKAGING_PROFILES = (LOCAL_MACHINE_PROFILE, ANONYMOUS_REVIEW_PROFILE, PUBLIC_ARCHIVE_PROFILE)
 
 REQUIRED_FILES = [
     "CITATION.cff",
@@ -28,6 +35,7 @@ REQUIRED_FILES = [
     "docs/artifact/benchmark-data-card.md",
     "docs/artifact/license-boundary.md",
     "docs/artifact/release-checklist.md",
+    "docs/artifact/venue-packaging-pass.md",
     "paper/artifact-readme.md",
     "paper/claim-ledger.json",
     "paper/claim-ledger.md",
@@ -144,6 +152,11 @@ def write_json(path: Path, value: Any) -> None:
     path.write_text(json.dumps(value, indent=2, sort_keys=True) + "\n", encoding="utf-8")
 
 
+def write_yaml(path: Path, value: dict[str, Any]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(yaml.safe_dump(value, sort_keys=False, allow_unicode=False), encoding="utf-8")
+
+
 def write_checksums(path: Path, relative_paths: list[str]) -> None:
     lines = []
     for relative_path in relative_paths:
@@ -168,26 +181,98 @@ def copy_bundle_files(output_dir: Path, source_paths: list[Path]) -> list[dict[s
     return copied_files
 
 
-def build_manifests(output_dir: Path, copied_files: list[dict[str, Any]]) -> tuple[dict[str, Any], dict[str, Any]]:
+def build_anonymous_citation(source_path: Path) -> dict[str, Any]:
+    citation = yaml.safe_load(source_path.read_text(encoding="utf-8"))
+    if not isinstance(citation, dict):
+        raise TypeError("CITATION.cff must parse as a mapping")
+    citation = dict(citation)
+    citation["message"] = "Anonymous review metadata for SkillDiff; replace with deanonymized citation after review."
+    citation["authors"] = [{"family-names": "Anonymous Artifact Authors"}]
+    for key in ("repository-code", "url", "identifiers", "license", "license-url"):
+        citation.pop(key, None)
+    return citation
+
+
+def apply_packaging_profile_overlays(
+    output_dir: Path,
+    copied_files: list[dict[str, Any]],
+    packaging_profile: str,
+) -> list[str]:
+    generated_overlays: list[str] = []
+    if packaging_profile != ANONYMOUS_REVIEW_PROFILE:
+        return generated_overlays
+
+    citation_path = output_dir / "CITATION.cff"
+    write_yaml(citation_path, build_anonymous_citation(REPO_ROOT / "CITATION.cff"))
+    generated_overlays.append("CITATION.cff")
+    for entry in copied_files:
+        if entry["path"] == "CITATION.cff":
+            entry["sha256"] = sha256_file(citation_path)
+            entry["size_bytes"] = citation_path.stat().st_size
+            entry["generated_profile_overlay"] = True
+            entry["source_path"] = "CITATION.cff"
+            break
+    else:
+        raise AssertionError("CITATION.cff missing from copied file list")
+    return generated_overlays
+
+
+def build_venue_packaging_manifest(packaging_profile: str, generated_overlays: list[str]) -> dict[str, Any]:
+    profile_kinds = {
+        LOCAL_MACHINE_PROFILE: "local_machine_release_metadata",
+        ANONYMOUS_REVIEW_PROFILE: "double_blind_review_candidate_metadata",
+        PUBLIC_ARCHIVE_PROFILE: "deanonymized_post_acceptance_archive_candidate_metadata",
+    }
+    return {
+        "schema_version": "0.1",
+        "manifest_type": "venue_packaging_manifest",
+        "packaging_profile": packaging_profile,
+        "profile_kind": profile_kinds[packaging_profile],
+        "generated_by": "tools/build_artifact_release_bundle.py",
+        "generated_profile_overlays": generated_overlays,
+        "selected_profile_for_next_external_review": ANONYMOUS_REVIEW_PROFILE,
+        "claim_boundary": {
+            "venue_submission_claimed": False,
+            "external_review_claimed": False,
+            "completed_human_review_included": False,
+            "venue_policy_human_review_completed": False,
+            "public_release_claimed": False,
+            "deanonymizing_repository_metadata_included": packaging_profile != ANONYMOUS_REVIEW_PROFILE,
+            "noassertion_boundary_documented_outside_cff": True,
+        },
+    }
+
+
+def build_manifests(
+    output_dir: Path,
+    copied_files: list[dict[str, Any]],
+    packaging_profile: str,
+    generated_overlays: list[str],
+) -> tuple[dict[str, Any], dict[str, Any], dict[str, Any]]:
     source_manifest = {
         "schema_version": "0.1",
         "manifest_type": "artifact_release_source_manifest",
         "generated_by": "tools/build_artifact_release_bundle.py",
         "repo_root": rel(REPO_ROOT),
+        "packaging_profile": packaging_profile,
+        "generated_profile_overlays": generated_overlays,
         "copied_file_count": len(copied_files),
         "forbidden_prefixes_excluded": list(FORBIDDEN_PREFIXES),
         "files": copied_files,
     }
+    venue_packaging_manifest = build_venue_packaging_manifest(packaging_profile, generated_overlays)
     release_manifest = {
         "schema_version": "0.1",
         "manifest_type": "artifact_release_bundle",
         "status": "local_machine_only_bundle_pending_human_review",
         "generated_by": "tools/build_artifact_release_bundle.py",
+        "packaging_profile": packaging_profile,
         "built_at_utc": utc_now(),
         "git_head": git_rev_parse("HEAD"),
         "git_tree": git_rev_parse("HEAD^{tree}"),
         "source_manifest_ref": SOURCE_MANIFEST_NAME,
         "checksums_ref": CHECKSUMS_NAME,
+        "venue_packaging_manifest_ref": VENUE_PACKAGING_MANIFEST_NAME,
         "boundaries": {
             "local_bundle_only": True,
             "public_network_used": False,
@@ -202,11 +287,12 @@ def build_manifests(output_dir: Path, copied_files: list[dict[str, Any]]) -> tup
             "This bundle is a clean local artifact-release export only.",
             "It excludes raw scratch, raw traces, credentials, cookies, auth state, and completed human-review claims.",
             "Run scripts/reproduce_paper_tables.sh from the repository root to rebuild the main machine-only paper tables and derived artifacts.",
+            "Venue packaging profiles are candidate metadata overlays only; they do not claim external submission or completed review.",
         ],
         "copied_files": [entry["path"] for entry in copied_files],
         "copied_file_count": len(copied_files),
     }
-    return source_manifest, release_manifest
+    return source_manifest, release_manifest, venue_packaging_manifest
 
 
 def replace_existing_bundle(output_dir: Path) -> None:
@@ -223,7 +309,7 @@ def replace_existing_bundle(output_dir: Path) -> None:
     shutil.rmtree(output_dir)
 
 
-def build_bundle(output_dir: Path, *, replace: bool = False) -> Path:
+def build_bundle(output_dir: Path, *, replace: bool = False, packaging_profile: str = LOCAL_MACHINE_PROFILE) -> Path:
     if output_dir.exists():
         if not replace:
             raise FileExistsError(f"bundle output already exists: {output_dir}")
@@ -232,15 +318,24 @@ def build_bundle(output_dir: Path, *, replace: bool = False) -> Path:
 
     source_paths = required_repo_paths()
     copied_files = copy_bundle_files(output_dir, source_paths)
-    source_manifest, release_manifest = build_manifests(output_dir, copied_files)
+    generated_overlays = apply_packaging_profile_overlays(output_dir, copied_files, packaging_profile)
+    source_manifest, release_manifest, venue_packaging_manifest = build_manifests(
+        output_dir,
+        copied_files,
+        packaging_profile,
+        generated_overlays,
+    )
 
     source_manifest_path = output_dir / SOURCE_MANIFEST_NAME
     release_manifest_path = output_dir / RELEASE_MANIFEST_NAME
+    venue_packaging_manifest_path = output_dir / VENUE_PACKAGING_MANIFEST_NAME
     write_json(source_manifest_path, source_manifest)
     write_json(release_manifest_path, release_manifest)
+    write_json(venue_packaging_manifest_path, venue_packaging_manifest)
 
     checksum_paths = sorted(
-        [entry["path"] for entry in copied_files] + [SOURCE_MANIFEST_NAME, RELEASE_MANIFEST_NAME]
+        [entry["path"] for entry in copied_files]
+        + [SOURCE_MANIFEST_NAME, RELEASE_MANIFEST_NAME, VENUE_PACKAGING_MANIFEST_NAME]
     )
     write_checksums(output_dir / CHECKSUMS_NAME, checksum_paths)
     return output_dir
@@ -250,13 +345,19 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output-dir", type=Path, default=DEFAULT_OUTPUT_DIR)
     parser.add_argument(
+        "--packaging-profile",
+        choices=PACKAGING_PROFILES,
+        default=LOCAL_MACHINE_PROFILE,
+        help="metadata profile to apply inside the generated local bundle",
+    )
+    parser.add_argument(
         "--replace",
         action="store_true",
         help="replace an existing bundle directory only when it already has bundle control files",
     )
     args = parser.parse_args(argv)
     output_dir = args.output_dir if args.output_dir.is_absolute() else REPO_ROOT / args.output_dir
-    bundle_dir = build_bundle(output_dir, replace=args.replace)
+    bundle_dir = build_bundle(output_dir, replace=args.replace, packaging_profile=args.packaging_profile)
     print(bundle_dir)
     return 0
 

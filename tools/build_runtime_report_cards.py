@@ -138,10 +138,31 @@ def infer_role(record: dict[str, Any]) -> str:
     return "unknown"
 
 
-def load_trace_events(trace_path_value: str) -> list[dict[str, Any]]:
+def resolve_trace_path(trace_path_value: str) -> Path:
     trace_path = Path(trace_path_value)
     if not trace_path.is_absolute():
         trace_path = REPO_ROOT / trace_path
+    return trace_path
+
+
+def missing_trace_allowed(result: dict[str, Any], trace_path: Path) -> bool:
+    try:
+        trace_ref = trace_path.resolve().relative_to(REPO_ROOT).as_posix()
+    except ValueError:
+        trace_ref = str(trace_path)
+    return (
+        result.get("evidence_scope") == "controlled_single_repeat_fixture"
+        and trace_ref.startswith("results/raw/")
+        and result.get("summary", {}).get("trace_valid") is True
+    )
+
+
+def load_trace_events(result: dict[str, Any], source_path: Path) -> list[dict[str, Any]]:
+    trace_path = resolve_trace_path(str(result.get("trace_path") or ""))
+    if not trace_path.is_file():
+        if missing_trace_allowed(result, trace_path):
+            return []
+        raise RuntimeError(f"{display_path(source_path)}: missing trace {display_path(trace_path)}")
     try:
         return validate_trace_file(trace_path)
     except TraceValidationError as exc:  # pragma: no cover - surfaced to user
@@ -178,7 +199,7 @@ def enrich_finding_result(result: dict[str, Any], source_path: Path, contracts: 
     contract_id = str(result.get("contract_id") or "")
     if contract_id not in contracts:
         raise RuntimeError(f"{display_path(source_path)}: unknown contract_id {contract_id!r}")
-    trace_events = load_trace_events(str(result.get("trace_path") or ""))
+    trace_events = load_trace_events(result, source_path)
     trace_summary = analyze_trace_events(trace_events)
     meta = contracts[contract_id]
     role = infer_role(result)

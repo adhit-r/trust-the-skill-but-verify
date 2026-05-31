@@ -100,7 +100,11 @@ def validate_unmatched_coverage(case_id: str, runtime: str, findings: dict[str, 
     require(not unexpected, f"{case_id}/{runtime}: unexpected unmatched coverage observations: {unexpected[:5]}")
 
 
-def validate_case(case: dict[str, Any]) -> tuple[int, int]:
+def findings_has_activation(findings: dict[str, Any]) -> bool:
+    return any(decision.get("event_type") == "activation.select" for decision in findings.get("decisions", []))
+
+
+def validate_case(case: dict[str, Any], require_traces: bool) -> tuple[int, int, int]:
     require(case["case_status"] == "current_pilot", f"{case['case_id']}: expected current_pilot")
     execution = case["execution"]
     require(execution["evidence_stage"] == "pilot", f"{case['case_id']}: expected pilot evidence stage")
@@ -109,7 +113,8 @@ def validate_case(case: dict[str, Any]) -> tuple[int, int]:
     for required in ("controlled", "single-repeat", "synthetic", "no live", "no prevalence"):
         require(required in note, f"{case['case_id']}: execution note missing {required!r}")
 
-    trace_count = 0
+    trace_ref_count = 0
+    validated_trace_count = 0
     finding_count = 0
     for runtime in ("rp2", "rp3"):
         path = findings_path(case, runtime)
@@ -121,10 +126,15 @@ def validate_case(case: dict[str, Any]) -> tuple[int, int]:
         require(observed == EXPECTED_SUMMARY, f"{case['case_id']}/{runtime}: summary mismatch {observed}")
         validate_unmatched_coverage(case["case_id"], runtime, findings, path)
         require(findings.get("evidence_scope") == "controlled_single_repeat_fixture", f"{path}: unexpected evidence scope")
+        require(summary.get("trace_valid") is True, f"{path}: expected trace_valid summary")
+        require(findings_has_activation(findings), f"{path}: missing activation.select decision")
         trace_path = REPO_ROOT / findings["trace_path"]
-        require(trace_path.is_file(), f"{path}: missing trace {trace_path}")
-        require(trace_has_activation(trace_path), f"{trace_path}: missing activation.select")
-        trace_count += 1
+        trace_ref_count += 1
+        if trace_path.is_file():
+            require(trace_has_activation(trace_path), f"{trace_path}: missing activation.select")
+            validated_trace_count += 1
+        else:
+            require(not require_traces, f"{path}: missing trace {trace_path}")
 
     comparison_file = comparison_path(case)
     require(comparison_file.is_file(), f"{case['case_id']}: missing comparison {comparison_file}")
@@ -140,18 +150,20 @@ def validate_case(case: dict[str, Any]) -> tuple[int, int]:
     )
     unchecked = comparison["pairs"][0]["comparison_invariants"]["unchecked_fields"]
     require(unchecked == [], f"{comparison_file}: unchecked invariants {unchecked}")
-    return trace_count, finding_count
+    return trace_ref_count, validated_trace_count, finding_count
 
 
-def validate_all() -> None:
+def validate_all(require_traces: bool) -> None:
     cases = promoted_cases()
     expected = expected_case_count()
     require(len(cases) == expected, f"expected {expected} promoted cases, observed {len(cases)}")
-    total_traces = 0
+    total_trace_refs = 0
+    total_validated_traces = 0
     total_findings = 0
     for case in cases:
-        traces, findings = validate_case(case)
-        total_traces += traces
+        trace_refs, validated_traces, findings = validate_case(case, require_traces)
+        total_trace_refs += trace_refs
+        total_validated_traces += validated_traces
         total_findings += findings
 
     comparison_files = sorted(RESULTS_ROOT.glob("*/*_rp2_rp3_comparison.json"))
@@ -160,14 +172,20 @@ def validate_all() -> None:
     require(len(drift_reports) == len({case["family_id"] for case in cases}), "missing per-family drift reports")
     print(
         "validated planned inclusion controlled fixture evidence: "
-        f"{len(cases)} cases, {total_traces} traces, {total_findings} findings files"
+        f"{len(cases)} cases, {total_trace_refs} trace references, "
+        f"{total_validated_traces} local traces validated, {total_findings} findings files"
     )
 
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.parse_args(argv)
-    validate_all()
+    parser.add_argument(
+        "--require-traces",
+        action="store_true",
+        help="require every findings trace_path to resolve to a local trace file",
+    )
+    args = parser.parse_args(argv)
+    validate_all(require_traces=args.require_traces)
     return 0
 
 

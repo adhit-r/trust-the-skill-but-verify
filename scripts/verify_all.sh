@@ -132,6 +132,7 @@ bash -n experiments/source-mix-rp6-repeat-stability/reproduce_source_mix_rp6_rep
 "$PYTHON_BIN" tools/validate_gate5_review_packet_index.py
 "$PYTHON_BIN" tools/validate_gate5_blinded_packet_bundle.py
 "$PYTHON_BIN" tools/validate_gate5_review_export_templates.py
+"$PYTHON_BIN" tools/validate_artifact_metadata.py
 "$PYTHON_BIN" -c 'import yaml; yaml.safe_load(open("CITATION.cff", encoding="utf-8"))'
 "$PYTHON_BIN" tools/validate_claim_ledger.py
 "$PYTHON_BIN" tools/check_no_local_paths.py

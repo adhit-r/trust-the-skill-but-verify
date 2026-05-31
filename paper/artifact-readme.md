@@ -393,6 +393,9 @@ PYTHON_BIN=/tmp/skilldiff-venv/bin/python make validate-artifact-release-bundle
 - [x] Maintain a validated paper claim ledger.
 - [x] Complete published pinned-source hash lists for first-party seed repos.
 - [x] Add a top-level `SECURITY.md`.
-- [ ] Finalize license and citation metadata.
-  Current `CITATION.cff` exists, but release URL and license fields remain
-  placeholder/incomplete until the artifact bundle is finalized.
+- [x] Finalize citation metadata and explicit license boundary.
+  Current `CITATION.cff` points to the repository URL and intentionally omits
+  the optional CFF `license` field because no top-level open-source license has
+  been selected. The local release bundle includes the `NOASSERTION`
+  license-boundary note; any double-blind venue package must replace or omit
+  deanonymizing repository metadata according to that venue's policy.

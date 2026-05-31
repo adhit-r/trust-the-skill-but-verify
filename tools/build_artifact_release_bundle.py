@@ -20,7 +20,13 @@ RELEASE_MANIFEST_NAME = "release-manifest.json"
 CHECKSUMS_NAME = "checksums.sha256"
 
 REQUIRED_FILES = [
+    "CITATION.cff",
+    "SECURITY.md",
     "scripts/reproduce_paper_tables.sh",
+    "docs/artifact/ai-use-disclosure.md",
+    "docs/artifact/anonymity-checklist.md",
+    "docs/artifact/benchmark-data-card.md",
+    "docs/artifact/license-boundary.md",
     "docs/artifact/release-checklist.md",
     "paper/artifact-readme.md",
     "paper/claim-ledger.json",

@@ -574,6 +574,9 @@ Goal: make the work submission-ready without unsupported claims.
    Include safe disclosure, synthetic canary policy, no-real-secret policy,
    and public-internet boundary.
 2. [x] Add `CITATION.cff`.
+   Current metadata points to the repository URL and intentionally omits the
+   optional CFF `license` field; `tools/validate_artifact_metadata.py` verifies
+   that the documented `NOASSERTION` boundary is not a placeholder.
 3. [x] Add benchmark data card.
 4. [x] Add license clarity for benchmark fixtures, generated results,
    scripts, and first-party references.
@@ -610,7 +613,7 @@ Goal: make the work submission-ready without unsupported claims.
    complete.
    The clean artifact path and claim-boundary checks are present; the
    manuscript is still not USENIX-ready until adjudication, selective real-run
-   promotion decisions, and final venue-specific release metadata are complete.
+   promotion decisions, and selected-venue packaging are complete.
 
 ## Immediate Next Step
 
@@ -623,8 +626,8 @@ layer, the frozen Gate 5 inclusion table, the raw descriptive-rate artifact,
 the Gate 5 non-human interval artifact, the 44/132
 manifest/source-provenance floor, the first-party/public source-mix RP6
 report-card slice, its three-repeat deterministic stability artifact, and the
-clean local release-bundle path are complete for the bounded non-human evidence
-boundary.
+clean local release-bundle path, citation metadata, and explicit license
+boundary are complete for the bounded non-human evidence boundary.
 
 The remaining submission-readiness dependencies are:
 
@@ -636,5 +639,7 @@ The remaining submission-readiness dependencies are:
    full-product overclaiming.
 3. Keep McNemar, reviewer-agreement, and adjudication claims blocked until
    binary matched outcome labels and real two-reviewer evidence exist.
-4. Finalize venue-specific release metadata, especially license and citation
-   fields, before external artifact submission.
+4. Run a selected-venue packaging pass before external artifact submission:
+   double-blind venues must replace or omit deanonymizing repository metadata,
+   while post-acceptance public archives can use the checked `CITATION.cff`
+   repository URL and explicit `NOASSERTION` license boundary.

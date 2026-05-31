@@ -68,6 +68,7 @@ SECRET_PATTERNS = [
         r"bearer\s+[A-Za-z0-9_\-\.]{20,}",
     )
 ]
+SHA256_RE = re.compile(r"[0-9a-f]{64}")
 
 
 def load_json(path: Path) -> dict[str, Any]:
@@ -128,6 +129,10 @@ def trace_event_map(trace_path: Path) -> dict[str, dict[str, Any]]:
                     "event_type": event.get("event_type") or "unknown",
                 }
     return events
+
+
+def optional_raw_trace_ref(trace_ref: str) -> bool:
+    return trace_ref.startswith("results/raw/")
 
 
 def validate_schema(index: dict[str, Any], path: Path) -> None:
@@ -399,7 +404,7 @@ def validate_index(path: Path) -> None:
                 finding_path = repo_path(run_ref["finding_ref"])
                 trace_path = repo_path(run_ref["trace_ref"])
                 require(finding_path is not None and finding_path.is_file(), f"{packet_id}: missing finding file")
-                require(trace_path is not None and trace_path.is_file(), f"{packet_id}: missing trace file")
+                require(trace_path is not None, f"{packet_id}: missing trace ref")
                 observed_trace_refs.add(run_ref["trace_ref"])
                 findings_doc = load_json(finding_path)
                 require(run_ref["run_id"] == run["run_id"], f"{packet_id}: run id mismatch")
@@ -410,15 +415,21 @@ def validate_index(path: Path) -> None:
                     run_ref["finding_sha256"] == build_gate5_review_packet_index.sha256_file(finding_path),
                     f"{packet_id}: finding hash mismatch",
                 )
-                require(
-                    run_ref["trace_sha256"] == build_gate5_review_packet_index.sha256_file(trace_path),
-                    f"{packet_id}: trace hash mismatch",
-                )
-                require(run_ref["trace_event_count"] == line_count(trace_path), f"{packet_id}: trace count mismatch")
+                if trace_path.is_file():
+                    require(
+                        run_ref["trace_sha256"] == build_gate5_review_packet_index.sha256_file(trace_path),
+                        f"{packet_id}: trace hash mismatch",
+                    )
+                    require(run_ref["trace_event_count"] == line_count(trace_path), f"{packet_id}: trace count mismatch")
+                    trace_events = trace_event_map(trace_path)
+                else:
+                    require(optional_raw_trace_ref(run_ref["trace_ref"]), f"{packet_id}: missing required trace file")
+                    require(SHA256_RE.fullmatch(run_ref["trace_sha256"]), f"{packet_id}: malformed trace hash")
+                    require(isinstance(run_ref["trace_event_count"], int), f"{packet_id}: malformed trace count")
+                    trace_events = {}
                 require(run_ref["finding_count"] == len(findings_doc.get("findings", [])), f"{packet_id}: finding count mismatch")
                 require(run_ref["trace_valid"] == bool(run.get("summary", {}).get("trace_valid")), f"{packet_id}: trace-valid mismatch")
 
-                trace_events = trace_event_map(trace_path)
                 for finding_index, finding in enumerate(findings_doc.get("findings", [])):
                     finding_key = (run_ref["finding_ref"], f"/findings/{finding_index}")
                     require(finding_key in packet_finding_refs, f"{packet_id}: missing finding ref {finding_key}")

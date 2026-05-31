@@ -3,9 +3,10 @@
 ## Scope
 
 This data card covers the current SkillDiff benchmark fixtures and derived
-artifacts. The current package is a controlled feasibility and method-evidence
-artifact, not a full 40/120 paper benchmark and not ecosystem prevalence
-evidence.
+artifacts. The current package reaches the 44-skill / 132-triple manifest
+floor with bounded provenance and execution labels, but it is still a
+controlled method-evidence artifact rather than completed paper-grade evidence
+or ecosystem prevalence evidence.
 
 ## Included Data
 

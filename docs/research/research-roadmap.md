@@ -16,12 +16,19 @@ Current strategic target:
 
 Current evidence boundary:
 
-- The repository has a verified pilot artifact, not a full-paper benchmark.
-- Current claims are limited to controlled feasibility and method evidence.
-- Executable runtime-drift aggregate evidence remains RP2/RP3. RP1 adds
-  promoted deterministic simulator evidence; RP4, RP5, and RP6 remain bounded
-  fixture/report-card evidence. These auxiliary profiles do not add
-  commercial-runtime, live-hosted, or prevalence claims.
+- The repository now has a verified bounded strengthening package and clean
+  local artifact path, not a completed submission package.
+- The 44-skill / 132-triple manifest floor is reached with provenance,
+  execution-level, publication-boundary, and safety labels. This is not
+  ecosystem prevalence evidence or completed paper-grade evidence.
+- Executable runtime-drift aggregate evidence remains RP2/RP3 controlled
+  fixture evidence. RP1 adds promoted deterministic simulator evidence; RP4,
+  RP5, and RP6 remain bounded fixture/report-card evidence. These auxiliary
+  profiles do not add commercial-runtime, live-hosted, or prevalence claims.
+- Non-human Gate 5 scaffolds now include repeat-backed deterministic fixtures,
+  runtime report cards, Wilson/bootstrap intervals, reviewer packets, and a
+  local release bundle. Completed human review, adjudication, reviewer
+  agreement, and venue-final artifact release remain open.
 - The paper must not claim ecosystem prevalence, commercial-runtime behavior,
   live connector authorization, public-internet exfiltration, syscall-complete
   tracing, or full product behavior until those claims have direct evidence.
@@ -153,28 +160,40 @@ but the top-tier paper is now steered by five evidence phases.
 | S2: Scale the benchmark without losing control | Expand from feasibility cases to a credible systems-security benchmark | 40+ skills, 120+ skill-task-contract triples before repeats, seven normalized categories, provenance and execution-level labels | Aggregate tables can be reported by category, runtime pair, and attack family |
 | S3: Add baselines reviewers expect | Show why runtime conformance testing is not replaced by static audit, least privilege, or guardrails | Static scanner baseline, reachability-inspired static approximation clearly labeled non-equivalent to Semia, SkillScope-style least privilege, ClawGuard/Task Shield-style guard, RP6 hardened profile, bounded RP6 component ablations over six controls | Report cards compare violation reduction, attempted-overreach conversion, task success, missing outputs, approval burden, component-disabled regressions, and coverage |
 | S4: Add statistical and human-review rigor | Make the evaluation acceptable for USENIX/NDSS/S&P/CCS | Repeat-run support, 3 deterministic repeats, 5 model-mediated repeats, Wilson intervals, bootstrap intervals, adjudication forms, two-reviewer agreement | Main tables include uncertainty and semantic findings have review evidence |
-| S5: Promote from pilot artifact to paper artifact | Make the release safe, anonymous, and reproducible | `SECURITY.md`, `CITATION.cff`, data card, license clarity, anonymity checklist, AI-use disclosure, one-command reproduction path, claim ledger for every number | A clean checkout can reproduce main tables and no unsupported claim remains in the manuscript |
+| S5: Promote from bounded artifact to submission artifact | Make the release safe, anonymous, and reproducible | `SECURITY.md`, `CITATION.cff`, data card, license clarity, anonymity checklist, AI-use disclosure, one-command reproduction path, claim ledger for every number | A clean checkout can reproduce main tables and no unsupported claim remains in the manuscript |
 
-Near-term dependency order:
+Current phase status as of 2026-05-31:
 
-1. Keep `docs/research/adapter-support-matrix.md` current before promoting any
-   runtime-surface claim.
-2. Treat RP1 as deterministic simulator evidence only; do not fold it into
+- S1, S2, and S3 are complete for the bounded non-human evidence boundary.
+- S4 is complete for machine-only repeats and intervals, but incomplete for
+  human/manual adjudication.
+- S5 has the clean local artifact path and safety scaffolds, but final
+  venue-specific release metadata remains open.
+- The remaining paper-grade blockers are two-reviewer adjudication,
+  selective safe real-run promotion decisions, four expected-output oracle refs
+  if their smoke/report-card cases are promoted, and venue-specific
+  license/citation finalization.
+
+Current dependency order:
+
+1. Run the two-reviewer workflow from the existing blinded packet templates
+   before claiming reviewer agreement, adjudication, or human-reviewed
+   statistics.
+2. Backfill the four missing expected-output oracle refs if the corresponding
+   network-egress/RP5 cases are promoted beyond smoke or report-card metadata.
+3. Add safe task-specific real-run adapters only when the run can avoid real
+   credentials, public-network exfiltration, commercial-runtime claims, and
+   full-product overclaiming.
+4. Keep `docs/research/adapter-support-matrix.md`, runtime report cards,
+   benchmark inclusion metadata, and claim-ledger validation current before
+   promoting any new runtime-surface or numerical claim.
+5. Treat RP1 as deterministic simulator evidence only; do not fold it into
    RP2/RP3 executable runtime-drift aggregate counts.
-3. Promote RP4 beyond the S1.2 local fixture only when external MCP
-   descriptor, tool-result, approval, and authorization traces can be captured
-   without real credentials or public-network exposure.
-4. Treat RP5 evidence as bounded local plugin fixture evidence; do not claim
-   commercial plugin-store, live host API, external MCP/server, or public-network
-   behavior.
-5. Treat RP6 evidence as bounded report-card, baseline, component-ablation, and
-   repeat-stability evidence until it scales beyond controlled fixtures.
-6. Keep runtime report-card schema, renderer, generated artifacts, and verify check mode current.
-7. Add contract-derived least-privilege baseline.
-8. Keep the machine-readable benchmark inclusion checklist current as cases are promoted.
-9. Add repeat-run support to the runners.
-10. Add the next 15 promoted skills only after the profile/baseline surfaces are
-   stable.
+6. Treat RP4/RP5/RP6 as bounded fixture, report-card, baseline,
+   component-ablation, and repeat-stability evidence until broader safe
+   real-run evidence supports a narrower promotion.
+7. Finalize venue-specific artifact release metadata, especially license and
+   citation fields, before external artifact submission.
 
 Stop rules:
 
@@ -738,14 +757,14 @@ Acceptance criteria:
 
 Current protocol status:
 
-- Current MVP is treated as feasibility and motivating evidence, not prevalence
-  evidence.
-- The full-paper minimum is at least 40 skills and 120 skill-task-contract
-  triples, with the roadmap target remaining 60 base skills, 60 adversarial
-  variants, 3-5 tasks per skill, and 3-6 runtime profiles.
-- Deterministic full-paper fixtures should run at least three repeats per
-  skill-task-profile; nondeterministic model-mediated runs should run at least
-  five repeats.
+- Current validated evidence is treated as bounded runtime-conformance and
+  method evidence, not prevalence evidence.
+- The 40-skill / 120-triple manifest floor is reached by the current
+  44-skill / 132-triple manifest, but this is not paper-grade completion
+  until adjudication and selective real-run promotion decisions catch up.
+- Deterministic promoted fixtures have repeat-backed evidence where admitted
+  into current claims; nondeterministic model-mediated runs remain excluded
+  until five-repeat evidence and matching validators exist.
 - The protocol maps each RQ to a primary measurement and figure/table target.
 
 ### RM-12: Paper, Artifact, and Release Plan
@@ -793,7 +812,14 @@ Current status as of the first executable MVP:
 
 - Done for RP2/RP3: benign repo-audit fixture, adversarial canary-leak fixture, AuditLens Acme P3/P4 fixture, synthetic workspaces, synthetic canaries, security contracts, trace generation, contract checking, Docker-backed RP3 run path, repo-owned neutral RP3 image, PV-01 RP3 container-strace MVP read evidence for supported file-open syscalls, PV-02 controlled Python fake-sink and blocked-egress evidence, and Markdown reports.
 - Current concrete answer: benign RP2/RP3 runs are clean for observed MVP surfaces; adversarial RP2 succeeds in reading `./.env` and leaks `CANARY_REPO_AUDIT_SMOKE_0001` into the generated local report; adversarial RP3 fails to read `./.env` and records attempted overreach without canary movement.
-- Not done yet: syscall-complete file-read provenance across all runtimes, packet capture or arbitrary-client network tracing, tool-call tracing, approval tracing, persistence tracing, aggregate drift metrics, and a publishable image-release flow.
+- Later strengthening adds RP1 simulator evidence, RP4/RP5/RP6 bounded
+  fixture/report-card evidence, 44/132 benchmark manifest coverage,
+  repeat-backed deterministic fixture evidence, machine-only intervals, review
+  packet scaffolds, and a clean local release-bundle path.
+- Not done yet: syscall-complete file-read provenance across all runtimes,
+  packet capture or arbitrary-client network tracing, external MCP/server
+  authorization evidence, commercial-runtime behavior, completed human review,
+  reviewer agreement, adjudication, and public release readiness.
 
 ## Paper Outline
 
@@ -891,10 +917,21 @@ Preferred paper shape:
 
 This research direction is ready for serious paper drafting when:
 
-- The MVP shows one real differential result end to end.
+- The MVP shows one real differential result end to end. Current status: done
+  for bounded RP2/RP3 fixture evidence.
 - The benchmark has at least 40 skills and 120 skill-task-contract triples.
-- Traces are stable and machine-checkable.
-- Drift metrics produce interpretable results.
-- Related work differentiation is crisp.
-- The artifact can be released safely.
+  Current status: done as a 44-skill / 132-triple manifest floor, with bounded
+  evidence labels preserved.
+- Traces are stable and machine-checkable. Current status: done for admitted
+  machine-validated traces and repeat-backed deterministic fixtures.
+- Drift metrics produce interpretable results. Current status: done for
+  machine-only paired-runtime summaries, report cards, and intervals; not done
+  for adjudicated human-reviewed outcome claims.
+- Related work differentiation is crisp. Current status: source-checked and
+  tracked, with final submission refresh still required.
+- The artifact can be released safely. Current status: local machine-only
+  bundle path exists; public release and final venue-specific metadata remain
+  open.
 - The paper can answer "why now" and "why this is not just another scanner."
+  Current status: yes for the runtime-conformance framing; top-tier submission
+  still requires adjudication and final claim-boundary review.

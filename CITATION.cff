@@ -5,12 +5,11 @@ type: software
 authors:
   - family-names: "SkillDiff Artifact Authors"
 version: "0.1.0"
-date-released: "2026-05-26"
-repository-code: "https://example.invalid/skilldiff-artifact"
+date-released: "2026-05-31"
+repository-code: "https://github.com/adhit-r/trust-the-skill-but-verify"
 abstract: "SkillDiff is a research artifact for differential runtime conformance testing of portable AI agent skills under fixed skill, task, workspace, prompt, contract, variant, and repeat invariants."
 keywords:
   - agent skills
   - runtime conformance
   - security contracts
   - differential testing
-license: "NOASSERTION"

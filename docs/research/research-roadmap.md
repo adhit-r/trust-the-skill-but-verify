@@ -167,11 +167,12 @@ Current phase status as of 2026-05-31:
 - S1, S2, and S3 are complete for the bounded non-human evidence boundary.
 - S4 is complete for machine-only repeats and intervals, but incomplete for
   human/manual adjudication.
-- S5 has the clean local artifact path and safety scaffolds, but final
-  venue-specific release metadata remains open.
+- S5 has the clean local artifact path, safety scaffolds, citation metadata,
+  and explicit `NOASSERTION` license boundary. A selected-venue packaging pass
+  is still required before external artifact submission.
 - The remaining paper-grade blockers are two-reviewer adjudication,
-  selective safe real-run promotion decisions, and venue-specific
-  license/citation finalization.
+  selective safe real-run promotion decisions, and selected-venue
+  anonymous/deanonymized packaging.
 
 Current dependency order:
 
@@ -189,8 +190,10 @@ Current dependency order:
 5. Treat RP4/RP5/RP6 as bounded fixture, report-card, baseline,
    component-ablation, and repeat-stability evidence until broader safe
    real-run evidence supports a narrower promotion.
-6. Finalize venue-specific artifact release metadata, especially license and
-   citation fields, before external artifact submission.
+6. Run a selected-venue packaging pass before external artifact submission:
+   double-blind venues must replace or omit deanonymizing repository metadata,
+   while post-acceptance public archives can use the checked `CITATION.cff`
+   repository URL and explicit `NOASSERTION` license boundary.
 
 Stop rules:
 

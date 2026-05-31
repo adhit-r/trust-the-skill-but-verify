@@ -19,6 +19,7 @@ Status: local machine-only bundle path available; no completed human review.
 - `python3 tools/validate_benchmark_cases.py --self-test benchmark/manifests/benchmark-cases-current.json`
 - `python3 tools/build_runtime_report_cards.py --check --output-dir results/derived/runtime-report-cards`
 - `python3 tools/validate_gate5_scaffolds.py`
+- `python3 tools/validate_artifact_metadata.py`
 - `python3 tools/validate_claim_ledger.py`
 - `python3 tools/check_no_local_paths.py`
 - `PYTHON_BIN=python3 make verify`

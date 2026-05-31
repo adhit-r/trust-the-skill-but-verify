@@ -613,7 +613,7 @@ Goal: make the work submission-ready without unsupported claims.
    complete.
    The clean artifact path and claim-boundary checks are present; the
    manuscript is still not USENIX-ready until adjudication, selective real-run
-   promotion decisions, and final selected-venue policy checks are complete.
+   promotion decisions, and final selected-venue policy refresh is complete.
 
 ## Immediate Next Step
 
@@ -628,7 +628,8 @@ manifest/source-provenance floor, the first-party/public source-mix RP6
 report-card slice, its three-repeat deterministic stability artifact, and the
 clean local release-bundle path, citation metadata, and explicit license
 boundary, plus the selected packaging-profile pass for `anonymous_review` and
-`public_archive` candidate metadata, are complete for the bounded non-human
+`public_archive` candidate metadata, plus the selected-venue policy snapshot
+for USENIX Security 2027 Cycle 2, are complete for the bounded non-human
 evidence boundary.
 
 The remaining submission-readiness dependencies are:
@@ -641,7 +642,8 @@ The remaining submission-readiness dependencies are:
    full-product overclaiming.
 3. Keep McNemar, reviewer-agreement, and adjudication claims blocked until
    binary matched outcome labels and real two-reviewer evidence exist.
-4. Run a final selected-venue policy check before external artifact submission:
-   the repo now validates `anonymous_review` and `public_archive` candidate
-   metadata, but actual submission packaging still has to follow the selected
-   venue's current rules.
+4. Refresh the selected-venue policy snapshot against the final 2027 CFP/CFA
+   before external artifact submission. The repo now validates the current
+   official-source snapshot, `anonymous_review` review metadata, and
+   `public_archive` post-acceptance metadata, but actual submission packaging
+   still has to follow the selected venue's current rules.

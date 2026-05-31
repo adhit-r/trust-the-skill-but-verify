@@ -1,0 +1,194 @@
+{
+  "schema_version": "0.1",
+  "status": "selected_venue_policy_snapshot_ready_no_external_submission",
+  "selected_policy_target": {
+    "venue_id": "usenix_security_2027_cycle_2",
+    "venue_name": "USENIX Security 2027 Cycle 2",
+    "role": "primary_realistic_target",
+    "submission_packaging_profile": "anonymous_review",
+    "post_acceptance_packaging_profile": "public_archive"
+  },
+  "snapshot": {
+    "checked_on": "2026-06-01",
+    "timezone": "Asia/Kolkata",
+    "source_policy_state": "usenix_security_2027_dates_official_2026_detailed_policy_precedent",
+    "final_submission_policy_check_complete": false,
+    "requires_refresh_before_submission": true,
+    "reason_final_check_open": "The official USENIX Security 2027 page listed dates, but a detailed USENIX Security 2027 CFP/CFA was not available at snapshot time. USENIX Security 2026 detailed policy pages are tracked as official precedent only."
+  },
+  "policy_sources": [
+    {
+      "source_id": "usenix_security_2027_dates",
+      "venue_id": "usenix_security_2027_cycle_2",
+      "source_kind": "official_venue_page",
+      "url": "https://www.usenix.org/conference/usenixsecurity27",
+      "checked_on": "2026-06-01",
+      "facts_used": [
+        "conference_dates",
+        "cycle_1_registration_deadline",
+        "cycle_1_submission_deadline",
+        "cycle_2_registration_deadline",
+        "cycle_2_submission_deadline"
+      ]
+    },
+    {
+      "source_id": "usenix_security_2026_cfp_precedent",
+      "venue_id": "usenix_security_2026",
+      "source_kind": "official_precedent_cfp",
+      "url": "https://www.usenix.org/conference/usenixsecurity26/call-for-papers",
+      "checked_on": "2026-06-01",
+      "facts_used": [
+        "open_science_appendix_required",
+        "ethical_considerations_appendix_required",
+        "anonymized_submission_required",
+        "anonymized_artifact_links_required",
+        "orcid_required_by_registration",
+        "ai_integrity_guideline"
+      ]
+    },
+    {
+      "source_id": "usenix_security_2026_cfa_precedent",
+      "venue_id": "usenix_security_2026",
+      "source_kind": "official_precedent_artifact_call",
+      "url": "https://www.usenix.org/conference/usenixsecurity26/call-for-artifacts",
+      "checked_on": "2026-06-01",
+      "facts_used": [
+        "post_acceptance_availability_verification",
+        "permanent_public_hosting_expected",
+        "github_only_archive_insufficient_for_permanent_availability",
+        "functionality_reproducibility_optional"
+      ]
+    },
+    {
+      "source_id": "ndss_2027_cfp",
+      "venue_id": "ndss_2027_fall",
+      "source_kind": "official_cfp",
+      "url": "https://www.ndss-symposium.org/ndss2027/submissions/call-for-papers/",
+      "checked_on": "2026-06-01",
+      "facts_used": [
+        "fall_submission_deadline",
+        "double_blind_required",
+        "artifact_evaluation_encouraged_after_acceptance",
+        "generative_ai_disclosure_policy"
+      ]
+    },
+    {
+      "source_id": "ndss_2027_cfa",
+      "venue_id": "ndss_2027_fall",
+      "source_kind": "official_artifact_call",
+      "url": "https://www.ndss-symposium.org/ndss2027/submissions/call-for-artifacts/",
+      "checked_on": "2026-06-01",
+      "facts_used": [
+        "post_notification_artifact_registration_deadline",
+        "post_notification_artifact_submission_deadline",
+        "artifact_evaluation_badge_appendix"
+      ]
+    },
+    {
+      "source_id": "ieee_sp_2027_cfp",
+      "venue_id": "ieee_sp_2027_second_deadline",
+      "source_kind": "official_cfp",
+      "url": "https://www.ieee-security.org/TC/SP2027/cfpapers.html",
+      "checked_on": "2026-06-01",
+      "facts_used": [
+        "second_deadline_submission_date",
+        "anonymous_submission_required",
+        "anonymous_artifact_repository_encouraged",
+        "artifact_repository_update_freeze",
+        "orcid_required",
+        "generative_ai_hotcrp_disclosure_required"
+      ]
+    },
+    {
+      "source_id": "acm_ccs_2026_cfp",
+      "venue_id": "acm_ccs_2026_cycle_b",
+      "source_kind": "official_cfp",
+      "url": "https://www.sigsac.org/ccs/CCS2026/call-for/call-for-papers.html",
+      "checked_on": "2026-06-01",
+      "facts_used": [
+        "open_science_appendix_required",
+        "anonymous_online_artifact_url_required_when_artifacts_online",
+        "artifact_grace_period",
+        "no_artifact_updates_after_deadline",
+        "generative_ai_disclosure_required"
+      ]
+    }
+  ],
+  "selected_target_requirements": {
+    "venue_id": "usenix_security_2027_cycle_2",
+    "registration_deadline": "2027-01-19",
+    "paper_submission_deadline": "2027-01-26",
+    "conference_start": "2027-08-11",
+    "conference_end": "2027-08-13",
+    "paper_review_anonymity_required": true,
+    "anonymous_artifact_access_at_submission_required": true,
+    "open_science_appendix_required": true,
+    "ethical_considerations_appendix_required": true,
+    "all_authors_orcid_required_by_registration": true,
+    "ai_use_policy": {
+      "status": "venue_specific_manual_finalization_required",
+      "draft_disclosure_file": "docs/artifact/ai-use-disclosure.md",
+      "disclosure_required_when_substantive": true,
+      "grammar_only_disclosure_may_be_venue_specific": true
+    },
+    "submission_packaging": {
+      "required_profile": "anonymous_review",
+      "forbidden_deanonymizing_repository_metadata": true,
+      "public_archive_profile_forbidden_in_review_submission": true,
+      "actual_hotcrp_submission_claimed": false
+    },
+    "post_acceptance_artifact_policy": {
+      "post_acceptance_profile": "public_archive",
+      "continued_availability_verification_required_for_promised_artifacts": true,
+      "permanent_public_hosting_expected_for_non_sensitive_artifacts": true,
+      "github_only_archive_insufficient_for_permanent_availability": true,
+      "functionality_reproducibility_assessment_optional": true
+    }
+  },
+  "candidate_venue_backplan": [
+    {
+      "venue_id": "ndss_2027_fall",
+      "role": "aggressive_target",
+      "paper_submission_deadline": "2026-08-19",
+      "submission_packaging_profile": "anonymous_review",
+      "artifact_boundary": "accepted_papers_strongly_encouraged_to_open_source_and_submit_artifacts_for_evaluation",
+      "ai_use_boundary": "disclosure_required_for substantive generated content; grammar/style-only editing need not be disclosed under the official CFP"
+    },
+    {
+      "venue_id": "ieee_sp_2027_second_deadline",
+      "role": "strong_target",
+      "abstract_registration_deadline": "2026-11-10",
+      "paper_submission_deadline": "2026-11-17",
+      "submission_packaging_profile": "anonymous_review",
+      "artifact_boundary": "anonymous artifact repositories are strongly encouraged and must not be updated after the paper deadline",
+      "ai_use_boundary": "HotCRP generative-AI usage considerations field is required when AI is used or studied"
+    },
+    {
+      "venue_id": "usenix_security_2027_cycle_2",
+      "role": "primary_realistic_target",
+      "registration_deadline": "2027-01-19",
+      "paper_submission_deadline": "2027-01-26",
+      "submission_packaging_profile": "anonymous_review",
+      "artifact_boundary": "2027 detailed policy pending; 2026 precedent requires anonymized submission artifacts and post-acceptance permanent availability verification for promised artifacts",
+      "ai_use_boundary": "2027 detailed policy pending; 2026 precedent requires integrity-respecting AI use and permits desk rejection for abuse"
+    },
+    {
+      "venue_id": "acm_ccs_2026_cycle_b",
+      "role": "backup_top_tier_reference",
+      "paper_submission_deadline": "2026-04-29",
+      "online_artifact_deadline": "2026-05-02",
+      "submission_packaging_profile": "anonymous_review",
+      "artifact_boundary": "online artifacts require anonymous URLs and no updates after artifact deadline",
+      "ai_use_boundary": "all generative-AI uses must be disclosed; substantive use needs a dedicated section"
+    }
+  ],
+  "claim_boundary": {
+    "actual_external_submission_claimed": false,
+    "accepted_by_venue_claimed": false,
+    "completed_human_review_claimed": false,
+    "public_release_claimed": false,
+    "venue_policy_human_review_completed": false,
+    "final_cfp_policy_frozen_claimed": false,
+    "commercial_runtime_behavior_claimed": false
+  }
+}

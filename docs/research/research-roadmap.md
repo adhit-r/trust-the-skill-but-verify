@@ -162,19 +162,20 @@ but the top-tier paper is now steered by five evidence phases.
 | S4: Add statistical and human-review rigor | Make the evaluation acceptable for USENIX/NDSS/S&P/CCS | Repeat-run support, 3 deterministic repeats, 5 model-mediated repeats, Wilson intervals, bootstrap intervals, adjudication forms, two-reviewer agreement | Main tables include uncertainty and semantic findings have review evidence |
 | S5: Promote from bounded artifact to submission artifact | Make the release safe, anonymous, and reproducible | `SECURITY.md`, `CITATION.cff`, data card, license clarity, anonymity checklist, AI-use disclosure, one-command reproduction path, claim ledger for every number | A clean checkout can reproduce main tables and no unsupported claim remains in the manuscript |
 
-Current phase status as of 2026-05-31:
+Current phase status as of 2026-06-01:
 
 - S1, S2, and S3 are complete for the bounded non-human evidence boundary.
 - S4 is complete for machine-only repeats and intervals, but incomplete for
   human/manual adjudication.
 - S5 has the clean local artifact path, safety scaffolds, citation metadata,
   explicit `NOASSERTION` license boundary, and a selected packaging-profile
-  pass for `anonymous_review` and `public_archive` candidate metadata. A final
-  venue-specific policy check is still required before external artifact
-  submission.
+  pass for `anonymous_review` and `public_archive` candidate metadata. A
+  selected-venue policy snapshot now records USENIX Security 2027 Cycle 2 as
+  the primary realistic target and is validated by `make verify`; a final 2027
+  CFP/CFA refresh is still required before external artifact submission.
 - The remaining paper-grade blockers are two-reviewer adjudication,
   selective safe real-run promotion decisions, and final selected-venue policy
-  checks before external submission.
+  refresh before external submission.
 
 Current dependency order:
 
@@ -192,11 +193,13 @@ Current dependency order:
 5. Treat RP4/RP5/RP6 as bounded fixture, report-card, baseline,
    component-ablation, and repeat-stability evidence until broader safe
    real-run evidence supports a narrower promotion.
-6. Run the selected packaging-profile pass before external artifact submission:
+6. Run the selected packaging-profile pass and selected-venue policy snapshot
+   before external artifact submission:
    double-blind candidates use the checked `anonymous_review` metadata overlay,
    while post-acceptance public archives can use the checked `public_archive`
-   repository metadata and explicit `NOASSERTION` license boundary. A final
-   venue-specific policy check is still required.
+   repository metadata and explicit `NOASSERTION` license boundary. The current
+   snapshot is not a final 2027 CFP/CFA freeze; refresh official venue sources
+   immediately before any real submission.
 
 Stop rules:
 

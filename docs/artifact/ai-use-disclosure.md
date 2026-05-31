@@ -1,7 +1,13 @@
 # AI-Use Disclosure Draft
 
 Status: venue-specific draft text. Final wording must match the selected
-venue policy.
+venue policy and still requires manual finalization.
+
+The selected-venue policy snapshot records USENIX Security 2027 Cycle 2 as the
+primary realistic target and tracks USENIX Security 2026 detailed policy as
+official precedent until the detailed 2027 CFP/CFA is available. This disclosure
+text must therefore be refreshed against the current selected venue policy and
+submission form immediately before any real external submission.
 
 The authors used AI coding and writing assistance to inspect repository
 structure, draft implementation scaffolds, generate validation scripts, and

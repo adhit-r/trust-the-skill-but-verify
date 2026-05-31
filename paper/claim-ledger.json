@@ -4402,6 +4402,88 @@
         "paper/tables/mvp-results.md"
       ],
       "status": "supported_boundary"
+    },
+    {
+      "claim": "The current benchmark manifest contains one hundred thirty-two cases and leaves four smoke or report-card cases with null expected-output oracle references: the network-egress MVP fake-sink smoke case and the three RP5 plugin-style report-card cases. This is a steering blocker only, not a paper-grade evidence-completion claim.",
+      "claim_id": "CL-STEER-001",
+      "evidence": [
+        {
+          "expected": 132,
+          "path": "benchmark/manifests/benchmark-cases-current.json",
+          "pointer": "/declared_case_count",
+          "type": "json_value"
+        },
+        {
+          "expected": 132,
+          "path": "benchmark/manifests/benchmark-cases-current.json",
+          "pointer": "/cases",
+          "type": "json_len"
+        },
+        {
+          "expected": "network-egress.mvp.fake-sink-egress-smoke",
+          "path": "benchmark/manifests/benchmark-cases-current.json",
+          "pointer": "/cases/6/case_id",
+          "type": "json_value"
+        },
+        {
+          "expected": null,
+          "path": "benchmark/manifests/benchmark-cases-current.json",
+          "pointer": "/cases/6/expected_output/oracle_ref",
+          "type": "json_value"
+        },
+        {
+          "expected": "rp5-plugin-style.p1.install-activation",
+          "path": "benchmark/manifests/benchmark-cases-current.json",
+          "pointer": "/cases/7/case_id",
+          "type": "json_value"
+        },
+        {
+          "expected": null,
+          "path": "benchmark/manifests/benchmark-cases-current.json",
+          "pointer": "/cases/7/expected_output/oracle_ref",
+          "type": "json_value"
+        },
+        {
+          "expected": "rp5-plugin-style.p2.update-metadata",
+          "path": "benchmark/manifests/benchmark-cases-current.json",
+          "pointer": "/cases/8/case_id",
+          "type": "json_value"
+        },
+        {
+          "expected": null,
+          "path": "benchmark/manifests/benchmark-cases-current.json",
+          "pointer": "/cases/8/expected_output/oracle_ref",
+          "type": "json_value"
+        },
+        {
+          "expected": "rp5-plugin-style.p3.negative-control",
+          "path": "benchmark/manifests/benchmark-cases-current.json",
+          "pointer": "/cases/9/case_id",
+          "type": "json_value"
+        },
+        {
+          "expected": null,
+          "path": "benchmark/manifests/benchmark-cases-current.json",
+          "pointer": "/cases/9/expected_output/oracle_ref",
+          "type": "json_value"
+        },
+        {
+          "contains": "missing file for task_prompt.prompt_ref",
+          "path": "tools/validate_benchmark_cases.py",
+          "type": "file_contains"
+        },
+        {
+          "contains": "expected_output.primary_artifact must be set",
+          "path": "tools/validate_benchmark_cases.py",
+          "type": "file_contains"
+        }
+      ],
+      "paper_locations": [
+        "docs/research/research-roadmap.md",
+        "docs/research/research-todo.md",
+        "benchmark/manifests/benchmark-cases-current.json"
+      ],
+      "status": "supported_boundary"
     }
   ],
   "ledger_id": "paper-claim-ledger",

@@ -121,9 +121,10 @@ agent-skill safety.
    order.
 2. [x] Create this tracked low-level TODO under `docs/research/`.
    Done when low-level tasks map to the high-level steering phases.
-3. [ ] Move any useful content from ignored scratch notes into tracked docs.
-   Done when no active planning dependency exists only under ignored
-   `research/` or root-level ignored TODO files.
+3. [x] Move any useful content from ignored scratch notes into tracked docs.
+   Current clean-checkout state has no ignored active roadmap/TODO dependency
+   under `research/` or root-level scratch planning files. The tracked steering
+   pair remains `docs/research/research-roadmap.md` plus this TODO.
 4. [x] Update `paper/paper-spine.md` to use the title
    `SkillDiff: Differential Runtime Conformance Testing for Portable AI Agent
    Skills`.
@@ -133,9 +134,12 @@ agent-skill safety.
    map.
    Current artifact: `docs/research/related-work.md`; source check completed
    on 2026-05-28 against current primary arXiv, MCP, and OWASP sources.
-6. [ ] Add a claim-ledger entry for every new numerical steering claim that is
+6. [x] Add a claim-ledger entry for every new numerical steering claim that is
    promoted into paper-facing text.
-   Done when `python3 tools/validate_claim_ledger.py` passes after the edit.
+   Current validation: `python3 tools/validate_claim_ledger.py` passes after
+   the Gate 5, artifact-release, and CI-warning cleanup updates. This remains
+   an ongoing guardrail: any newly promoted number must either reuse an
+   existing ledger claim or add a new one before merge.
 
 ## S1: Make The Runtime Variable Unignorable
 
@@ -342,45 +346,43 @@ Goal: reach a credible full-paper benchmark without diluting evidence quality.
 
 ### S3.2 Category Expansion Targets
 
-1. [~] Document automation: add at least two skills beyond docs-forge.
-   Current status: two synthetic document-automation skills are now in the
-   manifest with controlled single-repeat RP2/RP3 fixture traces.
-2. [~] Repository maintenance: add at least three non-trivial repo workflows.
-   Current status: three synthetic repository-maintenance skills are now in the
-   manifest with controlled single-repeat RP2/RP3 fixture traces.
-3. [~] Compliance/audit: add at least two workflows beyond AuditLens.
-   Current status: two synthetic compliance/audit skills are now in the
-   manifest with controlled single-repeat RP2/RP3 fixture traces.
-4. [~] Data extraction: add tasks covering CSV, JSON, Markdown, and mixed
+1. [x] Document automation: add at least two skills beyond docs-forge.
+   Current manifest category count: 21 document-automation triples, with
+   bounded controlled-fixture labels preserved.
+2. [x] Repository maintenance: add at least three non-trivial repo workflows.
+   Current manifest category count: 21 repository-maintenance triples, with
+   controlled RP2/RP3 fixture evidence for promoted entries.
+3. [x] Compliance/audit: add at least two workflows beyond AuditLens.
+   Current manifest category count: 15 compliance/audit triples, with
+   controlled-fixture and first-party/public source-mix boundaries preserved.
+4. [x] Data extraction: add tasks covering CSV, JSON, Markdown, and mixed
    file trees.
-   Current status: one synthetic data-extraction fixture family contributes
-   three tracked triples over CSV, JSON, and Markdown inputs, with controlled
-   RP2/RP3 executable traces and zero runtime-drift findings. More public or
-   first-party data-extraction skills are still needed for source-mix strength.
-5. [~] API workflow: add mock API tasks covering credential exposure,
+   Current manifest category count: 21 data-extraction triples. Category
+   coverage is complete for the manifest floor; paper-grade evidence still
+   depends on adjudication and any later safe task-specific real-run promotion.
+5. [x] API workflow: add mock API tasks covering credential exposure,
    no-egress policy, approval-required calls, and safe local fake sinks.
-   Current status: two synthetic API workflow skills are now in the manifest
-   with controlled single-repeat RP2/RP3 fixture traces.
-6. [~] MCP/tool workflow: add at least two live or fixture-backed MCP/tool
+   Current manifest category count: 18 API-workflow triples, with local
+   fake-sink and no-public-exfiltration boundaries preserved.
+6. [x] MCP/tool workflow: add at least two live or fixture-backed MCP/tool
    workflows beyond the current restricted-tool mini case.
-   Current status: RP5 plugin-style fixture is backfilled as one additional
-   synthetic fixture-backed MCP/tool workflow; one more remains for this
-   category-expansion target.
-7. [~] Local file operations: add path traversal, hidden write, cleanup, and
+   Current manifest category count: 18 MCP/tool-workflow triples, including
+   bounded RP4/RP5 and public/first-party source-mix entries. This remains
+   fixture/source-mix evidence, not external MCP-server behavior.
+7. [x] Local file operations: add path traversal, hidden write, cleanup, and
    cache-retention cases.
-   Current status: one synthetic local-file-operation fixture family
-   contributes output-only, archive-manifest, and cleanup-negative-control
-   triples, with controlled RP2/RP3 executable traces and zero runtime-drift
-   findings. One synthetic file-diff/local-operations skill adds path
-   traversal and cache-retention coverage through the planned-entry promotion.
+   Current manifest category count: 18 local-file-operation triples, with
+   path-traversal, cleanup, output-only, and cache-retention coverage kept
+   under bounded fixture labels.
 
 ### S3.3 Scale Gates
 
-1. [~] Reach 20 skills and 60 skill-task-contract triples before repeats.
-   Current status: numeric 20/60 inventory floor is reached, with 116 formerly
-   planned entries promoted to controlled single-repeat RP2/RP3 fixture
-   evidence. It should not support prevalence, source-mix evidence completion,
-   repeat stability, live product behavior, or defense-success claims.
+1. [x] Reach 20 skills and 60 skill-task-contract triples before repeats.
+   Current status: superseded by the 44 skills / 132 triples manifest floor,
+   with 116 formerly planned entries promoted to controlled single-repeat
+   RP2/RP3 fixture evidence. It still does not support prevalence,
+   source-mix evidence completion, live product behavior, or defense-success
+   claims.
 2. [x] Reach 40 skills and 120 skill-task-contract triples before repeats.
    Current status: the manifest/source-provenance inventory reaches 44 skills
    and 132 triples. This closes the numeric floor only, not executable
@@ -396,10 +398,24 @@ Goal: reach a credible full-paper benchmark without diluting evidence quality.
    evidence and three-repeat deterministic RP6 stability evidence. Source-mix
    evidence completion remains blocked until adjudication evidence and safe
    task-specific real-run adapters exist.
-4. [ ] Add 1-2 adversarial variants per promoted base skill.
-5. [ ] Store every prompt and expected output in tracked benchmark paths.
-6. [ ] Keep full-product, controlled-fixture, and source-only evidence labels
+4. [~] Add 1-2 adversarial variants per promoted base skill.
+   Current status: every one of the 44 promoted skills contributes exactly
+   three tracked triples, and most promoted triples include explicit boundary,
+   adversarial, unauthorized, or negative-control cases. Keep this partial
+   until stricter per-skill variant labels are machine-checked rather than
+   inferred from case names.
+5. [~] Store every prompt and expected output in tracked benchmark paths.
+   Current manifest status: all 132 cases have tracked prompt refs; 128 of 132
+   cases have tracked expected-output oracle refs. The remaining four cases
+   have primary artifact metadata but no `oracle_ref`: the network-egress MVP
+   fake-sink smoke case and the three RP5 plugin-style report-card cases
+   (`CL-STEER-001`).
+6. [x] Keep full-product, controlled-fixture, and source-only evidence labels
    visible in every aggregate table.
+   Current status: manifest provenance, execution-level, publication-boundary,
+   report-card, scale-gap, inclusion, and evidence-boundary artifacts preserve
+   controlled-fixture, source-mix, simulator, report-card, and future-work
+   labels.
 
 ## S4: Repeats, Statistics, And Adjudication
 
@@ -502,7 +518,7 @@ Goal: make the evaluation credible for a top-tier security review.
    run, trace, and hash refs, and keeps 10 unmapped items blocked as
    metadata-only packets. It contains no raw trace content or completed review
    evidence.
-5. [~] Blind runtime labels where possible for the first review pass.
+5. [x] Blind runtime labels where possible for the first review pass.
    Current artifact: `benchmark/review/gate5-blinded-packet-bundle.json`; it
    exports 122 first-pass runtime-label-blinded pair-review packets from the
    mapped subset and leaves 10 unmapped packets blocked as metadata-only
@@ -572,42 +588,53 @@ Goal: make the work submission-ready without unsupported claims.
 
 ### S5.3 Venue Gates
 
-1. [ ] By 2026-06-15: RP4 fixture, RP6 current-case run, adapter matrix, and
+1. [x] By 2026-06-15: RP4 fixture, RP6 current-case run, adapter matrix, and
    report-card schema exist.
-2. [ ] By 2026-07-15: 44 skills, 132 triples, four profiles on the promoted
+   Completed ahead of date on the verified main branch.
+2. [x] By 2026-07-15: 44 skills, 132 triples, four profiles on the promoted
    subset, first baselines, and repeat support exist, with the 24-family
    source-mix expansion promoted to controlled fixture evidence while preserving
    bounded evidence labels.
+   Completed ahead of date on the verified main branch; this is still bounded
+   evidence, not paper-grade completion.
 3. [ ] By 2026-08-01: decide whether NDSS 2027 Fall is viable.
    Submit to NDSS only if 40 skills, 120 triples, four profiles, and writing
    are close enough to be credible.
-4. [ ] By 2026-10-15: full benchmark, mitigation/report-card results,
+4. [~] By 2026-10-15: full benchmark, mitigation/report-card results,
    adjudication, and figures are complete for S&P decision.
-5. [ ] By 2027-01-05: USENIX-ready manuscript and clean artifact package are
+   Machine artifacts, figures, report cards, intervals, and release-bundle
+   scaffolds are present; adjudication remains the blocking dependency.
+5. [~] By 2027-01-05: USENIX-ready manuscript and clean artifact package are
    complete.
+   The clean artifact path and claim-boundary checks are present; the
+   manuscript is still not USENIX-ready until adjudication, selective real-run
+   promotion decisions, and final venue-specific release metadata are complete.
 
 ## Immediate Next Step
 
 S1.1, S1.2, S1.3, S1.4, the RP1 deterministic simulator slice, S2.1,
 S2.2, the current least-privilege baseline, the S3.1 current-case manifest plus
 scale-gap report, first data-extraction/local-file controlled RP2/RP3 coverage,
-	 the 116-entry planned promotion, the planned-inclusion RP2/RP3 deterministic
+the 116-entry planned promotion, the planned-inclusion RP2/RP3 deterministic
 repeat-stability strengthening artifact, the paired-runtime summary denominator
 layer, the frozen Gate 5 inclusion table, the raw descriptive-rate artifact,
-the Gate 5 non-human interval artifact, and the 44/132
-manifest/source-provenance floor, plus the first-party/public source-mix RP6
-report-card slice and its three-repeat deterministic stability artifact, are
-complete for the bounded evidence boundary. The next dependency is moving from
-bounded fixture stability plus controlled source-mix fixture coverage toward
-reviewer-adjudicated and selectively real-run evidence:
+the Gate 5 non-human interval artifact, the 44/132
+manifest/source-provenance floor, the first-party/public source-mix RP6
+report-card slice, its three-repeat deterministic stability artifact, and the
+clean local release-bundle path are complete for the bounded non-human evidence
+boundary.
 
-1. Use the existing manual review queue records and add completed two-reviewer
-   evidence before claiming reviewer agreement.
-2. Add safe task-specific real-run adapters where they can be run without real
-   credentials, public-network exfiltration, commercial-runtime claims, or
+The remaining submission-readiness dependencies are:
+
+1. Run the two-reviewer workflow from the existing blinded packet templates
+   before claiming reviewer agreement, adjudication, or human-reviewed
+   statistics.
+2. Backfill the four remaining missing expected-output oracle refs if those
+   cases are promoted beyond report-card or smoke metadata.
+3. Add safe task-specific real-run adapters only where they avoid real
+   credentials, public-network exfiltration, commercial-runtime claims, and
    full-product overclaiming.
-3. Keep McNemar, reviewer-agreement, and adjudication claims blocked until
+4. Keep McNemar, reviewer-agreement, and adjudication claims blocked until
    binary matched outcome labels and real two-reviewer evidence exist.
-4. Treat 40/120 as a manifest floor reached only; keep paper-grade execution
-   completion unchecked until adjudication and selective real-run evidence
-   catch up.
+5. Finalize venue-specific release metadata, especially license and citation
+   fields, before external artifact submission.

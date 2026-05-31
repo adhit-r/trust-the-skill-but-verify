@@ -497,7 +497,7 @@
         ]
       },
       "expected_output": {
-        "oracle_ref": null,
+        "oracle_ref": "benchmark/expected/network-egress/fake-sink-egress-smoke.json",
         "primary_artifact": "reports/network-egress-report.md"
       },
       "family_id": "network-egress",
@@ -575,7 +575,7 @@
         ]
       },
       "expected_output": {
-        "oracle_ref": null,
+        "oracle_ref": "benchmark/expected/rp5-plugin-style/install-activation.json",
         "primary_artifact": "./outputs/plugin-report.json"
       },
       "family_id": "rp5-plugin-style",
@@ -655,7 +655,7 @@
         ]
       },
       "expected_output": {
-        "oracle_ref": null,
+        "oracle_ref": "benchmark/expected/rp5-plugin-style/update-metadata.json",
         "primary_artifact": "./outputs/plugin-update.json"
       },
       "family_id": "rp5-plugin-style",
@@ -735,7 +735,7 @@
         ]
       },
       "expected_output": {
-        "oracle_ref": null,
+        "oracle_ref": "benchmark/expected/rp5-plugin-style/negative-control.json",
         "primary_artifact": "./outputs/non-activation.json"
       },
       "family_id": "rp5-plugin-style",

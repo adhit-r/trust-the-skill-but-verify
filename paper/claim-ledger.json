@@ -4404,7 +4404,7 @@
       "status": "supported_boundary"
     },
     {
-      "claim": "The current benchmark manifest contains one hundred thirty-two cases and leaves four smoke or report-card cases with null expected-output oracle references: the network-egress MVP fake-sink smoke case and the three RP5 plugin-style report-card cases. This is a steering blocker only, not a paper-grade evidence-completion claim.",
+      "claim": "The current benchmark manifest contains one hundred thirty-two cases, and the former four null oracle-reference smoke/report-card cases now point to bounded expected-output oracle metadata files. This closes a steering blocker only; it does not promote those cases to paper-grade runtime-success, public-network, commercial-runtime, prevalence, or defense-success evidence.",
       "claim_id": "CL-STEER-001",
       "evidence": [
         {
@@ -4426,7 +4426,7 @@
           "type": "json_value"
         },
         {
-          "expected": null,
+          "expected": "benchmark/expected/network-egress/fake-sink-egress-smoke.json",
           "path": "benchmark/manifests/benchmark-cases-current.json",
           "pointer": "/cases/6/expected_output/oracle_ref",
           "type": "json_value"
@@ -4438,7 +4438,7 @@
           "type": "json_value"
         },
         {
-          "expected": null,
+          "expected": "benchmark/expected/rp5-plugin-style/install-activation.json",
           "path": "benchmark/manifests/benchmark-cases-current.json",
           "pointer": "/cases/7/expected_output/oracle_ref",
           "type": "json_value"
@@ -4450,7 +4450,7 @@
           "type": "json_value"
         },
         {
-          "expected": null,
+          "expected": "benchmark/expected/rp5-plugin-style/update-metadata.json",
           "path": "benchmark/manifests/benchmark-cases-current.json",
           "pointer": "/cases/8/expected_output/oracle_ref",
           "type": "json_value"
@@ -4462,18 +4462,33 @@
           "type": "json_value"
         },
         {
-          "expected": null,
+          "expected": "benchmark/expected/rp5-plugin-style/negative-control.json",
           "path": "benchmark/manifests/benchmark-cases-current.json",
           "pointer": "/cases/9/expected_output/oracle_ref",
           "type": "json_value"
         },
         {
-          "contains": "missing file for task_prompt.prompt_ref",
-          "path": "tools/validate_benchmark_cases.py",
+          "contains": "Controlled local fake-sink oracle only",
+          "path": "benchmark/expected/network-egress/fake-sink-egress-smoke.json",
           "type": "file_contains"
         },
         {
-          "contains": "expected_output.primary_artifact must be set",
+          "contains": "Local synthetic plugin fixture oracle only",
+          "path": "benchmark/expected/rp5-plugin-style/install-activation.json",
+          "type": "file_contains"
+        },
+        {
+          "contains": "Local synthetic plugin metadata/update oracle only",
+          "path": "benchmark/expected/rp5-plugin-style/update-metadata.json",
+          "type": "file_contains"
+        },
+        {
+          "contains": "Local synthetic plugin non-activation oracle only",
+          "path": "benchmark/expected/rp5-plugin-style/negative-control.json",
+          "type": "file_contains"
+        },
+        {
+          "contains": "current benchmark entries must provide expected_output.oracle_ref",
           "path": "tools/validate_benchmark_cases.py",
           "type": "file_contains"
         }
@@ -4481,7 +4496,11 @@
       "paper_locations": [
         "docs/research/research-roadmap.md",
         "docs/research/research-todo.md",
-        "benchmark/manifests/benchmark-cases-current.json"
+        "benchmark/manifests/benchmark-cases-current.json",
+        "benchmark/expected/network-egress/fake-sink-egress-smoke.json",
+        "benchmark/expected/rp5-plugin-style/install-activation.json",
+        "benchmark/expected/rp5-plugin-style/update-metadata.json",
+        "benchmark/expected/rp5-plugin-style/negative-control.json"
       ],
       "status": "supported_boundary"
     }

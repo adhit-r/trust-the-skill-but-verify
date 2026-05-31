@@ -480,10 +480,10 @@
       "refs": {
         "adjudication_form_ref": "paper/gate5-adjudication-form.md",
         "contract_ref": "contracts/network-egress-executable-smoke.yaml",
-        "expected_output_ref": null,
+        "expected_output_ref": "benchmark/expected/network-egress/fake-sink-egress-smoke.json",
         "hashes": {
           "contract_sha256": "480dfed4f15382d4ef09edd3c1fef30bb8457dbe626b3a23f8830755ddb9d733",
-          "expected_output_sha256": null,
+          "expected_output_sha256": "8954140b6e07da1b2224ed9d9c173544516b3c8a3bcf07c5dbf9c76729f8044f",
           "prompt_sha256": "c2ce53871b120b981334909424c71749811461d0289cf705a4b6b0f39ac0023d",
           "source_comparison_sha256s": [],
           "workspace_snapshot_sha256": "f29fe9513687bf10e72841f390ea8e311b86b976d826ea99cf15adc0499934a4"
@@ -547,10 +547,10 @@
       "refs": {
         "adjudication_form_ref": "paper/gate5-adjudication-form.md",
         "contract_ref": "contracts/rp5-plugin-install-activation.yaml",
-        "expected_output_ref": null,
+        "expected_output_ref": "benchmark/expected/rp5-plugin-style/install-activation.json",
         "hashes": {
           "contract_sha256": "227b1a07258374809e3b8d787f30c004190c4a4f0fb46273454ff9920197fbb9",
-          "expected_output_sha256": null,
+          "expected_output_sha256": "c26c1c8a9d279ffe73e1e0335ca6097589d51337e30f6713247b3ab74ebf16a6",
           "prompt_sha256": "bc60835391d9263fd627d547c37b166125e4ee6b98cd3028410cce6c4149fd57",
           "source_comparison_sha256s": [],
           "workspace_snapshot_sha256": "67e8b74d29aed9ba6488a966c14aa9bcc3847f40ccb74d9b7abdf8a0fa72ca4f"
@@ -613,10 +613,10 @@
       "refs": {
         "adjudication_form_ref": "paper/gate5-adjudication-form.md",
         "contract_ref": "contracts/rp5-plugin-update-metadata.yaml",
-        "expected_output_ref": null,
+        "expected_output_ref": "benchmark/expected/rp5-plugin-style/update-metadata.json",
         "hashes": {
           "contract_sha256": "0125936c9acf2d81f5144ee8d76b9c69d5b00e716d5f5122e32b20631779ae2d",
-          "expected_output_sha256": null,
+          "expected_output_sha256": "fc22babb55914baeccf831bc05303be39e1a2e45b0975c3905b31c13058a5a33",
           "prompt_sha256": "c06de961727668eb9d0b2478601f831eae7954f8a97f82d4a9a8821a71cb8db9",
           "source_comparison_sha256s": [],
           "workspace_snapshot_sha256": "67e8b74d29aed9ba6488a966c14aa9bcc3847f40ccb74d9b7abdf8a0fa72ca4f"
@@ -679,10 +679,10 @@
       "refs": {
         "adjudication_form_ref": "paper/gate5-adjudication-form.md",
         "contract_ref": "contracts/rp5-plugin-negative-control.yaml",
-        "expected_output_ref": null,
+        "expected_output_ref": "benchmark/expected/rp5-plugin-style/negative-control.json",
         "hashes": {
           "contract_sha256": "4778f18534c91f63d533849910978462136d7ca0e2bb96c931ba06b7870b98a5",
-          "expected_output_sha256": null,
+          "expected_output_sha256": "7d6aad71c77d3aaab453d9299a5f563c0a71fd3c355e12816a1377a7e989b439",
           "prompt_sha256": "f41129670757f178e7f8cba255b24f75f13667b16f90414e1d62c86c295d61c0",
           "source_comparison_sha256s": [],
           "workspace_snapshot_sha256": "67e8b74d29aed9ba6488a966c14aa9bcc3847f40ccb74d9b7abdf8a0fa72ca4f"

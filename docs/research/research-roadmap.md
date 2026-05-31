@@ -170,8 +170,7 @@ Current phase status as of 2026-05-31:
 - S5 has the clean local artifact path and safety scaffolds, but final
   venue-specific release metadata remains open.
 - The remaining paper-grade blockers are two-reviewer adjudication,
-  selective safe real-run promotion decisions, four expected-output oracle refs
-  if their smoke/report-card cases are promoted, and venue-specific
+  selective safe real-run promotion decisions, and venue-specific
   license/citation finalization.
 
 Current dependency order:
@@ -179,20 +178,18 @@ Current dependency order:
 1. Run the two-reviewer workflow from the existing blinded packet templates
    before claiming reviewer agreement, adjudication, or human-reviewed
    statistics.
-2. Backfill the four missing expected-output oracle refs if the corresponding
-   network-egress/RP5 cases are promoted beyond smoke or report-card metadata.
-3. Add safe task-specific real-run adapters only when the run can avoid real
+2. Add safe task-specific real-run adapters only when the run can avoid real
    credentials, public-network exfiltration, commercial-runtime claims, and
    full-product overclaiming.
-4. Keep `docs/research/adapter-support-matrix.md`, runtime report cards,
+3. Keep `docs/research/adapter-support-matrix.md`, runtime report cards,
    benchmark inclusion metadata, and claim-ledger validation current before
    promoting any new runtime-surface or numerical claim.
-5. Treat RP1 as deterministic simulator evidence only; do not fold it into
+4. Treat RP1 as deterministic simulator evidence only; do not fold it into
    RP2/RP3 executable runtime-drift aggregate counts.
-6. Treat RP4/RP5/RP6 as bounded fixture, report-card, baseline,
+5. Treat RP4/RP5/RP6 as bounded fixture, report-card, baseline,
    component-ablation, and repeat-stability evidence until broader safe
    real-run evidence supports a narrower promotion.
-7. Finalize venue-specific artifact release metadata, especially license and
+6. Finalize venue-specific artifact release metadata, especially license and
    citation fields, before external artifact submission.
 
 Stop rules:

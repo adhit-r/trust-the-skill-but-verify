@@ -1,0 +1,2 @@
+{"copied_file_count": 8, "event": "workspace_seed_copied", "path": "<REPO_ROOT>/benchmark/workspaces/data-extraction-mini", "profile_id": "RP2", "timestamp": "2026-05-26T17:34:55+00:00"}
+{"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./outputs/non-export-report.json", "sha256": "sha256:726a75f17e5f07473f7166d40bf4b5067dd2c65360fd49388fee395bf06f83e1", "size": 202, "status": "succeeded", "timestamp": "2026-05-26T17:34:55+00:00"}

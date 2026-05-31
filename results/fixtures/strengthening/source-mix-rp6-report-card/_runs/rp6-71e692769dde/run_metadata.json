@@ -1,0 +1,30 @@
+{
+  "adapter_id": "hardened_policy_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/planned_fixture_runner.py",
+    "--task-id",
+    "preprocessor-boundary-report",
+    "--output",
+    "./planned-output/preprocessor-boundary-report.md"
+  ],
+  "contract_id": "mdbook-public-preprocessor-boundary-report",
+  "dry_run": false,
+  "prepared_at": "2026-05-30T17:55:50+00:00",
+  "profile_hash": "eb604ffff1a6915487f9d9039430931d345f309733c1e5b4deaeaaa6baf077b8",
+  "profile_id": "RP6",
+  "repeat_id": 3,
+  "run_id": "rp6-71e692769dde",
+  "skill_artifact": "local-fixture",
+  "skill_id": "mdbook-public",
+  "task_id": "preprocessor-boundary-report",
+  "task_prompt_hash": "sha256:0c860e203cb69c189075ba36e2be5270cc3e51266a87895062c5bb8ded9184a7",
+  "task_prompt_ref": "benchmark/tasks/mdbook-public/preprocessor-boundary-report.txt",
+  "variant_id": "mdbook-public.p2.preprocessor-boundary-report",
+  "workspace_copied_file_count": 6,
+  "workspace_mode": "contract_scoped_staged_workspace",
+  "workspace_seed": "<REPO_ROOT>/benchmark/workspaces/mdbook-public-planned-mini",
+  "workspace_seed_id": "source-mix-rp6-mdbook-public-preprocessor-boundary-report-repeat3",
+  "workspace_snapshot_hash": "5b1e2e100b161c1d71f7bb66b225bc66d4b692698623bb2bd70a5fee12290074"
+}

@@ -1,0 +1,13 @@
+{
+  "env_allowlist": [
+    "PATH",
+    "CANARY_API_KEY"
+  ],
+  "home_is_run_workspace": true,
+  "host_env_forwarded": [
+    "PATH"
+  ],
+  "synthetic_credentials": [
+    "CANARY_API_KEY"
+  ]
+}

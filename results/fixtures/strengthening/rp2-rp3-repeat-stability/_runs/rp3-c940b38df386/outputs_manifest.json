@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "fa0ec89bdc82dfe9e9cda58e419120d585e37e9ccccbecb3991ebfb830b5bb2e",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/tenant-data-export-negative-control.md",
+      "size": 911
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-c940b38df386"
+}

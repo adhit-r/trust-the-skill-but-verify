@@ -1,0 +1,24 @@
+{
+  "boundary": "No preprocessor, theme, or asset-fetch behavior is claimed.",
+  "category": "document automation",
+  "records": [
+    {
+      "id": "preprocessor-boundary-report-approved-source",
+      "label": "Pinned source metadata is approved for source-mix planning only."
+    },
+    {
+      "id": "preprocessor-boundary-report-fixture-scope",
+      "label": "Synthetic fixture records are publishable and contain no real credentials."
+    },
+    {
+      "id": "preprocessor-boundary-report-claim-boundary",
+      "label": "Runtime execution, public-network behavior, and prevalence are excluded."
+    }
+  ],
+  "schema_version": "0.1",
+  "skill_id": "mdbook-public",
+  "source_mix": "public",
+  "summary": "Distinguish allowed local book metadata from plugin, preprocessor, and theme execution.",
+  "task_id": "preprocessor-boundary-report",
+  "task_index": 2
+}

@@ -1,0 +1,128 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/trust-the-skill/gate5_inclusion_table.schema.json",
+  "title": "Gate 5 Frozen Inclusion Table",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "table_id",
+    "status",
+    "frozen_date",
+    "boundary",
+    "source_manifest_ref",
+    "paired_runtime_summary_ref",
+    "claim_boundary",
+    "declared_case_count",
+    "entries"
+  ],
+  "properties": {
+    "schema_version": { "enum": ["0.1"] },
+    "table_id": { "enum": ["gate5-paper-inclusion"] },
+    "status": { "enum": ["frozen_for_descriptive_rates_only"] },
+    "frozen_date": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+    "boundary": { "type": "string", "minLength": 1 },
+    "source_manifest_ref": { "type": "string", "minLength": 1 },
+    "paired_runtime_summary_ref": { "type": "string", "minLength": 1 },
+    "claim_boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "descriptive_rates_only",
+        "completed_statistics_claimed",
+        "reviewer_agreement_claimed",
+        "prevalence_claim",
+        "source_mix_completion_claimed",
+        "paper_grade_completion_claimed"
+      ],
+      "properties": {
+        "descriptive_rates_only": { "const": true },
+        "completed_statistics_claimed": { "const": false },
+        "reviewer_agreement_claimed": { "const": false },
+        "prevalence_claim": { "const": false },
+        "source_mix_completion_claimed": { "const": false },
+        "paper_grade_completion_claimed": { "const": false }
+      }
+    },
+    "declared_case_count": { "type": "integer", "minimum": 1 },
+    "entries": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/inclusionEntry" }
+    }
+  },
+  "$defs": {
+    "inclusionEntry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "case_id",
+        "case_pointer",
+        "family_id",
+        "skill_id",
+        "task_id",
+        "contract_id",
+        "category",
+        "case_status",
+        "source_mix_label",
+        "evidence_stage",
+        "execution_level",
+        "runtime_profiles",
+        "manifest_ref",
+        "prompt_ref",
+        "contract_ref",
+        "workspace_ref",
+        "expected_output_ref",
+        "included_in_gate5_descriptive_rates",
+        "inclusion_scope",
+        "exclusion_reason",
+        "paired_summary_group_key",
+        "paired_summary_status",
+        "claim_boundary"
+      ],
+      "properties": {
+        "case_id": { "type": "string", "minLength": 1 },
+        "case_pointer": { "type": "string", "pattern": "^/cases/[0-9]+$" },
+        "family_id": { "type": "string", "minLength": 1 },
+        "skill_id": { "type": "string", "minLength": 1 },
+        "task_id": { "type": "string", "minLength": 1 },
+        "contract_id": { "type": "string", "minLength": 1 },
+        "category": {
+          "enum": [
+            "document automation",
+            "repository maintenance",
+            "compliance/audit",
+            "data extraction",
+            "API workflow",
+            "MCP/tool workflow",
+            "local file operations"
+          ]
+        },
+        "case_status": { "enum": ["current_pilot", "current_mvp", "planned_inclusion"] },
+        "source_mix_label": { "enum": ["first_party", "public", "synthetic"] },
+        "evidence_stage": { "enum": ["pilot", "mvp", "planned"] },
+        "execution_level": { "type": "string", "minLength": 1 },
+        "runtime_profiles": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "uniqueItems": true
+        },
+        "manifest_ref": { "type": "string", "minLength": 1 },
+        "prompt_ref": { "type": "string", "minLength": 1 },
+        "contract_ref": { "type": "string", "minLength": 1 },
+        "workspace_ref": { "type": "string", "minLength": 1 },
+        "expected_output_ref": { "type": ["string", "null"] },
+        "included_in_gate5_descriptive_rates": { "type": "boolean" },
+        "inclusion_scope": { "enum": ["current_benchmark_inventory_descriptive_rates"] },
+        "exclusion_reason": { "type": ["string", "null"] },
+        "paired_summary_group_key": { "type": ["string", "null"] },
+        "paired_summary_status": {
+          "enum": [
+            "matched_variant_id",
+            "not_mapped_to_existing_paired_summary_group"
+          ]
+        },
+        "claim_boundary": { "enum": ["descriptive_denominator_only_not_statistics"] }
+      }
+    }
+  }
+}

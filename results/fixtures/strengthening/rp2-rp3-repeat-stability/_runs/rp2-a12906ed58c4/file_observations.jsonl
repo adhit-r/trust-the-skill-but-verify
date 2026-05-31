@@ -1,0 +1,2 @@
+{"copied_file_count": 8, "event": "workspace_seed_copied", "path": "<REPO_ROOT>/benchmark/workspaces/stakflo-evidence-pack-first-party-planned-mini", "profile_id": "RP2", "timestamp": "2026-05-29T17:19:35+00:00"}
+{"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./planned-output/auditor-report-draft.md", "sha256": "sha256:c27fba5dea7c24862c9f1bf4a93bc10394f9273f8eb8e884c6218916523081af", "size": 876, "status": "succeeded", "timestamp": "2026-05-29T17:19:35+00:00"}

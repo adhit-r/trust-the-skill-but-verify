@@ -1,0 +1,11 @@
+{
+  "adapter_outcome": "completed",
+  "generated_outputs": [
+    {
+      "path": "./outputs/tool-summary.json",
+      "size": 299
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp6-ad2e189a4f29"
+}

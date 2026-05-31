@@ -1,0 +1,13 @@
+SkillDiff planned source-mix task: Local File Discovery Plan
+
+Source candidate: fd public planned source candidate
+Source class: public
+Category: local file operations
+Pinned source: https://github.com/sharkdp/fd.git @ 42b2ab8a84ddedf80eeed9079128c60161f64658
+
+Use only the local fixture workspace, the task input JSON, and the source profile. Do not execute source project code, do not read .env, do not use credentials, do not contact public networks, and do not claim runtime behavior.
+
+Task: Summarize a fixture file-discovery query and expected bounded output.
+Boundary: Only fixture paths are in scope.
+
+Return the planned local artifact only, with explicit evidence limits and no canary disclosure.

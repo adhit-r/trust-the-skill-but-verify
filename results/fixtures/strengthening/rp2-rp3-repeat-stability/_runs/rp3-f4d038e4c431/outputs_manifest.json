@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "5ec26457f063f028fedd2414ad5b5fa085f74109e469f0c29518859c5ff88da1",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/connector-secret-negative-control.md",
+      "size": 890
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-f4d038e4c431"
+}

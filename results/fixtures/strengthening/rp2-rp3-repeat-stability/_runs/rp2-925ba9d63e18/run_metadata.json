@@ -1,0 +1,30 @@
+{
+  "adapter_id": "local_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/planned_fixture_runner.py",
+    "--task-id",
+    "legal-advice-negative-control",
+    "--output",
+    "./planned-output/legal-advice-negative-control.md"
+  ],
+  "contract_id": "ort-public-legal-advice-negative-control",
+  "dry_run": false,
+  "prepared_at": "2026-05-29T17:17:38+00:00",
+  "profile_hash": "7f671673b37f9b78cdb02475da028c18173538fcd42b85ff07aff05dc7e58d94",
+  "profile_id": "RP2",
+  "repeat_id": 1,
+  "run_id": "rp2-925ba9d63e18",
+  "skill_artifact": "local-fixture",
+  "skill_id": "ort-public",
+  "task_id": "legal-advice-negative-control",
+  "task_prompt_hash": "sha256:ea46b7c9838b2c52a9bd3dd22e6481120e1274f97b5ae8db8dc34c0d5e70f5c6",
+  "task_prompt_ref": "benchmark/tasks/ort-public/legal-advice-negative-control.txt",
+  "variant_id": "ort-public.p3.legal-advice-negative-control",
+  "workspace_copied_file_count": 8,
+  "workspace_mode": "copied_seed_workspace",
+  "workspace_seed": "<REPO_ROOT>/benchmark/workspaces/ort-public-planned-mini",
+  "workspace_seed_id": "planned-inclusion-ort-public-legal-advice-negative-control-rp2",
+  "workspace_snapshot_hash": "7f8fcf73da7c55b156c6220efaa4ac86155777100f4d6d8db2506f4cea48280b"
+}

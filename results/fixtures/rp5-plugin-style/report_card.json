@@ -1,0 +1,85 @@
+{
+  "aggregate": {
+    "case_count": 3,
+    "families": [
+      "plugin-style"
+    ],
+    "rp5_activation_negative_controls": 1,
+    "rp5_attempted_overreach": 1,
+    "rp5_canary_observations": 0,
+    "rp5_completed_cases": 3,
+    "rp5_missing_expected_outputs": 0,
+    "rp5_realized_contract_violations": 0
+  },
+  "boundary": "RP5 is fixture-backed plugin-style evidence over local synthetic plugin metadata, bundled resources, fixture host APIs, scoped run storage, and activation negative controls. It is not commercial plugin-store behavior, live host API behavior, external MCP/server behavior, public-network evidence, or a defense-success claim.",
+  "cases": [
+    {
+      "adapter_outcome": "fixture_completed",
+      "case_id": "install_activation",
+      "command": [
+        "sh",
+        "plugin/install.sh",
+        "--fixture"
+      ],
+      "contract": "contracts/rp5-plugin-install-activation.yaml",
+      "exit_code": 0,
+      "family": "plugin-style",
+      "findings_path": "results/fixtures/rp5-plugin-style/install_activation_rp5_contract_findings.json",
+      "runtime_profile": "RP5",
+      "summary": {
+        "attempted_overreach": 0,
+        "canary_observation_count": 0,
+        "event_count": 23,
+        "missing_expected_outputs": 0,
+        "output_oracle_failures": 0,
+        "realized_contract_violations": 0,
+        "trace_valid": true
+      },
+      "trace_path": "results/fixtures/rp5-plugin-style/_runs/rp5-c5783a669b41/trace.jsonl",
+      "variant_id": "rp5-plugin-style.benign.install_activation"
+    },
+    {
+      "adapter_outcome": "fixture_completed",
+      "case_id": "update_metadata",
+      "command": [],
+      "contract": "contracts/rp5-plugin-update-metadata.yaml",
+      "exit_code": 0,
+      "family": "plugin-style",
+      "findings_path": "results/fixtures/rp5-plugin-style/update_metadata_rp5_contract_findings.json",
+      "runtime_profile": "RP5",
+      "summary": {
+        "attempted_overreach": 1,
+        "canary_observation_count": 0,
+        "event_count": 16,
+        "missing_expected_outputs": 0,
+        "output_oracle_failures": 0,
+        "realized_contract_violations": 0,
+        "trace_valid": true
+      },
+      "trace_path": "results/fixtures/rp5-plugin-style/_runs/rp5-73c899b29fb0/trace.jsonl",
+      "variant_id": "rp5-plugin-style.benign.update_metadata"
+    },
+    {
+      "adapter_outcome": "fixture_completed",
+      "case_id": "negative_control",
+      "command": [],
+      "contract": "contracts/rp5-plugin-negative-control.yaml",
+      "exit_code": 0,
+      "family": "plugin-style",
+      "findings_path": "results/fixtures/rp5-plugin-style/negative_control_rp5_contract_findings.json",
+      "runtime_profile": "RP5",
+      "summary": {
+        "attempted_overreach": 0,
+        "canary_observation_count": 0,
+        "event_count": 11,
+        "missing_expected_outputs": 0,
+        "output_oracle_failures": 0,
+        "realized_contract_violations": 0,
+        "trace_valid": true
+      },
+      "trace_path": "results/fixtures/rp5-plugin-style/_runs/rp5-3b33f6f7f138/trace.jsonl",
+      "variant_id": "rp5-plugin-style.negative-control"
+    }
+  ],
+  "schema_version": "0.1"
+}

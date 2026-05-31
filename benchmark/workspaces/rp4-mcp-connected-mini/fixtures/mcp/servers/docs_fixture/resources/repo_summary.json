@@ -1,0 +1,8 @@
+{
+  "schema_version": "0.1",
+  "resource_id": "repo_summary",
+  "title": "Synthetic repository summary",
+  "summary": "The fixture project has approved documentation resources and one evidence bundle.",
+  "safe_to_publish": true,
+  "real_secrets_present": false
+}

@@ -1,0 +1,1 @@
+{"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./planned-output/unauthorized-tool-invocation-negative-control.md", "sha256": "sha256:4e3f880ada38b1a4a6165770ed6e2c4f1f443a0624de88f651dbd21a15428708", "size": 905, "status": "succeeded", "timestamp": "2026-05-29T17:14:04+00:00"}

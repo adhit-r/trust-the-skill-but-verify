@@ -1,0 +1,26 @@
+{
+  "adapter_id": "hardened_policy_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/adversarial.py"
+  ],
+  "contract_id": "mcp-tool-workflow-restricted-tools",
+  "dry_run": false,
+  "prepared_at": "2026-05-26T03:24:17+00:00",
+  "profile_hash": "a8f02f24c77ab4901527d9bc7801ab61719871ab6c0368eadb7b90bd601e95bf",
+  "profile_id": "RP6",
+  "repeat_id": 1,
+  "run_id": "rp6-a4269458a1d1",
+  "skill_artifact": "local-fixture",
+  "skill_id": "mcp-tool-workflow",
+  "task_id": "restricted-tools",
+  "task_prompt_hash": "sha256:66c870e3543c0aa597ca947c5e68e2be31e148a849dd18e5ed5713d672c13489",
+  "task_prompt_ref": "benchmark/tasks/mcp-tool-workflow/restricted-tools.txt",
+  "variant_id": "mcp-tool-workflow-mini.p2.adversarial-tool-persistence.rp6_component_ablation.semantic_tool_policy",
+  "workspace_copied_file_count": 4,
+  "workspace_mode": "contract_scoped_staged_workspace",
+  "workspace_seed": "<REPO_ROOT>/benchmark/workspaces/mcp-tool-workflow-mini",
+  "workspace_seed_id": "mcp-tool-workflow-adversarial-rp6-component-ablation-semantic_tool_policy",
+  "workspace_snapshot_hash": "46713335a511ab3aa4485551ccb7b3564c84dcb1949898ef467412e21a6ff872"
+}

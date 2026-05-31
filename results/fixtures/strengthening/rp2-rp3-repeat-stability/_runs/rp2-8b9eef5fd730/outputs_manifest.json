@@ -1,0 +1,11 @@
+{
+  "adapter_outcome": "completed",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/mixed-format-summary.json",
+      "size": 681
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp2-8b9eef5fd730"
+}

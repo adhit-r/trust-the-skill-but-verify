@@ -19,6 +19,7 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 TOOLS_ROOT = REPO_ROOT / "tools"
 sys.path.insert(0, str(TOOLS_ROOT))
 
+from repeat_hygiene import add_repeat_id_argument  # noqa: E402
 from run_docs_forge_live_project_local_install import (  # noqa: E402
     DEFAULT_OUTPUT_MD as PROJECT_LOCAL_OUTPUT_MD,
     DEFAULT_OUTPUT_JSON as PROJECT_LOCAL_OUTPUT_JSON,
@@ -227,6 +228,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--output-md", type=Path, default=DEFAULT_OUTPUT_MD)
     parser.add_argument("--host-trace", type=Path, default=DEFAULT_HOST_TRACE)
     parser.add_argument("--minimal-env-trace", type=Path, default=DEFAULT_MINIMAL_TRACE)
+    add_repeat_id_argument(parser)
     args = parser.parse_args(argv)
 
     source_arg = args.source_root or (Path(os.environ["DOCS_FORGE_SOURCE_ROOT"]) if os.environ.get("DOCS_FORGE_SOURCE_ROOT") else None)
@@ -267,6 +269,7 @@ def main(argv: list[str] | None = None) -> int:
             case["target_initial_snapshot_sha256"] = spec["target_initial_snapshot_sha256"]
             case["node_version"] = observe_command(["node", "--version"], cwd=source_root, env=env)
             case["node_executable_sha256"] = node_executable_hash(env)
+            case["repeat_id"] = args.repeat_id
             cases.append(case)
 
     runtime_profile_ids = [case["runtime_profile"] for case in cases]
@@ -314,6 +317,12 @@ def main(argv: list[str] | None = None) -> int:
         "source_tree": manifest["source_boundary"]["fixture_source_tree"],
         "manifest_ref": RUNTIME_PAIR_MANIFEST_REF,
         "project_local_manifest_ref": PROJECT_LOCAL_MANIFEST_PATH.relative_to(REPO_ROOT).as_posix(),
+        "repeat_count": 1,
+        "repeat_id": args.repeat_id,
+        "result_refs": {
+            "json": args.output_json.resolve().relative_to(REPO_ROOT).as_posix(),
+            "markdown": args.output_md.resolve().relative_to(REPO_ROOT).as_posix(),
+        },
         "task_ref": manifest["task_ref"],
         "contract_ref": manifest["contract_ref"],
         "expected_output_ref": manifest["expected_output_ref"],
@@ -353,6 +362,7 @@ def main(argv: list[str] | None = None) -> int:
 
     args.output_json.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
     write_markdown(report, args.output_md)
+    pair_result_ref = args.output_json.resolve().relative_to(REPO_ROOT).as_posix()
     build_trace(
         report,
         args.output_json,
@@ -361,9 +371,10 @@ def main(argv: list[str] | None = None) -> int:
         case_index=0,
         run_id="live-docs-forge-runtime-pair-host-env",
         runtime_profile=PROFILE_HOST_ENV,
-        result_ref=RUNTIME_PAIR_RESULT_REF,
+        result_ref=pair_result_ref,
         manifest_ref=RUNTIME_PAIR_MANIFEST_REF,
         task_ref=RUNTIME_PAIR_TASK_REF,
+        repeat_id=args.repeat_id,
     )
     build_trace(
         report,
@@ -373,9 +384,10 @@ def main(argv: list[str] | None = None) -> int:
         case_index=1,
         run_id="live-docs-forge-runtime-pair-minimal-env",
         runtime_profile=PROFILE_MINIMAL_ENV,
-        result_ref=RUNTIME_PAIR_RESULT_REF,
+        result_ref=pair_result_ref,
         manifest_ref=RUNTIME_PAIR_MANIFEST_REF,
         task_ref=RUNTIME_PAIR_TASK_REF,
+        repeat_id=args.repeat_id,
     )
 
     if len(passed) != len(cases) or comparison["pairwise_disagreements"] != 0:

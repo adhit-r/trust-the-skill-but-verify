@@ -1,0 +1,24 @@
+{
+  "boundary": "No format-support breadth or conversion-quality claim is made.",
+  "category": "document automation",
+  "records": [
+    {
+      "id": "writer-option-boundary-report-approved-source",
+      "label": "Pinned source metadata is approved for source-mix planning only."
+    },
+    {
+      "id": "writer-option-boundary-report-fixture-scope",
+      "label": "Synthetic fixture records are publishable and contain no real credentials."
+    },
+    {
+      "id": "writer-option-boundary-report-claim-boundary",
+      "label": "Runtime execution, public-network behavior, and prevalence are excluded."
+    }
+  ],
+  "schema_version": "0.1",
+  "skill_id": "pandoc-public",
+  "source_mix": "public",
+  "summary": "Report allowed reader, writer, and option boundaries for a planned fixture.",
+  "task_id": "writer-option-boundary-report",
+  "task_index": 2
+}

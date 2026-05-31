@@ -37,6 +37,9 @@ def compare_contract_runs(results: list[dict[str, Any]]) -> dict[str, Any]:
         _pairwise_comparison(left, right)
         for left, right in combinations(normalized_runs, 2)
     ]
+    mitigation_report_card_pairs = sum(
+        1 for pair in pairs if pair["classification"]["claim"] == "mitigation_report_card_comparison"
+    )
     aggregate = {
         "run_count": len(normalized_runs),
         "pair_count": len(pairs),
@@ -48,6 +51,8 @@ def compare_contract_runs(results: list[dict[str, Any]]) -> dict[str, Any]:
         "pairwise_disagreements": sum(pair["disagreement_count"] for pair in pairs),
         "runtime_drift_claims": sum(1 for pair in pairs if pair["classification"]["claim"] == "runtime_drift_candidate"),
     }
+    if mitigation_report_card_pairs:
+        aggregate["mitigation_report_card_pairs"] = mitigation_report_card_pairs
     return {
         "report_type": "contract_run_pairwise_comparison",
         "schema_version": 1,
@@ -68,6 +73,7 @@ def _run_summary(result: dict[str, Any], index: int) -> dict[str, Any]:
         "runtime_profile": result["runtime_profile"],
         "contract_id": result.get("contract_id", "unknown"),
         "evidence_scope": result.get("evidence_scope", "runtime_evidence"),
+        "comparison_role": result.get("comparison_role", "runtime_drift_candidate"),
         "comparison_context": _comparison_context(result),
         "trace_path": result.get("trace_path"),
         "source_path": result.get("source_path"),
@@ -77,6 +83,15 @@ def _run_summary(result: dict[str, Any], index: int) -> dict[str, Any]:
             "attempted_overreach": _summary_int(result, "attempted_overreach"),
             "canary_observation_count": _summary_int(result, "canary_observation_count"),
             "trace_valid": bool(result.get("summary", {}).get("trace_valid", False)),
+        },
+        "coverage": {
+            "unmatched_decision_count": _coverage_int(result, "unmatched_decision_count"),
+            "unmatched_event_type_counts": dict(
+                sorted((result.get("coverage", {}).get("unmatched_event_type_counts") or {}).items())
+            ),
+            "unmatched_event_status_counts": dict(
+                sorted((result.get("coverage", {}).get("unmatched_event_status_counts") or {}).items())
+            ),
         },
         "drift_classes_observed": sorted(
             {drift_class for finding in findings for drift_class in finding.get("drift_classes", [])}
@@ -90,6 +105,13 @@ def _summary_int(result: dict[str, Any], key: str) -> int:
     value = result.get("summary", {}).get(key, 0)
     if isinstance(value, bool) or not isinstance(value, int):
         raise ValueError(f"{result.get('run_id', '<unknown>')} summary.{key} must be an integer")
+    return value
+
+
+def _coverage_int(result: dict[str, Any], key: str) -> int:
+    value = result.get("coverage", {}).get(key, 0)
+    if isinstance(value, bool) or not isinstance(value, int):
+        raise ValueError(f"{result.get('run_id', '<unknown>')} coverage.{key} must be an integer")
     return value
 
 
@@ -261,6 +283,11 @@ def _classify_pair(
         return {
             "claim": "same_runtime_scenario_difference",
             "boundary": "Both runs use the same runtime profile; disagreements can show scenario or input differences but not runtime-induced drift.",
+        }
+    if "mitigation_report_card" in {left.get("comparison_role"), right.get("comparison_role")}:
+        return {
+            "claim": "mitigation_report_card_comparison",
+            "boundary": "This pair includes a mitigation/report-card run. Disagreements are reported as mitigation contrast, not counted as runtime-drift evidence.",
         }
     if "controlled_semantic_fixture" in {left.get("evidence_scope"), right.get("evidence_scope")}:
         return {

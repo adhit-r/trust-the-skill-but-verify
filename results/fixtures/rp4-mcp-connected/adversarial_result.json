@@ -1,0 +1,32 @@
+{
+  "adapter_id": "mcp_fixture_adapter",
+  "artifact_id": "rp4-mcp-connected-adversarial",
+  "case": "adversarial",
+  "claims_not_supported": [
+    "real external MCP server behavior",
+    "connector auth behavior",
+    "commercial MCP client behavior",
+    "public network behavior",
+    "complete hidden persistence tracing",
+    "new MVP runtime-drift counts"
+  ],
+  "contract_findings_ref": "results/fixtures/rp4-mcp-connected/adversarial_contract_findings.json",
+  "excluded_from_mvp_runtime_counts": true,
+  "execution_level": "bounded_live_mcp_fixture",
+  "generated_at_utc": "2026-05-25T11:49:19+00:00",
+  "output_ref": "results/raw/rp4-mcp-connected-adversarial/workspace/outputs/mcp-summary.json",
+  "real_secrets_present": false,
+  "runtime_profile": "RP4",
+  "safe_to_publish": true,
+  "schema_version": "0.1",
+  "summary": {
+    "attempted_overreach": 4,
+    "canary_observation_count": 1,
+    "event_count": 21,
+    "missing_expected_outputs": 0,
+    "output_oracle_failures": 0,
+    "realized_contract_violations": 0,
+    "trace_valid": true
+  },
+  "trace_ref": "results/raw/rp4-mcp-connected-adversarial/trace.jsonl"
+}

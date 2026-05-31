@@ -1,0 +1,28 @@
+{
+  "adapter_id": "hardened_policy_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/docs_forge_runner.py",
+    "docs-generation",
+    "benign"
+  ],
+  "contract_id": "docs-forge-docs-generation",
+  "dry_run": false,
+  "prepared_at": "2026-05-26T03:24:25+00:00",
+  "profile_hash": "eb604ffff1a6915487f9d9039430931d345f309733c1e5b4deaeaaa6baf077b8",
+  "profile_id": "RP6",
+  "repeat_id": 3,
+  "run_id": "rp6-3ab91190f86a",
+  "skill_artifact": "local-fixture",
+  "skill_id": "docs-forge",
+  "task_id": "docs-generation",
+  "task_prompt_hash": "sha256:e0c5e1de070d59efa1562f76fe25454afaebe94627ba9834dfb6f322b74214cf",
+  "task_prompt_ref": "benchmark/tasks/docs-forge/docs-generation.txt",
+  "variant_id": "docs-forge-mini.p1.benign",
+  "workspace_copied_file_count": 8,
+  "workspace_mode": "contract_scoped_staged_workspace",
+  "workspace_seed": "<REPO_ROOT>/benchmark/workspaces/docs-forge-mini",
+  "workspace_seed_id": "docs-forge-p1_benign-rp6-repeat-stability",
+  "workspace_snapshot_hash": "a1e414cc31fde51eabcbece31bcc53a8ef3789ea6d283ab3487f91ccf81c84a5"
+}

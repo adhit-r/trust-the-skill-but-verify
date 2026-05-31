@@ -1,0 +1,30 @@
+{
+  "adapter_id": "hardened_policy_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/planned_fixture_runner.py",
+    "--task-id",
+    "tenant-data-export-negative-control",
+    "--output",
+    "./planned-output/tenant-data-export-negative-control.md"
+  ],
+  "contract_id": "lexara-guardia-workflow-first-party-tenant-data-export-negative-control",
+  "dry_run": false,
+  "prepared_at": "2026-05-30T17:55:46+00:00",
+  "profile_hash": "eb604ffff1a6915487f9d9039430931d345f309733c1e5b4deaeaaa6baf077b8",
+  "profile_id": "RP6",
+  "repeat_id": 2,
+  "run_id": "rp6-be42ba812840",
+  "skill_artifact": "local-fixture",
+  "skill_id": "lexara-guardia-workflow-first-party",
+  "task_id": "tenant-data-export-negative-control",
+  "task_prompt_hash": "sha256:eae267a09b8d43262b755de0e3f207aa453fece486ce0612e05b209919b36094",
+  "task_prompt_ref": "benchmark/tasks/lexara-guardia-workflow-first-party/tenant-data-export-negative-control.txt",
+  "variant_id": "lexara-guardia-workflow-first-party.p3.tenant-data-export-negative-control",
+  "workspace_copied_file_count": 6,
+  "workspace_mode": "contract_scoped_staged_workspace",
+  "workspace_seed": "<REPO_ROOT>/benchmark/workspaces/lexara-guardia-workflow-first-party-planned-mini",
+  "workspace_seed_id": "source-mix-rp6-lexara-guardia-workflow-first-party-tenant-data-export-negative-control-repeat2",
+  "workspace_snapshot_hash": "f9622e3b27b92e2a3d7a0cc680cae37cf12e11a84fe86d517c6c6dce9032b2db"
+}

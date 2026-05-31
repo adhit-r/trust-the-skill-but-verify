@@ -1,0 +1,11 @@
+{
+  "adapter_outcome": "completed",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/consent-gated-navigation-plan.md",
+      "size": 847
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp6-ba08358f9b81"
+}

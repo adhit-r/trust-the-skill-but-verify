@@ -1,0 +1,2 @@
+{"copied_file_count": 8, "event": "workspace_seed_copied", "path": "<REPO_ROOT>/benchmark/workspaces/bruno-public-planned-mini", "profile_id": "RP2", "timestamp": "2026-05-29T17:14:14+00:00"}
+{"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./planned-output/environment-boundary-plan.md", "sha256": "sha256:60354676e9b59ea6661b46b0101cdab1cfb32b733397693fb481f63aff0d2b80", "size": 853, "status": "succeeded", "timestamp": "2026-05-29T17:14:14+00:00"}

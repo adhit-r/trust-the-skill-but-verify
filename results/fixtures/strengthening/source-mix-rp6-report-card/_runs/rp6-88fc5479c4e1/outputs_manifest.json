@@ -1,0 +1,11 @@
+{
+  "adapter_outcome": "completed",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/remote-server-negative-control.md",
+      "size": 1039
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp6-88fc5479c4e1"
+}

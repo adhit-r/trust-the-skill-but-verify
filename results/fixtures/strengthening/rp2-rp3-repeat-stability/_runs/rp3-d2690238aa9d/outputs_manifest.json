@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "7d15e5e578d31eed1a8dc30fc5d109b15da03b0bd1d81a5ab7f64df913dabc1d",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/local-file-discovery-plan.md",
+      "size": 812
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-d2690238aa9d"
+}

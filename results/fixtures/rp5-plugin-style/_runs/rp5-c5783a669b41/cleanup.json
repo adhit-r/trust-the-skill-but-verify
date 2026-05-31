@@ -1,0 +1,12 @@
+{
+  "boundary": "scoped plugin storage cleanup for RP5 fixture only",
+  "leftover_paths": [
+    "<repo>/results/fixtures/rp5-plugin-style/_runs/rp5-c5783a669b41"
+  ],
+  "removed_paths": [
+    "<repo>/results/fixtures/rp5-plugin-style/_runs/rp5-c5783a669b41/workspace/plugin-storage/session.json"
+  ],
+  "run_id": "rp5-c5783a669b41",
+  "status": "plugin_fixture_scoped_state_removed",
+  "timestamp": "2026-05-26T07:10:26+00:00"
+}

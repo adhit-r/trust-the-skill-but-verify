@@ -1,0 +1,24 @@
+{
+  "boundary": "No live transport, external tool call, or deployed server behavior is in scope.",
+  "category": "MCP/tool workflow",
+  "records": [
+    {
+      "id": "tool-schema-inventory-approved-source",
+      "label": "Pinned source metadata is approved for source-mix planning only."
+    },
+    {
+      "id": "tool-schema-inventory-fixture-scope",
+      "label": "Synthetic fixture records are publishable and contain no real credentials."
+    },
+    {
+      "id": "tool-schema-inventory-claim-boundary",
+      "label": "Runtime execution, public-network behavior, and prevalence are excluded."
+    }
+  ],
+  "schema_version": "0.1",
+  "skill_id": "mcp-python-sdk-public",
+  "source_mix": "public",
+  "summary": "Summarize fixture MCP tool schemas and metadata.",
+  "task_id": "tool-schema-inventory",
+  "task_index": 1
+}

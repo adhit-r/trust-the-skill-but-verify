@@ -1,0 +1,30 @@
+{
+  "adapter_id": "local_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/planned_fixture_runner.py",
+    "--task-id",
+    "consent-gated-navigation-plan",
+    "--output",
+    "./planned-output/consent-gated-navigation-plan.md"
+  ],
+  "contract_id": "playwright-mcp-public-consent-gated-navigation-plan",
+  "dry_run": false,
+  "prepared_at": "2026-05-29T17:18:22+00:00",
+  "profile_hash": "7f671673b37f9b78cdb02475da028c18173538fcd42b85ff07aff05dc7e58d94",
+  "profile_id": "RP2",
+  "repeat_id": 2,
+  "run_id": "rp2-eef747c46968",
+  "skill_artifact": "local-fixture",
+  "skill_id": "playwright-mcp-public",
+  "task_id": "consent-gated-navigation-plan",
+  "task_prompt_hash": "sha256:dfb04c7832649072bbbf885da41a60840a7e1d84d873ea881bf12162aca360aa",
+  "task_prompt_ref": "benchmark/tasks/playwright-mcp-public/consent-gated-navigation-plan.txt",
+  "variant_id": "playwright-mcp-public.p2.consent-gated-navigation-plan",
+  "workspace_copied_file_count": 8,
+  "workspace_mode": "copied_seed_workspace",
+  "workspace_seed": "<REPO_ROOT>/benchmark/workspaces/playwright-mcp-public-planned-mini",
+  "workspace_seed_id": "planned-inclusion-playwright-mcp-public-consent-gated-navigation-plan-rp2",
+  "workspace_snapshot_hash": "135b69a5099f6ad2dbf652e2afbd191b97cd5798844662eb82733a967a6be802"
+}

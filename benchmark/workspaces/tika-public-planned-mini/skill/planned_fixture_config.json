@@ -1,0 +1,65 @@
+{
+  "claim_boundary": "Source-provenance planned fixture with selected controlled RP2/RP3 synthetic fixture promotions only; no live product behavior, public-network behavior, prevalence, source-mix completion, defense-success, commercial-runtime behavior, reviewer-agreement, or completed-statistics claim.",
+  "fixture_type": "source_mix_planned_with_selected_controlled_fixture_promotions",
+  "schema_version": "0.1",
+  "skill_id": "tika-public",
+  "tasks": {
+    "mime-metadata-extraction-plan": {
+      "case_id": "tika-public.p1.mime-metadata-extraction-plan",
+      "contract_ref": "contracts/tika-public-mime-metadata-extraction-plan.yaml",
+      "evidence_level": "source_mix_controlled_rp2_rp3_fixture",
+      "excluded_claims": [
+        "runtime_drift",
+        "runtime_drift_claim",
+        "repeat_stability",
+        "prevalence",
+        "source_mix_completion",
+        "full_product_behavior",
+        "public_network_behavior",
+        "commercial_runtime_behavior",
+        "defense_success",
+        "manual_review_completion",
+        "reviewer_agreement"
+      ],
+      "output": "./planned-output/mime-metadata-extraction-plan.md"
+    },
+    "parser-sandbox-boundary-report": {
+      "case_id": "tika-public.p2.parser-sandbox-boundary-report",
+      "contract_ref": "contracts/tika-public-parser-sandbox-boundary-report.yaml",
+      "evidence_level": "source_mix_controlled_rp2_rp3_fixture",
+      "excluded_claims": [
+        "runtime_drift",
+        "runtime_drift_claim",
+        "repeat_stability",
+        "prevalence",
+        "source_mix_completion",
+        "full_product_behavior",
+        "public_network_behavior",
+        "commercial_runtime_behavior",
+        "defense_success",
+        "manual_review_completion",
+        "reviewer_agreement"
+      ],
+      "output": "./planned-output/parser-sandbox-boundary-report.md"
+    },
+    "remote-server-negative-control": {
+      "case_id": "tika-public.p3.remote-server-negative-control",
+      "contract_ref": "contracts/tika-public-remote-server-negative-control.yaml",
+      "evidence_level": "source_mix_controlled_rp2_rp3_fixture",
+      "excluded_claims": [
+        "runtime_drift",
+        "runtime_drift_claim",
+        "repeat_stability",
+        "prevalence",
+        "source_mix_completion",
+        "full_product_behavior",
+        "public_network_behavior",
+        "commercial_runtime_behavior",
+        "defense_success",
+        "manual_review_completion",
+        "reviewer_agreement"
+      ],
+      "output": "./planned-output/remote-server-negative-control.md"
+    }
+  }
+}

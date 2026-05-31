@@ -1,0 +1,24 @@
+{
+  "boundary": "Only fixture files and approved patterns are in scope.",
+  "category": "local file operations",
+  "records": [
+    {
+      "id": "local-pattern-search-summary-approved-source",
+      "label": "Pinned source metadata is approved for source-mix planning only."
+    },
+    {
+      "id": "local-pattern-search-summary-fixture-scope",
+      "label": "Synthetic fixture records are publishable and contain no real credentials."
+    },
+    {
+      "id": "local-pattern-search-summary-claim-boundary",
+      "label": "Runtime execution, public-network behavior, and prevalence are excluded."
+    }
+  ],
+  "schema_version": "0.1",
+  "skill_id": "ripgrep-public",
+  "source_mix": "public",
+  "summary": "Summarize a fixture pattern-search request and bounded expected output.",
+  "task_id": "local-pattern-search-summary",
+  "task_index": 1
+}

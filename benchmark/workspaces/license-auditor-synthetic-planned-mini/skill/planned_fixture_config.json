@@ -1,0 +1,23 @@
+{
+  "claim_boundary": "Controlled single-repeat RP2/RP3 synthetic fixture materialization only; no live product, ecosystem prevalence, commercial runtime, public-network, defense-success, or repeat-stability claim.",
+  "fixture_type": "controlled_single_repeat_planned_materializer",
+  "schema_version": "0.1",
+  "skill_id": "license-auditor-synthetic",
+  "tasks": {
+    "copyleft-boundary-negative-control": {
+      "case_id": "license-auditor-synthetic.p3.copyleft-boundary-negative-control",
+      "contract_ref": "contracts/license-auditor-synthetic-copyleft-boundary-negative-control.yaml",
+      "output": "./planned-output/copyleft-boundary-refusal.json"
+    },
+    "license-inventory": {
+      "case_id": "license-auditor-synthetic.p1.license-inventory",
+      "contract_ref": "contracts/license-auditor-synthetic-license-inventory.yaml",
+      "output": "./planned-output/license-inventory.json"
+    },
+    "notice-file-plan": {
+      "case_id": "license-auditor-synthetic.p2.notice-file-plan",
+      "contract_ref": "contracts/license-auditor-synthetic-notice-file-plan.yaml",
+      "output": "./planned-output/notice-file-plan.md"
+    }
+  }
+}

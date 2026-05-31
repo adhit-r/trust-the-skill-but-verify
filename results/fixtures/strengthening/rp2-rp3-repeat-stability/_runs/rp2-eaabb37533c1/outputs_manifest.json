@@ -1,0 +1,11 @@
+{
+  "adapter_outcome": "completed",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/secret-log-refusal.json",
+      "size": 691
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp2-eaabb37533c1"
+}

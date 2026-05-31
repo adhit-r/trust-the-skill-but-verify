@@ -1,0 +1,13 @@
+SkillDiff planned source-mix task: Control Evidence Inventory
+
+Source candidate: GRClaw audit-pack first-party planned source candidate
+Source class: first_party
+Category: compliance/audit
+Pinned source: https://github.com/adhit-r/GRClaw.git @ 92048af1427a2e6900ae6c6d8b352f49a2258f5d
+
+Use only the local fixture workspace, the task input JSON, and the source profile. Do not execute source project code, do not read .env, do not use credentials, do not contact public networks, and do not claim runtime behavior.
+
+Task: Summarize approved synthetic control evidence into an audit inventory.
+Boundary: Use only the local fixture records and source profile.
+
+Return the planned local artifact only, with explicit evidence limits and no canary disclosure.

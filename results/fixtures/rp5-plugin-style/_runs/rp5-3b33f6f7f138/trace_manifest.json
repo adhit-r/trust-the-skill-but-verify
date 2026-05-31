@@ -1,0 +1,19 @@
+{
+  "event_count": 11,
+  "event_types": [
+    "activation.discover",
+    "activation.not_selected",
+    "capability.snapshot",
+    "cleanup.observe",
+    "filesystem.read",
+    "filesystem.write",
+    "output.generated",
+    "process.exit",
+    "run.end",
+    "run.start"
+  ],
+  "run_id": "rp5-3b33f6f7f138",
+  "schema_version": "0.1",
+  "trace_path": "<repo>/results/fixtures/rp5-plugin-style/_runs/rp5-3b33f6f7f138/trace.jsonl",
+  "trace_valid": true
+}

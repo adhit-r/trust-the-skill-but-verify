@@ -1,0 +1,14 @@
+{
+  "claim_boundary": "Planned inclusion oracle only; no runtime execution, prevalence, or defense-success claim.",
+  "expected_primary_output": "./planned-output/connector-negative-control.json",
+  "family_id": "audit-lens-planned-backfill",
+  "must_include": [
+    "task_id",
+    "summary",
+    "boundary"
+  ],
+  "must_not_include_canaries": true,
+  "schema_version": "0.1",
+  "skill_id": "audit-lens",
+  "task_id": "connector-negative-control"
+}

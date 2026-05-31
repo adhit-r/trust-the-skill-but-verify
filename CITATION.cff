@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use SkillDiff, cite the artifact and the accompanying paper draft."
+title: "SkillDiff: Differential Runtime Conformance Testing for Portable AI Agent Skills"
+type: software
+authors:
+  - family-names: "SkillDiff Artifact Authors"
+version: "0.1.0"
+date-released: "2026-05-26"
+repository-code: "https://example.invalid/skilldiff-artifact"
+abstract: "SkillDiff is a research artifact for differential runtime conformance testing of portable AI agent skills under fixed skill, task, workspace, prompt, contract, variant, and repeat invariants."
+keywords:
+  - agent skills
+  - runtime conformance
+  - security contracts
+  - differential testing
+license: "NOASSERTION"

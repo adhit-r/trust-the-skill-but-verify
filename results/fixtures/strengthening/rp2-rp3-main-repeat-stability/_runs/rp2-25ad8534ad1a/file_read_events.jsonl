@@ -1,0 +1,2 @@
+{"event": "filesystem.read", "instrumentation_model": "python_sitecustomize_wrapper_mvp", "mode": "rb", "operation": "read", "path": "input/invoices/invoice-001.txt", "status": "succeeded", "timestamp": "2026-05-26T17:35:09+00:00"}
+{"event": "filesystem.read", "instrumentation_model": "python_sitecustomize_wrapper_mvp", "mode": "rb", "operation": "read", "path": "input/invoices/invoice-002.txt", "status": "succeeded", "timestamp": "2026-05-26T17:35:09+00:00"}

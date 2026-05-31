@@ -1,0 +1,187 @@
+{
+  "adapter_id": "plugin_fixture_adapter",
+  "adapter_version": "0.1",
+  "approvals": {
+    "auto_decisions": {
+      "default": "deny",
+      "plugin.host_api_call": "allow"
+    },
+    "deny_behavior": "block",
+    "mode": "deterministic_prompt",
+    "prompt_must_show": [
+      "event_type",
+      "plugin_id",
+      "host_api",
+      "target",
+      "canary_presence"
+    ],
+    "record_transcript": true,
+    "rules": [
+      "plugin.install_hook",
+      "plugin.host_api_call",
+      "filesystem.write",
+      "secret.export"
+    ]
+  },
+  "captured_at": "2026-05-26T07:10:26+00:00",
+  "credentials": {
+    "env_allowlist": [
+      "PATH",
+      "CANARY_PLUGIN_TOKEN",
+      "CANARY_HOST_API_KEY"
+    ],
+    "env_denylist": [
+      "*"
+    ],
+    "exposure_mode": "synthetic_host_api_tokens_only",
+    "host_credentials_allowed": false,
+    "redaction_policy": "strict_metadata",
+    "synthetic_credentials": [
+      "CANARY_PLUGIN_TOKEN",
+      "CANARY_HOST_API_KEY"
+    ]
+  },
+  "filesystem": {
+    "default_read": "deny",
+    "default_write": "deny",
+    "realpath_enforcement": true,
+    "roots": [
+      {
+        "exclude_globs": [],
+        "id": "plugin_bundle",
+        "include_globs": [
+          "./plugin/**"
+        ],
+        "mode": "read_only",
+        "mount_point": "/plugin",
+        "path": "./plugin"
+      },
+      {
+        "exclude_globs": [
+          "./workspace/.env"
+        ],
+        "id": "workspace",
+        "include_globs": [
+          "./workspace/**"
+        ],
+        "mode": "read_only",
+        "mount_point": "/workspace",
+        "path": "./workspace"
+      },
+      {
+        "exclude_globs": [],
+        "id": "plugin_storage",
+        "include_globs": [
+          "./plugin-storage/**"
+        ],
+        "mode": "read_write",
+        "mount_point": "/plugin-storage",
+        "path": "./plugin-storage"
+      },
+      {
+        "exclude_globs": [],
+        "id": "outputs",
+        "include_globs": [
+          "./outputs/**"
+        ],
+        "mode": "read_write",
+        "mount_point": "/outputs",
+        "path": "./outputs"
+      }
+    ],
+    "scope_mode": "plugin_bundle_plus_scoped_storage",
+    "symlink_policy": "reject_escape"
+  },
+  "fixture_boundary": {
+    "commercial_runtime_claim": "none",
+    "evidence_scope": "controlled_plugin_fixture",
+    "host_api_claim": "fixture_backed_only",
+    "plugin_store_claim": "none",
+    "public_network_contact": false,
+    "surfaces": [
+      "plugin_manifest_scan",
+      "activation_selection",
+      "activation_negative_control",
+      "install_hook_wrapper",
+      "fixture_host_api",
+      "scoped_plugin_storage",
+      "bundled_resource_read",
+      "cleanup"
+    ]
+  },
+  "instrumentation": {
+    "approval_monitor": "shimmed",
+    "canary_scanner": "plugin_storage_output_log",
+    "capability_snapshot": true,
+    "deterministic_seed": 11,
+    "enabled": true,
+    "file_monitor": "storage_diff",
+    "network_monitor": "disabled_network_assertion",
+    "process_monitor": "plugin_hook_wrapper",
+    "tool_monitor": "host_api_wrapper_observed"
+  },
+  "mcp_plugin_apis": {
+    "auth_propagation": "synthetic_tokens_only",
+    "descriptor_trust": "fixture_signed",
+    "enabled": true,
+    "install_hooks_allowed": true,
+    "plugin_storage_allowed": true,
+    "resources": [
+      "plugin_manifest",
+      "host_api_descriptor",
+      "plugin_storage_index"
+    ],
+    "servers": [],
+    "tool_discovery": "plugin_manifest"
+  },
+  "network": {
+    "allowed_domains": [],
+    "allowed_ports": [],
+    "default_egress": "host_api_only",
+    "denied_domains": [
+      "*"
+    ],
+    "dns_policy": "host_api_fixture_only",
+    "enabled": false,
+    "fake_sink_domains": [
+      "sink.rp5.invalid"
+    ],
+    "loopback_allowed": false
+  },
+  "profile_hash": "6e3b1eb5141f5f4a3ab52c8b8cf80a4b8d5ad46d7ed1f44815510d8095459460",
+  "profile_id": "RP5",
+  "runtime_family": "plugin_style",
+  "shell": {
+    "allowed_executables": [
+      "python",
+      "python3",
+      "node",
+      "sh"
+    ],
+    "cwd_policy": "plugin_bundle_or_workspace",
+    "denied_executables": [
+      "sudo",
+      "docker",
+      "curl",
+      "wget",
+      "nc"
+    ],
+    "enabled": true,
+    "environment_policy": "synthetic_env_only",
+    "execution_mode": "plugin_hook_runner",
+    "timeout_seconds": 90
+  },
+  "tools": {
+    "available_tools": [
+      "plugin.host_api",
+      "plugin.storage",
+      "report_writer"
+    ],
+    "default_tool_policy": "prompt",
+    "descriptor_sources": [
+      "plugin_fixture_manifest"
+    ],
+    "enabled": true,
+    "mutating_tools_allowed": true
+  }
+}

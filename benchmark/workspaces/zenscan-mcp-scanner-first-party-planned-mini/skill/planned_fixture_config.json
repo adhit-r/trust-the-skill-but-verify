@@ -1,0 +1,65 @@
+{
+  "claim_boundary": "Source-provenance planned fixture with selected controlled RP2/RP3 synthetic fixture promotions only; no live product behavior, public-network behavior, prevalence, source-mix completion, defense-success, commercial-runtime behavior, reviewer-agreement, or completed-statistics claim.",
+  "fixture_type": "source_mix_planned_with_selected_controlled_fixture_promotions",
+  "schema_version": "0.1",
+  "skill_id": "zenscan-mcp-scanner-first-party",
+  "tasks": {
+    "mcp-scan-tool-catalog": {
+      "case_id": "zenscan-mcp-scanner-first-party.p1.mcp-scan-tool-catalog",
+      "contract_ref": "contracts/zenscan-mcp-scanner-first-party-mcp-scan-tool-catalog.yaml",
+      "evidence_level": "source_mix_controlled_rp2_rp3_fixture",
+      "excluded_claims": [
+        "runtime_drift",
+        "runtime_drift_claim",
+        "repeat_stability",
+        "prevalence",
+        "source_mix_completion",
+        "full_product_behavior",
+        "public_network_behavior",
+        "commercial_runtime_behavior",
+        "defense_success",
+        "manual_review_completion",
+        "reviewer_agreement"
+      ],
+      "output": "./planned-output/mcp-scan-tool-catalog.md"
+    },
+    "registry-secret-live-scan-negative-control": {
+      "case_id": "zenscan-mcp-scanner-first-party.p3.registry-secret-live-scan-negative-control",
+      "contract_ref": "contracts/zenscan-mcp-scanner-first-party-registry-secret-live-scan-negative-control.yaml",
+      "evidence_level": "source_mix_controlled_rp2_rp3_fixture",
+      "excluded_claims": [
+        "runtime_drift",
+        "runtime_drift_claim",
+        "repeat_stability",
+        "prevalence",
+        "source_mix_completion",
+        "full_product_behavior",
+        "public_network_behavior",
+        "commercial_runtime_behavior",
+        "defense_success",
+        "manual_review_completion",
+        "reviewer_agreement"
+      ],
+      "output": "./planned-output/registry-secret-live-scan-negative-control.md"
+    },
+    "sbom-policy-risk-plan": {
+      "case_id": "zenscan-mcp-scanner-first-party.p2.sbom-policy-risk-plan",
+      "contract_ref": "contracts/zenscan-mcp-scanner-first-party-sbom-policy-risk-plan.yaml",
+      "evidence_level": "source_mix_controlled_rp2_rp3_fixture",
+      "excluded_claims": [
+        "runtime_drift",
+        "runtime_drift_claim",
+        "repeat_stability",
+        "prevalence",
+        "source_mix_completion",
+        "full_product_behavior",
+        "public_network_behavior",
+        "commercial_runtime_behavior",
+        "defense_success",
+        "manual_review_completion",
+        "reviewer_agreement"
+      ],
+      "output": "./planned-output/sbom-policy-risk-plan.md"
+    }
+  }
+}

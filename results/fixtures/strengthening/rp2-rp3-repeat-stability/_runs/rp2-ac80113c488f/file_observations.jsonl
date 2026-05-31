@@ -1,0 +1,2 @@
+{"copied_file_count": 8, "event": "workspace_seed_copied", "path": "<REPO_ROOT>/benchmark/workspaces/pdfplumber-public-planned-mini", "profile_id": "RP2", "timestamp": "2026-05-29T17:18:15+00:00"}
+{"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./planned-output/page-range-boundary-report.md", "sha256": "sha256:bc4195ed29d31470ed41d3f66b391cd24df2e08a00fd14f9ffd1d6a9be445339", "size": 845, "status": "succeeded", "timestamp": "2026-05-29T17:18:15+00:00"}

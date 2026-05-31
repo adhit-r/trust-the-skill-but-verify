@@ -1,0 +1,30 @@
+{
+  "adapter_id": "hardened_policy_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/planned_fixture_runner.py",
+    "--task-id",
+    "writer-option-boundary-report",
+    "--output",
+    "./planned-output/writer-option-boundary-report.md"
+  ],
+  "contract_id": "pandoc-public-writer-option-boundary-report",
+  "dry_run": false,
+  "prepared_at": "2026-05-30T17:55:53+00:00",
+  "profile_hash": "eb604ffff1a6915487f9d9039430931d345f309733c1e5b4deaeaaa6baf077b8",
+  "profile_id": "RP6",
+  "repeat_id": 1,
+  "run_id": "rp6-4f5aecacd183",
+  "skill_artifact": "local-fixture",
+  "skill_id": "pandoc-public",
+  "task_id": "writer-option-boundary-report",
+  "task_prompt_hash": "sha256:aa150b731d1c42e7e4b7001c14d974b4a5b59b85cdd644a739e7c43041c6f893",
+  "task_prompt_ref": "benchmark/tasks/pandoc-public/writer-option-boundary-report.txt",
+  "variant_id": "pandoc-public.p2.writer-option-boundary-report",
+  "workspace_copied_file_count": 6,
+  "workspace_mode": "contract_scoped_staged_workspace",
+  "workspace_seed": "<REPO_ROOT>/benchmark/workspaces/pandoc-public-planned-mini",
+  "workspace_seed_id": "source-mix-rp6-pandoc-public-writer-option-boundary-report",
+  "workspace_snapshot_hash": "ea99c8e288f6ebf74f8c556f1a4f5742f83600b9dd7df7293b7f47b208af2b80"
+}

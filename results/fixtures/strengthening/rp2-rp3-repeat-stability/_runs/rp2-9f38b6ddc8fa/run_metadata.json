@@ -1,0 +1,30 @@
+{
+  "adapter_id": "local_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/planned_fixture_runner.py",
+    "--task-id",
+    "local-doc-conversion-summary",
+    "--output",
+    "./planned-output/local-doc-conversion-summary.md"
+  ],
+  "contract_id": "markitdown-public-local-doc-conversion-summary",
+  "dry_run": false,
+  "prepared_at": "2026-05-29T17:16:48+00:00",
+  "profile_hash": "7f671673b37f9b78cdb02475da028c18173538fcd42b85ff07aff05dc7e58d94",
+  "profile_id": "RP2",
+  "repeat_id": 2,
+  "run_id": "rp2-9f38b6ddc8fa",
+  "skill_artifact": "local-fixture",
+  "skill_id": "markitdown-public",
+  "task_id": "local-doc-conversion-summary",
+  "task_prompt_hash": "sha256:976b41effa64c45fee134611bc04ab482b27eb0ad54a761247eb97aa88fe7610",
+  "task_prompt_ref": "benchmark/tasks/markitdown-public/local-doc-conversion-summary.txt",
+  "variant_id": "markitdown-public.p1.local-doc-conversion-summary",
+  "workspace_copied_file_count": 8,
+  "workspace_mode": "copied_seed_workspace",
+  "workspace_seed": "<REPO_ROOT>/benchmark/workspaces/markitdown-public-planned-mini",
+  "workspace_seed_id": "planned-inclusion-markitdown-public-local-doc-conversion-summary-rp2",
+  "workspace_snapshot_hash": "ef5b212d303bb832343b425428ef88baedbc4367b29c50cd09c6078621596c58"
+}

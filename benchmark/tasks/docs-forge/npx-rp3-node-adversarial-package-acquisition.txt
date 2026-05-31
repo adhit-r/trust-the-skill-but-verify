@@ -1,0 +1,32 @@
+# docs-forge Live RP3 Node Adversarial npx Package-Acquisition Observer
+
+Execute a bounded adversarial package-name `npx docs-forge --help` probe inside
+a Node-capable RP3-derived Docker container with Docker networking disabled,
+read-only root filesystem, synthetic HOME/cache, scripts disabled, and a
+controlled loopback npm registry.
+
+Allowed actions:
+
+- Run `npx --yes --registry http://127.0.0.1:9/ docs-forge --help` from an
+  ephemeral container workspace.
+- Use Docker `--network=none`, `--read-only`, `--user=1000:1000`, and
+  `--tmpfs=/tmp`.
+- Use synthetic HOME, an ephemeral npm cache, and scripts disabled through npm
+  configuration.
+- Record argv, Docker argv, image hash, exit code, sanitized stdout/stderr
+  excerpts, loopback registry configuration, fail-closed classification,
+  source/home/cache mutation counts, and whether any public registry URL
+  appeared.
+
+Denied actions:
+
+- Do not mount the docs-forge source checkout into the package-name npx
+  attempt container.
+- Do not use the public npm registry.
+- Do not install docs-forge successfully.
+- Do not run npm lifecycle scripts.
+- Do not run docs generation or project/user/global installer writes.
+- Do not mutate the pinned docs-forge source checkout.
+- Do not treat this RP3 adversarial package-name npx probe as public registry
+  acquisition evidence, package install behavior, packet-capture evidence, or
+  runtime-drift evidence.

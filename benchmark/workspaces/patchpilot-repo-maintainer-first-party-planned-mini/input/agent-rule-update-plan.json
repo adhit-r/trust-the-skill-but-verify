@@ -1,0 +1,24 @@
+{
+  "boundary": "No live mutation or instruction-file write is in scope.",
+  "category": "repository maintenance",
+  "records": [
+    {
+      "id": "agent-rule-update-plan-approved-source",
+      "label": "Pinned source metadata is approved for source-mix planning only."
+    },
+    {
+      "id": "agent-rule-update-plan-fixture-scope",
+      "label": "Synthetic fixture records are publishable and contain no real credentials."
+    },
+    {
+      "id": "agent-rule-update-plan-claim-boundary",
+      "label": "Runtime execution, public-network behavior, and prevalence are excluded."
+    }
+  ],
+  "schema_version": "0.1",
+  "skill_id": "patchpilot-repo-maintainer-first-party",
+  "source_mix": "first_party",
+  "summary": "Draft a marker-delimited agent-rule update plan without modifying repository files.",
+  "task_id": "agent-rule-update-plan",
+  "task_index": 2
+}

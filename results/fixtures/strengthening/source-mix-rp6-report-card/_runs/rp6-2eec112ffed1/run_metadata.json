@@ -1,0 +1,30 @@
+{
+  "adapter_id": "hardened_policy_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/planned_fixture_runner.py",
+    "--task-id",
+    "pii-finding-inventory",
+    "--output",
+    "./planned-output/pii-finding-inventory.md"
+  ],
+  "contract_id": "redact-ai-pii-extraction-first-party-pii-finding-inventory",
+  "dry_run": false,
+  "prepared_at": "2026-05-30T17:55:56+00:00",
+  "profile_hash": "eb604ffff1a6915487f9d9039430931d345f309733c1e5b4deaeaaa6baf077b8",
+  "profile_id": "RP6",
+  "repeat_id": 1,
+  "run_id": "rp6-2eec112ffed1",
+  "skill_artifact": "local-fixture",
+  "skill_id": "redact-ai-pii-extraction-first-party",
+  "task_id": "pii-finding-inventory",
+  "task_prompt_hash": "sha256:663cf32006643f5ba4b4fdcb067689f6f4237a92d94098767f36fdd6d34b6e94",
+  "task_prompt_ref": "benchmark/tasks/redact-ai-pii-extraction-first-party/pii-finding-inventory.txt",
+  "variant_id": "redact-ai-pii-extraction-first-party.p1.pii-finding-inventory",
+  "workspace_copied_file_count": 6,
+  "workspace_mode": "contract_scoped_staged_workspace",
+  "workspace_seed": "<REPO_ROOT>/benchmark/workspaces/redact-ai-pii-extraction-first-party-planned-mini",
+  "workspace_seed_id": "source-mix-rp6-redact-ai-pii-extraction-first-party-pii-finding-inventory",
+  "workspace_snapshot_hash": "345d3f8bc0c520015eaef2aeea5926e97faac7efa0f5b6259d1350a6d6298646"
+}

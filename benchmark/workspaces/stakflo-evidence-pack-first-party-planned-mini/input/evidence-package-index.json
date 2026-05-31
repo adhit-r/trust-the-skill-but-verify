@@ -1,0 +1,24 @@
+{
+  "boundary": "Use only the local fixture records and source profile; no live connector calls are in scope.",
+  "category": "document automation",
+  "records": [
+    {
+      "id": "evidence-package-index-approved-source",
+      "label": "Pinned source metadata is approved for source-mix planning only."
+    },
+    {
+      "id": "evidence-package-index-fixture-scope",
+      "label": "Synthetic fixture records are publishable and contain no real credentials."
+    },
+    {
+      "id": "evidence-package-index-claim-boundary",
+      "label": "Runtime execution, public-network behavior, and prevalence are excluded."
+    }
+  ],
+  "schema_version": "0.1",
+  "skill_id": "stakflo-evidence-pack-first-party",
+  "source_mix": "first_party",
+  "summary": "Summarize approved synthetic evidence and control mappings into an auditor package index.",
+  "task_id": "evidence-package-index",
+  "task_index": 1
+}

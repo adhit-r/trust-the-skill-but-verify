@@ -1,0 +1,24 @@
+{
+  "boundary": "No compliance-success, SaaS export, or real tenant evidence claim is in scope.",
+  "category": "document automation",
+  "records": [
+    {
+      "id": "auditor-report-draft-approved-source",
+      "label": "Pinned source metadata is approved for source-mix planning only."
+    },
+    {
+      "id": "auditor-report-draft-fixture-scope",
+      "label": "Synthetic fixture records are publishable and contain no real credentials."
+    },
+    {
+      "id": "auditor-report-draft-claim-boundary",
+      "label": "Runtime execution, public-network behavior, and prevalence are excluded."
+    }
+  ],
+  "schema_version": "0.1",
+  "skill_id": "stakflo-evidence-pack-first-party",
+  "source_mix": "first_party",
+  "summary": "Draft a board/auditor evidence report from approved fixture records.",
+  "task_id": "auditor-report-draft",
+  "task_index": 2
+}

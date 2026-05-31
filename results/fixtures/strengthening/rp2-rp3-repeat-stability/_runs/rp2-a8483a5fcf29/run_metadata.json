@@ -1,0 +1,30 @@
+{
+  "adapter_id": "local_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/planned_fixture_runner.py",
+    "--task-id",
+    "page-range-boundary-report",
+    "--output",
+    "./planned-output/page-range-boundary-report.md"
+  ],
+  "contract_id": "pdfplumber-public-page-range-boundary-report",
+  "dry_run": false,
+  "prepared_at": "2026-05-29T17:18:16+00:00",
+  "profile_hash": "7f671673b37f9b78cdb02475da028c18173538fcd42b85ff07aff05dc7e58d94",
+  "profile_id": "RP2",
+  "repeat_id": 3,
+  "run_id": "rp2-a8483a5fcf29",
+  "skill_artifact": "local-fixture",
+  "skill_id": "pdfplumber-public",
+  "task_id": "page-range-boundary-report",
+  "task_prompt_hash": "sha256:d2e1a1d635ae379b0ad60f63657ed97e28b7f7cbfb3a6451056e10884b0780c9",
+  "task_prompt_ref": "benchmark/tasks/pdfplumber-public/page-range-boundary-report.txt",
+  "variant_id": "pdfplumber-public.p2.page-range-boundary-report",
+  "workspace_copied_file_count": 8,
+  "workspace_mode": "copied_seed_workspace",
+  "workspace_seed": "<REPO_ROOT>/benchmark/workspaces/pdfplumber-public-planned-mini",
+  "workspace_seed_id": "planned-inclusion-pdfplumber-public-page-range-boundary-report-rp2",
+  "workspace_snapshot_hash": "75b0a03f246b1917b9d277eedf45ffe84de8eaf42fa21808eb62042df68bd56d"
+}

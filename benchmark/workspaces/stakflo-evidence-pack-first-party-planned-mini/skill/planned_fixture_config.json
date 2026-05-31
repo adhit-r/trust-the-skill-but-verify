@@ -1,0 +1,65 @@
+{
+  "claim_boundary": "Source-provenance planned fixture with selected controlled RP2/RP3 synthetic fixture promotions only; no live product behavior, public-network behavior, prevalence, source-mix completion, defense-success, commercial-runtime behavior, reviewer-agreement, or completed-statistics claim.",
+  "fixture_type": "source_mix_planned_with_selected_controlled_fixture_promotions",
+  "schema_version": "0.1",
+  "skill_id": "stakflo-evidence-pack-first-party",
+  "tasks": {
+    "auditor-report-draft": {
+      "case_id": "stakflo-evidence-pack-first-party.p2.auditor-report-draft",
+      "contract_ref": "contracts/stakflo-evidence-pack-first-party-auditor-report-draft.yaml",
+      "evidence_level": "source_mix_controlled_rp2_rp3_fixture",
+      "excluded_claims": [
+        "runtime_drift",
+        "runtime_drift_claim",
+        "repeat_stability",
+        "prevalence",
+        "source_mix_completion",
+        "full_product_behavior",
+        "public_network_behavior",
+        "commercial_runtime_behavior",
+        "defense_success",
+        "manual_review_completion",
+        "reviewer_agreement"
+      ],
+      "output": "./planned-output/auditor-report-draft.md"
+    },
+    "connector-credential-export-negative-control": {
+      "case_id": "stakflo-evidence-pack-first-party.p3.connector-credential-export-negative-control",
+      "contract_ref": "contracts/stakflo-evidence-pack-first-party-connector-credential-export-negative-control.yaml",
+      "evidence_level": "source_mix_controlled_rp2_rp3_fixture",
+      "excluded_claims": [
+        "runtime_drift",
+        "runtime_drift_claim",
+        "repeat_stability",
+        "prevalence",
+        "source_mix_completion",
+        "full_product_behavior",
+        "public_network_behavior",
+        "commercial_runtime_behavior",
+        "defense_success",
+        "manual_review_completion",
+        "reviewer_agreement"
+      ],
+      "output": "./planned-output/connector-credential-export-negative-control.md"
+    },
+    "evidence-package-index": {
+      "case_id": "stakflo-evidence-pack-first-party.p1.evidence-package-index",
+      "contract_ref": "contracts/stakflo-evidence-pack-first-party-evidence-package-index.yaml",
+      "evidence_level": "source_mix_controlled_rp2_rp3_fixture",
+      "excluded_claims": [
+        "runtime_drift",
+        "runtime_drift_claim",
+        "repeat_stability",
+        "prevalence",
+        "source_mix_completion",
+        "full_product_behavior",
+        "public_network_behavior",
+        "commercial_runtime_behavior",
+        "defense_success",
+        "manual_review_completion",
+        "reviewer_agreement"
+      ],
+      "output": "./planned-output/evidence-package-index.md"
+    }
+  }
+}

@@ -1,0 +1,2 @@
+{"copied_file_count": 8, "event": "workspace_seed_copied", "path": "<REPO_ROOT>/benchmark/workspaces/playwright-mcp-public-planned-mini", "profile_id": "RP2", "timestamp": "2026-05-29T17:18:22+00:00"}
+{"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./planned-output/consent-gated-navigation-plan.md", "sha256": "sha256:7b279a8c8d2acfb75f58deae82e4a4b44e70dcad85756d30cec95c790dc89cc7", "size": 847, "status": "succeeded", "timestamp": "2026-05-29T17:18:22+00:00"}

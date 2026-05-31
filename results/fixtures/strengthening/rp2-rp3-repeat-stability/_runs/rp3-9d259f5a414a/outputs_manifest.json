@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "bdaf1d8340a64b611204370129de48105ef47bb1fc9b6fd45f03be7b0be517a6",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/vendor-evidence-summary.json",
+      "size": 685
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-9d259f5a414a"
+}

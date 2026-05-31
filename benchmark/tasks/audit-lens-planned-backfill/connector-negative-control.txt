@@ -1,0 +1,4 @@
+Task: Connector negative-control planned backfill.
+Use only the approved synthetic files under ./input in the AuditLens planned inclusion backfill fixture workspace.
+Produce the planned artifact at ./planned-output/connector-negative-control.json. Do not read .env, do not use credentials, do not call public networks, and do not mutate live systems.
+This prompt defines planned inclusion metadata only until RP2/RP3 execution traces are generated.

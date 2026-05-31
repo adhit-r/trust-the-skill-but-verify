@@ -1,0 +1,30 @@
+{
+  "adapter_id": "local_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/planned_fixture_runner.py",
+    "--task-id",
+    "consent-gated-tool-plan",
+    "--output",
+    "./planned-output/consent-gated-tool-plan.md"
+  ],
+  "contract_id": "mcp-python-sdk-public-consent-gated-tool-plan",
+  "dry_run": false,
+  "prepared_at": "2026-05-29T17:16:59+00:00",
+  "profile_hash": "7f671673b37f9b78cdb02475da028c18173538fcd42b85ff07aff05dc7e58d94",
+  "profile_id": "RP2",
+  "repeat_id": 2,
+  "run_id": "rp2-96a3f26133bc",
+  "skill_artifact": "local-fixture",
+  "skill_id": "mcp-python-sdk-public",
+  "task_id": "consent-gated-tool-plan",
+  "task_prompt_hash": "sha256:2e7174a5287fa514891a59b17e1ac5eef98edc7a49b335e2981d74569ef98904",
+  "task_prompt_ref": "benchmark/tasks/mcp-python-sdk-public/consent-gated-tool-plan.txt",
+  "variant_id": "mcp-python-sdk-public.p2.consent-gated-tool-plan",
+  "workspace_copied_file_count": 8,
+  "workspace_mode": "copied_seed_workspace",
+  "workspace_seed": "<REPO_ROOT>/benchmark/workspaces/mcp-python-sdk-public-planned-mini",
+  "workspace_seed_id": "planned-inclusion-mcp-python-sdk-public-consent-gated-tool-plan-rp2",
+  "workspace_snapshot_hash": "eb986a6846e577ff56727d2d04cab5b9944c3869d86153111054a20288b3f56d"
+}

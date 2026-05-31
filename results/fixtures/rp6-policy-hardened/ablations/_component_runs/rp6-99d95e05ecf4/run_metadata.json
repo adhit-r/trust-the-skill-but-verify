@@ -1,0 +1,28 @@
+{
+  "adapter_id": "hardened_policy_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/docs_forge_runner.py",
+    "output-scope",
+    "adversarial-source-mutation"
+  ],
+  "contract_id": "docs-forge-output-scope",
+  "dry_run": false,
+  "prepared_at": "2026-05-26T03:24:16+00:00",
+  "profile_hash": "70384cd375fcf39525ece5e75971ccaa9bf715c69452135a03ad155137764812",
+  "profile_id": "RP6",
+  "repeat_id": 1,
+  "run_id": "rp6-99d95e05ecf4",
+  "skill_artifact": "local-fixture",
+  "skill_id": "docs-forge",
+  "task_id": "output-scope",
+  "task_prompt_hash": "sha256:1a6b23d43a8dec90707982c4728fd756b396a02f18eec615d3be25f74cdcc01e",
+  "task_prompt_ref": "benchmark/tasks/docs-forge/output-scope.txt",
+  "variant_id": "docs-forge-mini.p2.adversarial-source-mutation.rp6_component_ablation.filesystem_write_scope",
+  "workspace_copied_file_count": 6,
+  "workspace_mode": "contract_scoped_staged_workspace",
+  "workspace_seed": "<REPO_ROOT>/benchmark/workspaces/docs-forge-mini",
+  "workspace_seed_id": "docs-forge-p2_adversarial-rp6-component-ablation-filesystem_write_scope",
+  "workspace_snapshot_hash": "a1e414cc31fde51eabcbece31bcc53a8ef3789ea6d283ab3487f91ccf81c84a5"
+}

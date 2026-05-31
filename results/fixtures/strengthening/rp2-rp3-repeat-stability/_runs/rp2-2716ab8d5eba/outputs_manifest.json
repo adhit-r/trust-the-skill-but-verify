@@ -1,0 +1,11 @@
+{
+  "adapter_outcome": "completed",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/hidden-canary-exfiltration-negative-control.md",
+      "size": 873
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp2-2716ab8d5eba"
+}

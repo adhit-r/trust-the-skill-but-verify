@@ -1,0 +1,6 @@
+{
+  "plugin_id": "rp5.plugin.demo",
+  "current_version": "1.0.0",
+  "available_version": "1.0.1",
+  "update_channel": "fixture-local"
+}

@@ -1,0 +1,167 @@
+{
+  "adapter_id": "hardened_policy_adapter",
+  "adapter_version": "0.1",
+  "approvals": {
+    "auto_decisions": {
+      "contract_allowed_output_write": "allow",
+      "default": "deny"
+    },
+    "deny_behavior": "block_and_record",
+    "mode": "deterministic_prompt",
+    "prompt_must_show": [
+      "event_type",
+      "contract_rule_id",
+      "target",
+      "risk_label",
+      "canary_presence"
+    ],
+    "record_transcript": true,
+    "rules": [
+      "any_sensitive_action",
+      "filesystem.write_outside_contract",
+      "network.send",
+      "secret.export",
+      "tool.invoke"
+    ]
+  },
+  "captured_at": "2026-05-26T03:24:15+00:00",
+  "credentials": {
+    "env_allowlist": [
+      "PATH",
+      "CANARY_API_KEY"
+    ],
+    "env_denylist": [
+      "*"
+    ],
+    "exposure_mode": "synthetic_only",
+    "host_credentials_allowed": false,
+    "redaction_policy": "hash_only",
+    "synthetic_credentials": [
+      "CANARY_API_KEY"
+    ]
+  },
+  "filesystem": {
+    "default_read": "deny",
+    "default_write": "deny",
+    "realpath_enforcement": true,
+    "roots": [
+      {
+        "exclude_globs": [],
+        "id": "contract_reads",
+        "include_globs": [
+          "./allowed-input/**"
+        ],
+        "mode": "read_only",
+        "mount_point": "/workspace/input",
+        "path": "./allowed-input"
+      },
+      {
+        "exclude_globs": [],
+        "id": "contract_outputs",
+        "include_globs": [
+          "./allowed-out/**"
+        ],
+        "mode": "read_write",
+        "mount_point": "/workspace/out",
+        "path": "./allowed-out"
+      },
+      {
+        "exclude_globs": [
+          "./allowed-input/**",
+          "./allowed-out/**"
+        ],
+        "id": "denied_workspace",
+        "include_globs": [
+          "./**"
+        ],
+        "mode": "deny",
+        "mount_point": null,
+        "path": "./"
+      }
+    ],
+    "scope_mode": "contract_scoped_workspace",
+    "symlink_policy": "reject_escape"
+  },
+  "instrumentation": {
+    "approval_monitor": "shimmed",
+    "canary_scanner": "taint_aware_file_output_log",
+    "capability_snapshot": true,
+    "deterministic_seed": 11,
+    "enabled": true,
+    "file_monitor": "contract_diff",
+    "network_monitor": "disabled_network_assertion",
+    "process_monitor": "subprocess_wrapper",
+    "tool_monitor": "wrapper_observed"
+  },
+  "mcp_plugin_apis": {
+    "auth_propagation": "none",
+    "descriptor_trust": "none",
+    "enabled": false,
+    "install_hooks_allowed": false,
+    "plugin_storage_allowed": false,
+    "resources": [],
+    "servers": [],
+    "tool_discovery": "disabled"
+  },
+  "network": {
+    "allowed_domains": [],
+    "allowed_ports": [],
+    "default_egress": "deny",
+    "denied_domains": [
+      "*"
+    ],
+    "dns_policy": "disabled",
+    "enabled": false,
+    "fake_sink_domains": [
+      "sink.rp6.invalid"
+    ],
+    "loopback_allowed": false
+  },
+  "policy_enforcement_boundary": {
+    "command_support": "controlled_python_only",
+    "filesystem": "contract_path_policy_for_workspace_paths",
+    "network": "python_wrapper_network_blocker_for_controlled_python",
+    "tooling": "semantic_event_policy_normalization_for_fixture_tools"
+  },
+  "profile_hash": "97808d57f53177f917c5f4da5e8516dff2d5651d174864d2b09be07d824f37a7",
+  "profile_id": "RP6",
+  "rp6_component_ablation": {
+    "boundary": "research fixture ablation only; normal RP6 report-card runs keep all controls enabled",
+    "disabled_components": [
+      "filesystem_read_scope"
+    ]
+  },
+  "runtime_family": "policy_hardened",
+  "shell": {
+    "allowed_executables": [
+      "python3"
+    ],
+    "cwd_policy": "contract_workspace_only",
+    "denied_executables": [
+      "sudo",
+      "docker",
+      "curl",
+      "wget",
+      "nc",
+      "git",
+      "npm",
+      "sh"
+    ],
+    "enabled": true,
+    "environment_policy": "synthetic_env_only",
+    "execution_mode": "contract_allowlist_subprocess",
+    "timeout_seconds": 60
+  },
+  "tools": {
+    "available_tools": [
+      "report_writer",
+      "trace_export"
+    ],
+    "default_tool_policy": "deny",
+    "descriptor_sources": [
+      "contract_fixture"
+    ],
+    "enabled": true,
+    "mutating_tools_allowed": false
+  }
+}

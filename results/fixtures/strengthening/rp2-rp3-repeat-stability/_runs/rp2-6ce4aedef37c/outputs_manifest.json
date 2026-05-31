@@ -1,0 +1,11 @@
+{
+  "adapter_outcome": "completed",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/control-evidence-inventory.md",
+      "size": 856
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp2-6ce4aedef37c"
+}

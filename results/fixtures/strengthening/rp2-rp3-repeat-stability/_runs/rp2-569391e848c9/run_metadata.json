@@ -1,0 +1,30 @@
+{
+  "adapter_id": "local_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/planned_fixture_runner.py",
+    "--task-id",
+    "copyleft-notice-boundary-plan",
+    "--output",
+    "./planned-output/copyleft-notice-boundary-plan.md"
+  ],
+  "contract_id": "ort-public-copyleft-notice-boundary-plan",
+  "dry_run": false,
+  "prepared_at": "2026-05-29T17:17:34+00:00",
+  "profile_hash": "7f671673b37f9b78cdb02475da028c18173538fcd42b85ff07aff05dc7e58d94",
+  "profile_id": "RP2",
+  "repeat_id": 1,
+  "run_id": "rp2-569391e848c9",
+  "skill_artifact": "local-fixture",
+  "skill_id": "ort-public",
+  "task_id": "copyleft-notice-boundary-plan",
+  "task_prompt_hash": "sha256:74a8649ce117dd293882c5985289b78e072df276d0ef98b6b28ee40dc347f64f",
+  "task_prompt_ref": "benchmark/tasks/ort-public/copyleft-notice-boundary-plan.txt",
+  "variant_id": "ort-public.p2.copyleft-notice-boundary-plan",
+  "workspace_copied_file_count": 8,
+  "workspace_mode": "copied_seed_workspace",
+  "workspace_seed": "<REPO_ROOT>/benchmark/workspaces/ort-public-planned-mini",
+  "workspace_seed_id": "planned-inclusion-ort-public-copyleft-notice-boundary-plan-rp2",
+  "workspace_snapshot_hash": "7f8fcf73da7c55b156c6220efaa4ac86155777100f4d6d8db2506f4cea48280b"
+}

@@ -1,0 +1,30 @@
+{
+  "adapter_id": "hardened_policy_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/planned_fixture_runner.py",
+    "--task-id",
+    "local-file-discovery-plan",
+    "--output",
+    "./planned-output/local-file-discovery-plan.md"
+  ],
+  "contract_id": "fd-public-local-file-discovery-plan",
+  "dry_run": false,
+  "prepared_at": "2026-05-30T17:55:40+00:00",
+  "profile_hash": "eb604ffff1a6915487f9d9039430931d345f309733c1e5b4deaeaaa6baf077b8",
+  "profile_id": "RP6",
+  "repeat_id": 1,
+  "run_id": "rp6-c7065c929e34",
+  "skill_artifact": "local-fixture",
+  "skill_id": "fd-public",
+  "task_id": "local-file-discovery-plan",
+  "task_prompt_hash": "sha256:292006d7dbec1222d2aa713468f6a7d9f73dd1511f7992f1cae619921a585add",
+  "task_prompt_ref": "benchmark/tasks/fd-public/local-file-discovery-plan.txt",
+  "variant_id": "fd-public.p1.local-file-discovery-plan",
+  "workspace_copied_file_count": 6,
+  "workspace_mode": "contract_scoped_staged_workspace",
+  "workspace_seed": "<REPO_ROOT>/benchmark/workspaces/fd-public-planned-mini",
+  "workspace_seed_id": "source-mix-rp6-fd-public-local-file-discovery-plan",
+  "workspace_snapshot_hash": "71836f9dec5715e21e76896b4bb016b9885311ed5b593dc04663ec2f93dea9b6"
+}

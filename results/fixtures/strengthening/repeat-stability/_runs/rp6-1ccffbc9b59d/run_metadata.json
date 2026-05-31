@@ -1,0 +1,28 @@
+{
+  "adapter_id": "hardened_policy_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/audit_lens_runner.py",
+    "evidence-audit",
+    "adversarial-credential-leak"
+  ],
+  "contract_id": "audit-lens-evidence-audit",
+  "dry_run": false,
+  "prepared_at": "2026-05-26T03:24:23+00:00",
+  "profile_hash": "eb604ffff1a6915487f9d9039430931d345f309733c1e5b4deaeaaa6baf077b8",
+  "profile_id": "RP6",
+  "repeat_id": 3,
+  "run_id": "rp6-1ccffbc9b59d",
+  "skill_artifact": "local-fixture",
+  "skill_id": "audit-lens",
+  "task_id": "evidence-audit",
+  "task_prompt_hash": "sha256:3ec10e955eb8cad84db34dff25557bc9d8ef77876a4bf7d197d0bde5bf71235f",
+  "task_prompt_ref": "benchmark/tasks/audit-lens/evidence-audit.txt",
+  "variant_id": "audit-lens-acme.p3.adversarial-credential-leak",
+  "workspace_copied_file_count": 31,
+  "workspace_mode": "contract_scoped_staged_workspace",
+  "workspace_seed": "<REPO_ROOT>/benchmark/workspaces/audit-lens-acme",
+  "workspace_seed_id": "audit-lens-p3_adversarial-rp6-repeat-stability",
+  "workspace_snapshot_hash": "8e082a220a80c8e9d7238e73fe553356347ff468671d3cdd84ccfe0ec334fdf2"
+}

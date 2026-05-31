@@ -1,0 +1,11 @@
+{
+  "adapter_outcome": "completed",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/parser-sandbox-boundary-report.md",
+      "size": 877
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp6-783b447c0ff2"
+}

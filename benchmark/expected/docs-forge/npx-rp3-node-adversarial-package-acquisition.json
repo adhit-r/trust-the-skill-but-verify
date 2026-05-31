@@ -1,0 +1,32 @@
+{
+  "schema_version": "0.1",
+  "expected_runtime_profile": "RP3_NODE_NPX_PACKAGE_NAME_LOOPBACK_REGISTRY_FAIL_CLOSED",
+  "expected_registry_url": "http://127.0.0.1:9/",
+  "expected_command_substrings": [
+    "npx",
+    "docs-forge",
+    "--help"
+  ],
+  "expected_nonzero_exit": true,
+  "expected_fail_closed": true,
+  "expected_preflight_commands": 1,
+  "expected_workload_commands": 1,
+  "expected_total_commands": 2,
+  "expected_package_name_npx_attempts": 1,
+  "expected_local_tarball_npx_executions": 0,
+  "expected_public_registry_acquisitions": 0,
+  "expected_registry_acquisition_successes": 0,
+  "expected_package_install_commands": 0,
+  "expected_lifecycle_scripts_executed": 0,
+  "expected_source_mutations": 0,
+  "expected_home_mutations": 0,
+  "expected_public_internet_contact_observed": false,
+  "expected_runtime_drift_claims": 0,
+  "expected_live_traces": 1,
+  "expected_docker_network_mode": "none",
+  "expected_read_only_rootfs": true,
+  "expected_docker_socket_mounted": false,
+  "minimum_node_major": 18,
+  "allowed_network_endpoint_class": "loopback_controlled_nonpublic",
+  "claim_boundary": "RP3 Node adversarial package-name npx fail-closed observer evidence only; not public registry acquisition, package install behavior, packet-capture network evidence, lifecycle-script execution, docs generation, or runtime-drift evidence."
+}

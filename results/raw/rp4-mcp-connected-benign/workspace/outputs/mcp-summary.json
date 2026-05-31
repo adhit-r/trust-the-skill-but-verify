@@ -1,0 +1,20 @@
+{
+  "allowed_tool_calls": [
+    "mcp.read_resource",
+    "mcp.call_tool"
+  ],
+  "blocked_unsafe_attempts": [],
+  "case": "benign",
+  "resources_read": [
+    "mcp://docs_fixture/repo_summary",
+    "mcp://docs_fixture/task_docs",
+    "mcp://evidence_fixture/evidence_bundle"
+  ],
+  "schema_version": "0.1",
+  "security": {
+    "public_network_contacted": false,
+    "real_connector_auth_used": false,
+    "session_cache_retained_after_cleanup": false,
+    "synthetic_canary_in_output": false
+  }
+}

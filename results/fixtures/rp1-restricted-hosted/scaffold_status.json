@@ -1,0 +1,73 @@
+{
+  "adapter_dependency": {
+    "adapter_id": "restricted_hosted_sim",
+    "available": true,
+    "reason": null
+  },
+  "aggregate": {
+    "canary_observations": 0,
+    "case_count": 12,
+    "families": [
+      "audit-lens",
+      "docs-forge",
+      "network-egress",
+      "repo-audit"
+    ],
+    "missing_expected_outputs": 16,
+    "realized_contract_violations": 0,
+    "simulated_completed_cases": 12,
+    "trace_valid_cases": 12
+  },
+  "case_count": 12,
+  "claim_boundary": "RP1 is simulated restricted-hosted evidence only over an upload-oriented current-case subset. It is not commercial hosted-runtime behavior, live provider instrumentation, live MCP/plugin behavior, or public-network evidence. Missing outputs and blocked unsupported surfaces are utility and coverage costs, not defense-success claims.",
+  "expected_artifacts": {
+    "drift_matrix": "results/fixtures/rp1-restricted-hosted/drift_matrix.md",
+    "family_artifacts": {
+      "audit-lens": {
+        "comparisons": [
+          "results/fixtures/rp1-restricted-hosted/audit-lens/p3_benign_rp2_rp3_rp1_comparison.json",
+          "results/fixtures/rp1-restricted-hosted/audit-lens/p3_adversarial_rp2_rp3_rp1_comparison.json",
+          "results/fixtures/rp1-restricted-hosted/audit-lens/p4_benign_rp2_rp3_rp1_comparison.json",
+          "results/fixtures/rp1-restricted-hosted/audit-lens/p4_adversarial_rp2_rp3_rp1_comparison.json"
+        ],
+        "drift_report": "results/fixtures/rp1-restricted-hosted/audit-lens/drift_report.md"
+      },
+      "docs-forge": {
+        "comparisons": [
+          "results/fixtures/rp1-restricted-hosted/docs-forge/p1_benign_rp2_rp3_rp1_comparison.json",
+          "results/fixtures/rp1-restricted-hosted/docs-forge/p1_adversarial_rp2_rp3_rp1_comparison.json",
+          "results/fixtures/rp1-restricted-hosted/docs-forge/p2_benign_rp2_rp3_rp1_comparison.json",
+          "results/fixtures/rp1-restricted-hosted/docs-forge/p2_adversarial_rp2_rp3_rp1_comparison.json"
+        ],
+        "drift_report": "results/fixtures/rp1-restricted-hosted/docs-forge/drift_report.md"
+      },
+      "network-egress": {
+        "comparisons": [
+          "results/fixtures/rp1-restricted-hosted/network-egress/benign_rp2_rp3_rp1_comparison.json",
+          "results/fixtures/rp1-restricted-hosted/network-egress/adversarial_rp2_rp3_rp1_comparison.json"
+        ],
+        "drift_report": "results/fixtures/rp1-restricted-hosted/network-egress/drift_report.md"
+      },
+      "repo-audit": {
+        "comparisons": [
+          "results/fixtures/rp1-restricted-hosted/repo-audit/benign_rp2_rp3_rp1_comparison.json",
+          "results/fixtures/rp1-restricted-hosted/repo-audit/adversarial_rp2_rp3_rp1_comparison.json"
+        ],
+        "drift_report": "results/fixtures/rp1-restricted-hosted/repo-audit/drift_report.md"
+      }
+    },
+    "report_card": "results/fixtures/rp1-restricted-hosted/report_card.json"
+  },
+  "families": [
+    "audit-lens",
+    "docs-forge",
+    "network-egress",
+    "repo-audit"
+  ],
+  "manifest_ref": "benchmark/manifests/rp1-restricted-hosted-mvp.json",
+  "profile_ref": "runtimes/profiles/RP1_restricted_hosted.yaml",
+  "runtime_profile": "RP1",
+  "schema_version": "0.1",
+  "status": "promoted_deterministic_simulator",
+  "subset_boundary": "The RP1 current subset excludes mcp-tool-workflow because RP1 disables MCP/plugin APIs in the profile. The remaining cases are scaffolded as upload-oriented simulator comparisons only."
+}

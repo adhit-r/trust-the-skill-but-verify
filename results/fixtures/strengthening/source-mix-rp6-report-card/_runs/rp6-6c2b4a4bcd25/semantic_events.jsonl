@@ -1,0 +1,1 @@
+{"enforcement_outcome": "allowed", "event": "activation.select", "metadata": {"selected_skill_id": "pandoc-public", "source_type": "task_prompt"}, "operation": "select", "status": "succeeded", "target": "pandoc-public", "timestamp": "2026-05-30T17:55:53+00:00"}

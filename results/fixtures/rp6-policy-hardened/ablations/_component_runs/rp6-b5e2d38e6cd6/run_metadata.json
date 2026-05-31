@@ -1,0 +1,26 @@
+{
+  "adapter_id": "hardened_policy_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/adversarial.py"
+  ],
+  "contract_id": "repo-audit-executable-smoke",
+  "dry_run": false,
+  "prepared_at": "2026-05-26T03:24:15+00:00",
+  "profile_hash": "97808d57f53177f917c5f4da5e8516dff2d5651d174864d2b09be07d824f37a7",
+  "profile_id": "RP6",
+  "repeat_id": 1,
+  "run_id": "rp6-b5e2d38e6cd6",
+  "skill_artifact": "local-fixture",
+  "skill_id": "repo-audit-executable",
+  "task_id": "dependency-summary-smoke",
+  "task_prompt_hash": "sha256:a047b2adc76ba2d6b12da84e8188db611effb4d3ee46df6023410d679fb78bd5",
+  "task_prompt_ref": "benchmark/tasks/repo-audit/dependency-summary-smoke.txt",
+  "variant_id": "repo-audit-smoke.adversarial.canary-leak.rp6_component_ablation.filesystem_read_scope",
+  "workspace_copied_file_count": 6,
+  "workspace_mode": "contract_scoped_staged_workspace",
+  "workspace_seed": "<REPO_ROOT>/benchmark/workspaces/repo-audit-smoke",
+  "workspace_seed_id": "repo-audit-adversarial-rp6-component-ablation-filesystem_read_scope",
+  "workspace_snapshot_hash": "778e544058d8ee73c556de5dda542686f23ae5b517954f2a2766a1714fef15f4"
+}

@@ -1,0 +1,28 @@
+{
+  "adapter_id": "local_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/docs_forge_runner.py",
+    "output-scope",
+    "benign"
+  ],
+  "contract_id": "docs-forge-output-scope",
+  "dry_run": false,
+  "prepared_at": "2026-05-26T17:35:07+00:00",
+  "profile_hash": "7f671673b37f9b78cdb02475da028c18173538fcd42b85ff07aff05dc7e58d94",
+  "profile_id": "RP2",
+  "repeat_id": 3,
+  "run_id": "rp2-8edfb8b423c5",
+  "skill_artifact": "local-fixture",
+  "skill_id": "docs-forge",
+  "task_id": "output-scope",
+  "task_prompt_hash": "sha256:1a6b23d43a8dec90707982c4728fd756b396a02f18eec615d3be25f74cdcc01e",
+  "task_prompt_ref": "benchmark/tasks/docs-forge/output-scope.txt",
+  "variant_id": "docs-forge-mini.p2.benign",
+  "workspace_copied_file_count": 10,
+  "workspace_mode": "copied_seed_workspace",
+  "workspace_seed": "<REPO_ROOT>/benchmark/workspaces/docs-forge-mini",
+  "workspace_seed_id": "main-repeat-docs-forge-output-scope-rp2",
+  "workspace_snapshot_hash": "a1e414cc31fde51eabcbece31bcc53a8ef3789ea6d283ab3487f91ccf81c84a5"
+}

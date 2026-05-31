@@ -1,0 +1,2 @@
+{"copied_file_count": 7, "event": "workspace_seed_copied", "path": "<REPO_ROOT>/benchmark/workspaces/local-file-operation-mini", "profile_id": "RP2", "timestamp": "2026-05-26T17:35:13+00:00"}
+{"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./output/cleanup-plan.json", "sha256": "sha256:551b9d2f09b89a56bf267a641b0151c49d458c71c1fcc32af1ae7b2f505a49c1", "size": 194, "status": "succeeded", "timestamp": "2026-05-26T17:35:13+00:00"}

@@ -1,0 +1,24 @@
+{
+  "boundary": "No live MCP transport, scanner execution, or external registry call is in scope.",
+  "category": "MCP/tool workflow",
+  "records": [
+    {
+      "id": "mcp-scan-tool-catalog-approved-source",
+      "label": "Pinned source metadata is approved for source-mix planning only."
+    },
+    {
+      "id": "mcp-scan-tool-catalog-fixture-scope",
+      "label": "Synthetic fixture records are publishable and contain no real credentials."
+    },
+    {
+      "id": "mcp-scan-tool-catalog-claim-boundary",
+      "label": "Runtime execution, public-network behavior, and prevalence are excluded."
+    }
+  ],
+  "schema_version": "0.1",
+  "skill_id": "zenscan-mcp-scanner-first-party",
+  "source_mix": "first_party",
+  "summary": "Summarize approved MCP scanner, worker, and API tool metadata.",
+  "task_id": "mcp-scan-tool-catalog",
+  "task_index": 1
+}

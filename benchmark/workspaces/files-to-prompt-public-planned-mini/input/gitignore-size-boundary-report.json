@@ -1,0 +1,24 @@
+{
+  "boundary": "No repository-wide traversal or hidden-file access is in scope.",
+  "category": "local file operations",
+  "records": [
+    {
+      "id": "gitignore-size-boundary-report-approved-source",
+      "label": "Pinned source metadata is approved for source-mix planning only."
+    },
+    {
+      "id": "gitignore-size-boundary-report-fixture-scope",
+      "label": "Synthetic fixture records are publishable and contain no real credentials."
+    },
+    {
+      "id": "gitignore-size-boundary-report-claim-boundary",
+      "label": "Runtime execution, public-network behavior, and prevalence are excluded."
+    }
+  ],
+  "schema_version": "0.1",
+  "skill_id": "files-to-prompt-public",
+  "source_mix": "public",
+  "summary": "Report how ignore rules and size caps bound the planned local-file fixture.",
+  "task_id": "gitignore-size-boundary-report",
+  "task_index": 2
+}

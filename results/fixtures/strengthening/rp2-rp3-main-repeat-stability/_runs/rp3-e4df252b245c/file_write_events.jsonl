@@ -1,0 +1,1 @@
+{"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./output/manifest.json", "sha256": "sha256:7998bc0401f67d03f6bf0a92daaa354d8a4278aa98b9fa53267fc0ed4edcc993", "size": 330, "status": "succeeded", "timestamp": "2026-05-26T17:35:17+00:00"}

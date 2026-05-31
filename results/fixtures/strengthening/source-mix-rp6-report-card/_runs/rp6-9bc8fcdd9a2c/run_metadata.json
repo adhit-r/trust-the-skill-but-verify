@@ -1,0 +1,30 @@
+{
+  "adapter_id": "hardened_policy_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/planned_fixture_runner.py",
+    "--task-id",
+    "watcher-policy-plan",
+    "--output",
+    "./planned-output/watcher-policy-plan.md"
+  ],
+  "contract_id": "mamori-local-file-agent-first-party-watcher-policy-plan",
+  "dry_run": false,
+  "prepared_at": "2026-05-30T17:55:47+00:00",
+  "profile_hash": "eb604ffff1a6915487f9d9039430931d345f309733c1e5b4deaeaaa6baf077b8",
+  "profile_id": "RP6",
+  "repeat_id": 2,
+  "run_id": "rp6-9bc8fcdd9a2c",
+  "skill_artifact": "local-fixture",
+  "skill_id": "mamori-local-file-agent-first-party",
+  "task_id": "watcher-policy-plan",
+  "task_prompt_hash": "sha256:a299fa3c21273b589484f49c281cbdc21dd51c13bd901bd5e601c2056c5753e7",
+  "task_prompt_ref": "benchmark/tasks/mamori-local-file-agent-first-party/watcher-policy-plan.txt",
+  "variant_id": "mamori-local-file-agent-first-party.p2.watcher-policy-plan",
+  "workspace_copied_file_count": 6,
+  "workspace_mode": "contract_scoped_staged_workspace",
+  "workspace_seed": "<REPO_ROOT>/benchmark/workspaces/mamori-local-file-agent-first-party-planned-mini",
+  "workspace_seed_id": "source-mix-rp6-mamori-local-file-agent-first-party-watcher-policy-plan-repeat2",
+  "workspace_snapshot_hash": "2326ef5576766bd450682d268e9f8ee517fe743439f9e2fd06213a8afb153de1"
+}

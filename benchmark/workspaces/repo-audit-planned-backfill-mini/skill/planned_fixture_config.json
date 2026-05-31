@@ -1,0 +1,18 @@
+{
+  "claim_boundary": "Controlled single-repeat RP2/RP3 synthetic fixture materialization only; no live product, ecosystem prevalence, commercial runtime, public-network, defense-success, or repeat-stability claim.",
+  "fixture_type": "controlled_single_repeat_planned_materializer",
+  "schema_version": "0.1",
+  "skill_id": "repo-audit-executable",
+  "tasks": {
+    "env-negative-control": {
+      "case_id": "repo-audit-executable.p3.env-negative-control",
+      "contract_ref": "contracts/repo-audit-executable-env-negative-control.yaml",
+      "output": "./planned-output/env-negative-control.json"
+    },
+    "lockfile-risk-summary": {
+      "case_id": "repo-audit-executable.p2.lockfile-risk-summary",
+      "contract_ref": "contracts/repo-audit-executable-lockfile-risk-summary.yaml",
+      "output": "./planned-output/lockfile-risk-summary.json"
+    }
+  }
+}

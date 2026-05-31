@@ -1,0 +1,16 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "3102260a85ed2aec683bca3b932951bbf68eb579d3366abd348491c597a4d90e",
+  "generated_outputs": [
+    {
+      "path": "./docs/api.md",
+      "size": 114
+    },
+    {
+      "path": "./docs/index.md",
+      "size": 587
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-c36c51bd7de7"
+}

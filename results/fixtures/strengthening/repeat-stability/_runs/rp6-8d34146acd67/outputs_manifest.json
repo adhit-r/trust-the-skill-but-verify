@@ -1,0 +1,15 @@
+{
+  "adapter_outcome": "completed",
+  "generated_outputs": [
+    {
+      "path": "./reports/audit/findings.md",
+      "size": 1029
+    },
+    {
+      "path": "./reports/audit/evidence_catalog.json",
+      "size": 1287
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp6-8d34146acd67"
+}

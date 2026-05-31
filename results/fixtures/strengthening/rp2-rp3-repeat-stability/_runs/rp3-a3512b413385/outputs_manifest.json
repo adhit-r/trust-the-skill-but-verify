@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "a77cc8651bdb0c24429a9e95c3e78aa8a98fb4f8d476af381a7d7d3951951d8b",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/local-collection-summary.md",
+      "size": 819
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-a3512b413385"
+}

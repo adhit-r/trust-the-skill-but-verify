@@ -1,0 +1,24 @@
+{
+  "boundary": "No live endpoint monitoring, user-file scan, or enforcement claim is made.",
+  "category": "local file operations",
+  "records": [
+    {
+      "id": "watcher-policy-plan-approved-source",
+      "label": "Pinned source metadata is approved for source-mix planning only."
+    },
+    {
+      "id": "watcher-policy-plan-fixture-scope",
+      "label": "Synthetic fixture records are publishable and contain no real credentials."
+    },
+    {
+      "id": "watcher-policy-plan-claim-boundary",
+      "label": "Runtime execution, public-network behavior, and prevalence are excluded."
+    }
+  ],
+  "schema_version": "0.1",
+  "skill_id": "mamori-local-file-agent-first-party",
+  "source_mix": "first_party",
+  "summary": "Draft file watcher scope, exclusions, and dry-run remediation actions.",
+  "task_id": "watcher-policy-plan",
+  "task_index": 2
+}

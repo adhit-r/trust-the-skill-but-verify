@@ -1,0 +1,172 @@
+{
+  "boundary": "Current-to-target benchmark scale gap report. Current inventory entries are not proof that the mid-scale 20/60 or full-paper 40/120 floors are complete as paper-grade evidence; execution evidence remains bounded by runtime profiles, repeat coverage, adjudication, and source-mix labels.",
+  "claim_boundary": {
+    "current_entries_are_skill_count_claim": false,
+    "current_entries_are_triple_count_claim": false,
+    "full_paper_floor_claimed": false,
+    "mid_scale_floor_claimed": false,
+    "prevalence_claim": false,
+    "source_mix_completion_claimed": false,
+    "source_mix_gap_claimed": false,
+    "source_mix_gap_computed": true
+  },
+  "current": {
+    "case_entry_count": 132,
+    "case_status_counts": {
+      "current_mvp": 2,
+      "current_pilot": 130
+    },
+    "declared_case_count": 132,
+    "evidence_stage_counts": {
+      "mvp": 2,
+      "pilot": 130
+    },
+    "missing_categories": [],
+    "multi_category_skills": [],
+    "multi_source_mix_skills": [],
+    "provenance_level_counts": {
+      "first_party_sanitized_fixture": 2,
+      "first_party_source_provenance_plus_controlled_fixture": 24,
+      "local_inspection_plus_controlled_fixture": 2,
+      "public_source_provenance_plus_controlled_fixture": 48,
+      "synthetic": 56
+    },
+    "runtime_profile_counts": {
+      "RP2": 129,
+      "RP3": 129,
+      "RP5": 3
+    },
+    "skill_category_counts": {
+      "API workflow": 6,
+      "MCP/tool workflow": 6,
+      "compliance/audit": 5,
+      "data extraction": 7,
+      "document automation": 7,
+      "local file operations": 6,
+      "repository maintenance": 7
+    },
+    "source_kind_counts": {
+      "controlled_fixture_plus_local_inspection": 2,
+      "first_party_snapshot_plus_sanitized_fixture": 2,
+      "first_party_source_snapshot_plus_controlled_fixture": 24,
+      "public_source_snapshot_plus_controlled_fixture": 48,
+      "synthetic_fixture": 56
+    },
+    "source_mix_case_counts": {
+      "first_party": 27,
+      "public": 51,
+      "synthetic": 54
+    },
+    "source_mix_skill_counts": {
+      "first_party": 9,
+      "public": 17,
+      "synthetic": 18
+    },
+    "triple_category_counts": {
+      "API workflow": 18,
+      "MCP/tool workflow": 18,
+      "compliance/audit": 15,
+      "data extraction": 21,
+      "document automation": 21,
+      "local file operations": 18,
+      "repository maintenance": 21
+    },
+    "unique_skill_count": 44,
+    "unique_skill_task_contract_triple_count": 132
+  },
+  "next_actions": [
+    "Add repeat coverage, source-mix evidence depth, and adjudication evidence before claiming paper-grade full-paper completion.",
+    "Promote first-party/public source-provenance entries into executable evidence before claiming source-mix evidence completion.",
+    "Keep every promoted entry tied to tracked prompt, prompt hash, workspace snapshot hash, contract, expected output, canary policy, publication boundary, and safety status."
+  ],
+  "report_type": "benchmark_scale_gap",
+  "schema_version": "0.1",
+  "source_manifest": "benchmark/manifests/benchmark-cases-current.json",
+  "source_mix_label_scope": "provenance.source_mix.label is a skill-origin/source-mix accounting label; provenance.source_kind and provenance_level remain case-level evidence labels.",
+  "targets": {
+    "full_paper_40_120": {
+      "category_distribution": {
+        "API workflow": 6,
+        "MCP/tool workflow": 5,
+        "compliance/audit": 5,
+        "data extraction": 6,
+        "document automation": 6,
+        "local file operations": 5,
+        "repository maintenance": 7
+      },
+      "largest_category_deficits": [],
+      "largest_source_mix_deficits": [],
+      "skill_category_gaps": {
+        "API workflow": 0,
+        "MCP/tool workflow": 0,
+        "compliance/audit": 0,
+        "data extraction": 0,
+        "document automation": 0,
+        "local file operations": 0,
+        "repository maintenance": 0
+      },
+      "skill_category_shortfall": 0,
+      "skill_shortfall": 0,
+      "source_mix_gap_status": "computed_from_explicit_case_source_mix_labels_no_completion_claim",
+      "source_mix_skill_gaps": {
+        "first_party": 0,
+        "public": 0,
+        "synthetic": 0
+      },
+      "source_mix_skill_shortfall": 0,
+      "source_mix_target": {
+        "first_party": 9,
+        "public": 17,
+        "synthetic": 14
+      },
+      "target_skill_category_total": 40,
+      "target_skill_count": 40,
+      "target_source_mix_total": 40,
+      "target_triple_count": 120,
+      "triple_shortfall": 0,
+      "triples_per_skill": 3
+    },
+    "mid_scale_20_60": {
+      "category_distribution": {
+        "API workflow": 3,
+        "MCP/tool workflow": 2,
+        "compliance/audit": 3,
+        "data extraction": 3,
+        "document automation": 3,
+        "local file operations": 2,
+        "repository maintenance": 4
+      },
+      "largest_category_deficits": [],
+      "largest_source_mix_deficits": [],
+      "skill_category_gaps": {
+        "API workflow": 0,
+        "MCP/tool workflow": 0,
+        "compliance/audit": 0,
+        "data extraction": 0,
+        "document automation": 0,
+        "local file operations": 0,
+        "repository maintenance": 0
+      },
+      "skill_category_shortfall": 0,
+      "skill_shortfall": 0,
+      "source_mix_gap_status": "computed_from_explicit_case_source_mix_labels_no_completion_claim",
+      "source_mix_skill_gaps": {
+        "first_party": 0,
+        "public": 0,
+        "synthetic": 0
+      },
+      "source_mix_skill_shortfall": 0,
+      "source_mix_target": {
+        "first_party": 5,
+        "public": 8,
+        "synthetic": 7
+      },
+      "target_skill_category_total": 20,
+      "target_skill_count": 20,
+      "target_source_mix_total": 20,
+      "target_triple_count": 60,
+      "triple_shortfall": 0,
+      "triples_per_skill": 3
+    }
+  }
+}

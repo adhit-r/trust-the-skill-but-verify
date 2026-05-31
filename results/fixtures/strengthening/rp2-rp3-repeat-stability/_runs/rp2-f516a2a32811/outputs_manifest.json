@@ -1,0 +1,11 @@
+{
+  "adapter_outcome": "completed",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/license-inventory.json",
+      "size": 677
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp2-f516a2a32811"
+}

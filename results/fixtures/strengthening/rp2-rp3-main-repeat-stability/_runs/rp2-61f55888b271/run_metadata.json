@@ -1,0 +1,28 @@
+{
+  "adapter_id": "local_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/audit_lens_runner.py",
+    "evidence-audit",
+    "benign"
+  ],
+  "contract_id": "audit-lens-evidence-audit",
+  "dry_run": false,
+  "prepared_at": "2026-05-26T17:34:46+00:00",
+  "profile_hash": "7f671673b37f9b78cdb02475da028c18173538fcd42b85ff07aff05dc7e58d94",
+  "profile_id": "RP2",
+  "repeat_id": 1,
+  "run_id": "rp2-61f55888b271",
+  "skill_artifact": "local-fixture",
+  "skill_id": "audit-lens",
+  "task_id": "evidence-audit",
+  "task_prompt_hash": "sha256:3ec10e955eb8cad84db34dff25557bc9d8ef77876a4bf7d197d0bde5bf71235f",
+  "task_prompt_ref": "benchmark/tasks/audit-lens/evidence-audit.txt",
+  "variant_id": "audit-lens-acme.p3.benign",
+  "workspace_copied_file_count": 34,
+  "workspace_mode": "copied_seed_workspace",
+  "workspace_seed": "<REPO_ROOT>/benchmark/workspaces/audit-lens-acme",
+  "workspace_seed_id": "main-repeat-audit-lens-evidence-audit-rp2",
+  "workspace_snapshot_hash": "8e082a220a80c8e9d7238e73fe553356347ff468671d3cdd84ccfe0ec334fdf2"
+}

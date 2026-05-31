@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "fixture_completed",
+  "boundary": "fixture-backed RP5 plugin-style evidence; not commercial plugin-store behavior",
+  "generated_outputs": [
+    {
+      "path": "./outputs/non-activation.json",
+      "size": 345
+    }
+  ],
+  "mode": "fixture_live",
+  "run_id": "rp5-3b33f6f7f138"
+}

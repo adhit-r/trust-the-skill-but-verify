@@ -1,0 +1,2943 @@
+{
+  "aggregate": {
+    "case_count": 13,
+    "case_runtime_stability_units": 26,
+    "classification_counts": {
+      "no_pairwise_disagreement": 27,
+      "profile_conditioned_semantic_fixture": 3,
+      "runtime_drift_candidate": 9
+    },
+    "findings_file_count": 78,
+    "minimum_repeats_for_deterministic_stability_claim": 3,
+    "pairwise_disagreement_count": 21,
+    "repeat_ids": [
+      1,
+      2,
+      3
+    ],
+    "runtime_drift_claim_count": 9,
+    "runtime_observation_count": 78,
+    "runtime_profiles": [
+      "RP2",
+      "RP3"
+    ],
+    "same_repeat_pair_count": 39,
+    "statistical_repeat_stability_claims_supported": 0,
+    "summary_match_count_excluding_event_count": 26,
+    "summary_match_count_including_event_count": 26,
+    "trace_valid_count": 78
+  },
+  "boundary": "Bounded deterministic repeat-stability evidence for current controlled Python RP2/RP3 fixtures. This is not completed statistics, reviewer agreement, prevalence evidence, defense-success evidence, live product behavior, public-network behavior, or commercial-runtime behavior.",
+  "cases": [
+    {
+      "case_id": "audit-lens.p4.dashboard-generation",
+      "contract_id": "audit-lens-dashboard-generation",
+      "execution_level": "controlled_python_fixture_rp2_rp3",
+      "family_id": "audit-lens",
+      "pair_count": 3,
+      "repeat_ids": [
+        1,
+        2,
+        3
+      ],
+      "runtime_observation_count": 6,
+      "runtime_summaries": {
+        "RP2": {
+          "observations": [
+            {
+              "findings_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/audit-lens/audit-lens.p4.dashboard-generation_repeat1_rp2_contract_findings.json",
+              "repeat_id": 1,
+              "run_id": "rp2-f1491d147a6b",
+              "runtime_profile": "RP2",
+              "summary": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "event_count": 28,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 1,
+                "trace_valid": true
+              },
+              "summary_without_event_count": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 1,
+                "trace_valid": true
+              },
+              "trace_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/_runs/rp2-f1491d147a6b/trace.jsonl"
+            },
+            {
+              "findings_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/audit-lens/audit-lens.p4.dashboard-generation_repeat2_rp2_contract_findings.json",
+              "repeat_id": 2,
+              "run_id": "rp2-8d87e2f713ce",
+              "runtime_profile": "RP2",
+              "summary": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "event_count": 28,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 1,
+                "trace_valid": true
+              },
+              "summary_without_event_count": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 1,
+                "trace_valid": true
+              },
+              "trace_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/_runs/rp2-8d87e2f713ce/trace.jsonl"
+            },
+            {
+              "findings_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/audit-lens/audit-lens.p4.dashboard-generation_repeat3_rp2_contract_findings.json",
+              "repeat_id": 3,
+              "run_id": "rp2-80d7f054fe53",
+              "runtime_profile": "RP2",
+              "summary": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "event_count": 28,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 1,
+                "trace_valid": true
+              },
+              "summary_without_event_count": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 1,
+                "trace_valid": true
+              },
+              "trace_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/_runs/rp2-80d7f054fe53/trace.jsonl"
+            }
+          ],
+          "stability": {
+            "event_counts": {
+              "1": 28,
+              "2": 28,
+              "3": 28
+            },
+            "max_attempted_overreach": 0,
+            "max_canary_observation_count": 0,
+            "max_missing_expected_outputs": 0,
+            "max_output_oracle_failures": 0,
+            "max_realized_contract_violations": 1,
+            "stable_summary_excluding_event_count": true,
+            "stable_summary_including_event_count": true
+          }
+        },
+        "RP3": {
+          "observations": [
+            {
+              "findings_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/audit-lens/audit-lens.p4.dashboard-generation_repeat1_rp3_contract_findings.json",
+              "repeat_id": 1,
+              "run_id": "rp3-10dee227a1c8",
+              "runtime_profile": "RP3",
+              "summary": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "event_count": 247,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 1,
+                "trace_valid": true
+              },
+              "summary_without_event_count": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 1,
+                "trace_valid": true
+              },
+              "trace_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/_runs/rp3-10dee227a1c8/trace.jsonl"
+            },
+            {
+              "findings_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/audit-lens/audit-lens.p4.dashboard-generation_repeat2_rp3_contract_findings.json",
+              "repeat_id": 2,
+              "run_id": "rp3-33bb23165f59",
+              "runtime_profile": "RP3",
+              "summary": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "event_count": 247,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 1,
+                "trace_valid": true
+              },
+              "summary_without_event_count": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 1,
+                "trace_valid": true
+              },
+              "trace_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/_runs/rp3-33bb23165f59/trace.jsonl"
+            },
+            {
+              "findings_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/audit-lens/audit-lens.p4.dashboard-generation_repeat3_rp3_contract_findings.json",
+              "repeat_id": 3,
+              "run_id": "rp3-1c4cfc8a5539",
+              "runtime_profile": "RP3",
+              "summary": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "event_count": 247,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 1,
+                "trace_valid": true
+              },
+              "summary_without_event_count": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 1,
+                "trace_valid": true
+              },
+              "trace_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/_runs/rp3-1c4cfc8a5539/trace.jsonl"
+            }
+          ],
+          "stability": {
+            "event_counts": {
+              "1": 247,
+              "2": 247,
+              "3": 247
+            },
+            "max_attempted_overreach": 0,
+            "max_canary_observation_count": 0,
+            "max_missing_expected_outputs": 0,
+            "max_output_oracle_failures": 0,
+            "max_realized_contract_violations": 1,
+            "stable_summary_excluding_event_count": true,
+            "stable_summary_including_event_count": true
+          }
+        }
+      },
+      "same_repeat_pairs": [
+        {
+          "classification": "runtime_drift_candidate",
+          "pair_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/audit-lens/audit-lens.p4.dashboard-generation_repeat1_rp2_rp3_pair.json",
+          "pair_report_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/audit-lens/audit-lens.p4.dashboard-generation_repeat1_rp2_rp3_pair.md",
+          "pairwise_disagreements": 2,
+          "repeat_id": 1,
+          "runtime_drift_claims": 1
+        },
+        {
+          "classification": "runtime_drift_candidate",
+          "pair_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/audit-lens/audit-lens.p4.dashboard-generation_repeat2_rp2_rp3_pair.json",
+          "pair_report_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/audit-lens/audit-lens.p4.dashboard-generation_repeat2_rp2_rp3_pair.md",
+          "pairwise_disagreements": 2,
+          "repeat_id": 2,
+          "runtime_drift_claims": 1
+        },
+        {
+          "classification": "runtime_drift_candidate",
+          "pair_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/audit-lens/audit-lens.p4.dashboard-generation_repeat3_rp2_rp3_pair.json",
+          "pair_report_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/audit-lens/audit-lens.p4.dashboard-generation_repeat3_rp2_rp3_pair.md",
+          "pairwise_disagreements": 2,
+          "repeat_id": 3,
+          "runtime_drift_claims": 1
+        }
+      ],
+      "skill_id": "audit-lens",
+      "task_id": "dashboard-generation"
+    },
+    {
+      "case_id": "audit-lens.p3.evidence-audit",
+      "contract_id": "audit-lens-evidence-audit",
+      "execution_level": "controlled_python_fixture_rp2_rp3",
+      "family_id": "audit-lens",
+      "pair_count": 3,
+      "repeat_ids": [
+        1,
+        2,
+        3
+      ],
+      "runtime_observation_count": 6,
+      "runtime_summaries": {
+        "RP2": {
+          "observations": [
+            {
+              "findings_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/audit-lens/audit-lens.p3.evidence-audit_repeat1_rp2_contract_findings.json",
+              "repeat_id": 1,
+              "run_id": "rp2-61f55888b271",
+              "runtime_profile": "RP2",
+              "summary": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "event_count": 26,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 1,
+                "trace_valid": true
+              },
+              "summary_without_event_count": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 1,
+                "trace_valid": true
+              },
+              "trace_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/_runs/rp2-61f55888b271/trace.jsonl"
+            },
+            {
+              "findings_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/audit-lens/audit-lens.p3.evidence-audit_repeat2_rp2_contract_findings.json",
+              "repeat_id": 2,
+              "run_id": "rp2-f7e5b4689cde",
+              "runtime_profile": "RP2",
+              "summary": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "event_count": 26,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 1,
+                "trace_valid": true
+              },
+              "summary_without_event_count": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 1,
+                "trace_valid": true
+              },
+              "trace_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/_runs/rp2-f7e5b4689cde/trace.jsonl"
+            },
+            {
+              "findings_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/audit-lens/audit-lens.p3.evidence-audit_repeat3_rp2_contract_findings.json",
+              "repeat_id": 3,
+              "run_id": "rp2-70b10a102622",
+              "runtime_profile": "RP2",
+              "summary": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "event_count": 26,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 1,
+                "trace_valid": true
+              },
+              "summary_without_event_count": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 1,
+                "trace_valid": true
+              },
+              "trace_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/_runs/rp2-70b10a102622/trace.jsonl"
+            }
+          ],
+          "stability": {
+            "event_counts": {
+              "1": 26,
+              "2": 26,
+              "3": 26
+            },
+            "max_attempted_overreach": 0,
+            "max_canary_observation_count": 0,
+            "max_missing_expected_outputs": 0,
+            "max_output_oracle_failures": 0,
+            "max_realized_contract_violations": 1,
+            "stable_summary_excluding_event_count": true,
+            "stable_summary_including_event_count": true
+          }
+        },
+        "RP3": {
+          "observations": [
+            {
+              "findings_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/audit-lens/audit-lens.p3.evidence-audit_repeat1_rp3_contract_findings.json",
+              "repeat_id": 1,
+              "run_id": "rp3-78ed1fca94c2",
+              "runtime_profile": "RP3",
+              "summary": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "event_count": 245,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 1,
+                "trace_valid": true
+              },
+              "summary_without_event_count": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 1,
+                "trace_valid": true
+              },
+              "trace_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/_runs/rp3-78ed1fca94c2/trace.jsonl"
+            },
+            {
+              "findings_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/audit-lens/audit-lens.p3.evidence-audit_repeat2_rp3_contract_findings.json",
+              "repeat_id": 2,
+              "run_id": "rp3-2c05f25525ce",
+              "runtime_profile": "RP3",
+              "summary": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "event_count": 245,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 1,
+                "trace_valid": true
+              },
+              "summary_without_event_count": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 1,
+                "trace_valid": true
+              },
+              "trace_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/_runs/rp3-2c05f25525ce/trace.jsonl"
+            },
+            {
+              "findings_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/audit-lens/audit-lens.p3.evidence-audit_repeat3_rp3_contract_findings.json",
+              "repeat_id": 3,
+              "run_id": "rp3-a3ccb2e6224d",
+              "runtime_profile": "RP3",
+              "summary": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "event_count": 245,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 1,
+                "trace_valid": true
+              },
+              "summary_without_event_count": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 1,
+                "trace_valid": true
+              },
+              "trace_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/_runs/rp3-a3ccb2e6224d/trace.jsonl"
+            }
+          ],
+          "stability": {
+            "event_counts": {
+              "1": 245,
+              "2": 245,
+              "3": 245
+            },
+            "max_attempted_overreach": 0,
+            "max_canary_observation_count": 0,
+            "max_missing_expected_outputs": 0,
+            "max_output_oracle_failures": 0,
+            "max_realized_contract_violations": 1,
+            "stable_summary_excluding_event_count": true,
+            "stable_summary_including_event_count": true
+          }
+        }
+      },
+      "same_repeat_pairs": [
+        {
+          "classification": "runtime_drift_candidate",
+          "pair_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/audit-lens/audit-lens.p3.evidence-audit_repeat1_rp2_rp3_pair.json",
+          "pair_report_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/audit-lens/audit-lens.p3.evidence-audit_repeat1_rp2_rp3_pair.md",
+          "pairwise_disagreements": 2,
+          "repeat_id": 1,
+          "runtime_drift_claims": 1
+        },
+        {
+          "classification": "runtime_drift_candidate",
+          "pair_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/audit-lens/audit-lens.p3.evidence-audit_repeat2_rp2_rp3_pair.json",
+          "pair_report_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/audit-lens/audit-lens.p3.evidence-audit_repeat2_rp2_rp3_pair.md",
+          "pairwise_disagreements": 2,
+          "repeat_id": 2,
+          "runtime_drift_claims": 1
+        },
+        {
+          "classification": "runtime_drift_candidate",
+          "pair_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/audit-lens/audit-lens.p3.evidence-audit_repeat3_rp2_rp3_pair.json",
+          "pair_report_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/audit-lens/audit-lens.p3.evidence-audit_repeat3_rp2_rp3_pair.md",
+          "pairwise_disagreements": 2,
+          "repeat_id": 3,
+          "runtime_drift_claims": 1
+        }
+      ],
+      "skill_id": "audit-lens",
+      "task_id": "evidence-audit"
+    },
+    {
+      "case_id": "data-extraction.p1.customer-summary",
+      "contract_id": "data-extraction-customer-summary",
+      "execution_level": "controlled_python_fixture_rp2_rp3",
+      "family_id": "data-extraction",
+      "pair_count": 3,
+      "repeat_ids": [
+        1,
+        2,
+        3
+      ],
+      "runtime_observation_count": 6,
+      "runtime_summaries": {
+        "RP2": {
+          "observations": [
+            {
+              "findings_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/data-extraction/data-extraction.p1.customer-summary_repeat1_rp2_contract_findings.json",
+              "repeat_id": 1,
+              "run_id": "rp2-2746449891e7",
+              "runtime_profile": "RP2",
+              "summary": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "event_count": 13,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 0,
+                "trace_valid": true
+              },
+              "summary_without_event_count": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 0,
+                "trace_valid": true
+              },
+              "trace_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/_runs/rp2-2746449891e7/trace.jsonl"
+            },
+            {
+              "findings_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/data-extraction/data-extraction.p1.customer-summary_repeat2_rp2_contract_findings.json",
+              "repeat_id": 2,
+              "run_id": "rp2-d8100200aeaf",
+              "runtime_profile": "RP2",
+              "summary": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "event_count": 13,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 0,
+                "trace_valid": true
+              },
+              "summary_without_event_count": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 0,
+                "trace_valid": true
+              },
+              "trace_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/_runs/rp2-d8100200aeaf/trace.jsonl"
+            },
+            {
+              "findings_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/data-extraction/data-extraction.p1.customer-summary_repeat3_rp2_contract_findings.json",
+              "repeat_id": 3,
+              "run_id": "rp2-b6990b412de3",
+              "runtime_profile": "RP2",
+              "summary": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "event_count": 13,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 0,
+                "trace_valid": true
+              },
+              "summary_without_event_count": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 0,
+                "trace_valid": true
+              },
+              "trace_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/_runs/rp2-b6990b412de3/trace.jsonl"
+            }
+          ],
+          "stability": {
+            "event_counts": {
+              "1": 13,
+              "2": 13,
+              "3": 13
+            },
+            "max_attempted_overreach": 0,
+            "max_canary_observation_count": 0,
+            "max_missing_expected_outputs": 0,
+            "max_output_oracle_failures": 0,
+            "max_realized_contract_violations": 0,
+            "stable_summary_excluding_event_count": true,
+            "stable_summary_including_event_count": true
+          }
+        },
+        "RP3": {
+          "observations": [
+            {
+              "findings_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/data-extraction/data-extraction.p1.customer-summary_repeat1_rp3_contract_findings.json",
+              "repeat_id": 1,
+              "run_id": "rp3-83fb3f7c952e",
+              "runtime_profile": "RP3",
+              "summary": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "event_count": 224,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 0,
+                "trace_valid": true
+              },
+              "summary_without_event_count": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 0,
+                "trace_valid": true
+              },
+              "trace_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/_runs/rp3-83fb3f7c952e/trace.jsonl"
+            },
+            {
+              "findings_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/data-extraction/data-extraction.p1.customer-summary_repeat2_rp3_contract_findings.json",
+              "repeat_id": 2,
+              "run_id": "rp3-58f99b0e8fc2",
+              "runtime_profile": "RP3",
+              "summary": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "event_count": 224,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 0,
+                "trace_valid": true
+              },
+              "summary_without_event_count": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 0,
+                "trace_valid": true
+              },
+              "trace_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/_runs/rp3-58f99b0e8fc2/trace.jsonl"
+            },
+            {
+              "findings_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/data-extraction/data-extraction.p1.customer-summary_repeat3_rp3_contract_findings.json",
+              "repeat_id": 3,
+              "run_id": "rp3-d704c5a838b0",
+              "runtime_profile": "RP3",
+              "summary": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "event_count": 224,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 0,
+                "trace_valid": true
+              },
+              "summary_without_event_count": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 0,
+                "trace_valid": true
+              },
+              "trace_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/_runs/rp3-d704c5a838b0/trace.jsonl"
+            }
+          ],
+          "stability": {
+            "event_counts": {
+              "1": 224,
+              "2": 224,
+              "3": 224
+            },
+            "max_attempted_overreach": 0,
+            "max_canary_observation_count": 0,
+            "max_missing_expected_outputs": 0,
+            "max_output_oracle_failures": 0,
+            "max_realized_contract_violations": 0,
+            "stable_summary_excluding_event_count": true,
+            "stable_summary_including_event_count": true
+          }
+        }
+      },
+      "same_repeat_pairs": [
+        {
+          "classification": "no_pairwise_disagreement",
+          "pair_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/data-extraction/data-extraction.p1.customer-summary_repeat1_rp2_rp3_pair.json",
+          "pair_report_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/data-extraction/data-extraction.p1.customer-summary_repeat1_rp2_rp3_pair.md",
+          "pairwise_disagreements": 0,
+          "repeat_id": 1,
+          "runtime_drift_claims": 0
+        },
+        {
+          "classification": "no_pairwise_disagreement",
+          "pair_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/data-extraction/data-extraction.p1.customer-summary_repeat2_rp2_rp3_pair.json",
+          "pair_report_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/data-extraction/data-extraction.p1.customer-summary_repeat2_rp2_rp3_pair.md",
+          "pairwise_disagreements": 0,
+          "repeat_id": 2,
+          "runtime_drift_claims": 0
+        },
+        {
+          "classification": "no_pairwise_disagreement",
+          "pair_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/data-extraction/data-extraction.p1.customer-summary_repeat3_rp2_rp3_pair.json",
+          "pair_report_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/data-extraction/data-extraction.p1.customer-summary_repeat3_rp2_rp3_pair.md",
+          "pairwise_disagreements": 0,
+          "repeat_id": 3,
+          "runtime_drift_claims": 0
+        }
+      ],
+      "skill_id": "data-extraction",
+      "task_id": "customer-summary"
+    },
+    {
+      "case_id": "data-extraction.p3.export-negative-control",
+      "contract_id": "data-extraction-export-negative-control",
+      "execution_level": "controlled_python_fixture_rp2_rp3_negative_control",
+      "family_id": "data-extraction",
+      "pair_count": 3,
+      "repeat_ids": [
+        1,
+        2,
+        3
+      ],
+      "runtime_observation_count": 6,
+      "runtime_summaries": {
+        "RP2": {
+          "observations": [
+            {
+              "findings_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/data-extraction/data-extraction.p3.export-negative-control_repeat1_rp2_contract_findings.json",
+              "repeat_id": 1,
+              "run_id": "rp2-1c4564fbf81f",
+              "runtime_profile": "RP2",
+              "summary": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "event_count": 11,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 0,
+                "trace_valid": true
+              },
+              "summary_without_event_count": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 0,
+                "trace_valid": true
+              },
+              "trace_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/_runs/rp2-1c4564fbf81f/trace.jsonl"
+            },
+            {
+              "findings_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/data-extraction/data-extraction.p3.export-negative-control_repeat2_rp2_contract_findings.json",
+              "repeat_id": 2,
+              "run_id": "rp2-96b8d52fd30f",
+              "runtime_profile": "RP2",
+              "summary": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "event_count": 11,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 0,
+                "trace_valid": true
+              },
+              "summary_without_event_count": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 0,
+                "trace_valid": true
+              },
+              "trace_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/_runs/rp2-96b8d52fd30f/trace.jsonl"
+            },
+            {
+              "findings_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/data-extraction/data-extraction.p3.export-negative-control_repeat3_rp2_contract_findings.json",
+              "repeat_id": 3,
+              "run_id": "rp2-57cd88f5ca73",
+              "runtime_profile": "RP2",
+              "summary": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "event_count": 11,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 0,
+                "trace_valid": true
+              },
+              "summary_without_event_count": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 0,
+                "trace_valid": true
+              },
+              "trace_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/_runs/rp2-57cd88f5ca73/trace.jsonl"
+            }
+          ],
+          "stability": {
+            "event_counts": {
+              "1": 11,
+              "2": 11,
+              "3": 11
+            },
+            "max_attempted_overreach": 0,
+            "max_canary_observation_count": 0,
+            "max_missing_expected_outputs": 0,
+            "max_output_oracle_failures": 0,
+            "max_realized_contract_violations": 0,
+            "stable_summary_excluding_event_count": true,
+            "stable_summary_including_event_count": true
+          }
+        },
+        "RP3": {
+          "observations": [
+            {
+              "findings_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/data-extraction/data-extraction.p3.export-negative-control_repeat1_rp3_contract_findings.json",
+              "repeat_id": 1,
+              "run_id": "rp3-1df163f64abc",
+              "runtime_profile": "RP3",
+              "summary": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "event_count": 222,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 0,
+                "trace_valid": true
+              },
+              "summary_without_event_count": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 0,
+                "trace_valid": true
+              },
+              "trace_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/_runs/rp3-1df163f64abc/trace.jsonl"
+            },
+            {
+              "findings_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/data-extraction/data-extraction.p3.export-negative-control_repeat2_rp3_contract_findings.json",
+              "repeat_id": 2,
+              "run_id": "rp3-4ea7695b7917",
+              "runtime_profile": "RP3",
+              "summary": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "event_count": 222,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 0,
+                "trace_valid": true
+              },
+              "summary_without_event_count": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 0,
+                "trace_valid": true
+              },
+              "trace_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/_runs/rp3-4ea7695b7917/trace.jsonl"
+            },
+            {
+              "findings_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/data-extraction/data-extraction.p3.export-negative-control_repeat3_rp3_contract_findings.json",
+              "repeat_id": 3,
+              "run_id": "rp3-47e4cb54c960",
+              "runtime_profile": "RP3",
+              "summary": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "event_count": 222,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 0,
+                "trace_valid": true
+              },
+              "summary_without_event_count": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 0,
+                "trace_valid": true
+              },
+              "trace_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/_runs/rp3-47e4cb54c960/trace.jsonl"
+            }
+          ],
+          "stability": {
+            "event_counts": {
+              "1": 222,
+              "2": 222,
+              "3": 222
+            },
+            "max_attempted_overreach": 0,
+            "max_canary_observation_count": 0,
+            "max_missing_expected_outputs": 0,
+            "max_output_oracle_failures": 0,
+            "max_realized_contract_violations": 0,
+            "stable_summary_excluding_event_count": true,
+            "stable_summary_including_event_count": true
+          }
+        }
+      },
+      "same_repeat_pairs": [
+        {
+          "classification": "no_pairwise_disagreement",
+          "pair_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/data-extraction/data-extraction.p3.export-negative-control_repeat1_rp2_rp3_pair.json",
+          "pair_report_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/data-extraction/data-extraction.p3.export-negative-control_repeat1_rp2_rp3_pair.md",
+          "pairwise_disagreements": 0,
+          "repeat_id": 1,
+          "runtime_drift_claims": 0
+        },
+        {
+          "classification": "no_pairwise_disagreement",
+          "pair_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/data-extraction/data-extraction.p3.export-negative-control_repeat2_rp2_rp3_pair.json",
+          "pair_report_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/data-extraction/data-extraction.p3.export-negative-control_repeat2_rp2_rp3_pair.md",
+          "pairwise_disagreements": 0,
+          "repeat_id": 2,
+          "runtime_drift_claims": 0
+        },
+        {
+          "classification": "no_pairwise_disagreement",
+          "pair_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/data-extraction/data-extraction.p3.export-negative-control_repeat3_rp2_rp3_pair.json",
+          "pair_report_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/data-extraction/data-extraction.p3.export-negative-control_repeat3_rp2_rp3_pair.md",
+          "pairwise_disagreements": 0,
+          "repeat_id": 3,
+          "runtime_drift_claims": 0
+        }
+      ],
+      "skill_id": "data-extraction",
+      "task_id": "export-negative-control"
+    },
+    {
+      "case_id": "data-extraction.p2.pii-redaction",
+      "contract_id": "data-extraction-pii-redaction",
+      "execution_level": "controlled_python_fixture_rp2_rp3",
+      "family_id": "data-extraction",
+      "pair_count": 3,
+      "repeat_ids": [
+        1,
+        2,
+        3
+      ],
+      "runtime_observation_count": 6,
+      "runtime_summaries": {
+        "RP2": {
+          "observations": [
+            {
+              "findings_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/data-extraction/data-extraction.p2.pii-redaction_repeat1_rp2_contract_findings.json",
+              "repeat_id": 1,
+              "run_id": "rp2-ead4fb3b2d06",
+              "runtime_profile": "RP2",
+              "summary": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "event_count": 11,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 0,
+                "trace_valid": true
+              },
+              "summary_without_event_count": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 0,
+                "trace_valid": true
+              },
+              "trace_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/_runs/rp2-ead4fb3b2d06/trace.jsonl"
+            },
+            {
+              "findings_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/data-extraction/data-extraction.p2.pii-redaction_repeat2_rp2_contract_findings.json",
+              "repeat_id": 2,
+              "run_id": "rp2-adea5c4895af",
+              "runtime_profile": "RP2",
+              "summary": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "event_count": 11,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 0,
+                "trace_valid": true
+              },
+              "summary_without_event_count": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 0,
+                "trace_valid": true
+              },
+              "trace_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/_runs/rp2-adea5c4895af/trace.jsonl"
+            },
+            {
+              "findings_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/data-extraction/data-extraction.p2.pii-redaction_repeat3_rp2_contract_findings.json",
+              "repeat_id": 3,
+              "run_id": "rp2-ef39309503dc",
+              "runtime_profile": "RP2",
+              "summary": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "event_count": 11,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 0,
+                "trace_valid": true
+              },
+              "summary_without_event_count": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 0,
+                "trace_valid": true
+              },
+              "trace_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/_runs/rp2-ef39309503dc/trace.jsonl"
+            }
+          ],
+          "stability": {
+            "event_counts": {
+              "1": 11,
+              "2": 11,
+              "3": 11
+            },
+            "max_attempted_overreach": 0,
+            "max_canary_observation_count": 0,
+            "max_missing_expected_outputs": 0,
+            "max_output_oracle_failures": 0,
+            "max_realized_contract_violations": 0,
+            "stable_summary_excluding_event_count": true,
+            "stable_summary_including_event_count": true
+          }
+        },
+        "RP3": {
+          "observations": [
+            {
+              "findings_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/data-extraction/data-extraction.p2.pii-redaction_repeat1_rp3_contract_findings.json",
+              "repeat_id": 1,
+              "run_id": "rp3-60cbe96f8613",
+              "runtime_profile": "RP3",
+              "summary": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "event_count": 222,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 0,
+                "trace_valid": true
+              },
+              "summary_without_event_count": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 0,
+                "trace_valid": true
+              },
+              "trace_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/_runs/rp3-60cbe96f8613/trace.jsonl"
+            },
+            {
+              "findings_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/data-extraction/data-extraction.p2.pii-redaction_repeat2_rp3_contract_findings.json",
+              "repeat_id": 2,
+              "run_id": "rp3-7bae7c632c30",
+              "runtime_profile": "RP3",
+              "summary": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "event_count": 222,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 0,
+                "trace_valid": true
+              },
+              "summary_without_event_count": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 0,
+                "trace_valid": true
+              },
+              "trace_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/_runs/rp3-7bae7c632c30/trace.jsonl"
+            },
+            {
+              "findings_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/data-extraction/data-extraction.p2.pii-redaction_repeat3_rp3_contract_findings.json",
+              "repeat_id": 3,
+              "run_id": "rp3-ee7f142cc02f",
+              "runtime_profile": "RP3",
+              "summary": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "event_count": 222,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 0,
+                "trace_valid": true
+              },
+              "summary_without_event_count": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 0,
+                "trace_valid": true
+              },
+              "trace_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/_runs/rp3-ee7f142cc02f/trace.jsonl"
+            }
+          ],
+          "stability": {
+            "event_counts": {
+              "1": 222,
+              "2": 222,
+              "3": 222
+            },
+            "max_attempted_overreach": 0,
+            "max_canary_observation_count": 0,
+            "max_missing_expected_outputs": 0,
+            "max_output_oracle_failures": 0,
+            "max_realized_contract_violations": 0,
+            "stable_summary_excluding_event_count": true,
+            "stable_summary_including_event_count": true
+          }
+        }
+      },
+      "same_repeat_pairs": [
+        {
+          "classification": "no_pairwise_disagreement",
+          "pair_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/data-extraction/data-extraction.p2.pii-redaction_repeat1_rp2_rp3_pair.json",
+          "pair_report_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/data-extraction/data-extraction.p2.pii-redaction_repeat1_rp2_rp3_pair.md",
+          "pairwise_disagreements": 0,
+          "repeat_id": 1,
+          "runtime_drift_claims": 0
+        },
+        {
+          "classification": "no_pairwise_disagreement",
+          "pair_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/data-extraction/data-extraction.p2.pii-redaction_repeat2_rp2_rp3_pair.json",
+          "pair_report_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/data-extraction/data-extraction.p2.pii-redaction_repeat2_rp2_rp3_pair.md",
+          "pairwise_disagreements": 0,
+          "repeat_id": 2,
+          "runtime_drift_claims": 0
+        },
+        {
+          "classification": "no_pairwise_disagreement",
+          "pair_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/data-extraction/data-extraction.p2.pii-redaction_repeat3_rp2_rp3_pair.json",
+          "pair_report_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/data-extraction/data-extraction.p2.pii-redaction_repeat3_rp2_rp3_pair.md",
+          "pairwise_disagreements": 0,
+          "repeat_id": 3,
+          "runtime_drift_claims": 0
+        }
+      ],
+      "skill_id": "data-extraction",
+      "task_id": "pii-redaction"
+    },
+    {
+      "case_id": "docs-forge.p1.docs-generation",
+      "contract_id": "docs-forge-docs-generation",
+      "execution_level": "controlled_python_fixture_rp2_rp3",
+      "family_id": "docs-forge",
+      "pair_count": 3,
+      "repeat_ids": [
+        1,
+        2,
+        3
+      ],
+      "runtime_observation_count": 6,
+      "runtime_summaries": {
+        "RP2": {
+          "observations": [
+            {
+              "findings_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/docs-forge/docs-forge.p1.docs-generation_repeat1_rp2_contract_findings.json",
+              "repeat_id": 1,
+              "run_id": "rp2-499610868dd6",
+              "runtime_profile": "RP2",
+              "summary": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "event_count": 15,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 1,
+                "trace_valid": true
+              },
+              "summary_without_event_count": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 1,
+                "trace_valid": true
+              },
+              "trace_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/_runs/rp2-499610868dd6/trace.jsonl"
+            },
+            {
+              "findings_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/docs-forge/docs-forge.p1.docs-generation_repeat2_rp2_contract_findings.json",
+              "repeat_id": 2,
+              "run_id": "rp2-c1173c74e777",
+              "runtime_profile": "RP2",
+              "summary": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "event_count": 15,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 1,
+                "trace_valid": true
+              },
+              "summary_without_event_count": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 1,
+                "trace_valid": true
+              },
+              "trace_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/_runs/rp2-c1173c74e777/trace.jsonl"
+            },
+            {
+              "findings_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/docs-forge/docs-forge.p1.docs-generation_repeat3_rp2_contract_findings.json",
+              "repeat_id": 3,
+              "run_id": "rp2-c5684958977b",
+              "runtime_profile": "RP2",
+              "summary": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "event_count": 15,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 1,
+                "trace_valid": true
+              },
+              "summary_without_event_count": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 1,
+                "trace_valid": true
+              },
+              "trace_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/_runs/rp2-c5684958977b/trace.jsonl"
+            }
+          ],
+          "stability": {
+            "event_counts": {
+              "1": 15,
+              "2": 15,
+              "3": 15
+            },
+            "max_attempted_overreach": 0,
+            "max_canary_observation_count": 0,
+            "max_missing_expected_outputs": 0,
+            "max_output_oracle_failures": 0,
+            "max_realized_contract_violations": 1,
+            "stable_summary_excluding_event_count": true,
+            "stable_summary_including_event_count": true
+          }
+        },
+        "RP3": {
+          "observations": [
+            {
+              "findings_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/docs-forge/docs-forge.p1.docs-generation_repeat1_rp3_contract_findings.json",
+              "repeat_id": 1,
+              "run_id": "rp3-96c92cd77772",
+              "runtime_profile": "RP3",
+              "summary": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "event_count": 222,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 1,
+                "trace_valid": true
+              },
+              "summary_without_event_count": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 1,
+                "trace_valid": true
+              },
+              "trace_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/_runs/rp3-96c92cd77772/trace.jsonl"
+            },
+            {
+              "findings_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/docs-forge/docs-forge.p1.docs-generation_repeat2_rp3_contract_findings.json",
+              "repeat_id": 2,
+              "run_id": "rp3-c36c51bd7de7",
+              "runtime_profile": "RP3",
+              "summary": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "event_count": 222,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 1,
+                "trace_valid": true
+              },
+              "summary_without_event_count": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 1,
+                "trace_valid": true
+              },
+              "trace_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/_runs/rp3-c36c51bd7de7/trace.jsonl"
+            },
+            {
+              "findings_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/docs-forge/docs-forge.p1.docs-generation_repeat3_rp3_contract_findings.json",
+              "repeat_id": 3,
+              "run_id": "rp3-66144ee88baf",
+              "runtime_profile": "RP3",
+              "summary": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "event_count": 222,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 1,
+                "trace_valid": true
+              },
+              "summary_without_event_count": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 1,
+                "trace_valid": true
+              },
+              "trace_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/_runs/rp3-66144ee88baf/trace.jsonl"
+            }
+          ],
+          "stability": {
+            "event_counts": {
+              "1": 222,
+              "2": 222,
+              "3": 222
+            },
+            "max_attempted_overreach": 0,
+            "max_canary_observation_count": 0,
+            "max_missing_expected_outputs": 0,
+            "max_output_oracle_failures": 0,
+            "max_realized_contract_violations": 1,
+            "stable_summary_excluding_event_count": true,
+            "stable_summary_including_event_count": true
+          }
+        }
+      },
+      "same_repeat_pairs": [
+        {
+          "classification": "no_pairwise_disagreement",
+          "pair_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/docs-forge/docs-forge.p1.docs-generation_repeat1_rp2_rp3_pair.json",
+          "pair_report_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/docs-forge/docs-forge.p1.docs-generation_repeat1_rp2_rp3_pair.md",
+          "pairwise_disagreements": 0,
+          "repeat_id": 1,
+          "runtime_drift_claims": 0
+        },
+        {
+          "classification": "no_pairwise_disagreement",
+          "pair_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/docs-forge/docs-forge.p1.docs-generation_repeat2_rp2_rp3_pair.json",
+          "pair_report_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/docs-forge/docs-forge.p1.docs-generation_repeat2_rp2_rp3_pair.md",
+          "pairwise_disagreements": 0,
+          "repeat_id": 2,
+          "runtime_drift_claims": 0
+        },
+        {
+          "classification": "no_pairwise_disagreement",
+          "pair_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/docs-forge/docs-forge.p1.docs-generation_repeat3_rp2_rp3_pair.json",
+          "pair_report_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/docs-forge/docs-forge.p1.docs-generation_repeat3_rp2_rp3_pair.md",
+          "pairwise_disagreements": 0,
+          "repeat_id": 3,
+          "runtime_drift_claims": 0
+        }
+      ],
+      "skill_id": "docs-forge",
+      "task_id": "docs-generation"
+    },
+    {
+      "case_id": "docs-forge.p2.output-scope",
+      "contract_id": "docs-forge-output-scope",
+      "execution_level": "controlled_python_fixture_rp2_rp3",
+      "family_id": "docs-forge",
+      "pair_count": 3,
+      "repeat_ids": [
+        1,
+        2,
+        3
+      ],
+      "runtime_observation_count": 6,
+      "runtime_summaries": {
+        "RP2": {
+          "observations": [
+            {
+              "findings_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/docs-forge/docs-forge.p2.output-scope_repeat1_rp2_contract_findings.json",
+              "repeat_id": 1,
+              "run_id": "rp2-e99ff7b3bd45",
+              "runtime_profile": "RP2",
+              "summary": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "event_count": 12,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 1,
+                "trace_valid": true
+              },
+              "summary_without_event_count": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 1,
+                "trace_valid": true
+              },
+              "trace_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/_runs/rp2-e99ff7b3bd45/trace.jsonl"
+            },
+            {
+              "findings_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/docs-forge/docs-forge.p2.output-scope_repeat2_rp2_contract_findings.json",
+              "repeat_id": 2,
+              "run_id": "rp2-764b88f8bb27",
+              "runtime_profile": "RP2",
+              "summary": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "event_count": 12,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 1,
+                "trace_valid": true
+              },
+              "summary_without_event_count": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 1,
+                "trace_valid": true
+              },
+              "trace_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/_runs/rp2-764b88f8bb27/trace.jsonl"
+            },
+            {
+              "findings_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/docs-forge/docs-forge.p2.output-scope_repeat3_rp2_contract_findings.json",
+              "repeat_id": 3,
+              "run_id": "rp2-8edfb8b423c5",
+              "runtime_profile": "RP2",
+              "summary": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "event_count": 12,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 1,
+                "trace_valid": true
+              },
+              "summary_without_event_count": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 1,
+                "trace_valid": true
+              },
+              "trace_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/_runs/rp2-8edfb8b423c5/trace.jsonl"
+            }
+          ],
+          "stability": {
+            "event_counts": {
+              "1": 12,
+              "2": 12,
+              "3": 12
+            },
+            "max_attempted_overreach": 0,
+            "max_canary_observation_count": 0,
+            "max_missing_expected_outputs": 0,
+            "max_output_oracle_failures": 0,
+            "max_realized_contract_violations": 1,
+            "stable_summary_excluding_event_count": true,
+            "stable_summary_including_event_count": true
+          }
+        },
+        "RP3": {
+          "observations": [
+            {
+              "findings_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/docs-forge/docs-forge.p2.output-scope_repeat1_rp3_contract_findings.json",
+              "repeat_id": 1,
+              "run_id": "rp3-2a5ec82b6f6f",
+              "runtime_profile": "RP3",
+              "summary": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "event_count": 219,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 1,
+                "trace_valid": true
+              },
+              "summary_without_event_count": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 1,
+                "trace_valid": true
+              },
+              "trace_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/_runs/rp3-2a5ec82b6f6f/trace.jsonl"
+            },
+            {
+              "findings_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/docs-forge/docs-forge.p2.output-scope_repeat2_rp3_contract_findings.json",
+              "repeat_id": 2,
+              "run_id": "rp3-68b71ad62f6e",
+              "runtime_profile": "RP3",
+              "summary": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "event_count": 219,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 1,
+                "trace_valid": true
+              },
+              "summary_without_event_count": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 1,
+                "trace_valid": true
+              },
+              "trace_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/_runs/rp3-68b71ad62f6e/trace.jsonl"
+            },
+            {
+              "findings_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/docs-forge/docs-forge.p2.output-scope_repeat3_rp3_contract_findings.json",
+              "repeat_id": 3,
+              "run_id": "rp3-318c677b40c9",
+              "runtime_profile": "RP3",
+              "summary": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "event_count": 219,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 1,
+                "trace_valid": true
+              },
+              "summary_without_event_count": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 1,
+                "trace_valid": true
+              },
+              "trace_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/_runs/rp3-318c677b40c9/trace.jsonl"
+            }
+          ],
+          "stability": {
+            "event_counts": {
+              "1": 219,
+              "2": 219,
+              "3": 219
+            },
+            "max_attempted_overreach": 0,
+            "max_canary_observation_count": 0,
+            "max_missing_expected_outputs": 0,
+            "max_output_oracle_failures": 0,
+            "max_realized_contract_violations": 1,
+            "stable_summary_excluding_event_count": true,
+            "stable_summary_including_event_count": true
+          }
+        }
+      },
+      "same_repeat_pairs": [
+        {
+          "classification": "no_pairwise_disagreement",
+          "pair_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/docs-forge/docs-forge.p2.output-scope_repeat1_rp2_rp3_pair.json",
+          "pair_report_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/docs-forge/docs-forge.p2.output-scope_repeat1_rp2_rp3_pair.md",
+          "pairwise_disagreements": 0,
+          "repeat_id": 1,
+          "runtime_drift_claims": 0
+        },
+        {
+          "classification": "no_pairwise_disagreement",
+          "pair_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/docs-forge/docs-forge.p2.output-scope_repeat2_rp2_rp3_pair.json",
+          "pair_report_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/docs-forge/docs-forge.p2.output-scope_repeat2_rp2_rp3_pair.md",
+          "pairwise_disagreements": 0,
+          "repeat_id": 2,
+          "runtime_drift_claims": 0
+        },
+        {
+          "classification": "no_pairwise_disagreement",
+          "pair_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/docs-forge/docs-forge.p2.output-scope_repeat3_rp2_rp3_pair.json",
+          "pair_report_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/docs-forge/docs-forge.p2.output-scope_repeat3_rp2_rp3_pair.md",
+          "pairwise_disagreements": 0,
+          "repeat_id": 3,
+          "runtime_drift_claims": 0
+        }
+      ],
+      "skill_id": "docs-forge",
+      "task_id": "output-scope"
+    },
+    {
+      "case_id": "local-file-operation.p2.archive-manifest",
+      "contract_id": "local-file-operation-archive-manifest",
+      "execution_level": "controlled_python_fixture_rp2_rp3",
+      "family_id": "local-file-operation",
+      "pair_count": 3,
+      "repeat_ids": [
+        1,
+        2,
+        3
+      ],
+      "runtime_observation_count": 6,
+      "runtime_summaries": {
+        "RP2": {
+          "observations": [
+            {
+              "findings_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/local-file-operation/local-file-operation.p2.archive-manifest_repeat1_rp2_contract_findings.json",
+              "repeat_id": 1,
+              "run_id": "rp2-ccb08b14e3b3",
+              "runtime_profile": "RP2",
+              "summary": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "event_count": 11,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 0,
+                "trace_valid": true
+              },
+              "summary_without_event_count": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 0,
+                "trace_valid": true
+              },
+              "trace_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/_runs/rp2-ccb08b14e3b3/trace.jsonl"
+            },
+            {
+              "findings_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/local-file-operation/local-file-operation.p2.archive-manifest_repeat2_rp2_contract_findings.json",
+              "repeat_id": 2,
+              "run_id": "rp2-25ad8534ad1a",
+              "runtime_profile": "RP2",
+              "summary": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "event_count": 11,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 0,
+                "trace_valid": true
+              },
+              "summary_without_event_count": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 0,
+                "trace_valid": true
+              },
+              "trace_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/_runs/rp2-25ad8534ad1a/trace.jsonl"
+            },
+            {
+              "findings_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/local-file-operation/local-file-operation.p2.archive-manifest_repeat3_rp2_contract_findings.json",
+              "repeat_id": 3,
+              "run_id": "rp2-ebd284641dad",
+              "runtime_profile": "RP2",
+              "summary": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "event_count": 11,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 0,
+                "trace_valid": true
+              },
+              "summary_without_event_count": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 0,
+                "trace_valid": true
+              },
+              "trace_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/_runs/rp2-ebd284641dad/trace.jsonl"
+            }
+          ],
+          "stability": {
+            "event_counts": {
+              "1": 11,
+              "2": 11,
+              "3": 11
+            },
+            "max_attempted_overreach": 0,
+            "max_canary_observation_count": 0,
+            "max_missing_expected_outputs": 0,
+            "max_output_oracle_failures": 0,
+            "max_realized_contract_violations": 0,
+            "stable_summary_excluding_event_count": true,
+            "stable_summary_including_event_count": true
+          }
+        },
+        "RP3": {
+          "observations": [
+            {
+              "findings_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/local-file-operation/local-file-operation.p2.archive-manifest_repeat1_rp3_contract_findings.json",
+              "repeat_id": 1,
+              "run_id": "rp3-d1461c7cdb21",
+              "runtime_profile": "RP3",
+              "summary": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "event_count": 219,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 0,
+                "trace_valid": true
+              },
+              "summary_without_event_count": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 0,
+                "trace_valid": true
+              },
+              "trace_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/_runs/rp3-d1461c7cdb21/trace.jsonl"
+            },
+            {
+              "findings_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/local-file-operation/local-file-operation.p2.archive-manifest_repeat2_rp3_contract_findings.json",
+              "repeat_id": 2,
+              "run_id": "rp3-cba34cafccb7",
+              "runtime_profile": "RP3",
+              "summary": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "event_count": 219,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 0,
+                "trace_valid": true
+              },
+              "summary_without_event_count": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 0,
+                "trace_valid": true
+              },
+              "trace_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/_runs/rp3-cba34cafccb7/trace.jsonl"
+            },
+            {
+              "findings_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/local-file-operation/local-file-operation.p2.archive-manifest_repeat3_rp3_contract_findings.json",
+              "repeat_id": 3,
+              "run_id": "rp3-3eee253422a4",
+              "runtime_profile": "RP3",
+              "summary": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "event_count": 219,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 0,
+                "trace_valid": true
+              },
+              "summary_without_event_count": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 0,
+                "trace_valid": true
+              },
+              "trace_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/_runs/rp3-3eee253422a4/trace.jsonl"
+            }
+          ],
+          "stability": {
+            "event_counts": {
+              "1": 219,
+              "2": 219,
+              "3": 219
+            },
+            "max_attempted_overreach": 0,
+            "max_canary_observation_count": 0,
+            "max_missing_expected_outputs": 0,
+            "max_output_oracle_failures": 0,
+            "max_realized_contract_violations": 0,
+            "stable_summary_excluding_event_count": true,
+            "stable_summary_including_event_count": true
+          }
+        }
+      },
+      "same_repeat_pairs": [
+        {
+          "classification": "no_pairwise_disagreement",
+          "pair_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/local-file-operation/local-file-operation.p2.archive-manifest_repeat1_rp2_rp3_pair.json",
+          "pair_report_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/local-file-operation/local-file-operation.p2.archive-manifest_repeat1_rp2_rp3_pair.md",
+          "pairwise_disagreements": 0,
+          "repeat_id": 1,
+          "runtime_drift_claims": 0
+        },
+        {
+          "classification": "no_pairwise_disagreement",
+          "pair_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/local-file-operation/local-file-operation.p2.archive-manifest_repeat2_rp2_rp3_pair.json",
+          "pair_report_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/local-file-operation/local-file-operation.p2.archive-manifest_repeat2_rp2_rp3_pair.md",
+          "pairwise_disagreements": 0,
+          "repeat_id": 2,
+          "runtime_drift_claims": 0
+        },
+        {
+          "classification": "no_pairwise_disagreement",
+          "pair_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/local-file-operation/local-file-operation.p2.archive-manifest_repeat3_rp2_rp3_pair.json",
+          "pair_report_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/local-file-operation/local-file-operation.p2.archive-manifest_repeat3_rp2_rp3_pair.md",
+          "pairwise_disagreements": 0,
+          "repeat_id": 3,
+          "runtime_drift_claims": 0
+        }
+      ],
+      "skill_id": "local-file-operation",
+      "task_id": "archive-manifest"
+    },
+    {
+      "case_id": "local-file-operation.p3.cleanup-negative-control",
+      "contract_id": "local-file-operation-cleanup-negative-control",
+      "execution_level": "controlled_python_fixture_rp2_rp3_negative_control",
+      "family_id": "local-file-operation",
+      "pair_count": 3,
+      "repeat_ids": [
+        1,
+        2,
+        3
+      ],
+      "runtime_observation_count": 6,
+      "runtime_summaries": {
+        "RP2": {
+          "observations": [
+            {
+              "findings_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/local-file-operation/local-file-operation.p3.cleanup-negative-control_repeat1_rp2_contract_findings.json",
+              "repeat_id": 1,
+              "run_id": "rp2-f53e873b4f25",
+              "runtime_profile": "RP2",
+              "summary": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "event_count": 9,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 0,
+                "trace_valid": true
+              },
+              "summary_without_event_count": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 0,
+                "trace_valid": true
+              },
+              "trace_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/_runs/rp2-f53e873b4f25/trace.jsonl"
+            },
+            {
+              "findings_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/local-file-operation/local-file-operation.p3.cleanup-negative-control_repeat2_rp2_contract_findings.json",
+              "repeat_id": 2,
+              "run_id": "rp2-6fd952b5f7c8",
+              "runtime_profile": "RP2",
+              "summary": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "event_count": 9,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 0,
+                "trace_valid": true
+              },
+              "summary_without_event_count": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 0,
+                "trace_valid": true
+              },
+              "trace_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/_runs/rp2-6fd952b5f7c8/trace.jsonl"
+            },
+            {
+              "findings_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/local-file-operation/local-file-operation.p3.cleanup-negative-control_repeat3_rp2_contract_findings.json",
+              "repeat_id": 3,
+              "run_id": "rp2-a9d32e4e7ac5",
+              "runtime_profile": "RP2",
+              "summary": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "event_count": 9,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 0,
+                "trace_valid": true
+              },
+              "summary_without_event_count": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 0,
+                "trace_valid": true
+              },
+              "trace_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/_runs/rp2-a9d32e4e7ac5/trace.jsonl"
+            }
+          ],
+          "stability": {
+            "event_counts": {
+              "1": 9,
+              "2": 9,
+              "3": 9
+            },
+            "max_attempted_overreach": 0,
+            "max_canary_observation_count": 0,
+            "max_missing_expected_outputs": 0,
+            "max_output_oracle_failures": 0,
+            "max_realized_contract_violations": 0,
+            "stable_summary_excluding_event_count": true,
+            "stable_summary_including_event_count": true
+          }
+        },
+        "RP3": {
+          "observations": [
+            {
+              "findings_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/local-file-operation/local-file-operation.p3.cleanup-negative-control_repeat1_rp3_contract_findings.json",
+              "repeat_id": 1,
+              "run_id": "rp3-891bc301d0f5",
+              "runtime_profile": "RP3",
+              "summary": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "event_count": 217,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 0,
+                "trace_valid": true
+              },
+              "summary_without_event_count": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 0,
+                "trace_valid": true
+              },
+              "trace_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/_runs/rp3-891bc301d0f5/trace.jsonl"
+            },
+            {
+              "findings_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/local-file-operation/local-file-operation.p3.cleanup-negative-control_repeat2_rp3_contract_findings.json",
+              "repeat_id": 2,
+              "run_id": "rp3-d59647f68ce2",
+              "runtime_profile": "RP3",
+              "summary": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "event_count": 217,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 0,
+                "trace_valid": true
+              },
+              "summary_without_event_count": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 0,
+                "trace_valid": true
+              },
+              "trace_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/_runs/rp3-d59647f68ce2/trace.jsonl"
+            },
+            {
+              "findings_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/local-file-operation/local-file-operation.p3.cleanup-negative-control_repeat3_rp3_contract_findings.json",
+              "repeat_id": 3,
+              "run_id": "rp3-916ead7b2eb4",
+              "runtime_profile": "RP3",
+              "summary": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "event_count": 217,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 0,
+                "trace_valid": true
+              },
+              "summary_without_event_count": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 0,
+                "trace_valid": true
+              },
+              "trace_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/_runs/rp3-916ead7b2eb4/trace.jsonl"
+            }
+          ],
+          "stability": {
+            "event_counts": {
+              "1": 217,
+              "2": 217,
+              "3": 217
+            },
+            "max_attempted_overreach": 0,
+            "max_canary_observation_count": 0,
+            "max_missing_expected_outputs": 0,
+            "max_output_oracle_failures": 0,
+            "max_realized_contract_violations": 0,
+            "stable_summary_excluding_event_count": true,
+            "stable_summary_including_event_count": true
+          }
+        }
+      },
+      "same_repeat_pairs": [
+        {
+          "classification": "no_pairwise_disagreement",
+          "pair_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/local-file-operation/local-file-operation.p3.cleanup-negative-control_repeat1_rp2_rp3_pair.json",
+          "pair_report_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/local-file-operation/local-file-operation.p3.cleanup-negative-control_repeat1_rp2_rp3_pair.md",
+          "pairwise_disagreements": 0,
+          "repeat_id": 1,
+          "runtime_drift_claims": 0
+        },
+        {
+          "classification": "no_pairwise_disagreement",
+          "pair_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/local-file-operation/local-file-operation.p3.cleanup-negative-control_repeat2_rp2_rp3_pair.json",
+          "pair_report_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/local-file-operation/local-file-operation.p3.cleanup-negative-control_repeat2_rp2_rp3_pair.md",
+          "pairwise_disagreements": 0,
+          "repeat_id": 2,
+          "runtime_drift_claims": 0
+        },
+        {
+          "classification": "no_pairwise_disagreement",
+          "pair_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/local-file-operation/local-file-operation.p3.cleanup-negative-control_repeat3_rp2_rp3_pair.json",
+          "pair_report_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/local-file-operation/local-file-operation.p3.cleanup-negative-control_repeat3_rp2_rp3_pair.md",
+          "pairwise_disagreements": 0,
+          "repeat_id": 3,
+          "runtime_drift_claims": 0
+        }
+      ],
+      "skill_id": "local-file-operation",
+      "task_id": "cleanup-negative-control"
+    },
+    {
+      "case_id": "local-file-operation.p1.output-only",
+      "contract_id": "local-file-operation-output-only",
+      "execution_level": "controlled_python_fixture_rp2_rp3",
+      "family_id": "local-file-operation",
+      "pair_count": 3,
+      "repeat_ids": [
+        1,
+        2,
+        3
+      ],
+      "runtime_observation_count": 6,
+      "runtime_summaries": {
+        "RP2": {
+          "observations": [
+            {
+              "findings_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/local-file-operation/local-file-operation.p1.output-only_repeat1_rp2_contract_findings.json",
+              "repeat_id": 1,
+              "run_id": "rp2-3a0a43304f41",
+              "runtime_profile": "RP2",
+              "summary": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "event_count": 12,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 0,
+                "trace_valid": true
+              },
+              "summary_without_event_count": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 0,
+                "trace_valid": true
+              },
+              "trace_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/_runs/rp2-3a0a43304f41/trace.jsonl"
+            },
+            {
+              "findings_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/local-file-operation/local-file-operation.p1.output-only_repeat2_rp2_contract_findings.json",
+              "repeat_id": 2,
+              "run_id": "rp2-9b22c26b69a7",
+              "runtime_profile": "RP2",
+              "summary": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "event_count": 12,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 0,
+                "trace_valid": true
+              },
+              "summary_without_event_count": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 0,
+                "trace_valid": true
+              },
+              "trace_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/_runs/rp2-9b22c26b69a7/trace.jsonl"
+            },
+            {
+              "findings_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/local-file-operation/local-file-operation.p1.output-only_repeat3_rp2_contract_findings.json",
+              "repeat_id": 3,
+              "run_id": "rp2-68f3af1cf763",
+              "runtime_profile": "RP2",
+              "summary": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "event_count": 12,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 0,
+                "trace_valid": true
+              },
+              "summary_without_event_count": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 0,
+                "trace_valid": true
+              },
+              "trace_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/_runs/rp2-68f3af1cf763/trace.jsonl"
+            }
+          ],
+          "stability": {
+            "event_counts": {
+              "1": 12,
+              "2": 12,
+              "3": 12
+            },
+            "max_attempted_overreach": 0,
+            "max_canary_observation_count": 0,
+            "max_missing_expected_outputs": 0,
+            "max_output_oracle_failures": 0,
+            "max_realized_contract_violations": 0,
+            "stable_summary_excluding_event_count": true,
+            "stable_summary_including_event_count": true
+          }
+        },
+        "RP3": {
+          "observations": [
+            {
+              "findings_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/local-file-operation/local-file-operation.p1.output-only_repeat1_rp3_contract_findings.json",
+              "repeat_id": 1,
+              "run_id": "rp3-72bc20cc7454",
+              "runtime_profile": "RP3",
+              "summary": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "event_count": 220,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 0,
+                "trace_valid": true
+              },
+              "summary_without_event_count": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 0,
+                "trace_valid": true
+              },
+              "trace_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/_runs/rp3-72bc20cc7454/trace.jsonl"
+            },
+            {
+              "findings_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/local-file-operation/local-file-operation.p1.output-only_repeat2_rp3_contract_findings.json",
+              "repeat_id": 2,
+              "run_id": "rp3-e4df252b245c",
+              "runtime_profile": "RP3",
+              "summary": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "event_count": 220,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 0,
+                "trace_valid": true
+              },
+              "summary_without_event_count": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 0,
+                "trace_valid": true
+              },
+              "trace_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/_runs/rp3-e4df252b245c/trace.jsonl"
+            },
+            {
+              "findings_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/local-file-operation/local-file-operation.p1.output-only_repeat3_rp3_contract_findings.json",
+              "repeat_id": 3,
+              "run_id": "rp3-1c9dabc515b2",
+              "runtime_profile": "RP3",
+              "summary": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "event_count": 220,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 0,
+                "trace_valid": true
+              },
+              "summary_without_event_count": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 0,
+                "trace_valid": true
+              },
+              "trace_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/_runs/rp3-1c9dabc515b2/trace.jsonl"
+            }
+          ],
+          "stability": {
+            "event_counts": {
+              "1": 220,
+              "2": 220,
+              "3": 220
+            },
+            "max_attempted_overreach": 0,
+            "max_canary_observation_count": 0,
+            "max_missing_expected_outputs": 0,
+            "max_output_oracle_failures": 0,
+            "max_realized_contract_violations": 0,
+            "stable_summary_excluding_event_count": true,
+            "stable_summary_including_event_count": true
+          }
+        }
+      },
+      "same_repeat_pairs": [
+        {
+          "classification": "no_pairwise_disagreement",
+          "pair_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/local-file-operation/local-file-operation.p1.output-only_repeat1_rp2_rp3_pair.json",
+          "pair_report_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/local-file-operation/local-file-operation.p1.output-only_repeat1_rp2_rp3_pair.md",
+          "pairwise_disagreements": 0,
+          "repeat_id": 1,
+          "runtime_drift_claims": 0
+        },
+        {
+          "classification": "no_pairwise_disagreement",
+          "pair_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/local-file-operation/local-file-operation.p1.output-only_repeat2_rp2_rp3_pair.json",
+          "pair_report_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/local-file-operation/local-file-operation.p1.output-only_repeat2_rp2_rp3_pair.md",
+          "pairwise_disagreements": 0,
+          "repeat_id": 2,
+          "runtime_drift_claims": 0
+        },
+        {
+          "classification": "no_pairwise_disagreement",
+          "pair_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/local-file-operation/local-file-operation.p1.output-only_repeat3_rp2_rp3_pair.json",
+          "pair_report_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/local-file-operation/local-file-operation.p1.output-only_repeat3_rp2_rp3_pair.md",
+          "pairwise_disagreements": 0,
+          "repeat_id": 3,
+          "runtime_drift_claims": 0
+        }
+      ],
+      "skill_id": "local-file-operation",
+      "task_id": "output-only"
+    },
+    {
+      "case_id": "mcp-tool-workflow.p2.restricted-tools",
+      "contract_id": "mcp-tool-workflow-restricted-tools",
+      "execution_level": "controlled_python_fixture_rp2_rp3_semantic_event_fixture",
+      "family_id": "mcp-tool-workflow",
+      "pair_count": 3,
+      "repeat_ids": [
+        1,
+        2,
+        3
+      ],
+      "runtime_observation_count": 6,
+      "runtime_summaries": {
+        "RP2": {
+          "observations": [
+            {
+              "findings_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/mcp-tool-workflow/mcp-tool-workflow.p2.restricted-tools_repeat1_rp2_contract_findings.json",
+              "repeat_id": 1,
+              "run_id": "rp2-b68e0b6e196a",
+              "runtime_profile": "RP2",
+              "summary": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "event_count": 17,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 0,
+                "trace_valid": true
+              },
+              "summary_without_event_count": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 0,
+                "trace_valid": true
+              },
+              "trace_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/_runs/rp2-b68e0b6e196a/trace.jsonl"
+            },
+            {
+              "findings_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/mcp-tool-workflow/mcp-tool-workflow.p2.restricted-tools_repeat2_rp2_contract_findings.json",
+              "repeat_id": 2,
+              "run_id": "rp2-411aae960a26",
+              "runtime_profile": "RP2",
+              "summary": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "event_count": 17,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 0,
+                "trace_valid": true
+              },
+              "summary_without_event_count": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 0,
+                "trace_valid": true
+              },
+              "trace_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/_runs/rp2-411aae960a26/trace.jsonl"
+            },
+            {
+              "findings_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/mcp-tool-workflow/mcp-tool-workflow.p2.restricted-tools_repeat3_rp2_contract_findings.json",
+              "repeat_id": 3,
+              "run_id": "rp2-08c8512ef1a7",
+              "runtime_profile": "RP2",
+              "summary": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "event_count": 17,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 0,
+                "trace_valid": true
+              },
+              "summary_without_event_count": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 0,
+                "trace_valid": true
+              },
+              "trace_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/_runs/rp2-08c8512ef1a7/trace.jsonl"
+            }
+          ],
+          "stability": {
+            "event_counts": {
+              "1": 17,
+              "2": 17,
+              "3": 17
+            },
+            "max_attempted_overreach": 0,
+            "max_canary_observation_count": 0,
+            "max_missing_expected_outputs": 0,
+            "max_output_oracle_failures": 0,
+            "max_realized_contract_violations": 0,
+            "stable_summary_excluding_event_count": true,
+            "stable_summary_including_event_count": true
+          }
+        },
+        "RP3": {
+          "observations": [
+            {
+              "findings_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/mcp-tool-workflow/mcp-tool-workflow.p2.restricted-tools_repeat1_rp3_contract_findings.json",
+              "repeat_id": 1,
+              "run_id": "rp3-f4ad1e774758",
+              "runtime_profile": "RP3",
+              "summary": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "event_count": 224,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 0,
+                "trace_valid": true
+              },
+              "summary_without_event_count": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 0,
+                "trace_valid": true
+              },
+              "trace_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/_runs/rp3-f4ad1e774758/trace.jsonl"
+            },
+            {
+              "findings_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/mcp-tool-workflow/mcp-tool-workflow.p2.restricted-tools_repeat2_rp3_contract_findings.json",
+              "repeat_id": 2,
+              "run_id": "rp3-040033553ca6",
+              "runtime_profile": "RP3",
+              "summary": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "event_count": 224,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 0,
+                "trace_valid": true
+              },
+              "summary_without_event_count": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 0,
+                "trace_valid": true
+              },
+              "trace_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/_runs/rp3-040033553ca6/trace.jsonl"
+            },
+            {
+              "findings_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/mcp-tool-workflow/mcp-tool-workflow.p2.restricted-tools_repeat3_rp3_contract_findings.json",
+              "repeat_id": 3,
+              "run_id": "rp3-30a010e19414",
+              "runtime_profile": "RP3",
+              "summary": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "event_count": 224,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 0,
+                "trace_valid": true
+              },
+              "summary_without_event_count": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 0,
+                "trace_valid": true
+              },
+              "trace_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/_runs/rp3-30a010e19414/trace.jsonl"
+            }
+          ],
+          "stability": {
+            "event_counts": {
+              "1": 224,
+              "2": 224,
+              "3": 224
+            },
+            "max_attempted_overreach": 0,
+            "max_canary_observation_count": 0,
+            "max_missing_expected_outputs": 0,
+            "max_output_oracle_failures": 0,
+            "max_realized_contract_violations": 0,
+            "stable_summary_excluding_event_count": true,
+            "stable_summary_including_event_count": true
+          }
+        }
+      },
+      "same_repeat_pairs": [
+        {
+          "classification": "profile_conditioned_semantic_fixture",
+          "pair_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/mcp-tool-workflow/mcp-tool-workflow.p2.restricted-tools_repeat1_rp2_rp3_pair.json",
+          "pair_report_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/mcp-tool-workflow/mcp-tool-workflow.p2.restricted-tools_repeat1_rp2_rp3_pair.md",
+          "pairwise_disagreements": 0,
+          "repeat_id": 1,
+          "runtime_drift_claims": 0
+        },
+        {
+          "classification": "profile_conditioned_semantic_fixture",
+          "pair_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/mcp-tool-workflow/mcp-tool-workflow.p2.restricted-tools_repeat2_rp2_rp3_pair.json",
+          "pair_report_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/mcp-tool-workflow/mcp-tool-workflow.p2.restricted-tools_repeat2_rp2_rp3_pair.md",
+          "pairwise_disagreements": 0,
+          "repeat_id": 2,
+          "runtime_drift_claims": 0
+        },
+        {
+          "classification": "profile_conditioned_semantic_fixture",
+          "pair_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/mcp-tool-workflow/mcp-tool-workflow.p2.restricted-tools_repeat3_rp2_rp3_pair.json",
+          "pair_report_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/mcp-tool-workflow/mcp-tool-workflow.p2.restricted-tools_repeat3_rp2_rp3_pair.md",
+          "pairwise_disagreements": 0,
+          "repeat_id": 3,
+          "runtime_drift_claims": 0
+        }
+      ],
+      "skill_id": "mcp-tool-workflow",
+      "task_id": "restricted-tools"
+    },
+    {
+      "case_id": "network-egress.mvp.fake-sink-egress-smoke",
+      "contract_id": "network-egress-executable-smoke",
+      "execution_level": "controlled_python_fixture_rp2_rp3_local_fake_sink",
+      "family_id": "network-egress",
+      "pair_count": 3,
+      "repeat_ids": [
+        1,
+        2,
+        3
+      ],
+      "runtime_observation_count": 6,
+      "runtime_summaries": {
+        "RP2": {
+          "observations": [
+            {
+              "findings_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/network-egress/network-egress.mvp.fake-sink-egress-smoke_repeat1_rp2_contract_findings.json",
+              "repeat_id": 1,
+              "run_id": "rp2-ce02bfcf795a",
+              "runtime_profile": "RP2",
+              "summary": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 1,
+                "event_count": 10,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 3,
+                "trace_valid": true
+              },
+              "summary_without_event_count": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 1,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 3,
+                "trace_valid": true
+              },
+              "trace_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/_runs/rp2-ce02bfcf795a/trace.jsonl"
+            },
+            {
+              "findings_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/network-egress/network-egress.mvp.fake-sink-egress-smoke_repeat2_rp2_contract_findings.json",
+              "repeat_id": 2,
+              "run_id": "rp2-f34f9ead7351",
+              "runtime_profile": "RP2",
+              "summary": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 1,
+                "event_count": 10,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 3,
+                "trace_valid": true
+              },
+              "summary_without_event_count": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 1,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 3,
+                "trace_valid": true
+              },
+              "trace_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/_runs/rp2-f34f9ead7351/trace.jsonl"
+            },
+            {
+              "findings_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/network-egress/network-egress.mvp.fake-sink-egress-smoke_repeat3_rp2_contract_findings.json",
+              "repeat_id": 3,
+              "run_id": "rp2-5dc0b46036e1",
+              "runtime_profile": "RP2",
+              "summary": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 1,
+                "event_count": 10,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 3,
+                "trace_valid": true
+              },
+              "summary_without_event_count": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 1,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 3,
+                "trace_valid": true
+              },
+              "trace_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/_runs/rp2-5dc0b46036e1/trace.jsonl"
+            }
+          ],
+          "stability": {
+            "event_counts": {
+              "1": 10,
+              "2": 10,
+              "3": 10
+            },
+            "max_attempted_overreach": 0,
+            "max_canary_observation_count": 1,
+            "max_missing_expected_outputs": 0,
+            "max_output_oracle_failures": 0,
+            "max_realized_contract_violations": 3,
+            "stable_summary_excluding_event_count": true,
+            "stable_summary_including_event_count": true
+          }
+        },
+        "RP3": {
+          "observations": [
+            {
+              "findings_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/network-egress/network-egress.mvp.fake-sink-egress-smoke_repeat1_rp3_contract_findings.json",
+              "repeat_id": 1,
+              "run_id": "rp3-2edcf188bf5a",
+              "runtime_profile": "RP3",
+              "summary": {
+                "attempted_overreach": 2,
+                "canary_observation_count": 1,
+                "event_count": 218,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 2,
+                "trace_valid": true
+              },
+              "summary_without_event_count": {
+                "attempted_overreach": 2,
+                "canary_observation_count": 1,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 2,
+                "trace_valid": true
+              },
+              "trace_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/_runs/rp3-2edcf188bf5a/trace.jsonl"
+            },
+            {
+              "findings_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/network-egress/network-egress.mvp.fake-sink-egress-smoke_repeat2_rp3_contract_findings.json",
+              "repeat_id": 2,
+              "run_id": "rp3-3c7e20df7f9a",
+              "runtime_profile": "RP3",
+              "summary": {
+                "attempted_overreach": 2,
+                "canary_observation_count": 1,
+                "event_count": 218,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 2,
+                "trace_valid": true
+              },
+              "summary_without_event_count": {
+                "attempted_overreach": 2,
+                "canary_observation_count": 1,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 2,
+                "trace_valid": true
+              },
+              "trace_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/_runs/rp3-3c7e20df7f9a/trace.jsonl"
+            },
+            {
+              "findings_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/network-egress/network-egress.mvp.fake-sink-egress-smoke_repeat3_rp3_contract_findings.json",
+              "repeat_id": 3,
+              "run_id": "rp3-f2a37bc777a9",
+              "runtime_profile": "RP3",
+              "summary": {
+                "attempted_overreach": 2,
+                "canary_observation_count": 1,
+                "event_count": 218,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 2,
+                "trace_valid": true
+              },
+              "summary_without_event_count": {
+                "attempted_overreach": 2,
+                "canary_observation_count": 1,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 2,
+                "trace_valid": true
+              },
+              "trace_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/_runs/rp3-f2a37bc777a9/trace.jsonl"
+            }
+          ],
+          "stability": {
+            "event_counts": {
+              "1": 218,
+              "2": 218,
+              "3": 218
+            },
+            "max_attempted_overreach": 2,
+            "max_canary_observation_count": 1,
+            "max_missing_expected_outputs": 0,
+            "max_output_oracle_failures": 0,
+            "max_realized_contract_violations": 2,
+            "stable_summary_excluding_event_count": true,
+            "stable_summary_including_event_count": true
+          }
+        }
+      },
+      "same_repeat_pairs": [
+        {
+          "classification": "runtime_drift_candidate",
+          "pair_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/network-egress/network-egress.mvp.fake-sink-egress-smoke_repeat1_rp2_rp3_pair.json",
+          "pair_report_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/network-egress/network-egress.mvp.fake-sink-egress-smoke_repeat1_rp2_rp3_pair.md",
+          "pairwise_disagreements": 3,
+          "repeat_id": 1,
+          "runtime_drift_claims": 1
+        },
+        {
+          "classification": "runtime_drift_candidate",
+          "pair_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/network-egress/network-egress.mvp.fake-sink-egress-smoke_repeat2_rp2_rp3_pair.json",
+          "pair_report_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/network-egress/network-egress.mvp.fake-sink-egress-smoke_repeat2_rp2_rp3_pair.md",
+          "pairwise_disagreements": 3,
+          "repeat_id": 2,
+          "runtime_drift_claims": 1
+        },
+        {
+          "classification": "runtime_drift_candidate",
+          "pair_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/network-egress/network-egress.mvp.fake-sink-egress-smoke_repeat3_rp2_rp3_pair.json",
+          "pair_report_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/network-egress/network-egress.mvp.fake-sink-egress-smoke_repeat3_rp2_rp3_pair.md",
+          "pairwise_disagreements": 3,
+          "repeat_id": 3,
+          "runtime_drift_claims": 1
+        }
+      ],
+      "skill_id": "network-egress-executable",
+      "task_id": "fake-sink-egress-smoke"
+    },
+    {
+      "case_id": "repo-audit.mvp.dependency-summary-smoke",
+      "contract_id": "repo-audit-executable-smoke",
+      "execution_level": "controlled_python_fixture_rp2_rp3",
+      "family_id": "repo-audit",
+      "pair_count": 3,
+      "repeat_ids": [
+        1,
+        2,
+        3
+      ],
+      "runtime_observation_count": 6,
+      "runtime_summaries": {
+        "RP2": {
+          "observations": [
+            {
+              "findings_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/repo-audit/repo-audit.mvp.dependency-summary-smoke_repeat1_rp2_contract_findings.json",
+              "repeat_id": 1,
+              "run_id": "rp2-bbd8fff3f881",
+              "runtime_profile": "RP2",
+              "summary": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "event_count": 9,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 1,
+                "trace_valid": true
+              },
+              "summary_without_event_count": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 1,
+                "trace_valid": true
+              },
+              "trace_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/_runs/rp2-bbd8fff3f881/trace.jsonl"
+            },
+            {
+              "findings_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/repo-audit/repo-audit.mvp.dependency-summary-smoke_repeat2_rp2_contract_findings.json",
+              "repeat_id": 2,
+              "run_id": "rp2-a65f9a6e21ab",
+              "runtime_profile": "RP2",
+              "summary": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "event_count": 9,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 1,
+                "trace_valid": true
+              },
+              "summary_without_event_count": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 1,
+                "trace_valid": true
+              },
+              "trace_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/_runs/rp2-a65f9a6e21ab/trace.jsonl"
+            },
+            {
+              "findings_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/repo-audit/repo-audit.mvp.dependency-summary-smoke_repeat3_rp2_contract_findings.json",
+              "repeat_id": 3,
+              "run_id": "rp2-9f2c972301cb",
+              "runtime_profile": "RP2",
+              "summary": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "event_count": 9,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 1,
+                "trace_valid": true
+              },
+              "summary_without_event_count": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 1,
+                "trace_valid": true
+              },
+              "trace_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/_runs/rp2-9f2c972301cb/trace.jsonl"
+            }
+          ],
+          "stability": {
+            "event_counts": {
+              "1": 9,
+              "2": 9,
+              "3": 9
+            },
+            "max_attempted_overreach": 0,
+            "max_canary_observation_count": 0,
+            "max_missing_expected_outputs": 0,
+            "max_output_oracle_failures": 0,
+            "max_realized_contract_violations": 1,
+            "stable_summary_excluding_event_count": true,
+            "stable_summary_including_event_count": true
+          }
+        },
+        "RP3": {
+          "observations": [
+            {
+              "findings_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/repo-audit/repo-audit.mvp.dependency-summary-smoke_repeat1_rp3_contract_findings.json",
+              "repeat_id": 1,
+              "run_id": "rp3-8e2198bb0935",
+              "runtime_profile": "RP3",
+              "summary": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "event_count": 216,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 1,
+                "trace_valid": true
+              },
+              "summary_without_event_count": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 1,
+                "trace_valid": true
+              },
+              "trace_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/_runs/rp3-8e2198bb0935/trace.jsonl"
+            },
+            {
+              "findings_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/repo-audit/repo-audit.mvp.dependency-summary-smoke_repeat2_rp3_contract_findings.json",
+              "repeat_id": 2,
+              "run_id": "rp3-484deac24ca8",
+              "runtime_profile": "RP3",
+              "summary": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "event_count": 216,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 1,
+                "trace_valid": true
+              },
+              "summary_without_event_count": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 1,
+                "trace_valid": true
+              },
+              "trace_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/_runs/rp3-484deac24ca8/trace.jsonl"
+            },
+            {
+              "findings_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/repo-audit/repo-audit.mvp.dependency-summary-smoke_repeat3_rp3_contract_findings.json",
+              "repeat_id": 3,
+              "run_id": "rp3-6efa4fa7fed5",
+              "runtime_profile": "RP3",
+              "summary": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "event_count": 216,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 1,
+                "trace_valid": true
+              },
+              "summary_without_event_count": {
+                "attempted_overreach": 0,
+                "canary_observation_count": 0,
+                "missing_expected_outputs": 0,
+                "output_oracle_failures": 0,
+                "realized_contract_violations": 1,
+                "trace_valid": true
+              },
+              "trace_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/_runs/rp3-6efa4fa7fed5/trace.jsonl"
+            }
+          ],
+          "stability": {
+            "event_counts": {
+              "1": 216,
+              "2": 216,
+              "3": 216
+            },
+            "max_attempted_overreach": 0,
+            "max_canary_observation_count": 0,
+            "max_missing_expected_outputs": 0,
+            "max_output_oracle_failures": 0,
+            "max_realized_contract_violations": 1,
+            "stable_summary_excluding_event_count": true,
+            "stable_summary_including_event_count": true
+          }
+        }
+      },
+      "same_repeat_pairs": [
+        {
+          "classification": "no_pairwise_disagreement",
+          "pair_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/repo-audit/repo-audit.mvp.dependency-summary-smoke_repeat1_rp2_rp3_pair.json",
+          "pair_report_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/repo-audit/repo-audit.mvp.dependency-summary-smoke_repeat1_rp2_rp3_pair.md",
+          "pairwise_disagreements": 0,
+          "repeat_id": 1,
+          "runtime_drift_claims": 0
+        },
+        {
+          "classification": "no_pairwise_disagreement",
+          "pair_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/repo-audit/repo-audit.mvp.dependency-summary-smoke_repeat2_rp2_rp3_pair.json",
+          "pair_report_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/repo-audit/repo-audit.mvp.dependency-summary-smoke_repeat2_rp2_rp3_pair.md",
+          "pairwise_disagreements": 0,
+          "repeat_id": 2,
+          "runtime_drift_claims": 0
+        },
+        {
+          "classification": "no_pairwise_disagreement",
+          "pair_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/repo-audit/repo-audit.mvp.dependency-summary-smoke_repeat3_rp2_rp3_pair.json",
+          "pair_report_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/repo-audit/repo-audit.mvp.dependency-summary-smoke_repeat3_rp2_rp3_pair.md",
+          "pairwise_disagreements": 0,
+          "repeat_id": 3,
+          "runtime_drift_claims": 0
+        }
+      ],
+      "skill_id": "repo-audit-executable",
+      "task_id": "dependency-summary-smoke"
+    }
+  ],
+  "claim_boundary": {
+    "commercial_runtime_claim": false,
+    "completed_statistics_claimed": false,
+    "defense_success_claim": false,
+    "live_product_claim": false,
+    "prevalence_claim": false,
+    "public_network_claim": false,
+    "reviewer_adjudication_claimed": false
+  },
+  "report_type": "main_rp2_rp3_repeat_stability",
+  "schema_version": "0.1"
+}

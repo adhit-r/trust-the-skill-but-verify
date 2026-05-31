@@ -1,0 +1,26 @@
+# docs-forge Live Adversarial npx Package-Acquisition Runtime-Pair Scaffold
+
+Compare the same bounded adversarial package-name `npx docs-forge --help`
+fail-closed probe across two live Node runtime profiles:
+
+- `LIVE_NODE_NPX_PACKAGE_NAME_LOOPBACK_REGISTRY_FAIL_CLOSED`
+- `RP3_NODE_NPX_PACKAGE_NAME_LOOPBACK_REGISTRY_FAIL_CLOSED`
+
+Required boundary:
+
+- Run the host Node package-name npx observer with synthetic HOME/cache,
+  scripts disabled, and a controlled loopback registry.
+- Run the RP3 Node container package-name npx observer with Docker
+  `--network=none`, `--read-only`, synthetic HOME/cache, scripts disabled, and
+  the same controlled loopback registry.
+- Compare only fair safety invariants: both commands fail closed, both use the
+  package-name npx command shape, no local tarball npx command runs, no public
+  registry URL appears, no package acquisition succeeds, no package install
+  command is observed, no lifecycle script is observed, no docs-forge help
+  marker appears, source/home mutation counts remain zero, and no runtime-drift
+  claim is added.
+- Treat Node/npm/npx versions, npm-cache mutation counts, nonzero exit codes,
+  and stderr hashes as informational differences unless they affect the
+  fail-closed safety boundary.
+- Do not treat this scaffold as public npm acquisition evidence, packet-capture
+  evidence, package-install evidence, or an MVP runtime-drift result.

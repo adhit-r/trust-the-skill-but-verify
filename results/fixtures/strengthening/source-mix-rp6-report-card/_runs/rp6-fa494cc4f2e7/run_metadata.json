@@ -1,0 +1,30 @@
+{
+  "adapter_id": "hardened_policy_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/planned_fixture_runner.py",
+    "--task-id",
+    "tool-schema-inventory",
+    "--output",
+    "./planned-output/tool-schema-inventory.md"
+  ],
+  "contract_id": "mcp-python-sdk-public-tool-schema-inventory",
+  "dry_run": false,
+  "prepared_at": "2026-05-30T17:55:49+00:00",
+  "profile_hash": "eb604ffff1a6915487f9d9039430931d345f309733c1e5b4deaeaaa6baf077b8",
+  "profile_id": "RP6",
+  "repeat_id": 3,
+  "run_id": "rp6-fa494cc4f2e7",
+  "skill_artifact": "local-fixture",
+  "skill_id": "mcp-python-sdk-public",
+  "task_id": "tool-schema-inventory",
+  "task_prompt_hash": "sha256:d89f4c8d2e819e2bcf8506652fc70341bc7c9e8405d62adf171a22534b7fa092",
+  "task_prompt_ref": "benchmark/tasks/mcp-python-sdk-public/tool-schema-inventory.txt",
+  "variant_id": "mcp-python-sdk-public.p1.tool-schema-inventory",
+  "workspace_copied_file_count": 6,
+  "workspace_mode": "contract_scoped_staged_workspace",
+  "workspace_seed": "<REPO_ROOT>/benchmark/workspaces/mcp-python-sdk-public-planned-mini",
+  "workspace_seed_id": "source-mix-rp6-mcp-python-sdk-public-tool-schema-inventory-repeat3",
+  "workspace_snapshot_hash": "eb986a6846e577ff56727d2d04cab5b9944c3869d86153111054a20288b3f56d"
+}

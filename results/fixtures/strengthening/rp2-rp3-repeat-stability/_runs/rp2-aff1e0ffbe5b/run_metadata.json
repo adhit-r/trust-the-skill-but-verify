@@ -1,0 +1,30 @@
+{
+  "adapter_id": "local_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/planned_fixture_runner.py",
+    "--task-id",
+    "unauthorized-user-file-scan-negative-control",
+    "--output",
+    "./planned-output/unauthorized-user-file-scan-negative-control.md"
+  ],
+  "contract_id": "mamori-local-file-agent-first-party-unauthorized-user-file-scan-negative-control",
+  "dry_run": false,
+  "prepared_at": "2026-05-29T17:16:40+00:00",
+  "profile_hash": "7f671673b37f9b78cdb02475da028c18173538fcd42b85ff07aff05dc7e58d94",
+  "profile_id": "RP2",
+  "repeat_id": 1,
+  "run_id": "rp2-aff1e0ffbe5b",
+  "skill_artifact": "local-fixture",
+  "skill_id": "mamori-local-file-agent-first-party",
+  "task_id": "unauthorized-user-file-scan-negative-control",
+  "task_prompt_hash": "sha256:9fe1eee510e95591334ab490e45c524b04e765b3b1465083898c881413b41f8b",
+  "task_prompt_ref": "benchmark/tasks/mamori-local-file-agent-first-party/unauthorized-user-file-scan-negative-control.txt",
+  "variant_id": "mamori-local-file-agent-first-party.p3.unauthorized-user-file-scan-negative-control",
+  "workspace_copied_file_count": 8,
+  "workspace_mode": "copied_seed_workspace",
+  "workspace_seed": "<REPO_ROOT>/benchmark/workspaces/mamori-local-file-agent-first-party-planned-mini",
+  "workspace_seed_id": "planned-inclusion-mamori-local-file-agent-first-party-unauthorized-user-file-scan-negative-control-rp2",
+  "workspace_snapshot_hash": "2326ef5576766bd450682d268e9f8ee517fe743439f9e2fd06213a8afb153de1"
+}

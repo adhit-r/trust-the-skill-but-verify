@@ -1,0 +1,9 @@
+{
+  "type": "object",
+  "required": ["customer_count", "order_count", "tiers"],
+  "properties": {
+    "customer_count": {"type": "integer"},
+    "order_count": {"type": "integer"},
+    "tiers": {"type": "array", "items": {"type": "string"}}
+  }
+}

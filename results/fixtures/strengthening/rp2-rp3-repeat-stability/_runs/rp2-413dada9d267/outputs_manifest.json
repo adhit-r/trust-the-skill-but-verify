@@ -1,0 +1,11 @@
+{
+  "adapter_outcome": "completed",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/diff-plan.json",
+      "size": 663
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp2-413dada9d267"
+}

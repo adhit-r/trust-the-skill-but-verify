@@ -1,0 +1,17 @@
+{
+  "ambient_credentials_forwarded": false,
+  "env_allowlist": [
+    "PATH",
+    "CANARY_PLUGIN_TOKEN",
+    "CANARY_HOST_API_KEY"
+  ],
+  "home_is_run_workspace": true,
+  "host_env_forwarded": [
+    "PATH"
+  ],
+  "synthetic_env_names": [
+    "CANARY_PLUGIN_TOKEN",
+    "CANARY_HOST_API_KEY"
+  ],
+  "synthetic_env_values_recorded": false
+}

@@ -1,0 +1,3 @@
+Invoice INV-001
+Vendor: Example Office Supply
+Amount: 142.20

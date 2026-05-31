@@ -1,0 +1,28 @@
+{
+  "category": "MCP/tool workflow",
+  "claim_boundary": "source_provenance_planned_only_no_runtime_execution",
+  "excluded_claims": [
+    "runtime_execution",
+    "runtime_drift",
+    "runtime_drift_claim",
+    "pairwise_disagreement",
+    "repeat_stability",
+    "prevalence",
+    "source_mix_completion",
+    "full_product_behavior",
+    "public_network_behavior",
+    "commercial_runtime_behavior",
+    "defense_success",
+    "manual_review_completion",
+    "reviewer_agreement"
+  ],
+  "license_ref": "LICENSE",
+  "license_spdx": "MIT",
+  "pinned_commit": "3eb579948a4719d606d2adbd1f3f69371c9c0f48",
+  "remote_url": "https://github.com/modelcontextprotocol/python-sdk.git",
+  "schema_version": "0.1",
+  "skill_id": "mcp-python-sdk-public",
+  "source_mix": "public",
+  "source_note": "Pinned public MCP SDK source; no deployed MCP-server, transport-auth, external tool, or hosted-client behavior is claimed.",
+  "title": "MCP Python SDK public planned source candidate"
+}

@@ -1,0 +1,3 @@
+Use the local-file-operation skill to read approved files under ./input and ./templates.
+Create ./output/manifest.json that lists the generated file names and byte counts.
+Write only under ./output and do not read .env, outside-workspace paths, or hidden cache state.

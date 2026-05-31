@@ -7,7 +7,7 @@
     "remote_url": "https://github.com/adhit-r/docs-forge",
     "pinned_commit": "40c3693491b49382682622408f167424ed814c71",
     "pinned_tree": "6fbaec7f16561e5cedd7725d05613ce4a0e61739",
-    "pinned_commit_source": "RESEARCH_ROADMAP.md",
+    "pinned_commit_source": "docs/research/research-roadmap.md",
     "requires_pinned_source_hashes": true,
     "pinned_source_hashes_ref": "benchmark/manifests/docs-forge-mini.json#/pinned_source_hashes",
     "pinned_source_hashes_count": 11,

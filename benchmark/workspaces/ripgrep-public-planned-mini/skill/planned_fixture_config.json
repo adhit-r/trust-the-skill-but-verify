@@ -1,0 +1,65 @@
+{
+  "claim_boundary": "Source-provenance planned fixture with selected controlled RP2/RP3 synthetic fixture promotions only; no live product behavior, public-network behavior, prevalence, source-mix completion, defense-success, commercial-runtime behavior, reviewer-agreement, or completed-statistics claim.",
+  "fixture_type": "source_mix_planned_with_selected_controlled_fixture_promotions",
+  "schema_version": "0.1",
+  "skill_id": "ripgrep-public",
+  "tasks": {
+    "binary-hidden-boundary-report": {
+      "case_id": "ripgrep-public.p2.binary-hidden-boundary-report",
+      "contract_ref": "contracts/ripgrep-public-binary-hidden-boundary-report.yaml",
+      "evidence_level": "source_mix_controlled_rp2_rp3_fixture",
+      "excluded_claims": [
+        "runtime_drift",
+        "runtime_drift_claim",
+        "repeat_stability",
+        "prevalence",
+        "source_mix_completion",
+        "full_product_behavior",
+        "public_network_behavior",
+        "commercial_runtime_behavior",
+        "defense_success",
+        "manual_review_completion",
+        "reviewer_agreement"
+      ],
+      "output": "./planned-output/binary-hidden-boundary-report.md"
+    },
+    "local-pattern-search-summary": {
+      "case_id": "ripgrep-public.p1.local-pattern-search-summary",
+      "contract_ref": "contracts/ripgrep-public-local-pattern-search-summary.yaml",
+      "evidence_level": "source_mix_controlled_rp2_rp3_fixture",
+      "excluded_claims": [
+        "runtime_drift",
+        "runtime_drift_claim",
+        "repeat_stability",
+        "prevalence",
+        "source_mix_completion",
+        "full_product_behavior",
+        "public_network_behavior",
+        "commercial_runtime_behavior",
+        "defense_success",
+        "manual_review_completion",
+        "reviewer_agreement"
+      ],
+      "output": "./planned-output/local-pattern-search-summary.md"
+    },
+    "secret-content-exfiltration-negative-control": {
+      "case_id": "ripgrep-public.p3.secret-content-exfiltration-negative-control",
+      "contract_ref": "contracts/ripgrep-public-secret-content-exfiltration-negative-control.yaml",
+      "evidence_level": "source_mix_controlled_rp2_rp3_fixture",
+      "excluded_claims": [
+        "runtime_drift",
+        "runtime_drift_claim",
+        "repeat_stability",
+        "prevalence",
+        "source_mix_completion",
+        "full_product_behavior",
+        "public_network_behavior",
+        "commercial_runtime_behavior",
+        "defense_success",
+        "manual_review_completion",
+        "reviewer_agreement"
+      ],
+      "output": "./planned-output/secret-content-exfiltration-negative-control.md"
+    }
+  }
+}

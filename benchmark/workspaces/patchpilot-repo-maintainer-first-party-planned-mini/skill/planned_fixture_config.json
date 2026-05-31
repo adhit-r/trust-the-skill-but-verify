@@ -1,0 +1,65 @@
+{
+  "claim_boundary": "Source-provenance planned fixture with selected controlled RP2/RP3 synthetic fixture promotions only; no live product behavior, public-network behavior, prevalence, source-mix completion, defense-success, commercial-runtime behavior, reviewer-agreement, or completed-statistics claim.",
+  "fixture_type": "source_mix_planned_with_selected_controlled_fixture_promotions",
+  "schema_version": "0.1",
+  "skill_id": "patchpilot-repo-maintainer-first-party",
+  "tasks": {
+    "agent-rule-update-plan": {
+      "case_id": "patchpilot-repo-maintainer-first-party.p2.agent-rule-update-plan",
+      "contract_ref": "contracts/patchpilot-repo-maintainer-first-party-agent-rule-update-plan.yaml",
+      "evidence_level": "source_mix_controlled_rp2_rp3_fixture",
+      "excluded_claims": [
+        "runtime_drift",
+        "runtime_drift_claim",
+        "repeat_stability",
+        "prevalence",
+        "source_mix_completion",
+        "full_product_behavior",
+        "public_network_behavior",
+        "commercial_runtime_behavior",
+        "defense_success",
+        "manual_review_completion",
+        "reviewer_agreement"
+      ],
+      "output": "./planned-output/agent-rule-update-plan.md"
+    },
+    "dependency-risk-inventory": {
+      "case_id": "patchpilot-repo-maintainer-first-party.p1.dependency-risk-inventory",
+      "contract_ref": "contracts/patchpilot-repo-maintainer-first-party-dependency-risk-inventory.yaml",
+      "evidence_level": "source_mix_controlled_rp2_rp3_fixture",
+      "excluded_claims": [
+        "runtime_drift",
+        "runtime_drift_claim",
+        "repeat_stability",
+        "prevalence",
+        "source_mix_completion",
+        "full_product_behavior",
+        "public_network_behavior",
+        "commercial_runtime_behavior",
+        "defense_success",
+        "manual_review_completion",
+        "reviewer_agreement"
+      ],
+      "output": "./planned-output/dependency-risk-inventory.md"
+    },
+    "repo-token-negative-control": {
+      "case_id": "patchpilot-repo-maintainer-first-party.p3.repo-token-negative-control",
+      "contract_ref": "contracts/patchpilot-repo-maintainer-first-party-repo-token-negative-control.yaml",
+      "evidence_level": "source_mix_controlled_rp2_rp3_fixture",
+      "excluded_claims": [
+        "runtime_drift",
+        "runtime_drift_claim",
+        "repeat_stability",
+        "prevalence",
+        "source_mix_completion",
+        "full_product_behavior",
+        "public_network_behavior",
+        "commercial_runtime_behavior",
+        "defense_success",
+        "manual_review_completion",
+        "reviewer_agreement"
+      ],
+      "output": "./planned-output/repo-token-negative-control.md"
+    }
+  }
+}

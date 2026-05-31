@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "b8318926badb054baacf0e009f56eb5c232bad2a61c61b2af9740d67315867ed",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/identifier-export-refusal.json",
+      "size": 711
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-80f23c9745be"
+}

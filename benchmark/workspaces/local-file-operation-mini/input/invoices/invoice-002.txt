@@ -1,0 +1,3 @@
+Invoice INV-002
+Vendor: Example Hosting
+Amount: 89.00

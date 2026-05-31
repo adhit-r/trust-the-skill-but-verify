@@ -1,0 +1,182 @@
+{
+  "aggregates": {
+    "action_boundary_baseline": {
+      "case_count": 14,
+      "clawguard_reproduction_claims_supported": 0,
+      "command_actions_checked": 14,
+      "command_actions_contract_allowed": 14,
+      "commands_relevant_by_fixture_scope": 14,
+      "review_flags": 0,
+      "runtime_monitoring_required_cases": 14,
+      "task_shield_reproduction_claims_supported": 0,
+      "total_deny_rules_considered": 216
+    },
+    "least_privilege_baseline": {
+      "adversarial_cases": 7,
+      "adversarial_expectation_passes": 7,
+      "benign_cases": 7,
+      "benign_expectation_passes": 7,
+      "case_count": 14,
+      "rp6_canary_observations": 0,
+      "rp6_realized_contract_violations": 0,
+      "unique_contracts": 7
+    },
+    "reachability_approximation": {
+      "candidate_count": 88,
+      "case_count": 14,
+      "cases_with_candidates": 14,
+      "runtime_confirmation_claims_supported": 0,
+      "semia_equivalence_claims_supported": 0,
+      "semia_reproduction_claims_supported": 0,
+      "static_findings_considered": 88,
+      "unique_candidate_surfaces": [
+        "activation",
+        "context",
+        "credentials",
+        "filesystem",
+        "network",
+        "persistence",
+        "sinks",
+        "tools"
+      ]
+    },
+    "rp6_component_ablation": {
+      "adversarial_or_probe_cases": 6,
+      "benign_control_cases": 6,
+      "canary_observation_delta": 2,
+      "case_count": 12,
+      "component_count": 6,
+      "components_with_benign_and_adversarial_coverage": 6,
+      "expectation_passed_cases": 12,
+      "missing_expected_output_delta": -1,
+      "realized_contract_violation_delta": 13,
+      "rp6_ablated_canary_observations": 2,
+      "rp6_ablated_missing_expected_outputs": 0,
+      "rp6_ablated_realized_contract_violations": 13,
+      "rp6_baseline_canary_observations": 0,
+      "rp6_baseline_missing_expected_outputs": 1,
+      "rp6_baseline_realized_contract_violations": 0,
+      "runtime_profile": "RP6",
+      "security_regression_cases": 7,
+      "utility_preserved_cases": 11
+    },
+    "rp6_minimal_report_card_contrast": {
+      "case_count": 8,
+      "policy_probe_count": 1,
+      "rp2_to_rp6_canary_reduction": 9,
+      "rp2_to_rp6_realized_reduction": 13,
+      "rp6_missing_output_increase_vs_rp2": 2,
+      "rp6_mitigation_pair_count": 16,
+      "rp6_pair_count": 16,
+      "rp6_policy_probe_attempted_overreach": 2,
+      "runtime_aggregates": {
+        "RP2": {
+          "attempted_overreach": 0,
+          "canary_observations": 9,
+          "event_count": 106,
+          "missing_expected_outputs": 0,
+          "realized_contract_violations": 13
+        },
+        "RP3": {
+          "attempted_overreach": 9,
+          "canary_observations": 1,
+          "event_count": 1767,
+          "missing_expected_outputs": 1,
+          "realized_contract_violations": 1
+        },
+        "RP6": {
+          "attempted_overreach": 9,
+          "canary_observations": 0,
+          "event_count": 112,
+          "missing_expected_outputs": 2,
+          "realized_contract_violations": 0
+        }
+      },
+      "runtime_profiles": [
+        "RP2",
+        "RP3",
+        "RP6"
+      ]
+    },
+    "rp6_mitigation_ladder": {
+      "case_count": 14,
+      "rp2_to_rp6_canary_reduction": 25,
+      "rp2_to_rp6_realized_reduction": 22,
+      "rp6_missing_output_increase_vs_rp2": 7,
+      "runtime_aggregates": {
+        "RP2": {
+          "attempted_overreach": 0,
+          "canary_observations": 25,
+          "event_count": 255,
+          "missing_expected_outputs": 0,
+          "realized_contract_violations": 22
+        },
+        "RP3": {
+          "attempted_overreach": 11,
+          "canary_observations": 5,
+          "event_count": 3205,
+          "missing_expected_outputs": 4,
+          "realized_contract_violations": 4
+        },
+        "RP6": {
+          "attempted_overreach": 12,
+          "canary_observations": 0,
+          "event_count": 261,
+          "missing_expected_outputs": 7,
+          "realized_contract_violations": 0
+        }
+      },
+      "runtime_profiles": [
+        "RP2",
+        "RP3",
+        "RP6"
+      ]
+    },
+    "rp6_repeat_stability": {
+      "case_count": 14,
+      "deterministic_stability_claims_supported": 14,
+      "minimum_repeats_for_deterministic_stability_claim": 3,
+      "repeat_ids": [
+        "1",
+        "2",
+        "3"
+      ],
+      "repeat_observation_count": 42,
+      "repeats_per_case": 3,
+      "rp6_canary_observations": 0,
+      "rp6_realized_contract_violations": 0,
+      "statistical_repeat_stability_claims_supported": 0,
+      "summary_match_count_excluding_event_count": 14,
+      "summary_match_count_including_event_count": 14,
+      "trace_valid_count": 42
+    },
+    "static_scanner_baseline": {
+      "case_count": 14,
+      "cases_with_static_findings": 14,
+      "pattern_family_counts": {
+        "activation_or_trigger_reference": 4,
+        "credential_or_secret_reference": 48,
+        "filesystem_write_reference": 20,
+        "network_or_url_reference": 8,
+        "persistence_or_cache_reference": 4,
+        "tool_or_mcp_reference": 4
+      },
+      "scanned_file_count": 48,
+      "static_finding_count": 88,
+      "unique_contracts": 7
+    }
+  },
+  "boundary": "Strengthening package for reviewer-facing baselines. These artifacts are excluded from MVP runtime-drift counts.",
+  "report_type": "strengthening_evidence_index",
+  "reports": {
+    "action_boundary_baseline": "results/fixtures/strengthening/action_boundary_baseline.json",
+    "least_privilege_baseline": "results/fixtures/strengthening/least_privilege_baseline.json",
+    "reachability_approximation": "results/fixtures/strengthening/reachability_approximation.json",
+    "rp6_component_ablation": "results/fixtures/rp6-policy-hardened/ablations/component_report_card.json",
+    "rp6_minimal_report_card_contrast": "results/fixtures/rp6-policy-hardened/ablations/minimal_report_card.json",
+    "rp6_mitigation_ladder": "results/fixtures/strengthening/rp6_mitigation_ladder.json",
+    "rp6_repeat_stability": "results/fixtures/strengthening/repeat-stability/repeat_stability.json",
+    "static_scanner_baseline": "results/fixtures/strengthening/static_scanner_baseline.json"
+  },
+  "schema_version": "0.1"
+}

@@ -1,0 +1,1 @@
+{"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./planned-output/sbom-policy-risk-plan.md", "sha256": "sha256:b56f5187ddee3c159913b360fdd9715a411cc18a688fb37d32a4ecae9a35dbe6", "size": 884, "status": "succeeded", "timestamp": "2026-05-29T17:20:57+00:00"}

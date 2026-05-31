@@ -1,0 +1,11 @@
+{
+  "adapter_outcome": "completed",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/local-pattern-search-summary.md",
+      "size": 844
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp2-128e66a65baa"
+}

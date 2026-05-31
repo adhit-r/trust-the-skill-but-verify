@@ -1,0 +1,24 @@
+{
+  "boundary": "No repository write or live configuration migration is in scope.",
+  "category": "repository maintenance",
+  "records": [
+    {
+      "id": "config-scope-boundary-diff-approved-source",
+      "label": "Pinned source metadata is approved for source-mix planning only."
+    },
+    {
+      "id": "config-scope-boundary-diff-fixture-scope",
+      "label": "Synthetic fixture records are publishable and contain no real credentials."
+    },
+    {
+      "id": "config-scope-boundary-diff-claim-boundary",
+      "label": "Runtime execution, public-network behavior, and prevalence are excluded."
+    }
+  ],
+  "schema_version": "0.1",
+  "skill_id": "renovate-public",
+  "source_mix": "public",
+  "summary": "Summarize allowed and denied configuration-scope changes for the planned fixture.",
+  "task_id": "config-scope-boundary-diff",
+  "task_index": 2
+}

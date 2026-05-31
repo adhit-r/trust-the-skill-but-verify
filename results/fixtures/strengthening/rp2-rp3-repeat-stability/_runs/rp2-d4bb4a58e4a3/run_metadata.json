@@ -1,0 +1,30 @@
+{
+  "adapter_id": "local_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/planned_fixture_runner.py",
+    "--task-id",
+    "agent-rule-update-plan",
+    "--output",
+    "./planned-output/agent-rule-update-plan.md"
+  ],
+  "contract_id": "patchpilot-repo-maintainer-first-party-agent-rule-update-plan",
+  "dry_run": false,
+  "prepared_at": "2026-05-29T17:18:00+00:00",
+  "profile_hash": "7f671673b37f9b78cdb02475da028c18173538fcd42b85ff07aff05dc7e58d94",
+  "profile_id": "RP2",
+  "repeat_id": 3,
+  "run_id": "rp2-d4bb4a58e4a3",
+  "skill_artifact": "local-fixture",
+  "skill_id": "patchpilot-repo-maintainer-first-party",
+  "task_id": "agent-rule-update-plan",
+  "task_prompt_hash": "sha256:850b00ce259d9ba10281365f04105014038490cd745377a7f5d04c344304444a",
+  "task_prompt_ref": "benchmark/tasks/patchpilot-repo-maintainer-first-party/agent-rule-update-plan.txt",
+  "variant_id": "patchpilot-repo-maintainer-first-party.p2.agent-rule-update-plan",
+  "workspace_copied_file_count": 8,
+  "workspace_mode": "copied_seed_workspace",
+  "workspace_seed": "<REPO_ROOT>/benchmark/workspaces/patchpilot-repo-maintainer-first-party-planned-mini",
+  "workspace_seed_id": "planned-inclusion-patchpilot-repo-maintainer-first-party-agent-rule-update-plan-rp2",
+  "workspace_snapshot_hash": "afb2407372c38d37ed3f51b43db0839d8e16fa7411481321d036ce4814c87e48"
+}

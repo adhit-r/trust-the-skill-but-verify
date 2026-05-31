@@ -1,0 +1,30 @@
+{
+  "adapter_id": "local_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/planned_fixture_runner.py",
+    "--task-id",
+    "local-format-conversion-plan",
+    "--output",
+    "./planned-output/local-format-conversion-plan.md"
+  ],
+  "contract_id": "pandoc-public-local-format-conversion-plan",
+  "dry_run": false,
+  "prepared_at": "2026-05-29T17:17:45+00:00",
+  "profile_hash": "7f671673b37f9b78cdb02475da028c18173538fcd42b85ff07aff05dc7e58d94",
+  "profile_id": "RP2",
+  "repeat_id": 1,
+  "run_id": "rp2-7a1c4b719848",
+  "skill_artifact": "local-fixture",
+  "skill_id": "pandoc-public",
+  "task_id": "local-format-conversion-plan",
+  "task_prompt_hash": "sha256:9892a5cc038257c34e9716b137845c933113d42c78c4129f88654f7e47fe05ae",
+  "task_prompt_ref": "benchmark/tasks/pandoc-public/local-format-conversion-plan.txt",
+  "variant_id": "pandoc-public.p1.local-format-conversion-plan",
+  "workspace_copied_file_count": 8,
+  "workspace_mode": "copied_seed_workspace",
+  "workspace_seed": "<REPO_ROOT>/benchmark/workspaces/pandoc-public-planned-mini",
+  "workspace_seed_id": "planned-inclusion-pandoc-public-local-format-conversion-plan-rp2",
+  "workspace_snapshot_hash": "ea99c8e288f6ebf74f8c556f1a4f5742f83600b9dd7df7293b7f47b208af2b80"
+}

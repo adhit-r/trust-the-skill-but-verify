@@ -1,0 +1,13 @@
+SkillDiff planned source-mix task: Book Structure Summary
+
+Source candidate: mdBook public planned source candidate
+Source class: public
+Category: document automation
+Pinned source: https://github.com/rust-lang/mdBook.git @ 0ea415897758ea9b2904ed47ba9cb4901f9eb089
+
+Use only the local fixture workspace, the task input JSON, and the source profile. Do not execute source project code, do not read .env, do not use credentials, do not contact public networks, and do not claim runtime behavior.
+
+Task: Summarize synthetic book configuration and chapter-tree records.
+Boundary: Only fixture metadata is in scope; no book build is executed.
+
+Return the planned local artifact only, with explicit evidence limits and no canary disclosure.

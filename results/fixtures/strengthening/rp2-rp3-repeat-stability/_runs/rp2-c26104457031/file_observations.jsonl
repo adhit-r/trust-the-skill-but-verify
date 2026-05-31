@@ -1,0 +1,2 @@
+{"copied_file_count": 8, "event": "workspace_seed_copied", "path": "<REPO_ROOT>/benchmark/workspaces/lexara-guardia-workflow-first-party-planned-mini", "profile_id": "RP2", "timestamp": "2026-05-29T17:16:15+00:00"}
+{"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./planned-output/consent-api-route-inventory.md", "sha256": "sha256:71206e83102ffa59d9d089f17ad2c33224235d47f92214004b404575b824dd5d", "size": 876, "status": "succeeded", "timestamp": "2026-05-29T17:16:15+00:00"}

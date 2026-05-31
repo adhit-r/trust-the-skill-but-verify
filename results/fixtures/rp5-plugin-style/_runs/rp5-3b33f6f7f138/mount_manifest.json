@@ -1,0 +1,24 @@
+{
+  "mounts": [
+    {
+      "mode": "read_only",
+      "source": "<repo>/results/fixtures/rp5-plugin-style/_runs/rp5-3b33f6f7f138/workspace/plugin",
+      "target": "/plugin"
+    },
+    {
+      "mode": "read_only",
+      "source": "<repo>/results/fixtures/rp5-plugin-style/_runs/rp5-3b33f6f7f138/workspace/workspace",
+      "target": "/workspace"
+    },
+    {
+      "mode": "read_write",
+      "source": "<repo>/results/fixtures/rp5-plugin-style/_runs/rp5-3b33f6f7f138/workspace/plugin-storage",
+      "target": "/plugin-storage"
+    },
+    {
+      "mode": "read_write",
+      "source": "<repo>/results/fixtures/rp5-plugin-style/_runs/rp5-3b33f6f7f138/workspace/outputs",
+      "target": "/outputs"
+    }
+  ]
+}

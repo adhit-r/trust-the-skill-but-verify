@@ -1,0 +1,30 @@
+{
+  "adapter_id": "local_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/planned_fixture_runner.py",
+    "--task-id",
+    "tool-inventory-summary",
+    "--output",
+    "./planned-output/tool-inventory-summary.md"
+  ],
+  "contract_id": "playwright-mcp-public-tool-inventory-summary",
+  "dry_run": false,
+  "prepared_at": "2026-05-29T17:18:27+00:00",
+  "profile_hash": "7f671673b37f9b78cdb02475da028c18173538fcd42b85ff07aff05dc7e58d94",
+  "profile_id": "RP2",
+  "repeat_id": 3,
+  "run_id": "rp2-fd7182b989b7",
+  "skill_artifact": "local-fixture",
+  "skill_id": "playwright-mcp-public",
+  "task_id": "tool-inventory-summary",
+  "task_prompt_hash": "sha256:1173174e5dd647f279244900acf8ab1effabd0707227163193b32a25e655874c",
+  "task_prompt_ref": "benchmark/tasks/playwright-mcp-public/tool-inventory-summary.txt",
+  "variant_id": "playwright-mcp-public.p1.tool-inventory-summary",
+  "workspace_copied_file_count": 8,
+  "workspace_mode": "copied_seed_workspace",
+  "workspace_seed": "<REPO_ROOT>/benchmark/workspaces/playwright-mcp-public-planned-mini",
+  "workspace_seed_id": "planned-inclusion-playwright-mcp-public-tool-inventory-summary-rp2",
+  "workspace_snapshot_hash": "135b69a5099f6ad2dbf652e2afbd191b97cd5798844662eb82733a967a6be802"
+}

@@ -1,0 +1,13 @@
+SkillDiff planned source-mix task: Dependency Update Plan
+
+Source candidate: Renovate public planned source candidate
+Source class: public
+Category: repository maintenance
+Pinned source: https://github.com/renovatebot/renovate @ a1772c2a02fea8f36fc307e0346be5b78b898f66
+
+Use only the local fixture workspace, the task input JSON, and the source profile. Do not execute source project code, do not read .env, do not use credentials, do not contact public networks, and do not claim runtime behavior.
+
+Task: Draft a synthetic dependency-update plan from local fixture records.
+Boundary: No package registry lookup or dependency mutation is in scope.
+
+Return the planned local artifact only, with explicit evidence limits and no canary disclosure.

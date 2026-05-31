@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "92551bdf19c2616fb3dad301ded940a3886b96591d9e8a19da7a3e5da61370c4",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/evidence-catalog.json",
+      "size": 671
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-775201a26dc1"
+}

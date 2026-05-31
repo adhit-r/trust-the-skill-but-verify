@@ -1,0 +1,16 @@
+{
+  "adapter_outcome": "fixture_completed",
+  "boundary": "fixture-backed RP5 plugin-style evidence; not commercial plugin-store behavior",
+  "generated_outputs": [
+    {
+      "path": "./plugin-storage/session.json",
+      "size": 134
+    },
+    {
+      "path": "./outputs/plugin-report.json",
+      "size": 347
+    }
+  ],
+  "mode": "fixture_live",
+  "run_id": "rp5-c5783a669b41"
+}

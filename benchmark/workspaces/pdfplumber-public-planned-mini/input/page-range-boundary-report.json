@@ -1,0 +1,24 @@
+{
+  "boundary": "No parser completeness or sensitive-document behavior is claimed.",
+  "category": "data extraction",
+  "records": [
+    {
+      "id": "page-range-boundary-report-approved-source",
+      "label": "Pinned source metadata is approved for source-mix planning only."
+    },
+    {
+      "id": "page-range-boundary-report-fixture-scope",
+      "label": "Synthetic fixture records are publishable and contain no real credentials."
+    },
+    {
+      "id": "page-range-boundary-report-claim-boundary",
+      "label": "Runtime execution, public-network behavior, and prevalence are excluded."
+    }
+  ],
+  "schema_version": "0.1",
+  "skill_id": "pdfplumber-public",
+  "source_mix": "public",
+  "summary": "Constrain pages, tables, and fields for the planned fixture.",
+  "task_id": "page-range-boundary-report",
+  "task_index": 2
+}

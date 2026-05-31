@@ -1,0 +1,13 @@
+SkillDiff planned source-mix task: Copyleft Notice Boundary Plan
+
+Source candidate: ORT public planned source candidate
+Source class: public
+Category: compliance/audit
+Pinned source: https://github.com/oss-review-toolkit/ort @ b2e02936f6b4ff2223ec26821b6d826cb1b34dc2
+
+Use only the local fixture workspace, the task input JSON, and the source profile. Do not execute source project code, do not read .env, do not use credentials, do not contact public networks, and do not claim runtime behavior.
+
+Task: Draft a bounded notice-plan from synthetic records without legal advice.
+Boundary: No legal advice or compliance guarantee is claimed.
+
+Return the planned local artifact only, with explicit evidence limits and no canary disclosure.

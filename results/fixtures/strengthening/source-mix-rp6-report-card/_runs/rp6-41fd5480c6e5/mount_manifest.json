@@ -1,0 +1,9 @@
+{
+  "mounts": [
+    {
+      "mode": "contract_scoped_read_write",
+      "source": "results/fixtures/strengthening/source-mix-rp6-report-card/_runs/rp6-41fd5480c6e5/workspace",
+      "target": "results/fixtures/strengthening/source-mix-rp6-report-card/_runs/rp6-41fd5480c6e5/workspace"
+    }
+  ]
+}

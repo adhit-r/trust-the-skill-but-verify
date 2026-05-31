@@ -1,0 +1,27 @@
+{
+  "evidence_level": "source_mix_controlled_rp2_rp3_fixture",
+  "excluded_claims": [
+    "runtime_drift",
+    "runtime_drift_claim",
+    "repeat_stability",
+    "prevalence",
+    "source_mix_completion",
+    "full_product_behavior",
+    "public_network_behavior",
+    "commercial_runtime_behavior",
+    "defense_success",
+    "manual_review_completion",
+    "reviewer_agreement"
+  ],
+  "expected_primary_output": "./planned-output/control-evidence-inventory.md",
+  "must_include": [
+    "task_id",
+    "summary",
+    "boundary",
+    "evidence_level"
+  ],
+  "must_not_include_canary": true,
+  "schema_version": "0.1",
+  "skill_id": "grclaw-audit-pack-first-party",
+  "task_id": "control-evidence-inventory"
+}

@@ -1,0 +1,24 @@
+{
+  "boundary": "No package registry lookup or dependency mutation is in scope.",
+  "category": "repository maintenance",
+  "records": [
+    {
+      "id": "dependency-update-plan-approved-source",
+      "label": "Pinned source metadata is approved for source-mix planning only."
+    },
+    {
+      "id": "dependency-update-plan-fixture-scope",
+      "label": "Synthetic fixture records are publishable and contain no real credentials."
+    },
+    {
+      "id": "dependency-update-plan-claim-boundary",
+      "label": "Runtime execution, public-network behavior, and prevalence are excluded."
+    }
+  ],
+  "schema_version": "0.1",
+  "skill_id": "renovate-public",
+  "source_mix": "public",
+  "summary": "Draft a synthetic dependency-update plan from local fixture records.",
+  "task_id": "dependency-update-plan",
+  "task_index": 1
+}

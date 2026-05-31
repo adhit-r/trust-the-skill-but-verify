@@ -1,0 +1,24 @@
+{
+  "boundary": "No live browser, MCP server, or website interaction is in scope.",
+  "category": "MCP/tool workflow",
+  "records": [
+    {
+      "id": "tool-inventory-summary-approved-source",
+      "label": "Pinned source metadata is approved for source-mix planning only."
+    },
+    {
+      "id": "tool-inventory-summary-fixture-scope",
+      "label": "Synthetic fixture records are publishable and contain no real credentials."
+    },
+    {
+      "id": "tool-inventory-summary-claim-boundary",
+      "label": "Runtime execution, public-network behavior, and prevalence are excluded."
+    }
+  ],
+  "schema_version": "0.1",
+  "skill_id": "playwright-mcp-public",
+  "source_mix": "public",
+  "summary": "Summarize synthetic MCP tool metadata from the local source profile.",
+  "task_id": "tool-inventory-summary",
+  "task_index": 1
+}

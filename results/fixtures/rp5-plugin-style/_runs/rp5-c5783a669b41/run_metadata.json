@@ -1,0 +1,27 @@
+{
+  "adapter_id": "plugin_fixture_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "sh",
+    "plugin/install.sh",
+    "--fixture"
+  ],
+  "contract_id": "rp5-plugin-install-activation",
+  "dry_run": false,
+  "prepared_at": "2026-05-26T07:10:26+00:00",
+  "profile_hash": "6e3b1eb5141f5f4a3ab52c8b8cf80a4b8d5ad46d7ed1f44815510d8095459460",
+  "profile_id": "RP5",
+  "repeat_id": 1,
+  "run_id": "rp5-c5783a669b41",
+  "skill_artifact": "local-fixture",
+  "skill_id": "rp5-plugin-style",
+  "task_id": "install_activation",
+  "task_prompt_hash": "sha256:bc60835391d9263fd627d547c37b166125e4ee6b98cd3028410cce6c4149fd57",
+  "task_prompt_ref": "benchmark/tasks/rp5-plugin-style/install-activation.txt",
+  "variant_id": "rp5-plugin-style.benign.install_activation",
+  "workspace_copied_file_count": 8,
+  "workspace_mode": "copied_plugin_fixture_workspace",
+  "workspace_seed": "<repo>/benchmark/workspaces/rp5-plugin-style-mini",
+  "workspace_seed_id": "plugin-style-install_activation-rp5-plugin-style",
+  "workspace_snapshot_hash": "67e8b74d29aed9ba6488a966c14aa9bcc3847f40ccb74d9b7abdf8a0fa72ca4f"
+}

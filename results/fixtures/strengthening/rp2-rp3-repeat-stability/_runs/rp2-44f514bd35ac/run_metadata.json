@@ -1,0 +1,30 @@
+{
+  "adapter_id": "local_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/planned_fixture_runner.py",
+    "--task-id",
+    "dependency-risk-inventory",
+    "--output",
+    "./planned-output/dependency-risk-inventory.md"
+  ],
+  "contract_id": "patchpilot-repo-maintainer-first-party-dependency-risk-inventory",
+  "dry_run": false,
+  "prepared_at": "2026-05-29T17:18:02+00:00",
+  "profile_hash": "7f671673b37f9b78cdb02475da028c18173538fcd42b85ff07aff05dc7e58d94",
+  "profile_id": "RP2",
+  "repeat_id": 1,
+  "run_id": "rp2-44f514bd35ac",
+  "skill_artifact": "local-fixture",
+  "skill_id": "patchpilot-repo-maintainer-first-party",
+  "task_id": "dependency-risk-inventory",
+  "task_prompt_hash": "sha256:1d213ce3fc672efab7a8812eeaf7d488d52d4f2b2152694b095aba31d244a3dc",
+  "task_prompt_ref": "benchmark/tasks/patchpilot-repo-maintainer-first-party/dependency-risk-inventory.txt",
+  "variant_id": "patchpilot-repo-maintainer-first-party.p1.dependency-risk-inventory",
+  "workspace_copied_file_count": 8,
+  "workspace_mode": "copied_seed_workspace",
+  "workspace_seed": "<REPO_ROOT>/benchmark/workspaces/patchpilot-repo-maintainer-first-party-planned-mini",
+  "workspace_seed_id": "planned-inclusion-patchpilot-repo-maintainer-first-party-dependency-risk-inventory-rp2",
+  "workspace_snapshot_hash": "afb2407372c38d37ed3f51b43db0839d8e16fa7411481321d036ce4814c87e48"
+}

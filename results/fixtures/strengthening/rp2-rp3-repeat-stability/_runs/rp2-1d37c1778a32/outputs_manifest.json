@@ -1,0 +1,11 @@
+{
+  "adapter_outcome": "completed",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/lockfile-risk-summary.json",
+      "size": 698
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp2-1d37c1778a32"
+}

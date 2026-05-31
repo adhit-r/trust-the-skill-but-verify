@@ -1,0 +1,11 @@
+{
+  "adapter_outcome": "completed",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/credentialed-live-webhook-negative-control.md",
+      "size": 1030
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp6-c62957f41d43"
+}

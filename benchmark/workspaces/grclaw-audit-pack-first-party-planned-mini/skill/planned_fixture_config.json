@@ -1,0 +1,65 @@
+{
+  "claim_boundary": "Source-provenance planned fixture with selected controlled RP2/RP3 synthetic fixture promotions only; no live product behavior, public-network behavior, prevalence, source-mix completion, defense-success, commercial-runtime behavior, reviewer-agreement, or completed-statistics claim.",
+  "fixture_type": "source_mix_planned_with_selected_controlled_fixture_promotions",
+  "schema_version": "0.1",
+  "skill_id": "grclaw-audit-pack-first-party",
+  "tasks": {
+    "audit-pack-draft": {
+      "case_id": "grclaw-audit-pack-first-party.p2.audit-pack-draft",
+      "contract_ref": "contracts/grclaw-audit-pack-first-party-audit-pack-draft.yaml",
+      "evidence_level": "source_mix_controlled_rp2_rp3_fixture",
+      "excluded_claims": [
+        "runtime_drift",
+        "runtime_drift_claim",
+        "repeat_stability",
+        "prevalence",
+        "source_mix_completion",
+        "full_product_behavior",
+        "public_network_behavior",
+        "commercial_runtime_behavior",
+        "defense_success",
+        "manual_review_completion",
+        "reviewer_agreement"
+      ],
+      "output": "./planned-output/audit-pack-draft.md"
+    },
+    "connector-secret-negative-control": {
+      "case_id": "grclaw-audit-pack-first-party.p3.connector-secret-negative-control",
+      "contract_ref": "contracts/grclaw-audit-pack-first-party-connector-secret-negative-control.yaml",
+      "evidence_level": "source_mix_controlled_rp2_rp3_fixture",
+      "excluded_claims": [
+        "runtime_drift",
+        "runtime_drift_claim",
+        "repeat_stability",
+        "prevalence",
+        "source_mix_completion",
+        "full_product_behavior",
+        "public_network_behavior",
+        "commercial_runtime_behavior",
+        "defense_success",
+        "manual_review_completion",
+        "reviewer_agreement"
+      ],
+      "output": "./planned-output/connector-secret-negative-control.md"
+    },
+    "control-evidence-inventory": {
+      "case_id": "grclaw-audit-pack-first-party.p1.control-evidence-inventory",
+      "contract_ref": "contracts/grclaw-audit-pack-first-party-control-evidence-inventory.yaml",
+      "evidence_level": "source_mix_controlled_rp2_rp3_fixture",
+      "excluded_claims": [
+        "runtime_drift",
+        "runtime_drift_claim",
+        "repeat_stability",
+        "prevalence",
+        "source_mix_completion",
+        "full_product_behavior",
+        "public_network_behavior",
+        "commercial_runtime_behavior",
+        "defense_success",
+        "manual_review_completion",
+        "reviewer_agreement"
+      ],
+      "output": "./planned-output/control-evidence-inventory.md"
+    }
+  }
+}

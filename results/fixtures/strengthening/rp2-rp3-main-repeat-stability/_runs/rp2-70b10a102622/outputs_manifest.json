@@ -1,0 +1,15 @@
+{
+  "adapter_outcome": "completed",
+  "generated_outputs": [
+    {
+      "path": "./reports/audit/evidence_catalog.json",
+      "size": 1287
+    },
+    {
+      "path": "./reports/audit/findings.md",
+      "size": 1029
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp2-70b10a102622"
+}

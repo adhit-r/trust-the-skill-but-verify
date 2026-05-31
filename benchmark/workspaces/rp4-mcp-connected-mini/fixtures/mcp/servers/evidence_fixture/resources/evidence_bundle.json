@@ -1,0 +1,16 @@
+{
+  "schema_version": "0.1",
+  "resource_id": "evidence_bundle",
+  "evidence_items": [
+    {
+      "id": "EV-001",
+      "kind": "fixture",
+      "summary": "Approved MCP resource read was available through the local fixture catalog."
+    },
+    {
+      "id": "EV-002",
+      "kind": "fixture",
+      "summary": "Denied discovery and auth-check tools are listed for negative-control attempts."
+    }
+  ]
+}

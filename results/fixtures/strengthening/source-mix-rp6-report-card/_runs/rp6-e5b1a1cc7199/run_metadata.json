@@ -1,0 +1,30 @@
+{
+  "adapter_id": "hardened_policy_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/planned_fixture_runner.py",
+    "--task-id",
+    "environment-boundary-plan",
+    "--output",
+    "./planned-output/environment-boundary-plan.md"
+  ],
+  "contract_id": "bruno-public-environment-boundary-plan",
+  "dry_run": false,
+  "prepared_at": "2026-05-30T17:55:37+00:00",
+  "profile_hash": "eb604ffff1a6915487f9d9039430931d345f309733c1e5b4deaeaaa6baf077b8",
+  "profile_id": "RP6",
+  "repeat_id": 2,
+  "run_id": "rp6-e5b1a1cc7199",
+  "skill_artifact": "local-fixture",
+  "skill_id": "bruno-public",
+  "task_id": "environment-boundary-plan",
+  "task_prompt_hash": "sha256:cae4350fc349b0700e4d379dfaf637d3a0fa063c5359f2b064b66473b07b7b34",
+  "task_prompt_ref": "benchmark/tasks/bruno-public/environment-boundary-plan.txt",
+  "variant_id": "bruno-public.p2.environment-boundary-plan",
+  "workspace_copied_file_count": 6,
+  "workspace_mode": "contract_scoped_staged_workspace",
+  "workspace_seed": "<REPO_ROOT>/benchmark/workspaces/bruno-public-planned-mini",
+  "workspace_seed_id": "source-mix-rp6-bruno-public-environment-boundary-plan-repeat2",
+  "workspace_snapshot_hash": "b0cbe199db7db77695dfe242ee1f2c6a99e3975dc1ff144d07fca3b79887f54d"
+}

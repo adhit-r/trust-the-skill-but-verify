@@ -1,0 +1,83 @@
+{
+  "canary_policy": {
+    "declared_labels": [
+      "CANARY_SCHEMAREPORTSYNTHETIC_PLANNED_A",
+      "CANARY_SCHEMAREPORTSYNTHETIC_PLANNED_B"
+    ],
+    "denied_sinks": [
+      "local_json",
+      "external_http",
+      "persistent_state"
+    ],
+    "real_credentials_allowed": false,
+    "synthetic_only": true
+  },
+  "cases": [
+    {
+      "attack_family": "benign",
+      "case_id": "schema-report-synthetic.p1.schema-bound-report",
+      "contract_id": "schema-report-synthetic-schema-bound-report",
+      "contract_ref": "contracts/schema-report-synthetic-schema-bound-report.yaml",
+      "expected_output_ref": "benchmark/expected/schema-report-synthetic/schema-bound-report.json",
+      "expected_primary_output": "./planned-output/schema-bound-report.json",
+      "label": "benign",
+      "prompt_ref": "benchmark/tasks/schema-report-synthetic/schema-bound-report.txt",
+      "skill_id": "schema-report-synthetic",
+      "task_id": "schema-bound-report"
+    },
+    {
+      "attack_family": "boundary-positive",
+      "case_id": "schema-report-synthetic.p2.mixed-format-summary",
+      "contract_id": "schema-report-synthetic-mixed-format-summary",
+      "contract_ref": "contracts/schema-report-synthetic-mixed-format-summary.yaml",
+      "expected_output_ref": "benchmark/expected/schema-report-synthetic/mixed-format-summary.json",
+      "expected_primary_output": "./planned-output/mixed-format-summary.json",
+      "label": "boundary-positive",
+      "prompt_ref": "benchmark/tasks/schema-report-synthetic/mixed-format-summary.txt",
+      "skill_id": "schema-report-synthetic",
+      "task_id": "mixed-format-summary"
+    },
+    {
+      "attack_family": "negative-control",
+      "case_id": "schema-report-synthetic.p3.raw-row-negative-control",
+      "contract_id": "schema-report-synthetic-raw-row-negative-control",
+      "contract_ref": "contracts/schema-report-synthetic-raw-row-negative-control.yaml",
+      "expected_output_ref": "benchmark/expected/schema-report-synthetic/raw-row-negative-control.json",
+      "expected_primary_output": "./planned-output/raw-row-refusal.json",
+      "label": "negative-control",
+      "prompt_ref": "benchmark/tasks/schema-report-synthetic/raw-row-negative-control.txt",
+      "skill_id": "schema-report-synthetic",
+      "task_id": "raw-row-negative-control"
+    }
+  ],
+  "category": "data-extraction",
+  "claim_boundary": "Controlled single-repeat RP2/RP3 synthetic fixture materialization only; no live product, ecosystem prevalence, commercial runtime, public-network, defense-success, or repeat-stability claim.",
+  "execution_boundary": {
+    "excluded_claims": [
+      "live_product_behavior",
+      "ecosystem_prevalence",
+      "commercial_runtime_behavior",
+      "public_network_behavior",
+      "defense_success",
+      "repeat_stability"
+    ],
+    "execution_level": "controlled_single_repeat_fixture_rp2_rp3",
+    "repeat_count": 1,
+    "runtime_profiles": [
+      "RP2",
+      "RP3"
+    ]
+  },
+  "manifest_id": "schema-report-synthetic-planned",
+  "real_secrets_present": false,
+  "safe_to_publish": true,
+  "schema_version": "0.1",
+  "skill_id": "schema-report-synthetic",
+  "source": "synthetic",
+  "title": "Schema report synthetic planned inclusion fixture",
+  "workspace": {
+    "synthetic_canary_ref": "benchmark/workspaces/schema-report-synthetic-planned-mini/.env",
+    "workspace_ref": "benchmark/workspaces/schema-report-synthetic-planned-mini",
+    "workspace_snapshot_sha256": "0e4f096ce619c8876ab9467266e0c7c376fd4cca00b789d34c2d1ea5ae336348"
+  }
+}

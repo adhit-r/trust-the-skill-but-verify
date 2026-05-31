@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1160" height="560" viewBox="0 0 1160 560" role="img" aria-labelledby="title desc">
+  <title id="title">Runtime profile matrix</title>
+  <desc id="desc">Runtime profile matrix showing which profiles are current executable evidence, simulator-backed, fixture-only, or report-card pilot evidence across security surfaces.</desc>
+  <defs>
+    <style>
+      .title { font: 700 24px Arial, sans-serif; fill: #111827; }
+      .head { font: 700 13px Arial, sans-serif; fill: #111827; }
+      .cell { font: 12px Arial, sans-serif; fill: #374151; }
+      .table { fill: #ffffff; stroke: #d1d5db; stroke-width: 1; }
+      .header { fill: #f3f4f6; stroke: #d1d5db; stroke-width: 1; }
+      .exec { fill: #dcfce7; stroke: #86efac; stroke-width: 1; }
+      .bounded { fill: #ffedd5; stroke: #fdba74; stroke-width: 1; }
+      .limited { fill: #dbeafe; stroke: #93c5fd; stroke-width: 1; }
+      .none { fill: #f3f4f6; stroke: #d1d5db; stroke-width: 1; }
+    </style>
+  </defs>
+  <rect x="0" y="0" width="1160" height="560" fill="#ffffff"/>
+  <text x="42" y="46" class="title">Runtime Profile Matrix</text>
+  <text x="42" y="72" class="cell">Paper-safe labels: executable, simulator-backed, fixture-only, report-card pilot, or unsupported.</text>
+
+  <rect x="42" y="106" width="1076" height="42" class="header"/>
+  <text x="60" y="132" class="head">Profile</text>
+  <text x="178" y="132" class="head">Evidence role</text>
+  <text x="374" y="132" class="head">Filesystem</text>
+  <text x="510" y="132" class="head">Shell</text>
+  <text x="620" y="132" class="head">Network</text>
+  <text x="742" y="132" class="head">Activation</text>
+  <text x="874" y="132" class="head">Tool/MCP</text>
+  <text x="996" y="132" class="head">Persistence</text>
+
+  <rect x="42" y="148" width="1076" height="54" class="table"/>
+  <text x="60" y="180" class="head">RP1</text>
+  <text x="178" y="180" class="cell">Simulator-backed hosted contrast</text>
+  <rect x="360" y="160" width="102" height="30" class="limited"/><text x="380" y="180" class="cell">simulated</text>
+  <rect x="496" y="160" width="74" height="30" class="none"/><text x="506" y="180" class="cell">none</text>
+  <rect x="608" y="160" width="86" height="30" class="limited"/><text x="624" y="180" class="cell">sim</text>
+  <rect x="730" y="160" width="96" height="30" class="limited"/><text x="744" y="180" class="cell">sim</text>
+  <rect x="858" y="160" width="96" height="30" class="none"/><text x="872" y="180" class="cell">unsupported</text>
+  <rect x="986" y="160" width="96" height="30" class="limited"/><text x="1000" y="180" class="cell">sim</text>
+
+  <rect x="42" y="202" width="1076" height="54" class="table"/>
+  <text x="60" y="234" class="head">RP2</text>
+  <text x="178" y="234" class="cell">Current local controlled evidence</text>
+  <rect x="360" y="214" width="102" height="30" class="exec"/><text x="382" y="234" class="cell">exec</text>
+  <rect x="496" y="214" width="74" height="30" class="exec"/><text x="510" y="234" class="cell">exec</text>
+  <rect x="608" y="214" width="86" height="30" class="exec"/><text x="626" y="234" class="cell">exec</text>
+  <rect x="730" y="214" width="96" height="30" class="bounded"/><text x="744" y="234" class="cell">fixture</text>
+  <rect x="858" y="214" width="96" height="30" class="bounded"/><text x="872" y="234" class="cell">fixture</text>
+  <rect x="986" y="214" width="96" height="30" class="bounded"/><text x="1000" y="234" class="cell">fixture</text>
+
+  <rect x="42" y="256" width="1076" height="54" class="table"/>
+  <text x="60" y="288" class="head">RP3</text>
+  <text x="178" y="288" class="cell">Current Docker-backed evidence</text>
+  <rect x="360" y="268" width="102" height="30" class="exec"/><text x="382" y="288" class="cell">exec</text>
+  <rect x="496" y="268" width="74" height="30" class="exec"/><text x="510" y="288" class="cell">exec</text>
+  <rect x="608" y="268" width="86" height="30" class="exec"/><text x="626" y="288" class="cell">exec</text>
+  <rect x="730" y="268" width="96" height="30" class="bounded"/><text x="744" y="288" class="cell">fixture</text>
+  <rect x="858" y="268" width="96" height="30" class="bounded"/><text x="872" y="288" class="cell">fixture</text>
+  <rect x="986" y="268" width="96" height="30" class="bounded"/><text x="1000" y="288" class="cell">fixture</text>
+
+  <rect x="42" y="310" width="1076" height="54" class="table"/>
+  <text x="60" y="342" class="head">RP4</text>
+  <text x="178" y="342" class="cell">Bounded local MCP fixture</text>
+  <rect x="360" y="322" width="102" height="30" class="none"/><text x="382" y="342" class="cell">none</text>
+  <rect x="496" y="322" width="74" height="30" class="none"/><text x="506" y="342" class="cell">none</text>
+  <rect x="608" y="322" width="86" height="30" class="none"/><text x="624" y="342" class="cell">none</text>
+  <rect x="730" y="322" width="96" height="30" class="bounded"/><text x="744" y="342" class="cell">fixture</text>
+  <rect x="858" y="322" width="96" height="30" class="bounded"/><text x="872" y="342" class="cell">fixture</text>
+  <rect x="986" y="322" width="96" height="30" class="bounded"/><text x="1000" y="342" class="cell">fixture</text>
+
+  <rect x="42" y="364" width="1076" height="54" class="table"/>
+  <text x="60" y="396" class="head">RP5</text>
+  <text x="178" y="396" class="cell">Plugin-style fixture evidence</text>
+  <rect x="360" y="376" width="102" height="30" class="bounded"/><text x="382" y="396" class="cell">fixture</text>
+  <rect x="496" y="376" width="74" height="30" class="none"/><text x="506" y="396" class="cell">none</text>
+  <rect x="608" y="376" width="86" height="30" class="none"/><text x="624" y="396" class="cell">none</text>
+  <rect x="730" y="376" width="96" height="30" class="bounded"/><text x="744" y="396" class="cell">fixture</text>
+  <rect x="858" y="376" width="96" height="30" class="bounded"/><text x="872" y="396" class="cell">fixture</text>
+  <rect x="986" y="376" width="96" height="30" class="bounded"/><text x="1000" y="396" class="cell">fixture</text>
+
+  <rect x="42" y="418" width="1076" height="54" class="table"/>
+  <text x="60" y="450" class="head">RP6</text>
+  <text x="178" y="450" class="cell">Policy-hardened report-card pilot</text>
+  <rect x="360" y="430" width="102" height="30" class="exec"/><text x="382" y="450" class="cell">exec</text>
+  <rect x="496" y="430" width="74" height="30" class="exec"/><text x="510" y="450" class="cell">exec</text>
+  <rect x="608" y="430" width="86" height="30" class="exec"/><text x="626" y="450" class="cell">exec</text>
+  <rect x="730" y="430" width="96" height="30" class="bounded"/><text x="744" y="450" class="cell">bounded</text>
+  <rect x="858" y="430" width="96" height="30" class="bounded"/><text x="872" y="450" class="cell">bounded</text>
+  <rect x="986" y="430" width="96" height="30" class="bounded"/><text x="1000" y="450" class="cell">bounded</text>
+
+  <text x="42" y="512" class="cell">Legend: exec = executable controlled evidence; sim = simulator-backed; fixture/bounded = not commercial-host behavior; none/unsupported = not evidence of safe behavior.</text>
+</svg>

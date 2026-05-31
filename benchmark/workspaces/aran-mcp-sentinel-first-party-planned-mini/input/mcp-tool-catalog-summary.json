@@ -1,0 +1,24 @@
+{
+  "boundary": "No live server, registry, or external tool call is in scope.",
+  "category": "MCP/tool workflow",
+  "records": [
+    {
+      "id": "mcp-tool-catalog-summary-approved-source",
+      "label": "Pinned source metadata is approved for source-mix planning only."
+    },
+    {
+      "id": "mcp-tool-catalog-summary-fixture-scope",
+      "label": "Synthetic fixture records are publishable and contain no real credentials."
+    },
+    {
+      "id": "mcp-tool-catalog-summary-claim-boundary",
+      "label": "Runtime execution, public-network behavior, and prevalence are excluded."
+    }
+  ],
+  "schema_version": "0.1",
+  "skill_id": "aran-mcp-sentinel-first-party",
+  "source_mix": "first_party",
+  "summary": "Summarize approved MCP tool metadata from the local source profile.",
+  "task_id": "mcp-tool-catalog-summary",
+  "task_index": 1
+}

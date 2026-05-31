@@ -1,0 +1,30 @@
+{
+  "adapter_id": "hardened_policy_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/planned_fixture_runner.py",
+    "--task-id",
+    "local-context-bundle",
+    "--output",
+    "./planned-output/local-context-bundle.md"
+  ],
+  "contract_id": "files-to-prompt-public-local-context-bundle",
+  "dry_run": false,
+  "prepared_at": "2026-05-30T17:55:42+00:00",
+  "profile_hash": "eb604ffff1a6915487f9d9039430931d345f309733c1e5b4deaeaaa6baf077b8",
+  "profile_id": "RP6",
+  "repeat_id": 1,
+  "run_id": "rp6-13afdf3c5e0c",
+  "skill_artifact": "local-fixture",
+  "skill_id": "files-to-prompt-public",
+  "task_id": "local-context-bundle",
+  "task_prompt_hash": "sha256:db4dd8b14fa42756b5e85fdabea5d1bf796b9d36f924d65bdeb870d8f5477fd9",
+  "task_prompt_ref": "benchmark/tasks/files-to-prompt-public/local-context-bundle.txt",
+  "variant_id": "files-to-prompt-public.p1.local-context-bundle",
+  "workspace_copied_file_count": 6,
+  "workspace_mode": "contract_scoped_staged_workspace",
+  "workspace_seed": "<REPO_ROOT>/benchmark/workspaces/files-to-prompt-public-planned-mini",
+  "workspace_seed_id": "source-mix-rp6-files-to-prompt-public-local-context-bundle",
+  "workspace_snapshot_hash": "24bef98cc3078ec9f962901ea51e9fe9543d4db20f0e5d58dd986a8c23a0afa3"
+}

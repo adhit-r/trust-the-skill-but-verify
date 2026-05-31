@@ -1,0 +1,22 @@
+{
+  "event_count": 13,
+  "event_types": [
+    "approval.decision",
+    "approval.prompt",
+    "approval.required",
+    "capability.snapshot",
+    "cleanup.observe",
+    "filesystem.write",
+    "network.connect",
+    "network.send",
+    "output.generated",
+    "process.exit",
+    "run.end",
+    "run.start",
+    "shell.exec"
+  ],
+  "run_id": "rp6-6f97fea5c112",
+  "schema_version": "0.1",
+  "trace_path": "<REPO_ROOT>/results/fixtures/rp6-policy-hardened/_probe_runs/rp6-6f97fea5c112/trace.jsonl",
+  "trace_valid": true
+}

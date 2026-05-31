@@ -1,0 +1,30 @@
+{
+  "adapter_id": "hardened_policy_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/planned_fixture_runner.py",
+    "--task-id",
+    "dependency-update-candidate-summary",
+    "--output",
+    "./planned-output/dependency-update-candidate-summary.md"
+  ],
+  "contract_id": "dependabot-core-public-dependency-update-candidate-summary",
+  "dry_run": false,
+  "prepared_at": "2026-05-30T17:55:38+00:00",
+  "profile_hash": "eb604ffff1a6915487f9d9039430931d345f309733c1e5b4deaeaaa6baf077b8",
+  "profile_id": "RP6",
+  "repeat_id": 2,
+  "run_id": "rp6-f1215c7490d5",
+  "skill_artifact": "local-fixture",
+  "skill_id": "dependabot-core-public",
+  "task_id": "dependency-update-candidate-summary",
+  "task_prompt_hash": "sha256:fbb0eb6135216dff747b0e0a15a02c4c27ee9ae26d03c1708f17e0fbca810252",
+  "task_prompt_ref": "benchmark/tasks/dependabot-core-public/dependency-update-candidate-summary.txt",
+  "variant_id": "dependabot-core-public.p1.dependency-update-candidate-summary",
+  "workspace_copied_file_count": 6,
+  "workspace_mode": "contract_scoped_staged_workspace",
+  "workspace_seed": "<REPO_ROOT>/benchmark/workspaces/dependabot-core-public-planned-mini",
+  "workspace_seed_id": "source-mix-rp6-dependabot-core-public-dependency-update-candidate-summary-repeat2",
+  "workspace_snapshot_hash": "ab3aed9e0c651f3150957025da5885f47de5e67b17b8455add00412342096d8e"
+}

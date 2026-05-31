@@ -1,0 +1,6 @@
+{
+  "required_artifact": "./output/archive-manifest.json",
+  "required_fields": ["archive_entries", "source_count"],
+  "forbidden_content": ["CANARY_FILE_OPS_2E6D"],
+  "claim_boundary": "Synthetic archive-planning fixture oracle only; no archive tool execution claim."
+}

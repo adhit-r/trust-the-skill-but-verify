@@ -1,7 +1,8 @@
 # Artifact README Draft
 
 This is the paper-artifact README draft for the current MVP repository state.
-It is intentionally narrower than a final public artifact package.
+It is intentionally narrower than a final public artifact package and remains a
+local machine-only release path.
 
 ## Install
 
@@ -18,6 +19,7 @@ The existing reproduction scripts also accept `PYTHON_BIN`:
 ```bash
 PYTHON_BIN=/tmp/skilldiff-venv/bin/python bash experiments/repo-audit-mvp/reproduce_repo_audit_mvp.sh
 PYTHON_BIN=/tmp/skilldiff-venv/bin/python bash experiments/network-egress-mvp/reproduce_network_egress_mvp.sh
+PYTHON_BIN=/tmp/skilldiff-venv/bin/python bash experiments/mcp-tool-workflow-mvp/reproduce_mcp_tool_workflow_mvp.sh
 PYTHON_BIN=/tmp/skilldiff-venv/bin/python bash experiments/audit-lens-mvp/reproduce_audit_lens_mvp.sh
 PYTHON_BIN=/tmp/skilldiff-venv/bin/python bash experiments/docs-forge-mvp/reproduce_docs_forge_mvp.sh
 PYTHON_BIN=/tmp/skilldiff-venv/bin/python bash experiments/first-party-source-provenance/reproduce_first_party_source_provenance.sh
@@ -112,6 +114,109 @@ DOCS_FORGE_SOURCE_ROOT=/path/to/docs-forge \
   bash experiments/docs-forge-live-npx-adversarial-package-acquisition/reproduce_docs_forge_live_npx_adversarial_package_acquisition.sh
 ```
 
+The bounded docs-forge RP3 Node adversarial package-name npx observer also
+requires the pinned docs-forge source checkout and RP3 Node image:
+
+```bash
+DOCS_FORGE_SOURCE_ROOT=/path/to/docs-forge \
+  SKILLDIFF_RP3_NODE_IMAGE_REF=sha256:2ad42c75739973d9bebb233eed1e6e6056c32655a621dd4246d620aba0cef955 \
+  PYTHON_BIN=/tmp/skilldiff-venv/bin/python \
+  bash experiments/docs-forge-live-npx-rp3-node-adversarial-package-acquisition/reproduce_docs_forge_live_npx_rp3_node_adversarial_package_acquisition.sh
+```
+
+The bounded docs-forge adversarial npx runtime-pair scaffold also requires the
+pinned docs-forge source checkout and RP3 Node image:
+
+```bash
+DOCS_FORGE_SOURCE_ROOT=/path/to/docs-forge \
+  SKILLDIFF_RP3_NODE_IMAGE_REF=sha256:2ad42c75739973d9bebb233eed1e6e6056c32655a621dd4246d620aba0cef955 \
+  PYTHON_BIN=/tmp/skilldiff-venv/bin/python \
+  bash experiments/docs-forge-live-npx-adversarial-package-acquisition-runtime-pair/reproduce_docs_forge_live_npx_adversarial_package_acquisition_runtime_pair.sh
+```
+
+The bounded ripgrep public live local-binary fixture is fully local and uses
+the host `rg` binary over a synthetic allowlisted workspace only:
+
+```bash
+PYTHON_BIN=/tmp/skilldiff-venv/bin/python \
+  bash experiments/ripgrep-public-live-local-binary/reproduce_ripgrep_public_live_local_binary.sh
+```
+
+The bounded RP4 MCP-connected fixture is local and synthetic. It does not
+require an external MCP server, connector credentials, Docker, or public
+network access:
+
+```bash
+PYTHON_BIN=/tmp/skilldiff-venv/bin/python \
+  bash experiments/rp4-mcp-connected-mvp/reproduce_rp4_mcp_connected_mvp.sh
+```
+
+The RP6 current-case report card is also local and synthetic. It reruns the
+existing fourteen case variants under the policy-hardened adapter and keeps the
+results outside RP2/RP3 MVP aggregate counts. It also runs one supplemental
+network-denial policy probe inside the fixture results directory:
+
+```bash
+PYTHON_BIN=/tmp/skilldiff-venv/bin/python \
+  bash experiments/rp6-policy-hardened-mvp/reproduce_rp6_policy_hardened_mvp.sh
+```
+
+The strengthening evidence package builds static and derived baseline artifacts
+from existing results, runs generated RP6 component-ablation profiles, then
+runs RP6 repeat IDs 2 and 3 to produce a bounded three-repeat deterministic
+stability check:
+
+```bash
+PYTHON_BIN=/tmp/skilldiff-venv/bin/python \
+  bash experiments/strengthening-evidence/reproduce_strengthening_evidence.sh
+```
+
+The source-mix RP6 repeat-stability package reruns the first-party/public
+source-mix RP6 report-card fixture slice across repeat IDs 1, 2, and 3, then
+rebuilds the aggregate stability report:
+
+```bash
+PYTHON_BIN=/tmp/skilldiff-venv/bin/python \
+  bash experiments/source-mix-rp6-repeat-stability/reproduce_source_mix_rp6_repeat_stability.sh
+```
+
+To rebuild the main paper-facing machine-only tables and derived artifacts in
+dependency order from the repository root, use:
+
+```bash
+PYTHON_BIN=/tmp/skilldiff-venv/bin/python bash scripts/reproduce_paper_tables.sh
+```
+
+The same path is available through `make`:
+
+```bash
+PYTHON_BIN=/tmp/skilldiff-venv/bin/python make reproduce-paper-tables
+```
+
+For non-destructive local validation, stage the rebuilt artifacts under a clean
+temporary repo-local directory:
+
+```bash
+PYTHON_BIN=/tmp/skilldiff-venv/bin/python \
+  ARTIFACT_OUTPUT_ROOT=tmp/artifact-release-validation \
+  bash scripts/reproduce_paper_tables.sh
+```
+
+To export the conservative local release bundle and validate it:
+
+```bash
+PYTHON_BIN=/tmp/skilldiff-venv/bin/python bash scripts/reproduce_paper_tables.sh
+python3 tools/build_artifact_release_bundle.py --replace --output-dir tmp/artifact-release-bundle
+python3 tools/validate_artifact_release_bundle.py --bundle-dir tmp/artifact-release-bundle
+```
+
+Or, using the Makefile wrapper:
+
+```bash
+PYTHON_BIN=/tmp/skilldiff-venv/bin/python make artifact-release-bundle
+PYTHON_BIN=/tmp/skilldiff-venv/bin/python make validate-artifact-release-bundle
+```
+
 ## Expected Outputs
 
 | Script | Primary Result |
@@ -129,10 +234,25 @@ DOCS_FORGE_SOURCE_ROOT=/path/to/docs-forge \
 | `experiments/docs-forge-live-npx-rp3-node-observer/reproduce_docs_forge_live_npx_rp3_node_observer.sh` | `results/live/docs-forge-installer/npx_rp3_node_observer_report.md` |
 | `experiments/docs-forge-live-npx-runtime-pair/reproduce_docs_forge_live_npx_runtime_pair.sh` | `results/live/docs-forge-installer/npx_runtime_pair_report.md` |
 | `experiments/docs-forge-live-npx-adversarial-package-acquisition/reproduce_docs_forge_live_npx_adversarial_package_acquisition.sh` | `results/live/docs-forge-installer/npx_adversarial_package_acquisition_report.md` |
+| `experiments/docs-forge-live-npx-rp3-node-adversarial-package-acquisition/reproduce_docs_forge_live_npx_rp3_node_adversarial_package_acquisition.sh` | `results/live/docs-forge-installer/npx_rp3_node_adversarial_package_acquisition_report.md` |
+| `experiments/docs-forge-live-npx-adversarial-package-acquisition-runtime-pair/reproduce_docs_forge_live_npx_adversarial_package_acquisition_runtime_pair.sh` | `results/live/docs-forge-installer/npx_adversarial_package_acquisition_runtime_pair_report.md` |
+| `experiments/ripgrep-public-live-local-binary/reproduce_ripgrep_public_live_local_binary.sh` | `results/live/ripgrep-public-local-binary/live_local_binary_search_report.md` |
+| `experiments/rp4-mcp-connected-mvp/reproduce_rp4_mcp_connected_mvp.sh` | `results/fixtures/rp4-mcp-connected/drift_report.md` |
+| `experiments/rp6-policy-hardened-mvp/reproduce_rp6_policy_hardened_mvp.sh` | `results/fixtures/rp6-policy-hardened/report_card.json` plus `results/fixtures/rp6-policy-hardened/network-egress/network_policy_probe_rp6_contract_findings.json` |
+| `experiments/strengthening-evidence/reproduce_strengthening_evidence.sh` | `results/fixtures/strengthening/index.json` plus `results/fixtures/rp6-policy-hardened/ablations/component_report_card.json` and `results/fixtures/rp6-policy-hardened/ablations/minimal_report_card.json` |
+| `experiments/source-mix-rp6-repeat-stability/reproduce_source_mix_rp6_repeat_stability.sh` | `results/fixtures/strengthening/source-mix-rp6-repeat-stability/repeat_stability.json` |
 
 ## Safety Notes
 
 - The repository uses synthetic canaries only.
+- The artifact-release bundle is a clean local path only. It is not a public
+  network release, an external review packet, or a completed human-review
+  artifact.
+- The artifact-release bundle includes release manifests, checksums,
+  paper-facing derived artifacts, the claim ledger, method boundaries, and
+  aggregate repeat-stability reports only. It excludes raw scratch, raw trace
+  directories, per-run trace directories, secrets, auth state, cookies, and
+  completed human-review data.
 - Benchmark network tests use reserved fake-sink destinations or Docker network
   denial; they must not contact the public internet.
 - Raw payload bodies, raw query strings, sensitive headers, and real secrets are
@@ -167,6 +287,11 @@ DOCS_FORGE_SOURCE_ROOT=/path/to/docs-forge \
   bounded local-tarball `npx --offline` help execution from the locally
   materialized docs-forge package. It does not execute package-name `npx`, npm
   registry acquisition, install behavior, or docs generation.
+- `results/live/ripgrep-public-local-binary/live_local_binary_search_result.json`
+  records local real ripgrep binary execution over a copied synthetic
+  allowlisted workspace (`input/` and `docs/`) with one negative-control
+  command. It is excluded from RP2/RP3 MVP runtime-drift counts and carries no
+  public-network, commercial-runtime, or defense-success claim.
 - `results/live/docs-forge-installer/npx_rp3_node_observer_result.json`
   records one containerized local-tarball `npx --offline` help execution under
   Docker `--network=none` and `--read-only` constraints. It does not execute
@@ -181,18 +306,42 @@ DOCS_FORGE_SOURCE_ROOT=/path/to/docs-forge \
   records one bounded package-name `npx docs-forge --help` probe against a
   controlled loopback registry. It observes fail-closed behavior and remains
   excluded from MVP runtime-drift counts.
+- `results/live/docs-forge-installer/npx_rp3_node_adversarial_package_acquisition_result.json`
+  records one bounded package-name `npx docs-forge --help` probe against a
+  controlled nonpublic registry target inside a Node-capable RP3-derived
+  container. It observes fail-closed behavior under Docker network denial and
+  read-only root filesystem constraints, and remains excluded from MVP
+  runtime-drift counts.
+- `results/live/docs-forge-installer/npx_adversarial_package_acquisition_runtime_pair_result.json`
+  records a bounded comparison between the host Node synthetic-home
+  adversarial package-name npx observer and the RP3 Node container adversarial
+  observer. Required pair checks pass, exact nonzero exit-code equality is
+  informational, and the result remains excluded from MVP runtime-drift counts.
 
 ## Known Limitations
 
+- The release bundle is conservative and local-only. It does not by itself
+  claim external review, public release readiness, or completed human review.
 - RP2 read provenance is Python wrapper-level.
 - Failed Python write-attempt provenance is wrapper-level evidence for
   controlled Python commands.
 - RP3 file-read provenance is container-strace MVP coverage for supported
   `open`, `openat`, and `openat2` events.
 - The current artifact measures approval, MCP-style tool-call, and persistence
-  surfaces only through a controlled semantic-event fixture. It does not
-  measure live MCP server behavior, connector auth, or complete persistence
+  surfaces through controlled semantic-event fixtures, including the bounded
+  RP4 local MCP fixture. It does not measure external MCP server behavior,
+  connector auth, commercial MCP-client behavior, or complete persistence
   behavior.
+- RP6 is a current-case mitigation report-card pilot with wrapper-level
+  controlled Python enforcement and controlled semantic-fixture tool
+  normalization. Its supplemental network policy probe exercises blocked
+  fake-sink connect/send events, but RP6 remains not syscall-complete hardening,
+  not RP6-vs-RP2/RP3 runtime-drift evidence, and not a defense-success claim.
+- Strengthening artifacts add a contract-derived least-privilege budget, coarse
+  mitigation ladder, minimal RP6 contrast, bounded RP6 component-ablation
+  fixture evidence across six controls, and bounded deterministic RP6 repeat
+  stability across repeat IDs 1, 2, and 3. They do not prove product-scale
+  defense causality or statistical/model-mediated repeat stability.
 - docs-forge P1/P2 runtime-drift evidence is represented by a controlled Python
   docs-forge-style fixture. The live-installer evidence covers dry-run and
   project-local installer-only execution; it is not docs generation, user/global
@@ -226,6 +375,14 @@ DOCS_FORGE_SOURCE_ROOT=/path/to/docs-forge \
   registry probe. It is not successful package acquisition, public-registry
   evidence, package-install behavior, lifecycle-script execution,
   packet-capture evidence, docs generation, or runtime-drift evidence.
+- docs-forge RP3 Node adversarial package-name npx evidence is a fail-closed
+  controlled nonpublic registry probe inside a Docker network-denied container.
+  It is not public-registry evidence, packet-capture evidence, successful
+  package acquisition, package-install behavior, lifecycle-script execution,
+  docs generation, or runtime-drift evidence.
+- docs-forge adversarial npx runtime-pair evidence compares fail-closed safety
+  invariants only. It is not public npm acquisition evidence, packet-capture
+  coverage, successful install behavior, or an added runtime-drift finding.
 
 ## Release Checklist
 
@@ -235,5 +392,7 @@ DOCS_FORGE_SOURCE_ROOT=/path/to/docs-forge \
 - [x] Preserve synthetic canary labels for reproducible detection.
 - [x] Maintain a validated paper claim ledger.
 - [x] Complete published pinned-source hash lists for first-party seed repos.
-- [ ] Add a top-level `SECURITY.md`.
-- [ ] Add final license and citation metadata.
+- [x] Add a top-level `SECURITY.md`.
+- [ ] Finalize license and citation metadata.
+  Current `CITATION.cff` exists, but release URL and license fields remain
+  placeholder/incomplete until the artifact bundle is finalized.

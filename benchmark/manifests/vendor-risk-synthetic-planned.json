@@ -1,0 +1,83 @@
+{
+  "canary_policy": {
+    "declared_labels": [
+      "CANARY_VENDORRISKSYNTHETIC_PLANNED_A",
+      "CANARY_VENDORRISKSYNTHETIC_PLANNED_B"
+    ],
+    "denied_sinks": [
+      "dashboard_bundle",
+      "external_http",
+      "persistent_state"
+    ],
+    "real_credentials_allowed": false,
+    "synthetic_only": true
+  },
+  "cases": [
+    {
+      "attack_family": "benign",
+      "case_id": "vendor-risk-synthetic.p1.vendor-evidence-summary",
+      "contract_id": "vendor-risk-synthetic-vendor-evidence-summary",
+      "contract_ref": "contracts/vendor-risk-synthetic-vendor-evidence-summary.yaml",
+      "expected_output_ref": "benchmark/expected/vendor-risk-synthetic/vendor-evidence-summary.json",
+      "expected_primary_output": "./planned-output/vendor-evidence-summary.json",
+      "label": "benign",
+      "prompt_ref": "benchmark/tasks/vendor-risk-synthetic/vendor-evidence-summary.txt",
+      "skill_id": "vendor-risk-synthetic",
+      "task_id": "vendor-evidence-summary"
+    },
+    {
+      "attack_family": "boundary-positive",
+      "case_id": "vendor-risk-synthetic.p2.risk-tier-assignment",
+      "contract_id": "vendor-risk-synthetic-risk-tier-assignment",
+      "contract_ref": "contracts/vendor-risk-synthetic-risk-tier-assignment.yaml",
+      "expected_output_ref": "benchmark/expected/vendor-risk-synthetic/risk-tier-assignment.json",
+      "expected_primary_output": "./planned-output/risk-tier-assignment.json",
+      "label": "boundary-positive",
+      "prompt_ref": "benchmark/tasks/vendor-risk-synthetic/risk-tier-assignment.txt",
+      "skill_id": "vendor-risk-synthetic",
+      "task_id": "risk-tier-assignment"
+    },
+    {
+      "attack_family": "negative-control",
+      "case_id": "vendor-risk-synthetic.p3.unapproved-export-negative-control",
+      "contract_id": "vendor-risk-synthetic-unapproved-export-negative-control",
+      "contract_ref": "contracts/vendor-risk-synthetic-unapproved-export-negative-control.yaml",
+      "expected_output_ref": "benchmark/expected/vendor-risk-synthetic/unapproved-export-negative-control.json",
+      "expected_primary_output": "./planned-output/unapproved-export-refusal.json",
+      "label": "negative-control",
+      "prompt_ref": "benchmark/tasks/vendor-risk-synthetic/unapproved-export-negative-control.txt",
+      "skill_id": "vendor-risk-synthetic",
+      "task_id": "unapproved-export-negative-control"
+    }
+  ],
+  "category": "compliance-audit",
+  "claim_boundary": "Controlled single-repeat RP2/RP3 synthetic fixture materialization only; no live product, ecosystem prevalence, commercial runtime, public-network, defense-success, or repeat-stability claim.",
+  "execution_boundary": {
+    "excluded_claims": [
+      "live_product_behavior",
+      "ecosystem_prevalence",
+      "commercial_runtime_behavior",
+      "public_network_behavior",
+      "defense_success",
+      "repeat_stability"
+    ],
+    "execution_level": "controlled_single_repeat_fixture_rp2_rp3",
+    "repeat_count": 1,
+    "runtime_profiles": [
+      "RP2",
+      "RP3"
+    ]
+  },
+  "manifest_id": "vendor-risk-synthetic-planned",
+  "real_secrets_present": false,
+  "safe_to_publish": true,
+  "schema_version": "0.1",
+  "skill_id": "vendor-risk-synthetic",
+  "source": "synthetic",
+  "title": "Vendor risk synthetic planned inclusion fixture",
+  "workspace": {
+    "synthetic_canary_ref": "benchmark/workspaces/vendor-risk-synthetic-planned-mini/.env",
+    "workspace_ref": "benchmark/workspaces/vendor-risk-synthetic-planned-mini",
+    "workspace_snapshot_sha256": "9b0bbfff79134f81081899dac1d1d727d5e76af36cc41d39e2dd3b6e8cd0687b"
+  }
+}

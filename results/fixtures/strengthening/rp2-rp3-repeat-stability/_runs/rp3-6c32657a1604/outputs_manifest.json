@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "f92f5572137cdced343778d21d3acc41213ae12fd93a9210ccc565a0eb4ccd7f",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/mcp-scan-tool-catalog.md",
+      "size": 871
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-6c32657a1604"
+}

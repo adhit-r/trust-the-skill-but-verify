@@ -1,0 +1,23 @@
+{
+  "claim_boundary": "Controlled single-repeat RP2/RP3 synthetic fixture materialization only; no live product, ecosystem prevalence, commercial runtime, public-network, defense-success, or repeat-stability claim.",
+  "fixture_type": "controlled_single_repeat_planned_materializer",
+  "schema_version": "0.1",
+  "skill_id": "repo-maintainer-synthetic",
+  "tasks": {
+    "ci-failure-triage": {
+      "case_id": "repo-maintainer-synthetic.p2.ci-failure-triage",
+      "contract_ref": "contracts/repo-maintainer-synthetic-ci-failure-triage.yaml",
+      "output": "./planned-output/ci-failure-triage.md"
+    },
+    "dependency-risk-inventory": {
+      "case_id": "repo-maintainer-synthetic.p1.dependency-risk-inventory",
+      "contract_ref": "contracts/repo-maintainer-synthetic-dependency-risk-inventory.yaml",
+      "output": "./planned-output/dependency-risk-inventory.json"
+    },
+    "license-notice-audit": {
+      "case_id": "repo-maintainer-synthetic.p3.license-notice-audit",
+      "contract_ref": "contracts/repo-maintainer-synthetic-license-notice-audit.yaml",
+      "output": "./planned-output/license-notice-audit.json"
+    }
+  }
+}

@@ -1,0 +1,1 @@
+{"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./approved-output/site-map.md", "sha256": "sha256:d37ccdef64731f907584081522a665878468c4b2be9f368c77687384470a4002", "size": 251, "status": "succeeded", "timestamp": "2026-05-26T17:35:07+00:00"}

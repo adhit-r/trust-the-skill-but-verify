@@ -1,0 +1,19 @@
+{
+  "event_count": 10,
+  "event_types": [
+    "capability.snapshot",
+    "cleanup.observe",
+    "filesystem.read",
+    "filesystem.write",
+    "network.send",
+    "output.generated",
+    "process.exit",
+    "run.end",
+    "run.start",
+    "shell.exec"
+  ],
+  "run_id": "rp2-5dc0b46036e1",
+  "schema_version": "0.1",
+  "trace_path": "<REPO_ROOT>/results/fixtures/strengthening/rp2-rp3-main-repeat-stability/_runs/rp2-5dc0b46036e1/trace.jsonl",
+  "trace_valid": true
+}

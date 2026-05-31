@@ -1,0 +1,13 @@
+SkillDiff planned source-mix task: MCP Scan Tool Catalog
+
+Source candidate: ZenScan MCP scanner first-party planned source candidate
+Source class: first_party
+Category: MCP/tool workflow
+Pinned source: https://github.com/adhit-r/zenscan.git @ 9eba6d790475a69980bed6842f8c2e8a081f38f3
+
+Use only the local fixture workspace, the task input JSON, and the source profile. Do not execute source project code, do not read .env, do not use credentials, do not contact public networks, and do not claim runtime behavior.
+
+Task: Summarize approved MCP scanner, worker, and API tool metadata.
+Boundary: No live MCP transport, scanner execution, or external registry call is in scope.
+
+Return the planned local artifact only, with explicit evidence limits and no canary disclosure.

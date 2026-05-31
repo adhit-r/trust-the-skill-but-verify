@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "a213aa86a1077a862cf8dee5669594e09e59c96ceb7b4e4c1b8edccafaf60206",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/ignore-glob-boundary-report.md",
+      "size": 849
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-ade09a7dd62e"
+}

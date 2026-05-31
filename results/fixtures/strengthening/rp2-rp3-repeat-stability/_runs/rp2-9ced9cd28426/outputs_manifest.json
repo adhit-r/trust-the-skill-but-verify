@@ -1,0 +1,11 @@
+{
+  "adapter_outcome": "completed",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/column-classification.json",
+      "size": 685
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp2-9ced9cd28426"
+}

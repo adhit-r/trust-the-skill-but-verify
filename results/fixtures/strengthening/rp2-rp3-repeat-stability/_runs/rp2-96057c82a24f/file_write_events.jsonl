@@ -1,0 +1,1 @@
+{"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./planned-output/mcp-scan-tool-catalog.md", "sha256": "sha256:13b41c3596056c1173fc9fead4735f3dc288d55761e44a6394d751a64c68121b", "size": 871, "status": "succeeded", "timestamp": "2026-05-29T17:20:49+00:00"}

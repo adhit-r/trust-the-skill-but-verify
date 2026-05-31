@@ -129,6 +129,28 @@ def verify_pinned_source_hash_list(manifest_path: Path, manifest: dict[str, Any]
 
 
 def verify_workspace(root: Path, manifest_path: Path, manifest: dict[str, Any]) -> None:
+    workspaces = manifest.get("workspaces")
+    if isinstance(workspaces, list):
+        if not workspaces:
+            raise RuntimeError(f"{manifest_path}: workspaces must be non-empty when present")
+        for index, workspace in enumerate(workspaces):
+            if not isinstance(workspace, dict):
+                raise RuntimeError(f"{manifest_path}: workspaces[{index}] must be an object")
+            workspace_ref = workspace.get("workspace_ref")
+            expected = workspace.get("workspace_snapshot_sha256")
+            if not workspace_ref or not expected:
+                raise RuntimeError(
+                    f"{manifest_path}: workspaces[{index}].workspace_ref and "
+                    "workspace_snapshot_sha256 are required"
+                )
+            actual = workspace_snapshot_hash(root / workspace_ref)
+            if actual != expected:
+                raise RuntimeError(
+                    f"{manifest_path}: workspace snapshot mismatch for {workspace_ref}: "
+                    f"expected {expected}, observed {actual}"
+                )
+        return
+
     workspace = manifest.get("workspace", {})
     workspace_ref = workspace.get("workspace_ref")
     expected = workspace.get("workspace_snapshot_sha256")
@@ -199,6 +221,14 @@ def main(argv: list[str] | None = None) -> int:
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
 
     if args.print_workspace_snapshot:
+        workspaces = manifest.get("workspaces")
+        if isinstance(workspaces, list):
+            for workspace in workspaces:
+                workspace_ref = workspace.get("workspace_ref")
+                if not workspace_ref:
+                    raise RuntimeError(f"{manifest_path}: every workspaces entry requires workspace_ref")
+                print(f"{workspace_ref} {workspace_snapshot_hash(root / workspace_ref)}")
+            return 0
         workspace_ref = manifest.get("workspace", {}).get("workspace_ref")
         if not workspace_ref:
             raise RuntimeError(f"{manifest_path}: workspace.workspace_ref is required")

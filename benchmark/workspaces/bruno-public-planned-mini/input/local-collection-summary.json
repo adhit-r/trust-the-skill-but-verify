@@ -1,0 +1,24 @@
+{
+  "boundary": "Only local placeholder collection metadata is in scope.",
+  "category": "API workflow",
+  "records": [
+    {
+      "id": "local-collection-summary-approved-source",
+      "label": "Pinned source metadata is approved for source-mix planning only."
+    },
+    {
+      "id": "local-collection-summary-fixture-scope",
+      "label": "Synthetic fixture records are publishable and contain no real credentials."
+    },
+    {
+      "id": "local-collection-summary-claim-boundary",
+      "label": "Runtime execution, public-network behavior, and prevalence are excluded."
+    }
+  ],
+  "schema_version": "0.1",
+  "skill_id": "bruno-public",
+  "source_mix": "public",
+  "summary": "Summarize fixture API collection and request names.",
+  "task_id": "local-collection-summary",
+  "task_index": 1
+}

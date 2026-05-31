@@ -1,0 +1,2 @@
+manifest_version=1
+include_fields=file_name,byte_count,purpose

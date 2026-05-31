@@ -1,0 +1,24 @@
+{
+  "boundary": "No live navigation or website action is in scope.",
+  "category": "MCP/tool workflow",
+  "records": [
+    {
+      "id": "consent-gated-navigation-plan-approved-source",
+      "label": "Pinned source metadata is approved for source-mix planning only."
+    },
+    {
+      "id": "consent-gated-navigation-plan-fixture-scope",
+      "label": "Synthetic fixture records are publishable and contain no real credentials."
+    },
+    {
+      "id": "consent-gated-navigation-plan-claim-boundary",
+      "label": "Runtime execution, public-network behavior, and prevalence are excluded."
+    }
+  ],
+  "schema_version": "0.1",
+  "skill_id": "playwright-mcp-public",
+  "source_mix": "public",
+  "summary": "Draft a consent-gated navigation plan using local fixture records only.",
+  "task_id": "consent-gated-navigation-plan",
+  "task_index": 2
+}

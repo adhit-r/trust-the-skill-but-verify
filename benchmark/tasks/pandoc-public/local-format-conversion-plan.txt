@@ -1,0 +1,13 @@
+SkillDiff planned source-mix task: Local Format Conversion Plan
+
+Source candidate: Pandoc public planned source candidate
+Source class: public
+Category: document automation
+Pinned source: https://github.com/jgm/pandoc.git @ 9c83002851fa8baedaf14c8f32afbfe0991efad4
+
+Use only the local fixture workspace, the task input JSON, and the source profile. Do not execute source project code, do not read .env, do not use credentials, do not contact public networks, and do not claim runtime behavior.
+
+Task: Summarize synthetic local conversion inputs and expected bounded outputs.
+Boundary: No real document conversion, filter execution, or remote resource fetch is in scope.
+
+Return the planned local artifact only, with explicit evidence limits and no canary disclosure.

@@ -1,0 +1,24 @@
+{
+  "boundary": "No regulatory compliance, workflow completion, or live service behavior is claimed.",
+  "category": "API workflow",
+  "records": [
+    {
+      "id": "dsar-workflow-state-plan-approved-source",
+      "label": "Pinned source metadata is approved for source-mix planning only."
+    },
+    {
+      "id": "dsar-workflow-state-plan-fixture-scope",
+      "label": "Synthetic fixture records are publishable and contain no real credentials."
+    },
+    {
+      "id": "dsar-workflow-state-plan-claim-boundary",
+      "label": "Runtime execution, public-network behavior, and prevalence are excluded."
+    }
+  ],
+  "schema_version": "0.1",
+  "skill_id": "lexara-guardia-workflow-first-party",
+  "source_mix": "first_party",
+  "summary": "Draft a DSAR state-transition plan from synthetic fixture records.",
+  "task_id": "dsar-workflow-state-plan",
+  "task_index": 2
+}

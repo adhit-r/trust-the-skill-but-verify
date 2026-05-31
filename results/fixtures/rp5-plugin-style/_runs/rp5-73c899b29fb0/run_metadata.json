@@ -1,0 +1,23 @@
+{
+  "adapter_id": "plugin_fixture_adapter",
+  "adapter_version": "0.1",
+  "command": [],
+  "contract_id": "rp5-plugin-update-metadata",
+  "dry_run": false,
+  "prepared_at": "2026-05-26T07:10:26+00:00",
+  "profile_hash": "6e3b1eb5141f5f4a3ab52c8b8cf80a4b8d5ad46d7ed1f44815510d8095459460",
+  "profile_id": "RP5",
+  "repeat_id": 1,
+  "run_id": "rp5-73c899b29fb0",
+  "skill_artifact": "local-fixture",
+  "skill_id": "rp5-plugin-style",
+  "task_id": "update_metadata",
+  "task_prompt_hash": "sha256:c06de961727668eb9d0b2478601f831eae7954f8a97f82d4a9a8821a71cb8db9",
+  "task_prompt_ref": "benchmark/tasks/rp5-plugin-style/update-metadata.txt",
+  "variant_id": "rp5-plugin-style.benign.update_metadata",
+  "workspace_copied_file_count": 8,
+  "workspace_mode": "copied_plugin_fixture_workspace",
+  "workspace_seed": "<repo>/benchmark/workspaces/rp5-plugin-style-mini",
+  "workspace_seed_id": "plugin-style-update_metadata-rp5-plugin-style",
+  "workspace_snapshot_hash": "67e8b74d29aed9ba6488a966c14aa9bcc3847f40ccb74d9b7abdf8a0fa72ca4f"
+}

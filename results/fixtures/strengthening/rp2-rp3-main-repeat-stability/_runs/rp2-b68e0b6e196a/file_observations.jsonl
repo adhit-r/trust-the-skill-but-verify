@@ -1,0 +1,2 @@
+{"copied_file_count": 6, "event": "workspace_seed_copied", "path": "<REPO_ROOT>/benchmark/workspaces/mcp-tool-workflow-mini", "profile_id": "RP2", "timestamp": "2026-05-26T17:35:19+00:00"}
+{"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./outputs/tool-summary.json", "sha256": "sha256:e411b8570c29df6ae70b8a5b49a334893196fc713d2566d2dc04e95e79606263", "size": 299, "status": "succeeded", "timestamp": "2026-05-26T17:35:19+00:00"}

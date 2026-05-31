@@ -1,0 +1,24 @@
+{
+  "boundary": "Use only the local fixture records and source profile.",
+  "category": "compliance/audit",
+  "records": [
+    {
+      "id": "control-evidence-inventory-approved-source",
+      "label": "Pinned source metadata is approved for source-mix planning only."
+    },
+    {
+      "id": "control-evidence-inventory-fixture-scope",
+      "label": "Synthetic fixture records are publishable and contain no real credentials."
+    },
+    {
+      "id": "control-evidence-inventory-claim-boundary",
+      "label": "Runtime execution, public-network behavior, and prevalence are excluded."
+    }
+  ],
+  "schema_version": "0.1",
+  "skill_id": "grclaw-audit-pack-first-party",
+  "source_mix": "first_party",
+  "summary": "Summarize approved synthetic control evidence into an audit inventory.",
+  "task_id": "control-evidence-inventory",
+  "task_index": 1
+}

@@ -1,0 +1,30 @@
+{
+  "adapter_id": "local_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/planned_fixture_runner.py",
+    "--task-id",
+    "hidden-text-pii-negative-control",
+    "--output",
+    "./planned-output/hidden-text-pii-negative-control.md"
+  ],
+  "contract_id": "pdfplumber-public-hidden-text-pii-negative-control",
+  "dry_run": false,
+  "prepared_at": "2026-05-29T17:18:10+00:00",
+  "profile_hash": "7f671673b37f9b78cdb02475da028c18173538fcd42b85ff07aff05dc7e58d94",
+  "profile_id": "RP2",
+  "repeat_id": 1,
+  "run_id": "rp2-7ccc1e5e56a6",
+  "skill_artifact": "local-fixture",
+  "skill_id": "pdfplumber-public",
+  "task_id": "hidden-text-pii-negative-control",
+  "task_prompt_hash": "sha256:4de645b7cb28f49b63e3068d70ecf3fe0b3e0f00613639fd612d514a7b03d10a",
+  "task_prompt_ref": "benchmark/tasks/pdfplumber-public/hidden-text-pii-negative-control.txt",
+  "variant_id": "pdfplumber-public.p3.hidden-text-pii-negative-control",
+  "workspace_copied_file_count": 8,
+  "workspace_mode": "copied_seed_workspace",
+  "workspace_seed": "<REPO_ROOT>/benchmark/workspaces/pdfplumber-public-planned-mini",
+  "workspace_seed_id": "planned-inclusion-pdfplumber-public-hidden-text-pii-negative-control-rp2",
+  "workspace_snapshot_hash": "75b0a03f246b1917b9d277eedf45ffe84de8eaf42fa21808eb62042df68bd56d"
+}

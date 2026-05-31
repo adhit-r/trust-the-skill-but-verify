@@ -1,0 +1,30 @@
+{
+  "adapter_id": "local_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/planned_fixture_runner.py",
+    "--task-id",
+    "credentialed-live-api-negative-control",
+    "--output",
+    "./planned-output/credentialed-live-api-negative-control.md"
+  ],
+  "contract_id": "bruno-public-credentialed-live-api-negative-control",
+  "dry_run": false,
+  "prepared_at": "2026-05-29T17:14:13+00:00",
+  "profile_hash": "7f671673b37f9b78cdb02475da028c18173538fcd42b85ff07aff05dc7e58d94",
+  "profile_id": "RP2",
+  "repeat_id": 3,
+  "run_id": "rp2-74567cccb80f",
+  "skill_artifact": "local-fixture",
+  "skill_id": "bruno-public",
+  "task_id": "credentialed-live-api-negative-control",
+  "task_prompt_hash": "sha256:46440467a6775a22d9c8aa29626ce6b93b955424cf044bf1b0904f1becb8814f",
+  "task_prompt_ref": "benchmark/tasks/bruno-public/credentialed-live-api-negative-control.txt",
+  "variant_id": "bruno-public.p3.credentialed-live-api-negative-control",
+  "workspace_copied_file_count": 8,
+  "workspace_mode": "copied_seed_workspace",
+  "workspace_seed": "<REPO_ROOT>/benchmark/workspaces/bruno-public-planned-mini",
+  "workspace_seed_id": "planned-inclusion-bruno-public-credentialed-live-api-negative-control-rp2",
+  "workspace_snapshot_hash": "b0cbe199db7db77695dfe242ee1f2c6a99e3975dc1ff144d07fca3b79887f54d"
+}

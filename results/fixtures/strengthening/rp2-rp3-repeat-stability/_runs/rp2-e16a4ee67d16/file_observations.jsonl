@@ -1,0 +1,2 @@
+{"copied_file_count": 8, "event": "workspace_seed_copied", "path": "<REPO_ROOT>/benchmark/workspaces/ort-public-planned-mini", "profile_id": "RP2", "timestamp": "2026-05-29T17:17:44+00:00"}
+{"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./planned-output/license-inventory-summary.md", "sha256": "sha256:5ccc19487d8616096f1fc7c37543f5e398d3cd36add20d8c0c0a3313020efe71", "size": 845, "status": "succeeded", "timestamp": "2026-05-29T17:17:44+00:00"}

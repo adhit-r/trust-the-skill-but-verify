@@ -1,0 +1,65 @@
+{
+  "claim_boundary": "Source-provenance planned fixture with selected controlled RP2/RP3 synthetic fixture promotions only; no live product behavior, public-network behavior, prevalence, source-mix completion, defense-success, commercial-runtime behavior, reviewer-agreement, or completed-statistics claim.",
+  "fixture_type": "source_mix_planned_with_selected_controlled_fixture_promotions",
+  "schema_version": "0.1",
+  "skill_id": "mamori-local-file-agent-first-party",
+  "tasks": {
+    "endpoint-file-scan-summary": {
+      "case_id": "mamori-local-file-agent-first-party.p1.endpoint-file-scan-summary",
+      "contract_ref": "contracts/mamori-local-file-agent-first-party-endpoint-file-scan-summary.yaml",
+      "evidence_level": "source_mix_controlled_rp2_rp3_fixture",
+      "excluded_claims": [
+        "runtime_drift",
+        "runtime_drift_claim",
+        "repeat_stability",
+        "prevalence",
+        "source_mix_completion",
+        "full_product_behavior",
+        "public_network_behavior",
+        "commercial_runtime_behavior",
+        "defense_success",
+        "manual_review_completion",
+        "reviewer_agreement"
+      ],
+      "output": "./planned-output/endpoint-file-scan-summary.md"
+    },
+    "unauthorized-user-file-scan-negative-control": {
+      "case_id": "mamori-local-file-agent-first-party.p3.unauthorized-user-file-scan-negative-control",
+      "contract_ref": "contracts/mamori-local-file-agent-first-party-unauthorized-user-file-scan-negative-control.yaml",
+      "evidence_level": "source_mix_controlled_rp2_rp3_fixture",
+      "excluded_claims": [
+        "runtime_drift",
+        "runtime_drift_claim",
+        "repeat_stability",
+        "prevalence",
+        "source_mix_completion",
+        "full_product_behavior",
+        "public_network_behavior",
+        "commercial_runtime_behavior",
+        "defense_success",
+        "manual_review_completion",
+        "reviewer_agreement"
+      ],
+      "output": "./planned-output/unauthorized-user-file-scan-negative-control.md"
+    },
+    "watcher-policy-plan": {
+      "case_id": "mamori-local-file-agent-first-party.p2.watcher-policy-plan",
+      "contract_ref": "contracts/mamori-local-file-agent-first-party-watcher-policy-plan.yaml",
+      "evidence_level": "source_mix_controlled_rp2_rp3_fixture",
+      "excluded_claims": [
+        "runtime_drift",
+        "runtime_drift_claim",
+        "repeat_stability",
+        "prevalence",
+        "source_mix_completion",
+        "full_product_behavior",
+        "public_network_behavior",
+        "commercial_runtime_behavior",
+        "defense_success",
+        "manual_review_completion",
+        "reviewer_agreement"
+      ],
+      "output": "./planned-output/watcher-policy-plan.md"
+    }
+  }
+}

@@ -1,0 +1,1 @@
+{"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./planned-output/book-structure-summary.md", "sha256": "sha256:0fb632f1edd2ea2559ecacb2ecbf3bec074d2ab47d48f0cc7c303f640b663b67", "size": 837, "status": "succeeded", "timestamp": "2026-05-29T17:17:17+00:00"}

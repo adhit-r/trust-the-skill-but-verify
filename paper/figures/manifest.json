@@ -1,0 +1,117 @@
+{
+  "schema_version": "1.0",
+  "title": "SkillDiff core paper figure package",
+  "status": "figure_package_ready_no_new_experimental_results",
+  "figures": [
+    {
+      "figure_id": "F1",
+      "title": "Architecture",
+      "asset": "paper/figures/fig1-architecture.svg",
+      "source_paths": [
+        "paper/introduction-skeleton.md",
+        "paper/paper-spine.md",
+        "paper/tables/evidence-boundary-matrix.md"
+      ],
+      "claim_ids": [
+        "CL-P1-001",
+        "CL-P1-002",
+        "CL-P1-003"
+      ],
+      "numeric_fields": [],
+      "regen_command": "manual-svg",
+      "boundary_note": "Method architecture only; runtime profile is the varied variable."
+    },
+    {
+      "figure_id": "F2",
+      "title": "Trace lifecycle",
+      "asset": "paper/figures/fig2-trace-lifecycle.svg",
+      "source_paths": [
+        "docs/research/trace-harness.md",
+        "paper/experiment-protocol.md"
+      ],
+      "claim_ids": [
+        "CL-MVP-010",
+        "CL-P1-003"
+      ],
+      "numeric_fields": [],
+      "regen_command": "manual-svg",
+      "boundary_note": "Observer gaps are instrumentation failures, not clean behavior."
+    },
+    {
+      "figure_id": "F3",
+      "title": "Runtime profile matrix",
+      "asset": "paper/figures/fig3-runtime-matrix.svg",
+      "source_paths": [
+        "docs/research/adapter-support-matrix.md",
+        "paper/tables/evidence-boundary-matrix.md"
+      ],
+      "claim_ids": [
+        "CL-P1-002",
+        "CL-GATE3-002"
+      ],
+      "numeric_fields": [],
+      "regen_command": "manual-svg",
+      "boundary_note": "RP1 is simulator-backed, RP4/RP5 are fixture-backed, and RP6 is a report-card pilot."
+    },
+    {
+      "figure_id": "F4",
+      "title": "Drift outcomes",
+      "asset": "paper/figures/fig4-drift-outcomes.svg",
+      "source_paths": [
+        "docs/research/drift-taxonomy-metrics.md",
+        "paper/tables/mvp-results.md"
+      ],
+      "claim_ids": [
+        "CL-MVP-004",
+        "CL-MVP-005",
+        "CL-BOUNDARY-001"
+      ],
+      "numeric_fields": [],
+      "regen_command": "manual-svg",
+      "boundary_note": "Outcome taxonomy only; pairwise disagreement is not prevalence."
+    },
+    {
+      "figure_id": "F5",
+      "title": "Runtime report cards",
+      "asset": "paper/figures/fig5-runtime-report-cards.svg",
+      "source_paths": [
+        "results/derived/runtime-report-cards",
+        "paper/tables/evidence-boundary-matrix.md"
+      ],
+      "claim_ids": [
+        "CL-GATE3-002",
+        "CL-RP6-001"
+      ],
+      "numeric_fields": [],
+      "regen_command": "manual-svg",
+      "boundary_note": "Report-card dimensions only; RP6 is not defense success."
+    },
+    {
+      "figure_id": "F6",
+      "title": "Artifact flow",
+      "asset": "paper/figures/fig6-artifact-flow.svg",
+      "source_paths": [
+        "docs/artifact/anonymity-checklist.md",
+        "paper/claim-ledger.md",
+        "paper/tables/evidence-boundary-matrix.md"
+      ],
+      "claim_ids": [
+        "CL-P1-002",
+        "CL-GATE5-006",
+        "CL-GATE5-007"
+      ],
+      "numeric_fields": [],
+      "regen_command": "manual-svg",
+      "boundary_note": "Release-flow scaffold only; clean bundle and completed human review remain pending."
+    }
+  ],
+  "claim_boundary": {
+    "adds_new_experimental_results": false,
+    "prevalence_claim": false,
+    "commercial_runtime_claim": false,
+    "public_network_exfiltration_claim": false,
+    "syscall_complete_tracing_claim": false,
+    "defense_success_claim": false,
+    "completed_human_review_claim": false
+  }
+}

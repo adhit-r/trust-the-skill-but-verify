@@ -78,7 +78,8 @@ attempts, with no canary movement.
 
 Paper use: first controlled evidence for tool-call, approval-event, and
 persistence surfaces. It strengthens the P2 instrumentation story and gives a
-clear D3/D4/D5 semantic-fixture case before live RP4 work.
+clear D3/D4/D5 semantic-fixture case that the bounded RP4 local fixture now
+extends without claiming external MCP coverage.
 
 Boundary: controlled semantic-event fixture only. Its RP2/RP3 tool statuses are
 scripted profile-conditioned fixture evidence, not live runtime-enforced MCP

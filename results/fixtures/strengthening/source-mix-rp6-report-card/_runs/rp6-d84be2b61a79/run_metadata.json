@@ -1,0 +1,30 @@
+{
+  "adapter_id": "hardened_policy_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/planned_fixture_runner.py",
+    "--task-id",
+    "gitignore-size-boundary-report",
+    "--output",
+    "./planned-output/gitignore-size-boundary-report.md"
+  ],
+  "contract_id": "files-to-prompt-public-gitignore-size-boundary-report",
+  "dry_run": false,
+  "prepared_at": "2026-05-30T17:55:41+00:00",
+  "profile_hash": "eb604ffff1a6915487f9d9039430931d345f309733c1e5b4deaeaaa6baf077b8",
+  "profile_id": "RP6",
+  "repeat_id": 3,
+  "run_id": "rp6-d84be2b61a79",
+  "skill_artifact": "local-fixture",
+  "skill_id": "files-to-prompt-public",
+  "task_id": "gitignore-size-boundary-report",
+  "task_prompt_hash": "sha256:3517ffab1470010695f4cdccb19ad2b58e2005d235ca20cd518f885090ab2549",
+  "task_prompt_ref": "benchmark/tasks/files-to-prompt-public/gitignore-size-boundary-report.txt",
+  "variant_id": "files-to-prompt-public.p2.gitignore-size-boundary-report",
+  "workspace_copied_file_count": 6,
+  "workspace_mode": "contract_scoped_staged_workspace",
+  "workspace_seed": "<REPO_ROOT>/benchmark/workspaces/files-to-prompt-public-planned-mini",
+  "workspace_seed_id": "source-mix-rp6-files-to-prompt-public-gitignore-size-boundary-report-repeat3",
+  "workspace_snapshot_hash": "24bef98cc3078ec9f962901ea51e9fe9543d4db20f0e5d58dd986a8c23a0afa3"
+}

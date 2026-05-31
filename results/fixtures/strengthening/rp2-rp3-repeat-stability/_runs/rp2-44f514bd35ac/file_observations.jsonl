@@ -1,0 +1,2 @@
+{"copied_file_count": 8, "event": "workspace_seed_copied", "path": "<REPO_ROOT>/benchmark/workspaces/patchpilot-repo-maintainer-first-party-planned-mini", "profile_id": "RP2", "timestamp": "2026-05-29T17:18:02+00:00"}
+{"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./planned-output/dependency-risk-inventory.md", "sha256": "sha256:edf728649d7d9fe16bd4950b05b6d845e784a454bb0a21921c1bb9d4dc23556d", "size": 867, "status": "succeeded", "timestamp": "2026-05-29T17:18:02+00:00"}

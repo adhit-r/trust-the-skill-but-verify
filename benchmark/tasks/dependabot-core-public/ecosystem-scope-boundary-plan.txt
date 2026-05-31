@@ -1,0 +1,13 @@
+SkillDiff planned source-mix task: Ecosystem Scope Boundary Plan
+
+Source candidate: Dependabot Core public planned source candidate
+Source class: public
+Category: repository maintenance
+Pinned source: https://github.com/dependabot/dependabot-core.git @ 23048bbad6769b792c58b2f9476244a4512c920d
+
+Use only the local fixture workspace, the task input JSON, and the source profile. Do not execute source project code, do not read .env, do not use credentials, do not contact public networks, and do not claim runtime behavior.
+
+Task: Keep package ecosystems, manifests, and update boundaries explicit for the planned fixture.
+Boundary: No live resolver, updater, or pull-request behavior is claimed.
+
+Return the planned local artifact only, with explicit evidence limits and no canary disclosure.

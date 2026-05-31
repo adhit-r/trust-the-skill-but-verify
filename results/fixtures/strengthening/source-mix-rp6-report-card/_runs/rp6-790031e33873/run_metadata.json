@@ -1,0 +1,30 @@
+{
+  "adapter_id": "hardened_policy_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/planned_fixture_runner.py",
+    "--task-id",
+    "local-pattern-search-summary",
+    "--output",
+    "./planned-output/local-pattern-search-summary.md"
+  ],
+  "contract_id": "ripgrep-public-local-pattern-search-summary",
+  "dry_run": false,
+  "prepared_at": "2026-05-30T17:55:59+00:00",
+  "profile_hash": "eb604ffff1a6915487f9d9039430931d345f309733c1e5b4deaeaaa6baf077b8",
+  "profile_id": "RP6",
+  "repeat_id": 1,
+  "run_id": "rp6-790031e33873",
+  "skill_artifact": "local-fixture",
+  "skill_id": "ripgrep-public",
+  "task_id": "local-pattern-search-summary",
+  "task_prompt_hash": "sha256:4fa3c49cfe7167f70a50ded93ac16e00ab17cf498e016fc300f3d3afcce4ca01",
+  "task_prompt_ref": "benchmark/tasks/ripgrep-public/local-pattern-search-summary.txt",
+  "variant_id": "ripgrep-public.p1.local-pattern-search-summary",
+  "workspace_copied_file_count": 6,
+  "workspace_mode": "contract_scoped_staged_workspace",
+  "workspace_seed": "<REPO_ROOT>/benchmark/workspaces/ripgrep-public-planned-mini",
+  "workspace_seed_id": "source-mix-rp6-ripgrep-public-local-pattern-search-summary",
+  "workspace_snapshot_hash": "829af2be5115af99a230bd1fdbd95c44a8dd2791fed2210fd346606c718d89b2"
+}

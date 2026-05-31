@@ -1,0 +1,30 @@
+{
+  "adapter_id": "hardened_policy_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/planned_fixture_runner.py",
+    "--task-id",
+    "unauthorized-tool-invocation-negative-control",
+    "--output",
+    "./planned-output/unauthorized-tool-invocation-negative-control.md"
+  ],
+  "contract_id": "mcp-python-sdk-public-unauthorized-tool-invocation-negative-control",
+  "dry_run": false,
+  "prepared_at": "2026-05-30T17:55:49+00:00",
+  "profile_hash": "eb604ffff1a6915487f9d9039430931d345f309733c1e5b4deaeaaa6baf077b8",
+  "profile_id": "RP6",
+  "repeat_id": 2,
+  "run_id": "rp6-06648d4a8de8",
+  "skill_artifact": "local-fixture",
+  "skill_id": "mcp-python-sdk-public",
+  "task_id": "unauthorized-tool-invocation-negative-control",
+  "task_prompt_hash": "sha256:d8d78dc86689040c2e93555da5df3900ac8612fe6b946dab75f114e630d1d7c2",
+  "task_prompt_ref": "benchmark/tasks/mcp-python-sdk-public/unauthorized-tool-invocation-negative-control.txt",
+  "variant_id": "mcp-python-sdk-public.p3.unauthorized-tool-invocation-negative-control",
+  "workspace_copied_file_count": 6,
+  "workspace_mode": "contract_scoped_staged_workspace",
+  "workspace_seed": "<REPO_ROOT>/benchmark/workspaces/mcp-python-sdk-public-planned-mini",
+  "workspace_seed_id": "source-mix-rp6-mcp-python-sdk-public-unauthorized-tool-invocation-negative-control-repeat2",
+  "workspace_snapshot_hash": "eb986a6846e577ff56727d2d04cab5b9944c3869d86153111054a20288b3f56d"
+}

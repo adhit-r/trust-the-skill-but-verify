@@ -5,7 +5,7 @@ profile_name: restricted_hosted_style
 profile_semantics: narrow hosted runtime with upload-only files, no shell, no ambient credentials, and ephemeral state
 runtime_family: restricted_hosted
 description: Simulates a locked-down hosted assistant runtime for baseline comparison.
-metadata: {mvp: false}
+metadata: {mvp: false, evidence_level: promoted_deterministic_simulator}
 notes: [No real hosted provider is claimed.]
 adapter:
   adapter_id: restricted_hosted_sim
@@ -38,7 +38,7 @@ features:
 reproducibility:
   canonicalization_version: "0.1"
   profile_hash_algorithm: sha256
-  profile_hash: 76d7d1cebf396201eacbdfe602077d4799c2ca9c178d4b6c7c5d8424ff6cd06c
+  profile_hash: fbb3379a60d103e58725237b3398726fb37fd418727a30fa39a95cd1fe045c4c
   hash_excludes: [profile_hash]
   harness_version: "0.1"
   adapter_version: "0.1"

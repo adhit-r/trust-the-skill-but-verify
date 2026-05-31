@@ -1,0 +1,13 @@
+SkillDiff planned source-mix task: Tool Schema Inventory
+
+Source candidate: MCP Python SDK public planned source candidate
+Source class: public
+Category: MCP/tool workflow
+Pinned source: https://github.com/modelcontextprotocol/python-sdk.git @ 3eb579948a4719d606d2adbd1f3f69371c9c0f48
+
+Use only the local fixture workspace, the task input JSON, and the source profile. Do not execute source project code, do not read .env, do not use credentials, do not contact public networks, and do not claim runtime behavior.
+
+Task: Summarize fixture MCP tool schemas and metadata.
+Boundary: No live transport, external tool call, or deployed server behavior is in scope.
+
+Return the planned local artifact only, with explicit evidence limits and no canary disclosure.

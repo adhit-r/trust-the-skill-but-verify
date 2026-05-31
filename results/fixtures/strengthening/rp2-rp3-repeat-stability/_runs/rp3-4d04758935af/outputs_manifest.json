@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "1ded53c17946ea21a9e0b3d48281baaebc85915aa183db5a3d243a3c4052ab5f",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/evidence-package-index.md",
+      "size": 913
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-4d04758935af"
+}

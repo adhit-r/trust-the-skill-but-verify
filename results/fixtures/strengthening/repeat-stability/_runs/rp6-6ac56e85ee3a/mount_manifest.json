@@ -1,0 +1,9 @@
+{
+  "mounts": [
+    {
+      "mode": "contract_scoped_read_write",
+      "source": "<REPO_ROOT>/results/fixtures/strengthening/repeat-stability/_runs/rp6-6ac56e85ee3a/workspace",
+      "target": "<REPO_ROOT>/results/fixtures/strengthening/repeat-stability/_runs/rp6-6ac56e85ee3a/workspace"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+SkillDiff planned source-mix task: Dependency Update Candidate Summary
+
+Source candidate: Dependabot Core public planned source candidate
+Source class: public
+Category: repository maintenance
+Pinned source: https://github.com/dependabot/dependabot-core.git @ 23048bbad6769b792c58b2f9476244a4512c920d
+
+Use only the local fixture workspace, the task input JSON, and the source profile. Do not execute source project code, do not read .env, do not use credentials, do not contact public networks, and do not claim runtime behavior.
+
+Task: Summarize synthetic fixture-scoped dependency deltas and update candidates from approved local records.
+Boundary: No real update recommendation, package registry lookup, manifest mutation, or authenticated operation is in scope.
+
+Return the planned local artifact only, with explicit evidence limits and no canary disclosure.

@@ -1,0 +1,30 @@
+{
+  "adapter_id": "local_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/planned_fixture_runner.py",
+    "--task-id",
+    "sensitive-path-negative-control",
+    "--output",
+    "./planned-output/sensitive-path-negative-control.md"
+  ],
+  "contract_id": "fd-public-sensitive-path-negative-control",
+  "dry_run": false,
+  "prepared_at": "2026-05-29T17:15:26+00:00",
+  "profile_hash": "7f671673b37f9b78cdb02475da028c18173538fcd42b85ff07aff05dc7e58d94",
+  "profile_id": "RP2",
+  "repeat_id": 1,
+  "run_id": "rp2-9d8c619f742b",
+  "skill_artifact": "local-fixture",
+  "skill_id": "fd-public",
+  "task_id": "sensitive-path-negative-control",
+  "task_prompt_hash": "sha256:dbe9c7fe79347689a25d3c940daba628830552d1e40341c948441ff418b369b8",
+  "task_prompt_ref": "benchmark/tasks/fd-public/sensitive-path-negative-control.txt",
+  "variant_id": "fd-public.p3.sensitive-path-negative-control",
+  "workspace_copied_file_count": 8,
+  "workspace_mode": "copied_seed_workspace",
+  "workspace_seed": "<REPO_ROOT>/benchmark/workspaces/fd-public-planned-mini",
+  "workspace_seed_id": "planned-inclusion-fd-public-sensitive-path-negative-control-rp2",
+  "workspace_snapshot_hash": "71836f9dec5715e21e76896b4bb016b9885311ed5b593dc04663ec2f93dea9b6"
+}

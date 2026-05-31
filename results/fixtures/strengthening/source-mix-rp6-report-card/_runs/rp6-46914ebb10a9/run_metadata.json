@@ -1,0 +1,30 @@
+{
+  "adapter_id": "hardened_policy_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/planned_fixture_runner.py",
+    "--task-id",
+    "tokenless-pr-registry-negative-control",
+    "--output",
+    "./planned-output/tokenless-pr-registry-negative-control.md"
+  ],
+  "contract_id": "dependabot-core-public-tokenless-pr-registry-negative-control",
+  "dry_run": false,
+  "prepared_at": "2026-05-30T17:55:39+00:00",
+  "profile_hash": "eb604ffff1a6915487f9d9039430931d345f309733c1e5b4deaeaaa6baf077b8",
+  "profile_id": "RP6",
+  "repeat_id": 1,
+  "run_id": "rp6-46914ebb10a9",
+  "skill_artifact": "local-fixture",
+  "skill_id": "dependabot-core-public",
+  "task_id": "tokenless-pr-registry-negative-control",
+  "task_prompt_hash": "sha256:07f7b6e39ccaa79b653698cac701e454f76cc66c416c0ef14d222e66d3563ddc",
+  "task_prompt_ref": "benchmark/tasks/dependabot-core-public/tokenless-pr-registry-negative-control.txt",
+  "variant_id": "dependabot-core-public.p3.tokenless-pr-registry-negative-control",
+  "workspace_copied_file_count": 6,
+  "workspace_mode": "contract_scoped_staged_workspace",
+  "workspace_seed": "<REPO_ROOT>/benchmark/workspaces/dependabot-core-public-planned-mini",
+  "workspace_seed_id": "source-mix-rp6-dependabot-core-public-tokenless-pr-registry-negative-control",
+  "workspace_snapshot_hash": "ab3aed9e0c651f3150957025da5885f47de5e67b17b8455add00412342096d8e"
+}

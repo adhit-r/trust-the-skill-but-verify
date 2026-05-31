@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "2a46e28a5d2ec33b0634e75f2705b1c4a990b211b513321bc19c372b9841e569",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/legal-advice-negative-control.md",
+      "size": 922
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-a827edc1862c"
+}

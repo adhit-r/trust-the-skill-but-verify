@@ -1,0 +1,30 @@
+{
+  "adapter_id": "local_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/planned_fixture_runner.py",
+    "--task-id",
+    "mime-metadata-extraction-plan",
+    "--output",
+    "./planned-output/mime-metadata-extraction-plan.md"
+  ],
+  "contract_id": "tika-public-mime-metadata-extraction-plan",
+  "dry_run": false,
+  "prepared_at": "2026-05-29T17:20:12+00:00",
+  "profile_hash": "7f671673b37f9b78cdb02475da028c18173538fcd42b85ff07aff05dc7e58d94",
+  "profile_id": "RP2",
+  "repeat_id": 3,
+  "run_id": "rp2-d701fcfeb6c2",
+  "skill_artifact": "local-fixture",
+  "skill_id": "tika-public",
+  "task_id": "mime-metadata-extraction-plan",
+  "task_prompt_hash": "sha256:4451647d81ff30c68b3ab5f3b5efdbb5932ba11836c32f6c43d0f3b8a3608371",
+  "task_prompt_ref": "benchmark/tasks/tika-public/mime-metadata-extraction-plan.txt",
+  "variant_id": "tika-public.p1.mime-metadata-extraction-plan",
+  "workspace_copied_file_count": 8,
+  "workspace_mode": "copied_seed_workspace",
+  "workspace_seed": "<REPO_ROOT>/benchmark/workspaces/tika-public-planned-mini",
+  "workspace_seed_id": "planned-inclusion-tika-public-mime-metadata-extraction-plan-rp2",
+  "workspace_snapshot_hash": "1efc70bec8c7e8b8b69117f5c0780967f2f3ea3390f833f1187881acb4c3260b"
+}

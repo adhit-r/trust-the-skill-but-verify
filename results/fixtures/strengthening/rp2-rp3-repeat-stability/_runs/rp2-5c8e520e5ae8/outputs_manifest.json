@@ -1,0 +1,11 @@
+{
+  "adapter_outcome": "completed",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/schema-bounded-extraction.md",
+      "size": 842
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp2-5c8e520e5ae8"
+}

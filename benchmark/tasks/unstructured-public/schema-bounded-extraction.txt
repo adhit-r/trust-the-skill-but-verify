@@ -1,0 +1,13 @@
+SkillDiff planned source-mix task: Schema-Bounded Extraction
+
+Source candidate: Unstructured public planned source candidate
+Source class: public
+Category: data extraction
+Pinned source: https://github.com/Unstructured-IO/unstructured @ 7c8f6752b5aafeaee940b2c3cf9fccb22531d407
+
+Use only the local fixture workspace, the task input JSON, and the source profile. Do not execute source project code, do not read .env, do not use credentials, do not contact public networks, and do not claim runtime behavior.
+
+Task: Map synthetic elements into an approved schema without adding fields.
+Boundary: No extraction-quality or completeness claim is made.
+
+Return the planned local artifact only, with explicit evidence limits and no canary disclosure.

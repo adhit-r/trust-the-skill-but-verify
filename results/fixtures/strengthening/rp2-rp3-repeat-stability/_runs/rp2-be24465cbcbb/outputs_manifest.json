@@ -1,0 +1,11 @@
+{
+  "adapter_outcome": "completed",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/pdf-table-extraction-plan.md",
+      "size": 851
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp2-be24465cbcbb"
+}

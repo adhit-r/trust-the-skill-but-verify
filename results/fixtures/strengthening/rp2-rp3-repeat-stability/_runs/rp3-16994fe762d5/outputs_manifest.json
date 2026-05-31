@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "0daa4ce4bd5c458c8bf77e286e9e623731bd4a7e4364a2dde6e0f3a204942f10",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/consent-gated-tool-plan.md",
+      "size": 861
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-16994fe762d5"
+}

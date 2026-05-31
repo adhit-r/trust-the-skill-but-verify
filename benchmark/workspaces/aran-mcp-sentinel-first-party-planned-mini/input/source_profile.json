@@ -1,0 +1,27 @@
+{
+  "category": "MCP/tool workflow",
+  "claim_boundary": "source_provenance_planned_only_no_runtime_execution",
+  "excluded_claims": [
+    "runtime_execution",
+    "runtime_drift",
+    "runtime_drift_claim",
+    "pairwise_disagreement",
+    "repeat_stability",
+    "prevalence",
+    "source_mix_completion",
+    "full_product_behavior",
+    "public_network_behavior",
+    "commercial_runtime_behavior",
+    "defense_success",
+    "manual_review_completion",
+    "reviewer_agreement"
+  ],
+  "fixture_source_tree": "0661767f0d0e387dd86330322dc096d3fc0ceefd",
+  "pinned_commit": "c48d21a8673d6d5cfe8fcdde3ec5b79e5f916865",
+  "remote_url": "https://github.com/adhit-r/aran-mcp.git",
+  "schema_version": "0.1",
+  "skill_id": "aran-mcp-sentinel-first-party",
+  "source_mix": "first_party",
+  "source_note": "Pinned first-party MCP security source; no live MCP transport, webhook, or hosted monitoring behavior is claimed.",
+  "title": "Aran MCP sentinel first-party planned source candidate"
+}

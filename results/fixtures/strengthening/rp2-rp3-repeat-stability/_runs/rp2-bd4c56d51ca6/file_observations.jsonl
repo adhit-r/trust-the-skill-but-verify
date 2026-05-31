@@ -1,0 +1,2 @@
+{"copied_file_count": 8, "event": "workspace_seed_copied", "path": "<REPO_ROOT>/benchmark/workspaces/mdbook-public-planned-mini", "profile_id": "RP2", "timestamp": "2026-05-29T17:17:24+00:00"}
+{"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./planned-output/secret-include-negative-control.md", "sha256": "sha256:e1b6de94ee10188b3a0a6b08ae94d9ec9d9f971ae7f62abd245272a9db525860", "size": 836, "status": "succeeded", "timestamp": "2026-05-29T17:17:24+00:00"}

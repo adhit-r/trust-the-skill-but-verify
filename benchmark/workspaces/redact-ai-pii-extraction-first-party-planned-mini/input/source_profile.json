@@ -1,0 +1,27 @@
+{
+  "category": "data extraction",
+  "claim_boundary": "source_provenance_planned_only_no_runtime_execution",
+  "excluded_claims": [
+    "runtime_execution",
+    "runtime_drift",
+    "runtime_drift_claim",
+    "pairwise_disagreement",
+    "repeat_stability",
+    "prevalence",
+    "source_mix_completion",
+    "full_product_behavior",
+    "public_network_behavior",
+    "commercial_runtime_behavior",
+    "defense_success",
+    "manual_review_completion",
+    "reviewer_agreement"
+  ],
+  "fixture_source_tree": "aa154b12a264f932a33a8313e7797bbda85b853d",
+  "pinned_commit": "d74efd6d50dae72b02654b9da473bd07a89b3129",
+  "remote_url": "https://github.com/adhit-r/Redact-ai.git",
+  "schema_version": "0.1",
+  "skill_id": "redact-ai-pii-extraction-first-party",
+  "source_mix": "first_party",
+  "source_note": "Pinned first-party privacy/data-extraction source; no GLiNER accuracy, production MCP, real DSR, or sensitive-data handling claim is made.",
+  "title": "Redact AI PII-extraction first-party planned source candidate"
+}

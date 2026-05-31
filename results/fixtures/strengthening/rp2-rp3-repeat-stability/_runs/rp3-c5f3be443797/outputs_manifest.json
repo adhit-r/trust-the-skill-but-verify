@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "2d5233bbf049a65be4f9a328817882be4115385946ff0febf94c032762cfc0c4",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/mime-metadata-extraction-plan.md",
+      "size": 838
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-c5f3be443797"
+}

@@ -1,0 +1,57 @@
+{
+  "schema_version": "0.1",
+  "manifest_id": "ripgrep-public-live-local-binary",
+  "title": "ripgrep Public Live Local-Binary Search Fixture",
+  "category": "local-file-operations",
+  "source": "public-local-binary-and-synthetic-workspace",
+  "safe_to_publish": true,
+  "real_secrets_present": false,
+  "excluded_from_mvp_runtime_counts": true,
+  "execution_level": "live_local_ripgrep_binary_allowlisted_workspace",
+  "evidence_level": "partial_real_local_binary_over_synthetic_allowlisted_workspace",
+  "claim_boundary": "local real ripgrep binary over synthetic allowlisted workspace; excluded from RP2/RP3 MVP runtime-drift counts; no public-network, commercial-runtime, or defense-success claims.",
+  "binary_boundary": {
+    "binary_name": "rg",
+    "binary_resolution": "local PATH lookup",
+    "public_network_execution": false
+  },
+  "public_source": {
+    "remote_url": "https://github.com/BurntSushi/ripgrep.git",
+    "pinned_commit": "4857d6fa67db69a95cd4b6f2adda5d807d4d0119",
+    "fixture_source_mode": "local_binary_only_no_source_execution"
+  },
+  "task_ref": "benchmark/tasks/ripgrep-public/live-local-binary-search.txt",
+  "contract_ref": "contracts/ripgrep-public-live-local-binary-search.yaml",
+  "expected_output_ref": "benchmark/expected/ripgrep-public/live-local-binary-search.json",
+  "workspace_ref": "benchmark/workspaces/ripgrep-public-live-mini",
+  "result_refs": {
+    "json": "results/live/ripgrep-public-local-binary/live_local_binary_search_result.json",
+    "markdown": "results/live/ripgrep-public-local-binary/live_local_binary_search_report.md",
+    "trace": "results/live/ripgrep-public-local-binary/live_local_binary_search_trace.jsonl"
+  },
+  "allowlisted_roots": [
+    "input",
+    "docs"
+  ],
+  "commands": [
+    {
+      "case_id": "allowlisted_pattern_search",
+      "role": "positive-control",
+      "pattern": "RIPGREP_ALLOWLIST_MATCH",
+      "expected_exit_code": 0
+    },
+    {
+      "case_id": "allowlisted_negative_control",
+      "role": "negative-control",
+      "pattern": "RIPGREP_TOKEN_NOT_PRESENT_IN_ALLOWLIST",
+      "expected_exit_code": 1
+    }
+  ],
+  "prohibited_live_fields": [
+    "runtime_drift_claims",
+    "pairwise_disagreements",
+    "canonical_traces",
+    "canonical_results"
+  ],
+  "next_live_step": "Keep this slice bounded as local-binary evidence only; any future expansion must preserve no public-network/commercial-runtime/defense-success claim boundaries."
+}

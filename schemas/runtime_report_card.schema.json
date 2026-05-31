@@ -1,0 +1,268 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/trust-the-skill/runtime_report_card.schema.json",
+  "title": "SkillDiff Runtime Report Card",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "report_type",
+    "runtime_profile",
+    "generated_at",
+    "boundary",
+    "artifacts",
+    "aggregate",
+    "metrics",
+    "evidence_coverage",
+    "pairwise",
+    "breakdowns"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1"
+    },
+    "report_type": {
+      "type": "string",
+      "const": "runtime_report_card"
+    },
+    "runtime_profile": {
+      "type": "string",
+      "minLength": 1
+    },
+    "generated_at": {
+      "type": "string",
+      "minLength": 1
+    },
+    "boundary": {
+      "type": "string",
+      "minLength": 1
+    },
+    "artifacts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "finding_paths",
+        "comparison_paths"
+      ],
+      "properties": {
+        "finding_paths": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "comparison_paths": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+    "aggregate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "run_count",
+        "benign_run_count",
+        "adversarial_run_count",
+        "unknown_role_run_count",
+        "trace_valid_runs",
+        "comparison_pair_count",
+        "expected_comparison_pair_count",
+        "realized_violation_runs",
+        "attempted_overreach_runs",
+        "attack_success_proxy_runs",
+        "functional_success_runs",
+        "secure_functional_success_runs",
+        "missing_output_runs",
+        "output_oracle_failure_runs",
+        "approval_prompt_count",
+        "approval_required_event_count",
+        "approval_bypass_runs",
+        "instrumentation_failure_runs",
+        "instrumentation_failure_events",
+        "severity_weighted_realized_violation_mass",
+        "categories",
+        "attack_families"
+      ],
+      "properties": {
+        "run_count": { "type": "integer", "minimum": 0 },
+        "benign_run_count": { "type": "integer", "minimum": 0 },
+        "adversarial_run_count": { "type": "integer", "minimum": 0 },
+        "unknown_role_run_count": { "type": "integer", "minimum": 0 },
+        "trace_valid_runs": { "type": "integer", "minimum": 0 },
+        "comparison_pair_count": { "type": "integer", "minimum": 0 },
+        "expected_comparison_pair_count": { "type": "integer", "minimum": 0 },
+        "realized_violation_runs": { "type": "integer", "minimum": 0 },
+        "attempted_overreach_runs": { "type": "integer", "minimum": 0 },
+        "attack_success_proxy_runs": { "type": "integer", "minimum": 0 },
+        "functional_success_runs": { "type": "integer", "minimum": 0 },
+        "secure_functional_success_runs": { "type": "integer", "minimum": 0 },
+        "missing_output_runs": { "type": "integer", "minimum": 0 },
+        "output_oracle_failure_runs": { "type": "integer", "minimum": 0 },
+        "approval_prompt_count": { "type": "integer", "minimum": 0 },
+        "approval_required_event_count": { "type": "integer", "minimum": 0 },
+        "approval_bypass_runs": { "type": "integer", "minimum": 0 },
+        "instrumentation_failure_runs": { "type": "integer", "minimum": 0 },
+        "instrumentation_failure_events": { "type": "integer", "minimum": 0 },
+        "severity_weighted_realized_violation_mass": { "type": "integer", "minimum": 0 },
+        "categories": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "uniqueItems": true
+        },
+        "attack_families": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "uniqueItems": true
+        }
+      }
+    },
+    "metrics": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract_violation_rate",
+        "attempted_overreach_rate",
+        "benign_task_success_rate",
+        "secure_benign_success_rate",
+        "adversarial_realized_violation_rate",
+        "utility_cost_rate",
+        "approval_burden",
+        "runtime_risk_score_proxy"
+      ],
+      "properties": {
+        "contract_violation_rate": { "$ref": "#/$defs/metric" },
+        "attempted_overreach_rate": { "$ref": "#/$defs/metric" },
+        "benign_task_success_rate": { "$ref": "#/$defs/metric" },
+        "secure_benign_success_rate": { "$ref": "#/$defs/metric" },
+        "adversarial_realized_violation_rate": { "$ref": "#/$defs/metric" },
+        "utility_cost_rate": { "$ref": "#/$defs/metric" },
+        "approval_burden": { "$ref": "#/$defs/metric" },
+        "runtime_risk_score_proxy": { "$ref": "#/$defs/metric" }
+      }
+    },
+    "evidence_coverage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "trace_valid_rate",
+        "comparison_pair_coverage_rate",
+        "instrumentation_failure_run_rate"
+      ],
+      "properties": {
+        "trace_valid_rate": { "$ref": "#/$defs/metric" },
+        "comparison_pair_coverage_rate": { "$ref": "#/$defs/metric" },
+        "instrumentation_failure_run_rate": { "$ref": "#/$defs/metric" }
+      }
+    },
+    "pairwise": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/pairwiseSummary" }
+    },
+    "breakdowns": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "by_category",
+        "by_attack_family"
+      ],
+      "properties": {
+        "by_category": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/sliceSummary" }
+        },
+        "by_attack_family": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/sliceSummary" }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "metric": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "supported",
+        "numerator",
+        "denominator",
+        "value"
+      ],
+      "properties": {
+        "supported": { "type": "boolean" },
+        "numerator": { "type": ["integer", "number", "null"] },
+        "denominator": { "type": ["integer", "number", "null"] },
+        "value": { "type": ["number", "null"] },
+        "notes": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "sliceSummary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "label",
+        "run_count",
+        "realized_violation_runs",
+        "attempted_overreach_runs",
+        "functional_success_runs",
+        "attack_success_proxy_runs",
+        "missing_output_runs"
+      ],
+      "properties": {
+        "label": { "type": "string", "minLength": 1 },
+        "run_count": { "type": "integer", "minimum": 0 },
+        "realized_violation_runs": { "type": "integer", "minimum": 0 },
+        "attempted_overreach_runs": { "type": "integer", "minimum": 0 },
+        "functional_success_runs": { "type": "integer", "minimum": 0 },
+        "attack_success_proxy_runs": { "type": "integer", "minimum": 0 },
+        "missing_output_runs": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "pairwiseSummary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "counterpart_runtime_profile",
+        "pair_count",
+        "runtime_drift_candidate_pairs",
+        "mitigation_report_card_pairs",
+        "pairwise_disagreements",
+        "pairwise_disagreement_rate",
+        "drift_class_pair_rates"
+      ],
+      "properties": {
+        "counterpart_runtime_profile": {
+          "type": "string",
+          "minLength": 1
+        },
+        "pair_count": { "type": "integer", "minimum": 0 },
+        "runtime_drift_candidate_pairs": { "type": "integer", "minimum": 0 },
+        "mitigation_report_card_pairs": { "type": "integer", "minimum": 0 },
+        "pairwise_disagreements": { "type": "integer", "minimum": 0 },
+        "pairwise_disagreement_rate": { "$ref": "#/$defs/metric" },
+        "drift_class_pair_rates": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["D1", "D2", "D3", "D4", "D5"],
+          "properties": {
+            "D1": { "$ref": "#/$defs/metric" },
+            "D2": { "$ref": "#/$defs/metric" },
+            "D3": { "$ref": "#/$defs/metric" },
+            "D4": { "$ref": "#/$defs/metric" },
+            "D5": { "$ref": "#/$defs/metric" }
+          }
+        }
+      }
+    }
+  }
+}

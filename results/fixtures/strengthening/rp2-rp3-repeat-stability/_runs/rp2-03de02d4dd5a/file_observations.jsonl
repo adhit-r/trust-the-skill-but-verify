@@ -1,0 +1,2 @@
+{"copied_file_count": 8, "event": "workspace_seed_copied", "path": "<REPO_ROOT>/benchmark/workspaces/dependabot-core-public-planned-mini", "profile_id": "RP2", "timestamp": "2026-05-29T17:14:59+00:00"}
+{"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./planned-output/ecosystem-scope-boundary-plan.md", "sha256": "sha256:ecec88711ed2811aa6ef37190efdebfe9bc97c18144c72c4f138704abb4c3cec", "size": 882, "status": "succeeded", "timestamp": "2026-05-29T17:15:00+00:00"}

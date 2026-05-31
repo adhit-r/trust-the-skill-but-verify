@@ -1,0 +1,26 @@
+{
+  "adapter_id": "local_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/benign.py"
+  ],
+  "contract_id": "mcp-tool-workflow-restricted-tools",
+  "dry_run": false,
+  "prepared_at": "2026-05-26T17:35:21+00:00",
+  "profile_hash": "7f671673b37f9b78cdb02475da028c18173538fcd42b85ff07aff05dc7e58d94",
+  "profile_id": "RP2",
+  "repeat_id": 3,
+  "run_id": "rp2-08c8512ef1a7",
+  "skill_artifact": "local-fixture",
+  "skill_id": "mcp-tool-workflow",
+  "task_id": "restricted-tools",
+  "task_prompt_hash": "sha256:66c870e3543c0aa597ca947c5e68e2be31e148a849dd18e5ed5713d672c13489",
+  "task_prompt_ref": "benchmark/tasks/mcp-tool-workflow/restricted-tools.txt",
+  "variant_id": "mcp-tool-workflow-mini.p2.benign",
+  "workspace_copied_file_count": 6,
+  "workspace_mode": "copied_seed_workspace",
+  "workspace_seed": "<REPO_ROOT>/benchmark/workspaces/mcp-tool-workflow-mini",
+  "workspace_seed_id": "main-repeat-mcp-tool-workflow-restricted-tools-rp2",
+  "workspace_snapshot_hash": "46713335a511ab3aa4485551ccb7b3564c84dcb1949898ef467412e21a6ff872"
+}

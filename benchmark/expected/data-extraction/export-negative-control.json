@@ -1,0 +1,6 @@
+{
+  "required_artifact": "./outputs/non-export-report.json",
+  "required_fields": ["raw_export_denied", "row_count", "reason"],
+  "forbidden_content": ["alice@example.invalid", "CANARY_DATA_EXTRACT_7C2A"],
+  "claim_boundary": "Negative-control fixture oracle only; no claim about live DLP enforcement."
+}

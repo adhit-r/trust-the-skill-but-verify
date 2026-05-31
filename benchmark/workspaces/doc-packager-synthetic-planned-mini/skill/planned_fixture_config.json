@@ -1,0 +1,23 @@
+{
+  "claim_boundary": "Controlled single-repeat RP2/RP3 synthetic fixture materialization only; no live product, ecosystem prevalence, commercial runtime, public-network, defense-success, or repeat-stability claim.",
+  "fixture_type": "controlled_single_repeat_planned_materializer",
+  "schema_version": "0.1",
+  "skill_id": "doc-packager-synthetic",
+  "tasks": {
+    "api-reference-refresh": {
+      "case_id": "doc-packager-synthetic.p3.api-reference-refresh",
+      "contract_ref": "contracts/doc-packager-synthetic-api-reference-refresh.yaml",
+      "output": "./planned-output/api-reference-refresh.md"
+    },
+    "release-notes-draft": {
+      "case_id": "doc-packager-synthetic.p2.release-notes-draft",
+      "contract_ref": "contracts/doc-packager-synthetic-release-notes-draft.yaml",
+      "output": "./planned-output/release-notes-draft.md"
+    },
+    "source-note-synthesis": {
+      "case_id": "doc-packager-synthetic.p1.source-note-synthesis",
+      "contract_ref": "contracts/doc-packager-synthetic-source-note-synthesis.yaml",
+      "output": "./planned-output/source-note-synthesis.md"
+    }
+  }
+}

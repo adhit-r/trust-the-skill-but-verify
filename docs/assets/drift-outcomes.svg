@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1160" height="520" viewBox="0 0 1160 520" role="img" aria-labelledby="title desc">
+  <title id="title">Drift outcomes</title>
+  <desc id="desc">Outcome taxonomy for comparing runtime profiles: realized violations, attempted overreach, missing outputs, oracle failures, canary observations, instrumentation failures, and runtime-pair disagreements.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1f2937"/>
+    </marker>
+    <style>
+      .title { font: 700 24px Arial, sans-serif; fill: #111827; }
+      .label { font: 700 15px Arial, sans-serif; fill: #111827; }
+      .small { font: 13px Arial, sans-serif; fill: #374151; }
+      .box { fill: #f8fafc; stroke: #1f2937; stroke-width: 1.5; rx: 8; }
+      .bad { fill: #fee2e2; stroke: #b91c1c; }
+      .blocked { fill: #ffedd5; stroke: #b45309; }
+      .utility { fill: #fef9c3; stroke: #a16207; }
+      .observe { fill: #dbeafe; stroke: #2563eb; }
+      .pair { fill: #dcfce7; stroke: #15803d; }
+      .neutral { fill: #f3f4f6; stroke: #6b7280; }
+      .arrow { stroke: #1f2937; stroke-width: 1.6; fill: none; marker-end: url(#arrow); }
+    </style>
+  </defs>
+  <rect x="0" y="0" width="1160" height="520" fill="#ffffff"/>
+  <text x="42" y="46" class="title">Drift Outcomes</text>
+  <text x="42" y="72" class="small">Contract checking separates unsafe behavior, blocked attempts, utility loss, and observer gaps before pairwise comparison.</text>
+
+  <rect x="470" y="106" width="220" height="72" class="box"/>
+  <text x="506" y="136" class="label">Contract check</text>
+  <text x="506" y="158" class="small">One run, one runtime profile</text>
+
+  <rect x="66" y="238" width="176" height="86" class="box bad"/>
+  <text x="94" y="270" class="label">Realized violation</text>
+  <text x="94" y="294" class="small">Denied action completes</text>
+  <rect x="276" y="238" width="176" height="86" class="box blocked"/>
+  <text x="304" y="270" class="label">Attempted overreach</text>
+  <text x="304" y="294" class="small">Denied action blocked</text>
+  <rect x="486" y="238" width="176" height="86" class="box utility"/>
+  <text x="514" y="270" class="label">Missing output</text>
+  <text x="514" y="294" class="small">Utility failure or fail closed</text>
+  <rect x="696" y="238" width="176" height="86" class="box observe"/>
+  <text x="724" y="270" class="label">Canary observation</text>
+  <text x="724" y="294" class="small">Synthetic marker appears</text>
+  <rect x="906" y="238" width="176" height="86" class="box neutral"/>
+  <text x="934" y="270" class="label">Instrumentation failure</text>
+  <text x="934" y="294" class="small">Observer gap, not clean run</text>
+
+  <rect x="330" y="394" width="500" height="74" class="box pair"/>
+  <text x="368" y="424" class="label">Runtime-pair disagreement</text>
+  <text x="368" y="446" class="small">Two fixed-invariant runs differ in security-relevant findings or outputs.</text>
+
+  <path class="arrow" d="M 520 178 C 372 196 250 210 154 236"/>
+  <path class="arrow" d="M 550 178 C 480 198 430 214 364 236"/>
+  <path class="arrow" d="M 580 178 L 574 236"/>
+  <path class="arrow" d="M 610 178 C 668 198 718 214 784 236"/>
+  <path class="arrow" d="M 640 178 C 776 198 892 214 994 236"/>
+  <path class="arrow" d="M 154 324 C 230 376 362 390 476 392"/>
+  <path class="arrow" d="M 364 324 C 420 362 466 378 520 392"/>
+  <path class="arrow" d="M 574 324 L 574 390"/>
+  <path class="arrow" d="M 784 324 C 740 362 692 378 640 392"/>
+  <path class="arrow" d="M 994 324 C 930 372 806 388 686 392"/>
+</svg>

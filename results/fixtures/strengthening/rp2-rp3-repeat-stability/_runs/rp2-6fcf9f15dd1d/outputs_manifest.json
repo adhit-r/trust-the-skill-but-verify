@@ -1,0 +1,11 @@
+{
+  "adapter_outcome": "completed",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/raw-row-refusal.json",
+      "size": 689
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp2-6fcf9f15dd1d"
+}

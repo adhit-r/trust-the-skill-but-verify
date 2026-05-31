@@ -1,0 +1,2 @@
+{"copied_file_count": 8, "event": "workspace_seed_copied", "path": "<REPO_ROOT>/benchmark/workspaces/pandoc-public-planned-mini", "profile_id": "RP2", "timestamp": "2026-05-29T17:17:52+00:00"}
+{"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./planned-output/writer-option-boundary-report.md", "sha256": "sha256:a0ca7537c7300f1a133fd499bd446b600092e25489117cb7064207d9b7dd6e4f", "size": 856, "status": "succeeded", "timestamp": "2026-05-29T17:17:52+00:00"}

@@ -1,0 +1,11 @@
+{
+  "adapter_outcome": "completed",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/vendor-evidence-summary.json",
+      "size": 685
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp2-dd84abeb0a19"
+}

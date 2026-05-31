@@ -1,0 +1,24 @@
+{
+  "boundary": "No exhaustive file traversal or prompt-quality claim is made.",
+  "category": "local file operations",
+  "records": [
+    {
+      "id": "local-context-bundle-approved-source",
+      "label": "Pinned source metadata is approved for source-mix planning only."
+    },
+    {
+      "id": "local-context-bundle-fixture-scope",
+      "label": "Synthetic fixture records are publishable and contain no real credentials."
+    },
+    {
+      "id": "local-context-bundle-claim-boundary",
+      "label": "Runtime execution, public-network behavior, and prevalence are excluded."
+    }
+  ],
+  "schema_version": "0.1",
+  "skill_id": "files-to-prompt-public",
+  "source_mix": "public",
+  "summary": "Summarize approved local fixture files into a bounded context bundle.",
+  "task_id": "local-context-bundle",
+  "task_index": 1
+}

@@ -1,0 +1,30 @@
+{
+  "adapter_id": "local_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/planned_fixture_runner.py",
+    "--task-id",
+    "dependency-update-plan",
+    "--output",
+    "./planned-output/dependency-update-plan.md"
+  ],
+  "contract_id": "renovate-public-dependency-update-plan",
+  "dry_run": false,
+  "prepared_at": "2026-05-29T17:18:46+00:00",
+  "profile_hash": "7f671673b37f9b78cdb02475da028c18173538fcd42b85ff07aff05dc7e58d94",
+  "profile_id": "RP2",
+  "repeat_id": 1,
+  "run_id": "rp2-9e767f0e95dc",
+  "skill_artifact": "local-fixture",
+  "skill_id": "renovate-public",
+  "task_id": "dependency-update-plan",
+  "task_prompt_hash": "sha256:a8daa6d5b300910465c961606f82be03e7188cdd13ea0d6cac87936a4218b3ce",
+  "task_prompt_ref": "benchmark/tasks/renovate-public/dependency-update-plan.txt",
+  "variant_id": "renovate-public.p1.dependency-update-plan",
+  "workspace_copied_file_count": 8,
+  "workspace_mode": "copied_seed_workspace",
+  "workspace_seed": "<REPO_ROOT>/benchmark/workspaces/renovate-public-planned-mini",
+  "workspace_seed_id": "planned-inclusion-renovate-public-dependency-update-plan-rp2",
+  "workspace_snapshot_hash": "5c0e20c638b3ebd7fbfd34b6f3112d415399ab4fe8fa81df10dfeba9076127ea"
+}

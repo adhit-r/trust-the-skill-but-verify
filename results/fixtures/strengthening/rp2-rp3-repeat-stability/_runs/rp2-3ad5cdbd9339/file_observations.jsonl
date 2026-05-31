@@ -1,0 +1,2 @@
+{"copied_file_count": 8, "event": "workspace_seed_copied", "path": "<REPO_ROOT>/benchmark/workspaces/zenscan-mcp-scanner-first-party-planned-mini", "profile_id": "RP2", "timestamp": "2026-05-29T17:20:51+00:00"}
+{"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./planned-output/registry-secret-live-scan-negative-control.md", "sha256": "sha256:edd4dafcae17644cc1e762db7988577aa091df9f84b071b32e2d371161946ccb", "size": 883, "status": "succeeded", "timestamp": "2026-05-29T17:20:51+00:00"}

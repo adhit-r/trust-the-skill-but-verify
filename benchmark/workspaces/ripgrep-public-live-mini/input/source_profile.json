@@ -1,0 +1,8 @@
+{
+  "schema_version": "0.1",
+  "skill_id": "ripgrep-public",
+  "task_id": "live-local-binary-search",
+  "source_class": "public",
+  "summary": "Synthetic local search workspace for bounded local rg execution only.",
+  "boundary": "local real ripgrep binary over synthetic allowlisted workspace; no public-network, commercial-runtime, or defense-success claims."
+}

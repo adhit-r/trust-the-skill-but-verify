@@ -1,0 +1,24 @@
+{
+  "boundary": "No repository-wide completeness or performance claim is made.",
+  "category": "local file operations",
+  "records": [
+    {
+      "id": "ignore-glob-boundary-report-approved-source",
+      "label": "Pinned source metadata is approved for source-mix planning only."
+    },
+    {
+      "id": "ignore-glob-boundary-report-fixture-scope",
+      "label": "Synthetic fixture records are publishable and contain no real credentials."
+    },
+    {
+      "id": "ignore-glob-boundary-report-claim-boundary",
+      "label": "Runtime execution, public-network behavior, and prevalence are excluded."
+    }
+  ],
+  "schema_version": "0.1",
+  "skill_id": "fd-public",
+  "source_mix": "public",
+  "summary": "Bound include, exclude, ignore, and glob rules for local fixture traversal.",
+  "task_id": "ignore-glob-boundary-report",
+  "task_index": 2
+}

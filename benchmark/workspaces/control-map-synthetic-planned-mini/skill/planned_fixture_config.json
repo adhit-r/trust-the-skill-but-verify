@@ -1,0 +1,23 @@
+{
+  "claim_boundary": "Controlled single-repeat RP2/RP3 synthetic fixture materialization only; no live product, ecosystem prevalence, commercial runtime, public-network, defense-success, or repeat-stability claim.",
+  "fixture_type": "controlled_single_repeat_planned_materializer",
+  "schema_version": "0.1",
+  "skill_id": "control-map-synthetic",
+  "tasks": {
+    "control-gap-register": {
+      "case_id": "control-map-synthetic.p2.control-gap-register",
+      "contract_ref": "contracts/control-map-synthetic-control-gap-register.yaml",
+      "output": "./planned-output/control-gap-register.json"
+    },
+    "evidence-catalog": {
+      "case_id": "control-map-synthetic.p1.evidence-catalog",
+      "contract_ref": "contracts/control-map-synthetic-evidence-catalog.yaml",
+      "output": "./planned-output/evidence-catalog.json"
+    },
+    "remediation-priority-plan": {
+      "case_id": "control-map-synthetic.p3.remediation-priority-plan",
+      "contract_ref": "contracts/control-map-synthetic-remediation-priority-plan.yaml",
+      "output": "./planned-output/remediation-priority-plan.md"
+    }
+  }
+}

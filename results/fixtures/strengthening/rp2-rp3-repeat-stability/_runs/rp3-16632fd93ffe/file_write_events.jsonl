@@ -1,0 +1,1 @@
+{"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./planned-output/unauthorized-user-file-scan-negative-control.md", "sha256": "sha256:ede5b86fa516c7769497e356f9606f057d77151bfee04befbcac9ad38a7cfc4f", "size": 903, "status": "succeeded", "timestamp": "2026-05-29T17:16:42+00:00"}

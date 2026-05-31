@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1160" height="520" viewBox="0 0 1160 520" role="img" aria-labelledby="title desc">
+  <title id="title">Trace lifecycle</title>
+  <desc id="desc">Trace lifecycle from fixed run metadata through raw observations, normalized events, contract findings, runtime pair comparison, and claim-ledger evidence.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1f2937"/>
+    </marker>
+    <style>
+      .title { font: 700 24px Arial, sans-serif; fill: #111827; }
+      .label { font: 700 15px Arial, sans-serif; fill: #111827; }
+      .small { font: 13px Arial, sans-serif; fill: #374151; }
+      .box { fill: #f8fafc; stroke: #1f2937; stroke-width: 1.5; rx: 8; }
+      .meta { fill: #ecfeff; stroke: #0f766e; }
+      .raw { fill: #fff7ed; stroke: #b45309; }
+      .norm { fill: #eff6ff; stroke: #2563eb; }
+      .out { fill: #f0fdf4; stroke: #15803d; }
+      .warn { fill: #f9fafb; stroke: #6b7280; }
+      .arrow { stroke: #1f2937; stroke-width: 1.6; fill: none; marker-end: url(#arrow); }
+    </style>
+  </defs>
+  <rect x="0" y="0" width="1160" height="520" fill="#ffffff"/>
+  <text x="42" y="46" class="title">Trace Lifecycle</text>
+  <text x="42" y="72" class="small">Every comparison starts with fixed run identity and ends in bounded, ledger-backed evidence.</text>
+
+  <rect x="50" y="142" width="160" height="108" class="box meta"/>
+  <text x="76" y="174" class="label">Run identity</text>
+  <text x="76" y="198" class="small">Skill, task, contract</text>
+  <text x="76" y="218" class="small">Workspace hash</text>
+  <text x="76" y="238" class="small">Prompt, variant, repeat</text>
+
+  <rect x="260" y="142" width="160" height="108" class="box raw"/>
+  <text x="286" y="174" class="label">Raw observers</text>
+  <text x="286" y="198" class="small">Filesystem</text>
+  <text x="286" y="218" class="small">Process, network</text>
+  <text x="286" y="238" class="small">Outputs, canaries</text>
+
+  <rect x="470" y="142" width="160" height="108" class="box norm"/>
+  <text x="496" y="174" class="label">trace.jsonl</text>
+  <text x="496" y="198" class="small">Normalized events</text>
+  <text x="496" y="218" class="small">Profile metadata</text>
+  <text x="496" y="238" class="small">Evidence refs</text>
+
+  <rect x="680" y="142" width="160" height="108" class="box out"/>
+  <text x="706" y="174" class="label">Contract findings</text>
+  <text x="706" y="198" class="small">Realized violation</text>
+  <text x="706" y="218" class="small">Attempted overreach</text>
+  <text x="706" y="238" class="small">Missing output</text>
+
+  <rect x="890" y="142" width="180" height="108" class="box out"/>
+  <text x="916" y="174" class="label">Pair and report</text>
+  <text x="916" y="198" class="small">Runtime disagreement</text>
+  <text x="916" y="218" class="small">Report card</text>
+  <text x="916" y="238" class="small">Claim ledger ref</text>
+
+  <path class="arrow" d="M 210 196 L 258 196"/>
+  <path class="arrow" d="M 420 196 L 468 196"/>
+  <path class="arrow" d="M 630 196 L 678 196"/>
+  <path class="arrow" d="M 840 196 L 888 196"/>
+
+  <rect x="94" y="330" width="300" height="78" class="box warn"/>
+  <text x="122" y="362" class="label">Instrumentation failures</text>
+  <text x="122" y="386" class="small">Observer gaps are counted separately from clean behavior.</text>
+  <rect x="432" y="330" width="300" height="78" class="box warn"/>
+  <text x="460" y="362" class="label">Safety boundary</text>
+  <text x="460" y="386" class="small">Synthetic canaries only; no real credentials or public exfiltration.</text>
+  <rect x="770" y="330" width="300" height="78" class="box warn"/>
+  <text x="798" y="362" class="label">Evidence boundary</text>
+  <text x="798" y="386" class="small">Generated claims must map back to repository artifacts.</text>
+</svg>

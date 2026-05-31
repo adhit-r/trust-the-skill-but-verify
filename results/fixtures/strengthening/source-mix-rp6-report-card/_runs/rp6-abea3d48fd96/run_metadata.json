@@ -1,0 +1,30 @@
+{
+  "adapter_id": "hardened_policy_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/planned_fixture_runner.py",
+    "--task-id",
+    "webhook-agent-flow-summary",
+    "--output",
+    "./planned-output/webhook-agent-flow-summary.md"
+  ],
+  "contract_id": "huginn-public-webhook-agent-flow-summary",
+  "dry_run": false,
+  "prepared_at": "2026-05-30T17:55:44+00:00",
+  "profile_hash": "eb604ffff1a6915487f9d9039430931d345f309733c1e5b4deaeaaa6baf077b8",
+  "profile_id": "RP6",
+  "repeat_id": 3,
+  "run_id": "rp6-abea3d48fd96",
+  "skill_artifact": "local-fixture",
+  "skill_id": "huginn-public",
+  "task_id": "webhook-agent-flow-summary",
+  "task_prompt_hash": "sha256:dc38ef45e4077d930f72924636ca557755d837b68690899071b07c865d693924",
+  "task_prompt_ref": "benchmark/tasks/huginn-public/webhook-agent-flow-summary.txt",
+  "variant_id": "huginn-public.p1.webhook-agent-flow-summary",
+  "workspace_copied_file_count": 6,
+  "workspace_mode": "contract_scoped_staged_workspace",
+  "workspace_seed": "<REPO_ROOT>/benchmark/workspaces/huginn-public-planned-mini",
+  "workspace_seed_id": "source-mix-rp6-huginn-public-webhook-agent-flow-summary-repeat3",
+  "workspace_snapshot_hash": "9c149ba6511d418513fb196eb56bf76c20ec924ec7537ef325aa1671e1209f0e"
+}

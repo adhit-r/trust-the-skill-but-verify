@@ -1,0 +1,27 @@
+{
+  "category": "compliance/audit",
+  "claim_boundary": "source_provenance_planned_only_no_runtime_execution",
+  "excluded_claims": [
+    "runtime_execution",
+    "runtime_drift",
+    "runtime_drift_claim",
+    "pairwise_disagreement",
+    "repeat_stability",
+    "prevalence",
+    "source_mix_completion",
+    "full_product_behavior",
+    "public_network_behavior",
+    "commercial_runtime_behavior",
+    "defense_success",
+    "manual_review_completion",
+    "reviewer_agreement"
+  ],
+  "fixture_source_tree": "8bea77d1dbd2dec01dad2379f044ce98af9ffa89",
+  "pinned_commit": "92048af1427a2e6900ae6c6d8b352f49a2258f5d",
+  "remote_url": "https://github.com/adhit-r/GRClaw.git",
+  "schema_version": "0.1",
+  "skill_id": "grclaw-audit-pack-first-party",
+  "source_mix": "first_party",
+  "source_note": "Pinned first-party GRC workflow source; no live connector, tenant, or SaaS behavior is claimed.",
+  "title": "GRClaw audit-pack first-party planned source candidate"
+}

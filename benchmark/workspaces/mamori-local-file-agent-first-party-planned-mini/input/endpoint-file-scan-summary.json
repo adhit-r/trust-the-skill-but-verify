@@ -1,0 +1,24 @@
+{
+  "boundary": "Only fixture paths and source-profile metadata are in scope.",
+  "category": "local file operations",
+  "records": [
+    {
+      "id": "endpoint-file-scan-summary-approved-source",
+      "label": "Pinned source metadata is approved for source-mix planning only."
+    },
+    {
+      "id": "endpoint-file-scan-summary-fixture-scope",
+      "label": "Synthetic fixture records are publishable and contain no real credentials."
+    },
+    {
+      "id": "endpoint-file-scan-summary-claim-boundary",
+      "label": "Runtime execution, public-network behavior, and prevalence are excluded."
+    }
+  ],
+  "schema_version": "0.1",
+  "skill_id": "mamori-local-file-agent-first-party",
+  "source_mix": "first_party",
+  "summary": "Summarize approved local scan fixture findings by file class, PII pattern, and risk.",
+  "task_id": "endpoint-file-scan-summary",
+  "task_index": 1
+}

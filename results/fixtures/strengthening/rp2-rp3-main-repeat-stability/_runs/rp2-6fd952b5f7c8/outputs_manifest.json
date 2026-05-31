@@ -1,0 +1,11 @@
+{
+  "adapter_outcome": "completed",
+  "generated_outputs": [
+    {
+      "path": "./output/cleanup-plan.json",
+      "size": 194
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp2-6fd952b5f7c8"
+}

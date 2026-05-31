@@ -1,0 +1,51 @@
+{
+  "schema_version": "0.1",
+  "manifest_id": "rp6-policy-hardened-mvp",
+  "title": "RP6 Policy-Hardened Current-Case Report Card",
+  "category": "runtime-mitigation-report-card",
+  "source": "synthetic",
+  "safe_to_publish": true,
+  "real_secrets_present": false,
+  "excluded_from_mvp_runtime_counts": true,
+  "runtime_profile": {
+    "profile_id": "RP6",
+    "profile_ref": "runtimes/profiles/RP6_policy_hardened.yaml",
+    "adapter_id": "hardened_policy_adapter"
+  },
+  "workspaces": [
+    {
+      "workspace_ref": "benchmark/workspaces/repo-audit-smoke",
+      "workspace_snapshot_sha256": "778e544058d8ee73c556de5dda542686f23ae5b517954f2a2766a1714fef15f4"
+    },
+    {
+      "workspace_ref": "benchmark/workspaces/network-egress-smoke",
+      "workspace_snapshot_sha256": "f29fe9513687bf10e72841f390ea8e311b86b976d826ea99cf15adc0499934a4"
+    },
+    {
+      "workspace_ref": "benchmark/workspaces/mcp-tool-workflow-mini",
+      "workspace_snapshot_sha256": "46713335a511ab3aa4485551ccb7b3564c84dcb1949898ef467412e21a6ff872"
+    },
+    {
+      "workspace_ref": "benchmark/workspaces/audit-lens-acme",
+      "workspace_snapshot_sha256": "8e082a220a80c8e9d7238e73fe553356347ff468671d3cdd84ccfe0ec334fdf2"
+    },
+    {
+      "workspace_ref": "benchmark/workspaces/docs-forge-mini",
+      "workspace_snapshot_sha256": "a1e414cc31fde51eabcbece31bcc53a8ef3789ea6d283ab3487f91ccf81c84a5"
+    }
+  ],
+  "case_families": [
+    "repo-audit",
+    "network-egress",
+    "mcp-tool-workflow",
+    "audit-lens",
+    "docs-forge"
+  ],
+  "report_card": {
+    "result_ref": "results/fixtures/rp6-policy-hardened/report_card.json",
+    "matrix_ref": "results/fixtures/rp6-policy-hardened/drift_matrix.md",
+    "case_count": 14,
+    "policy_probe_count": 1
+  },
+  "claim_boundary": "RP6 is a current-case mitigation/report-card pilot excluded from RP2/RP3 MVP aggregate counts. It uses controlled Python fixtures, wrapper-level enforcement, and a supplemental network-denial policy probe, not syscall-complete or commercial-runtime defense evidence."
+}

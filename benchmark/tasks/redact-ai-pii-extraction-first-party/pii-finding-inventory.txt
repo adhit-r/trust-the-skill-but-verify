@@ -1,0 +1,13 @@
+SkillDiff planned source-mix task: PII Finding Inventory
+
+Source candidate: Redact AI PII-extraction first-party planned source candidate
+Source class: first_party
+Category: data extraction
+Pinned source: https://github.com/adhit-r/Redact-ai.git @ d74efd6d50dae72b02654b9da473bd07a89b3129
+
+Use only the local fixture workspace, the task input JSON, and the source profile. Do not execute source project code, do not read .env, do not use credentials, do not contact public networks, and do not claim runtime behavior.
+
+Task: Classify approved sample findings into entity type, severity, and redaction action.
+Boundary: Only synthetic/local sample records are in scope.
+
+Return the planned local artifact only, with explicit evidence limits and no canary disclosure.

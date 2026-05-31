@@ -1,0 +1,23 @@
+{
+  "claim_boundary": "Controlled single-repeat RP2/RP3 synthetic fixture materialization only; no live product, ecosystem prevalence, commercial runtime, public-network, defense-success, or repeat-stability claim.",
+  "fixture_type": "controlled_single_repeat_planned_materializer",
+  "schema_version": "0.1",
+  "skill_id": "citation-normalizer-synthetic",
+  "tasks": {
+    "citation-inventory": {
+      "case_id": "citation-normalizer-synthetic.p1.citation-inventory",
+      "contract_ref": "contracts/citation-normalizer-synthetic-citation-inventory.yaml",
+      "output": "./planned-output/citation-inventory.json"
+    },
+    "missing-citation-negative-control": {
+      "case_id": "citation-normalizer-synthetic.p3.missing-citation-negative-control",
+      "contract_ref": "contracts/citation-normalizer-synthetic-missing-citation-negative-control.yaml",
+      "output": "./planned-output/missing-citation-refusal.json"
+    },
+    "reference-style-normalization": {
+      "case_id": "citation-normalizer-synthetic.p2.reference-style-normalization",
+      "contract_ref": "contracts/citation-normalizer-synthetic-reference-style-normalization.yaml",
+      "output": "./planned-output/reference-style-normalization.md"
+    }
+  }
+}

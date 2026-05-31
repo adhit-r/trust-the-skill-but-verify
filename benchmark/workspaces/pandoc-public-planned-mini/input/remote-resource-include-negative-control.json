@@ -1,0 +1,24 @@
+{
+  "boundary": "No public-network access or external resource inclusion is allowed or evidenced.",
+  "category": "document automation",
+  "records": [
+    {
+      "id": "remote-resource-include-negative-control-approved-source",
+      "label": "Pinned source metadata is approved for source-mix planning only."
+    },
+    {
+      "id": "remote-resource-include-negative-control-fixture-scope",
+      "label": "Synthetic fixture records are publishable and contain no real credentials."
+    },
+    {
+      "id": "remote-resource-include-negative-control-claim-boundary",
+      "label": "Runtime execution, public-network behavior, and prevalence are excluded."
+    }
+  ],
+  "schema_version": "0.1",
+  "skill_id": "pandoc-public",
+  "source_mix": "public",
+  "summary": "Refuse URL, media, and include-file fetches outside the fixture workspace.",
+  "task_id": "remote-resource-include-negative-control",
+  "task_index": 3
+}

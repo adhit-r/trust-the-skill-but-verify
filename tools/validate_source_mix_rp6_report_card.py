@@ -190,10 +190,19 @@ def validate_comparisons(report: dict[str, Any]) -> None:
             source_path = resolve_repo_path(run["source_path"])
             trace_path = resolve_repo_path(run["trace_path"])
             require(source_path.is_file(), f"{path}: missing source {source_path}")
-            require(trace_path.is_file(), f"{path}: missing trace {trace_path}")
             source_paths.append(source_path)
             context = run.get("comparison_context", {})
             runtime_profile = run.get("runtime_profile")
+            summary = run.get("summary", {})
+            require(summary.get("trace_valid") is True, f"{path}: {runtime_profile} trace_valid is not true")
+            if trace_path.is_file():
+                events = validate_trace_file(trace_path)
+                require(any(event["event_type"] == "activation.select" for event in events), f"{path}: missing activation")
+            else:
+                require(
+                    runtime_profile in {"RP2", "RP3"},
+                    f"{path}: missing required RP6 report-card trace {trace_path}",
+                )
             expected_repeat_id = repeat_id if runtime_profile == "RP6" else 1
             require(
                 context.get("repeat_id") == expected_repeat_id,

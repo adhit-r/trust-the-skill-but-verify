@@ -167,7 +167,7 @@ review, external-review claim, and raw-scratch inclusion.
 | Instrumentation gaps look like safety. | Instrumentation failures and evidence coverage are reported separately from clean behavior, realized violations, attempted overreach, missing outputs, and utility cost. | Keep report cards and adapter support matrix current for every promoted profile. |
 | Mitigations prove a defense. | RP6, least-privilege, reachability, static scanner, and action-boundary artifacts are bounded comparator or strengthening evidence. They do not support defense-success claims. | Add scaled utility-preserving mitigation evidence before any defense-success language. |
 | Review scaffolds imply human validation. | The queue, packet index, blinded bundle, and blank templates are review-ready only. Completed human/manual review remains zero. | Real independent reviewers must complete exported templates before agreement, adjudication, or kappa claims. |
-| The artifact is release-ready. | The current bundle is a curated local machine-only bundle with checksums and hygiene validation. It is not a whole-repo archive, public release, external review packet, or completed human-review artifact. | Perform clean-checkout and venue-specific artifact-submission checks before external release. |
+| The artifact is release-ready. | The current bundle is a curated local machine-only bundle with checksums and hygiene validation. It is not a whole-repo archive, public release, external review packet, or completed human-review artifact. The selected-venue policy snapshot is a current official-source check, not a final 2027 CFP/CFA freeze or submission claim. | Perform clean-checkout and final selected-venue artifact-submission checks before external release. |
 
 ## Provenance Levels
 

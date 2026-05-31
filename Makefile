@@ -3,7 +3,7 @@ ARTIFACT_BUNDLE_DIR ?= tmp/artifact-release-bundle
 ARTIFACT_PACKAGING_PROFILE ?= local_machine
 VENUE_METADATA_DIR ?= tmp/venue-package-metadata
 
-.PHONY: verify reproduce-paper-tables artifact-release-bundle validate-artifact-release-bundle venue-package-metadata validate-venue-package-metadata
+.PHONY: verify reproduce-paper-tables artifact-release-bundle validate-artifact-release-bundle venue-package-metadata validate-venue-package-metadata validate-selected-venue-policy
 
 verify:
 	PYTHON_BIN="$(PYTHON_BIN)" bash scripts/verify_all.sh
@@ -22,3 +22,6 @@ venue-package-metadata:
 
 validate-venue-package-metadata:
 	"$(PYTHON_BIN)" tools/validate_venue_package_metadata.py --bundle-dir "$(VENUE_METADATA_DIR)"
+
+validate-selected-venue-policy:
+	"$(PYTHON_BIN)" tools/validate_selected_venue_policy.py --venue-metadata-dir "$(VENUE_METADATA_DIR)"

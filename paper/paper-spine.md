@@ -196,7 +196,7 @@ Reviewer-facing differentiation sentence:
 
 ## Venue Backplan
 
-As of 2026-05-26, the top-tier target plan is:
+As of 2026-06-01, the top-tier target plan is:
 
 | Target | Role | Paper-State Requirement |
 | --- | --- | --- |
@@ -210,15 +210,22 @@ the evidence does not meet the full-paper gate for the earliest venue, the work
 moves to the next top-tier deadline rather than downshifting to a workshop or
 short-paper target.
 
-Official venue sources checked on 2026-05-26:
+Official venue sources checked on 2026-06-01:
 
 - NDSS 2027 call for papers:
   `https://www.ndss-symposium.org/ndss2027/submissions/call-for-papers/`
+- NDSS 2027 call for artifacts:
+  `https://www.ndss-symposium.org/ndss2027/submissions/call-for-artifacts/`
 - IEEE S&P 2027 call for papers:
-  `https://sp2027.ieee-security.org/cfpapers.html`
+  `https://www.ieee-security.org/TC/SP2027/cfpapers.html`
 - USENIX Security 2027:
   `https://www.usenix.org/conference/usenixsecurity27`
-- ACM CCS 2026 call for papers and artifact policy:
+- USENIX Security 2026 official CFP/CFA precedent while the detailed 2027
+  CFP/CFA is unavailable:
+  `https://www.usenix.org/conference/usenixsecurity26/call-for-papers`
+  and
+  `https://www.usenix.org/conference/usenixsecurity26/call-for-artifacts`
+- ACM CCS 2026 call for papers and artifact policy reference:
   `https://www.sigsac.org/ccs/CCS2026/call-for/call-for-papers.html`
 
 ## Immediate Writing Order

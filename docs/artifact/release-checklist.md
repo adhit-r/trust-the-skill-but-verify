@@ -16,6 +16,7 @@ Status: local machine-only bundle path available; no completed human review.
 - `python3 tools/validate_artifact_release_bundle.py --bundle-dir tmp/artifact-release-bundle`
 - `python3 tools/build_venue_package_metadata.py --replace --output-dir tmp/venue-package-metadata`
 - `python3 tools/validate_venue_package_metadata.py --bundle-dir tmp/venue-package-metadata`
+- `python3 tools/validate_selected_venue_policy.py --venue-metadata-dir tmp/venue-package-metadata`
 - Anonymous review candidate:
   `python3 tools/build_artifact_release_bundle.py --replace --packaging-profile anonymous_review --output-dir tmp/artifact-release-bundle-anonymous-review`
 - Validate anonymous review candidate:
@@ -57,6 +58,10 @@ Status: local machine-only bundle path available; no completed human review.
 - The selected packaging-profile pass validates `anonymous_review` and
   `public_archive` candidate metadata without claiming actual external
   submission, public release, completed human review, or reviewer agreement.
+- The selected-venue policy snapshot validates the current USENIX Security
+  2027 Cycle 2 policy target, official-source URLs, `anonymous_review`
+  submission profile, `public_archive` post-acceptance profile, AI-use
+  manual-finalization boundary, and no-submission claim flags.
 - The machine-only release bundle contains paper-facing derived artifacts,
   aggregate repeat-stability reports, the claim ledger, method boundaries,
   release manifests, and checksums only.

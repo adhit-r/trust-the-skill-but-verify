@@ -103,11 +103,12 @@ def validate_tracked_profiles() -> dict[str, Any]:
 def validate_tracked_docs() -> None:
     packaging_pass = PACKAGING_PASS_PATH.read_text(encoding="utf-8")
     for required_text in (
-        "Status: selected packaging-profile pass; no external venue submission claimed.",
+        "Status: selected packaging-profile pass plus selected-venue policy snapshot;",
         "anonymous_review",
         "public_archive",
         "python3 tools/build_venue_package_metadata.py --replace --output-dir tmp/venue-package-metadata",
         "python3 tools/validate_venue_package_metadata.py --bundle-dir tmp/venue-package-metadata",
+        "python3 tools/validate_selected_venue_policy.py --venue-metadata-dir tmp/venue-package-metadata",
         "Do not encode `NOASSERTION` as a CFF license value.",
     ):
         require(required_text in packaging_pass, f"venue packaging pass doc missing: {required_text}")

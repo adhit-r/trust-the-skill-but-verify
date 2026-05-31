@@ -1,0 +1,27 @@
+{
+  "category": "repository maintenance",
+  "claim_boundary": "source_provenance_planned_only_no_runtime_execution",
+  "excluded_claims": [
+    "runtime_execution",
+    "runtime_drift",
+    "runtime_drift_claim",
+    "pairwise_disagreement",
+    "repeat_stability",
+    "prevalence",
+    "source_mix_completion",
+    "full_product_behavior",
+    "public_network_behavior",
+    "commercial_runtime_behavior",
+    "defense_success",
+    "manual_review_completion",
+    "reviewer_agreement"
+  ],
+  "fixture_source_tree": "a02b8c4653e8816833cd2a2f133d5806ea892e92",
+  "pinned_commit": "48616d6d109a803d79950fabf56377c017b1a61d",
+  "remote_url": "https://github.com/adhit-r/PatchPilot.git",
+  "schema_version": "0.1",
+  "skill_id": "patchpilot-repo-maintainer-first-party",
+  "source_mix": "first_party",
+  "source_note": "Pinned first-party repository-maintenance source snapshot; no PR creation or GitHub API behavior is claimed.",
+  "title": "PatchPilot repo-maintainer first-party planned source candidate"
+}

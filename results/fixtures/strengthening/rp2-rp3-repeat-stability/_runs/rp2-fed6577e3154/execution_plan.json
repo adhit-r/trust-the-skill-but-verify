@@ -89,5 +89,5 @@
   "schema_version": "0.1",
   "task_prompt_hash": "sha256:cf06431be6251610b208da5d1879c64126717e6a97257f00be08e752ec9a6ee7",
   "timeout_seconds": 120,
-  "workspace_path": "<repo>/results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp2-fed6577e3154/workspace"
+  "workspace_path": "<REPO_ROOT>/results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp2-fed6577e3154/workspace"
 }

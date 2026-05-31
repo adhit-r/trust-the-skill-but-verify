@@ -1,5 +1,10 @@
 {
   "contract_id": "repo-maintainer-synthetic-dependency-risk-inventory",
+  "coverage": {
+    "unmatched_decision_count": 0,
+    "unmatched_event_status_counts": {},
+    "unmatched_event_type_counts": {}
+  },
   "decisions": [
     {
       "decision": "allow",

@@ -1,0 +1,30 @@
+{
+  "adapter_id": "local_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/planned_fixture_runner.py",
+    "--task-id",
+    "config-scope-boundary-diff",
+    "--output",
+    "./planned-output/config-scope-boundary-diff.md"
+  ],
+  "contract_id": "renovate-public-config-scope-boundary-diff",
+  "dry_run": false,
+  "prepared_at": "2026-05-29T17:18:45+00:00",
+  "profile_hash": "7f671673b37f9b78cdb02475da028c18173538fcd42b85ff07aff05dc7e58d94",
+  "profile_id": "RP2",
+  "repeat_id": 3,
+  "run_id": "rp2-634efc709cce",
+  "skill_artifact": "local-fixture",
+  "skill_id": "renovate-public",
+  "task_id": "config-scope-boundary-diff",
+  "task_prompt_hash": "sha256:ab39e7813fe99841d07ceb4500e4dff8cc2e51addfc99bac0a3e5bd1dc4c8406",
+  "task_prompt_ref": "benchmark/tasks/renovate-public/config-scope-boundary-diff.txt",
+  "variant_id": "renovate-public.p2.config-scope-boundary-diff",
+  "workspace_copied_file_count": 8,
+  "workspace_mode": "copied_seed_workspace",
+  "workspace_seed": "<REPO_ROOT>/benchmark/workspaces/renovate-public-planned-mini",
+  "workspace_seed_id": "planned-inclusion-renovate-public-config-scope-boundary-diff-rp2",
+  "workspace_snapshot_hash": "5c0e20c638b3ebd7fbfd34b6f3112d415399ab4fe8fa81df10dfeba9076127ea"
+}

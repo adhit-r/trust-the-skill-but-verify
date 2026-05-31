@@ -1,0 +1,1 @@
+{"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./planned-output/ignore-glob-boundary-report.md", "sha256": "sha256:893c91f18ee208d92d34e40827e43ad957daf3cd890b79dec3fe4edec729c413", "size": 849, "status": "succeeded", "timestamp": "2026-05-29T17:15:21+00:00"}

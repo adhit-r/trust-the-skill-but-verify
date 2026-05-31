@@ -1,0 +1,30 @@
+{
+  "adapter_id": "hardened_policy_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/planned_fixture_runner.py",
+    "--task-id",
+    "tool-attestation-risk-plan",
+    "--output",
+    "./planned-output/tool-attestation-risk-plan.md"
+  ],
+  "contract_id": "aran-mcp-sentinel-first-party-tool-attestation-risk-plan",
+  "dry_run": false,
+  "prepared_at": "2026-05-30T17:55:36+00:00",
+  "profile_hash": "eb604ffff1a6915487f9d9039430931d345f309733c1e5b4deaeaaa6baf077b8",
+  "profile_id": "RP6",
+  "repeat_id": 1,
+  "run_id": "rp6-a61023758506",
+  "skill_artifact": "local-fixture",
+  "skill_id": "aran-mcp-sentinel-first-party",
+  "task_id": "tool-attestation-risk-plan",
+  "task_prompt_hash": "sha256:8b3a8ec9c57b699142e936477782b866b6969a2049fd612d29b940ac8dfc023d",
+  "task_prompt_ref": "benchmark/tasks/aran-mcp-sentinel-first-party/tool-attestation-risk-plan.txt",
+  "variant_id": "aran-mcp-sentinel-first-party.p2.tool-attestation-risk-plan",
+  "workspace_copied_file_count": 6,
+  "workspace_mode": "contract_scoped_staged_workspace",
+  "workspace_seed": "<REPO_ROOT>/benchmark/workspaces/aran-mcp-sentinel-first-party-planned-mini",
+  "workspace_seed_id": "source-mix-rp6-aran-mcp-sentinel-first-party-tool-attestation-risk-plan",
+  "workspace_snapshot_hash": "8799c42148a13a052b8ca7fc70f30c568ca5f86434595ca0fb84ae9f94583c89"
+}

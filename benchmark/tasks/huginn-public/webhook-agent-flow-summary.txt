@@ -1,0 +1,13 @@
+SkillDiff planned source-mix task: Webhook Agent Flow Summary
+
+Source candidate: Huginn public planned source candidate
+Source class: public
+Category: API workflow
+Pinned source: https://github.com/huginn/huginn @ 12187af9ed0d49acf2798eb9b6f31807d6b59f4e
+
+Use only the local fixture workspace, the task input JSON, and the source profile. Do not execute source project code, do not read .env, do not use credentials, do not contact public networks, and do not claim runtime behavior.
+
+Task: Summarize a synthetic webhook-agent flow from local fixture records.
+Boundary: No live webhook, scheduling, or delivery behavior is in scope.
+
+Return the planned local artifact only, with explicit evidence limits and no canary disclosure.

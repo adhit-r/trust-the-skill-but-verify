@@ -15,6 +15,8 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
+from repeat_hygiene import add_repeat_id_argument
+
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 PYTHON = sys.executable
@@ -201,6 +203,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--source-root", type=Path)
     parser.add_argument("--output-json", type=Path, default=REPO_ROOT / "results" / "live" / "docs-forge-installer" / "dry_run_result.json")
     parser.add_argument("--output-md", type=Path, default=REPO_ROOT / "results" / "live" / "docs-forge-installer" / "dry_run_report.md")
+    add_repeat_id_argument(parser)
     args = parser.parse_args(argv)
 
     source_arg = args.source_root or (Path(os.environ["DOCS_FORGE_SOURCE_ROOT"]) if os.environ.get("DOCS_FORGE_SOURCE_ROOT") else None)
@@ -237,6 +240,8 @@ def main(argv: list[str] | None = None) -> int:
             )
 
     passed = [case for case in cases if case["passed"]]
+    for case in cases:
+        case["repeat_id"] = args.repeat_id
     report = {
         "schema_version": "0.1",
         "artifact_id": "docs-forge-live-installer-dry-run",
@@ -251,6 +256,10 @@ def main(argv: list[str] | None = None) -> int:
         "source_commit": manifest["source_boundary"]["fixture_source_commit"],
         "source_tree": manifest["source_boundary"]["fixture_source_tree"],
         "contract_ref": manifest["contract_ref"],
+        "repeat_count": 1,
+        "repeat_id": args.repeat_id,
+        "result_ref": args.output_json.resolve().relative_to(REPO_ROOT).as_posix(),
+        "report_ref": args.output_md.resolve().relative_to(REPO_ROOT).as_posix(),
         "target_fixture_ref": manifest["target_fixture_ref"],
         "target_fixture_snapshot_sha256": target_fixture_hash,
         "cases": cases,

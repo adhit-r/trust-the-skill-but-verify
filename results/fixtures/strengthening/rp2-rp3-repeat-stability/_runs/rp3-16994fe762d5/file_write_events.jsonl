@@ -1,0 +1,1 @@
+{"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./planned-output/consent-gated-tool-plan.md", "sha256": "sha256:a63763e5ffcb30c157e083409432c5b9289ad7cfa44334c97a93cc653db81c34", "size": 861, "status": "succeeded", "timestamp": "2026-05-29T17:17:01+00:00"}

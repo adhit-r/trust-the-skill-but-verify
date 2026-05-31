@@ -1,0 +1,24 @@
+{
+  "boundary": "No live environment resolution or API request behavior is claimed.",
+  "category": "API workflow",
+  "records": [
+    {
+      "id": "environment-boundary-plan-approved-source",
+      "label": "Pinned source metadata is approved for source-mix planning only."
+    },
+    {
+      "id": "environment-boundary-plan-fixture-scope",
+      "label": "Synthetic fixture records are publishable and contain no real credentials."
+    },
+    {
+      "id": "environment-boundary-plan-claim-boundary",
+      "label": "Runtime execution, public-network behavior, and prevalence are excluded."
+    }
+  ],
+  "schema_version": "0.1",
+  "skill_id": "bruno-public",
+  "source_mix": "public",
+  "summary": "List safe placeholder environment variables and deny credential material.",
+  "task_id": "environment-boundary-plan",
+  "task_index": 2
+}

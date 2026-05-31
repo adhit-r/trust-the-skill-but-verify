@@ -10,6 +10,8 @@ import sys
 from pathlib import Path
 from typing import Any
 
+from repeat_hygiene import add_repeat_id_argument, repeat_seed, repeat_stem
+
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 PYTHON = sys.executable
@@ -93,7 +95,7 @@ def command_for(name: str, runtime: str) -> list[str]:
     return ["python3", f"skill/{script}"]
 
 
-def run_case(name: str, runtime: str) -> dict[str, Any]:
+def run_case(name: str, runtime: str, repeat_id: int) -> dict[str, Any]:
     profile = profile_path(runtime)
     contract = REPO_ROOT / "contracts" / "mcp-tool-workflow-restricted-tools.yaml"
     workspace = REPO_ROOT / "benchmark" / "workspaces" / "mcp-tool-workflow-mini"
@@ -110,13 +112,13 @@ def run_case(name: str, runtime: str) -> dict[str, Any]:
             "--workspace",
             str(workspace),
             "--workspace-seed-id",
-            f"mcp-tool-workflow-mini-{name}-{runtime}",
+            repeat_seed(f"mcp-tool-workflow-mini-{name}-{runtime}", repeat_id),
             "--variant-id",
             VARIANT_IDS[name],
             "--output-root",
             str(output_root),
             "--repeat-id",
-            "1",
+            str(repeat_id),
             "--live",
             "--command",
             *command_for(name, runtime),
@@ -126,7 +128,7 @@ def run_case(name: str, runtime: str) -> dict[str, Any]:
         raise RuntimeError(f"unexpected run outcome for {name}/{runtime}: {result}")
 
     out_dir = REPO_ROOT / "results" / "mvp" / "mcp-tool-workflow"
-    stem = result_stem(name, runtime)
+    stem = repeat_stem(result_stem(name, runtime), repeat_id)
     run_text(
         [
             PYTHON,
@@ -141,15 +143,16 @@ def run_case(name: str, runtime: str) -> dict[str, Any]:
             str(out_dir / f"{stem}_contract_report.md"),
         ]
     )
-    findings = load_findings(name, runtime)
+    findings = load_findings(name, runtime, repeat_id)
     assert_summary(name, runtime, findings["summary"])
     assert_semantic_evidence(name, runtime, Path(result["trace_path"]))
     return result
 
 
-def load_findings(name: str, runtime: str) -> dict[str, Any]:
+def load_findings(name: str, runtime: str, repeat_id: int) -> dict[str, Any]:
     out_dir = REPO_ROOT / "results" / "mvp" / "mcp-tool-workflow"
-    return json.loads((out_dir / f"{result_stem(name, runtime)}_contract_findings.json").read_text(encoding="utf-8"))
+    stem = repeat_stem(result_stem(name, runtime), repeat_id)
+    return json.loads((out_dir / f"{stem}_contract_findings.json").read_text(encoding="utf-8"))
 
 
 def assert_summary(name: str, runtime: str, summary: dict[str, Any]) -> None:
@@ -186,7 +189,7 @@ def assert_semantic_evidence(name: str, runtime: str, trace_path: Path) -> None:
                 )
 
 
-def write_summary(results: dict[tuple[str, str], dict[str, Any]]) -> None:
+def write_summary(results: dict[tuple[str, str], dict[str, Any]], repeat_id: int) -> None:
     out_dir = REPO_ROOT / "results" / "mvp" / "mcp-tool-workflow"
     rows = [
         ("Benign", "rp2", "Approved lookup/resource calls with explicit lookup approval and no canary movement"),
@@ -204,7 +207,7 @@ def write_summary(results: dict[tuple[str, str], dict[str, Any]]) -> None:
     ]
     for label, runtime, result_text in rows:
         name = label.lower()
-        findings = load_findings(name, runtime)
+        findings = load_findings(name, runtime, repeat_id)
         result = results[(name, runtime)]
         summary = findings["summary"]
         lines.append(
@@ -229,38 +232,40 @@ def write_summary(results: dict[tuple[str, str], dict[str, Any]]) -> None:
             "- This is a controlled profile-conditioned semantic-event fixture, not live MCP server telemetry, runtime-enforced MCP policy, or full RP4 implementation.",
         ]
     )
-    (out_dir / "drift_report.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
-    print(out_dir / "drift_report.md")
+    summary_path = out_dir / f"{repeat_stem('drift_report', repeat_id)}.md"
+    summary_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    print(summary_path)
 
 
-def write_comparison(name: str, output_prefix: str, left_runtime: str, right_runtime: str) -> None:
+def write_comparison(name: str, output_prefix: str, left_runtime: str, right_runtime: str, repeat_id: int) -> None:
     out_dir = REPO_ROOT / "results" / "mvp" / "mcp-tool-workflow"
     run_text(
         [
             PYTHON,
             "tools/compare_contract_runs.py",
-            str(out_dir / f"{result_stem(name, left_runtime)}_contract_findings.json"),
-            str(out_dir / f"{result_stem(name, right_runtime)}_contract_findings.json"),
+            str(out_dir / f"{repeat_stem(result_stem(name, left_runtime), repeat_id)}_contract_findings.json"),
+            str(out_dir / f"{repeat_stem(result_stem(name, right_runtime), repeat_id)}_contract_findings.json"),
             "--out-json",
-            str(out_dir / f"{output_prefix}_comparison.json"),
+            str(out_dir / f"{repeat_stem(output_prefix, repeat_id)}_comparison.json"),
             "--out-md",
-            str(out_dir / f"{output_prefix}_comparison.md"),
+            str(out_dir / f"{repeat_stem(output_prefix, repeat_id)}_comparison.md"),
         ]
     )
 
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Run the controlled MCP/tool workflow MVP traces and reports")
-    parser.parse_args(argv)
+    add_repeat_id_argument(parser)
+    args = parser.parse_args(argv)
     results = {
-        ("benign", "rp2"): run_case("benign", "rp2"),
-        ("adversarial", "rp2"): run_case("adversarial", "rp2"),
-        ("benign", "rp3"): run_case("benign", "rp3"),
-        ("adversarial", "rp3"): run_case("adversarial", "rp3"),
+        ("benign", "rp2"): run_case("benign", "rp2", args.repeat_id),
+        ("adversarial", "rp2"): run_case("adversarial", "rp2", args.repeat_id),
+        ("benign", "rp3"): run_case("benign", "rp3", args.repeat_id),
+        ("adversarial", "rp3"): run_case("adversarial", "rp3", args.repeat_id),
     }
-    write_summary(results)
-    write_comparison("benign", "benign_rp2_rp3", "rp2", "rp3")
-    write_comparison("adversarial", "adversarial_rp2_rp3", "rp2", "rp3")
+    write_summary(results, args.repeat_id)
+    write_comparison("benign", "benign_rp2_rp3", "rp2", "rp3", args.repeat_id)
+    write_comparison("adversarial", "adversarial_rp2_rp3", "rp2", "rp3", args.repeat_id)
     return 0
 
 

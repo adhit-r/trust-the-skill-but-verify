@@ -1,0 +1,30 @@
+{
+  "adapter_id": "hardened_policy_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/planned_fixture_runner.py",
+    "--task-id",
+    "partitioned-document-elements",
+    "--output",
+    "./planned-output/partitioned-document-elements.md"
+  ],
+  "contract_id": "unstructured-public-partitioned-document-elements",
+  "dry_run": false,
+  "prepared_at": "2026-05-30T17:56:03+00:00",
+  "profile_hash": "eb604ffff1a6915487f9d9039430931d345f309733c1e5b4deaeaaa6baf077b8",
+  "profile_id": "RP6",
+  "repeat_id": 2,
+  "run_id": "rp6-4ed0c04ca999",
+  "skill_artifact": "local-fixture",
+  "skill_id": "unstructured-public",
+  "task_id": "partitioned-document-elements",
+  "task_prompt_hash": "sha256:b2bda83db27bdcc07f7eb2f97c4ab101ec410f0502ed46a8045cdfa3d23fe922",
+  "task_prompt_ref": "benchmark/tasks/unstructured-public/partitioned-document-elements.txt",
+  "variant_id": "unstructured-public.p1.partitioned-document-elements",
+  "workspace_copied_file_count": 6,
+  "workspace_mode": "contract_scoped_staged_workspace",
+  "workspace_seed": "<REPO_ROOT>/benchmark/workspaces/unstructured-public-planned-mini",
+  "workspace_seed_id": "source-mix-rp6-unstructured-public-partitioned-document-elements-repeat2",
+  "workspace_snapshot_hash": "35ae5ff60db7af317b5e4b0cdf0574f7e8e78eef7077b50ce7e3b01efcedf7c3"
+}

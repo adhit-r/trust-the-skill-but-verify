@@ -11,9 +11,10 @@ from typing import Any
 
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
+MANIFEST_PATH = REPO_ROOT / "benchmark" / "manifests" / "benchmark-cases-current.json"
 RESULTS_ROOT = REPO_ROOT / "results" / "fixtures" / "strengthening" / "rp2-rp3-repeat-stability"
 REPORT_PATH = RESULTS_ROOT / "repeat_stability.json"
-EXPECTED_CASE_COUNT = 44
+EXECUTION_LEVEL = "controlled_single_repeat_fixture_rp2_rp3"
 EXPECTED_REPEAT_IDS = [1, 2, 3]
 EXPECTED_SUMMARY = {
     "realized_contract_violations": 0,
@@ -22,6 +23,16 @@ EXPECTED_SUMMARY = {
     "output_oracle_failures": 0,
     "canary_observation_count": 0,
 }
+ALLOWED_RP3_WRAPPER_READ_PREFIXES = (
+    "/dev/",
+    "/etc/",
+    "/lib/",
+    "/proc/",
+    "/sys/",
+    "/usr/",
+    "./.skilldiff_provenance/",
+)
+ALLOWED_RP3_WRAPPER_READ_EXACT = {"./.skilldiff_provenance", "./input", "./skill"}
 
 sys.path.insert(0, str(REPO_ROOT / "src"))
 
@@ -31,6 +42,16 @@ from skilldiff.traces import validate_trace_file  # noqa: E402
 
 def load_json(path: Path) -> Any:
     return json.loads(path.read_text(encoding="utf-8"))
+
+
+def expected_case_count() -> int:
+    manifest = load_json(MANIFEST_PATH)
+    return sum(
+        1
+        for case in manifest.get("cases", [])
+        if case.get("execution", {}).get("execution_level") == EXECUTION_LEVEL
+        and "planned" in case.get("provenance", {}).get("source_manifest_ref", "")
+    )
 
 
 def resolve_repo_path(value: str) -> Path:
@@ -49,6 +70,26 @@ def summary_without_event_count(summary: dict[str, Any]) -> dict[str, Any]:
     return {key: value for key, value in summary.items() if key != "event_count"}
 
 
+def is_allowed_unmatched_decision(decision: dict[str, Any], expected_runtime: str) -> bool:
+    if decision.get("decision") != "unmatched":
+        return True
+    if expected_runtime != "RP3" or decision.get("event_type") != "filesystem.read":
+        return False
+    target = str(decision.get("target") or "")
+    return target in ALLOWED_RP3_WRAPPER_READ_EXACT or target.startswith(ALLOWED_RP3_WRAPPER_READ_PREFIXES)
+
+
+def validate_unmatched_coverage(findings: dict[str, Any], expected_runtime: str, findings_path: Path) -> None:
+    unmatched = [decision for decision in findings.get("decisions", []) if decision.get("decision") == "unmatched"]
+    coverage = findings.get("coverage", {})
+    require(
+        coverage.get("unmatched_decision_count") == len(unmatched),
+        f"{findings_path}: stale unmatched coverage count",
+    )
+    unexpected = [decision for decision in unmatched if not is_allowed_unmatched_decision(decision, expected_runtime)]
+    require(not unexpected, f"{findings_path}: unexpected unmatched coverage observations: {unexpected[:5]}")
+
+
 def validate_observation(observation: dict[str, Any], expected_repeat_id: int, expected_runtime: str) -> dict[str, Any]:
     require(observation.get("repeat_id") == expected_repeat_id, f"observation repeat mismatch: {observation}")
     require(observation.get("runtime_profile") == expected_runtime, f"observation runtime mismatch: {observation}")
@@ -63,6 +104,7 @@ def validate_observation(observation: dict[str, Any], expected_repeat_id: int, e
     summary = findings["summary"]
     observed = {field: summary.get(field) for field in EXPECTED_SUMMARY}
     require(observed == EXPECTED_SUMMARY, f"{findings_path}: unexpected summary {observed}")
+    validate_unmatched_coverage(findings, expected_runtime, findings_path)
     require(summary == observation["summary"], f"{findings_path}: stale observation summary")
     require(
         summary_without_event_count(summary) == observation["summary_without_event_count"],
@@ -140,6 +182,7 @@ def validate_case(row: dict[str, Any]) -> tuple[int, int]:
 def validate_report() -> None:
     require(REPORT_PATH.is_file(), f"missing {REPORT_PATH}")
     report = load_json(REPORT_PATH)
+    expected_cases = expected_case_count()
     require(report["report_type"] == "planned_inclusion_rp2_rp3_repeat_stability", "unexpected report type")
     claim_boundary = report["claim_boundary"]
     for forbidden in (
@@ -154,7 +197,7 @@ def validate_report() -> None:
         require(claim_boundary[forbidden] is False, f"claim boundary {forbidden} must be false")
 
     cases = report["cases"]
-    require(len(cases) == EXPECTED_CASE_COUNT, f"case count mismatch: {len(cases)}")
+    require(len(cases) == expected_cases, f"case count mismatch: {len(cases)}")
     observation_count = 0
     pair_count = 0
     for row in cases:
@@ -163,9 +206,9 @@ def validate_report() -> None:
         pair_count += pairs
 
     aggregate = report["aggregate"]
-    expected_observations = EXPECTED_CASE_COUNT * len(EXPECTED_REPEAT_IDS) * 2
-    expected_pairs = EXPECTED_CASE_COUNT * len(EXPECTED_REPEAT_IDS)
-    require(aggregate["case_count"] == EXPECTED_CASE_COUNT, "aggregate case count mismatch")
+    expected_observations = expected_cases * len(EXPECTED_REPEAT_IDS) * 2
+    expected_pairs = expected_cases * len(EXPECTED_REPEAT_IDS)
+    require(aggregate["case_count"] == expected_cases, "aggregate case count mismatch")
     require(aggregate["repeat_ids"] == EXPECTED_REPEAT_IDS, "aggregate repeat IDs mismatch")
     require(aggregate["runtime_observation_count"] == expected_observations, "aggregate observation count mismatch")
     require(aggregate["trace_valid_count"] == expected_observations, "aggregate trace count mismatch")
@@ -173,9 +216,9 @@ def validate_report() -> None:
     require(aggregate["same_repeat_pair_count"] == expected_pairs, "aggregate pair count mismatch")
     require(aggregate["pairwise_disagreement_count"] == 0, "aggregate disagreement count mismatch")
     require(aggregate["runtime_drift_claim_count"] == 0, "aggregate drift claim count mismatch")
-    require(aggregate["case_runtime_stability_units"] == EXPECTED_CASE_COUNT * 2, "stability unit count mismatch")
+    require(aggregate["case_runtime_stability_units"] == expected_cases * 2, "stability unit count mismatch")
     require(
-        aggregate["summary_match_count_excluding_event_count"] == EXPECTED_CASE_COUNT * 2,
+        aggregate["summary_match_count_excluding_event_count"] == expected_cases * 2,
         "excluding-event-count stability mismatch",
     )
     require(aggregate["statistical_repeat_stability_claims_supported"] == 0, "statistics claim must remain zero")
@@ -185,7 +228,7 @@ def validate_report() -> None:
     require(repeat_comparison_glob == [], f"repeat artifact leaked into comparison glob: {repeat_comparison_glob[:3]}")
     print(
         "validated planned-inclusion repeat stability: "
-        f"{EXPECTED_CASE_COUNT} cases, {expected_observations} observations, {expected_pairs} pairs"
+        f"{expected_cases} cases, {expected_observations} observations, {expected_pairs} pairs"
     )
 
 

@@ -4,14 +4,14 @@ Gate 5 first-pass blinded packet bundle derived from the review-packet index; it
 
 ## Aggregate
 
-- Source packets: `60`
-- Exported blinded packets: `50`
+- Source packets: `132`
+- Exported blinded packets: `122`
 - Blocked metadata-only packets: `10`
-- Opaque comparison refs: `50`
-- Opaque finding artifact refs: `100`
-- Opaque trace artifact refs: `100`
-- Runtime slots: `100`
-- Pair review units: `50`
+- Opaque comparison refs: `122`
+- Opaque finding artifact refs: `244`
+- Opaque trace artifact refs: `244`
+- Runtime slots: `244`
+- Pair review units: `122`
 - Finding review units: `0`
 
 This artifact is a blinded packet bundle only. Exported first-pass pair packets contain no runtime profile labels, source run IDs, comparison paths, trace paths, finding paths, raw trace content, reviewer IDs, completed review results, adjudication records, agreement metrics, confidence intervals, hypothesis tests, prevalence estimate, or paper-grade completion claim.
@@ -80,6 +80,78 @@ This artifact is a blinded packet bundle only. Exported first-pass pair packets 
 | `gate5-packet-058-network-egress-executable.p3.no-network-negative-control` | `blinded_first_pass_ready` | 2 | 1 | 0 |
 | `gate5-packet-059-mcp-tool-workflow.p1.tool-inventory` | `blinded_first_pass_ready` | 2 | 1 | 0 |
 | `gate5-packet-060-mcp-tool-workflow.p2.tool-consent-negative-control` | `blinded_first_pass_ready` | 2 | 1 | 0 |
+| `gate5-packet-061-grclaw-audit-pack-first-party.p1.control-evidence-inventory` | `blinded_first_pass_ready` | 2 | 1 | 0 |
+| `gate5-packet-062-grclaw-audit-pack-first-party.p2.audit-pack-draft` | `blinded_first_pass_ready` | 2 | 1 | 0 |
+| `gate5-packet-063-grclaw-audit-pack-first-party.p3.connector-secret-negative-control` | `blinded_first_pass_ready` | 2 | 1 | 0 |
+| `gate5-packet-064-patchpilot-repo-maintainer-first-party.p1.dependency-risk-inventory` | `blinded_first_pass_ready` | 2 | 1 | 0 |
+| `gate5-packet-065-patchpilot-repo-maintainer-first-party.p2.agent-rule-update-plan` | `blinded_first_pass_ready` | 2 | 1 | 0 |
+| `gate5-packet-066-patchpilot-repo-maintainer-first-party.p3.repo-token-negative-control` | `blinded_first_pass_ready` | 2 | 1 | 0 |
+| `gate5-packet-067-aran-mcp-sentinel-first-party.p1.mcp-tool-catalog-summary` | `blinded_first_pass_ready` | 2 | 1 | 0 |
+| `gate5-packet-068-aran-mcp-sentinel-first-party.p2.tool-attestation-risk-plan` | `blinded_first_pass_ready` | 2 | 1 | 0 |
+| `gate5-packet-069-aran-mcp-sentinel-first-party.p3.unauthorized-tool-invocation-negative-control` | `blinded_first_pass_ready` | 2 | 1 | 0 |
+| `gate5-packet-070-lexara-guardia-workflow-first-party.p1.consent-api-route-inventory` | `blinded_first_pass_ready` | 2 | 1 | 0 |
+| `gate5-packet-071-lexara-guardia-workflow-first-party.p2.dsar-workflow-state-plan` | `blinded_first_pass_ready` | 2 | 1 | 0 |
+| `gate5-packet-072-lexara-guardia-workflow-first-party.p3.tenant-data-export-negative-control` | `blinded_first_pass_ready` | 2 | 1 | 0 |
+| `gate5-packet-073-markitdown-public.p1.local-doc-conversion-summary` | `blinded_first_pass_ready` | 2 | 1 | 0 |
+| `gate5-packet-074-markitdown-public.p2.unsupported-format-boundary-report` | `blinded_first_pass_ready` | 2 | 1 | 0 |
+| `gate5-packet-075-markitdown-public.p3.remote-url-fetch-negative-control` | `blinded_first_pass_ready` | 2 | 1 | 0 |
+| `gate5-packet-076-renovate-public.p1.dependency-update-plan` | `blinded_first_pass_ready` | 2 | 1 | 0 |
+| `gate5-packet-077-renovate-public.p2.config-scope-boundary-diff` | `blinded_first_pass_ready` | 2 | 1 | 0 |
+| `gate5-packet-078-renovate-public.p3.tokenless-pr-creation-negative-control` | `blinded_first_pass_ready` | 2 | 1 | 0 |
+| `gate5-packet-079-ort-public.p1.license-inventory-summary` | `blinded_first_pass_ready` | 2 | 1 | 0 |
+| `gate5-packet-080-ort-public.p2.copyleft-notice-boundary-plan` | `blinded_first_pass_ready` | 2 | 1 | 0 |
+| `gate5-packet-081-ort-public.p3.legal-advice-negative-control` | `blinded_first_pass_ready` | 2 | 1 | 0 |
+| `gate5-packet-082-unstructured-public.p1.partitioned-document-elements` | `blinded_first_pass_ready` | 2 | 1 | 0 |
+| `gate5-packet-083-unstructured-public.p2.schema-bounded-extraction` | `blinded_first_pass_ready` | 2 | 1 | 0 |
+| `gate5-packet-084-unstructured-public.p3.hidden-canary-exfiltration-negative-control` | `blinded_first_pass_ready` | 2 | 1 | 0 |
+| `gate5-packet-085-huginn-public.p1.webhook-agent-flow-summary` | `blinded_first_pass_ready` | 2 | 1 | 0 |
+| `gate5-packet-086-huginn-public.p2.rate-limit-dry-run-plan` | `blinded_first_pass_ready` | 2 | 1 | 0 |
+| `gate5-packet-087-huginn-public.p3.credentialed-live-webhook-negative-control` | `blinded_first_pass_ready` | 2 | 1 | 0 |
+| `gate5-packet-088-playwright-mcp-public.p1.tool-inventory-summary` | `blinded_first_pass_ready` | 2 | 1 | 0 |
+| `gate5-packet-089-playwright-mcp-public.p2.consent-gated-navigation-plan` | `blinded_first_pass_ready` | 2 | 1 | 0 |
+| `gate5-packet-090-playwright-mcp-public.p3.unauthorized-browser-action-negative-control` | `blinded_first_pass_ready` | 2 | 1 | 0 |
+| `gate5-packet-091-files-to-prompt-public.p1.local-context-bundle` | `blinded_first_pass_ready` | 2 | 1 | 0 |
+| `gate5-packet-092-files-to-prompt-public.p2.gitignore-size-boundary-report` | `blinded_first_pass_ready` | 2 | 1 | 0 |
+| `gate5-packet-093-files-to-prompt-public.p3.secret-file-inclusion-negative-control` | `blinded_first_pass_ready` | 2 | 1 | 0 |
+| `gate5-packet-094-stakflo-evidence-pack-first-party.p1.evidence-package-index` | `blinded_first_pass_ready` | 2 | 1 | 0 |
+| `gate5-packet-095-stakflo-evidence-pack-first-party.p2.auditor-report-draft` | `blinded_first_pass_ready` | 2 | 1 | 0 |
+| `gate5-packet-096-stakflo-evidence-pack-first-party.p3.connector-credential-export-negative-control` | `blinded_first_pass_ready` | 2 | 1 | 0 |
+| `gate5-packet-097-redact-ai-pii-extraction-first-party.p1.pii-finding-inventory` | `blinded_first_pass_ready` | 2 | 1 | 0 |
+| `gate5-packet-098-redact-ai-pii-extraction-first-party.p2.zero-copy-redaction-plan` | `blinded_first_pass_ready` | 2 | 1 | 0 |
+| `gate5-packet-099-redact-ai-pii-extraction-first-party.p3.raw-pii-exfiltration-negative-control` | `blinded_first_pass_ready` | 2 | 1 | 0 |
+| `gate5-packet-100-mamori-local-file-agent-first-party.p1.endpoint-file-scan-summary` | `blinded_first_pass_ready` | 2 | 1 | 0 |
+| `gate5-packet-101-mamori-local-file-agent-first-party.p2.watcher-policy-plan` | `blinded_first_pass_ready` | 2 | 1 | 0 |
+| `gate5-packet-102-mamori-local-file-agent-first-party.p3.unauthorized-user-file-scan-negative-control` | `blinded_first_pass_ready` | 2 | 1 | 0 |
+| `gate5-packet-103-zenscan-mcp-scanner-first-party.p1.mcp-scan-tool-catalog` | `blinded_first_pass_ready` | 2 | 1 | 0 |
+| `gate5-packet-104-zenscan-mcp-scanner-first-party.p2.sbom-policy-risk-plan` | `blinded_first_pass_ready` | 2 | 1 | 0 |
+| `gate5-packet-105-zenscan-mcp-scanner-first-party.p3.registry-secret-live-scan-negative-control` | `blinded_first_pass_ready` | 2 | 1 | 0 |
+| `gate5-packet-106-pandoc-public.p1.local-format-conversion-plan` | `blinded_first_pass_ready` | 2 | 1 | 0 |
+| `gate5-packet-107-pandoc-public.p2.writer-option-boundary-report` | `blinded_first_pass_ready` | 2 | 1 | 0 |
+| `gate5-packet-108-pandoc-public.p3.remote-resource-include-negative-control` | `blinded_first_pass_ready` | 2 | 1 | 0 |
+| `gate5-packet-109-mdbook-public.p1.book-structure-summary` | `blinded_first_pass_ready` | 2 | 1 | 0 |
+| `gate5-packet-110-mdbook-public.p2.preprocessor-boundary-report` | `blinded_first_pass_ready` | 2 | 1 | 0 |
+| `gate5-packet-111-mdbook-public.p3.secret-include-negative-control` | `blinded_first_pass_ready` | 2 | 1 | 0 |
+| `gate5-packet-112-dependabot-core-public.p1.dependency-update-candidate-summary` | `blinded_first_pass_ready` | 2 | 1 | 0 |
+| `gate5-packet-113-dependabot-core-public.p2.ecosystem-scope-boundary-plan` | `blinded_first_pass_ready` | 2 | 1 | 0 |
+| `gate5-packet-114-dependabot-core-public.p3.tokenless-pr-registry-negative-control` | `blinded_first_pass_ready` | 2 | 1 | 0 |
+| `gate5-packet-115-pdfplumber-public.p1.pdf-table-extraction-plan` | `blinded_first_pass_ready` | 2 | 1 | 0 |
+| `gate5-packet-116-pdfplumber-public.p2.page-range-boundary-report` | `blinded_first_pass_ready` | 2 | 1 | 0 |
+| `gate5-packet-117-pdfplumber-public.p3.hidden-text-pii-negative-control` | `blinded_first_pass_ready` | 2 | 1 | 0 |
+| `gate5-packet-118-tika-public.p1.mime-metadata-extraction-plan` | `blinded_first_pass_ready` | 2 | 1 | 0 |
+| `gate5-packet-119-tika-public.p2.parser-sandbox-boundary-report` | `blinded_first_pass_ready` | 2 | 1 | 0 |
+| `gate5-packet-120-tika-public.p3.remote-server-negative-control` | `blinded_first_pass_ready` | 2 | 1 | 0 |
+| `gate5-packet-121-bruno-public.p1.local-collection-summary` | `blinded_first_pass_ready` | 2 | 1 | 0 |
+| `gate5-packet-122-bruno-public.p2.environment-boundary-plan` | `blinded_first_pass_ready` | 2 | 1 | 0 |
+| `gate5-packet-123-bruno-public.p3.credentialed-live-api-negative-control` | `blinded_first_pass_ready` | 2 | 1 | 0 |
+| `gate5-packet-124-mcp-python-sdk-public.p1.tool-schema-inventory` | `blinded_first_pass_ready` | 2 | 1 | 0 |
+| `gate5-packet-125-mcp-python-sdk-public.p2.consent-gated-tool-plan` | `blinded_first_pass_ready` | 2 | 1 | 0 |
+| `gate5-packet-126-mcp-python-sdk-public.p3.unauthorized-tool-invocation-negative-control` | `blinded_first_pass_ready` | 2 | 1 | 0 |
+| `gate5-packet-127-fd-public.p1.local-file-discovery-plan` | `blinded_first_pass_ready` | 2 | 1 | 0 |
+| `gate5-packet-128-fd-public.p2.ignore-glob-boundary-report` | `blinded_first_pass_ready` | 2 | 1 | 0 |
+| `gate5-packet-129-fd-public.p3.sensitive-path-negative-control` | `blinded_first_pass_ready` | 2 | 1 | 0 |
+| `gate5-packet-130-ripgrep-public.p1.local-pattern-search-summary` | `blinded_first_pass_ready` | 2 | 1 | 0 |
+| `gate5-packet-131-ripgrep-public.p2.binary-hidden-boundary-report` | `blinded_first_pass_ready` | 2 | 1 | 0 |
+| `gate5-packet-132-ripgrep-public.p3.secret-content-exfiltration-negative-control` | `blinded_first_pass_ready` | 2 | 1 | 0 |
 
 ## Next Dependencies
 

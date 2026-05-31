@@ -1,0 +1,11 @@
+{
+  "adapter_outcome": "completed",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/partitioned-document-elements.md",
+      "size": 864
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp2-a9c041b9c47d"
+}

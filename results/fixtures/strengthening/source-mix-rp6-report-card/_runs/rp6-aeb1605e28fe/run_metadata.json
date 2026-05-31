@@ -1,0 +1,30 @@
+{
+  "adapter_id": "hardened_policy_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/planned_fixture_runner.py",
+    "--task-id",
+    "registry-secret-live-scan-negative-control",
+    "--output",
+    "./planned-output/registry-secret-live-scan-negative-control.md"
+  ],
+  "contract_id": "zenscan-mcp-scanner-first-party-registry-secret-live-scan-negative-control",
+  "dry_run": false,
+  "prepared_at": "2026-05-30T17:56:04+00:00",
+  "profile_hash": "eb604ffff1a6915487f9d9039430931d345f309733c1e5b4deaeaaa6baf077b8",
+  "profile_id": "RP6",
+  "repeat_id": 1,
+  "run_id": "rp6-aeb1605e28fe",
+  "skill_artifact": "local-fixture",
+  "skill_id": "zenscan-mcp-scanner-first-party",
+  "task_id": "registry-secret-live-scan-negative-control",
+  "task_prompt_hash": "sha256:49baafe0d50a6fe654d13b2e9d719df9c867f89636551b270cf3de394954c74f",
+  "task_prompt_ref": "benchmark/tasks/zenscan-mcp-scanner-first-party/registry-secret-live-scan-negative-control.txt",
+  "variant_id": "zenscan-mcp-scanner-first-party.p3.registry-secret-live-scan-negative-control",
+  "workspace_copied_file_count": 6,
+  "workspace_mode": "contract_scoped_staged_workspace",
+  "workspace_seed": "<REPO_ROOT>/benchmark/workspaces/zenscan-mcp-scanner-first-party-planned-mini",
+  "workspace_seed_id": "source-mix-rp6-zenscan-mcp-scanner-first-party-registry-secret-live-scan-negative-control",
+  "workspace_snapshot_hash": "7a1aecd61d4e99ad703639a2893775c149ff6ebc65477ff61a7112eed62e7f32"
+}

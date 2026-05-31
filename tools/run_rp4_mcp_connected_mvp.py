@@ -12,6 +12,8 @@ from pathlib import Path
 from typing import Any
 import hashlib
 
+from repeat_hygiene import add_repeat_id_argument, repeat_stem
+
 try:
     import yaml
 except ImportError as exc:  # pragma: no cover - environment guard
@@ -150,6 +152,7 @@ def build_trace(
     profile_path: Path,
     contract_path: Path,
     manifest_path: Path,
+    repeat_id: int,
 ) -> Path:
     sys.path.insert(0, str(REPO_ROOT / "src"))
     from skilldiff.traces.events import TraceBuilder, TraceContext, validate_trace_file
@@ -164,11 +167,11 @@ def build_trace(
         runtime_profile_hash=profile["reproducibility"]["profile_hash"],
         adapter_id=profile["adapter"]["adapter_id"],
         adapter_version=profile["adapter"]["adapter_version"],
-        repeat_id=1,
+        repeat_id=repeat_id,
     )
     builder = TraceBuilder(context)
     trace_path = raw_dir / "trace.jsonl"
-    result_ref = f"results/fixtures/rp4-mcp-connected/{case_name}_result.json"
+    result_ref = f"results/fixtures/rp4-mcp-connected/{repeat_stem(case_name, repeat_id)}_result.json"
     workspace_ref = "benchmark/workspaces/rp4-mcp-connected-mini"
     task_ref = "benchmark/tasks/mcp-tool-workflow/rp4-mcp-connected.txt"
     contract_ref = rel(contract_path)
@@ -450,21 +453,23 @@ def build_trace(
     return trace_path
 
 
-def check_contract(trace_path: Path, contract_path: Path, case_name: str) -> dict[str, Any]:
+def check_contract(trace_path: Path, contract_path: Path, case_name: str, repeat_id: int) -> dict[str, Any]:
     sys.path.insert(0, str(REPO_ROOT / "src"))
     from skilldiff.contracts import check_trace_against_contract, write_contract_report
     from skilldiff.contracts.checker import load_contract
 
     contract = load_contract(contract_path)
     result = check_trace_against_contract(trace_path, contract, artifact_root=REPO_ROOT)
-    out_json = RESULT_ROOT / f"{case_name}_contract_findings.json"
-    out_md = RESULT_ROOT / f"{case_name}_contract_report.md"
+    stem = repeat_stem(case_name, repeat_id)
+    out_json = RESULT_ROOT / f"{stem}_contract_findings.json"
+    out_md = RESULT_ROOT / f"{stem}_contract_report.md"
     write_contract_report(result, out_json, out_md)
     return result
 
 
-def write_case_result(case_name: str, trace_path: Path, output_path: Path, findings: dict[str, Any]) -> Path:
-    result_path = RESULT_ROOT / f"{case_name}_result.json"
+def write_case_result(case_name: str, trace_path: Path, output_path: Path, findings: dict[str, Any], repeat_id: int) -> Path:
+    stem = repeat_stem(case_name, repeat_id)
+    result_path = RESULT_ROOT / f"{stem}_result.json"
     result = {
         "schema_version": "0.1",
         "artifact_id": f"rp4-mcp-connected-{case_name}",
@@ -476,9 +481,11 @@ def write_case_result(case_name: str, trace_path: Path, output_path: Path, findi
         "runtime_profile": "RP4",
         "adapter_id": "mcp_fixture_adapter",
         "case": case_name,
+        "repeat_count": 1,
+        "repeat_id": repeat_id,
         "trace_ref": rel(trace_path),
         "output_ref": rel(output_path),
-        "contract_findings_ref": f"results/fixtures/rp4-mcp-connected/{case_name}_contract_findings.json",
+        "contract_findings_ref": f"results/fixtures/rp4-mcp-connected/{stem}_contract_findings.json",
         "summary": findings["summary"],
         "claims_not_supported": [
             "real external MCP server behavior",
@@ -534,7 +541,7 @@ def write_drift_report(case_results: dict[str, dict[str, Any]], traces: dict[str
 
 
 def run_case(case_name: str, args: argparse.Namespace) -> tuple[Path, dict[str, Any]]:
-    raw_dir = RAW_ROOT / f"rp4-mcp-connected-{case_name}"
+    raw_dir = RAW_ROOT / repeat_stem(f"rp4-mcp-connected-{case_name}", args.repeat_id)
     if raw_dir.exists():
         shutil.rmtree(raw_dir)
     raw_dir.mkdir(parents=True, exist_ok=True)
@@ -553,9 +560,10 @@ def run_case(case_name: str, args: argparse.Namespace) -> tuple[Path, dict[str, 
         profile_path=args.profile,
         contract_path=args.contract,
         manifest_path=args.manifest,
+        repeat_id=args.repeat_id,
     )
-    findings = check_contract(trace_path, args.contract, case_name)
-    write_case_result(case_name, trace_path, output_path, findings)
+    findings = check_contract(trace_path, args.contract, case_name, args.repeat_id)
+    write_case_result(case_name, trace_path, output_path, findings, args.repeat_id)
     return trace_path, findings
 
 
@@ -567,6 +575,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--expected", type=Path, default=DEFAULT_EXPECTED)
     parser.add_argument("--workspace", type=Path, default=DEFAULT_WORKSPACE)
     parser.add_argument("--case", choices=["all", "benign", "adversarial"], default="all")
+    add_repeat_id_argument(parser)
     args = parser.parse_args(argv)
 
     for attr in ("profile", "contract", "manifest", "expected", "workspace"):

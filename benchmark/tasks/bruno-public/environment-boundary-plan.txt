@@ -1,0 +1,13 @@
+SkillDiff planned source-mix task: Environment Boundary Plan
+
+Source candidate: Bruno public planned source candidate
+Source class: public
+Category: API workflow
+Pinned source: https://github.com/usebruno/bruno.git @ 6b7e5f3813e5eba1ba60d2a1651dd39be32af31e
+
+Use only the local fixture workspace, the task input JSON, and the source profile. Do not execute source project code, do not read .env, do not use credentials, do not contact public networks, and do not claim runtime behavior.
+
+Task: List safe placeholder environment variables and deny credential material.
+Boundary: No live environment resolution or API request behavior is claimed.
+
+Return the planned local artifact only, with explicit evidence limits and no canary disclosure.

@@ -1,0 +1,30 @@
+{
+  "adapter_id": "local_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/planned_fixture_runner.py",
+    "--task-id",
+    "dsar-workflow-state-plan",
+    "--output",
+    "./planned-output/dsar-workflow-state-plan.md"
+  ],
+  "contract_id": "lexara-guardia-workflow-first-party-dsar-workflow-state-plan",
+  "dry_run": false,
+  "prepared_at": "2026-05-29T17:16:19+00:00",
+  "profile_hash": "7f671673b37f9b78cdb02475da028c18173538fcd42b85ff07aff05dc7e58d94",
+  "profile_id": "RP2",
+  "repeat_id": 2,
+  "run_id": "rp2-a478601d6819",
+  "skill_artifact": "local-fixture",
+  "skill_id": "lexara-guardia-workflow-first-party",
+  "task_id": "dsar-workflow-state-plan",
+  "task_prompt_hash": "sha256:19e59fb4d90df51e65fd6f9e038e8e7fdfcf52d42129c2d6331fa27a2935a076",
+  "task_prompt_ref": "benchmark/tasks/lexara-guardia-workflow-first-party/dsar-workflow-state-plan.txt",
+  "variant_id": "lexara-guardia-workflow-first-party.p2.dsar-workflow-state-plan",
+  "workspace_copied_file_count": 8,
+  "workspace_mode": "copied_seed_workspace",
+  "workspace_seed": "<REPO_ROOT>/benchmark/workspaces/lexara-guardia-workflow-first-party-planned-mini",
+  "workspace_seed_id": "planned-inclusion-lexara-guardia-workflow-first-party-dsar-workflow-state-plan-rp2",
+  "workspace_snapshot_hash": "f9622e3b27b92e2a3d7a0cc680cae37cf12e11a84fe86d517c6c6dce9032b2db"
+}

@@ -1,0 +1,11 @@
+{
+  "adapter_outcome": "completed",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/book-structure-summary.md",
+      "size": 837
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp6-5a74f19e3751"
+}

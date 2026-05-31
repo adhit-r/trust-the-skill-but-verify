@@ -67,6 +67,11 @@
       },
       "comparison_role": "runtime_drift_candidate",
       "contract_id": "repo-audit-executable-lockfile-risk-summary",
+      "coverage": {
+        "unmatched_decision_count": 0,
+        "unmatched_event_status_counts": {},
+        "unmatched_event_type_counts": {}
+      },
       "drift_classes_observed": [],
       "evidence_scope": "controlled_single_repeat_fixture",
       "finding_count": 0,
@@ -98,6 +103,16 @@
       },
       "comparison_role": "runtime_drift_candidate",
       "contract_id": "repo-audit-executable-lockfile-risk-summary",
+      "coverage": {
+        "unmatched_decision_count": 210,
+        "unmatched_event_status_counts": {
+          "failed": 89,
+          "succeeded": 121
+        },
+        "unmatched_event_type_counts": {
+          "filesystem.read": 210
+        }
+      },
       "drift_classes_observed": [],
       "evidence_scope": "controlled_single_repeat_fixture",
       "finding_count": 0,

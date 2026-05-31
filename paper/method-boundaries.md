@@ -81,6 +81,23 @@ state. Use it before turning the current evidence artifacts into paper prose.
   metadata, activation selection, one non-activation negative control,
   fixture install/update behavior, bundled-resource reads, fixture host API
   calls, scoped plugin storage, generated outputs, and cleanup.
+- Repeat-backed aggregate claims currently cover four machine-validated
+  buckets: planned-inclusion RP2/RP3 controlled fixtures, current main RP2/RP3
+  controlled fixtures, RP6 current-case deterministic fixtures, and
+  first-party/public source-mix RP6 report-card fixtures. RP1 and RP5 are
+  explicit report-card or fixture evidence, not repeat-backed aggregate
+  evidence. The current source-mix metadata-only count is zero after promotion,
+  but future metadata-only source-mix entries must stay excluded from
+  repeat-backed aggregate claims until executable traces, findings,
+  comparisons, and repeats exist. Model-mediated or nondeterministic repeat
+  stability remains unsupported until five-repeat evidence and matching
+  validators exist.
+- A bounded source-mix RP6 report card can be reported for seventy-four
+  first-party/public controlled fixtures across twenty-six families. It is
+  broader profile-backed mitigation/report-card evidence over controlled
+  source-mix fixtures, not live product behavior, source-mix completion,
+  defense success, commercial-runtime behavior, public-network behavior,
+  prevalence evidence, runtime-drift evidence, or human adjudication evidence.
 
 ## What Current Evidence Does Not Prove
 
@@ -121,6 +138,37 @@ state. Use it before turning the current evidence artifacts into paper prose.
 - It does not claim live command/tool guardrail UX efficacy, ClawGuard
   reproduction, or Task Shield reproduction.
 
+## Machine-Only Release Boundary
+
+The current artifact-release path is a curated local machine-only bundle. It
+contains paper-facing derived artifacts, release manifests, and checksums, and
+it is validated by `tools/validate_artifact_release_bundle.py` inside
+`make verify`. It is not a whole-repo archive, public release, external review
+packet, completed human-review artifact, or paper-grade completion claim.
+
+The one-command table reproduction path is
+`PYTHON_BIN=python3 make reproduce-paper-tables`. It rebuilds the main
+machine-only derived tables and review scaffolds in dependency order. When
+`ARTIFACT_OUTPUT_ROOT` is set, the command stages rebuilt artifacts under a
+temporary output tree so the release path can be checked without rewriting
+tracked paper-facing outputs.
+
+The release bundle must keep these boundary flags false: public network use,
+secret inclusion, auth-state inclusion, cookie inclusion, completed human
+review, external-review claim, and raw-scratch inclusion.
+
+## Reviewer Objection Responses
+
+| Objection | Reviewer-safe answer | Remaining gate |
+| --- | --- | --- |
+| This is just another skill-safety benchmark. | The unit of analysis is runtime-pair conformance under a fixed skill/task/contract/workspace/prompt/variant/repeat invariant. Skill content, skill selection, and harmful-skill datasets are related work, not the independent variable. | Keep related-work citations current and avoid firstness claims. |
+| The current evidence is too small. | The current RP2/RP3 evidence is method evidence. The manifest floor and source mix are tracked separately from executable evidence completion; bounded RP6 source-mix report-card evidence is still not full-paper completion. | Add repeat-backed analysis, reviewer adjudication, and safe task-specific real-run adapters. |
+| The profiles are artificial. | RP1, RP4, RP5, and RP6 are explicitly labeled as simulator, fixture, or report-card evidence; only RP2/RP3 controlled executable evidence supports current drift claims. | Add safe live or partial-real execution slices only when their evidence level is explicitly labeled. |
+| Instrumentation gaps look like safety. | Instrumentation failures and evidence coverage are reported separately from clean behavior, realized violations, attempted overreach, missing outputs, and utility cost. | Keep report cards and adapter support matrix current for every promoted profile. |
+| Mitigations prove a defense. | RP6, least-privilege, reachability, static scanner, and action-boundary artifacts are bounded comparator or strengthening evidence. They do not support defense-success claims. | Add scaled utility-preserving mitigation evidence before any defense-success language. |
+| Review scaffolds imply human validation. | The queue, packet index, blinded bundle, and blank templates are review-ready only. Completed human/manual review remains zero. | Real independent reviewers must complete exported templates before agreement, adjudication, or kappa claims. |
+| The artifact is release-ready. | The current bundle is a curated local machine-only bundle with checksums and hygiene validation. It is not a whole-repo archive, public release, external review packet, or completed human-review artifact. | Perform clean-checkout and venue-specific artifact-submission checks before external release. |
+
 ## Provenance Levels
 
 | Level | Current Artifact | Safe Description | Unsafe Description |
@@ -146,6 +194,7 @@ state. Use it before turning the current evidence artifacts into paper prose.
 | docs-forge adversarial package-name npx observer | Host Node synthetic-home execution of `npx --yes --registry http://127.0.0.1:9/ docs-forge --help` | Bounded fail-closed package-name npx probe against a loopback registry, excluded from MVP counts | Public registry acquisition, successful package acquisition, package install behavior, lifecycle-script execution, packet-capture evidence, or runtime-drift evidence |
 | docs-forge RP3 Node adversarial package-name npx observer | Containerized `npx --yes --registry http://127.0.0.1:9/ docs-forge --help` in `skilldiff-rp3-node` with Docker `--network=none` and `--read-only` | Bounded fail-closed package-name npx probe against a controlled nonpublic registry target, excluded from MVP counts | Public registry acquisition, packet capture, successful package acquisition, package install behavior, lifecycle-script execution, or runtime-drift evidence |
 | docs-forge adversarial npx runtime-pair scaffold | Host Node synthetic-home and RP3 Node container executions of the same fail-closed package-name npx probe | Bounded pair comparison for adversarial fail-closed safety invariants, excluded from MVP counts | Public npm acquisition evidence, packet-capture coverage, successful install behavior, or an added runtime-drift finding |
+| ripgrep public live local-binary fixture | Host `rg` binary executed against a copied synthetic workspace with explicit allowlisted roots (`input/` and `docs/`) plus one negative-control command | Partial real local executable evidence with sanitized outputs/traces and zero workspace mutation, excluded from MVP counts | Public-network behavior, commercial-runtime behavior, defense-success claims, hidden `.env` canary disclosure, or RP2/RP3 runtime-drift evidence |
 
 ## Network Evidence Boundary
 

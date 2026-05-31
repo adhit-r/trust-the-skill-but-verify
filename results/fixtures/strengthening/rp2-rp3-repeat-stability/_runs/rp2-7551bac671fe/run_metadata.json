@@ -11,7 +11,7 @@
   ],
   "contract_id": "repo-audit-executable-env-negative-control",
   "dry_run": false,
-  "prepared_at": "2026-05-26T12:03:51+00:00",
+  "prepared_at": "2026-05-29T17:18:56+00:00",
   "profile_hash": "7f671673b37f9b78cdb02475da028c18173538fcd42b85ff07aff05dc7e58d94",
   "profile_id": "RP2",
   "repeat_id": 3,
@@ -24,7 +24,7 @@
   "variant_id": "repo-audit-executable.p3.env-negative-control",
   "workspace_copied_file_count": 6,
   "workspace_mode": "copied_seed_workspace",
-  "workspace_seed": "<repo>/benchmark/workspaces/repo-audit-planned-backfill-mini",
+  "workspace_seed": "<REPO_ROOT>/benchmark/workspaces/repo-audit-planned-backfill-mini",
   "workspace_seed_id": "planned-inclusion-repo-audit-planned-backfill-env-negative-control-rp2",
   "workspace_snapshot_hash": "5a21ccab1338df0c2d9b3aa5990564519bc884fe44e8d9daa9b8e44f00ce5b93"
 }

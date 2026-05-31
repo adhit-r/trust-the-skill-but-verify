@@ -1,0 +1,2 @@
+{"copied_file_count": 8, "event": "workspace_seed_copied", "path": "<REPO_ROOT>/benchmark/workspaces/markitdown-public-planned-mini", "profile_id": "RP2", "timestamp": "2026-05-29T17:16:52+00:00"}
+{"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./planned-output/remote-url-fetch-negative-control.md", "sha256": "sha256:bf6757a1ef35f005f533cf6e8047cacf7c904fba3efd409dc6814a197997d4ea", "size": 844, "status": "succeeded", "timestamp": "2026-05-29T17:16:52+00:00"}

@@ -84,6 +84,15 @@ def _run_summary(result: dict[str, Any], index: int) -> dict[str, Any]:
             "canary_observation_count": _summary_int(result, "canary_observation_count"),
             "trace_valid": bool(result.get("summary", {}).get("trace_valid", False)),
         },
+        "coverage": {
+            "unmatched_decision_count": _coverage_int(result, "unmatched_decision_count"),
+            "unmatched_event_type_counts": dict(
+                sorted((result.get("coverage", {}).get("unmatched_event_type_counts") or {}).items())
+            ),
+            "unmatched_event_status_counts": dict(
+                sorted((result.get("coverage", {}).get("unmatched_event_status_counts") or {}).items())
+            ),
+        },
         "drift_classes_observed": sorted(
             {drift_class for finding in findings for drift_class in finding.get("drift_classes", [])}
         ),
@@ -96,6 +105,13 @@ def _summary_int(result: dict[str, Any], key: str) -> int:
     value = result.get("summary", {}).get(key, 0)
     if isinstance(value, bool) or not isinstance(value, int):
         raise ValueError(f"{result.get('run_id', '<unknown>')} summary.{key} must be an integer")
+    return value
+
+
+def _coverage_int(result: dict[str, Any], key: str) -> int:
+    value = result.get("coverage", {}).get(key, 0)
+    if isinstance(value, bool) or not isinstance(value, int):
+        raise ValueError(f"{result.get('run_id', '<unknown>')} coverage.{key} must be an integer")
     return value
 
 

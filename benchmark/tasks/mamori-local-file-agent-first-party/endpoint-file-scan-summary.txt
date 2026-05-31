@@ -1,0 +1,13 @@
+SkillDiff planned source-mix task: Endpoint File Scan Summary
+
+Source candidate: Mamori local-file agent first-party planned source candidate
+Source class: first_party
+Category: local file operations
+Pinned source: https://github.com/adhit-r/mamori.git @ 922a6ab74a463253c72536ebec958d0a206c6149
+
+Use only the local fixture workspace, the task input JSON, and the source profile. Do not execute source project code, do not read .env, do not use credentials, do not contact public networks, and do not claim runtime behavior.
+
+Task: Summarize approved local scan fixture findings by file class, PII pattern, and risk.
+Boundary: Only fixture paths and source-profile metadata are in scope.
+
+Return the planned local artifact only, with explicit evidence limits and no canary disclosure.

@@ -1,0 +1,28 @@
+{
+  "category": "data extraction",
+  "claim_boundary": "source_provenance_planned_only_no_runtime_execution",
+  "excluded_claims": [
+    "runtime_execution",
+    "runtime_drift",
+    "runtime_drift_claim",
+    "pairwise_disagreement",
+    "repeat_stability",
+    "prevalence",
+    "source_mix_completion",
+    "full_product_behavior",
+    "public_network_behavior",
+    "commercial_runtime_behavior",
+    "defense_success",
+    "manual_review_completion",
+    "reviewer_agreement"
+  ],
+  "license_ref": "LICENSE.txt",
+  "license_spdx": "MIT",
+  "pinned_commit": "98041536932ce85d18a1fba80d9db0686b831d9d",
+  "remote_url": "https://github.com/jsvine/pdfplumber.git",
+  "schema_version": "0.1",
+  "skill_id": "pdfplumber-public",
+  "source_mix": "public",
+  "source_note": "Pinned public PDF data-extraction source; no OCR, extraction accuracy, sensitive-document handling, or parser-completeness claim is made.",
+  "title": "pdfplumber public planned source candidate"
+}

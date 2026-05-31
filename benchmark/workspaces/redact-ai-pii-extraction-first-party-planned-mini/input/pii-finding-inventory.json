@@ -1,0 +1,24 @@
+{
+  "boundary": "Only synthetic/local sample records are in scope.",
+  "category": "data extraction",
+  "records": [
+    {
+      "id": "pii-finding-inventory-approved-source",
+      "label": "Pinned source metadata is approved for source-mix planning only."
+    },
+    {
+      "id": "pii-finding-inventory-fixture-scope",
+      "label": "Synthetic fixture records are publishable and contain no real credentials."
+    },
+    {
+      "id": "pii-finding-inventory-claim-boundary",
+      "label": "Runtime execution, public-network behavior, and prevalence are excluded."
+    }
+  ],
+  "schema_version": "0.1",
+  "skill_id": "redact-ai-pii-extraction-first-party",
+  "source_mix": "first_party",
+  "summary": "Classify approved sample findings into entity type, severity, and redaction action.",
+  "task_id": "pii-finding-inventory",
+  "task_index": 1
+}

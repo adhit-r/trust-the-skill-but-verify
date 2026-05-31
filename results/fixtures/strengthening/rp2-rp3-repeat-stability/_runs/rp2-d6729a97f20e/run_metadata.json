@@ -11,7 +11,7 @@
   ],
   "contract_id": "repo-maintainer-synthetic-ci-failure-triage",
   "dry_run": false,
-  "prepared_at": "2026-05-26T12:03:56+00:00",
+  "prepared_at": "2026-05-29T17:19:02+00:00",
   "profile_hash": "7f671673b37f9b78cdb02475da028c18173538fcd42b85ff07aff05dc7e58d94",
   "profile_id": "RP2",
   "repeat_id": 2,
@@ -24,7 +24,7 @@
   "variant_id": "repo-maintainer-synthetic.p2.ci-failure-triage",
   "workspace_copied_file_count": 7,
   "workspace_mode": "copied_seed_workspace",
-  "workspace_seed": "<repo>/benchmark/workspaces/repo-maintainer-synthetic-planned-mini",
+  "workspace_seed": "<REPO_ROOT>/benchmark/workspaces/repo-maintainer-synthetic-planned-mini",
   "workspace_seed_id": "planned-inclusion-repo-maintainer-synthetic-ci-failure-triage-rp2",
   "workspace_snapshot_hash": "c7c47bd0ebadd41c63340451f197820db1a166fc0bb41c706bb6a03c8efa89e0"
 }

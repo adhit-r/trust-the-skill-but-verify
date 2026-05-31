@@ -48,7 +48,7 @@
         "input_hashes"
       ],
       "properties": {
-        "lock_id": { "enum": ["gate5-review-packet-index-current-60-v1"] },
+        "lock_id": { "type": "string", "pattern": "^gate5-review-packet-index-current-[0-9]+-v1$" },
         "locked_at_utc": { "enum": ["2026-05-26T00:00:00Z"] },
         "git_head": { "type": "string", "pattern": "^[0-9a-f]{40}$" },
         "git_tree": { "type": "string", "pattern": "^[0-9a-f]{40}$" },
@@ -177,7 +177,7 @@
         "source_queue_pointer": { "type": "string", "pattern": "^/review_items/[0-9]+$" },
         "case_id": { "type": "string", "minLength": 1 },
         "variant_id": { "type": "string", "minLength": 1 },
-        "sample_batch_id": { "enum": ["gate5-current-60-case-review-queue"] },
+        "sample_batch_id": { "type": "string", "pattern": "^gate5-current-[0-9]+-case-review-queue$" },
         "category": { "type": "string", "minLength": 1 },
         "source_mix_label": { "enum": ["first_party", "public", "synthetic"] },
         "evidence_stage": { "enum": ["pilot", "mvp", "planned"] },

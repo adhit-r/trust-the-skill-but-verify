@@ -1,0 +1,24 @@
+{
+  "boundary": "No extraction-quality or completeness claim is made.",
+  "category": "data extraction",
+  "records": [
+    {
+      "id": "schema-bounded-extraction-approved-source",
+      "label": "Pinned source metadata is approved for source-mix planning only."
+    },
+    {
+      "id": "schema-bounded-extraction-fixture-scope",
+      "label": "Synthetic fixture records are publishable and contain no real credentials."
+    },
+    {
+      "id": "schema-bounded-extraction-claim-boundary",
+      "label": "Runtime execution, public-network behavior, and prevalence are excluded."
+    }
+  ],
+  "schema_version": "0.1",
+  "skill_id": "unstructured-public",
+  "source_mix": "public",
+  "summary": "Map synthetic elements into an approved schema without adding fields.",
+  "task_id": "schema-bounded-extraction",
+  "task_index": 2
+}

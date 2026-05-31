@@ -1,0 +1,1 @@
+{"enforcement_outcome": "allowed", "event": "activation.select", "metadata": {"selected_skill_id": "grclaw-audit-pack-first-party", "source_type": "task_prompt"}, "operation": "select", "status": "succeeded", "target": "grclaw-audit-pack-first-party", "timestamp": "2026-05-29T17:15:54+00:00"}

@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "9b993fdf17c3c52da7140dbaaa1a2054b5ee3064c6dd742a2bf4159eda34c250",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/registry-secret-live-scan-negative-control.md",
+      "size": 883
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-a143bd825c58"
+}

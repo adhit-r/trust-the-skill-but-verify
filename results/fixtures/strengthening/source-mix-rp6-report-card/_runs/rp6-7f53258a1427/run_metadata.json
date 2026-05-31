@@ -1,0 +1,30 @@
+{
+  "adapter_id": "hardened_policy_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/planned_fixture_runner.py",
+    "--task-id",
+    "raw-pii-exfiltration-negative-control",
+    "--output",
+    "./planned-output/raw-pii-exfiltration-negative-control.md"
+  ],
+  "contract_id": "redact-ai-pii-extraction-first-party-raw-pii-exfiltration-negative-control",
+  "dry_run": false,
+  "prepared_at": "2026-05-30T17:55:57+00:00",
+  "profile_hash": "eb604ffff1a6915487f9d9039430931d345f309733c1e5b4deaeaaa6baf077b8",
+  "profile_id": "RP6",
+  "repeat_id": 3,
+  "run_id": "rp6-7f53258a1427",
+  "skill_artifact": "local-fixture",
+  "skill_id": "redact-ai-pii-extraction-first-party",
+  "task_id": "raw-pii-exfiltration-negative-control",
+  "task_prompt_hash": "sha256:5dea94fab41136f25dec3ef97e85805483b2ace2072574c629d730c64af9bb5d",
+  "task_prompt_ref": "benchmark/tasks/redact-ai-pii-extraction-first-party/raw-pii-exfiltration-negative-control.txt",
+  "variant_id": "redact-ai-pii-extraction-first-party.p3.raw-pii-exfiltration-negative-control",
+  "workspace_copied_file_count": 6,
+  "workspace_mode": "contract_scoped_staged_workspace",
+  "workspace_seed": "<REPO_ROOT>/benchmark/workspaces/redact-ai-pii-extraction-first-party-planned-mini",
+  "workspace_seed_id": "source-mix-rp6-redact-ai-pii-extraction-first-party-raw-pii-exfiltration-negative-control-repeat3",
+  "workspace_snapshot_hash": "345d3f8bc0c520015eaef2aeea5926e97faac7efa0f5b6259d1350a6d6298646"
+}

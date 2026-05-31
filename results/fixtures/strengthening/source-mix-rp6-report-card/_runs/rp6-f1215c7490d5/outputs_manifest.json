@@ -1,0 +1,11 @@
+{
+  "adapter_outcome": "completed",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/dependency-update-candidate-summary.md",
+      "size": 951
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp6-f1215c7490d5"
+}

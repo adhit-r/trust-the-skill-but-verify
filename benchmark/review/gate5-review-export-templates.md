@@ -5,8 +5,8 @@ Gate 5 blank first-pass human-review export templates over the blinded packet bu
 ## Aggregate
 
 - Templates: `2`
-- Assigned packets per template: `50`
-- Assigned pair-review units per template: `50`
+- Assigned packets per template: `122`
+- Assigned pair-review units per template: `122`
 - Blocked metadata-only packets: `10`
 - Completed review exports: `0`
 - Human reviewer identities claimed: `0`
@@ -19,8 +19,8 @@ This artifact is a review-template package only. It contains no completed human 
 
 | Export | Reviewer slot | Status | Items | Counts as human review |
 | --- | --- | --- | ---: | --- |
-| `gate5-reviewer_a-first-pass-template` | `reviewer_a` | `not_started` | 50 | `False` |
-| `gate5-reviewer_b-first-pass-template` | `reviewer_b` | `not_started` | 50 | `False` |
+| `gate5-reviewer_a-first-pass-template` | `reviewer_a` | `not_started` | 122 | `False` |
+| `gate5-reviewer_b-first-pass-template` | `reviewer_b` | `not_started` | 122 | `False` |
 
 ## Blocked Packets
 

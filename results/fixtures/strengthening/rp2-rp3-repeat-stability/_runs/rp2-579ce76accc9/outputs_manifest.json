@@ -1,0 +1,11 @@
+{
+  "adapter_outcome": "completed",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/ecosystem-scope-boundary-plan.md",
+      "size": 882
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp2-579ce76accc9"
+}

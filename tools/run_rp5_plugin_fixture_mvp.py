@@ -10,6 +10,8 @@ import sys
 from pathlib import Path
 from typing import Any
 
+from repeat_hygiene import add_repeat_id_argument, repeat_seed, repeat_stem
+
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 PYTHON = sys.executable
@@ -77,7 +79,7 @@ def display_path(path: Path) -> str:
         return str(path)
 
 
-def run_case(case: dict[str, Any]) -> dict[str, Any]:
+def run_case(case: dict[str, Any], repeat_id: int) -> dict[str, Any]:
     case_id = case["case_id"]
     contract = REPO_ROOT / case["contract"]
     workspace = REPO_ROOT / case["workspace"]
@@ -92,13 +94,13 @@ def run_case(case: dict[str, Any]) -> dict[str, Any]:
         "--workspace",
         str(workspace),
         "--workspace-seed-id",
-        f"plugin-style-{case_id}-rp5-plugin-style",
+        repeat_seed(f"plugin-style-{case_id}-rp5-plugin-style", repeat_id),
         "--variant-id",
         case["variant_id"],
         "--output-root",
         str(OUT_ROOT / "_runs"),
         "--repeat-id",
-        "1",
+        str(repeat_id),
         "--live",
     ]
     if case["command"]:
@@ -106,7 +108,8 @@ def run_case(case: dict[str, Any]) -> dict[str, Any]:
     result = run_json(args)
 
     OUT_ROOT.mkdir(parents=True, exist_ok=True)
-    findings_path = OUT_ROOT / f"{case_id}_rp5_contract_findings.json"
+    stem = repeat_stem(f"{case_id}_rp5", repeat_id)
+    findings_path = OUT_ROOT / f"{stem}_contract_findings.json"
     run_text(
         [
             PYTHON,
@@ -118,7 +121,7 @@ def run_case(case: dict[str, Any]) -> dict[str, Any]:
             "--out-json",
             str(findings_path),
             "--out-md",
-            str(OUT_ROOT / f"{case_id}_rp5_contract_report.md"),
+            str(OUT_ROOT / f"{stem}_contract_report.md"),
         ]
     )
     annotate_rp5_findings(findings_path)
@@ -214,8 +217,9 @@ def write_reports(rows: list[dict[str, Any]]) -> None:
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Run the RP5 plugin-style fixture report card")
-    parser.parse_args(argv)
-    rows = [run_case(case) for case in CASES]
+    add_repeat_id_argument(parser)
+    args = parser.parse_args(argv)
+    rows = [run_case(case, args.repeat_id) for case in CASES]
     write_reports(rows)
     print(OUT_ROOT / "report_card.json")
     return 0

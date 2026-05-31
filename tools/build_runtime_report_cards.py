@@ -32,12 +32,14 @@ DEFAULT_FINDING_GLOBS = [
     "results/fixtures/rp1-restricted-hosted/*/*_rp1_contract_findings.json",
     "results/fixtures/rp5-plugin-style/*_rp5_contract_findings.json",
     "results/fixtures/rp6-policy-hardened/*/*_rp6_contract_findings.json",
+    "results/fixtures/strengthening/source-mix-rp6-report-card/*/*_rp6_contract_findings.json",
 ]
 DEFAULT_COMPARISON_GLOBS = [
     "results/mvp/*/*_rp2_rp3_comparison.json",
     "results/planned-inclusion/*/*_rp2_rp3_comparison.json",
     "results/fixtures/rp1-restricted-hosted/*/*_rp2_rp3_rp1_comparison.json",
     "results/fixtures/rp6-policy-hardened/*/*_rp2_rp3_rp6_comparison.json",
+    "results/fixtures/strengthening/source-mix-rp6-report-card/*/*_rp2_rp3_rp6_comparison.json",
 ]
 SEVERITY_WEIGHTS = {
     "low": 1,

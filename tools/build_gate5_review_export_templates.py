@@ -166,7 +166,12 @@ def build_templates(bundle_path: Path = DEFAULT_BUNDLE) -> dict[str, Any]:
             "adjudication_form_ref": bundle["input_refs"]["adjudication_form_ref"],
         },
         "package_lock": {
-            "lock_id": "gate5-review-export-templates-current-50x2-v1",
+            "lock_id": (
+                "gate5-review-export-templates-current-"
+                f"{aggregate['source_packet_count']}source-"
+                f"{aggregate['assigned_packet_count_per_template']}x"
+                f"{aggregate['template_count']}-v1"
+            ),
             "locked_at_utc": LOCKED_AT_UTC,
             "git_head": build_gate5_review_packet_index.git_rev_parse("HEAD"),
             "git_tree": build_gate5_review_packet_index.git_rev_parse("HEAD^{tree}"),

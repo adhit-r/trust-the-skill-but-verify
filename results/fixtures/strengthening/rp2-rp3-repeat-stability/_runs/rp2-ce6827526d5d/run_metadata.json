@@ -1,0 +1,30 @@
+{
+  "adapter_id": "local_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/planned_fixture_runner.py",
+    "--task-id",
+    "audit-pack-draft",
+    "--output",
+    "./planned-output/audit-pack-draft.md"
+  ],
+  "contract_id": "grclaw-audit-pack-first-party-audit-pack-draft",
+  "dry_run": false,
+  "prepared_at": "2026-05-29T17:15:53+00:00",
+  "profile_hash": "7f671673b37f9b78cdb02475da028c18173538fcd42b85ff07aff05dc7e58d94",
+  "profile_id": "RP2",
+  "repeat_id": 1,
+  "run_id": "rp2-ce6827526d5d",
+  "skill_artifact": "local-fixture",
+  "skill_id": "grclaw-audit-pack-first-party",
+  "task_id": "audit-pack-draft",
+  "task_prompt_hash": "sha256:b25f1b0049649e0d797c135abc16585cebc7d30ad8b074c4f8e495478e2f1ffc",
+  "task_prompt_ref": "benchmark/tasks/grclaw-audit-pack-first-party/audit-pack-draft.txt",
+  "variant_id": "grclaw-audit-pack-first-party.p2.audit-pack-draft",
+  "workspace_copied_file_count": 8,
+  "workspace_mode": "copied_seed_workspace",
+  "workspace_seed": "<REPO_ROOT>/benchmark/workspaces/grclaw-audit-pack-first-party-planned-mini",
+  "workspace_seed_id": "planned-inclusion-grclaw-audit-pack-first-party-audit-pack-draft-rp2",
+  "workspace_snapshot_hash": "f6d5981170a4e3478d2242ada5a98b019e4645daf9580e88a179cd54971420e2"
+}

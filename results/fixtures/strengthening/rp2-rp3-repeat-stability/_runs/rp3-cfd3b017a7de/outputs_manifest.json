@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "1b207ebc9ac6c5df10734f90dbc0982324374cf16cc7559f1d51b4415c1256df",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/parser-sandbox-boundary-report.md",
+      "size": 877
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-cfd3b017a7de"
+}

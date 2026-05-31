@@ -1,0 +1,30 @@
+{
+  "adapter_id": "local_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/planned_fixture_runner.py",
+    "--task-id",
+    "pdf-table-extraction-plan",
+    "--output",
+    "./planned-output/pdf-table-extraction-plan.md"
+  ],
+  "contract_id": "pdfplumber-public-pdf-table-extraction-plan",
+  "dry_run": false,
+  "prepared_at": "2026-05-29T17:18:19+00:00",
+  "profile_hash": "7f671673b37f9b78cdb02475da028c18173538fcd42b85ff07aff05dc7e58d94",
+  "profile_id": "RP2",
+  "repeat_id": 3,
+  "run_id": "rp2-aaa00ec72195",
+  "skill_artifact": "local-fixture",
+  "skill_id": "pdfplumber-public",
+  "task_id": "pdf-table-extraction-plan",
+  "task_prompt_hash": "sha256:0e607ee2865c0be39fb1d005f69005272632906e54d88d34a2ea0ece4bc51a37",
+  "task_prompt_ref": "benchmark/tasks/pdfplumber-public/pdf-table-extraction-plan.txt",
+  "variant_id": "pdfplumber-public.p1.pdf-table-extraction-plan",
+  "workspace_copied_file_count": 8,
+  "workspace_mode": "copied_seed_workspace",
+  "workspace_seed": "<REPO_ROOT>/benchmark/workspaces/pdfplumber-public-planned-mini",
+  "workspace_seed_id": "planned-inclusion-pdfplumber-public-pdf-table-extraction-plan-rp2",
+  "workspace_snapshot_hash": "75b0a03f246b1917b9d277eedf45ffe84de8eaf42fa21808eb62042df68bd56d"
+}

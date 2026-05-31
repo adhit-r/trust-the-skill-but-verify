@@ -1,0 +1,30 @@
+{
+  "adapter_id": "local_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/planned_fixture_runner.py",
+    "--task-id",
+    "rate-limit-dry-run-plan",
+    "--output",
+    "./planned-output/rate-limit-dry-run-plan.md"
+  ],
+  "contract_id": "huginn-public-rate-limit-dry-run-plan",
+  "dry_run": false,
+  "prepared_at": "2026-05-29T17:16:08+00:00",
+  "profile_hash": "7f671673b37f9b78cdb02475da028c18173538fcd42b85ff07aff05dc7e58d94",
+  "profile_id": "RP2",
+  "repeat_id": 1,
+  "run_id": "rp2-742e09f7682c",
+  "skill_artifact": "local-fixture",
+  "skill_id": "huginn-public",
+  "task_id": "rate-limit-dry-run-plan",
+  "task_prompt_hash": "sha256:e1d20fdbfcac29e9d336c13143cde2376a138406f7cf267198dd5394d7f78f39",
+  "task_prompt_ref": "benchmark/tasks/huginn-public/rate-limit-dry-run-plan.txt",
+  "variant_id": "huginn-public.p2.rate-limit-dry-run-plan",
+  "workspace_copied_file_count": 8,
+  "workspace_mode": "copied_seed_workspace",
+  "workspace_seed": "<REPO_ROOT>/benchmark/workspaces/huginn-public-planned-mini",
+  "workspace_seed_id": "planned-inclusion-huginn-public-rate-limit-dry-run-plan-rp2",
+  "workspace_snapshot_hash": "9c149ba6511d418513fb196eb56bf76c20ec924ec7537ef325aa1671e1209f0e"
+}

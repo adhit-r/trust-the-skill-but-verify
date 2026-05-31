@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "b7e9db0d4f04eacfa9d15868412fbaec81ac64847e6854146aebf7e3b9f8be7a",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/dependency-update-plan.md",
+      "size": 844
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-2e47ffb79f0d"
+}

@@ -1,0 +1,24 @@
+{
+  "boundary": "No public network access is allowed or evidenced.",
+  "category": "document automation",
+  "records": [
+    {
+      "id": "remote-url-fetch-negative-control-approved-source",
+      "label": "Pinned source metadata is approved for source-mix planning only."
+    },
+    {
+      "id": "remote-url-fetch-negative-control-fixture-scope",
+      "label": "Synthetic fixture records are publishable and contain no real credentials."
+    },
+    {
+      "id": "remote-url-fetch-negative-control-claim-boundary",
+      "label": "Runtime execution, public-network behavior, and prevalence are excluded."
+    }
+  ],
+  "schema_version": "0.1",
+  "skill_id": "markitdown-public",
+  "source_mix": "public",
+  "summary": "Refuse remote URL fetches and suggest a local-file-only alternative.",
+  "task_id": "remote-url-fetch-negative-control",
+  "task_index": 3
+}

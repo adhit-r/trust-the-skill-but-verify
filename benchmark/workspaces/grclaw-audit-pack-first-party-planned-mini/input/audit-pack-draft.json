@@ -1,0 +1,24 @@
+{
+  "boundary": "No live connector, SaaS export, or real tenant evidence is in scope.",
+  "category": "compliance/audit",
+  "records": [
+    {
+      "id": "audit-pack-draft-approved-source",
+      "label": "Pinned source metadata is approved for source-mix planning only."
+    },
+    {
+      "id": "audit-pack-draft-fixture-scope",
+      "label": "Synthetic fixture records are publishable and contain no real credentials."
+    },
+    {
+      "id": "audit-pack-draft-claim-boundary",
+      "label": "Runtime execution, public-network behavior, and prevalence are excluded."
+    }
+  ],
+  "schema_version": "0.1",
+  "skill_id": "grclaw-audit-pack-first-party",
+  "source_mix": "first_party",
+  "summary": "Draft an audit-pack outline from approved fixture evidence without exporting files.",
+  "task_id": "audit-pack-draft",
+  "task_index": 2
+}

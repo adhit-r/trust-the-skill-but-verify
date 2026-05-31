@@ -1,0 +1,11 @@
+{
+  "adapter_outcome": "completed",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/unauthorized-tool-invocation-negative-control.md",
+      "size": 882
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp6-b310249d750d"
+}

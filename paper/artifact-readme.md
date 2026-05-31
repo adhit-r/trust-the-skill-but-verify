@@ -1,7 +1,8 @@
 # Artifact README Draft
 
 This is the paper-artifact README draft for the current MVP repository state.
-It is intentionally narrower than a final public artifact package.
+It is intentionally narrower than a final public artifact package and remains a
+local machine-only release path.
 
 ## Install
 
@@ -133,6 +134,14 @@ DOCS_FORGE_SOURCE_ROOT=/path/to/docs-forge \
   bash experiments/docs-forge-live-npx-adversarial-package-acquisition-runtime-pair/reproduce_docs_forge_live_npx_adversarial_package_acquisition_runtime_pair.sh
 ```
 
+The bounded ripgrep public live local-binary fixture is fully local and uses
+the host `rg` binary over a synthetic allowlisted workspace only:
+
+```bash
+PYTHON_BIN=/tmp/skilldiff-venv/bin/python \
+  bash experiments/ripgrep-public-live-local-binary/reproduce_ripgrep_public_live_local_binary.sh
+```
+
 The bounded RP4 MCP-connected fixture is local and synthetic. It does not
 require an external MCP server, connector credentials, Docker, or public
 network access:
@@ -162,6 +171,52 @@ PYTHON_BIN=/tmp/skilldiff-venv/bin/python \
   bash experiments/strengthening-evidence/reproduce_strengthening_evidence.sh
 ```
 
+The source-mix RP6 repeat-stability package reruns the first-party/public
+source-mix RP6 report-card fixture slice across repeat IDs 1, 2, and 3, then
+rebuilds the aggregate stability report:
+
+```bash
+PYTHON_BIN=/tmp/skilldiff-venv/bin/python \
+  bash experiments/source-mix-rp6-repeat-stability/reproduce_source_mix_rp6_repeat_stability.sh
+```
+
+To rebuild the main paper-facing machine-only tables and derived artifacts in
+dependency order from the repository root, use:
+
+```bash
+PYTHON_BIN=/tmp/skilldiff-venv/bin/python bash scripts/reproduce_paper_tables.sh
+```
+
+The same path is available through `make`:
+
+```bash
+PYTHON_BIN=/tmp/skilldiff-venv/bin/python make reproduce-paper-tables
+```
+
+For non-destructive local validation, stage the rebuilt artifacts under a clean
+temporary repo-local directory:
+
+```bash
+PYTHON_BIN=/tmp/skilldiff-venv/bin/python \
+  ARTIFACT_OUTPUT_ROOT=tmp/artifact-release-validation \
+  bash scripts/reproduce_paper_tables.sh
+```
+
+To export the conservative local release bundle and validate it:
+
+```bash
+PYTHON_BIN=/tmp/skilldiff-venv/bin/python bash scripts/reproduce_paper_tables.sh
+python3 tools/build_artifact_release_bundle.py --replace --output-dir tmp/artifact-release-bundle
+python3 tools/validate_artifact_release_bundle.py --bundle-dir tmp/artifact-release-bundle
+```
+
+Or, using the Makefile wrapper:
+
+```bash
+PYTHON_BIN=/tmp/skilldiff-venv/bin/python make artifact-release-bundle
+PYTHON_BIN=/tmp/skilldiff-venv/bin/python make validate-artifact-release-bundle
+```
+
 ## Expected Outputs
 
 | Script | Primary Result |
@@ -181,13 +236,23 @@ PYTHON_BIN=/tmp/skilldiff-venv/bin/python \
 | `experiments/docs-forge-live-npx-adversarial-package-acquisition/reproduce_docs_forge_live_npx_adversarial_package_acquisition.sh` | `results/live/docs-forge-installer/npx_adversarial_package_acquisition_report.md` |
 | `experiments/docs-forge-live-npx-rp3-node-adversarial-package-acquisition/reproduce_docs_forge_live_npx_rp3_node_adversarial_package_acquisition.sh` | `results/live/docs-forge-installer/npx_rp3_node_adversarial_package_acquisition_report.md` |
 | `experiments/docs-forge-live-npx-adversarial-package-acquisition-runtime-pair/reproduce_docs_forge_live_npx_adversarial_package_acquisition_runtime_pair.sh` | `results/live/docs-forge-installer/npx_adversarial_package_acquisition_runtime_pair_report.md` |
+| `experiments/ripgrep-public-live-local-binary/reproduce_ripgrep_public_live_local_binary.sh` | `results/live/ripgrep-public-local-binary/live_local_binary_search_report.md` |
 | `experiments/rp4-mcp-connected-mvp/reproduce_rp4_mcp_connected_mvp.sh` | `results/fixtures/rp4-mcp-connected/drift_report.md` |
 | `experiments/rp6-policy-hardened-mvp/reproduce_rp6_policy_hardened_mvp.sh` | `results/fixtures/rp6-policy-hardened/report_card.json` plus `results/fixtures/rp6-policy-hardened/network-egress/network_policy_probe_rp6_contract_findings.json` |
 | `experiments/strengthening-evidence/reproduce_strengthening_evidence.sh` | `results/fixtures/strengthening/index.json` plus `results/fixtures/rp6-policy-hardened/ablations/component_report_card.json` and `results/fixtures/rp6-policy-hardened/ablations/minimal_report_card.json` |
+| `experiments/source-mix-rp6-repeat-stability/reproduce_source_mix_rp6_repeat_stability.sh` | `results/fixtures/strengthening/source-mix-rp6-repeat-stability/repeat_stability.json` |
 
 ## Safety Notes
 
 - The repository uses synthetic canaries only.
+- The artifact-release bundle is a clean local path only. It is not a public
+  network release, an external review packet, or a completed human-review
+  artifact.
+- The artifact-release bundle includes release manifests, checksums,
+  paper-facing derived artifacts, the claim ledger, method boundaries, and
+  aggregate repeat-stability reports only. It excludes raw scratch, raw trace
+  directories, per-run trace directories, secrets, auth state, cookies, and
+  completed human-review data.
 - Benchmark network tests use reserved fake-sink destinations or Docker network
   denial; they must not contact the public internet.
 - Raw payload bodies, raw query strings, sensitive headers, and real secrets are
@@ -222,6 +287,11 @@ PYTHON_BIN=/tmp/skilldiff-venv/bin/python \
   bounded local-tarball `npx --offline` help execution from the locally
   materialized docs-forge package. It does not execute package-name `npx`, npm
   registry acquisition, install behavior, or docs generation.
+- `results/live/ripgrep-public-local-binary/live_local_binary_search_result.json`
+  records local real ripgrep binary execution over a copied synthetic
+  allowlisted workspace (`input/` and `docs/`) with one negative-control
+  command. It is excluded from RP2/RP3 MVP runtime-drift counts and carries no
+  public-network, commercial-runtime, or defense-success claim.
 - `results/live/docs-forge-installer/npx_rp3_node_observer_result.json`
   records one containerized local-tarball `npx --offline` help execution under
   Docker `--network=none` and `--read-only` constraints. It does not execute
@@ -250,6 +320,8 @@ PYTHON_BIN=/tmp/skilldiff-venv/bin/python \
 
 ## Known Limitations
 
+- The release bundle is conservative and local-only. It does not by itself
+  claim external review, public release readiness, or completed human review.
 - RP2 read provenance is Python wrapper-level.
 - Failed Python write-attempt provenance is wrapper-level evidence for
   controlled Python commands.

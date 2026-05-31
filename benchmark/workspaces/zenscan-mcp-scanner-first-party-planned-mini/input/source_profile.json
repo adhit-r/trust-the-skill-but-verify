@@ -1,0 +1,27 @@
+{
+  "category": "MCP/tool workflow",
+  "claim_boundary": "source_provenance_planned_only_no_runtime_execution",
+  "excluded_claims": [
+    "runtime_execution",
+    "runtime_drift",
+    "runtime_drift_claim",
+    "pairwise_disagreement",
+    "repeat_stability",
+    "prevalence",
+    "source_mix_completion",
+    "full_product_behavior",
+    "public_network_behavior",
+    "commercial_runtime_behavior",
+    "defense_success",
+    "manual_review_completion",
+    "reviewer_agreement"
+  ],
+  "fixture_source_tree": "f648f87abc71b6bb8cdbc63c557b3cce2ec3403d",
+  "pinned_commit": "9eba6d790475a69980bed6842f8c2e8a081f38f3",
+  "remote_url": "https://github.com/adhit-r/zenscan.git",
+  "schema_version": "0.1",
+  "skill_id": "zenscan-mcp-scanner-first-party",
+  "source_mix": "first_party",
+  "source_note": "Pinned first-party MCP scanner source; no live MCP transport, registry authentication, cluster scan, or vulnerability-prevalence claim is made.",
+  "title": "ZenScan MCP scanner first-party planned source candidate"
+}

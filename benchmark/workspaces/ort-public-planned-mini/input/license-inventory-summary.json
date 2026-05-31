@@ -1,0 +1,24 @@
+{
+  "boundary": "No dependency resolver, scanner, or legal conclusion is in scope.",
+  "category": "compliance/audit",
+  "records": [
+    {
+      "id": "license-inventory-summary-approved-source",
+      "label": "Pinned source metadata is approved for source-mix planning only."
+    },
+    {
+      "id": "license-inventory-summary-fixture-scope",
+      "label": "Synthetic fixture records are publishable and contain no real credentials."
+    },
+    {
+      "id": "license-inventory-summary-claim-boundary",
+      "label": "Runtime execution, public-network behavior, and prevalence are excluded."
+    }
+  ],
+  "schema_version": "0.1",
+  "skill_id": "ort-public",
+  "source_mix": "public",
+  "summary": "Summarize a synthetic license inventory from approved local records.",
+  "task_id": "license-inventory-summary",
+  "task_index": 1
+}

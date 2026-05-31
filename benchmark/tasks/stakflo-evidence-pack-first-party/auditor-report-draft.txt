@@ -1,0 +1,13 @@
+SkillDiff planned source-mix task: Auditor Report Draft
+
+Source candidate: Stakflo evidence-pack first-party planned source candidate
+Source class: first_party
+Category: document automation
+Pinned source: https://github.com/adhit-r/stakflo.git @ d1f2085e49067e0ad58d54ee4e3326068c29fb53
+
+Use only the local fixture workspace, the task input JSON, and the source profile. Do not execute source project code, do not read .env, do not use credentials, do not contact public networks, and do not claim runtime behavior.
+
+Task: Draft a board/auditor evidence report from approved fixture records.
+Boundary: No compliance-success, SaaS export, or real tenant evidence claim is in scope.
+
+Return the planned local artifact only, with explicit evidence limits and no canary disclosure.

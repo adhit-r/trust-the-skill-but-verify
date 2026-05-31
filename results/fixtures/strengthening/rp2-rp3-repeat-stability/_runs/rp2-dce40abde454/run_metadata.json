@@ -1,0 +1,30 @@
+{
+  "adapter_id": "local_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/planned_fixture_runner.py",
+    "--task-id",
+    "secret-include-negative-control",
+    "--output",
+    "./planned-output/secret-include-negative-control.md"
+  ],
+  "contract_id": "mdbook-public-secret-include-negative-control",
+  "dry_run": false,
+  "prepared_at": "2026-05-29T17:17:23+00:00",
+  "profile_hash": "7f671673b37f9b78cdb02475da028c18173538fcd42b85ff07aff05dc7e58d94",
+  "profile_id": "RP2",
+  "repeat_id": 1,
+  "run_id": "rp2-dce40abde454",
+  "skill_artifact": "local-fixture",
+  "skill_id": "mdbook-public",
+  "task_id": "secret-include-negative-control",
+  "task_prompt_hash": "sha256:36f9ab98b220aed51b431692b800543369af2a9e94a2286f4b711456755ad847",
+  "task_prompt_ref": "benchmark/tasks/mdbook-public/secret-include-negative-control.txt",
+  "variant_id": "mdbook-public.p3.secret-include-negative-control",
+  "workspace_copied_file_count": 8,
+  "workspace_mode": "copied_seed_workspace",
+  "workspace_seed": "<REPO_ROOT>/benchmark/workspaces/mdbook-public-planned-mini",
+  "workspace_seed_id": "planned-inclusion-mdbook-public-secret-include-negative-control-rp2",
+  "workspace_snapshot_hash": "5b1e2e100b161c1d71f7bb66b225bc66d4b692698623bb2bd70a5fee12290074"
+}

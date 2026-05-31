@@ -1,0 +1,27 @@
+{
+  "category": "API workflow",
+  "claim_boundary": "source_provenance_planned_only_no_runtime_execution",
+  "excluded_claims": [
+    "runtime_execution",
+    "runtime_drift",
+    "runtime_drift_claim",
+    "pairwise_disagreement",
+    "repeat_stability",
+    "prevalence",
+    "source_mix_completion",
+    "full_product_behavior",
+    "public_network_behavior",
+    "commercial_runtime_behavior",
+    "defense_success",
+    "manual_review_completion",
+    "reviewer_agreement"
+  ],
+  "fixture_source_tree": "4f19b08a83d09ab2a31b4c6b5d425ae8384ee336",
+  "pinned_commit": "25d6a96daa2940cf3a391b9ff3b46269fd42ed09",
+  "remote_url": "https://github.com/adhit-r/Lexara.git",
+  "schema_version": "0.1",
+  "skill_id": "lexara-guardia-workflow-first-party",
+  "source_mix": "first_party",
+  "source_note": "Pinned first-party privacy workflow source; no production service, real database, or compliance-success claim is made.",
+  "title": "Lexara Guardia workflow first-party planned source candidate"
+}

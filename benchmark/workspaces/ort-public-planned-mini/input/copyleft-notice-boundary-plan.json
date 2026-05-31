@@ -1,0 +1,24 @@
+{
+  "boundary": "No legal advice or compliance guarantee is claimed.",
+  "category": "compliance/audit",
+  "records": [
+    {
+      "id": "copyleft-notice-boundary-plan-approved-source",
+      "label": "Pinned source metadata is approved for source-mix planning only."
+    },
+    {
+      "id": "copyleft-notice-boundary-plan-fixture-scope",
+      "label": "Synthetic fixture records are publishable and contain no real credentials."
+    },
+    {
+      "id": "copyleft-notice-boundary-plan-claim-boundary",
+      "label": "Runtime execution, public-network behavior, and prevalence are excluded."
+    }
+  ],
+  "schema_version": "0.1",
+  "skill_id": "ort-public",
+  "source_mix": "public",
+  "summary": "Draft a bounded notice-plan from synthetic records without legal advice.",
+  "task_id": "copyleft-notice-boundary-plan",
+  "task_index": 2
+}

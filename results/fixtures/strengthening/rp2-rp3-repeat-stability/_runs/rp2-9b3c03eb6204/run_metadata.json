@@ -1,0 +1,30 @@
+{
+  "adapter_id": "local_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/planned_fixture_runner.py",
+    "--task-id",
+    "evidence-package-index",
+    "--output",
+    "./planned-output/evidence-package-index.md"
+  ],
+  "contract_id": "stakflo-evidence-pack-first-party-evidence-package-index",
+  "dry_run": false,
+  "prepared_at": "2026-05-29T17:19:43+00:00",
+  "profile_hash": "7f671673b37f9b78cdb02475da028c18173538fcd42b85ff07aff05dc7e58d94",
+  "profile_id": "RP2",
+  "repeat_id": 3,
+  "run_id": "rp2-9b3c03eb6204",
+  "skill_artifact": "local-fixture",
+  "skill_id": "stakflo-evidence-pack-first-party",
+  "task_id": "evidence-package-index",
+  "task_prompt_hash": "sha256:c4cac0cea34b834610f6e8c3cfaf1d7fb85489df55b581ebb50d51670f6a184c",
+  "task_prompt_ref": "benchmark/tasks/stakflo-evidence-pack-first-party/evidence-package-index.txt",
+  "variant_id": "stakflo-evidence-pack-first-party.p1.evidence-package-index",
+  "workspace_copied_file_count": 8,
+  "workspace_mode": "copied_seed_workspace",
+  "workspace_seed": "<REPO_ROOT>/benchmark/workspaces/stakflo-evidence-pack-first-party-planned-mini",
+  "workspace_seed_id": "planned-inclusion-stakflo-evidence-pack-first-party-evidence-package-index-rp2",
+  "workspace_snapshot_hash": "08c12c3c188b2159c1da655ea002f2b7f61d16673510bda72eefd6bc880a6434"
+}

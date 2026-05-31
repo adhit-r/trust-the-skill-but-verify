@@ -1,0 +1,30 @@
+{
+  "adapter_id": "hardened_policy_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/planned_fixture_runner.py",
+    "--task-id",
+    "control-evidence-inventory",
+    "--output",
+    "./planned-output/control-evidence-inventory.md"
+  ],
+  "contract_id": "grclaw-audit-pack-first-party-control-evidence-inventory",
+  "dry_run": false,
+  "prepared_at": "2026-05-30T17:55:43+00:00",
+  "profile_hash": "eb604ffff1a6915487f9d9039430931d345f309733c1e5b4deaeaaa6baf077b8",
+  "profile_id": "RP6",
+  "repeat_id": 1,
+  "run_id": "rp6-8764efd4348f",
+  "skill_artifact": "local-fixture",
+  "skill_id": "grclaw-audit-pack-first-party",
+  "task_id": "control-evidence-inventory",
+  "task_prompt_hash": "sha256:98f77c464dbcccad8449700bba9fe2a85ee339c6ee9f4a07671c77e103c8139f",
+  "task_prompt_ref": "benchmark/tasks/grclaw-audit-pack-first-party/control-evidence-inventory.txt",
+  "variant_id": "grclaw-audit-pack-first-party.p1.control-evidence-inventory",
+  "workspace_copied_file_count": 6,
+  "workspace_mode": "contract_scoped_staged_workspace",
+  "workspace_seed": "<REPO_ROOT>/benchmark/workspaces/grclaw-audit-pack-first-party-planned-mini",
+  "workspace_seed_id": "source-mix-rp6-grclaw-audit-pack-first-party-control-evidence-inventory",
+  "workspace_snapshot_hash": "f6d5981170a4e3478d2242ada5a98b019e4645daf9580e88a179cd54971420e2"
+}

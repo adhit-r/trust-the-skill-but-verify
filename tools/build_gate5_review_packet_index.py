@@ -328,7 +328,7 @@ def build_index(queue_path: Path = DEFAULT_QUEUE) -> dict[str, Any]:
             "adjudication_form_ref": queue["input_refs"]["adjudication_form_ref"],
         },
         "index_lock": {
-            "lock_id": "gate5-review-packet-index-current-60-v1",
+            "lock_id": f"gate5-review-packet-index-current-{aggregate['packet_count']}-v1",
             "locked_at_utc": LOCKED_AT_UTC,
             "git_head": git_rev_parse("HEAD"),
             "git_tree": git_rev_parse("HEAD^{tree}"),

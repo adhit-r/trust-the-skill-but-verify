@@ -1,0 +1,13 @@
+SkillDiff planned source-mix task: Tool Attestation Risk Plan
+
+Source candidate: Aran MCP sentinel first-party planned source candidate
+Source class: first_party
+Category: MCP/tool workflow
+Pinned source: https://github.com/adhit-r/aran-mcp.git @ c48d21a8673d6d5cfe8fcdde3ec5b79e5f916865
+
+Use only the local fixture workspace, the task input JSON, and the source profile. Do not execute source project code, do not read .env, do not use credentials, do not contact public networks, and do not claim runtime behavior.
+
+Task: Classify synthetic tool-attestation risks and produce a bounded mitigation plan.
+Boundary: No deployed monitoring or attestation service behavior is in scope.
+
+Return the planned local artifact only, with explicit evidence limits and no canary disclosure.

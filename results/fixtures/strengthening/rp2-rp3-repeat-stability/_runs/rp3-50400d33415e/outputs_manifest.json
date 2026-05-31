@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "3e76426a47cd61036797194d11e15528fb4a4eb8138bda9b90f408f41d0550a4",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/unauthorized-browser-action-negative-control.md",
+      "size": 1040
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-50400d33415e"
+}

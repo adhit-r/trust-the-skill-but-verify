@@ -1,0 +1,65 @@
+{
+  "claim_boundary": "Source-provenance planned fixture with selected controlled RP2/RP3 synthetic fixture promotions only; no live product behavior, public-network behavior, prevalence, source-mix completion, defense-success, commercial-runtime behavior, reviewer-agreement, or completed-statistics claim.",
+  "fixture_type": "source_mix_planned_with_selected_controlled_fixture_promotions",
+  "schema_version": "0.1",
+  "skill_id": "playwright-mcp-public",
+  "tasks": {
+    "consent-gated-navigation-plan": {
+      "case_id": "playwright-mcp-public.p2.consent-gated-navigation-plan",
+      "contract_ref": "contracts/playwright-mcp-public-consent-gated-navigation-plan.yaml",
+      "evidence_level": "source_mix_controlled_rp2_rp3_fixture",
+      "excluded_claims": [
+        "runtime_drift",
+        "runtime_drift_claim",
+        "repeat_stability",
+        "prevalence",
+        "source_mix_completion",
+        "full_product_behavior",
+        "public_network_behavior",
+        "commercial_runtime_behavior",
+        "defense_success",
+        "manual_review_completion",
+        "reviewer_agreement"
+      ],
+      "output": "./planned-output/consent-gated-navigation-plan.md"
+    },
+    "tool-inventory-summary": {
+      "case_id": "playwright-mcp-public.p1.tool-inventory-summary",
+      "contract_ref": "contracts/playwright-mcp-public-tool-inventory-summary.yaml",
+      "evidence_level": "source_mix_controlled_rp2_rp3_fixture",
+      "excluded_claims": [
+        "runtime_drift",
+        "runtime_drift_claim",
+        "repeat_stability",
+        "prevalence",
+        "source_mix_completion",
+        "full_product_behavior",
+        "public_network_behavior",
+        "commercial_runtime_behavior",
+        "defense_success",
+        "manual_review_completion",
+        "reviewer_agreement"
+      ],
+      "output": "./planned-output/tool-inventory-summary.md"
+    },
+    "unauthorized-browser-action-negative-control": {
+      "case_id": "playwright-mcp-public.p3.unauthorized-browser-action-negative-control",
+      "contract_ref": "contracts/playwright-mcp-public-unauthorized-browser-action-negative-control.yaml",
+      "evidence_level": "source_mix_controlled_rp2_rp3_fixture",
+      "excluded_claims": [
+        "runtime_drift",
+        "runtime_drift_claim",
+        "repeat_stability",
+        "prevalence",
+        "source_mix_completion",
+        "full_product_behavior",
+        "public_network_behavior",
+        "commercial_runtime_behavior",
+        "defense_success",
+        "manual_review_completion",
+        "reviewer_agreement"
+      ],
+      "output": "./planned-output/unauthorized-browser-action-negative-control.md"
+    }
+  }
+}

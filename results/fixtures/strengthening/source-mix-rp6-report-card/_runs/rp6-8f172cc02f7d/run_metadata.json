@@ -1,0 +1,30 @@
+{
+  "adapter_id": "hardened_policy_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/planned_fixture_runner.py",
+    "--task-id",
+    "remote-server-negative-control",
+    "--output",
+    "./planned-output/remote-server-negative-control.md"
+  ],
+  "contract_id": "tika-public-remote-server-negative-control",
+  "dry_run": false,
+  "prepared_at": "2026-05-30T17:56:02+00:00",
+  "profile_hash": "eb604ffff1a6915487f9d9039430931d345f309733c1e5b4deaeaaa6baf077b8",
+  "profile_id": "RP6",
+  "repeat_id": 3,
+  "run_id": "rp6-8f172cc02f7d",
+  "skill_artifact": "local-fixture",
+  "skill_id": "tika-public",
+  "task_id": "remote-server-negative-control",
+  "task_prompt_hash": "sha256:c3a6d4b445038a582235699ffdc6ad3a2bfd81235176fba3ecb64b79d27010e9",
+  "task_prompt_ref": "benchmark/tasks/tika-public/remote-server-negative-control.txt",
+  "variant_id": "tika-public.p3.remote-server-negative-control",
+  "workspace_copied_file_count": 6,
+  "workspace_mode": "contract_scoped_staged_workspace",
+  "workspace_seed": "<REPO_ROOT>/benchmark/workspaces/tika-public-planned-mini",
+  "workspace_seed_id": "source-mix-rp6-tika-public-remote-server-negative-control-repeat3",
+  "workspace_snapshot_hash": "1efc70bec8c7e8b8b69117f5c0780967f2f3ea3390f833f1187881acb4c3260b"
+}

@@ -1,6 +1,6 @@
 # Trust the Skill, Verify the Runtime
 
-`SkillDiff` is a research artifact for differential security testing of portable AI agent skills. The project holds a skill, task, and security contract fixed, runs the pair under different runtime profiles, records normalized traces, and reports where runtime policy changes the observed security outcome.
+`SkillDiff` is a research artifact for differential security testing of portable AI agent skills. The project holds the skill, task, security contract, workspace snapshot, task prompt, variant, and repeat identity fixed; varies the runtime profile; records normalized traces; and reports where runtime policy changes the observed security outcome.
 
 The short version: a reusable agent skill is not secure or unsafe in isolation. Its effective behavior depends on the runtime that loads it: filesystem scope, shell access, network policy, approval prompts, tool exposure, persistence, credentials, and traceability.
 
@@ -13,8 +13,11 @@ For a fast technical review:
 1. Start with this README and the architecture diagrams below.
 2. Run `make verify` to validate schemas, contracts, traces, result comparisons, claim ledger entries, and local-path hygiene.
 3. Read `paper/tables/mvp-results.md` for the current result tables.
-4. Read `paper/claim-ledger.md` before using any numeric claim.
-5. Use `docs/research/` for method details instead of old root-level progress notes.
+4. Read `paper/tables/evidence-boundary-matrix.md` before moving results into
+   manuscript prose.
+5. Read `paper/figures.md` before using manuscript figures or captions.
+6. Read `paper/claim-ledger.md` before using any numeric claim.
+7. Use `docs/research/` for method details instead of old root-level progress notes.
 
 ## Current Evidence Snapshot
 
@@ -28,29 +31,47 @@ These are feasibility and method claims, not ecosystem prevalence claims.
 | Pairwise disagreements | 36 | `paper/tables/mvp-results.md` |
 | Seeded real-source case families | 2 | AuditLens first-party; docs-forge pinned public-source |
 | Controlled synthetic case families | 3 | repo-audit, network-egress, MCP/tool workflow |
-| Current inventory triples | 60 | `benchmark/manifests/benchmark-cases-current.json` |
-| Skill-origin source mix | 1 first-party / 1 public / 18 synthetic skills | `results/derived/benchmark-scale-gap.json` |
-| Gate 5 descriptive denominator | 60 included cases / 22 raw rate records | `results/derived/gate5-descriptive-rates.json` |
-| Gate 5 manual review queue | 60 queued items / 50 blinding-eligible items | `benchmark/review/gate5-review-queue.json` |
-| Gate 5 review-packet index | 60 packets / 50 comparison refs / 100 trace refs | `benchmark/review/gate5-review-packet-index.json` |
-| Gate 5 blinded packet bundle | 50 blinded first-pass packet exports / 10 blocked metadata-only packets | `benchmark/review/gate5-blinded-packet-bundle.json` |
-| Gate 5 review export templates | 2 blank reviewer templates / 50 assigned pair-review units each | `benchmark/review/gate5-review-export-templates.json` |
-| Formerly planned entries promoted to controlled fixture evidence | 44 | `results/planned-inclusion/` |
-| Planned-inclusion deterministic repeat observations | 264 | `results/fixtures/strengthening/rp2-rp3-repeat-stability/` |
+| Current manifest inventory triples | 132 | `benchmark/manifests/benchmark-cases-current.json` |
+| Current manifest source mix | 9 first-party / 17 public / 18 synthetic skills | `results/derived/benchmark-scale-gap.json` |
+| Gate 5 descriptive denominator | 132 included cases / 22 raw rate records | `results/derived/gate5-descriptive-rates.json` |
+| Gate 5 non-human interval artifact | 36 Wilson / 18 case-bootstrap / 6 hierarchical-bootstrap intervals; human review 0% | `results/derived/gate5-statistical-intervals.json` |
+| Gate 5 manual review queue | 132 queued items / 122 blinding-eligible items | `benchmark/review/gate5-review-queue.json` |
+| Gate 5 review-packet index | 132 packets / 122 comparison refs / 244 trace refs | `benchmark/review/gate5-review-packet-index.json` |
+| Gate 5 blinded packet bundle | 122 blinded first-pass packet exports / 10 blocked metadata-only packets | `benchmark/review/gate5-blinded-packet-bundle.json` |
+| Gate 5 review export templates | 2 blank reviewer templates / 122 assigned pair-review units each | `benchmark/review/gate5-review-export-templates.json` |
+| Formerly planned entries promoted to controlled fixture evidence | 116 | `results/planned-inclusion/` |
+| Planned-inclusion deterministic repeat observations | 696 | `results/fixtures/strengthening/rp2-rp3-repeat-stability/` |
 | Current main deterministic repeat observations | 78 | `results/fixtures/strengthening/rp2-rp3-main-repeat-stability/` |
 
 `results/derived/benchmark-scale-gap.json` computes source-mix gaps from
-explicit manifest labels. The current inventory is still short of the
-mid-scale source-mix target by 4 first-party and 7 public skills, so it does
-not claim source-mix completion.
+explicit manifest labels. After the planned 24-family source-mix expansion,
+the manifest inventory is 44 skills and 132 triples with a 9 first-party / 17
+public / 18 synthetic source mix. That closes the 40/120 numeric and
+source-mix minimum gaps in manifest accounting only. These counts are manifest
+and source-provenance accounting for the new entries. Seventy-two selected
+source-mix cases now have controlled RP2/RP3 fixture evidence, and the current
+source-mix metadata-only count is zero. Seventy-four first-party/public
+source-mix cases across twenty-six families also have bounded deterministic RP6
+repeat mitigation/report-card evidence. The inventory does not claim source-mix
+evidence completion, adjudication, prevalence, defense success, or paper-grade
+full-benchmark completion; source-mix completion remains blocked on adjudication
+and selective safe real-run evidence.
 
-The 44-entry promotion is controlled single-repeat RP2/RP3 synthetic fixture
-evidence. It adds denominator and contract-check coverage only; it does not
+The 24 planned source-mix additions improve manifest coverage and source
+labeling. Seventy-two selected cases across twenty-four source-mix families
+have been promoted to controlled source-mix fixture evidence, covering benign,
+boundary, and negative-control tasks. Seventy-four first-party/public cases now
+also have bounded deterministic RP6 repeat mitigation/report-card evidence.
+This remains bounded fixture/report-card evidence only; none of this claims
+real product behavior, public-network behavior, commercial-runtime behavior,
+prevalence, defense success, source-mix evidence completion, or human review.
+
+The 116-entry promotion is controlled single-repeat RP2/RP3 fixture evidence.
+It adds denominator and contract-check coverage only; it does not
 claim live product behavior, public-network behavior, commercial-runtime
-behavior, source-mix completion, repeat stability, prevalence, or defense
-success.
+behavior, source-mix evidence completion, prevalence, or defense success.
 
-The separate repeat-stability strengthening artifact runs those 44 controlled
+The separate repeat-stability strengthening artifact runs those 116 controlled
 fixtures across repeat IDs 1, 2, and 3 under RP2 and RP3. It supports bounded
 deterministic fixture stability only, not statistical, prevalence,
 reviewer-agreement, live-product, commercial-runtime, public-network, or
@@ -104,6 +125,7 @@ The harness executes that triple under runtime profiles such as RP2 local coding
 | `results/live/` | Bounded live-installer scaffold evidence. |
 | `results/raw/` | Raw local run artifacts and trace files; generated sidecars and scratch workspaces are ignored. |
 | `paper/` | Paper-facing claim ledger, protocol, case-study notes, and result tables. |
+| `paper/figures/` | Canonical SVG figure package and figure manifest for the manuscript. |
 | `docs/research/` | Stable research notes moved out of the repository root. |
 | `docs/assets/` | Rendered diagrams used by this README. |
 

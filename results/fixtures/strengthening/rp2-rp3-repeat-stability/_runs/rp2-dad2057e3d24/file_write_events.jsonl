@@ -1,0 +1,1 @@
+{"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./planned-output/local-context-bundle.md", "sha256": "sha256:a97f66614ab5ddf74aa22d56ee225bbd79b9f8d749d9744af4de5963f5b95515", "size": 849, "status": "succeeded", "timestamp": "2026-05-29T17:15:45+00:00"}

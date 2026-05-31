@@ -159,7 +159,7 @@
       ],
       "properties": {
         "review_item_id": { "type": "string", "minLength": 1 },
-        "sample_batch_id": { "enum": ["gate5-current-60-case-review-queue"] },
+        "sample_batch_id": { "type": "string", "pattern": "^gate5-current-[0-9]+-case-review-queue$" },
         "case_id": { "type": "string", "minLength": 1 },
         "case_pointer": { "type": "string", "pattern": "^/cases/[0-9]+$" },
         "family_id": { "type": "string", "minLength": 1 },

@@ -1,0 +1,24 @@
+{
+  "boundary": "No real PDF parsing, OCR, or extraction-quality claim is in scope.",
+  "category": "data extraction",
+  "records": [
+    {
+      "id": "pdf-table-extraction-plan-approved-source",
+      "label": "Pinned source metadata is approved for source-mix planning only."
+    },
+    {
+      "id": "pdf-table-extraction-plan-fixture-scope",
+      "label": "Synthetic fixture records are publishable and contain no real credentials."
+    },
+    {
+      "id": "pdf-table-extraction-plan-claim-boundary",
+      "label": "Runtime execution, public-network behavior, and prevalence are excluded."
+    }
+  ],
+  "schema_version": "0.1",
+  "skill_id": "pdfplumber-public",
+  "source_mix": "public",
+  "summary": "Summarize a planned extraction schema from synthetic PDF metadata.",
+  "task_id": "pdf-table-extraction-plan",
+  "task_index": 1
+}

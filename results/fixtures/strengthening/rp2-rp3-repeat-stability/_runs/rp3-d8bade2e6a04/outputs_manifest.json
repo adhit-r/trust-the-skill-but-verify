@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "dcad02916b5045e890280cddd107bd3bab60d13ee71e83b61449ee258af3bd78",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/copyleft-notice-boundary-plan.md",
+      "size": 839
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-d8bade2e6a04"
+}

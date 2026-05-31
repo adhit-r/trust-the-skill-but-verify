@@ -10,6 +10,8 @@ import sys
 from pathlib import Path
 from typing import Any
 
+from repeat_hygiene import add_repeat_id_argument, repeat_seed, repeat_stem
+
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 PYTHON = sys.executable
@@ -92,7 +94,7 @@ def command_for(case: dict[str, Any], runtime: str) -> list[str]:
     return ["python3", "skill/data_extraction_runner.py", case["task_arg"]]
 
 
-def run_case(case: dict[str, Any], runtime: str) -> dict[str, Any]:
+def run_case(case: dict[str, Any], runtime: str, repeat_id: int) -> dict[str, Any]:
     contract = REPO_ROOT / case["contract"]
     workspace = REPO_ROOT / "benchmark" / "workspaces" / "data-extraction-mini"
     result = run_json(
@@ -107,13 +109,13 @@ def run_case(case: dict[str, Any], runtime: str) -> dict[str, Any]:
             "--workspace",
             str(workspace),
             "--workspace-seed-id",
-            f"data-extraction-mini-{case['case_id']}-{runtime}",
+            repeat_seed(f"data-extraction-mini-{case['case_id']}-{runtime}", repeat_id),
             "--variant-id",
             case["variant_id"],
             "--output-root",
             str(REPO_ROOT / "results" / "raw"),
             "--repeat-id",
-            "1",
+            str(repeat_id),
             "--live",
             "--command",
             *command_for(case, runtime),
@@ -124,7 +126,7 @@ def run_case(case: dict[str, Any], runtime: str) -> dict[str, Any]:
         raise RuntimeError(f"unexpected run outcome for {case['case_id']}/{runtime}: {actual} result={result}")
 
     out_dir = REPO_ROOT / "results" / "mvp" / "data-extraction"
-    stem = result_stem(case["case_id"], runtime)
+    stem = repeat_stem(result_stem(case["case_id"], runtime), repeat_id)
     trace_path = Path(result["trace_path"])
     trace_ref = repo_relative(trace_path)
     run_text(
@@ -141,19 +143,20 @@ def run_case(case: dict[str, Any], runtime: str) -> dict[str, Any]:
             str(out_dir / f"{stem}_contract_report.md"),
         ]
     )
-    assert_summary(case["case_id"], runtime)
+    assert_summary(case["case_id"], runtime, repeat_id)
     assert_activation(trace_path)
     result["trace_path"] = trace_ref
     return result
 
 
-def load_findings(case_id: str, runtime: str) -> dict[str, Any]:
+def load_findings(case_id: str, runtime: str, repeat_id: int) -> dict[str, Any]:
     out_dir = REPO_ROOT / "results" / "mvp" / "data-extraction"
-    return json.loads((out_dir / f"{result_stem(case_id, runtime)}_contract_findings.json").read_text(encoding="utf-8"))
+    stem = repeat_stem(result_stem(case_id, runtime), repeat_id)
+    return json.loads((out_dir / f"{stem}_contract_findings.json").read_text(encoding="utf-8"))
 
 
-def assert_summary(case_id: str, runtime: str) -> None:
-    summary = load_findings(case_id, runtime)["summary"]
+def assert_summary(case_id: str, runtime: str, repeat_id: int) -> None:
+    summary = load_findings(case_id, runtime, repeat_id)["summary"]
     observed = {field: summary.get(field) for field in EXPECTED_SUMMARY}
     if observed != EXPECTED_SUMMARY:
         raise RuntimeError(f"{case_id}/{runtime} unexpected summary: expected={EXPECTED_SUMMARY} observed={observed}")
@@ -168,23 +171,23 @@ def assert_activation(trace_path: Path) -> None:
         raise RuntimeError(f"{trace_path} missing activation.select")
 
 
-def write_comparison(case_id: str) -> None:
+def write_comparison(case_id: str, repeat_id: int) -> None:
     out_dir = REPO_ROOT / "results" / "mvp" / "data-extraction"
     run_text(
         [
             PYTHON,
             "tools/compare_contract_runs.py",
-            str(out_dir / f"{case_id}_contract_findings.json"),
-            str(out_dir / f"{case_id}_rp3_contract_findings.json"),
+            str(out_dir / f"{repeat_stem(case_id, repeat_id)}_contract_findings.json"),
+            str(out_dir / f"{repeat_stem(case_id + '_rp3', repeat_id)}_contract_findings.json"),
             "--out-json",
-            str(out_dir / f"{case_id}_rp2_rp3_comparison.json"),
+            str(out_dir / f"{repeat_stem(case_id + '_rp2_rp3', repeat_id)}_comparison.json"),
             "--out-md",
-            str(out_dir / f"{case_id}_rp2_rp3_comparison.md"),
+            str(out_dir / f"{repeat_stem(case_id + '_rp2_rp3', repeat_id)}_comparison.md"),
         ]
     )
 
 
-def write_summary(results: dict[tuple[str, str], dict[str, Any]]) -> None:
+def write_summary(results: dict[tuple[str, str], dict[str, Any]], repeat_id: int) -> None:
     out_dir = REPO_ROOT / "results" / "mvp" / "data-extraction"
     lines = [
         "# Data Extraction MVP Result",
@@ -196,7 +199,7 @@ def write_summary(results: dict[tuple[str, str], dict[str, Any]]) -> None:
     ]
     for case in CASES:
         for runtime in ("rp2", "rp3"):
-            findings = load_findings(case["case_id"], runtime)
+            findings = load_findings(case["case_id"], runtime, repeat_id)
             summary = findings["summary"]
             lines.append(
                 "| `{case}` | {runtime} | `{trace}` | {violations} | {attempted} | {missing} | {canaries} | {result} |".format(
@@ -218,19 +221,21 @@ def write_summary(results: dict[tuple[str, str], dict[str, Any]]) -> None:
             "This is controlled Python fixture evidence over synthetic local files. It is not live database, SaaS, warehouse, production PII-detector, DLP, or prevalence evidence.",
         ]
     )
-    (out_dir / "drift_report.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
-    print(out_dir / "drift_report.md")
+    summary_path = out_dir / f"{repeat_stem('drift_report', repeat_id)}.md"
+    summary_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    print(summary_path)
 
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.parse_args(argv)
+    add_repeat_id_argument(parser)
+    args = parser.parse_args(argv)
     results = {}
     for case in CASES:
         for runtime in ("rp2", "rp3"):
-            results[(case["case_id"], runtime)] = run_case(case, runtime)
-        write_comparison(case["case_id"])
-    write_summary(results)
+            results[(case["case_id"], runtime)] = run_case(case, runtime, args.repeat_id)
+        write_comparison(case["case_id"], args.repeat_id)
+    write_summary(results, args.repeat_id)
     return 0
 
 

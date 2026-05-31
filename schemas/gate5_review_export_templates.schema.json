@@ -47,7 +47,7 @@
         "input_hashes"
       ],
       "properties": {
-        "lock_id": { "enum": ["gate5-review-export-templates-current-50x2-v1"] },
+        "lock_id": { "type": "string", "pattern": "^gate5-review-export-templates-current-[0-9]+source-[0-9]+x[0-9]+-v1$" },
         "locked_at_utc": { "enum": ["2026-05-26T00:00:00Z"] },
         "git_head": { "type": "string", "pattern": "^[0-9a-f]{40}$" },
         "git_tree": { "type": "string", "pattern": "^[0-9a-f]{40}$" },

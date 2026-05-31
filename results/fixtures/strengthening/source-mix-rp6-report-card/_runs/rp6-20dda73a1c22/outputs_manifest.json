@@ -1,0 +1,11 @@
+{
+  "adapter_outcome": "completed",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/local-context-bundle.md",
+      "size": 849
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp6-20dda73a1c22"
+}

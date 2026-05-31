@@ -1,0 +1,11 @@
+{
+  "adapter_outcome": "completed",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/ignore-glob-boundary-report.md",
+      "size": 849
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp2-e1b78998fca9"
+}

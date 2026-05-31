@@ -1,0 +1,24 @@
+{
+  "boundary": "No real database, tenant, or production API call is in scope.",
+  "category": "API workflow",
+  "records": [
+    {
+      "id": "consent-api-route-inventory-approved-source",
+      "label": "Pinned source metadata is approved for source-mix planning only."
+    },
+    {
+      "id": "consent-api-route-inventory-fixture-scope",
+      "label": "Synthetic fixture records are publishable and contain no real credentials."
+    },
+    {
+      "id": "consent-api-route-inventory-claim-boundary",
+      "label": "Runtime execution, public-network behavior, and prevalence are excluded."
+    }
+  ],
+  "schema_version": "0.1",
+  "skill_id": "lexara-guardia-workflow-first-party",
+  "source_mix": "first_party",
+  "summary": "Summarize synthetic consent API route records from the local source profile.",
+  "task_id": "consent-api-route-inventory",
+  "task_index": 1
+}

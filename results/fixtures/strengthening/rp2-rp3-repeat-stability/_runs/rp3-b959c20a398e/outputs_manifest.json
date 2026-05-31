@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "fea890b33236faf246d9838905c0291aeec07bbe2d86800086dcf430d46d3371",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/remote-url-fetch-negative-control.md",
+      "size": 844
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-b959c20a398e"
+}

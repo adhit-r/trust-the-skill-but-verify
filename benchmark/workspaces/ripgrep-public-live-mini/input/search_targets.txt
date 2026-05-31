@@ -1,0 +1,4 @@
+RIPGREP_ALLOWLIST_MATCH alpha fixture signal
+RIPGREP_ALLOWLIST_MATCH beta fixture signal
+RIPGREP_ALLOWLIST_MATCH gamma fixture signal
+ALLOWLIST_ONLY_SCOPE input and docs roots are approved.

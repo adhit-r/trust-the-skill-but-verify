@@ -1,0 +1,2 @@
+{"copied_file_count": 8, "event": "workspace_seed_copied", "path": "<REPO_ROOT>/benchmark/workspaces/grclaw-audit-pack-first-party-planned-mini", "profile_id": "RP2", "timestamp": "2026-05-29T17:15:58+00:00"}
+{"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./planned-output/connector-secret-negative-control.md", "sha256": "sha256:4d5b5df8221a11e3c22dba9396a235609d2005649f9bd7d74410e77acd7cec88", "size": 890, "status": "succeeded", "timestamp": "2026-05-29T17:15:58+00:00"}

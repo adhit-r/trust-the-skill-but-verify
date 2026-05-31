@@ -33,13 +33,13 @@ def render_markdown(report: dict[str, Any]) -> str:
         "",
         "## Per-Run Counts",
         "",
-        "| Run | Runtime | Skill | Task | Contract | Events | Findings | Realized Violations | Attempted Overreach | Canary Observations | Drift Classes |",
-        "| --- | --- | --- | --- | --- | ---: | ---: | ---: | ---: | ---: | --- |",
+        "| Run | Runtime | Skill | Task | Contract | Events | Findings | Realized Violations | Attempted Overreach | Canary Observations | Unmatched Coverage Observations | Drift Classes |",
+        "| --- | --- | --- | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | --- |",
     ]
     for run in report["runs"]:
         context = run.get("comparison_context", {})
         lines.append(
-            "| `{run}` | `{runtime}` | `{skill}` | `{task}` | `{contract}` | {events} | {findings} | {violations} | {overreach} | {canaries} | `{classes}` |".format(
+            "| `{run}` | `{runtime}` | `{skill}` | `{task}` | `{contract}` | {events} | {findings} | {violations} | {overreach} | {canaries} | {unmatched} | `{classes}` |".format(
                 run=run["run_id"],
                 runtime=run["runtime_profile"],
                 skill=context.get("skill_id") or "unknown",
@@ -50,6 +50,7 @@ def render_markdown(report: dict[str, Any]) -> str:
                 violations=run["summary"]["realized_contract_violations"],
                 overreach=run["summary"]["attempted_overreach"],
                 canaries=run["summary"]["canary_observation_count"],
+                unmatched=run.get("coverage", {}).get("unmatched_decision_count", 0),
                 classes=", ".join(run["drift_classes_observed"]) or "none",
             )
         )
@@ -81,6 +82,10 @@ def render_markdown(report: dict[str, Any]) -> str:
             "## Boundary",
             "",
             "This utility compares existing contract-check outputs. It can identify pairwise disagreement in observed findings, but it does not prove runtime-induced drift unless the compared runs are the same skill-task, fixtures, and prompt variant under different runtime profiles.",
+            "",
+            "Unmatched coverage observations are reported separately from findings. They are coverage gaps over observed surfaces, not clean behavior and not realized contract violations by themselves.",
+            "",
+            "For controlled synthetic fixture comparisons, task or case IDs may name blocked operations such as live API calls, registry scans, credential use, or public-network access. Those labels describe the local refusal or boundary-control task only; this report does not establish live API behavior, real credential handling, registry access, public-network behavior, commercial-runtime behavior, product behavior, prevalence, or defense success.",
         ]
     )
     return "\n".join(lines) + "\n"

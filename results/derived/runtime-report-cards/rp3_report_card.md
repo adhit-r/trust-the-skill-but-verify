@@ -8,28 +8,28 @@
 
 | Runs | Benign | Adversarial | Unknown | Trace-valid | Pairwise comparisons | Expected pairwise comparisons |
 | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| 64 | 7 | 7 | 50 | 64 | 90 | 90 |
+| 136 | 7 | 7 | 122 | 136 | 236 | 236 |
 
 ## Metrics
 
 | Metric | Value | Numerator | Denominator |
 | --- | ---: | ---: | ---: |
-| Contract violation rate | 0.0312 | 2 | 64 |
-| Attempted overreach rate | 0.0938 | 6 | 64 |
+| Contract violation rate | 0.0147 | 2 | 136 |
+| Attempted overreach rate | 0.0441 | 6 | 136 |
 | Benign task success rate | 1.0000 | 7 | 7 |
 | Secure benign success rate | 1.0000 | 7 | 7 |
 | Adversarial realized-violation rate | 0.2857 | 2 | 7 |
 | Utility cost rate | 0.0000 | 0 | 7 |
 | Approval burden | 0.1429 | 1 | 7 |
-| Runtime risk score proxy | 0.0250 | 32 | 1280 |
+| Runtime risk score proxy | 0.0118 | 32 | 2720 |
 
 ## Evidence Coverage
 
 | Metric | Value | Numerator | Denominator |
 | --- | ---: | ---: | ---: |
-| Trace-valid rate | 1.0000 | 64 | 64 |
-| Comparison-pair coverage rate | 1.0000 | 90 | 90 |
-| Instrumentation-failure run rate | 0.0000 | 0 | 64 |
+| Trace-valid rate | 1.0000 | 136 | 136 |
+| Comparison-pair coverage rate | 1.0000 | 236 | 236 |
+| Instrumentation-failure run rate | 0.0000 | 0 | 136 |
 
 ## Pairwise Disagreement
 
@@ -37,37 +37,37 @@
 | --- | ---: | ---: | ---: | ---: | ---: |
 | `RP1` | 12 | 0 | 0 | 25 | 1.0000 |
 | drift classes | D1 0.0000 | D2 0.5000 | D3 0.0000 | D4 0.7500 | D5 0.5000 |
-| `RP2` | 64 | 5 | 0 | 36 | 0.0938 |
-| drift classes | D1 0.0000 | D2 0.0781 | D3 0.0156 | D4 0.0781 | D5 0.0781 |
-| `RP6` | 14 | 0 | 14 | 21 | 0.7143 |
-| drift classes | D1 0.5714 | D2 0.1429 | D3 0.0000 | D4 0.2143 | D5 0.1429 |
+| `RP2` | 136 | 5 | 0 | 36 | 0.0441 |
+| drift classes | D1 0.0000 | D2 0.0368 | D3 0.0074 | D4 0.0368 | D5 0.0368 |
+| `RP6` | 88 | 0 | 88 | 21 | 0.1136 |
+| drift classes | D1 0.0909 | D2 0.0227 | D3 0.0000 | D4 0.0341 | D5 0.0227 |
 
 ## By Category
 
 | Slice | Runs | Realized violations | Attempted overreach | Functional success | Attack-success proxy | Missing outputs |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| `api-workflow` | 8 | 0 | 0 | 8 | 0 | 0 |
-| `compliance-audit` | 11 | 1 | 1 | 9 | 1 | 1 |
-| `data-extraction` | 9 | 0 | 0 | 9 | 0 | 0 |
-| `document-automation` | 11 | 0 | 2 | 10 | 0 | 1 |
-| `local-file-operations` | 6 | 0 | 0 | 6 | 0 | 0 |
-| `mcp-tool-workflow` | 4 | 0 | 1 | 4 | 0 | 0 |
+| `api-workflow` | 17 | 0 | 0 | 17 | 0 | 0 |
+| `compliance-audit` | 17 | 1 | 1 | 15 | 1 | 1 |
+| `data-extraction` | 21 | 0 | 0 | 21 | 0 | 0 |
+| `document-automation` | 23 | 0 | 2 | 22 | 0 | 1 |
+| `local-file-operations` | 18 | 0 | 0 | 18 | 0 | 0 |
+| `mcp-tool-workflow` | 16 | 0 | 1 | 16 | 0 | 0 |
 | `network-egress` | 2 | 1 | 1 | 2 | 1 | 0 |
-| `repository-maintenance` | 13 | 0 | 1 | 12 | 0 | 1 |
+| `repository-maintenance` | 22 | 0 | 1 | 21 | 0 | 1 |
 
 ## By Attack Family
 
 | Slice | Runs | Realized violations | Attempted overreach | Functional success | Attack-success proxy | Missing outputs |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| `benign` | 23 | 1 | 1 | 21 | 1 | 1 |
+| `benign` | 47 | 1 | 1 | 45 | 1 | 1 |
 | `benign-or-canary-leak` | 2 | 0 | 1 | 1 | 0 | 1 |
 | `benign-or-network-canary-leak` | 2 | 1 | 1 | 2 | 1 | 0 |
-| `boundary-positive` | 15 | 0 | 0 | 15 | 0 | 0 |
-| `negative-control` | 15 | 0 | 0 | 15 | 0 | 0 |
+| `boundary-positive` | 39 | 0 | 0 | 39 | 0 | 0 |
+| `negative-control` | 39 | 0 | 0 | 39 | 0 | 0 |
 | `output-only` | 1 | 0 | 0 | 1 | 0 | 0 |
 | `output-scope` | 4 | 0 | 2 | 3 | 0 | 1 |
 | `restricted-tools` | 2 | 0 | 1 | 2 | 0 | 0 |
 ## Artifact Inputs
 
-- Findings JSON files: `64`
-- Comparison JSON files: `90`
+- Findings JSON files: `136`
+- Comparison JSON files: `236`

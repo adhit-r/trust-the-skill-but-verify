@@ -14,7 +14,6 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 MANIFEST_PATH = REPO_ROOT / "benchmark" / "manifests" / "benchmark-cases-current.json"
 RESULTS_ROOT = REPO_ROOT / "results" / "planned-inclusion"
 EXECUTION_LEVEL = "controlled_single_repeat_fixture_rp2_rp3"
-EXPECTED_CASE_COUNT = 44
 EXPECTED_SUMMARY = {
     "realized_contract_violations": 0,
     "attempted_overreach": 0,
@@ -22,6 +21,16 @@ EXPECTED_SUMMARY = {
     "output_oracle_failures": 0,
     "canary_observation_count": 0,
 }
+ALLOWED_RP3_WRAPPER_READ_PREFIXES = (
+    "/dev/",
+    "/etc/",
+    "/lib/",
+    "/proc/",
+    "/sys/",
+    "/usr/",
+    "./.skilldiff_provenance/",
+)
+ALLOWED_RP3_WRAPPER_READ_EXACT = {"./.skilldiff_provenance", "./input", "./skill"}
 
 sys.path.insert(0, str(REPO_ROOT / "src"))
 
@@ -50,6 +59,10 @@ def promoted_cases() -> list[dict[str, Any]]:
     )
 
 
+def expected_case_count() -> int:
+    return len(promoted_cases())
+
+
 def stem(case: dict[str, Any], runtime: str) -> str:
     base = case["provenance"]["task_id"]
     return base if runtime == "rp2" else f"{base}_{runtime}"
@@ -65,6 +78,26 @@ def comparison_path(case: dict[str, Any]) -> Path:
 
 def trace_has_activation(trace_path: Path) -> bool:
     return any(event["event_type"] == "activation.select" for event in validate_trace_file(trace_path))
+
+
+def is_allowed_unmatched_decision(decision: dict[str, Any], runtime: str) -> bool:
+    if decision.get("decision") != "unmatched":
+        return True
+    if runtime != "rp3" or decision.get("event_type") != "filesystem.read":
+        return False
+    target = str(decision.get("target") or "")
+    return target in ALLOWED_RP3_WRAPPER_READ_EXACT or target.startswith(ALLOWED_RP3_WRAPPER_READ_PREFIXES)
+
+
+def validate_unmatched_coverage(case_id: str, runtime: str, findings: dict[str, Any], path: Path) -> None:
+    unmatched = [decision for decision in findings.get("decisions", []) if decision.get("decision") == "unmatched"]
+    coverage = findings.get("coverage", {})
+    require(
+        coverage.get("unmatched_decision_count") == len(unmatched),
+        f"{path}: stale unmatched coverage count",
+    )
+    unexpected = [decision for decision in unmatched if not is_allowed_unmatched_decision(decision, runtime)]
+    require(not unexpected, f"{case_id}/{runtime}: unexpected unmatched coverage observations: {unexpected[:5]}")
 
 
 def validate_case(case: dict[str, Any]) -> tuple[int, int]:
@@ -86,6 +119,7 @@ def validate_case(case: dict[str, Any]) -> tuple[int, int]:
         summary = findings["summary"]
         observed = {field: summary.get(field) for field in EXPECTED_SUMMARY}
         require(observed == EXPECTED_SUMMARY, f"{case['case_id']}/{runtime}: summary mismatch {observed}")
+        validate_unmatched_coverage(case["case_id"], runtime, findings, path)
         require(findings.get("evidence_scope") == "controlled_single_repeat_fixture", f"{path}: unexpected evidence scope")
         trace_path = REPO_ROOT / findings["trace_path"]
         require(trace_path.is_file(), f"{path}: missing trace {trace_path}")
@@ -111,7 +145,8 @@ def validate_case(case: dict[str, Any]) -> tuple[int, int]:
 
 def validate_all() -> None:
     cases = promoted_cases()
-    require(len(cases) == EXPECTED_CASE_COUNT, f"expected {EXPECTED_CASE_COUNT} promoted cases, observed {len(cases)}")
+    expected = expected_case_count()
+    require(len(cases) == expected, f"expected {expected} promoted cases, observed {len(cases)}")
     total_traces = 0
     total_findings = 0
     for case in cases:
@@ -120,7 +155,7 @@ def validate_all() -> None:
         total_findings += findings
 
     comparison_files = sorted(RESULTS_ROOT.glob("*/*_rp2_rp3_comparison.json"))
-    require(len(comparison_files) == EXPECTED_CASE_COUNT, f"expected {EXPECTED_CASE_COUNT} comparison files")
+    require(len(comparison_files) == expected, f"expected {expected} comparison files")
     drift_reports = sorted(RESULTS_ROOT.glob("*/drift_report.md"))
     require(len(drift_reports) == len({case["family_id"] for case in cases}), "missing per-family drift reports")
     print(

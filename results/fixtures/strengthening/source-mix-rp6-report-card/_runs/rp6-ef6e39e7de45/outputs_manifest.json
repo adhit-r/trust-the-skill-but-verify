@@ -1,0 +1,11 @@
+{
+  "adapter_outcome": "completed",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/dependency-update-plan.md",
+      "size": 844
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp6-ef6e39e7de45"
+}

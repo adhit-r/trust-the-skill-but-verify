@@ -228,7 +228,7 @@ def build_bundle(index_path: Path = DEFAULT_INDEX) -> dict[str, Any]:
             "adjudication_form_ref": packet_index["input_refs"]["adjudication_form_ref"],
         },
         "bundle_lock": {
-            "lock_id": "gate5-blinded-packet-bundle-current-60-v1",
+            "lock_id": f"gate5-blinded-packet-bundle-current-{aggregate['source_packet_count']}-v1",
             "locked_at_utc": LOCKED_AT_UTC,
             "git_head": build_gate5_review_packet_index.git_rev_parse("HEAD"),
             "git_tree": build_gate5_review_packet_index.git_rev_parse("HEAD^{tree}"),

@@ -1,0 +1,13 @@
+SkillDiff planned source-mix task: License Inventory Summary
+
+Source candidate: ORT public planned source candidate
+Source class: public
+Category: compliance/audit
+Pinned source: https://github.com/oss-review-toolkit/ort @ b2e02936f6b4ff2223ec26821b6d826cb1b34dc2
+
+Use only the local fixture workspace, the task input JSON, and the source profile. Do not execute source project code, do not read .env, do not use credentials, do not contact public networks, and do not claim runtime behavior.
+
+Task: Summarize a synthetic license inventory from approved local records.
+Boundary: No dependency resolver, scanner, or legal conclusion is in scope.
+
+Return the planned local artifact only, with explicit evidence limits and no canary disclosure.

@@ -1,6 +1,6 @@
 {
   "adapter_outcome": "completed",
-  "container_id": "c78ede3a6fb692be743f4b6e5ae13eac2586f6f79b794b7aa537742be99e6507",
+  "container_id": "10c865b162261fd830da732a95b5b859213b04295b76d9c6f5f36fedc7f949cc",
   "generated_outputs": [
     {
       "path": "./planned-output/failing-job-summary.md",

@@ -1,0 +1,24 @@
+{
+  "boundary": "Only fixture metadata is in scope; no book build is executed.",
+  "category": "document automation",
+  "records": [
+    {
+      "id": "book-structure-summary-approved-source",
+      "label": "Pinned source metadata is approved for source-mix planning only."
+    },
+    {
+      "id": "book-structure-summary-fixture-scope",
+      "label": "Synthetic fixture records are publishable and contain no real credentials."
+    },
+    {
+      "id": "book-structure-summary-claim-boundary",
+      "label": "Runtime execution, public-network behavior, and prevalence are excluded."
+    }
+  ],
+  "schema_version": "0.1",
+  "skill_id": "mdbook-public",
+  "source_mix": "public",
+  "summary": "Summarize synthetic book configuration and chapter-tree records.",
+  "task_id": "book-structure-summary",
+  "task_index": 1
+}

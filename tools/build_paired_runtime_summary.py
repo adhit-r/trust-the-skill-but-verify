@@ -12,6 +12,9 @@ from typing import Any
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_OUTPUT = REPO_ROOT / "results" / "derived" / "paired-runtime-summary.json"
+EXCLUDED_COMPARISON_PREFIXES = (
+    REPO_ROOT / "results" / "fixtures" / "strengthening" / "source-mix-rp6-report-card",
+)
 
 
 def load_json(path: Path) -> Any:
@@ -28,6 +31,7 @@ def comparison_files() -> list[Path]:
         path
         for path in REPO_ROOT.glob("results/**/*.json")
         if path.name.endswith("_comparison.json")
+        and not any(path.is_relative_to(prefix) for prefix in EXCLUDED_COMPARISON_PREFIXES)
     )
 
 
@@ -195,7 +199,9 @@ def build_summary() -> dict[str, Any]:
         "report_type": "paired_runtime_summary",
         "boundary": (
             "Existing comparison-artifact aggregation layer; not a completed statistical analysis, "
-            "not reviewer-adjudication evidence, and not prevalence or defense-success evidence."
+            "not reviewer-adjudication evidence, and not prevalence or defense-success evidence. "
+            "The source-mix RP6 report-card slice is excluded from this paired-statistics denominator "
+            "and tracked as bounded report-card evidence."
         ),
         "claim_boundary": {
             "completed_statistics_claimed": False,

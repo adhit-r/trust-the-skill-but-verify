@@ -1,0 +1,24 @@
+{
+  "boundary": "No parser isolation, completeness, or production service behavior is claimed.",
+  "category": "data extraction",
+  "records": [
+    {
+      "id": "parser-sandbox-boundary-report-approved-source",
+      "label": "Pinned source metadata is approved for source-mix planning only."
+    },
+    {
+      "id": "parser-sandbox-boundary-report-fixture-scope",
+      "label": "Synthetic fixture records are publishable and contain no real credentials."
+    },
+    {
+      "id": "parser-sandbox-boundary-report-claim-boundary",
+      "label": "Runtime execution, public-network behavior, and prevalence are excluded."
+    }
+  ],
+  "schema_version": "0.1",
+  "skill_id": "tika-public",
+  "source_mix": "public",
+  "summary": "Bound parser scope, output schema, and unsupported surfaces for a planned fixture.",
+  "task_id": "parser-sandbox-boundary-report",
+  "task_index": 2
+}

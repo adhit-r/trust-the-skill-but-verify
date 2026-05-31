@@ -60,6 +60,7 @@ def check_trace_against_contract(
     }
     return {
         "contract_id": contract["contract_id"],
+        "coverage": unmatched_coverage(decisions),
         "evidence_scope": contract.get("metadata", {}).get("runtime_drift_scope", "runtime_evidence"),
         "findings": unique_findings,
         "repeat_id": events[0].get("repeat_id"),
@@ -93,10 +94,36 @@ def write_contract_report(result: dict[str, Any], output_json: Path, output_md: 
         f"- Realized contract violations: `{result['summary']['realized_contract_violations']}`",
         f"- Attempted overreach: `{result['summary']['attempted_overreach']}`",
         f"- Canary observations: `{result['summary']['canary_observation_count']}`",
+        f"- Unmatched coverage observations: `{result.get('coverage', {}).get('unmatched_decision_count', 0)}`",
         "",
-        "## Findings",
+        "## Coverage",
         "",
     ]
+    coverage = result.get("coverage", {})
+    unmatched_count = int(coverage.get("unmatched_decision_count", 0))
+    if unmatched_count:
+        lines.extend(
+            [
+                "Unmatched observations are reported as coverage gaps, not as clean behavior and not as realized contract violations by themselves.",
+                "",
+                "### Unmatched Event Counts",
+                "",
+            ]
+        )
+        for event_type, count in sorted((coverage.get("unmatched_event_type_counts") or {}).items()):
+            lines.append(f"- `{event_type}`: `{count}`")
+        lines.extend(["", "### Unmatched Event Status Counts", ""])
+        for status, count in sorted((coverage.get("unmatched_event_status_counts") or {}).items()):
+            lines.append(f"- `{status}`: `{count}`")
+        lines.append("")
+    else:
+        lines.extend(["No unmatched contract observations for the observed trace surfaces.", ""])
+    lines.extend(
+        [
+        "## Findings",
+        "",
+        ]
+    )
     if not result["findings"]:
         lines.append("No contract findings for the observed MVP trace surfaces.")
     else:
@@ -125,6 +152,22 @@ def write_contract_report(result: dict[str, Any], output_json: Path, output_md: 
     output_md.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
+def unmatched_coverage(decisions: list[dict[str, Any]]) -> dict[str, Any]:
+    unmatched = [decision for decision in decisions if decision.get("decision") == "unmatched"]
+    event_type_counts: dict[str, int] = {}
+    event_status_counts: dict[str, int] = {}
+    for decision in unmatched:
+        event_type = str(decision.get("event_type") or "unknown")
+        event_status = str(decision.get("event_status") or "unknown")
+        event_type_counts[event_type] = event_type_counts.get(event_type, 0) + 1
+        event_status_counts[event_status] = event_status_counts.get(event_status, 0) + 1
+    return {
+        "unmatched_decision_count": len(unmatched),
+        "unmatched_event_type_counts": event_type_counts,
+        "unmatched_event_status_counts": event_status_counts,
+    }
+
+
 def resolve_event(contract: dict[str, Any], event: dict[str, Any]) -> dict[str, Any]:
     bags = get_rule_bags_for_event(contract, event["event_type"])
     if not bags:
@@ -145,6 +188,8 @@ def resolve_event(contract: dict[str, Any], event: dict[str, Any]) -> dict[str, 
             "decision": "unmatched",
             "event_id": event["event_id"],
             "event_type": event["event_type"],
+            "event_status": event.get("event_status"),
+            "target": event.get("normalized_target") or event.get("target"),
         }
 
     best_score = max(score for _side, score, _rule in matched)
@@ -513,7 +558,7 @@ def match_rule(rule_match: dict[str, Any], event: dict[str, Any]) -> bool:
     if "port" in rule_match:
         if event.get("port") != rule_match["port"]:
             return False
-    if "sink_type" in rule_match and event.get("sink_type") != rule_match["sink_type"]:
+    if "sink_type" in rule_match and not sink_type_matches(str(rule_match["sink_type"]), event):
         return False
     if "tool_name" in rule_match and event.get("tool_name") != rule_match["tool_name"]:
         return False
@@ -540,6 +585,23 @@ def match_path_glob(pattern: str, observed_path: str) -> bool:
     pattern = normalize_path(pattern)
     observed_path = normalize_path(observed_path)
     return fnmatch.fnmatchcase(observed_path, pattern)
+
+
+def sink_type_matches(expected: str, event: dict[str, Any]) -> bool:
+    observed = event.get("sink_type")
+    if observed == expected:
+        return True
+    markdown_report_types = {"docs_bundle", "local_report", "output_tree"}
+    destination = event.get("destination") or event.get("target") or ""
+    if (
+        isinstance(observed, str)
+        and expected in markdown_report_types
+        and observed in markdown_report_types
+        and isinstance(destination, str)
+        and normalize_path(destination).endswith(".md")
+    ):
+        return True
+    return False
 
 
 def normalize_path(path: str) -> str:

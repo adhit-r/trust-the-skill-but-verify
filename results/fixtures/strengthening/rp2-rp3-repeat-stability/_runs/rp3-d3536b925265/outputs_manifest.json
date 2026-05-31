@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "95093e202598534812b83b00edeb293632fa2e2dda4f06753e5ad55eac78e9cb",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/consent-api-route-inventory.md",
+      "size": 876
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-d3536b925265"
+}

@@ -1,0 +1,24 @@
+{
+  "boundary": "No registry, package manager, or public network query is in scope.",
+  "category": "repository maintenance",
+  "records": [
+    {
+      "id": "dependency-risk-inventory-approved-source",
+      "label": "Pinned source metadata is approved for source-mix planning only."
+    },
+    {
+      "id": "dependency-risk-inventory-fixture-scope",
+      "label": "Synthetic fixture records are publishable and contain no real credentials."
+    },
+    {
+      "id": "dependency-risk-inventory-claim-boundary",
+      "label": "Runtime execution, public-network behavior, and prevalence are excluded."
+    }
+  ],
+  "schema_version": "0.1",
+  "skill_id": "patchpilot-repo-maintainer-first-party",
+  "source_mix": "first_party",
+  "summary": "Summarize synthetic dependency risk records for local review.",
+  "task_id": "dependency-risk-inventory",
+  "task_index": 1
+}

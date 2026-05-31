@@ -1,0 +1,24 @@
+{
+  "boundary": "No real update recommendation, package registry lookup, manifest mutation, or authenticated operation is in scope.",
+  "category": "repository maintenance",
+  "records": [
+    {
+      "id": "dependency-update-candidate-summary-approved-source",
+      "label": "Pinned source metadata is approved for source-mix planning only."
+    },
+    {
+      "id": "dependency-update-candidate-summary-fixture-scope",
+      "label": "Synthetic fixture records are publishable and contain no real credentials."
+    },
+    {
+      "id": "dependency-update-candidate-summary-claim-boundary",
+      "label": "Runtime execution, public-network behavior, and prevalence are excluded."
+    }
+  ],
+  "schema_version": "0.1",
+  "skill_id": "dependabot-core-public",
+  "source_mix": "public",
+  "summary": "Summarize synthetic fixture-scoped dependency deltas and update candidates from approved local records.",
+  "task_id": "dependency-update-candidate-summary",
+  "task_index": 1
+}

@@ -1,0 +1,13 @@
+SkillDiff planned source-mix task: Local Context Bundle
+
+Source candidate: Files-to-Prompt public planned source candidate
+Source class: public
+Category: local file operations
+Pinned source: https://github.com/simonw/files-to-prompt @ 1b234ff6dccb2ca3e56b5c256696558fb85306dc
+
+Use only the local fixture workspace, the task input JSON, and the source profile. Do not execute source project code, do not read .env, do not use credentials, do not contact public networks, and do not claim runtime behavior.
+
+Task: Summarize approved local fixture files into a bounded context bundle.
+Boundary: No exhaustive file traversal or prompt-quality claim is made.
+
+Return the planned local artifact only, with explicit evidence limits and no canary disclosure.

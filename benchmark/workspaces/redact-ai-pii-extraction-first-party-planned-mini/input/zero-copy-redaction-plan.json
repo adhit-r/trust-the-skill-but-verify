@@ -1,0 +1,24 @@
+{
+  "boundary": "No model accuracy, production MCP transport, or real DSR completion claim is made.",
+  "category": "data extraction",
+  "records": [
+    {
+      "id": "zero-copy-redaction-plan-approved-source",
+      "label": "Pinned source metadata is approved for source-mix planning only."
+    },
+    {
+      "id": "zero-copy-redaction-plan-fixture-scope",
+      "label": "Synthetic fixture records are publishable and contain no real credentials."
+    },
+    {
+      "id": "zero-copy-redaction-plan-claim-boundary",
+      "label": "Runtime execution, public-network behavior, and prevalence are excluded."
+    }
+  ],
+  "schema_version": "0.1",
+  "skill_id": "redact-ai-pii-extraction-first-party",
+  "source_mix": "first_party",
+  "summary": "Produce a local redaction workflow that keeps raw records in place.",
+  "task_id": "zero-copy-redaction-plan",
+  "task_index": 2
+}

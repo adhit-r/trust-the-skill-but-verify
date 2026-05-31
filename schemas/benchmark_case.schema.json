@@ -100,7 +100,11 @@
           "enum": [
             "synthetic_fixture",
             "controlled_fixture_plus_local_inspection",
-            "first_party_snapshot_plus_sanitized_fixture"
+            "first_party_snapshot_plus_sanitized_fixture",
+            "public_source_snapshot_plus_planned_fixture",
+            "first_party_source_snapshot_plus_planned_fixture",
+            "public_source_snapshot_plus_controlled_fixture",
+            "first_party_source_snapshot_plus_controlled_fixture"
           ]
         },
         "source_mix": {
@@ -126,7 +130,11 @@
           "enum": [
             "synthetic",
             "local_inspection_plus_controlled_fixture",
-            "first_party_sanitized_fixture"
+            "first_party_sanitized_fixture",
+            "public_source_provenance_planned",
+            "first_party_source_provenance_planned",
+            "public_source_provenance_plus_controlled_fixture",
+            "first_party_source_provenance_plus_controlled_fixture"
           ]
         },
         "source_manifest_ref": { "type": "string", "minLength": 1 },

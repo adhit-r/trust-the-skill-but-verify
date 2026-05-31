@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "69d1f8724821c425bd28c2c6a2d1e3101d65b6ea90b20cab34c3c8dbab860f4a",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/pdf-table-extraction-plan.md",
+      "size": 851
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-789dd007dfa5"
+}

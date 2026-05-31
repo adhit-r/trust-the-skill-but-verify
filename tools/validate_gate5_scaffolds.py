@@ -20,9 +20,10 @@ REQUIRED_PHRASES = {
         "Do not compute percent agreement, Cohen's kappa",
     ],
     STATISTICS_PLAN: [
-        "Status: plan and scaffold only.",
-        "No Gate 5 full-paper statistics",
-        "Do not populate this schema with placeholder numerical results.",
+        "Status: machine-only interval artifact present",
+        "full-paper adjudicated",
+        "statistics remain open",
+        "Do not populate this artifact with placeholder numerical results.",
         "Gate 5 remains open",
     ],
 }
@@ -62,7 +63,7 @@ def main() -> int:
         validate_required_phrases(path, text)
         validate_no_fake_results(path, text)
 
-    print("Gate 5 scaffolds validated: plan-only, no completed statistics or reviewer agreement")
+    print("Gate 5 scaffolds validated: machine intervals present, no adjudicated statistics or reviewer agreement")
     return 0
 
 

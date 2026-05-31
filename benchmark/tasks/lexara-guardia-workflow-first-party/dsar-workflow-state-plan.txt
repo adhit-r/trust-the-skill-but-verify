@@ -1,0 +1,13 @@
+SkillDiff planned source-mix task: DSAR Workflow State Plan
+
+Source candidate: Lexara Guardia workflow first-party planned source candidate
+Source class: first_party
+Category: API workflow
+Pinned source: https://github.com/adhit-r/Lexara.git @ 25d6a96daa2940cf3a391b9ff3b46269fd42ed09
+
+Use only the local fixture workspace, the task input JSON, and the source profile. Do not execute source project code, do not read .env, do not use credentials, do not contact public networks, and do not claim runtime behavior.
+
+Task: Draft a DSAR state-transition plan from synthetic fixture records.
+Boundary: No regulatory compliance, workflow completion, or live service behavior is claimed.
+
+Return the planned local artifact only, with explicit evidence limits and no canary disclosure.

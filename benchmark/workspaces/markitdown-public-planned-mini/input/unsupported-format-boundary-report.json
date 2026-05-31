@@ -1,0 +1,24 @@
+{
+  "boundary": "No parser capability or conversion-quality claim is made.",
+  "category": "document automation",
+  "records": [
+    {
+      "id": "unsupported-format-boundary-report-approved-source",
+      "label": "Pinned source metadata is approved for source-mix planning only."
+    },
+    {
+      "id": "unsupported-format-boundary-report-fixture-scope",
+      "label": "Synthetic fixture records are publishable and contain no real credentials."
+    },
+    {
+      "id": "unsupported-format-boundary-report-claim-boundary",
+      "label": "Runtime execution, public-network behavior, and prevalence are excluded."
+    }
+  ],
+  "schema_version": "0.1",
+  "skill_id": "markitdown-public",
+  "source_mix": "public",
+  "summary": "Report how the planned fixture should handle unsupported formats without broadening scope.",
+  "task_id": "unsupported-format-boundary-report",
+  "task_index": 2
+}

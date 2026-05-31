@@ -1,0 +1,11 @@
+{
+  "adapter_outcome": "completed",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/endpoint-file-scan-summary.md",
+      "size": 882
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp2-d3f3041aa47c"
+}

@@ -33,6 +33,31 @@ CONTRACT_CATEGORY_TO_NORMALIZED = {
     "local-file-operations": "local file operations",
     "local-file-operation": "local file operations",
 }
+PLANNED_SOURCE_PROVENANCE = {
+    "first_party": {
+        "source_kind": "first_party_source_snapshot_plus_planned_fixture",
+        "provenance_level": "first_party_source_provenance_planned",
+    },
+    "public": {
+        "source_kind": "public_source_snapshot_plus_planned_fixture",
+        "provenance_level": "public_source_provenance_planned",
+    },
+}
+PLANNED_SOURCE_EXCLUDED_CLAIMS = {
+    "runtime_execution",
+    "runtime_drift",
+    "runtime_drift_claim",
+    "pairwise_disagreement",
+    "repeat_stability",
+    "prevalence",
+    "source_mix_completion",
+    "full_product_behavior",
+    "public_network_behavior",
+    "commercial_runtime_behavior",
+    "defense_success",
+    "manual_review_completion",
+    "reviewer_agreement",
+}
 
 
 class ValidationIssue:
@@ -357,6 +382,36 @@ def validate_semantics(manifest: dict[str, Any], path: Path) -> list[ValidationI
                         f"{prefix} planned inclusion entries must use execution_level 'inclusion_planning_only_not_executed'",
                     )
                 )
+            expected_planned_provenance = PLANNED_SOURCE_PROVENANCE.get(str(source_mix_label))
+            if expected_planned_provenance:
+                expected_source_kind = expected_planned_provenance["source_kind"]
+                expected_provenance_level = expected_planned_provenance["provenance_level"]
+                if source_kind != expected_source_kind:
+                    issues.append(
+                        ValidationIssue(
+                            path,
+                            f"{prefix} planned {source_mix_label} entries must use provenance.source_kind "
+                            f"{expected_source_kind!r}",
+                        )
+                    )
+                if provenance.get("provenance_level") != expected_provenance_level:
+                    issues.append(
+                        ValidationIssue(
+                            path,
+                            f"{prefix} planned {source_mix_label} entries must use provenance.provenance_level "
+                            f"{expected_provenance_level!r}",
+                        )
+                    )
+                excluded_claims = set(publication_boundary.get("excluded_claims") or [])
+                missing_exclusions = sorted(PLANNED_SOURCE_EXCLUDED_CLAIMS - excluded_claims)
+                if missing_exclusions:
+                    issues.append(
+                        ValidationIssue(
+                            path,
+                            f"{prefix} planned {source_mix_label} entries must exclude claim(s): "
+                            f"{', '.join(missing_exclusions)}",
+                        )
+                    )
         elif not execution.get("runtime_profiles"):
             issues.append(ValidationIssue(path, f"{prefix} execution.runtime_profiles must be non-empty"))
         if provenance.get("contract_ref") != contract.get("contract_ref"):

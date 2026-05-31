@@ -1,0 +1,2 @@
+{"copied_file_count": 8, "event": "workspace_seed_copied", "path": "<REPO_ROOT>/benchmark/workspaces/files-to-prompt-public-planned-mini", "profile_id": "RP2", "timestamp": "2026-05-29T17:15:51+00:00"}
+{"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./planned-output/secret-file-inclusion-negative-control.md", "sha256": "sha256:b4ebebb9988a87b9e357eb7167f3609c1083d7d0c7ef4367726857d53d6dd322", "size": 854, "status": "succeeded", "timestamp": "2026-05-29T17:15:51+00:00"}

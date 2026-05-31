@@ -20,6 +20,7 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 TOOLS_ROOT = REPO_ROOT / "tools"
 sys.path.insert(0, str(TOOLS_ROOT))
 
+from repeat_hygiene import add_repeat_id_argument  # noqa: E402
 from run_docs_forge_live_project_local_install import (  # noqa: E402
     changed_paths,
     git_status,
@@ -390,7 +391,7 @@ def write_markdown(report: dict[str, Any], output_md: Path) -> None:
     output_md.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
-def build_trace(report: dict[str, Any], output_json: Path, output_md: Path, trace_path: Path) -> None:
+def build_trace(report: dict[str, Any], output_json: Path, output_md: Path, trace_path: Path, repeat_id: int) -> None:
     sys.path.insert(0, str(REPO_ROOT / "src"))
     from skilldiff.traces.events import TraceBuilder, TraceContext, validate_trace_file
 
@@ -407,7 +408,7 @@ def build_trace(report: dict[str, Any], output_json: Path, output_md: Path, trac
         runtime_profile_hash=sha256_text(RUNTIME_PROFILE + report["container_image_ref"] + case["registry_url"]),
         adapter_id="live_rp3_node_npx_adversarial_package_acquisition_observer",
         adapter_version="0.1",
-        repeat_id=1,
+        repeat_id=repeat_id,
     )
     builder = TraceBuilder(context)
     builder.add(
@@ -603,6 +604,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--output-json", type=Path, default=DEFAULT_OUTPUT_JSON)
     parser.add_argument("--output-md", type=Path, default=DEFAULT_OUTPUT_MD)
     parser.add_argument("--trace", type=Path, default=DEFAULT_TRACE)
+    add_repeat_id_argument(parser)
     args = parser.parse_args(argv)
 
     source_arg = args.source_root or (Path(os.environ["DOCS_FORGE_SOURCE_ROOT"]) if os.environ.get("DOCS_FORGE_SOURCE_ROOT") else None)
@@ -680,6 +682,8 @@ def main(argv: list[str] | None = None) -> int:
         ]
 
     case = cases[0]
+    for item in cases:
+        item["repeat_id"] = args.repeat_id
     report = {
         "schema_version": "0.1",
         "artifact_id": "docs-forge-live-npx-rp3-node-adversarial-package-acquisition",
@@ -694,6 +698,10 @@ def main(argv: list[str] | None = None) -> int:
         "source_commit": manifest["source_boundary"]["fixture_source_commit"],
         "source_tree": manifest["source_boundary"]["fixture_source_tree"],
         "manifest_ref": MANIFEST_REF,
+        "result_ref": args.output_json.resolve().relative_to(REPO_ROOT).as_posix(),
+        "report_ref": args.output_md.resolve().relative_to(REPO_ROOT).as_posix(),
+        "repeat_count": 1,
+        "repeat_id": args.repeat_id,
         "task_ref": manifest["task_ref"],
         "contract_ref": manifest["contract_ref"],
         "expected_output_ref": manifest["expected_output_ref"],
@@ -750,7 +758,7 @@ def main(argv: list[str] | None = None) -> int:
     }
     args.output_json.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
     write_markdown(report, args.output_md)
-    build_trace(report, args.output_json, args.output_md, args.trace)
+    build_trace(report, args.output_json, args.output_md, args.trace, args.repeat_id)
     if not preflight["passed"]:
         raise RuntimeError("docs-forge live RP3 Node adversarial npx observer preflight failed")
     if not case["passed"]:

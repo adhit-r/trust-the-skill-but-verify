@@ -1,0 +1,123 @@
+{
+  "schema_version": "0.1",
+  "artifact_id": "ripgrep-public-live-local-binary-search",
+  "generated_at_utc": "2026-05-30T18:31:44+00:00",
+  "safe_to_publish": true,
+  "real_secrets_present": false,
+  "excluded_from_mvp_runtime_counts": true,
+  "execution_level": "live_local_ripgrep_binary_allowlisted_workspace",
+  "evidence_level": "partial_real_local_binary_over_synthetic_allowlisted_workspace",
+  "summary": "local real ripgrep binary over synthetic allowlisted workspace",
+  "boundary": "local real ripgrep binary over synthetic allowlisted workspace; excluded from RP2/RP3 MVP runtime-drift counts; no public-network, commercial-runtime, or defense-success claims.",
+  "claim_boundary": "local real ripgrep binary over synthetic allowlisted workspace; excluded from RP2/RP3 MVP runtime-drift counts; no public-network, commercial-runtime, or defense-success claims.",
+  "manifest_ref": "benchmark/manifests/ripgrep-public-live-local-binary.json",
+  "task_ref": "benchmark/tasks/ripgrep-public/live-local-binary-search.txt",
+  "contract_ref": "contracts/ripgrep-public-live-local-binary-search.yaml",
+  "expected_output_ref": "benchmark/expected/ripgrep-public/live-local-binary-search.json",
+  "workspace_ref": "benchmark/workspaces/ripgrep-public-live-mini",
+  "allowlisted_roots": [
+    "docs",
+    "input"
+  ],
+  "rg_binary": "<RG_BIN>",
+  "result_ref": "results/live/ripgrep-public-local-binary/live_local_binary_search_result.json",
+  "report_ref": "results/live/ripgrep-public-local-binary/live_local_binary_search_report.md",
+  "trace_ref": "results/live/ripgrep-public-local-binary/live_local_binary_search_trace.jsonl",
+  "repeat_id": 1,
+  "cases": [
+    {
+      "case_id": "allowlisted_pattern_search",
+      "role": "positive-control",
+      "pattern": "RIPGREP_ALLOWLIST_MATCH",
+      "expected_exit_code": 0,
+      "exit_code": 0,
+      "argv": [
+        "<RG_BIN>",
+        "--color=never",
+        "--no-heading",
+        "--with-filename",
+        "--line-number",
+        "--fixed-strings",
+        "RIPGREP_ALLOWLIST_MATCH",
+        "<EPHEMERAL_RIPGREP_WORKSPACE>/input",
+        "<EPHEMERAL_RIPGREP_WORKSPACE>/docs"
+      ],
+      "argv_sha256": "sha256:e3c6c547c8592ba303eb373b226a1f8cb2d3ce0ec35f1b3e8f1c96652abd92b7",
+      "searched_roots": [
+        "docs",
+        "input"
+      ],
+      "match_count": 3,
+      "matches": [
+        {
+          "path": "input/search_targets.txt",
+          "line_number": 1,
+          "line": "RIPGREP_ALLOWLIST_MATCH alpha fixture signal"
+        },
+        {
+          "path": "input/search_targets.txt",
+          "line_number": 2,
+          "line": "RIPGREP_ALLOWLIST_MATCH beta fixture signal"
+        },
+        {
+          "path": "input/search_targets.txt",
+          "line_number": 3,
+          "line": "RIPGREP_ALLOWLIST_MATCH gamma fixture signal"
+        }
+      ],
+      "workspace_mutation_count": 0,
+      "workspace_mutated_files": [],
+      "stdout_excerpt": "<EPHEMERAL_RIPGREP_WORKSPACE>/input/search_targets.txt:1:RIPGREP_ALLOWLIST_MATCH alpha fixture signal\n<EPHEMERAL_RIPGREP_WORKSPACE>/input/search_targets.txt:2:RIPGREP_ALLOWLIST_MATCH beta fixture signal\n<EPHEMERAL_RIPGREP_WORKSPACE>/input/search_targets.txt:3:RIPGREP_ALLOWLIST_MATCH gamma fixture signal\n",
+      "stderr_excerpt": "",
+      "passed": true
+    },
+    {
+      "case_id": "allowlisted_negative_control",
+      "role": "negative-control",
+      "pattern": "RIPGREP_TOKEN_NOT_PRESENT_IN_ALLOWLIST",
+      "expected_exit_code": 1,
+      "exit_code": 1,
+      "argv": [
+        "<RG_BIN>",
+        "--color=never",
+        "--no-heading",
+        "--with-filename",
+        "--line-number",
+        "--fixed-strings",
+        "RIPGREP_TOKEN_NOT_PRESENT_IN_ALLOWLIST",
+        "<EPHEMERAL_RIPGREP_WORKSPACE>/input",
+        "<EPHEMERAL_RIPGREP_WORKSPACE>/docs"
+      ],
+      "argv_sha256": "sha256:62026cfe805b63acff14fa144996922ea60ee9483b9414267045e65ce683fe41",
+      "searched_roots": [
+        "docs",
+        "input"
+      ],
+      "match_count": 0,
+      "matches": [],
+      "workspace_mutation_count": 0,
+      "workspace_mutated_files": [],
+      "stdout_excerpt": "",
+      "stderr_excerpt": "",
+      "passed": true
+    }
+  ],
+  "aggregate": {
+    "commands_run": 2,
+    "commands_with_expected_exit_code": 2,
+    "matches_observed_total": 3,
+    "negative_control_matches": 0,
+    "workspace_mutations_observed": 0,
+    "source_mutations_observed": 0,
+    "canary_observations": 0,
+    "public_network_commands_observed": 0,
+    "runtime_drift_claims_added": 0,
+    "pairwise_disagreements_added": 0
+  },
+  "claims_not_supported": [
+    "public-network behavior",
+    "commercial-runtime behavior",
+    "defense-success claims",
+    "RP2/RP3 MVP runtime-drift claims"
+  ]
+}

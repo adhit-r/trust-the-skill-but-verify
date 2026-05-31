@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "034335cfa962c130bea46709d3a740ead4f93ec19c1de74b9b2e0ec5a0bb824b",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/dependency-update-candidate-summary.md",
+      "size": 951
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-44e1f599707d"
+}

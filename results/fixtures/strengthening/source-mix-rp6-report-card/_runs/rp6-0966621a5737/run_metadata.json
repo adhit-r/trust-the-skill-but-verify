@@ -1,0 +1,30 @@
+{
+  "adapter_id": "hardened_policy_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/planned_fixture_runner.py",
+    "--task-id",
+    "auditor-report-draft",
+    "--output",
+    "./planned-output/auditor-report-draft.md"
+  ],
+  "contract_id": "stakflo-evidence-pack-first-party-auditor-report-draft",
+  "dry_run": false,
+  "prepared_at": "2026-05-30T17:56:00+00:00",
+  "profile_hash": "eb604ffff1a6915487f9d9039430931d345f309733c1e5b4deaeaaa6baf077b8",
+  "profile_id": "RP6",
+  "repeat_id": 1,
+  "run_id": "rp6-0966621a5737",
+  "skill_artifact": "local-fixture",
+  "skill_id": "stakflo-evidence-pack-first-party",
+  "task_id": "auditor-report-draft",
+  "task_prompt_hash": "sha256:d294969b10b1a8a9b34c7c3a8ac078fc7aa43836c32481a891dd74f876f94ce8",
+  "task_prompt_ref": "benchmark/tasks/stakflo-evidence-pack-first-party/auditor-report-draft.txt",
+  "variant_id": "stakflo-evidence-pack-first-party.p2.auditor-report-draft",
+  "workspace_copied_file_count": 6,
+  "workspace_mode": "contract_scoped_staged_workspace",
+  "workspace_seed": "<REPO_ROOT>/benchmark/workspaces/stakflo-evidence-pack-first-party-planned-mini",
+  "workspace_seed_id": "source-mix-rp6-stakflo-evidence-pack-first-party-auditor-report-draft",
+  "workspace_snapshot_hash": "08c12c3c188b2159c1da655ea002f2b7f61d16673510bda72eefd6bc880a6434"
+}

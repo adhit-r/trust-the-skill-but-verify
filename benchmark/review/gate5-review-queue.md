@@ -4,12 +4,12 @@ Gate 5 manual review queue scaffold generated from the frozen inclusion table; n
 
 ## Aggregate
 
-- Queued items: `60`
-- Included cases: `60`
-- Paired-summary mapped items: `50`
+- Queued items: `132`
+- Included cases: `132`
+- Paired-summary mapped items: `122`
 - Paired-summary unmapped items: `10`
-- Blinding-eligible items: `50`
-- Source-mix items: `first_party=3`, `public=3`, `synthetic=54`
+- Blinding-eligible items: `122`
+- Source-mix items: `first_party=27`, `public=51`, `synthetic=54`
 
 This artifact is a queue only. It contains no reviewer IDs, completed review results, adjudication records, percent agreement, Cohen's kappa, confidence intervals, hypothesis tests, prevalence estimate, or paper-grade completion claim.
 
@@ -77,6 +77,78 @@ This artifact is a queue only. It contains no reviewer IDs, completed review res
 | `gate5-review-058-network-egress-executable.p3.no-network-negative-control` | API workflow | `synthetic` | `matched_variant_id` | `eligible_for_first_pass_blinding` | `paired_no_disagreement` |
 | `gate5-review-059-mcp-tool-workflow.p1.tool-inventory` | MCP/tool workflow | `synthetic` | `matched_variant_id` | `eligible_for_first_pass_blinding` | `paired_no_disagreement` |
 | `gate5-review-060-mcp-tool-workflow.p2.tool-consent-negative-control` | MCP/tool workflow | `synthetic` | `matched_variant_id` | `eligible_for_first_pass_blinding` | `paired_no_disagreement` |
+| `gate5-review-061-grclaw-audit-pack-first-party.p1.control-evidence-inventory` | compliance/audit | `first_party` | `matched_variant_id` | `eligible_for_first_pass_blinding` | `paired_no_disagreement` |
+| `gate5-review-062-grclaw-audit-pack-first-party.p2.audit-pack-draft` | compliance/audit | `first_party` | `matched_variant_id` | `eligible_for_first_pass_blinding` | `paired_no_disagreement` |
+| `gate5-review-063-grclaw-audit-pack-first-party.p3.connector-secret-negative-control` | compliance/audit | `first_party` | `matched_variant_id` | `eligible_for_first_pass_blinding` | `paired_no_disagreement` |
+| `gate5-review-064-patchpilot-repo-maintainer-first-party.p1.dependency-risk-inventory` | repository maintenance | `first_party` | `matched_variant_id` | `eligible_for_first_pass_blinding` | `paired_no_disagreement` |
+| `gate5-review-065-patchpilot-repo-maintainer-first-party.p2.agent-rule-update-plan` | repository maintenance | `first_party` | `matched_variant_id` | `eligible_for_first_pass_blinding` | `paired_no_disagreement` |
+| `gate5-review-066-patchpilot-repo-maintainer-first-party.p3.repo-token-negative-control` | repository maintenance | `first_party` | `matched_variant_id` | `eligible_for_first_pass_blinding` | `paired_no_disagreement` |
+| `gate5-review-067-aran-mcp-sentinel-first-party.p1.mcp-tool-catalog-summary` | MCP/tool workflow | `first_party` | `matched_variant_id` | `eligible_for_first_pass_blinding` | `paired_no_disagreement` |
+| `gate5-review-068-aran-mcp-sentinel-first-party.p2.tool-attestation-risk-plan` | MCP/tool workflow | `first_party` | `matched_variant_id` | `eligible_for_first_pass_blinding` | `paired_no_disagreement` |
+| `gate5-review-069-aran-mcp-sentinel-first-party.p3.unauthorized-tool-invocation-negative-control` | MCP/tool workflow | `first_party` | `matched_variant_id` | `eligible_for_first_pass_blinding` | `paired_no_disagreement` |
+| `gate5-review-070-lexara-guardia-workflow-first-party.p1.consent-api-route-inventory` | API workflow | `first_party` | `matched_variant_id` | `eligible_for_first_pass_blinding` | `paired_no_disagreement` |
+| `gate5-review-071-lexara-guardia-workflow-first-party.p2.dsar-workflow-state-plan` | API workflow | `first_party` | `matched_variant_id` | `eligible_for_first_pass_blinding` | `paired_no_disagreement` |
+| `gate5-review-072-lexara-guardia-workflow-first-party.p3.tenant-data-export-negative-control` | API workflow | `first_party` | `matched_variant_id` | `eligible_for_first_pass_blinding` | `paired_no_disagreement` |
+| `gate5-review-073-markitdown-public.p1.local-doc-conversion-summary` | document automation | `public` | `matched_variant_id` | `eligible_for_first_pass_blinding` | `paired_no_disagreement` |
+| `gate5-review-074-markitdown-public.p2.unsupported-format-boundary-report` | document automation | `public` | `matched_variant_id` | `eligible_for_first_pass_blinding` | `paired_no_disagreement` |
+| `gate5-review-075-markitdown-public.p3.remote-url-fetch-negative-control` | document automation | `public` | `matched_variant_id` | `eligible_for_first_pass_blinding` | `paired_no_disagreement` |
+| `gate5-review-076-renovate-public.p1.dependency-update-plan` | repository maintenance | `public` | `matched_variant_id` | `eligible_for_first_pass_blinding` | `paired_no_disagreement` |
+| `gate5-review-077-renovate-public.p2.config-scope-boundary-diff` | repository maintenance | `public` | `matched_variant_id` | `eligible_for_first_pass_blinding` | `paired_no_disagreement` |
+| `gate5-review-078-renovate-public.p3.tokenless-pr-creation-negative-control` | repository maintenance | `public` | `matched_variant_id` | `eligible_for_first_pass_blinding` | `paired_no_disagreement` |
+| `gate5-review-079-ort-public.p1.license-inventory-summary` | compliance/audit | `public` | `matched_variant_id` | `eligible_for_first_pass_blinding` | `paired_no_disagreement` |
+| `gate5-review-080-ort-public.p2.copyleft-notice-boundary-plan` | compliance/audit | `public` | `matched_variant_id` | `eligible_for_first_pass_blinding` | `paired_no_disagreement` |
+| `gate5-review-081-ort-public.p3.legal-advice-negative-control` | compliance/audit | `public` | `matched_variant_id` | `eligible_for_first_pass_blinding` | `paired_no_disagreement` |
+| `gate5-review-082-unstructured-public.p1.partitioned-document-elements` | data extraction | `public` | `matched_variant_id` | `eligible_for_first_pass_blinding` | `paired_no_disagreement` |
+| `gate5-review-083-unstructured-public.p2.schema-bounded-extraction` | data extraction | `public` | `matched_variant_id` | `eligible_for_first_pass_blinding` | `paired_no_disagreement` |
+| `gate5-review-084-unstructured-public.p3.hidden-canary-exfiltration-negative-control` | data extraction | `public` | `matched_variant_id` | `eligible_for_first_pass_blinding` | `paired_no_disagreement` |
+| `gate5-review-085-huginn-public.p1.webhook-agent-flow-summary` | API workflow | `public` | `matched_variant_id` | `eligible_for_first_pass_blinding` | `paired_no_disagreement` |
+| `gate5-review-086-huginn-public.p2.rate-limit-dry-run-plan` | API workflow | `public` | `matched_variant_id` | `eligible_for_first_pass_blinding` | `paired_no_disagreement` |
+| `gate5-review-087-huginn-public.p3.credentialed-live-webhook-negative-control` | API workflow | `public` | `matched_variant_id` | `eligible_for_first_pass_blinding` | `paired_no_disagreement` |
+| `gate5-review-088-playwright-mcp-public.p1.tool-inventory-summary` | MCP/tool workflow | `public` | `matched_variant_id` | `eligible_for_first_pass_blinding` | `paired_no_disagreement` |
+| `gate5-review-089-playwright-mcp-public.p2.consent-gated-navigation-plan` | MCP/tool workflow | `public` | `matched_variant_id` | `eligible_for_first_pass_blinding` | `paired_no_disagreement` |
+| `gate5-review-090-playwright-mcp-public.p3.unauthorized-browser-action-negative-control` | MCP/tool workflow | `public` | `matched_variant_id` | `eligible_for_first_pass_blinding` | `paired_no_disagreement` |
+| `gate5-review-091-files-to-prompt-public.p1.local-context-bundle` | local file operations | `public` | `matched_variant_id` | `eligible_for_first_pass_blinding` | `paired_no_disagreement` |
+| `gate5-review-092-files-to-prompt-public.p2.gitignore-size-boundary-report` | local file operations | `public` | `matched_variant_id` | `eligible_for_first_pass_blinding` | `paired_no_disagreement` |
+| `gate5-review-093-files-to-prompt-public.p3.secret-file-inclusion-negative-control` | local file operations | `public` | `matched_variant_id` | `eligible_for_first_pass_blinding` | `paired_no_disagreement` |
+| `gate5-review-094-stakflo-evidence-pack-first-party.p1.evidence-package-index` | document automation | `first_party` | `matched_variant_id` | `eligible_for_first_pass_blinding` | `paired_no_disagreement` |
+| `gate5-review-095-stakflo-evidence-pack-first-party.p2.auditor-report-draft` | document automation | `first_party` | `matched_variant_id` | `eligible_for_first_pass_blinding` | `paired_no_disagreement` |
+| `gate5-review-096-stakflo-evidence-pack-first-party.p3.connector-credential-export-negative-control` | document automation | `first_party` | `matched_variant_id` | `eligible_for_first_pass_blinding` | `paired_no_disagreement` |
+| `gate5-review-097-redact-ai-pii-extraction-first-party.p1.pii-finding-inventory` | data extraction | `first_party` | `matched_variant_id` | `eligible_for_first_pass_blinding` | `paired_no_disagreement` |
+| `gate5-review-098-redact-ai-pii-extraction-first-party.p2.zero-copy-redaction-plan` | data extraction | `first_party` | `matched_variant_id` | `eligible_for_first_pass_blinding` | `paired_no_disagreement` |
+| `gate5-review-099-redact-ai-pii-extraction-first-party.p3.raw-pii-exfiltration-negative-control` | data extraction | `first_party` | `matched_variant_id` | `eligible_for_first_pass_blinding` | `paired_no_disagreement` |
+| `gate5-review-100-mamori-local-file-agent-first-party.p1.endpoint-file-scan-summary` | local file operations | `first_party` | `matched_variant_id` | `eligible_for_first_pass_blinding` | `paired_no_disagreement` |
+| `gate5-review-101-mamori-local-file-agent-first-party.p2.watcher-policy-plan` | local file operations | `first_party` | `matched_variant_id` | `eligible_for_first_pass_blinding` | `paired_no_disagreement` |
+| `gate5-review-102-mamori-local-file-agent-first-party.p3.unauthorized-user-file-scan-negative-control` | local file operations | `first_party` | `matched_variant_id` | `eligible_for_first_pass_blinding` | `paired_no_disagreement` |
+| `gate5-review-103-zenscan-mcp-scanner-first-party.p1.mcp-scan-tool-catalog` | MCP/tool workflow | `first_party` | `matched_variant_id` | `eligible_for_first_pass_blinding` | `paired_no_disagreement` |
+| `gate5-review-104-zenscan-mcp-scanner-first-party.p2.sbom-policy-risk-plan` | MCP/tool workflow | `first_party` | `matched_variant_id` | `eligible_for_first_pass_blinding` | `paired_no_disagreement` |
+| `gate5-review-105-zenscan-mcp-scanner-first-party.p3.registry-secret-live-scan-negative-control` | MCP/tool workflow | `first_party` | `matched_variant_id` | `eligible_for_first_pass_blinding` | `paired_no_disagreement` |
+| `gate5-review-106-pandoc-public.p1.local-format-conversion-plan` | document automation | `public` | `matched_variant_id` | `eligible_for_first_pass_blinding` | `paired_no_disagreement` |
+| `gate5-review-107-pandoc-public.p2.writer-option-boundary-report` | document automation | `public` | `matched_variant_id` | `eligible_for_first_pass_blinding` | `paired_no_disagreement` |
+| `gate5-review-108-pandoc-public.p3.remote-resource-include-negative-control` | document automation | `public` | `matched_variant_id` | `eligible_for_first_pass_blinding` | `paired_no_disagreement` |
+| `gate5-review-109-mdbook-public.p1.book-structure-summary` | document automation | `public` | `matched_variant_id` | `eligible_for_first_pass_blinding` | `paired_no_disagreement` |
+| `gate5-review-110-mdbook-public.p2.preprocessor-boundary-report` | document automation | `public` | `matched_variant_id` | `eligible_for_first_pass_blinding` | `paired_no_disagreement` |
+| `gate5-review-111-mdbook-public.p3.secret-include-negative-control` | document automation | `public` | `matched_variant_id` | `eligible_for_first_pass_blinding` | `paired_no_disagreement` |
+| `gate5-review-112-dependabot-core-public.p1.dependency-update-candidate-summary` | repository maintenance | `public` | `matched_variant_id` | `eligible_for_first_pass_blinding` | `paired_no_disagreement` |
+| `gate5-review-113-dependabot-core-public.p2.ecosystem-scope-boundary-plan` | repository maintenance | `public` | `matched_variant_id` | `eligible_for_first_pass_blinding` | `paired_no_disagreement` |
+| `gate5-review-114-dependabot-core-public.p3.tokenless-pr-registry-negative-control` | repository maintenance | `public` | `matched_variant_id` | `eligible_for_first_pass_blinding` | `paired_no_disagreement` |
+| `gate5-review-115-pdfplumber-public.p1.pdf-table-extraction-plan` | data extraction | `public` | `matched_variant_id` | `eligible_for_first_pass_blinding` | `paired_no_disagreement` |
+| `gate5-review-116-pdfplumber-public.p2.page-range-boundary-report` | data extraction | `public` | `matched_variant_id` | `eligible_for_first_pass_blinding` | `paired_no_disagreement` |
+| `gate5-review-117-pdfplumber-public.p3.hidden-text-pii-negative-control` | data extraction | `public` | `matched_variant_id` | `eligible_for_first_pass_blinding` | `paired_no_disagreement` |
+| `gate5-review-118-tika-public.p1.mime-metadata-extraction-plan` | data extraction | `public` | `matched_variant_id` | `eligible_for_first_pass_blinding` | `paired_no_disagreement` |
+| `gate5-review-119-tika-public.p2.parser-sandbox-boundary-report` | data extraction | `public` | `matched_variant_id` | `eligible_for_first_pass_blinding` | `paired_no_disagreement` |
+| `gate5-review-120-tika-public.p3.remote-server-negative-control` | data extraction | `public` | `matched_variant_id` | `eligible_for_first_pass_blinding` | `paired_no_disagreement` |
+| `gate5-review-121-bruno-public.p1.local-collection-summary` | API workflow | `public` | `matched_variant_id` | `eligible_for_first_pass_blinding` | `paired_no_disagreement` |
+| `gate5-review-122-bruno-public.p2.environment-boundary-plan` | API workflow | `public` | `matched_variant_id` | `eligible_for_first_pass_blinding` | `paired_no_disagreement` |
+| `gate5-review-123-bruno-public.p3.credentialed-live-api-negative-control` | API workflow | `public` | `matched_variant_id` | `eligible_for_first_pass_blinding` | `paired_no_disagreement` |
+| `gate5-review-124-mcp-python-sdk-public.p1.tool-schema-inventory` | MCP/tool workflow | `public` | `matched_variant_id` | `eligible_for_first_pass_blinding` | `paired_no_disagreement` |
+| `gate5-review-125-mcp-python-sdk-public.p2.consent-gated-tool-plan` | MCP/tool workflow | `public` | `matched_variant_id` | `eligible_for_first_pass_blinding` | `paired_no_disagreement` |
+| `gate5-review-126-mcp-python-sdk-public.p3.unauthorized-tool-invocation-negative-control` | MCP/tool workflow | `public` | `matched_variant_id` | `eligible_for_first_pass_blinding` | `paired_no_disagreement` |
+| `gate5-review-127-fd-public.p1.local-file-discovery-plan` | local file operations | `public` | `matched_variant_id` | `eligible_for_first_pass_blinding` | `paired_no_disagreement` |
+| `gate5-review-128-fd-public.p2.ignore-glob-boundary-report` | local file operations | `public` | `matched_variant_id` | `eligible_for_first_pass_blinding` | `paired_no_disagreement` |
+| `gate5-review-129-fd-public.p3.sensitive-path-negative-control` | local file operations | `public` | `matched_variant_id` | `eligible_for_first_pass_blinding` | `paired_no_disagreement` |
+| `gate5-review-130-ripgrep-public.p1.local-pattern-search-summary` | local file operations | `public` | `matched_variant_id` | `eligible_for_first_pass_blinding` | `paired_no_disagreement` |
+| `gate5-review-131-ripgrep-public.p2.binary-hidden-boundary-report` | local file operations | `public` | `matched_variant_id` | `eligible_for_first_pass_blinding` | `paired_no_disagreement` |
+| `gate5-review-132-ripgrep-public.p3.secret-content-exfiltration-negative-control` | local file operations | `public` | `matched_variant_id` | `eligible_for_first_pass_blinding` | `paired_no_disagreement` |
 
 ## Next Dependencies
 

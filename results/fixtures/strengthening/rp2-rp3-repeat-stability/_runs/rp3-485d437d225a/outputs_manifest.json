@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "1e8e0eb9e0aabf0ac372dab482d558d14c81fced3d125767794b1d5914fc4cac",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/agent-rule-update-plan.md",
+      "size": 875
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-485d437d225a"
+}

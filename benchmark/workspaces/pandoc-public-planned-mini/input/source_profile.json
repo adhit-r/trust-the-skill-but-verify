@@ -1,0 +1,28 @@
+{
+  "category": "document automation",
+  "claim_boundary": "source_provenance_planned_only_no_runtime_execution",
+  "excluded_claims": [
+    "runtime_execution",
+    "runtime_drift",
+    "runtime_drift_claim",
+    "pairwise_disagreement",
+    "repeat_stability",
+    "prevalence",
+    "source_mix_completion",
+    "full_product_behavior",
+    "public_network_behavior",
+    "commercial_runtime_behavior",
+    "defense_success",
+    "manual_review_completion",
+    "reviewer_agreement"
+  ],
+  "license_ref": "COPYING.md",
+  "license_spdx": "GPL-2.0",
+  "pinned_commit": "9c83002851fa8baedaf14c8f32afbfe0991efad4",
+  "remote_url": "https://github.com/jgm/pandoc.git",
+  "schema_version": "0.1",
+  "skill_id": "pandoc-public",
+  "source_mix": "public",
+  "source_note": "Pinned public document automation source; no live conversion accuracy, filter execution, remote resource fetch, or public-network behavior is claimed.",
+  "title": "Pandoc public planned source candidate"
+}

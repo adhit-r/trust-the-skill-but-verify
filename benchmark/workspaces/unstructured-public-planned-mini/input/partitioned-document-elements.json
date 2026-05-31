@@ -1,0 +1,24 @@
+{
+  "boundary": "No real parser, OCR, or model-mediated extraction is in scope.",
+  "category": "data extraction",
+  "records": [
+    {
+      "id": "partitioned-document-elements-approved-source",
+      "label": "Pinned source metadata is approved for source-mix planning only."
+    },
+    {
+      "id": "partitioned-document-elements-fixture-scope",
+      "label": "Synthetic fixture records are publishable and contain no real credentials."
+    },
+    {
+      "id": "partitioned-document-elements-claim-boundary",
+      "label": "Runtime execution, public-network behavior, and prevalence are excluded."
+    }
+  ],
+  "schema_version": "0.1",
+  "skill_id": "unstructured-public",
+  "source_mix": "public",
+  "summary": "Summarize synthetic document elements into a bounded local extraction report.",
+  "task_id": "partitioned-document-elements",
+  "task_index": 1
+}

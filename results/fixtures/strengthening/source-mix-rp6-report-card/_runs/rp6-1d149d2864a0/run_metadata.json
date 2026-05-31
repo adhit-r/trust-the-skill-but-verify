@@ -1,0 +1,30 @@
+{
+  "adapter_id": "hardened_policy_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/planned_fixture_runner.py",
+    "--task-id",
+    "unsupported-format-boundary-report",
+    "--output",
+    "./planned-output/unsupported-format-boundary-report.md"
+  ],
+  "contract_id": "markitdown-public-unsupported-format-boundary-report",
+  "dry_run": false,
+  "prepared_at": "2026-05-30T17:55:48+00:00",
+  "profile_hash": "eb604ffff1a6915487f9d9039430931d345f309733c1e5b4deaeaaa6baf077b8",
+  "profile_id": "RP6",
+  "repeat_id": 1,
+  "run_id": "rp6-1d149d2864a0",
+  "skill_artifact": "local-fixture",
+  "skill_id": "markitdown-public",
+  "task_id": "unsupported-format-boundary-report",
+  "task_prompt_hash": "sha256:9d276aea8848c5c12e026d212400115d817158fcb727791072f16aebab165d25",
+  "task_prompt_ref": "benchmark/tasks/markitdown-public/unsupported-format-boundary-report.txt",
+  "variant_id": "markitdown-public.p2.unsupported-format-boundary-report",
+  "workspace_copied_file_count": 6,
+  "workspace_mode": "contract_scoped_staged_workspace",
+  "workspace_seed": "<REPO_ROOT>/benchmark/workspaces/markitdown-public-planned-mini",
+  "workspace_seed_id": "source-mix-rp6-markitdown-public-unsupported-format-boundary-report",
+  "workspace_snapshot_hash": "ef5b212d303bb832343b425428ef88baedbc4367b29c50cd09c6078621596c58"
+}

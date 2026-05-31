@@ -10,6 +10,8 @@ import sys
 from pathlib import Path
 from typing import Any
 
+from repeat_hygiene import add_repeat_id_argument, repeat_seed, repeat_stem
+
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 PYTHON = sys.executable
@@ -190,7 +192,7 @@ def run_text(args: list[str]) -> None:
     print(completed.stdout, end="")
 
 
-def run_case(case: dict[str, Any]) -> dict[str, Any]:
+def run_case(case: dict[str, Any], repeat_id: int) -> dict[str, Any]:
     family = case["family"]
     case_id = case["case_id"]
     contract = REPO_ROOT / case["contract"]
@@ -207,13 +209,13 @@ def run_case(case: dict[str, Any]) -> dict[str, Any]:
             "--workspace",
             str(workspace),
             "--workspace-seed-id",
-            f"{family}-{case_id}-rp6-policy-hardened",
+            repeat_seed(f"{family}-{case_id}-rp6-policy-hardened", repeat_id),
             "--variant-id",
             case["variant_id"],
             "--output-root",
             str(REPO_ROOT / "results" / "raw"),
             "--repeat-id",
-            "1",
+            str(repeat_id),
             "--live",
             "--command",
             *case["command"],
@@ -221,7 +223,8 @@ def run_case(case: dict[str, Any]) -> dict[str, Any]:
     )
     family_dir = OUT_ROOT / family
     family_dir.mkdir(parents=True, exist_ok=True)
-    rp6_findings = family_dir / f"{case_id}_rp6_contract_findings.json"
+    stem = repeat_stem(f"{case_id}_rp6", repeat_id)
+    rp6_findings = family_dir / f"{stem}_contract_findings.json"
     run_text(
         [
             PYTHON,
@@ -233,11 +236,11 @@ def run_case(case: dict[str, Any]) -> dict[str, Any]:
             "--out-json",
             str(rp6_findings),
             "--out-md",
-            str(family_dir / f"{case_id}_rp6_contract_report.md"),
+            str(family_dir / f"{stem}_contract_report.md"),
         ]
     )
     annotate_rp6_findings(rp6_findings)
-    compare_case(case, rp6_findings)
+    compare_case(case, rp6_findings, repeat_id)
     findings = json.loads(rp6_findings.read_text(encoding="utf-8"))
     return {
         "adapter_outcome": result["adapter_outcome"],
@@ -264,13 +267,13 @@ def annotate_rp6_findings(path: Path) -> None:
     path.write_text(json.dumps(findings, indent=2, sort_keys=True) + "\n", encoding="utf-8")
 
 
-def compare_case(case: dict[str, Any], rp6_findings: Path) -> None:
+def compare_case(case: dict[str, Any], rp6_findings: Path, repeat_id: int) -> None:
     family_dir = OUT_ROOT / case["family"]
     baseline_dir = REPO_ROOT / "results" / "mvp" / case["family"]
     case_id = case["case_id"]
     rp2 = baseline_dir / f"{case_id}_contract_findings.json"
     rp3 = baseline_dir / f"{case_id}_rp3_contract_findings.json"
-    out_prefix = family_dir / f"{case_id}_rp2_rp3_rp6_comparison"
+    out_prefix = family_dir / repeat_stem(f"{case_id}_rp2_rp3_rp6_comparison", repeat_id)
     run_text(
         [
             PYTHON,
@@ -286,7 +289,7 @@ def compare_case(case: dict[str, Any], rp6_findings: Path) -> None:
     )
 
 
-def run_network_policy_probe() -> dict[str, Any]:
+def run_network_policy_probe(repeat_id: int) -> dict[str, Any]:
     family_dir = OUT_ROOT / "network-egress"
     family_dir.mkdir(parents=True, exist_ok=True)
     contract = REPO_ROOT / "contracts/network-egress-executable-smoke.yaml"
@@ -303,13 +306,13 @@ def run_network_policy_probe() -> dict[str, Any]:
             "--workspace",
             str(workspace),
             "--workspace-seed-id",
-            "network-egress-rp6-network-policy-probe",
+            repeat_seed("network-egress-rp6-network-policy-probe", repeat_id),
             "--variant-id",
             "network-egress-smoke.rp6-network-policy-probe",
             "--output-root",
             str(OUT_ROOT / "_probe_runs"),
             "--repeat-id",
-            "1",
+            str(repeat_id),
             "--live",
             "--command",
             "python3",
@@ -317,7 +320,8 @@ def run_network_policy_probe() -> dict[str, Any]:
             NETWORK_POLICY_PROBE_SCRIPT,
         ]
     )
-    probe_findings = family_dir / "network_policy_probe_rp6_contract_findings.json"
+    probe_stem = repeat_stem("network_policy_probe_rp6", repeat_id)
+    probe_findings = family_dir / f"{probe_stem}_contract_findings.json"
     run_text(
         [
             PYTHON,
@@ -329,7 +333,7 @@ def run_network_policy_probe() -> dict[str, Any]:
             "--out-json",
             str(probe_findings),
             "--out-md",
-            str(family_dir / "network_policy_probe_rp6_contract_report.md"),
+            str(family_dir / f"{probe_stem}_contract_report.md"),
         ]
     )
     annotate_rp6_findings(probe_findings)
@@ -349,9 +353,9 @@ def run_network_policy_probe() -> dict[str, Any]:
     }
 
 
-def write_reports(rows: list[dict[str, Any]]) -> None:
+def write_reports(rows: list[dict[str, Any]], repeat_id: int) -> None:
     OUT_ROOT.mkdir(parents=True, exist_ok=True)
-    policy_probes = [run_network_policy_probe()]
+    policy_probes = [run_network_policy_probe(repeat_id)]
     aggregate = {
         "case_count": len(rows),
         "families": sorted({row["family"] for row in rows}),
@@ -467,9 +471,10 @@ def display_path(path: Path) -> str:
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Run the RP6 policy-hardened current-case report card")
-    parser.parse_args(argv)
-    rows = [run_case(case) for case in CASES]
-    write_reports(rows)
+    add_repeat_id_argument(parser)
+    args = parser.parse_args(argv)
+    rows = [run_case(case, args.repeat_id) for case in CASES]
+    write_reports(rows, args.repeat_id)
     print(OUT_ROOT / "report_card.json")
     return 0
 

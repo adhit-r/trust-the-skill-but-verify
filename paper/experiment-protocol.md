@@ -122,10 +122,11 @@ Exclusion rules:
 | --- | --- | --- |
 | Current baseline evidence | 5 case families, 28 paper-facing canonical traces, RP2/RP3 only | Feasibility and method evidence |
 | Current controlled executable extension | 2 additional synthetic fixture families, 12 RP2/RP3 traces, and 6 comparison artifacts for data extraction and local file operations | Bounded fixture evidence only; no live SaaS/database/filesystem-sandbox, archive-tool, destructive-cleanup, prevalence, or runtime-drift finding claim |
-| Current controlled fixture inventory | 20 skills and 60 skill-task-contract triples after promoting the planned inclusion entries; skill-origin source mix is 1 first-party, 1 public, and 18 synthetic skills | Controlled single-repeat RP2/RP3 fixture evidence only; source-mix gaps are computed but no source-mix completion, repeat stability, prevalence, live product, public-network, commercial-runtime, defense-success, or 40/120 completion claim |
-| Current Gate 5 descriptive denominator | Frozen inclusion table over 60 current cases and 22 raw inventory/coverage rate records | Descriptive denominator and rate evidence only; no completed statistics, intervals, hypothesis tests, reviewer agreement, prevalence, source-mix completion, or paper-grade completion claim |
-| Current planned-entry promotion | 44 formerly planned entries, 88 RP2/RP3 traces, and 44 comparison artifacts | Denominator and contract-check coverage only; generic-runner cases do not establish skill-specific product behavior or runtime-drift findings |
-| Planned-inclusion deterministic repeat stability | 44 controlled planned-inclusion fixtures, repeat IDs 1-3, 264 RP2/RP3 observations, and 132 same-repeat RP2/RP3 pairs | Bounded deterministic fixture-stability evidence only; no completed statistics, reviewer agreement, prevalence, live product, public-network, commercial-runtime, or defense-success claim |
+| Current controlled fixture and planned source inventory | 44 skills and 132 skill-task-contract triples after adding 24 planned first-party/public source-provenance families; skill-origin source mix is 9 first-party, 17 public, and 18 synthetic skills | Controlled single-repeat RP2/RP3 fixture evidence exists for 72 selected source-mix cases across 24 first-party/public families, with zero current source-mix metadata-only cases; 74 first-party/public source-mix cases across 26 families also have bounded RP6 mitigation/report-card evidence; this is bounded fixture/report-card evidence only, with no source-mix evidence completion, prevalence, live product, public-network, commercial-runtime, defense-success, runtime-drift, or paper-grade 40/120 execution-completion claim |
+| Current Gate 5 descriptive denominator | Frozen inclusion table over 132 current cases and 22 raw inventory/coverage rate records | Descriptive denominator and rate evidence only; no completed statistics, intervals, hypothesis tests, reviewer agreement, prevalence, source-mix evidence completion, or paper-grade completion claim |
+| Current Gate 5 non-human intervals | 36 Wilson intervals, 18 case-bootstrap intervals, 6 hierarchical-bootstrap intervals, and 214 paired-runtime records | Machine-only interval evidence over the curated Gate 5 denominator; no completed human review, reviewer agreement, adjudication, McNemar-style hypothesis test, prevalence, source-mix evidence completion, or paper-grade completion claim |
+| Current planned-entry promotion | 116 formerly planned entries, 232 RP2/RP3 traces, and 116 comparison artifacts | Denominator and contract-check coverage only; generic-runner cases do not establish skill-specific product behavior, source-mix evidence completion, or runtime-drift findings |
+| Planned-inclusion deterministic repeat stability | 116 controlled planned-inclusion fixtures, repeat IDs 1-3, 696 RP2/RP3 observations, and 348 same-repeat RP2/RP3 pairs | Bounded deterministic fixture-stability evidence only; no completed statistics, reviewer agreement, prevalence, live product, public-network, commercial-runtime, or defense-success claim |
 | Full-paper evidence floor | At least 40 skills and 120 skill-task-contract triples before repeats, across at least four runtime profiles or an equivalent-depth full-paper scope | Quantitative claims by category and runtime pair |
 | Full benchmark stretch | 60 base skills, 60 adversarial variants, 3-5 tasks per skill, 4-6 runtime profiles | Strong systems-security benchmark contribution |
 
@@ -145,8 +146,8 @@ For deterministic controlled Python fixtures:
   bounded fixture-stability result, not prevalence, statistical, or
   model-mediated stability evidence.
 - Current planned-inclusion RP2/RP3 repeat-stability evidence meets this
-  deterministic threshold for the 44 controlled planned-inclusion fixtures:
-  repeat IDs 1, 2, and 3 produce 264 trace-valid observations and 132
+  deterministic threshold for the 116 controlled planned-inclusion fixtures:
+  repeat IDs 1, 2, and 3 produce 696 trace-valid observations and 348
   same-repeat RP2/RP3 pairs with matching outcome summaries. This remains
   bounded deterministic fixture-stability evidence and is not a completed
   statistical analysis or reviewer-adjudication result.

@@ -990,6 +990,8 @@ def _infer_sink_type(target: str) -> str:
         return "local_html"
     if target.endswith(".json"):
         return "local_json"
+    if target.endswith(".md"):
+        return "local_report"
     if "report" in target or "audit" in target:
         return "local_report"
     return "output_tree"

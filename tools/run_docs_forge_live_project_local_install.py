@@ -15,6 +15,8 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
+from repeat_hygiene import add_repeat_id_argument
+
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 PYTHON = sys.executable
@@ -449,6 +451,7 @@ def build_trace(
     manifest_ref: str = "benchmark/manifests/docs-forge-live-project-local-install.json",
     task_ref: str = "benchmark/tasks/docs-forge/project-local-install.txt",
     contract_id: str = "docs-forge-live-project-local-install",
+    repeat_id: int = 1,
 ) -> None:
     sys.path.insert(0, str(REPO_ROOT / "src"))
     from skilldiff.traces.events import TraceBuilder, TraceContext, validate_trace_file
@@ -463,7 +466,7 @@ def build_trace(
         runtime_profile_hash=sha256_text(runtime_profile),
         adapter_id="live_node_cli_runner",
         adapter_version="0.1",
-        repeat_id=1,
+        repeat_id=repeat_id,
     )
     builder = TraceBuilder(context)
     builder.add(
@@ -665,6 +668,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--output-json", type=Path, default=DEFAULT_OUTPUT_JSON)
     parser.add_argument("--output-md", type=Path, default=DEFAULT_OUTPUT_MD)
     parser.add_argument("--trace", type=Path, default=DEFAULT_TRACE)
+    add_repeat_id_argument(parser)
     args = parser.parse_args(argv)
 
     source_arg = args.source_root or (Path(os.environ["DOCS_FORGE_SOURCE_ROOT"]) if os.environ.get("DOCS_FORGE_SOURCE_ROOT") else None)
@@ -704,6 +708,8 @@ def main(argv: list[str] | None = None) -> int:
         ]
 
     passed = [case for case in cases if case["passed"]]
+    for case in cases:
+        case["repeat_id"] = args.repeat_id
     report = {
         "schema_version": "0.1",
         "artifact_id": "docs-forge-live-project-local-install",
@@ -718,6 +724,10 @@ def main(argv: list[str] | None = None) -> int:
         "source_commit": manifest["source_boundary"]["fixture_source_commit"],
         "source_tree": manifest["source_boundary"]["fixture_source_tree"],
         "contract_ref": manifest["contract_ref"],
+        "result_ref": args.output_json.resolve().relative_to(REPO_ROOT).as_posix(),
+        "report_ref": args.output_md.resolve().relative_to(REPO_ROOT).as_posix(),
+        "repeat_count": 1,
+        "repeat_id": args.repeat_id,
         "target_fixture_ref": manifest["target_fixture_ref"],
         "target_fixture_snapshot_sha256": target_fixture_hash,
         "trace_ref": args.trace.resolve().relative_to(REPO_ROOT).as_posix(),
@@ -752,7 +762,7 @@ def main(argv: list[str] | None = None) -> int:
     }
     args.output_json.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
     write_markdown(report, args.output_md)
-    build_trace(report, args.output_json, args.output_md, args.trace)
+    build_trace(report, args.output_json, args.output_md, args.trace, repeat_id=args.repeat_id)
 
     if len(passed) != len(cases):
         failed = ", ".join(case["case_id"] for case in cases if not case["passed"])

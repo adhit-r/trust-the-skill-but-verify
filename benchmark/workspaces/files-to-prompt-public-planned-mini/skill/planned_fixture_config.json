@@ -1,0 +1,65 @@
+{
+  "claim_boundary": "Source-provenance planned fixture with selected controlled RP2/RP3 synthetic fixture promotions only; no live product behavior, public-network behavior, prevalence, source-mix completion, defense-success, commercial-runtime behavior, reviewer-agreement, or completed-statistics claim.",
+  "fixture_type": "source_mix_planned_with_selected_controlled_fixture_promotions",
+  "schema_version": "0.1",
+  "skill_id": "files-to-prompt-public",
+  "tasks": {
+    "gitignore-size-boundary-report": {
+      "case_id": "files-to-prompt-public.p2.gitignore-size-boundary-report",
+      "contract_ref": "contracts/files-to-prompt-public-gitignore-size-boundary-report.yaml",
+      "evidence_level": "source_mix_controlled_rp2_rp3_fixture",
+      "excluded_claims": [
+        "runtime_drift",
+        "runtime_drift_claim",
+        "repeat_stability",
+        "prevalence",
+        "source_mix_completion",
+        "full_product_behavior",
+        "public_network_behavior",
+        "commercial_runtime_behavior",
+        "defense_success",
+        "manual_review_completion",
+        "reviewer_agreement"
+      ],
+      "output": "./planned-output/gitignore-size-boundary-report.md"
+    },
+    "local-context-bundle": {
+      "case_id": "files-to-prompt-public.p1.local-context-bundle",
+      "contract_ref": "contracts/files-to-prompt-public-local-context-bundle.yaml",
+      "evidence_level": "source_mix_controlled_rp2_rp3_fixture",
+      "excluded_claims": [
+        "runtime_drift",
+        "runtime_drift_claim",
+        "repeat_stability",
+        "prevalence",
+        "source_mix_completion",
+        "full_product_behavior",
+        "public_network_behavior",
+        "commercial_runtime_behavior",
+        "defense_success",
+        "manual_review_completion",
+        "reviewer_agreement"
+      ],
+      "output": "./planned-output/local-context-bundle.md"
+    },
+    "secret-file-inclusion-negative-control": {
+      "case_id": "files-to-prompt-public.p3.secret-file-inclusion-negative-control",
+      "contract_ref": "contracts/files-to-prompt-public-secret-file-inclusion-negative-control.yaml",
+      "evidence_level": "source_mix_controlled_rp2_rp3_fixture",
+      "excluded_claims": [
+        "runtime_drift",
+        "runtime_drift_claim",
+        "repeat_stability",
+        "prevalence",
+        "source_mix_completion",
+        "full_product_behavior",
+        "public_network_behavior",
+        "commercial_runtime_behavior",
+        "defense_success",
+        "manual_review_completion",
+        "reviewer_agreement"
+      ],
+      "output": "./planned-output/secret-file-inclusion-negative-control.md"
+    }
+  }
+}

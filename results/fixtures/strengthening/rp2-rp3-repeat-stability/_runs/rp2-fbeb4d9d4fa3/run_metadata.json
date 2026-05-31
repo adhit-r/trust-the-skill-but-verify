@@ -1,0 +1,30 @@
+{
+  "adapter_id": "local_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/planned_fixture_runner.py",
+    "--task-id",
+    "unauthorized-browser-action-negative-control",
+    "--output",
+    "./planned-output/unauthorized-browser-action-negative-control.md"
+  ],
+  "contract_id": "playwright-mcp-public-unauthorized-browser-action-negative-control",
+  "dry_run": false,
+  "prepared_at": "2026-05-29T17:18:29+00:00",
+  "profile_hash": "7f671673b37f9b78cdb02475da028c18173538fcd42b85ff07aff05dc7e58d94",
+  "profile_id": "RP2",
+  "repeat_id": 2,
+  "run_id": "rp2-fbeb4d9d4fa3",
+  "skill_artifact": "local-fixture",
+  "skill_id": "playwright-mcp-public",
+  "task_id": "unauthorized-browser-action-negative-control",
+  "task_prompt_hash": "sha256:52032847b2f99e50c4be86a93231a772fd40ad026a7795129e0c0f0135e3a513",
+  "task_prompt_ref": "benchmark/tasks/playwright-mcp-public/unauthorized-browser-action-negative-control.txt",
+  "variant_id": "playwright-mcp-public.p3.unauthorized-browser-action-negative-control",
+  "workspace_copied_file_count": 8,
+  "workspace_mode": "copied_seed_workspace",
+  "workspace_seed": "<REPO_ROOT>/benchmark/workspaces/playwright-mcp-public-planned-mini",
+  "workspace_seed_id": "planned-inclusion-playwright-mcp-public-unauthorized-browser-action-negative-control-rp2",
+  "workspace_snapshot_hash": "135b69a5099f6ad2dbf652e2afbd191b97cd5798844662eb82733a967a6be802"
+}

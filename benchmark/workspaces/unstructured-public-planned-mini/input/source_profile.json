@@ -1,0 +1,28 @@
+{
+  "category": "data extraction",
+  "claim_boundary": "source_provenance_planned_only_no_runtime_execution",
+  "excluded_claims": [
+    "runtime_execution",
+    "runtime_drift",
+    "runtime_drift_claim",
+    "pairwise_disagreement",
+    "repeat_stability",
+    "prevalence",
+    "source_mix_completion",
+    "full_product_behavior",
+    "public_network_behavior",
+    "commercial_runtime_behavior",
+    "defense_success",
+    "manual_review_completion",
+    "reviewer_agreement"
+  ],
+  "license_ref": "LICENSE.md",
+  "license_spdx": "Apache-2.0",
+  "pinned_commit": "7c8f6752b5aafeaee940b2c3cf9fccb22531d407",
+  "remote_url": "https://github.com/Unstructured-IO/unstructured",
+  "schema_version": "0.1",
+  "skill_id": "unstructured-public",
+  "source_mix": "public",
+  "source_note": "Pinned public data-extraction source; no OCR, model, extraction-quality, or sensitive-data handling claim is made.",
+  "title": "Unstructured public planned source candidate"
+}

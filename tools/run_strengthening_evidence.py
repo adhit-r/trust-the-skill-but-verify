@@ -19,6 +19,7 @@ TOOLS_ROOT = REPO_ROOT / "tools"
 sys.path.insert(0, str(TOOLS_ROOT))
 
 import run_rp6_policy_hardened_mvp as rp6_runner  # noqa: E402
+from repeat_hygiene import add_repeat_id_argument, repeat_seed, repeat_stem  # noqa: E402
 import strengthening_baselines  # noqa: E402
 
 
@@ -30,8 +31,9 @@ RP6_REPORT_CARD = REPO_ROOT / "results" / "fixtures" / "rp6-policy-hardened" / "
 RP6_ABLATION_ROOT = REPO_ROOT / "results" / "fixtures" / "rp6-policy-hardened" / "ablations"
 COMPONENT_ABLATION_RUN_ROOT = RP6_ABLATION_ROOT / "_component_runs"
 COMPONENT_ABLATION_INPUT_ROOT = RP6_ABLATION_ROOT / "_component_inputs"
+BASELINE_REPEAT_ID = "1"
 GENERATED_REPEAT_IDS = ("2", "3")
-STABILITY_REPEAT_IDS = ("1", *GENERATED_REPEAT_IDS)
+STABILITY_REPEAT_IDS = (BASELINE_REPEAT_ID, *GENERATED_REPEAT_IDS)
 MINIMAL_ABLATION_CASES = {
     ("repo-audit", "benign"),
     ("repo-audit", "adversarial"),
@@ -663,6 +665,7 @@ def run_component_ablation_case(
     profile_path: Path,
     ref: dict[str, Any],
     rp6_cases: dict[tuple[str, str], dict[str, Any]],
+    repeat_id: int,
 ) -> dict[str, Any]:
     case = component_case_spec(ref)
     baseline = component_baseline_row(ref, rp6_cases)
@@ -683,13 +686,13 @@ def run_component_ablation_case(
             "--workspace",
             str(workspace),
             "--workspace-seed-id",
-            f"{family}-{case_id}-rp6-component-ablation-{component_id}",
+            repeat_seed(f"{family}-{case_id}-rp6-component-ablation-{component_id}", repeat_id),
             "--variant-id",
             variant_id,
             "--output-root",
             str(COMPONENT_ABLATION_RUN_ROOT),
             "--repeat-id",
-            "1",
+            str(repeat_id),
             "--live",
             "--command",
             *case["command"],
@@ -698,7 +701,8 @@ def run_component_ablation_case(
     component_dir = RP6_ABLATION_ROOT / "components" / component_id
     component_dir.mkdir(parents=True, exist_ok=True)
     safe_case_id = case_id.replace("/", "_")
-    findings_path = component_dir / f"{family}_{safe_case_id}_component_findings.json"
+    stem = repeat_stem(f"{family}_{safe_case_id}_component", repeat_id)
+    findings_path = component_dir / f"{stem}_findings.json"
     run_text(
         [
             PYTHON,
@@ -710,7 +714,7 @@ def run_component_ablation_case(
             "--out-json",
             str(findings_path),
             "--out-md",
-            str(component_dir / f"{family}_{safe_case_id}_component_report.md"),
+            str(component_dir / f"{stem}_report.md"),
         ]
     )
     findings = annotate_component_findings(
@@ -783,7 +787,7 @@ def component_aggregate(rows: list[dict[str, Any]], components: list[dict[str, A
     }
 
 
-def generate_component_ablation_report() -> dict[str, Any]:
+def generate_component_ablation_report(repeat_id: int) -> dict[str, Any]:
     if COMPONENT_ABLATION_RUN_ROOT.exists():
         shutil.rmtree(COMPONENT_ABLATION_RUN_ROOT)
     if COMPONENT_ABLATION_INPUT_ROOT.exists():
@@ -806,6 +810,7 @@ def generate_component_ablation_report() -> dict[str, Any]:
                 profile_path=profile_path,
                 ref=ref,
                 rp6_cases=rp6_cases,
+                repeat_id=repeat_id,
             )
             for ref in component["cases"]
         ]
@@ -1016,7 +1021,7 @@ def generate_repeat_stability() -> dict[str, Any]:
         first_case = rp6_cases[(family, case_id)]
         observations = [
             build_repeat_observation(
-                repeat_id="1",
+                repeat_id=BASELINE_REPEAT_ID,
                 source="rp6_report_card",
                 findings_path=first_case["findings_path"],
                 trace_path=first_case["trace_path"],
@@ -1189,6 +1194,7 @@ def main(argv: list[str] | None = None) -> int:
         action="store_true",
         help="Regenerate only static/reachability/action-boundary baselines and refresh the index.",
     )
+    add_repeat_id_argument(parser)
     args = parser.parse_args(argv)
     OUT_ROOT.mkdir(parents=True, exist_ok=True)
     static_scanner = generate_static_scanner_baseline()
@@ -1219,7 +1225,7 @@ def main(argv: list[str] | None = None) -> int:
     least_privilege = generate_least_privilege_baseline()
     mitigation_ladder = generate_mitigation_ladder()
     minimal_ablation = generate_minimal_ablation_matrix()
-    component_ablation = generate_component_ablation_report()
+    component_ablation = generate_component_ablation_report(args.repeat_id)
     repeat_stability = generate_repeat_stability()
     write_index(
         {

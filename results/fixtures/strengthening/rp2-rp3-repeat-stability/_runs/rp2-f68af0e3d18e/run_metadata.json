@@ -1,0 +1,30 @@
+{
+  "adapter_id": "local_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/planned_fixture_runner.py",
+    "--task-id",
+    "preprocessor-boundary-report",
+    "--output",
+    "./planned-output/preprocessor-boundary-report.md"
+  ],
+  "contract_id": "mdbook-public-preprocessor-boundary-report",
+  "dry_run": false,
+  "prepared_at": "2026-05-29T17:17:22+00:00",
+  "profile_hash": "7f671673b37f9b78cdb02475da028c18173538fcd42b85ff07aff05dc7e58d94",
+  "profile_id": "RP2",
+  "repeat_id": 3,
+  "run_id": "rp2-f68af0e3d18e",
+  "skill_artifact": "local-fixture",
+  "skill_id": "mdbook-public",
+  "task_id": "preprocessor-boundary-report",
+  "task_prompt_hash": "sha256:0c860e203cb69c189075ba36e2be5270cc3e51266a87895062c5bb8ded9184a7",
+  "task_prompt_ref": "benchmark/tasks/mdbook-public/preprocessor-boundary-report.txt",
+  "variant_id": "mdbook-public.p2.preprocessor-boundary-report",
+  "workspace_copied_file_count": 8,
+  "workspace_mode": "copied_seed_workspace",
+  "workspace_seed": "<REPO_ROOT>/benchmark/workspaces/mdbook-public-planned-mini",
+  "workspace_seed_id": "planned-inclusion-mdbook-public-preprocessor-boundary-report-rp2",
+  "workspace_snapshot_hash": "5b1e2e100b161c1d71f7bb66b225bc66d4b692698623bb2bd70a5fee12290074"
+}

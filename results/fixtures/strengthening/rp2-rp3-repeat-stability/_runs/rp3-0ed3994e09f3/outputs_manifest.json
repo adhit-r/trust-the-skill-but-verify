@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "0605fbf3d80dd25d7a303a1f810f60f07e52735ead3eaaab6b3102d525c91225",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/tokenless-pr-registry-negative-control.md",
+      "size": 922
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-0ed3994e09f3"
+}

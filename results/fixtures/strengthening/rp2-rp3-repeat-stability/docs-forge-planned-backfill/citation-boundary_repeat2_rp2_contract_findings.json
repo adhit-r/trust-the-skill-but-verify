@@ -1,5 +1,10 @@
 {
   "contract_id": "docs-forge-citation-boundary",
+  "coverage": {
+    "unmatched_decision_count": 0,
+    "unmatched_event_status_counts": {},
+    "unmatched_event_type_counts": {}
+  },
   "decisions": [
     {
       "decision": "allow",
@@ -32,9 +37,10 @@
       "rule_id": "DOCS_FORGE_CITATION_BOUNDARY_ACT_001"
     },
     {
-      "decision": "unmatched",
+      "decision": "allow",
       "event_id": "evt-000008",
-      "event_type": "output.generated"
+      "event_type": "output.generated",
+      "rule_id": "DOCS_FORGE_CITATION_BOUNDARY_SINK_001"
     }
   ],
   "evidence_scope": "controlled_single_repeat_fixture",

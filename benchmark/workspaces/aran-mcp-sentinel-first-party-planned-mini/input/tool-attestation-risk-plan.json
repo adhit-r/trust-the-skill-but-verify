@@ -1,0 +1,24 @@
+{
+  "boundary": "No deployed monitoring or attestation service behavior is in scope.",
+  "category": "MCP/tool workflow",
+  "records": [
+    {
+      "id": "tool-attestation-risk-plan-approved-source",
+      "label": "Pinned source metadata is approved for source-mix planning only."
+    },
+    {
+      "id": "tool-attestation-risk-plan-fixture-scope",
+      "label": "Synthetic fixture records are publishable and contain no real credentials."
+    },
+    {
+      "id": "tool-attestation-risk-plan-claim-boundary",
+      "label": "Runtime execution, public-network behavior, and prevalence are excluded."
+    }
+  ],
+  "schema_version": "0.1",
+  "skill_id": "aran-mcp-sentinel-first-party",
+  "source_mix": "first_party",
+  "summary": "Classify synthetic tool-attestation risks and produce a bounded mitigation plan.",
+  "task_id": "tool-attestation-risk-plan",
+  "task_index": 2
+}

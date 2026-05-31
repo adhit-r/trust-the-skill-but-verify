@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "4f4e02174a5007059af0c7f21682aaa12dacab3f142b1d4a7fe049f4b65a2bca",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/secret-file-inclusion-negative-control.md",
+      "size": 854
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-6b8fba900721"
+}

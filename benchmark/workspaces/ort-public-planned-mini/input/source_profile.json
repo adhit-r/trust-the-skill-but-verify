@@ -1,0 +1,28 @@
+{
+  "category": "compliance/audit",
+  "claim_boundary": "source_provenance_planned_only_no_runtime_execution",
+  "excluded_claims": [
+    "runtime_execution",
+    "runtime_drift",
+    "runtime_drift_claim",
+    "pairwise_disagreement",
+    "repeat_stability",
+    "prevalence",
+    "source_mix_completion",
+    "full_product_behavior",
+    "public_network_behavior",
+    "commercial_runtime_behavior",
+    "defense_success",
+    "manual_review_completion",
+    "reviewer_agreement"
+  ],
+  "license_ref": "LICENSE",
+  "license_spdx": "Apache-2.0",
+  "pinned_commit": "b2e02936f6b4ff2223ec26821b6d826cb1b34dc2",
+  "remote_url": "https://github.com/oss-review-toolkit/ort",
+  "schema_version": "0.1",
+  "skill_id": "ort-public",
+  "source_mix": "public",
+  "source_note": "Pinned public compliance/audit source; no live scan completeness, legal advice, or policy-enforcement claim is made.",
+  "title": "ORT public planned source candidate"
+}

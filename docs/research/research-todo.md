@@ -28,49 +28,82 @@ separately under S4.3 and is intentionally excluded from this snapshot.
    GitHub `make verify` passed on `codex/gate5-review-infra` in PR #1 on
    2026-05-26; local clean-checkout verification and GitGuardian had already
    passed.
-2. [ ] Scale from 20 skills / 60 triples to 40 skills / 120 triples.
-   Add 20 more promoted skills and 60 more tracked skill-task-contract triples
-   before repeats. Keep the no-prevalence and no-source-mix-completion
-   boundary until the manifest and scale-gap report support those claims.
-3. [ ] Fix the source-mix weakness before calling the benchmark full-paper
-   credible.
-   Current mix is 1 first-party, 1 public, and 18 synthetic skills. The
-   full-paper source-mix gap is 8 first-party and 16 public skills; synthetic
-   coverage should not grow faster than real first-party/public coverage.
-4. [ ] Finish repeat and statistics infrastructure beyond the bounded fixture
+2. [x] Scale past the 40 skills / 120 triples manifest floor.
+   The planned 24-family source-mix expansion is now in the manifest, moving
+   the inventory to 44 skills and 132 tracked skill-task-contract triples.
+   Treat this as manifest/source-provenance accounting for the new entries.
+   Seventy-two selected source-mix cases now have controlled RP2/RP3 fixture
+   evidence across twenty-four first-party/public families, and the current
+   source-mix metadata-only count is zero. Seventy-four first-party/public
+   source-mix cases across twenty-six families also have bounded RP6
+   mitigation/report-card evidence and three-repeat deterministic
+   source-mix RP6 stability evidence. Paper-grade completion still requires
+   adjudication evidence and safe task-specific real-run adapters where
+   appropriate. Current bounded partial-real slice:
+   `results/live/ripgrep-public-local-binary/live_local_binary_search_result.json`
+   (local real ripgrep binary over synthetic allowlisted workspace only).
+3. [x] Keep the source-mix gap explicit before calling the benchmark
+   full-paper credible.
+   Current post-expansion mix is 9 first-party, 17 public, and 18 synthetic
+   skills. That closes the full-paper source-mix minimum gap in manifest
+   accounting only; bounded source-mix RP6 report-card evidence and
+   repeat-backed deterministic source-mix RP6 evidence now exist, but
+   source-mix evidence completion remains blocked until adjudication evidence
+   and safe task-specific real-run adapters exist.
+4. [x] Finish repeat and statistics infrastructure beyond the bounded fixture
    slices.
    Current main RP2/RP3 controlled fixtures now have a bounded deterministic
    repeat-stability artifact with 13 cases, 78 trace-valid observations, and
-   39 same-repeat RP2/RP3 pairs. Remaining work: add repeat support to the
-   remaining profile-specific runners, run five repeats for nondeterministic
-   or model-mediated cases, report max severity beside majority/median
-   outcomes, and add Wilson, bootstrap, hierarchical bootstrap, and
-   McNemar-style paired analysis only where sample size supports them.
-5. [ ] Promote runtime report cards and evidence-boundary tables into the
+   39 same-repeat RP2/RP3 pairs. First-party/public source-mix RP6
+   report-card fixtures now have a bounded deterministic repeat-stability
+   artifact with 74 cases and 222 trace-valid observations. The Gate 5
+   machine-only interval artifact reports Wilson, case-bootstrap, and
+   hierarchical-bootstrap intervals, plus max severity beside majority/median
+   paired-runtime behavior. Current model-mediated/nondeterministic benchmark
+   case count is zero; future admitted cases remain blocked until five-repeat
+   evidence exists. McNemar-style paired analysis remains blocked until binary
+   matched outcome labels support it. Current guardrails:
+   `tools/validate_repeat_coverage.py` validates the repeat-backed buckets,
+   and `tools/validate_runner_repeat_hygiene.py` blocks runner wrappers that
+   collapse future runs back to repeat ID 1.
+5. [x] Promote runtime report cards and evidence-boundary tables into the
    manuscript.
-   Add a paper table that separates current evidence, promoted evidence, and
-   future work, while keeping simulator, fixture, bounded-live, and source-only
-   evidence labels visible.
-6. [ ] Rewrite the manuscript introduction around the invariant.
-   The introduction should state: fixed skill, task, contract, workspace,
-   prompt, variant, and repeat; varied runtime profile; measured conformance
-   changes.
-7. [ ] Add the core paper figures.
-   Required figures: architecture, trace lifecycle, runtime matrix, drift
-   outcomes, runtime report cards, and artifact flow.
-8. [ ] Refresh related work with current primary sources before any
+   Current artifact: `paper/tables/evidence-boundary-matrix.md`; it separates
+   current evidence, promoted bounded evidence, review-ready scaffolds, and
+   future work, while keeping simulator, fixture, source-only, report-card,
+   repeat, machine-only interval, and human-review boundaries visible.
+6. [x] Rewrite the manuscript introduction around the invariant.
+   Current artifact: `paper/introduction-skeleton.md`; it now states the
+   fixed skill, task, contract, workspace snapshot, prompt, variant, and repeat
+   invariant; identifies runtime profile as the variable; and keeps measured
+   conformance changes separate from prevalence, commercial-runtime,
+   public-internet, defense-success, and completed-human-review claims.
+7. [x] Add the core paper figures.
+   Current artifacts: `paper/figures/` and `paper/figures.md`; the package
+   includes architecture, trace lifecycle, runtime matrix, drift outcomes,
+   runtime report cards, and artifact flow figures, with a manifest and
+   validator-backed boundaries for simulator, fixture, report-card,
+   machine-only interval, release-bundle, and human-review claims.
+8. [x] Refresh related work with current primary sources before any
    submission-facing claim.
-   Cover Semia, SkillSafetyBench, HarmfulSkillBench, RouteGuard, MCPShield,
-   remote MCP authentication measurement, OWASP MCP Top 10, and OWASP Agentic
-   Skills Top 10.
-9. [ ] Build the clean artifact-release bundle.
-   Produce a clean-checkout artifact package, document one command that
-   reproduces the main paper tables, and keep raw stdout/stderr/workspace
-   directories either ignored, local-only, or explicitly documented as
-   non-release scratch.
-10. [ ] Keep the claim ledger synchronized with every paper-facing number.
-    Done when `python3 tools/validate_claim_ledger.py` passes after each
-    manuscript or table update.
+   Current artifact: `docs/research/related-work.md`; primary-source map
+   refreshed on 2026-05-28. It covers Semia, SkillSafetyBench,
+   HarmfulSkillBench, RouteGuard, MCPShield, remote MCP authentication
+   measurement, OWASP MCP Top 10, and OWASP Agentic Skills Top 10 while
+   avoiding firstness, prevalence, Semia-equivalence, live-guardrail,
+   completed-human-review, commercial-runtime, public-network, and
+   defense-success claims.
+9. [x] Build the clean artifact-release bundle.
+   Current artifacts: `scripts/reproduce_paper_tables.sh`,
+   `tools/build_artifact_release_bundle.py`, and
+   `tools/validate_artifact_release_bundle.py`; the path is a curated local
+   machine-only bundle, not a whole-repo archive, public release, external
+   review packet, or completed human-review artifact. Raw stdout/stderr,
+   workspace directories, raw traces, secrets, auth state, cookies, and local
+   scratch stay outside the release boundary.
+10. [x] Keep the claim ledger synchronized with every paper-facing number.
+    Current validation: `python3 tools/validate_claim_ledger.py` passes after
+    the related-work and artifact-release updates.
 
 ## S0: Steering And Claim Hygiene
 
@@ -92,11 +125,10 @@ agent-skill safety.
    Skills`.
    Done when paper title, abstract, RQs, and contributions consistently lead
    with runtime conformance.
-5. [ ] Update `docs/research/related-work.md` with the newest crowded-field
+5. [x] Update `docs/research/related-work.md` with the newest crowded-field
    map.
-   Include Semia, SkillSafetyBench, HarmfulSkillBench, RouteGuard,
-   MCPShield, remote MCP authentication measurement, OWASP MCP Top 10, and
-   OWASP Agentic Skills Top 10.
+   Current artifact: `docs/research/related-work.md`; source check completed
+   on 2026-05-28 against current primary arXiv, MCP, and OWASP sources.
 6. [ ] Add a claim-ledger entry for every new numerical steering claim that is
    promoted into paper-facing text.
    Done when `python3 tools/validate_claim_ledger.py` passes after the edit.
@@ -211,10 +243,12 @@ scanner, least-privilege, or guardrail methods.
    It should generate JSON and Markdown report cards for each runtime profile.
 4. [x] Add report-card validation to `make verify`.
    Current check mode validates `results/derived/runtime-report-cards/`.
-5. [~] Add a report-card table to the paper notes.
-   The generated JSON/Markdown report cards exist for RP1, RP2, RP3, RP5, and
-   RP6; manuscript table promotion remains open until final claim-ledger
-   wording is frozen.
+5. [x] Add a report-card table to the paper notes.
+   Current artifact: `paper/tables/runtime-report-card-summary.md`; it is
+   generated from `results/derived/runtime-report-cards/*_report_card.json`
+   and checked by `make verify`, preserving simulator, fixture,
+   mitigation/report-card, no-commercial-runtime, no-defense-success,
+   no-prevalence, and no-completed-human-review boundaries.
 
 ### S2.2 Static And Least-Privilege Baselines
 
@@ -285,16 +319,22 @@ Goal: reach a credible full-paper benchmark without diluting evidence quality.
 3. [x] Add validation to `make verify`.
 4. [x] Backfill the current case families into the new schema.
    Current artifact: `benchmark/manifests/benchmark-cases-current.json`.
-   Current count: 20 skills / 60 skill-task-contract triples after promoting
-   the planned synthetic inclusion entries to controlled single-repeat RP2/RP3
-   fixture evidence. This is denominator and contract-check coverage only, not
-   source-mix completion, repeat stability, prevalence evidence, live product
-   behavior, or full-paper completion.
+   Current count: 44 skills / 132 skill-task-contract triples after the
+   planned 24-family first-party/public source-mix manifest expansion and the
+   earlier promoted synthetic inclusion entries. The 24-family source-mix
+   slice now includes seventy-two selected controlled RP2/RP3 fixture cases, and
+   the current source-mix metadata-only count is zero. Seventy-four
+   first-party/public source-mix cases now also have bounded RP6
+   mitigation/report-card evidence. Together they support denominator,
+   contract-check, and bounded report-card coverage only, not source-mix
+   evidence completion, prevalence evidence, runtime-drift findings, live
+   product behavior, or full-paper completion.
 5. [x] Add a machine-readable benchmark scale-gap report.
    Current artifact: `results/derived/benchmark-scale-gap.json`.
-   Current source-mix accounting uses skill-origin labels: 1 first-party,
-   1 public, and 18 synthetic skills. It computes source-mix gaps but does not
-   claim source-mix completion.
+   Current source-mix accounting uses skill-origin labels: 9 first-party,
+   17 public, and 18 synthetic skills after the planned source-mix expansion.
+   It computes source-mix gaps but does not claim source-mix evidence
+   completion.
 
 ### S3.2 Category Expansion Targets
 
@@ -333,18 +373,25 @@ Goal: reach a credible full-paper benchmark without diluting evidence quality.
 ### S3.3 Scale Gates
 
 1. [~] Reach 20 skills and 60 skill-task-contract triples before repeats.
-   Current status: numeric 20/60 inventory floor is reached, with 44 formerly
-   planned entries promoted to controlled single-repeat RP2/RP3 synthetic
-   fixture evidence. It should not support prevalence, source-mix completion,
+   Current status: numeric 20/60 inventory floor is reached, with 116 formerly
+   planned entries promoted to controlled single-repeat RP2/RP3 fixture
+   evidence. It should not support prevalence, source-mix evidence completion,
    repeat stability, live product behavior, or defense-success claims.
-2. [ ] Reach 40 skills and 120 skill-task-contract triples before repeats.
-   This is the minimum full-paper floor.
-3. [~] Preserve a source mix: 8-10 first-party real skills, 15-20 public
-   skills, and 12-15 controlled synthetic skills.
+2. [x] Reach 40 skills and 120 skill-task-contract triples before repeats.
+   Current status: the manifest/source-provenance inventory reaches 44 skills
+   and 132 triples. This closes the numeric floor only, not executable
+   full-paper evidence.
+3. [x] Preserve a source mix with additional first-party and public coverage,
+   without expanding synthetic coverage further for the current gap.
    Current status: explicit skill-origin source-mix labels are in the current
-   manifest and derived scale-gap report. Current count is 1 first-party,
-   1 public, and 18 synthetic skills; the mid-scale source-mix gap remains
-   4 first-party and 7 public skills, so source-mix completion is blocked.
+   manifest and derived scale-gap report. Post-expansion count is 9
+   first-party, 17 public, and 18 synthetic skills; the remaining full-paper
+   source-mix gap is zero in manifest accounting, and all current source-mix
+   planned cases have controlled RP2/RP3 fixture evidence. Seventy-four
+   first-party/public cases also have bounded RP6 mitigation/report-card
+   evidence and three-repeat deterministic RP6 stability evidence. Source-mix
+   evidence completion remains blocked until adjudication evidence and safe
+   task-specific real-run adapters exist.
 4. [ ] Add 1-2 adversarial variants per promoted base skill.
 5. [ ] Store every prompt and expected output in tracked benchmark paths.
 6. [ ] Keep full-product, controlled-fixture, and source-only evidence labels
@@ -356,34 +403,49 @@ Goal: make the evaluation credible for a top-tier security review.
 
 ### S4.1 Repeat Runs
 
-1. [ ] Add repeat ID support to all runners.
-   Repeat ID must be emitted in `run.start`, contract findings, and
-   comparison metadata.
+1. [x] Add repeat ID support to all runners.
+   The remaining runner wrappers now expose caller-provided `--repeat-id`
+   plumbing, live trace builders stamp the caller repeat into `run.start`, and
+   generated findings/comparisons keep repeat IDs through the existing
+   contract checker and comparison invariants. `tools/validate_runner_repeat_hygiene.py`
+   is wired into `scripts/verify_all.sh` to block wrapper regressions.
 2. [x] Add deterministic repeat commands for current controlled fixtures.
    Current artifact: `experiments/strengthening-evidence/reproduce_strengthening_evidence.sh`.
-3. [ ] Run three repeats for every deterministic fixture promoted to main
+3. [x] Run three repeats for every deterministic fixture promoted to main
    paper evidence.
    Current state: RP6 current-case strengthening fixtures now have repeat IDs
-   1, 2, and 3 with bounded deterministic stability support. The 44
+   1, 2, and 3 with bounded deterministic stability support. The 116
    planned-inclusion RP2/RP3 controlled fixtures also now have repeat IDs 1,
    2, and 3 under
-   `results/fixtures/strengthening/rp2-rp3-repeat-stability/`, covering 264
-   trace-valid observations and 132 same-repeat RP2/RP3 pairs. The 13 current
+   `results/fixtures/strengthening/rp2-rp3-repeat-stability/`, covering 696
+   trace-valid observations and 348 same-repeat RP2/RP3 pairs. The 13 current
    non-planned main RP2/RP3 controlled fixtures now have repeat IDs 1, 2, and
    3 under
    `results/fixtures/strengthening/rp2-rp3-main-repeat-stability/`, covering
-   78 trace-valid observations and 39 same-repeat RP2/RP3 pairs. Remaining
-   source-mix-backed repeat claims remain open until more first-party/public
-   skills are added.
-4. [ ] Run five repeats for model-mediated or nondeterministic cases.
-5. [ ] Report max-severity outcome alongside majority or median behavior.
-   Do not average away realized high-severity violations.
+   78 trace-valid observations and 39 same-repeat RP2/RP3 pairs. The
+   first-party/public source-mix RP6 report-card fixtures now have repeat IDs
+   1, 2, and 3 under
+   `results/fixtures/strengthening/source-mix-rp6-repeat-stability/`,
+   covering 222 trace-valid observations across 74 cases. The repeat-coverage
+   validator blocks accidental promotion of RP1/RP5 report-card evidence,
+   model-mediated cases, or future metadata-only source-mix entries into
+   repeat-backed aggregate claims.
+4. [x] Run five repeats for model-mediated or nondeterministic cases.
+   Current manifest state: no model-mediated or nondeterministic benchmark
+   cases are admitted into repeat-backed claims. `tools/validate_repeat_coverage.py`
+   blocks any future admitted model-mediated/nondeterministic case until
+   five-repeat evidence and matching validators exist.
+5. [x] Report max-severity outcome alongside majority or median behavior.
+   Current artifact: `results/derived/gate5-statistical-intervals.json`
+   reports max pair severity beside majority pair classification and median
+   disagreement count, with an explicit non-human-adjudicated severity
+   boundary.
 
 ### S4.2 Statistics
 
 1. [x] Freeze inclusion/exclusion rules for descriptive rates.
    Current artifact: `benchmark/manifests/gate5-paper-inclusion.json`; it
-   includes 60 current benchmark cases and excludes completed-statistics,
+   includes 132 current benchmark cases and excludes completed-statistics,
    reviewer-agreement, prevalence, source-mix-completion, and paper-grade
    completion claims.
 2. [x] Add raw descriptive-rate artifact.
@@ -391,18 +453,30 @@ Goal: make the evaluation credible for a top-tier security review.
    reports 22 raw inventory and coverage rate records from the frozen inclusion
    table, without Wilson/bootstrap/McNemar, reviewer agreement, or prevalence
    claims.
-3. [~] Add Wilson confidence intervals for simple rates.
-   Current status: plan scaffold only in `paper/gate5-statistics-plan.md`;
-   no intervals have been computed or claimed.
-4. [ ] Add bootstrap intervals over skill-task-contract triples.
-5. [ ] Add hierarchical bootstrap by skill when multiple tasks come from the
+3. [x] Add Wilson confidence intervals for simple rates.
+   Current artifact: `results/derived/gate5-statistical-intervals.json`; it
+   reports 36 Wilson intervals over the frozen descriptive and paired-runtime
+   denominators, without prevalence, human-review, adjudication, or
+   hypothesis-test claims.
+4. [x] Add bootstrap intervals over skill-task-contract triples.
+   Current artifact: `results/derived/gate5-statistical-intervals.json`; it
+   reports 18 nonparametric case-bootstrap intervals with fixed seed and
+   sample count.
+5. [x] Add hierarchical bootstrap by skill when multiple tasks come from the
    same skill.
+   Current artifact: `results/derived/gate5-statistical-intervals.json`; it
+   reports 6 hierarchical skill/case bootstrap intervals.
 6. [x] Add paired runtime comparison summaries.
    Current artifact: `results/derived/paired-runtime-summary.json`; it is an
-   aggregation layer for existing comparison artifacts, not Wilson/bootstrap
-   statistics or reviewer-agreement evidence.
-7. [ ] Use McNemar-style paired analysis only after the paired sample size is
+   aggregation layer for existing comparison artifacts. The interval artifact
+   now reports max severity beside majority and median paired-runtime behavior,
+   while keeping human adjudication unsupported.
+7. [x] Use McNemar-style paired analysis only after the paired sample size is
    large enough.
+   Current status: explicitly deferred in
+   `results/derived/gate5-statistical-intervals.json` because the present
+   paired records are comparator classifications and finding-set deltas, not a
+   frozen binary human-adjudicated matched outcome table.
 
 ### S4.3 Manual Review
 
@@ -413,25 +487,26 @@ Goal: make the evaluation credible for a top-tier security review.
    runtime-pair disagreement, missing output, oracle failure,
    instrumentation artifact, and non-claimable finding.
 3. [x] Add a machine-readable manual review queue.
-   Current artifact: `benchmark/review/gate5-review-queue.json`; it queues 60
-   case-level review items from the frozen inclusion table, marks 50 as
-   first-pass blinding eligible, and explicitly contains no completed reviews,
-   reviewer IDs, agreement metrics, adjudication records, or statistics.
+   Current artifact: `benchmark/review/gate5-review-queue.json`; it queues 132
+   case-level review items from the frozen inclusion table, marks 122 as
+   first-pass blinding eligible and 10 as metadata-only unmapped, and
+   explicitly contains no completed reviews, reviewer IDs, agreement metrics,
+   adjudication records, or statistics.
 4. [x] Add a review-packet index with exact evidence refs.
    Current artifact: `benchmark/review/gate5-review-packet-index.json`; it
-   creates 60 packet-index records, expands 50 mapped items to comparison,
+   creates 132 packet-index records, expands 122 mapped items to comparison,
    run, trace, and hash refs, and keeps 10 unmapped items blocked as
    metadata-only packets. It contains no raw trace content or completed review
    evidence.
 5. [~] Blind runtime labels where possible for the first review pass.
    Current artifact: `benchmark/review/gate5-blinded-packet-bundle.json`; it
-   exports 50 first-pass runtime-label-blinded pair-review packets from the
+   exports 122 first-pass runtime-label-blinded pair-review packets from the
    mapped subset and leaves 10 unmapped packets blocked as metadata-only
    records. It is still pre-review and does not claim agreement,
    adjudication, statistics, prevalence, or paper-grade completion.
 6. [ ] Run two-reviewer agreement on a representative sample.
    Current scaffold: `benchmark/review/gate5-review-export-templates.json`;
-   it creates two blank reviewer templates over the same 50 blinded pair-review
+   it creates two blank reviewer templates over the same 122 blinded pair-review
    units. These templates do not count as completed human reviews and do not
    support agreement, adjudication, statistics, prevalence, or paper-grade
    completion claims.
@@ -444,17 +519,32 @@ Goal: make the work submission-ready without unsupported claims.
 
 ### S5.1 Manuscript
 
-1. [ ] Rewrite the introduction around the invariant:
+1. [x] Rewrite the introduction around the invariant:
    fixed skill/task/contract/workspace/prompt/variant/repeat, varied runtime.
-2. [ ] Add a clear table separating current evidence, promoted evidence, and
+   Current artifact: `paper/introduction-skeleton.md`; validated by
+   `CL-P1-003`.
+2. [x] Add a clear table separating current evidence, promoted evidence, and
    future work.
-3. [ ] Add figures for architecture, trace lifecycle, runtime matrix, drift
+   Current artifact: `paper/tables/evidence-boundary-matrix.md`.
+3. [x] Add figures for architecture, trace lifecycle, runtime matrix, drift
    outcomes, report cards, and artifact flow.
-4. [ ] Update related work with the crowded 2026 skill-security landscape.
-5. [ ] Add reviewer-objection answers directly in the methodology and
+   Current artifacts: `paper/figures/` and `paper/figures.md`; validated by
+   `tools/validate_paper_figures.py` and `CL-P1-004`.
+4. [x] Update related work with the crowded 2026 skill-security landscape.
+   Current artifact: `docs/research/related-work.md`; it keeps the paper's
+   positioning as runtime conformance under a fixed invariant rather than a
+   scanner, harmful-skill corpus, least-privilege compiler, or MCP-only
+   defense.
+5. [x] Add reviewer-objection answers directly in the methodology and
    limitations sections.
-6. [ ] Keep limitations explicit: no real secrets, no live SaaS exports, no
+   Current artifact: `paper/method-boundaries.md`; it now includes
+   reviewer-safe answers for benchmark novelty, evidence scale, artificial
+   profiles, instrumentation gaps, mitigation claims, review scaffolds, and
+   local artifact-release boundaries.
+6. [x] Keep limitations explicit: no real secrets, no live SaaS exports, no
    public exfiltration, no commercial-runtime claims without evidence.
+   Current validation: `tools/validate_paper_claim_boundaries.py` is wired into
+   `make verify` to check high-risk boundary phrases and stale status rows.
 
 ### S5.2 Safe Artifact Release
 
@@ -467,15 +557,23 @@ Goal: make the work submission-ready without unsupported claims.
    scripts, and first-party references.
 5. [x] Add artifact anonymity checklist for double-blind venues.
 6. [x] Add venue-specific AI-use disclosure draft.
-7. [ ] Build a clean-checkout artifact bundle.
-8. [ ] Ensure one documented command can reproduce the main paper tables.
+7. [x] Build a clean-checkout artifact bundle.
+   Current machine-only local path:
+   `tools/build_artifact_release_bundle.py` plus
+   `tools/validate_artifact_release_bundle.py`. This remains a curated local
+   bundle and does not claim public release or external review readiness.
+8. [x] Ensure one documented command can reproduce the main paper tables.
+   Current command: `PYTHON_BIN=python3 make reproduce-paper-tables`, with
+   `ARTIFACT_OUTPUT_ROOT` support for non-destructive validation.
 
 ### S5.3 Venue Gates
 
 1. [ ] By 2026-06-15: RP4 fixture, RP6 current-case run, adapter matrix, and
    report-card schema exist.
-2. [ ] By 2026-07-15: 20 skills, 60 triples, four profiles on promoted subset,
-   first baselines, and repeat support exist.
+2. [ ] By 2026-07-15: 44 skills, 132 triples, four profiles on the promoted
+   subset, first baselines, and repeat support exist, with the 24-family
+   source-mix expansion promoted to controlled fixture evidence while preserving
+   bounded evidence labels.
 3. [ ] By 2026-08-01: decide whether NDSS 2027 Fall is viable.
    Submit to NDSS only if 40 skills, 120 triples, four profiles, and writing
    are close enough to be credible.
@@ -489,19 +587,23 @@ Goal: make the work submission-ready without unsupported claims.
 S1.1, S1.2, S1.3, S1.4, the RP1 deterministic simulator slice, S2.1,
 S2.2, the current least-privilege baseline, the S3.1 current-case manifest plus
 scale-gap report, first data-extraction/local-file controlled RP2/RP3 coverage,
-the 44-entry planned promotion, the planned-inclusion RP2/RP3 deterministic
+	 the 116-entry planned promotion, the planned-inclusion RP2/RP3 deterministic
 repeat-stability strengthening artifact, the paired-runtime summary denominator
-layer, the frozen Gate 5 inclusion table, and the raw descriptive-rate artifact
-are complete for the bounded evidence boundary. The next dependency is moving
-from bounded fixture stability toward source-mix-backed, repeat-backed, and
-reviewer-adjudicated evidence:
+layer, the frozen Gate 5 inclusion table, the raw descriptive-rate artifact,
+the Gate 5 non-human interval artifact, and the 44/132
+manifest/source-provenance floor, plus the first-party/public source-mix RP6
+report-card slice and its three-repeat deterministic stability artifact, are
+complete for the bounded evidence boundary. The next dependency is moving from
+bounded fixture stability plus controlled source-mix fixture coverage toward
+reviewer-adjudicated and selectively real-run evidence:
 
-1. Add public and additional first-party skills before claiming source-mix
-   target completion.
-2. Add repeat-run support to the remaining non-planned RP2/RP3 runners before
-   promoting those cases into full-paper aggregate statistics.
-3. Add manual review queue records and completed two-reviewer evidence before
-   claiming reviewer agreement.
-4. Keep Wilson/bootstrap/McNemar claims blocked until repeat-backed analysis
-   and adjudication evidence exist.
-5. Keep 40/120 unchecked until the manifest actually reaches that floor.
+1. Use the existing manual review queue records and add completed two-reviewer
+   evidence before claiming reviewer agreement.
+2. Add safe task-specific real-run adapters where they can be run without real
+   credentials, public-network exfiltration, commercial-runtime claims, or
+   full-product overclaiming.
+3. Keep McNemar, reviewer-agreement, and adjudication claims blocked until
+   binary matched outcome labels and real two-reviewer evidence exist.
+4. Treat 40/120 as a manifest floor reached only; keep paper-grade execution
+   completion unchecked until adjudication and selective real-run evidence
+   catch up.

@@ -12,6 +12,9 @@ from typing import Any
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_SUMMARY = REPO_ROOT / "results" / "derived" / "paired-runtime-summary.json"
+EXCLUDED_COMPARISON_PREFIXES = (
+    REPO_ROOT / "results" / "fixtures" / "strengthening" / "source-mix-rp6-report-card",
+)
 
 sys.path.insert(0, str(REPO_ROOT / "tools"))
 import build_paired_runtime_summary  # noqa: E402
@@ -31,6 +34,7 @@ def comparison_files() -> list[Path]:
         path
         for path in REPO_ROOT.glob("results/**/*.json")
         if path.name.endswith("_comparison.json")
+        and not any(path.is_relative_to(prefix) for prefix in EXCLUDED_COMPARISON_PREFIXES)
     )
 
 
@@ -41,6 +45,7 @@ def validate_summary(path: Path) -> None:
     boundary = summary.get("boundary", "")
     require("not a completed statistical analysis" in boundary, "boundary must exclude completed statistics")
     require("not reviewer-adjudication evidence" in boundary, "boundary must exclude reviewer adjudication")
+    require("source-mix RP6 report-card slice is excluded" in boundary, "boundary must exclude source-mix RP6 statistics")
 
     sources = comparison_files()
     recomputed = build_paired_runtime_summary.build_summary()

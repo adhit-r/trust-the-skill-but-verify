@@ -10,6 +10,8 @@ import argparse
 from pathlib import Path
 from typing import Any
 
+from repeat_hygiene import add_repeat_id_argument, repeat_seed, repeat_stem
+
 REPO_ROOT = Path(__file__).resolve().parents[1]
 PYTHON = sys.executable
 
@@ -63,7 +65,7 @@ VARIANT_IDS = {
 }
 
 
-def run_case(name: str, runtime: str, command: list[str]) -> dict[str, Any]:
+def run_case(name: str, runtime: str, command: list[str], repeat_id: int) -> dict[str, Any]:
     profile = profile_path(runtime)
     contract = REPO_ROOT / "contracts" / "repo-audit-executable-smoke.yaml"
     workspace = REPO_ROOT / "benchmark" / "workspaces" / "repo-audit-smoke"
@@ -80,13 +82,13 @@ def run_case(name: str, runtime: str, command: list[str]) -> dict[str, Any]:
             "--workspace",
             str(workspace),
             "--workspace-seed-id",
-            f"repo-audit-smoke-{name}-{runtime}",
+            repeat_seed(f"repo-audit-smoke-{name}-{runtime}", repeat_id),
             "--variant-id",
             VARIANT_IDS[name],
             "--output-root",
             str(output_root),
             "--repeat-id",
-            "1",
+            str(repeat_id),
             "--live",
             "--command",
             *command,
@@ -94,7 +96,7 @@ def run_case(name: str, runtime: str, command: list[str]) -> dict[str, Any]:
     )
     assert_run_outcome(name, runtime, result)
     out_dir = REPO_ROOT / "results" / "mvp" / "repo-audit"
-    stem = result_stem(name, runtime)
+    stem = repeat_stem(result_stem(name, runtime), repeat_id)
     run_text(
         [
             PYTHON,
@@ -153,12 +155,13 @@ def assert_file_read(trace_path: Path, target: str, status: str, instrumentation
     )
 
 
-def load_findings(name: str, runtime: str) -> dict[str, object]:
+def load_findings(name: str, runtime: str, repeat_id: int) -> dict[str, object]:
     out_dir = REPO_ROOT / "results" / "mvp" / "repo-audit"
-    return json.loads((out_dir / f"{result_stem(name, runtime)}_contract_findings.json").read_text(encoding="utf-8"))
+    stem = repeat_stem(result_stem(name, runtime), repeat_id)
+    return json.loads((out_dir / f"{stem}_contract_findings.json").read_text(encoding="utf-8"))
 
 
-def write_summary(results: dict[tuple[str, str], dict[str, Any]]) -> None:
+def write_summary(results: dict[tuple[str, str], dict[str, Any]], repeat_id: int) -> None:
     out_dir = REPO_ROOT / "results" / "mvp" / "repo-audit"
     rows = [
         ("Benign", "rp2", "Contract-compliant for observed MVP surfaces"),
@@ -176,7 +179,7 @@ def write_summary(results: dict[tuple[str, str], dict[str, Any]]) -> None:
     ]
     for label, runtime, result_text in rows:
         name = label.lower()
-        findings = load_findings(name, runtime)
+        findings = load_findings(name, runtime, repeat_id)
         result = results[(name, runtime)]
         lines.append(
             "| {label} | {runtime} | `{trace}` | {violations} | {canaries} | {result_text} |".format(
@@ -204,38 +207,44 @@ def write_summary(results: dict[tuple[str, str], dict[str, Any]]) -> None:
             "Extend provenance beyond RP3 container file-open tracing to network attempts, tool calls, approvals, persistence, and broader host/runtime observers.",
         ]
     )
-    (out_dir / "drift_report.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
-    print(out_dir / "drift_report.md")
+    summary_path = out_dir / f"{repeat_stem('drift_report', repeat_id)}.md"
+    summary_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    print(summary_path)
 
 
-def write_comparison(name: str, output_prefix: str, left_runtime: str, right_runtime: str) -> None:
+def write_comparison(name: str, output_prefix: str, left_runtime: str, right_runtime: str, repeat_id: int) -> None:
     out_dir = REPO_ROOT / "results" / "mvp" / "repo-audit"
     run_text(
         [
             PYTHON,
             "tools/compare_contract_runs.py",
-            str(out_dir / f"{result_stem(name, left_runtime)}_contract_findings.json"),
-            str(out_dir / f"{result_stem(name, right_runtime)}_contract_findings.json"),
+            str(out_dir / f"{repeat_stem(result_stem(name, left_runtime), repeat_id)}_contract_findings.json"),
+            str(out_dir / f"{repeat_stem(result_stem(name, right_runtime), repeat_id)}_contract_findings.json"),
             "--out-json",
-            str(out_dir / f"{output_prefix}_comparison.json"),
+            str(out_dir / f"{repeat_stem(output_prefix, repeat_id)}_comparison.json"),
             "--out-md",
-            str(out_dir / f"{output_prefix}_comparison.md"),
+            str(out_dir / f"{repeat_stem(output_prefix, repeat_id)}_comparison.md"),
         ]
     )
 
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Run the repo-audit MVP traces and contract reports")
-    parser.parse_args(argv)
+    add_repeat_id_argument(parser)
+    args = parser.parse_args(argv)
     results = {
-        ("benign", "rp2"): run_case("benign", "rp2", ["python3", "skill/benign.py"]),
-        ("adversarial", "rp2"): run_case("adversarial", "rp2", ["python3", "skill/adversarial.py"]),
-        ("benign", "rp3"): run_case("benign", "rp3", ["python3", "-B", "/workspace/repo/skill/benign.py"]),
-        ("adversarial", "rp3"): run_case("adversarial", "rp3", ["python3", "-B", "/workspace/repo/skill/adversarial.py"]),
+        ("benign", "rp2"): run_case("benign", "rp2", ["python3", "skill/benign.py"], args.repeat_id),
+        ("adversarial", "rp2"): run_case("adversarial", "rp2", ["python3", "skill/adversarial.py"], args.repeat_id),
+        ("benign", "rp3"): run_case(
+            "benign", "rp3", ["python3", "-B", "/workspace/repo/skill/benign.py"], args.repeat_id
+        ),
+        ("adversarial", "rp3"): run_case(
+            "adversarial", "rp3", ["python3", "-B", "/workspace/repo/skill/adversarial.py"], args.repeat_id
+        ),
     }
-    write_summary(results)
-    write_comparison("benign", "benign_rp2_rp3", "rp2", "rp3")
-    write_comparison("adversarial", "adversarial_rp2_rp3", "rp2", "rp3")
+    write_summary(results, args.repeat_id)
+    write_comparison("benign", "benign_rp2_rp3", "rp2", "rp3", args.repeat_id)
+    write_comparison("adversarial", "adversarial_rp2_rp3", "rp2", "rp3", args.repeat_id)
     return 0
 
 

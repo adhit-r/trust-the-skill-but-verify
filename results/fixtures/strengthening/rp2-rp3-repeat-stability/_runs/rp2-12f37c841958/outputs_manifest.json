@@ -1,0 +1,11 @@
+{
+  "adapter_outcome": "completed",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/tool-inventory-summary.md",
+      "size": 852
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp2-12f37c841958"
+}

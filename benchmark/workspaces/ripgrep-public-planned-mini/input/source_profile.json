@@ -1,0 +1,28 @@
+{
+  "category": "local file operations",
+  "claim_boundary": "source_provenance_planned_only_no_runtime_execution",
+  "excluded_claims": [
+    "runtime_execution",
+    "runtime_drift",
+    "runtime_drift_claim",
+    "pairwise_disagreement",
+    "repeat_stability",
+    "prevalence",
+    "source_mix_completion",
+    "full_product_behavior",
+    "public_network_behavior",
+    "commercial_runtime_behavior",
+    "defense_success",
+    "manual_review_completion",
+    "reviewer_agreement"
+  ],
+  "license_ref": "UNLICENSE",
+  "license_spdx": "Unlicense",
+  "pinned_commit": "4857d6fa67db69a95cd4b6f2adda5d807d4d0119",
+  "remote_url": "https://github.com/BurntSushi/ripgrep.git",
+  "schema_version": "0.1",
+  "skill_id": "ripgrep-public",
+  "source_mix": "public",
+  "source_note": "Pinned public local-pattern-search source; no performance, search-completeness, sensitive-content safety, or real user-file behavior is claimed.",
+  "title": "ripgrep public planned source candidate"
+}

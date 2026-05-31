@@ -6,10 +6,10 @@ cd "$ROOT"
 
 PYTHON_BIN="${PYTHON_BIN:-${PYTHON:-python3}}"
 export PYTHONDONTWRITEBYTECODE=1
+ARTIFACT_BUNDLE_VERIFY_ROOT="$(mktemp -d "${TMPDIR:-/tmp}/skilldiff-artifact-bundle-verify.XXXXXX")"
+trap 'rm -rf "$ARTIFACT_BUNDLE_VERIFY_ROOT"' EXIT
 
-while IFS= read -r -d '' json_file; do
-  "$PYTHON_BIN" -m json.tool "$json_file" >/dev/null
-done < <(git ls-files -z '*.json')
+git ls-files -z '*.json' | "$PYTHON_BIN" tools/validate_json_files.py --stdin0
 
 "$PYTHON_BIN" -m compileall -q src tools
 "$PYTHON_BIN" tools/validate_runtime_profiles.py --self-test runtimes/profiles/*.yaml
@@ -93,6 +93,8 @@ done < <(find benchmark/manifests -maxdepth 1 -name '*-planned*.json' -print0 | 
 "$PYTHON_BIN" tools/validate_traces.py \
   results/live/docs-forge-installer/npx_adversarial_package_acquisition_runtime_pair_host_trace.jsonl \
   results/live/docs-forge-installer/npx_adversarial_package_acquisition_runtime_pair_rp3_trace.jsonl
+"$PYTHON_BIN" tools/validate_ripgrep_public_live_local_binary.py
+"$PYTHON_BIN" tools/validate_traces.py results/live/ripgrep-public-local-binary/live_local_binary_search_trace.jsonl
 "$PYTHON_BIN" tools/validate_rp4_mcp_connected_mvp.py
 "$PYTHON_BIN" tools/validate_traces.py \
   results/raw/rp4-mcp-connected-benign/trace.jsonl \
@@ -104,14 +106,28 @@ done < <(find benchmark/manifests -maxdepth 1 -name '*-planned*.json' -print0 | 
 "$PYTHON_BIN" tools/validate_rp6_policy_hardened_mvp.py
 "$PYTHON_BIN" tools/validate_traces.py results/raw/rp6-*/trace.jsonl
 "$PYTHON_BIN" tools/validate_traces.py results/fixtures/rp6-policy-hardened/_probe_runs/rp6-*/trace.jsonl
+"$PYTHON_BIN" tools/validate_source_mix_rp6_report_card.py
+"$PYTHON_BIN" tools/validate_traces.py results/fixtures/strengthening/source-mix-rp6-report-card/_runs/rp6-*/trace.jsonl
+"$PYTHON_BIN" tools/build_source_mix_rp6_repeat_stability.py --check
 "$PYTHON_BIN" tools/validate_strengthening_evidence.py
 "$PYTHON_BIN" tools/validate_traces.py results/fixtures/rp6-policy-hardened/ablations/_component_runs/rp6-*/trace.jsonl
 "$PYTHON_BIN" tools/validate_traces.py results/fixtures/strengthening/repeat-stability/_runs/rp6-*/trace.jsonl
+"$PYTHON_BIN" tools/validate_repeat_coverage.py
+"$PYTHON_BIN" tools/validate_runner_repeat_hygiene.py
 "$PYTHON_BIN" tools/build_runtime_report_cards.py --check --output-dir results/derived/runtime-report-cards
+"$PYTHON_BIN" tools/build_runtime_report_card_table.py --check
+"$PYTHON_BIN" tools/validate_paper_figures.py
+"$PYTHON_BIN" tools/validate_paper_claim_boundaries.py
+bash -n scripts/reproduce_paper_tables.sh
+bash -n experiments/ripgrep-public-live-local-binary/reproduce_ripgrep_public_live_local_binary.sh
+bash -n experiments/source-mix-rp6-repeat-stability/reproduce_source_mix_rp6_repeat_stability.sh
+"$PYTHON_BIN" tools/build_artifact_release_bundle.py --output-dir "$ARTIFACT_BUNDLE_VERIFY_ROOT/bundle"
+"$PYTHON_BIN" tools/validate_artifact_release_bundle.py --bundle-dir "$ARTIFACT_BUNDLE_VERIFY_ROOT/bundle"
 "$PYTHON_BIN" tools/validate_gate5_scaffolds.py
 "$PYTHON_BIN" tools/validate_paired_runtime_summary.py
 "$PYTHON_BIN" tools/validate_gate5_inclusion_table.py
 "$PYTHON_BIN" tools/validate_gate5_descriptive_rates.py
+"$PYTHON_BIN" tools/validate_gate5_statistical_intervals.py
 "$PYTHON_BIN" tools/validate_gate5_review_queue.py
 "$PYTHON_BIN" tools/validate_gate5_review_packet_index.py
 "$PYTHON_BIN" tools/validate_gate5_blinded_packet_bundle.py

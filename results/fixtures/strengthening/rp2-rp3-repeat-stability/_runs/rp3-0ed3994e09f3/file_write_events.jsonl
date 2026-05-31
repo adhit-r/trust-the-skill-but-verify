@@ -1,0 +1,1 @@
+{"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./planned-output/tokenless-pr-registry-negative-control.md", "sha256": "sha256:d7b07cae99c81e419f465867a272d4af813410d3423ee314d6c941a079ef0be5", "size": 922, "status": "succeeded", "timestamp": "2026-05-29T17:15:04+00:00"}

@@ -10,6 +10,8 @@ import sys
 from pathlib import Path
 from typing import Any
 
+from repeat_hygiene import add_repeat_id_argument, repeat_seed, repeat_stem
+
 try:
     import yaml
 except ImportError as exc:  # pragma: no cover - environment guard
@@ -265,13 +267,13 @@ def annotate_rp1_findings(path: Path) -> None:
     path.write_text(json.dumps(findings, indent=2, sort_keys=True) + "\n", encoding="utf-8")
 
 
-def compare_case(case: dict[str, Any], rp1_findings: Path) -> None:
+def compare_case(case: dict[str, Any], rp1_findings: Path, repeat_id: int) -> None:
     family_dir = OUT_ROOT / case["family"]
     baseline_dir = REPO_ROOT / "results" / "mvp" / case["family"]
     case_id = case["case_id"]
     rp2 = baseline_dir / f"{case_id}_contract_findings.json"
     rp3 = baseline_dir / f"{case_id}_rp3_contract_findings.json"
-    out_prefix = family_dir / f"{case_id}_rp2_rp3_rp1_comparison"
+    out_prefix = family_dir / repeat_stem(f"{case_id}_rp2_rp3_rp1_comparison", repeat_id)
     run_text(
         [
             PYTHON,
@@ -287,7 +289,7 @@ def compare_case(case: dict[str, Any], rp1_findings: Path) -> None:
     )
 
 
-def run_case(case: dict[str, Any]) -> dict[str, Any]:
+def run_case(case: dict[str, Any], repeat_id: int) -> dict[str, Any]:
     family = case["family"]
     case_id = case["case_id"]
     contract = REPO_ROOT / case["contract"]
@@ -304,13 +306,13 @@ def run_case(case: dict[str, Any]) -> dict[str, Any]:
             "--workspace",
             str(workspace),
             "--workspace-seed-id",
-            f"{family}-{case_id}-rp1-restricted-hosted",
+            repeat_seed(f"{family}-{case_id}-rp1-restricted-hosted", repeat_id),
             "--variant-id",
             case["variant_id"],
             "--output-root",
             str(REPO_ROOT / "results" / "raw"),
             "--repeat-id",
-            "1",
+            str(repeat_id),
             "--live",
             "--command",
             *case["command"],
@@ -318,7 +320,8 @@ def run_case(case: dict[str, Any]) -> dict[str, Any]:
     )
     family_dir = OUT_ROOT / family
     family_dir.mkdir(parents=True, exist_ok=True)
-    rp1_findings = family_dir / f"{case_id}_rp1_contract_findings.json"
+    stem = repeat_stem(f"{case_id}_rp1", repeat_id)
+    rp1_findings = family_dir / f"{stem}_contract_findings.json"
     run_text(
         [
             PYTHON,
@@ -330,11 +333,11 @@ def run_case(case: dict[str, Any]) -> dict[str, Any]:
             "--out-json",
             str(rp1_findings),
             "--out-md",
-            str(family_dir / f"{case_id}_rp1_contract_report.md"),
+            str(family_dir / f"{stem}_contract_report.md"),
         ]
     )
     annotate_rp1_findings(rp1_findings)
-    compare_case(case, rp1_findings)
+    compare_case(case, rp1_findings, repeat_id)
     findings = json.loads(rp1_findings.read_text(encoding="utf-8"))
     return {
         "adapter_outcome": result["adapter_outcome"],
@@ -451,6 +454,7 @@ def main(argv: list[str] | None = None) -> int:
         action="store_true",
         help="Fail instead of writing scaffold_status.json when restricted_hosted_sim is unavailable.",
     )
+    add_repeat_id_argument(parser)
     args = parser.parse_args(argv)
 
     status = adapter_status()
@@ -462,7 +466,7 @@ def main(argv: list[str] | None = None) -> int:
         print(status_path)
         return 0
 
-    rows = [run_case(case) for case in CASES]
+    rows = [run_case(case, args.repeat_id) for case in CASES]
     write_reports(rows)
     print(OUT_ROOT / "report_card.json")
     return 0

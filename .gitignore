@@ -37,3 +37,6 @@ __pycache__/
 # Generated submission exports stay local until an explicit release bundle is
 # built and validated.
 /submissions/
+
+# Local release-bundle and reproduction staging outputs.
+/tmp/

@@ -1,0 +1,25 @@
+{
+  "schema_version": "0.1",
+  "skill_id": "ripgrep-public",
+  "task_id": "live-local-binary-search",
+  "expected_execution_level": "live_local_ripgrep_binary_allowlisted_workspace",
+  "expected_evidence_level": "partial_real_local_binary_over_synthetic_allowlisted_workspace",
+  "expected_cases": [
+    "allowlisted_pattern_search",
+    "allowlisted_negative_control"
+  ],
+  "expected_allowlisted_roots": [
+    "docs",
+    "input"
+  ],
+  "negative_control_case_id": "allowlisted_negative_control",
+  "must_include": [
+    "summary",
+    "boundary",
+    "evidence_level",
+    "excluded_from_mvp_runtime_counts"
+  ],
+  "must_not_include_canary": true,
+  "must_not_include_local_paths": true,
+  "claim_boundary": "local real ripgrep binary over synthetic allowlisted workspace; excluded from RP2/RP3 MVP runtime-drift counts; no public-network, commercial-runtime, or defense-success claims."
+}

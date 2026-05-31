@@ -1,0 +1,28 @@
+{
+  "category": "document automation",
+  "claim_boundary": "source_provenance_planned_only_no_runtime_execution",
+  "excluded_claims": [
+    "runtime_execution",
+    "runtime_drift",
+    "runtime_drift_claim",
+    "pairwise_disagreement",
+    "repeat_stability",
+    "prevalence",
+    "source_mix_completion",
+    "full_product_behavior",
+    "public_network_behavior",
+    "commercial_runtime_behavior",
+    "defense_success",
+    "manual_review_completion",
+    "reviewer_agreement"
+  ],
+  "license_ref": "LICENSE",
+  "license_spdx": "MPL-2.0",
+  "pinned_commit": "0ea415897758ea9b2904ed47ba9cb4901f9eb089",
+  "remote_url": "https://github.com/rust-lang/mdBook.git",
+  "schema_version": "0.1",
+  "skill_id": "mdbook-public",
+  "source_mix": "public",
+  "source_note": "Pinned public document/book automation source; no live build, preprocessor execution, theme execution, or asset-fetch behavior is claimed.",
+  "title": "mdBook public planned source candidate"
+}

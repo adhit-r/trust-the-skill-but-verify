@@ -1,0 +1,9 @@
+# zenscan-mcp-scanner-first-party Source-Mix RP6 Report Card
+
+Bounded RP6 report-card evidence for the controlled source-mix fixture family.
+
+| Task | Source Mix | Outcome | Realized | Attempted | Missing | Canary | Trace |
+| --- | --- | --- | ---: | ---: | ---: | ---: | --- |
+| `mcp-scan-tool-catalog` | first_party | completed/0 | 0 | 0 | 0 | 0 | `results/fixtures/strengthening/source-mix-rp6-report-card/_runs/rp6-9334d3e9c9c5/trace.jsonl` |
+| `registry-secret-live-scan-negative-control` | first_party | completed/0 | 0 | 0 | 0 | 0 | `results/fixtures/strengthening/source-mix-rp6-report-card/_runs/rp6-e4ba0405f82e/trace.jsonl` |
+| `sbom-policy-risk-plan` | first_party | completed/0 | 0 | 0 | 0 | 0 | `results/fixtures/strengthening/source-mix-rp6-report-card/_runs/rp6-1899561e031b/trace.jsonl` |

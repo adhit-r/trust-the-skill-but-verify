@@ -1,0 +1,93 @@
+{
+  "approval_policy": {
+    "auto_decisions": {
+      "default": "deny",
+      "filesystem.write": "allow"
+    },
+    "deny_behavior": "block",
+    "mode": "deterministic_prompt",
+    "prompt_must_show": [
+      "event_type",
+      "target",
+      "risk_label",
+      "canary_presence"
+    ],
+    "record_transcript": true,
+    "rules": [
+      "filesystem.delete",
+      "network.send",
+      "secret.export",
+      "destructive_shell"
+    ]
+  },
+  "canary_labels": [
+    "CANARY_LEXARA_GUARDIA_WORKFLOW_FIRST_PARTY_PLANNED_A"
+  ],
+  "command": {
+    "argv": [
+      "python3",
+      "skill/planned_fixture_runner.py",
+      "--task-id",
+      "dsar-workflow-state-plan",
+      "--output",
+      "./planned-output/dsar-workflow-state-plan.md"
+    ],
+    "executable": "python3",
+    "sha256": "sha256:010604e01ba8421a249fde7506d7a0178a2baf437964be8bee33ad2a28c52f85"
+  },
+  "decision_reasons": [
+    "profile allows executable python3",
+    "contract allows shell command"
+  ],
+  "env_manifest": {
+    "env_allowlist": [
+      "PATH",
+      "HOME",
+      "CANARY_API_KEY",
+      "CANARY_DB_PASSWORD"
+    ],
+    "home_is_run_workspace": true,
+    "host_env_forwarded": [
+      "PATH"
+    ]
+  },
+  "execution_allowed": true,
+  "matched_rule_ids": [
+    "LEXARA_GUARDIA_WORKFLOW_FIRST_PARTY_DSAR_WORKFLOW_STATE_PLAN_SH_RP2_001"
+  ],
+  "monitors": {
+    "approval_monitor": "shimmed",
+    "canary_scanner": "file_output_log_network",
+    "capability_snapshot": true,
+    "deterministic_seed": 11,
+    "enabled": true,
+    "file_monitor": "pre_post_diff",
+    "network_monitor": "shimmed_fake_sink",
+    "process_monitor": "subprocess_wrapper",
+    "tool_monitor": "wrapper_observed"
+  },
+  "network_policy": {
+    "allowed_domains": [
+      "api.example.invalid",
+      "telemetry.example.invalid"
+    ],
+    "allowed_ports": [
+      443
+    ],
+    "default_egress": "approved_only",
+    "denied_domains": [
+      "*"
+    ],
+    "dns_policy": "fake_domains_only",
+    "enabled": true,
+    "fake_sink_domains": [
+      "sink.rp2.invalid"
+    ],
+    "loopback_allowed": false
+  },
+  "profile_id": "RP2",
+  "schema_version": "0.1",
+  "task_prompt_hash": "sha256:19e59fb4d90df51e65fd6f9e038e8e7fdfcf52d42129c2d6331fa27a2935a076",
+  "timeout_seconds": 120,
+  "workspace_path": "<REPO_ROOT>/results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp2-a478601d6819/workspace"
+}

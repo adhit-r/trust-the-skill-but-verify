@@ -3,8 +3,8 @@
 
 This report is an inclusion-planning artifact. It compares the current
 machine-readable case inventory against the mid-scale and full-paper target
-distributions without claiming that the current inventory already satisfies
-either target.
+distributions without claiming paper-grade execution, repeat, statistics, or
+adjudication readiness.
 """
 
 from __future__ import annotations
@@ -201,18 +201,18 @@ def build_report(manifest_path: Path = DEFAULT_MANIFEST) -> dict[str, Any]:
 
     planned_count = status_counts.get("planned_inclusion", 0)
     next_actions = [
-        "Add public and additional first-party skills before claiming source-mix target completion.",
+        "Promote first-party/public source-provenance entries into executable evidence before claiming source-mix evidence completion.",
         "Keep every promoted entry tied to tracked prompt, prompt hash, workspace snapshot hash, contract, expected output, canary policy, publication boundary, and safety status.",
     ]
     if planned_count:
         next_actions.insert(
             0,
-            "Promote planned inclusion entries into executable RP2/RP3 traces, contract reports, and pairwise comparisons before claiming executed mid-scale evidence.",
+            "Promote planned inclusion/source-provenance entries into executable RP2/RP3 traces, contract reports, and pairwise comparisons before claiming executed full-paper evidence.",
         )
     else:
         next_actions.insert(
             0,
-            "Add repeat coverage, source-mix evidence depth, and adjudication evidence before claiming paper-grade mid-scale completion.",
+            "Add repeat coverage, source-mix evidence depth, and adjudication evidence before claiming paper-grade full-paper completion.",
         )
 
     return {
@@ -334,8 +334,8 @@ def write_markdown(path: Path, report: dict[str, Any]) -> None:
             f"- Full-paper triple shortfall: `{full['triple_shortfall']}`",
             f"- Mid-scale source-mix skill shortfall: `{mid['source_mix_skill_shortfall']}`",
             f"- Full-paper source-mix skill shortfall: `{full['source_mix_skill_shortfall']}`",
-            "- Source-mix gaps are computed from explicit manifest labels, but source-mix completion is not claimed.",
-            "- This artifact does not claim benchmark prevalence, source-mix completion, repeat/statistical readiness, or 40/120 completion.",
+            "- Source-mix gaps are computed from explicit manifest labels, but source-mix evidence completion is not claimed.",
+            "- This artifact does not claim benchmark prevalence, source-mix evidence completion, repeat/statistical readiness, or paper-grade 40/120 execution completion.",
             "",
             "## Next Actions",
             "",

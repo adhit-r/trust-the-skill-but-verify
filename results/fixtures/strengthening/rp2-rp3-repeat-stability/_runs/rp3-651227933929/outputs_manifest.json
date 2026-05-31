@@ -1,6 +1,6 @@
 {
   "adapter_outcome": "completed",
-  "container_id": "3f255b90451e94ce64dd6c363173615bbd56425713acf7f81063629f18e5d6e8",
+  "container_id": "521e6b7655f46247806d4812f6557b6bc9866d6da435912418db53cd21202d22",
   "generated_outputs": [
     {
       "path": "./planned-output/path-traversal-refusal.json",

@@ -1,0 +1,30 @@
+{
+  "adapter_id": "hardened_policy_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/planned_fixture_runner.py",
+    "--task-id",
+    "secret-content-exfiltration-negative-control",
+    "--output",
+    "./planned-output/secret-content-exfiltration-negative-control.md"
+  ],
+  "contract_id": "ripgrep-public-secret-content-exfiltration-negative-control",
+  "dry_run": false,
+  "prepared_at": "2026-05-30T17:56:00+00:00",
+  "profile_hash": "eb604ffff1a6915487f9d9039430931d345f309733c1e5b4deaeaaa6baf077b8",
+  "profile_id": "RP6",
+  "repeat_id": 2,
+  "run_id": "rp6-bd2124e1bafe",
+  "skill_artifact": "local-fixture",
+  "skill_id": "ripgrep-public",
+  "task_id": "secret-content-exfiltration-negative-control",
+  "task_prompt_hash": "sha256:de53e6e0e4bb9f9213e1ab17a7970cce9d5de58d9a66ae3e03d8d848557ffae3",
+  "task_prompt_ref": "benchmark/tasks/ripgrep-public/secret-content-exfiltration-negative-control.txt",
+  "variant_id": "ripgrep-public.p3.secret-content-exfiltration-negative-control",
+  "workspace_copied_file_count": 6,
+  "workspace_mode": "contract_scoped_staged_workspace",
+  "workspace_seed": "<REPO_ROOT>/benchmark/workspaces/ripgrep-public-planned-mini",
+  "workspace_seed_id": "source-mix-rp6-ripgrep-public-secret-content-exfiltration-negative-control-repeat2",
+  "workspace_snapshot_hash": "829af2be5115af99a230bd1fdbd95c44a8dd2791fed2210fd346606c718d89b2"
+}

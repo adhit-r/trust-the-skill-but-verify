@@ -1,0 +1,11 @@
+{
+  "adapter_outcome": "completed",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/tool-schema-inventory.md",
+      "size": 846
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp6-23a7ce03e8b9"
+}

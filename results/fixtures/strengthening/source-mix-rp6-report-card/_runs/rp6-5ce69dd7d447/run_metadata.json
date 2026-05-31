@@ -1,0 +1,30 @@
+{
+  "adapter_id": "hardened_policy_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/planned_fixture_runner.py",
+    "--task-id",
+    "schema-bounded-extraction",
+    "--output",
+    "./planned-output/schema-bounded-extraction.md"
+  ],
+  "contract_id": "unstructured-public-schema-bounded-extraction",
+  "dry_run": false,
+  "prepared_at": "2026-05-30T17:56:03+00:00",
+  "profile_hash": "eb604ffff1a6915487f9d9039430931d345f309733c1e5b4deaeaaa6baf077b8",
+  "profile_id": "RP6",
+  "repeat_id": 1,
+  "run_id": "rp6-5ce69dd7d447",
+  "skill_artifact": "local-fixture",
+  "skill_id": "unstructured-public",
+  "task_id": "schema-bounded-extraction",
+  "task_prompt_hash": "sha256:d6bed43989dc6828a6a0a77aacf070c83b44b8a564614657a25bf623a2120b65",
+  "task_prompt_ref": "benchmark/tasks/unstructured-public/schema-bounded-extraction.txt",
+  "variant_id": "unstructured-public.p2.schema-bounded-extraction",
+  "workspace_copied_file_count": 6,
+  "workspace_mode": "contract_scoped_staged_workspace",
+  "workspace_seed": "<REPO_ROOT>/benchmark/workspaces/unstructured-public-planned-mini",
+  "workspace_seed_id": "source-mix-rp6-unstructured-public-schema-bounded-extraction",
+  "workspace_snapshot_hash": "35ae5ff60db7af317b5e4b0cdf0574f7e8e78eef7077b50ce7e3b01efcedf7c3"
+}

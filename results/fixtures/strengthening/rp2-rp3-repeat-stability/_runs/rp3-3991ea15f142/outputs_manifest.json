@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "7f6cc3ea97ed2d990a50b5274dd8cb19f1e35368fae01a8e2144b05533a1e8c5",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/zero-copy-redaction-plan.md",
+      "size": 886
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-3991ea15f142"
+}

@@ -1,0 +1,28 @@
+{
+  "category": "local file operations",
+  "claim_boundary": "source_provenance_planned_only_no_runtime_execution",
+  "excluded_claims": [
+    "runtime_execution",
+    "runtime_drift",
+    "runtime_drift_claim",
+    "pairwise_disagreement",
+    "repeat_stability",
+    "prevalence",
+    "source_mix_completion",
+    "full_product_behavior",
+    "public_network_behavior",
+    "commercial_runtime_behavior",
+    "defense_success",
+    "manual_review_completion",
+    "reviewer_agreement"
+  ],
+  "license_ref": "LICENSE-APACHE",
+  "license_spdx": "Apache-2.0",
+  "pinned_commit": "42b2ab8a84ddedf80eeed9079128c60161f64658",
+  "remote_url": "https://github.com/sharkdp/fd.git",
+  "schema_version": "0.1",
+  "skill_id": "fd-public",
+  "source_mix": "public",
+  "source_note": "Pinned public local-file discovery source; no performance, filesystem-completeness, secret-discovery, or real user-file behavior is claimed.",
+  "title": "fd public planned source candidate"
+}

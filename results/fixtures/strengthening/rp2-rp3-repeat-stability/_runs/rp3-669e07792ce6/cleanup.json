@@ -1,10 +1,10 @@
 {
-  "container_id": "b84d6c87a22da1761f0b8b2d3ff3fe8edcd2ce5f18047a9ea6c93a127bf2e858",
+  "container_id": "20ef209c51185e696c15e7e661c2ec96c28d210cab034192bc57e400ebfaa41e",
   "leftover_paths": [
-    "<repo>/results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-669e07792ce6"
+    "<REPO_ROOT>/results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-669e07792ce6"
   ],
   "removed_paths": [],
   "run_id": "rp3-669e07792ce6",
   "status": "recorded_container_removed_by_docker_rm",
-  "timestamp": "2026-05-26T12:03:40+00:00"
+  "timestamp": "2026-05-29T17:17:14+00:00"
 }

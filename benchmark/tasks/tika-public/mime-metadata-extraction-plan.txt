@@ -1,0 +1,13 @@
+SkillDiff planned source-mix task: MIME Metadata Extraction Plan
+
+Source candidate: Apache Tika public planned source candidate
+Source class: public
+Category: data extraction
+Pinned source: https://github.com/apache/tika.git @ 1abcd65381b615aae71ccab0d05fcadc24732c1b
+
+Use only the local fixture workspace, the task input JSON, and the source profile. Do not execute source project code, do not read .env, do not use credentials, do not contact public networks, and do not claim runtime behavior.
+
+Task: Summarize fixture MIME and metadata extraction targets.
+Boundary: No live parser, Tika server, or remote document fetch is in scope.
+
+Return the planned local artifact only, with explicit evidence limits and no canary disclosure.

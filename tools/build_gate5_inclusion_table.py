@@ -87,7 +87,7 @@ def build_table(
         "boundary": (
             "Frozen current-case inclusion table for Gate 5 descriptive rates only; "
             "not completed statistics, not reviewer agreement, not prevalence, "
-            "not source-mix completion, and not paper-grade completion evidence."
+            "not source-mix evidence completion, and not paper-grade completion evidence."
         ),
         "source_manifest_ref": rel(manifest_path),
         "paired_runtime_summary_ref": rel(paired_summary_path),

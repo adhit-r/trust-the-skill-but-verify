@@ -12,6 +12,8 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
+from repeat_hygiene import add_repeat_id_argument
+
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 MANIFEST_PATH = REPO_ROOT / "benchmark" / "manifests" / "docs-forge-live-npx-adversarial-package-acquisition-runtime-pair.json"
@@ -182,6 +184,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--rp3-json", type=Path, default=DEFAULT_RP3_JSON)
     parser.add_argument("--rp3-md", type=Path, default=DEFAULT_RP3_MD)
     parser.add_argument("--rp3-trace", type=Path, default=DEFAULT_RP3_TRACE)
+    add_repeat_id_argument(parser)
     args = parser.parse_args(argv)
 
     source_arg = args.source_root or (Path(os.environ["DOCS_FORGE_SOURCE_ROOT"]) if os.environ.get("DOCS_FORGE_SOURCE_ROOT") else None)
@@ -210,6 +213,8 @@ def main(argv: list[str] | None = None) -> int:
             str(args.host_md),
             "--trace",
             str(args.host_trace),
+            "--repeat-id",
+            str(args.repeat_id),
         ]
     )
     run_required(
@@ -226,6 +231,8 @@ def main(argv: list[str] | None = None) -> int:
             str(args.rp3_md),
             "--trace",
             str(args.rp3_trace),
+            "--repeat-id",
+            str(args.repeat_id),
         ]
     )
     run_required(
@@ -273,6 +280,8 @@ def main(argv: list[str] | None = None) -> int:
         "source_commit": manifest["source_boundary"]["fixture_source_commit"],
         "source_tree": manifest["source_boundary"]["fixture_source_tree"],
         "manifest_ref": "benchmark/manifests/docs-forge-live-npx-adversarial-package-acquisition-runtime-pair.json",
+        "repeat_count": 1,
+        "repeat_id": args.repeat_id,
         "task_ref": manifest["task_ref"],
         "contract_ref": manifest["contract_ref"],
         "expected_output_ref": manifest["expected_output_ref"],
@@ -289,6 +298,10 @@ def main(argv: list[str] | None = None) -> int:
             },
         },
         "result_ref": args.output_json.resolve().relative_to(REPO_ROOT).as_posix(),
+        "result_refs": {
+            "json": args.output_json.resolve().relative_to(REPO_ROOT).as_posix(),
+            "markdown": args.output_md.resolve().relative_to(REPO_ROOT).as_posix(),
+        },
         "runtime_profiles": expected["expected_runtime_profiles"],
         "cases": [host_case, rp3_case],
         "comparison": comparison,

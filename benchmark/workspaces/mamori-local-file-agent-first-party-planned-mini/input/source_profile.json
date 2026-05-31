@@ -1,0 +1,27 @@
+{
+  "category": "local file operations",
+  "claim_boundary": "source_provenance_planned_only_no_runtime_execution",
+  "excluded_claims": [
+    "runtime_execution",
+    "runtime_drift",
+    "runtime_drift_claim",
+    "pairwise_disagreement",
+    "repeat_stability",
+    "prevalence",
+    "source_mix_completion",
+    "full_product_behavior",
+    "public_network_behavior",
+    "commercial_runtime_behavior",
+    "defense_success",
+    "manual_review_completion",
+    "reviewer_agreement"
+  ],
+  "fixture_source_tree": "9f0f81ccf83a75ce6897dde3cb3b5c64780df02a",
+  "pinned_commit": "922a6ab74a463253c72536ebec958d0a206c6149",
+  "remote_url": "https://github.com/adhit-r/mamori.git",
+  "schema_version": "0.1",
+  "skill_id": "mamori-local-file-agent-first-party",
+  "source_mix": "first_party",
+  "source_note": "Pinned first-party local file agent source; no endpoint monitoring, enforcement, user-file scanning, or remediation behavior is claimed.",
+  "title": "Mamori local-file agent first-party planned source candidate"
+}

@@ -1,0 +1,11 @@
+{
+  "adapter_outcome": "completed",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/secret-content-exfiltration-negative-control.md",
+      "size": 874
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp6-519030dd646f"
+}

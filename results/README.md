@@ -39,30 +39,44 @@ Do not delete raw directories during reproducibility checks. Use `experiments/re
 ## Derived Benchmark Scale Gap
 
 `results/derived/benchmark-scale-gap.json` and `.md` compute the current
-20-skill / 60-triple inventory against the mid-scale and full-paper targets.
+44-skill / 132-triple inventory against the mid-scale and full-paper targets.
 `provenance.source_mix.label` is a skill-origin accounting label; case-level
 evidence remains represented by `source_kind` and `provenance_level`.
 
-Current source-mix accounting is 1 first-party, 1 public, and 18 synthetic
-skills. The mid-scale source-mix gap is 4 first-party and 7 public skills, and
-source-mix completion is not claimed.
+Current source-mix accounting is 9 first-party, 17 public, and 18 synthetic
+skills. The full-paper source-mix gap is zero in manifest accounting, and
+source-mix evidence completion is not claimed.
 
 ## Gate 5 Descriptive Rates
 
 `benchmark/manifests/gate5-paper-inclusion.json` freezes the current
-60-case inclusion table for descriptive-rate accounting. `results/derived/gate5-descriptive-rates.json`
+132-case inclusion table for descriptive-rate accounting. `results/derived/gate5-descriptive-rates.json`
 and `.md` report 22 raw inventory and coverage rate records from that table.
 
 These artifacts are denominator and descriptive-rate evidence only. They do
 not claim completed statistics, confidence intervals, hypothesis tests,
-reviewer agreement, prevalence, source-mix completion, or paper-grade
+reviewer agreement, prevalence, source-mix evidence completion, or paper-grade
 completion.
+
+## Gate 5 Statistical Intervals
+
+`results/derived/gate5-statistical-intervals.json` and `.md` compute
+machine-only intervals over the frozen Gate 5 denominator and paired-runtime
+summary. The current artifact reports 36 Wilson intervals, 18 case-bootstrap
+intervals, and 6 hierarchical-bootstrap intervals over 132 included cases and
+214 paired-runtime pair records.
+
+This is non-human interval evidence only. Human/manual review remains 0%:
+there are no completed human reviews, reviewer identities, adjudication
+records, reviewer-agreement metrics, McNemar-style hypothesis-test results,
+prevalence estimates, source-mix evidence-completion claims, or paper-grade
+completion claims.
 
 ## Gate 5 Manual Review Queue
 
-`benchmark/review/gate5-review-queue.json` and `.md` enumerate 60 queued
-case-level review items from the frozen inclusion table. The queue records 50
-paired-summary mapped items, 10 unmapped metadata-only items, and 50 items
+`benchmark/review/gate5-review-queue.json` and `.md` enumerate 132 queued
+case-level review items from the frozen inclusion table. The queue records 122
+paired-summary mapped items, 10 unmapped metadata-only items, and 122 items
 eligible for first-pass runtime-label blinding.
 
 This is queue evidence only. It does not contain reviewer IDs, completed
@@ -72,8 +86,8 @@ confidence intervals, prevalence estimates, or paper-grade completion claims.
 ## Gate 5 Review Packet Index
 
 `benchmark/review/gate5-review-packet-index.json` and `.md` expand the review
-queue into 60 packet-index records. The index resolves 50 comparison refs, 100
-run/finding-file refs, 100 trace refs, and 50 runtime-pair review units. The 10
+queue into 132 packet-index records. The index resolves 122 comparison refs, 244
+run/finding-file refs, 244 trace refs, and 122 runtime-pair review units. The 10
 unmapped queue items remain blocked as metadata-only packets.
 
 This is packet-index evidence only. It contains no raw trace content,
@@ -84,7 +98,7 @@ claims.
 ## Gate 5 Blinded Packet Bundle
 
 `benchmark/review/gate5-blinded-packet-bundle.json` and `.md` derive a
-first-pass blinded bundle from the review-packet index. The bundle exports 50
+first-pass blinded bundle from the review-packet index. The bundle exports 122
 runtime-label-blinded pair-review packets and keeps 10 unmapped cases blocked
 as metadata-only records.
 
@@ -99,7 +113,7 @@ paper-grade completion claims.
 
 `benchmark/review/gate5-review-export-templates.json` and `.md` provide two
 blank first-pass human-review templates over the blinded bundle. Each template
-assigns the same 50 blinded pair-review units to an unassigned human reviewer
+assigns the same 122 blinded pair-review units to an unassigned human reviewer
 slot. The 10 unmapped metadata-only packets remain blocked and unassigned.
 
 This is template evidence only. It contains no completed human reviews, human
@@ -128,22 +142,31 @@ aggregate counts lives under `results/fixtures/`.
 
 ## Planned Inclusion Promotion
 
-`results/planned-inclusion/` contains controlled single-repeat RP2/RP3
-synthetic fixture evidence for the 44 entries that were previously only
-planned inclusion records. Each promoted case has one RP2 trace, one RP3 trace,
-two contract-finding files, and one RP2/RP3 comparison.
+`results/planned-inclusion/` contains controlled single-repeat RP2/RP3 fixture
+evidence for 116 entries that were previously only planned inclusion records.
+This now includes seventy-two selected source-mix cases across twenty-four
+first-party/public families as controlled fixture evidence only. Each promoted case has one RP2
+trace, one RP3 trace, two contract-finding files, and one RP2/RP3 comparison.
 
 This directory is denominator and contract-check coverage. It does not claim
 live product execution, public-network behavior, commercial-runtime behavior,
-source-mix completion, repeat stability, prevalence, defense success, or
+source-mix evidence completion, repeat stability, prevalence, defense success, or
 runtime-drift findings.
+
+`results/fixtures/strengthening/source-mix-rp6-report-card/` contains bounded
+RP6 mitigation/report-card evidence for seventy-four first-party/public
+source-mix cases across twenty-six families. It adds profile-backed
+report-card coverage only; it does not claim live product execution,
+source-mix evidence completion, public-network behavior, commercial-runtime
+behavior, prevalence, defense success, reviewer adjudication, or runtime-drift
+findings.
 
 ## Planned-Inclusion Repeat Stability
 
 `results/fixtures/strengthening/rp2-rp3-repeat-stability/` contains a separate
-bounded deterministic repeat-stability artifact for the 44 planned-inclusion
-fixtures. It runs repeat IDs 1, 2, and 3 under RP2 and RP3, for 264 runtime
-observations and 132 same-repeat RP2/RP3 pairs.
+bounded deterministic repeat-stability artifact for the 116 planned-inclusion
+fixtures. It runs repeat IDs 1, 2, and 3 under RP2 and RP3, for 696 runtime
+observations and 348 same-repeat RP2/RP3 pairs.
 
 This artifact intentionally stays outside the broad `*_comparison.json` result
 glob used for the paired-runtime denominator layer. It supports only bounded

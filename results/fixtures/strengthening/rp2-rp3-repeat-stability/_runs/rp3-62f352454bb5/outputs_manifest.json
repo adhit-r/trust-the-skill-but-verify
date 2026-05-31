@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "fb567163b305fdf656a057e236f9e1497bf3e70e6773578404576376729db264",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/consent-gated-navigation-plan.md",
+      "size": 847
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-62f352454bb5"
+}

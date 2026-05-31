@@ -10,6 +10,8 @@ import sys
 from pathlib import Path
 from typing import Any
 
+from repeat_hygiene import add_repeat_id_argument, repeat_seed, repeat_stem
+
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 PYTHON = sys.executable
@@ -172,7 +174,7 @@ def result_stem(case_id: str, runtime: str) -> str:
     return case_id if runtime == "rp2" else f"{case_id}_{runtime}"
 
 
-def run_case(case: dict[str, Any], runtime: str) -> dict[str, Any]:
+def run_case(case: dict[str, Any], runtime: str, repeat_id: int) -> dict[str, Any]:
     contract = REPO_ROOT / case["contract"]
     workspace = REPO_ROOT / "benchmark" / "workspaces" / "audit-lens-acme"
     command = case[f"{runtime}_command"]
@@ -188,13 +190,13 @@ def run_case(case: dict[str, Any], runtime: str) -> dict[str, Any]:
             "--workspace",
             str(workspace),
             "--workspace-seed-id",
-            f"audit-lens-acme-{case['case_id']}-{runtime}",
+            repeat_seed(f"audit-lens-acme-{case['case_id']}-{runtime}", repeat_id),
             "--variant-id",
             case["variant_id"],
             "--output-root",
             str(REPO_ROOT / "results" / "raw"),
             "--repeat-id",
-            "1",
+            str(repeat_id),
             "--live",
             "--command",
             *command,
@@ -206,7 +208,7 @@ def run_case(case: dict[str, Any], runtime: str) -> dict[str, Any]:
         raise RuntimeError(f"unexpected run outcome for {case['case_id']}/{runtime}: expected={expected} actual={actual}")
 
     out_dir = REPO_ROOT / "results" / "mvp" / "audit-lens"
-    stem = result_stem(case["case_id"], runtime)
+    stem = repeat_stem(result_stem(case["case_id"], runtime), repeat_id)
     run_text(
         [
             PYTHON,
@@ -221,17 +223,18 @@ def run_case(case: dict[str, Any], runtime: str) -> dict[str, Any]:
             str(out_dir / f"{stem}_contract_report.md"),
         ]
     )
-    assert_case_summary(case["case_id"], runtime)
+    assert_case_summary(case["case_id"], runtime, repeat_id)
     return result
 
 
-def load_findings(case_id: str, runtime: str) -> dict[str, Any]:
+def load_findings(case_id: str, runtime: str, repeat_id: int) -> dict[str, Any]:
     out_dir = REPO_ROOT / "results" / "mvp" / "audit-lens"
-    return json.loads((out_dir / f"{result_stem(case_id, runtime)}_contract_findings.json").read_text(encoding="utf-8"))
+    stem = repeat_stem(result_stem(case_id, runtime), repeat_id)
+    return json.loads((out_dir / f"{stem}_contract_findings.json").read_text(encoding="utf-8"))
 
 
-def assert_case_summary(case_id: str, runtime: str) -> None:
-    findings = load_findings(case_id, runtime)
+def assert_case_summary(case_id: str, runtime: str, repeat_id: int) -> None:
+    findings = load_findings(case_id, runtime, repeat_id)
     summary = findings["summary"]
     expected = EXPECTED_SUMMARIES[(case_id, runtime)]
     observed = {field: summary.get(field) for field in expected}
@@ -247,7 +250,7 @@ def display_trace_path(trace_path: str) -> str:
         return trace_path
 
 
-def write_summary(results: dict[tuple[str, str], dict[str, Any]]) -> None:
+def write_summary(results: dict[tuple[str, str], dict[str, Any]], repeat_id: int) -> None:
     out_dir = REPO_ROOT / "results" / "mvp" / "audit-lens"
     lines = [
         "# AuditLens Acme MVP Result",
@@ -260,7 +263,7 @@ def write_summary(results: dict[tuple[str, str], dict[str, Any]]) -> None:
     for case in CASES:
         for runtime in ("rp2", "rp3"):
             result = results[(case["case_id"], runtime)]
-            findings = load_findings(case["case_id"], runtime)
+            findings = load_findings(case["case_id"], runtime, repeat_id)
             summary = findings["summary"]
             lines.append(
                 "| {pilot} | {case_id} | {runtime} | `{trace}` | {violations} | {attempted} | {missing} | {oracle} | {canaries} | {expectation} |".format(
@@ -292,36 +295,38 @@ def write_summary(results: dict[tuple[str, str], dict[str, Any]]) -> None:
         ]
     )
     out_dir.mkdir(parents=True, exist_ok=True)
-    (out_dir / "drift_report.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
-    print(out_dir / "drift_report.md")
+    summary_path = out_dir / f"{repeat_stem('drift_report', repeat_id)}.md"
+    summary_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    print(summary_path)
 
 
-def write_comparison(case_id: str, output_prefix: str) -> None:
+def write_comparison(case_id: str, output_prefix: str, repeat_id: int) -> None:
     out_dir = REPO_ROOT / "results" / "mvp" / "audit-lens"
     run_text(
         [
             PYTHON,
             "tools/compare_contract_runs.py",
-            str(out_dir / f"{case_id}_contract_findings.json"),
-            str(out_dir / f"{case_id}_rp3_contract_findings.json"),
+            str(out_dir / f"{repeat_stem(case_id, repeat_id)}_contract_findings.json"),
+            str(out_dir / f"{repeat_stem(case_id + '_rp3', repeat_id)}_contract_findings.json"),
             "--out-json",
-            str(out_dir / f"{output_prefix}_comparison.json"),
+            str(out_dir / f"{repeat_stem(output_prefix, repeat_id)}_comparison.json"),
             "--out-md",
-            str(out_dir / f"{output_prefix}_comparison.md"),
+            str(out_dir / f"{repeat_stem(output_prefix, repeat_id)}_comparison.md"),
         ]
     )
 
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Run the AuditLens Acme MVP traces and reports")
-    parser.parse_args(argv)
+    add_repeat_id_argument(parser)
+    args = parser.parse_args(argv)
     results = {}
     for case in CASES:
         for runtime in ("rp2", "rp3"):
-            results[(case["case_id"], runtime)] = run_case(case, runtime)
-    write_summary(results)
+            results[(case["case_id"], runtime)] = run_case(case, runtime, args.repeat_id)
+    write_summary(results, args.repeat_id)
     for case in CASES:
-        write_comparison(case["case_id"], f"{case['case_id']}_rp2_rp3")
+        write_comparison(case["case_id"], f"{case['case_id']}_rp2_rp3", args.repeat_id)
     return 0
 
 

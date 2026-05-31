@@ -80,9 +80,10 @@ causes, coverage, validation, tool/approval boundaries, and mitigations.
 5. A full-paper benchmark target of at least 40 skills and 120
    skill-task-contract triples before repeats across four or more runtime
    profiles, clearly separated from current pilot evidence until executed.
-6. A rigor layer with repeats, utility metrics, uncertainty estimates, manual
-   adjudication, and two-reviewer agreement; current Gate 5 materials are
-   scaffolds until review and statistics are actually run.
+6. A rigor layer with repeats, utility metrics, machine-only uncertainty
+   estimates, manual-adjudication scaffolds, and planned two-reviewer
+   agreement; current Gate 5 interval artifacts are non-human only until real
+   review and adjudication are completed.
 7. Mitigation report cards that compare hardened runtime profiles and
    least-privilege-style baselines by realized violations, attempted overreach,
    utility cost, approval burden, and evidence coverage without claiming
@@ -152,21 +153,29 @@ Safety boundary:
 
 ## Related-Work Differentiation
 
+Primary-source related-work map refreshed on 2026-05-28:
+`docs/research/related-work.md`. The refresh covers Semia, SkillSafetyBench,
+HarmfulSkillBench, RouteGuard, MCPShield, remote MCP authentication
+measurement, OWASP MCP Top 10, and OWASP Agentic Skills Top 10. It is a
+positioning artifact only; it does not add experiment evidence, prevalence
+claims, Semia equivalence, live guardrail efficacy, completed human/manual
+review, public-network exfiltration evidence, commercial-runtime coverage, or
+defense-success evidence.
+
 | Line Of Work | Closest Examples | Difference From This Paper |
 | --- | --- | --- |
-| Skill vulnerability and malicious-skill measurement | Agent Skills in the Wild; Malicious Agent Skills in the Wild; HarmfulSkillBench | Those works classify skills or malicious skill behavior. This paper fixes the skill-task-contract triple and varies the runtime to measure security conformance drift. |
-| Skill-file prompt injection, routing, and registry manipulation | Skill-Inject; Under the Hood of SKILL.md; SkillRouter; RouteGuard | Those works study compromised skill text, discovery, routing, selection, detection, and governance. This paper starts after selection and asks whether runtime execution preserves security semantics. |
-| Task-conditioned least privilege | SkillScope and related policy-constraining work | Least privilege is a baseline or mitigation here, not the main measurement question. The independent variable is runtime profile disagreement. |
+| Skill vulnerability, harmful-skill, and malicious-skill measurement | Agent Skills in the Wild; Malicious Agent Skills in the Wild; SkillSafetyBench; HarmfulSkillBench; Semia | Those works classify, audit, or evaluate skills and skill-mediated safety failures. This paper fixes the skill-task-contract triple and varies the runtime to measure security conformance drift. |
+| Skill-file prompt injection, routing, detection, and registry manipulation | Skill-Inject; Under the Hood of SKILL.md; SkillRouter; RouteGuard | Those works study compromised skill text, discovery, routing, selection, detection, and governance. This paper starts after selection and asks whether runtime execution preserves security semantics. |
+| Task-conditioned least privilege and action-boundary guardrails | SkillScope; ClawGuard; Task Shield | Least privilege and action-boundary checks are baselines or mitigations here, not the main measurement question. The independent variable is runtime profile disagreement. |
 | Cross-framework skill compilation | SkCC and skill intermediate-representation work | Compilation improves functional portability before execution. This paper tests security behavior after deployment under different host policies. |
-| MCP and tool security | MCP protocol and tool-poisoning studies; ClawGuard-style guardrails | Those works focus on descriptors, authorization, client validation, and tool-call boundaries. This paper uses MCP/tool surfaces as runtime-profile dimensions and measures drift with controlled skill and tool conditions. |
+| MCP and tool security | MCP protocol and security best practices; MCPShield; remote MCP authentication measurement; OWASP MCP Top 10 | Those works focus on protocol semantics, authorization, client/server validation, and tool-call boundaries. This paper uses MCP/tool surfaces as runtime-profile dimensions and measures drift with controlled skill and tool conditions. |
+| Agentic skill practitioner taxonomies | OWASP Agentic Skills Top 10 | Practitioner taxonomies motivate benchmark and artifact-hygiene checklists. They are not trace-backed runtime-conformance evidence. |
 | Agent security and prompt-injection benchmarks | Agent Security Bench, AgentDojo, InjecAgent, and related tool-agent benchmarks | Those works evaluate attack success and defenses in tool-using agents. This paper's unit is runtime-pair conformance for portable skills. |
 
 Reviewer-facing differentiation sentence:
 
-> This paper is not another skill scanner, malicious-skill corpus,
-> least-privilege compiler, or MCP-only defense. It is a differential
-> conformance test for the runtime boundary that makes skill portability
-> security-relevant.
+> SkillDiff fixes the skill/task/contract/workspace/prompt/variant/repeat
+> invariant and varies runtime profile to measure security conformance drift.
 
 ## Reviewer-Risk Table
 
@@ -215,9 +224,11 @@ Official venue sources checked on 2026-05-26:
 ## Immediate Writing Order
 
 1. Rewrite the introduction around "runtime as the security variable."
-2. Move this threat model into the main manuscript.
-3. Convert the related-work differentiation into a paper section with
+   Current artifact: `paper/introduction-skeleton.md`.
+2. Use the existing figure package for architecture, trace lifecycle, runtime
+   profile matrix, drift outcomes, mitigation report cards, and artifact flow.
+   Current artifacts: `paper/figures/` and `paper/figures.md`.
+3. Move this threat model into the main manuscript.
+4. Convert the related-work differentiation into a paper section with
    primary-source citations.
-4. Expand the current result tables only after P2/P3/P4 evidence gates improve.
-5. Add figures for architecture, trace lifecycle, runtime profile matrix,
-   drift outcomes, mitigation report cards, and artifact flow.
+5. Expand the current result tables only after P2/P3/P4 evidence gates improve.

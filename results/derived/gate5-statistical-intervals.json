@@ -1,0 +1,1158 @@
+{
+  "aggregate": {
+    "case_bootstrap_interval_count": 18,
+    "completed_human_review_count": 0,
+    "frozen_case_count": 132,
+    "hierarchical_bootstrap_interval_count": 6,
+    "included_case_count": 132,
+    "mcnemar_deferred_count": 1,
+    "mcnemar_result_count": 0,
+    "paired_summary_mapped_case_count": 122,
+    "paired_summary_pair_count": 214,
+    "paired_summary_unmapped_case_count": 10,
+    "reviewer_agreement_result_count": 0,
+    "unique_skill_count": 44,
+    "wilson_interval_count": 36
+  },
+  "analysis_script": "tools/build_gate5_statistical_intervals.py",
+  "boundary": "Non-human Wilson and bootstrap interval artifact over the curated Gate 5 denominator and existing paired-runtime summary. It is not an ecosystem prevalence estimate, not a completed human/manual review, not reviewer agreement, not adjudication, not a McNemar hypothesis-test result, not source-mix evidence completion, not commercial-runtime behavior, not defense-success evidence, and not paper-grade completion by itself. Human review remains 0% until real reviewers complete the review exports.",
+  "case_bootstrap_intervals": [
+    {
+      "boundary": "curated_gate5_denominator_only_not_prevalence_not_human_review_not_adjudication",
+      "confidence_level": 0.95,
+      "estimate": 0.924242,
+      "lower": 0.871212,
+      "method": "nonparametric_case_bootstrap",
+      "metric_id": "paired_summary_mapped_case_share",
+      "sample_count": 2000,
+      "slice": {
+        "dimension": "all",
+        "value": "all"
+      },
+      "source": "results/derived/gate5-descriptive-rates.json",
+      "source_pointer": "/rates/1",
+      "unit": "case_share",
+      "upper": 0.962121
+    },
+    {
+      "boundary": "curated_gate5_denominator_only_not_prevalence_not_human_review_not_adjudication",
+      "confidence_level": 0.95,
+      "estimate": 0.204545,
+      "lower": 0.136364,
+      "method": "nonparametric_case_bootstrap",
+      "metric_id": "source_mix_case_share",
+      "sample_count": 2000,
+      "slice": {
+        "dimension": "source_mix_label",
+        "value": "first_party"
+      },
+      "source": "results/derived/gate5-descriptive-rates.json",
+      "source_pointer": "/rates/2",
+      "unit": "case_share",
+      "upper": 0.272917
+    },
+    {
+      "boundary": "curated_gate5_denominator_only_not_prevalence_not_human_review_not_adjudication",
+      "confidence_level": 0.95,
+      "estimate": 0.386364,
+      "lower": 0.310606,
+      "method": "nonparametric_case_bootstrap",
+      "metric_id": "source_mix_case_share",
+      "sample_count": 2000,
+      "slice": {
+        "dimension": "source_mix_label",
+        "value": "public"
+      },
+      "source": "results/derived/gate5-descriptive-rates.json",
+      "source_pointer": "/rates/4",
+      "unit": "case_share",
+      "upper": 0.469697
+    },
+    {
+      "boundary": "curated_gate5_denominator_only_not_prevalence_not_human_review_not_adjudication",
+      "confidence_level": 0.95,
+      "estimate": 0.409091,
+      "lower": 0.325758,
+      "method": "nonparametric_case_bootstrap",
+      "metric_id": "source_mix_case_share",
+      "sample_count": 2000,
+      "slice": {
+        "dimension": "source_mix_label",
+        "value": "synthetic"
+      },
+      "source": "results/derived/gate5-descriptive-rates.json",
+      "source_pointer": "/rates/6",
+      "unit": "case_share",
+      "upper": 0.492424
+    },
+    {
+      "boundary": "curated_gate5_denominator_only_not_prevalence_not_human_review_not_adjudication",
+      "confidence_level": 0.95,
+      "estimate": 0.136364,
+      "lower": 0.083333,
+      "method": "nonparametric_case_bootstrap",
+      "metric_id": "category_case_share",
+      "sample_count": 2000,
+      "slice": {
+        "dimension": "category",
+        "value": "API workflow"
+      },
+      "source": "results/derived/gate5-descriptive-rates.json",
+      "source_pointer": "/rates/8",
+      "unit": "case_share",
+      "upper": 0.19697
+    },
+    {
+      "boundary": "curated_gate5_denominator_only_not_prevalence_not_human_review_not_adjudication",
+      "confidence_level": 0.95,
+      "estimate": 0.136364,
+      "lower": 0.083333,
+      "method": "nonparametric_case_bootstrap",
+      "metric_id": "category_case_share",
+      "sample_count": 2000,
+      "slice": {
+        "dimension": "category",
+        "value": "MCP/tool workflow"
+      },
+      "source": "results/derived/gate5-descriptive-rates.json",
+      "source_pointer": "/rates/9",
+      "unit": "case_share",
+      "upper": 0.19697
+    },
+    {
+      "boundary": "curated_gate5_denominator_only_not_prevalence_not_human_review_not_adjudication",
+      "confidence_level": 0.95,
+      "estimate": 0.113636,
+      "lower": 0.068182,
+      "method": "nonparametric_case_bootstrap",
+      "metric_id": "category_case_share",
+      "sample_count": 2000,
+      "slice": {
+        "dimension": "category",
+        "value": "compliance/audit"
+      },
+      "source": "results/derived/gate5-descriptive-rates.json",
+      "source_pointer": "/rates/10",
+      "unit": "case_share",
+      "upper": 0.174242
+    },
+    {
+      "boundary": "curated_gate5_denominator_only_not_prevalence_not_human_review_not_adjudication",
+      "confidence_level": 0.95,
+      "estimate": 0.159091,
+      "lower": 0.106061,
+      "method": "nonparametric_case_bootstrap",
+      "metric_id": "category_case_share",
+      "sample_count": 2000,
+      "slice": {
+        "dimension": "category",
+        "value": "data extraction"
+      },
+      "source": "results/derived/gate5-descriptive-rates.json",
+      "source_pointer": "/rates/11",
+      "unit": "case_share",
+      "upper": 0.227273
+    },
+    {
+      "boundary": "curated_gate5_denominator_only_not_prevalence_not_human_review_not_adjudication",
+      "confidence_level": 0.95,
+      "estimate": 0.159091,
+      "lower": 0.098485,
+      "method": "nonparametric_case_bootstrap",
+      "metric_id": "category_case_share",
+      "sample_count": 2000,
+      "slice": {
+        "dimension": "category",
+        "value": "document automation"
+      },
+      "source": "results/derived/gate5-descriptive-rates.json",
+      "source_pointer": "/rates/12",
+      "unit": "case_share",
+      "upper": 0.219697
+    },
+    {
+      "boundary": "curated_gate5_denominator_only_not_prevalence_not_human_review_not_adjudication",
+      "confidence_level": 0.95,
+      "estimate": 0.136364,
+      "lower": 0.083333,
+      "method": "nonparametric_case_bootstrap",
+      "metric_id": "category_case_share",
+      "sample_count": 2000,
+      "slice": {
+        "dimension": "category",
+        "value": "local file operations"
+      },
+      "source": "results/derived/gate5-descriptive-rates.json",
+      "source_pointer": "/rates/13",
+      "unit": "case_share",
+      "upper": 0.19697
+    },
+    {
+      "boundary": "curated_gate5_denominator_only_not_prevalence_not_human_review_not_adjudication",
+      "confidence_level": 0.95,
+      "estimate": 0.159091,
+      "lower": 0.098485,
+      "method": "nonparametric_case_bootstrap",
+      "metric_id": "category_case_share",
+      "sample_count": 2000,
+      "slice": {
+        "dimension": "category",
+        "value": "repository maintenance"
+      },
+      "source": "results/derived/gate5-descriptive-rates.json",
+      "source_pointer": "/rates/14",
+      "unit": "case_share",
+      "upper": 0.219697
+    },
+    {
+      "boundary": "curated_gate5_denominator_only_not_prevalence_not_human_review_not_adjudication",
+      "confidence_level": 0.95,
+      "estimate": 0.015152,
+      "lower": 0.0,
+      "method": "nonparametric_case_bootstrap",
+      "metric_id": "case_status_share",
+      "sample_count": 2000,
+      "slice": {
+        "dimension": "case_status",
+        "value": "current_mvp"
+      },
+      "source": "results/derived/gate5-descriptive-rates.json",
+      "source_pointer": "/rates/15",
+      "unit": "case_share",
+      "upper": 0.037879
+    },
+    {
+      "boundary": "curated_gate5_denominator_only_not_prevalence_not_human_review_not_adjudication",
+      "confidence_level": 0.95,
+      "estimate": 0.984848,
+      "lower": 0.962121,
+      "method": "nonparametric_case_bootstrap",
+      "metric_id": "case_status_share",
+      "sample_count": 2000,
+      "slice": {
+        "dimension": "case_status",
+        "value": "current_pilot"
+      },
+      "source": "results/derived/gate5-descriptive-rates.json",
+      "source_pointer": "/rates/16",
+      "unit": "case_share",
+      "upper": 1.0
+    },
+    {
+      "boundary": "curated_gate5_denominator_only_not_prevalence_not_human_review_not_adjudication",
+      "confidence_level": 0.95,
+      "estimate": 0.015152,
+      "lower": 0.0,
+      "method": "nonparametric_case_bootstrap",
+      "metric_id": "evidence_stage_share",
+      "sample_count": 2000,
+      "slice": {
+        "dimension": "evidence_stage",
+        "value": "mvp"
+      },
+      "source": "results/derived/gate5-descriptive-rates.json",
+      "source_pointer": "/rates/17",
+      "unit": "case_share",
+      "upper": 0.037879
+    },
+    {
+      "boundary": "curated_gate5_denominator_only_not_prevalence_not_human_review_not_adjudication",
+      "confidence_level": 0.95,
+      "estimate": 0.984848,
+      "lower": 0.962121,
+      "method": "nonparametric_case_bootstrap",
+      "metric_id": "evidence_stage_share",
+      "sample_count": 2000,
+      "slice": {
+        "dimension": "evidence_stage",
+        "value": "pilot"
+      },
+      "source": "results/derived/gate5-descriptive-rates.json",
+      "source_pointer": "/rates/18",
+      "unit": "case_share",
+      "upper": 1.0
+    },
+    {
+      "boundary": "curated_gate5_denominator_only_not_prevalence_not_human_review_not_adjudication",
+      "confidence_level": 0.95,
+      "estimate": 0.977273,
+      "lower": 0.94697,
+      "method": "nonparametric_case_bootstrap",
+      "metric_id": "runtime_profile_case_coverage_share",
+      "sample_count": 2000,
+      "slice": {
+        "dimension": "runtime_profile",
+        "value": "RP2"
+      },
+      "source": "results/derived/gate5-descriptive-rates.json",
+      "source_pointer": "/rates/19",
+      "unit": "case_share",
+      "upper": 1.0
+    },
+    {
+      "boundary": "curated_gate5_denominator_only_not_prevalence_not_human_review_not_adjudication",
+      "confidence_level": 0.95,
+      "estimate": 0.977273,
+      "lower": 0.94697,
+      "method": "nonparametric_case_bootstrap",
+      "metric_id": "runtime_profile_case_coverage_share",
+      "sample_count": 2000,
+      "slice": {
+        "dimension": "runtime_profile",
+        "value": "RP3"
+      },
+      "source": "results/derived/gate5-descriptive-rates.json",
+      "source_pointer": "/rates/20",
+      "unit": "case_share",
+      "upper": 1.0
+    },
+    {
+      "boundary": "curated_gate5_denominator_only_not_prevalence_not_human_review_not_adjudication",
+      "confidence_level": 0.95,
+      "estimate": 0.022727,
+      "lower": 0.0,
+      "method": "nonparametric_case_bootstrap",
+      "metric_id": "runtime_profile_case_coverage_share",
+      "sample_count": 2000,
+      "slice": {
+        "dimension": "runtime_profile",
+        "value": "RP5"
+      },
+      "source": "results/derived/gate5-descriptive-rates.json",
+      "source_pointer": "/rates/21",
+      "unit": "case_share",
+      "upper": 0.05303
+    }
+  ],
+  "claim_boundary": {
+    "adjudication_claimed": false,
+    "bootstrap_intervals_claimed": true,
+    "commercial_runtime_behavior_claim": false,
+    "completed_human_review_claimed": false,
+    "defense_success_claim": false,
+    "hierarchical_bootstrap_intervals_claimed": true,
+    "mcnemar_hypothesis_tests_claimed": false,
+    "non_human_interval_statistics_claimed": true,
+    "paper_grade_completion_claimed": false,
+    "prevalence_claim": false,
+    "reviewer_agreement_claimed": false,
+    "source_mix_completion_claimed": false,
+    "wilson_intervals_claimed": true
+  },
+  "hierarchical_bootstrap_intervals": [
+    {
+      "boundary": "curated_gate5_denominator_only_not_prevalence_not_human_review_not_adjudication",
+      "confidence_level": 0.95,
+      "estimate": 0.924242,
+      "lower": 0.848485,
+      "method": "hierarchical_skill_case_bootstrap",
+      "metric_id": "paired_summary_mapped_case_share",
+      "sample_count": 2000,
+      "slice": {
+        "dimension": "all",
+        "value": "all"
+      },
+      "source": "results/derived/gate5-descriptive-rates.json",
+      "source_pointer": "/rates/1",
+      "unit": "case_share",
+      "upper": 0.977273
+    },
+    {
+      "boundary": "curated_gate5_denominator_only_not_prevalence_not_human_review_not_adjudication",
+      "confidence_level": 0.95,
+      "estimate": 0.204545,
+      "lower": 0.090909,
+      "method": "hierarchical_skill_case_bootstrap",
+      "metric_id": "source_mix_case_share",
+      "sample_count": 2000,
+      "slice": {
+        "dimension": "source_mix_label",
+        "value": "first_party"
+      },
+      "source": "results/derived/gate5-descriptive-rates.json",
+      "source_pointer": "/rates/2",
+      "unit": "case_share",
+      "upper": 0.340909
+    },
+    {
+      "boundary": "curated_gate5_denominator_only_not_prevalence_not_human_review_not_adjudication",
+      "confidence_level": 0.95,
+      "estimate": 0.386364,
+      "lower": 0.25,
+      "method": "hierarchical_skill_case_bootstrap",
+      "metric_id": "source_mix_case_share",
+      "sample_count": 2000,
+      "slice": {
+        "dimension": "source_mix_label",
+        "value": "public"
+      },
+      "source": "results/derived/gate5-descriptive-rates.json",
+      "source_pointer": "/rates/4",
+      "unit": "case_share",
+      "upper": 0.522727
+    },
+    {
+      "boundary": "curated_gate5_denominator_only_not_prevalence_not_human_review_not_adjudication",
+      "confidence_level": 0.95,
+      "estimate": 0.409091,
+      "lower": 0.272727,
+      "method": "hierarchical_skill_case_bootstrap",
+      "metric_id": "source_mix_case_share",
+      "sample_count": 2000,
+      "slice": {
+        "dimension": "source_mix_label",
+        "value": "synthetic"
+      },
+      "source": "results/derived/gate5-descriptive-rates.json",
+      "source_pointer": "/rates/6",
+      "unit": "case_share",
+      "upper": 0.545455
+    },
+    {
+      "boundary": "curated_gate5_denominator_only_not_prevalence_not_human_review_not_adjudication",
+      "confidence_level": 0.95,
+      "estimate": 0.015152,
+      "lower": 0.0,
+      "method": "hierarchical_skill_case_bootstrap",
+      "metric_id": "evidence_stage_share",
+      "sample_count": 2000,
+      "slice": {
+        "dimension": "evidence_stage",
+        "value": "mvp"
+      },
+      "source": "results/derived/gate5-descriptive-rates.json",
+      "source_pointer": "/rates/17",
+      "unit": "case_share",
+      "upper": 0.045455
+    },
+    {
+      "boundary": "curated_gate5_denominator_only_not_prevalence_not_human_review_not_adjudication",
+      "confidence_level": 0.95,
+      "estimate": 0.984848,
+      "lower": 0.954545,
+      "method": "hierarchical_skill_case_bootstrap",
+      "metric_id": "evidence_stage_share",
+      "sample_count": 2000,
+      "slice": {
+        "dimension": "evidence_stage",
+        "value": "pilot"
+      },
+      "source": "results/derived/gate5-descriptive-rates.json",
+      "source_pointer": "/rates/18",
+      "unit": "case_share",
+      "upper": 1.0
+    }
+  ],
+  "input_refs": {
+    "descriptive_rates_ref": "results/derived/gate5-descriptive-rates.json",
+    "frozen_inclusion_table_ref": "benchmark/manifests/gate5-paper-inclusion.json",
+    "paired_runtime_summary_ref": "results/derived/paired-runtime-summary.json"
+  },
+  "manual_review_status": {
+    "boundary": "Human/manual review remains 0% until real independent reviewers complete exports.",
+    "completed_human_review_count": 0,
+    "percent_complete": 0.0
+  },
+  "mcnemar_style_analysis": {
+    "reason": "Current paired-runtime records are comparator classifications and finding-set deltas, not a frozen binary human-adjudicated matched outcome table. A McNemar-style result would overstate the evidence at this stage.",
+    "result_count": 0,
+    "status": "deferred_not_reported"
+  },
+  "next_dependencies": [
+    "Complete real two-reviewer human review exports before reviewer agreement or Cohen's kappa claims.",
+    "Add binary matched outcome labels before McNemar-style hypothesis-test reporting.",
+    "Keep all intervals scoped to the curated Gate 5 denominator rather than ecosystem prevalence.",
+    "Promote more source-provenance entries into executable evidence before claiming source-mix evidence completion."
+  ],
+  "paired_runtime_summary": {
+    "classification_counts": {
+      "mitigation_report_card_comparison": 28,
+      "no_pairwise_disagreement": 143,
+      "profile_conditioned_semantic_fixture": 28,
+      "runtime_drift_candidate": 15
+    },
+    "majority_pair_classification": "no_pairwise_disagreement",
+    "max_pair_severity": "critical",
+    "max_severity_reporting_boundary": "Max severity is computed from comparator finding-set deltas only; it is reported beside majority/median behavior and is not human-adjudicated severity.",
+    "median_pair_disagreement_count": 0.0,
+    "pair_count": 214,
+    "pair_max_severity_counts": {
+      "critical": 40,
+      "high": 11,
+      "low": 11,
+      "none": 152
+    },
+    "pairwise_disagreement_finding_count": 232,
+    "positive_pair_disagreement_count": 62,
+    "runtime_pair_counts": {
+      "RP2__RP1": 12,
+      "RP2__RP3": 162,
+      "RP2__RP6": 14,
+      "RP3__RP1": 12,
+      "RP3__RP6": 14
+    }
+  },
+  "parameters": {
+    "bootstrap_quantiles": [
+      0.025,
+      0.975
+    ],
+    "bootstrap_samples": 2000,
+    "bootstrap_seed": 20260528,
+    "confidence_level": 0.95,
+    "wilson_z": 1.959963984540054
+  },
+  "report_type": "gate5_statistical_intervals",
+  "schema_version": "0.1",
+  "status": "non_human_intervals_ready_no_manual_review",
+  "wilson_intervals": [
+    {
+      "boundary": "curated_gate5_denominator_only_not_prevalence_not_human_review_not_adjudication",
+      "confidence_level": 0.95,
+      "denominator": 132,
+      "estimate": 1.0,
+      "lower": 0.971721,
+      "method": "wilson_score",
+      "metric_id": "included_case_share",
+      "numerator": 132,
+      "slice": {
+        "dimension": "all",
+        "value": "all"
+      },
+      "source": "results/derived/gate5-descriptive-rates.json",
+      "source_pointer": "/rates/0",
+      "unit": "case_share",
+      "upper": 1.0
+    },
+    {
+      "boundary": "curated_gate5_denominator_only_not_prevalence_not_human_review_not_adjudication",
+      "confidence_level": 0.95,
+      "denominator": 132,
+      "estimate": 0.924242,
+      "lower": 0.866159,
+      "method": "wilson_score",
+      "metric_id": "paired_summary_mapped_case_share",
+      "numerator": 122,
+      "slice": {
+        "dimension": "all",
+        "value": "all"
+      },
+      "source": "results/derived/gate5-descriptive-rates.json",
+      "source_pointer": "/rates/1",
+      "unit": "case_share",
+      "upper": 0.958332
+    },
+    {
+      "boundary": "curated_gate5_denominator_only_not_prevalence_not_human_review_not_adjudication",
+      "confidence_level": 0.95,
+      "denominator": 132,
+      "estimate": 0.204545,
+      "lower": 0.144556,
+      "method": "wilson_score",
+      "metric_id": "source_mix_case_share",
+      "numerator": 27,
+      "slice": {
+        "dimension": "source_mix_label",
+        "value": "first_party"
+      },
+      "source": "results/derived/gate5-descriptive-rates.json",
+      "source_pointer": "/rates/2",
+      "unit": "case_share",
+      "upper": 0.281245
+    },
+    {
+      "boundary": "curated_gate5_denominator_only_not_prevalence_not_human_review_not_adjudication",
+      "confidence_level": 0.95,
+      "denominator": 44,
+      "estimate": 0.204545,
+      "lower": 0.111533,
+      "method": "wilson_score",
+      "metric_id": "source_mix_skill_share",
+      "numerator": 9,
+      "slice": {
+        "dimension": "source_mix_label",
+        "value": "first_party"
+      },
+      "source": "results/derived/gate5-descriptive-rates.json",
+      "source_pointer": "/rates/3",
+      "unit": "skill_share",
+      "upper": 0.345006
+    },
+    {
+      "boundary": "curated_gate5_denominator_only_not_prevalence_not_human_review_not_adjudication",
+      "confidence_level": 0.95,
+      "denominator": 132,
+      "estimate": 0.386364,
+      "lower": 0.307633,
+      "method": "wilson_score",
+      "metric_id": "source_mix_case_share",
+      "numerator": 51,
+      "slice": {
+        "dimension": "source_mix_label",
+        "value": "public"
+      },
+      "source": "results/derived/gate5-descriptive-rates.json",
+      "source_pointer": "/rates/4",
+      "unit": "case_share",
+      "upper": 0.471522
+    },
+    {
+      "boundary": "curated_gate5_denominator_only_not_prevalence_not_human_review_not_adjudication",
+      "confidence_level": 0.95,
+      "denominator": 44,
+      "estimate": 0.386364,
+      "lower": 0.257212,
+      "method": "wilson_score",
+      "metric_id": "source_mix_skill_share",
+      "numerator": 17,
+      "slice": {
+        "dimension": "source_mix_label",
+        "value": "public"
+      },
+      "source": "results/derived/gate5-descriptive-rates.json",
+      "source_pointer": "/rates/5",
+      "unit": "skill_share",
+      "upper": 0.533764
+    },
+    {
+      "boundary": "curated_gate5_denominator_only_not_prevalence_not_human_review_not_adjudication",
+      "confidence_level": 0.95,
+      "denominator": 132,
+      "estimate": 0.409091,
+      "lower": 0.328941,
+      "method": "wilson_score",
+      "metric_id": "source_mix_case_share",
+      "numerator": 54,
+      "slice": {
+        "dimension": "source_mix_label",
+        "value": "synthetic"
+      },
+      "source": "results/derived/gate5-descriptive-rates.json",
+      "source_pointer": "/rates/6",
+      "unit": "case_share",
+      "upper": 0.494382
+    },
+    {
+      "boundary": "curated_gate5_denominator_only_not_prevalence_not_human_review_not_adjudication",
+      "confidence_level": 0.95,
+      "denominator": 44,
+      "estimate": 0.409091,
+      "lower": 0.276879,
+      "method": "wilson_score",
+      "metric_id": "source_mix_skill_share",
+      "numerator": 18,
+      "slice": {
+        "dimension": "source_mix_label",
+        "value": "synthetic"
+      },
+      "source": "results/derived/gate5-descriptive-rates.json",
+      "source_pointer": "/rates/7",
+      "unit": "skill_share",
+      "upper": 0.555902
+    },
+    {
+      "boundary": "curated_gate5_denominator_only_not_prevalence_not_human_review_not_adjudication",
+      "confidence_level": 0.95,
+      "denominator": 132,
+      "estimate": 0.136364,
+      "lower": 0.088028,
+      "method": "wilson_score",
+      "metric_id": "category_case_share",
+      "numerator": 18,
+      "slice": {
+        "dimension": "category",
+        "value": "API workflow"
+      },
+      "source": "results/derived/gate5-descriptive-rates.json",
+      "source_pointer": "/rates/8",
+      "unit": "case_share",
+      "upper": 0.205265
+    },
+    {
+      "boundary": "curated_gate5_denominator_only_not_prevalence_not_human_review_not_adjudication",
+      "confidence_level": 0.95,
+      "denominator": 132,
+      "estimate": 0.136364,
+      "lower": 0.088028,
+      "method": "wilson_score",
+      "metric_id": "category_case_share",
+      "numerator": 18,
+      "slice": {
+        "dimension": "category",
+        "value": "MCP/tool workflow"
+      },
+      "source": "results/derived/gate5-descriptive-rates.json",
+      "source_pointer": "/rates/9",
+      "unit": "case_share",
+      "upper": 0.205265
+    },
+    {
+      "boundary": "curated_gate5_denominator_only_not_prevalence_not_human_review_not_adjudication",
+      "confidence_level": 0.95,
+      "denominator": 132,
+      "estimate": 0.113636,
+      "lower": 0.070086,
+      "method": "wilson_score",
+      "metric_id": "category_case_share",
+      "numerator": 15,
+      "slice": {
+        "dimension": "category",
+        "value": "compliance/audit"
+      },
+      "source": "results/derived/gate5-descriptive-rates.json",
+      "source_pointer": "/rates/10",
+      "unit": "case_share",
+      "upper": 0.179039
+    },
+    {
+      "boundary": "curated_gate5_denominator_only_not_prevalence_not_human_review_not_adjudication",
+      "confidence_level": 0.95,
+      "denominator": 132,
+      "estimate": 0.159091,
+      "lower": 0.106473,
+      "method": "wilson_score",
+      "metric_id": "category_case_share",
+      "numerator": 21,
+      "slice": {
+        "dimension": "category",
+        "value": "data extraction"
+      },
+      "source": "results/derived/gate5-descriptive-rates.json",
+      "source_pointer": "/rates/11",
+      "unit": "case_share",
+      "upper": 0.23099
+    },
+    {
+      "boundary": "curated_gate5_denominator_only_not_prevalence_not_human_review_not_adjudication",
+      "confidence_level": 0.95,
+      "denominator": 132,
+      "estimate": 0.159091,
+      "lower": 0.106473,
+      "method": "wilson_score",
+      "metric_id": "category_case_share",
+      "numerator": 21,
+      "slice": {
+        "dimension": "category",
+        "value": "document automation"
+      },
+      "source": "results/derived/gate5-descriptive-rates.json",
+      "source_pointer": "/rates/12",
+      "unit": "case_share",
+      "upper": 0.23099
+    },
+    {
+      "boundary": "curated_gate5_denominator_only_not_prevalence_not_human_review_not_adjudication",
+      "confidence_level": 0.95,
+      "denominator": 132,
+      "estimate": 0.136364,
+      "lower": 0.088028,
+      "method": "wilson_score",
+      "metric_id": "category_case_share",
+      "numerator": 18,
+      "slice": {
+        "dimension": "category",
+        "value": "local file operations"
+      },
+      "source": "results/derived/gate5-descriptive-rates.json",
+      "source_pointer": "/rates/13",
+      "unit": "case_share",
+      "upper": 0.205265
+    },
+    {
+      "boundary": "curated_gate5_denominator_only_not_prevalence_not_human_review_not_adjudication",
+      "confidence_level": 0.95,
+      "denominator": 132,
+      "estimate": 0.159091,
+      "lower": 0.106473,
+      "method": "wilson_score",
+      "metric_id": "category_case_share",
+      "numerator": 21,
+      "slice": {
+        "dimension": "category",
+        "value": "repository maintenance"
+      },
+      "source": "results/derived/gate5-descriptive-rates.json",
+      "source_pointer": "/rates/14",
+      "unit": "case_share",
+      "upper": 0.23099
+    },
+    {
+      "boundary": "curated_gate5_denominator_only_not_prevalence_not_human_review_not_adjudication",
+      "confidence_level": 0.95,
+      "denominator": 132,
+      "estimate": 0.015152,
+      "lower": 0.004165,
+      "method": "wilson_score",
+      "metric_id": "case_status_share",
+      "numerator": 2,
+      "slice": {
+        "dimension": "case_status",
+        "value": "current_mvp"
+      },
+      "source": "results/derived/gate5-descriptive-rates.json",
+      "source_pointer": "/rates/15",
+      "unit": "case_share",
+      "upper": 0.05356
+    },
+    {
+      "boundary": "curated_gate5_denominator_only_not_prevalence_not_human_review_not_adjudication",
+      "confidence_level": 0.95,
+      "denominator": 132,
+      "estimate": 0.984848,
+      "lower": 0.94644,
+      "method": "wilson_score",
+      "metric_id": "case_status_share",
+      "numerator": 130,
+      "slice": {
+        "dimension": "case_status",
+        "value": "current_pilot"
+      },
+      "source": "results/derived/gate5-descriptive-rates.json",
+      "source_pointer": "/rates/16",
+      "unit": "case_share",
+      "upper": 0.995835
+    },
+    {
+      "boundary": "curated_gate5_denominator_only_not_prevalence_not_human_review_not_adjudication",
+      "confidence_level": 0.95,
+      "denominator": 132,
+      "estimate": 0.015152,
+      "lower": 0.004165,
+      "method": "wilson_score",
+      "metric_id": "evidence_stage_share",
+      "numerator": 2,
+      "slice": {
+        "dimension": "evidence_stage",
+        "value": "mvp"
+      },
+      "source": "results/derived/gate5-descriptive-rates.json",
+      "source_pointer": "/rates/17",
+      "unit": "case_share",
+      "upper": 0.05356
+    },
+    {
+      "boundary": "curated_gate5_denominator_only_not_prevalence_not_human_review_not_adjudication",
+      "confidence_level": 0.95,
+      "denominator": 132,
+      "estimate": 0.984848,
+      "lower": 0.94644,
+      "method": "wilson_score",
+      "metric_id": "evidence_stage_share",
+      "numerator": 130,
+      "slice": {
+        "dimension": "evidence_stage",
+        "value": "pilot"
+      },
+      "source": "results/derived/gate5-descriptive-rates.json",
+      "source_pointer": "/rates/18",
+      "unit": "case_share",
+      "upper": 0.995835
+    },
+    {
+      "boundary": "curated_gate5_denominator_only_not_prevalence_not_human_review_not_adjudication",
+      "confidence_level": 0.95,
+      "denominator": 132,
+      "estimate": 0.977273,
+      "lower": 0.935311,
+      "method": "wilson_score",
+      "metric_id": "runtime_profile_case_coverage_share",
+      "numerator": 129,
+      "slice": {
+        "dimension": "runtime_profile",
+        "value": "RP2"
+      },
+      "source": "results/derived/gate5-descriptive-rates.json",
+      "source_pointer": "/rates/19",
+      "unit": "case_share",
+      "upper": 0.992241
+    },
+    {
+      "boundary": "curated_gate5_denominator_only_not_prevalence_not_human_review_not_adjudication",
+      "confidence_level": 0.95,
+      "denominator": 132,
+      "estimate": 0.977273,
+      "lower": 0.935311,
+      "method": "wilson_score",
+      "metric_id": "runtime_profile_case_coverage_share",
+      "numerator": 129,
+      "slice": {
+        "dimension": "runtime_profile",
+        "value": "RP3"
+      },
+      "source": "results/derived/gate5-descriptive-rates.json",
+      "source_pointer": "/rates/20",
+      "unit": "case_share",
+      "upper": 0.992241
+    },
+    {
+      "boundary": "curated_gate5_denominator_only_not_prevalence_not_human_review_not_adjudication",
+      "confidence_level": 0.95,
+      "denominator": 132,
+      "estimate": 0.022727,
+      "lower": 0.007759,
+      "method": "wilson_score",
+      "metric_id": "runtime_profile_case_coverage_share",
+      "numerator": 3,
+      "slice": {
+        "dimension": "runtime_profile",
+        "value": "RP5"
+      },
+      "source": "results/derived/gate5-descriptive-rates.json",
+      "source_pointer": "/rates/21",
+      "unit": "case_share",
+      "upper": 0.064689
+    },
+    {
+      "boundary": "curated_gate5_denominator_only_not_prevalence_not_human_review_not_adjudication",
+      "confidence_level": 0.95,
+      "denominator": 214,
+      "estimate": 0.130841,
+      "lower": 0.092099,
+      "method": "wilson_score",
+      "metric_id": "pair_classification_share",
+      "numerator": 28,
+      "slice": {
+        "dimension": "classification",
+        "value": "mitigation_report_card_comparison"
+      },
+      "source": "results/derived/paired-runtime-summary.json",
+      "source_pointer": "/aggregate/classification_counts/mitigation_report_card_comparison",
+      "unit": "pair_share",
+      "upper": 0.182603
+    },
+    {
+      "boundary": "curated_gate5_denominator_only_not_prevalence_not_human_review_not_adjudication",
+      "confidence_level": 0.95,
+      "denominator": 214,
+      "estimate": 0.668224,
+      "lower": 0.602661,
+      "method": "wilson_score",
+      "metric_id": "pair_classification_share",
+      "numerator": 143,
+      "slice": {
+        "dimension": "classification",
+        "value": "no_pairwise_disagreement"
+      },
+      "source": "results/derived/paired-runtime-summary.json",
+      "source_pointer": "/aggregate/classification_counts/no_pairwise_disagreement",
+      "unit": "pair_share",
+      "upper": 0.727854
+    },
+    {
+      "boundary": "curated_gate5_denominator_only_not_prevalence_not_human_review_not_adjudication",
+      "confidence_level": 0.95,
+      "denominator": 214,
+      "estimate": 0.130841,
+      "lower": 0.092099,
+      "method": "wilson_score",
+      "metric_id": "pair_classification_share",
+      "numerator": 28,
+      "slice": {
+        "dimension": "classification",
+        "value": "profile_conditioned_semantic_fixture"
+      },
+      "source": "results/derived/paired-runtime-summary.json",
+      "source_pointer": "/aggregate/classification_counts/profile_conditioned_semantic_fixture",
+      "unit": "pair_share",
+      "upper": 0.182603
+    },
+    {
+      "boundary": "curated_gate5_denominator_only_not_prevalence_not_human_review_not_adjudication",
+      "confidence_level": 0.95,
+      "denominator": 214,
+      "estimate": 0.070093,
+      "lower": 0.042934,
+      "method": "wilson_score",
+      "metric_id": "pair_classification_share",
+      "numerator": 15,
+      "slice": {
+        "dimension": "classification",
+        "value": "runtime_drift_candidate"
+      },
+      "source": "results/derived/paired-runtime-summary.json",
+      "source_pointer": "/aggregate/classification_counts/runtime_drift_candidate",
+      "unit": "pair_share",
+      "upper": 0.112415
+    },
+    {
+      "boundary": "curated_gate5_denominator_only_not_prevalence_not_human_review_not_adjudication",
+      "confidence_level": 0.95,
+      "denominator": 214,
+      "estimate": 0.056075,
+      "lower": 0.032365,
+      "method": "wilson_score",
+      "metric_id": "runtime_pair_share",
+      "numerator": 12,
+      "slice": {
+        "dimension": "runtime_pair",
+        "value": "RP2__RP1"
+      },
+      "source": "results/derived/paired-runtime-summary.json",
+      "source_pointer": "/aggregate/runtime_pair_counts/RP2__RP1",
+      "unit": "pair_share",
+      "upper": 0.095441
+    },
+    {
+      "boundary": "curated_gate5_denominator_only_not_prevalence_not_human_review_not_adjudication",
+      "confidence_level": 0.95,
+      "denominator": 214,
+      "estimate": 0.757009,
+      "lower": 0.695343,
+      "method": "wilson_score",
+      "metric_id": "runtime_pair_share",
+      "numerator": 162,
+      "slice": {
+        "dimension": "runtime_pair",
+        "value": "RP2__RP3"
+      },
+      "source": "results/derived/paired-runtime-summary.json",
+      "source_pointer": "/aggregate/runtime_pair_counts/RP2__RP3",
+      "unit": "pair_share",
+      "upper": 0.809611
+    },
+    {
+      "boundary": "curated_gate5_denominator_only_not_prevalence_not_human_review_not_adjudication",
+      "confidence_level": 0.95,
+      "denominator": 214,
+      "estimate": 0.065421,
+      "lower": 0.039366,
+      "method": "wilson_score",
+      "metric_id": "runtime_pair_share",
+      "numerator": 14,
+      "slice": {
+        "dimension": "runtime_pair",
+        "value": "RP2__RP6"
+      },
+      "source": "results/derived/paired-runtime-summary.json",
+      "source_pointer": "/aggregate/runtime_pair_counts/RP2__RP6",
+      "unit": "pair_share",
+      "upper": 0.106802
+    },
+    {
+      "boundary": "curated_gate5_denominator_only_not_prevalence_not_human_review_not_adjudication",
+      "confidence_level": 0.95,
+      "denominator": 214,
+      "estimate": 0.056075,
+      "lower": 0.032365,
+      "method": "wilson_score",
+      "metric_id": "runtime_pair_share",
+      "numerator": 12,
+      "slice": {
+        "dimension": "runtime_pair",
+        "value": "RP3__RP1"
+      },
+      "source": "results/derived/paired-runtime-summary.json",
+      "source_pointer": "/aggregate/runtime_pair_counts/RP3__RP1",
+      "unit": "pair_share",
+      "upper": 0.095441
+    },
+    {
+      "boundary": "curated_gate5_denominator_only_not_prevalence_not_human_review_not_adjudication",
+      "confidence_level": 0.95,
+      "denominator": 214,
+      "estimate": 0.065421,
+      "lower": 0.039366,
+      "method": "wilson_score",
+      "metric_id": "runtime_pair_share",
+      "numerator": 14,
+      "slice": {
+        "dimension": "runtime_pair",
+        "value": "RP3__RP6"
+      },
+      "source": "results/derived/paired-runtime-summary.json",
+      "source_pointer": "/aggregate/runtime_pair_counts/RP3__RP6",
+      "unit": "pair_share",
+      "upper": 0.106802
+    },
+    {
+      "boundary": "curated_gate5_denominator_only_not_prevalence_not_human_review_not_adjudication",
+      "confidence_level": 0.95,
+      "denominator": 214,
+      "estimate": 0.28972,
+      "lower": 0.233074,
+      "method": "wilson_score",
+      "metric_id": "positive_pair_disagreement_share",
+      "numerator": 62,
+      "slice": {
+        "dimension": "all",
+        "value": "all"
+      },
+      "source": "results/derived/paired-runtime-summary.json",
+      "source_pointer": "/aggregate/pair_count",
+      "unit": "pair_share",
+      "upper": 0.353781
+    },
+    {
+      "boundary": "curated_gate5_denominator_only_not_prevalence_not_human_review_not_adjudication",
+      "confidence_level": 0.95,
+      "denominator": 214,
+      "estimate": 0.71028,
+      "lower": 0.646219,
+      "method": "wilson_score",
+      "metric_id": "pair_max_severity_share",
+      "numerator": 152,
+      "slice": {
+        "dimension": "max_severity",
+        "value": "none"
+      },
+      "source": "results/derived/paired-runtime-summary.json",
+      "source_pointer": "/aggregate/pair_count",
+      "unit": "pair_share",
+      "upper": 0.766926
+    },
+    {
+      "boundary": "curated_gate5_denominator_only_not_prevalence_not_human_review_not_adjudication",
+      "confidence_level": 0.95,
+      "denominator": 214,
+      "estimate": 0.051402,
+      "lower": 0.028941,
+      "method": "wilson_score",
+      "metric_id": "pair_max_severity_share",
+      "numerator": 11,
+      "slice": {
+        "dimension": "max_severity",
+        "value": "low"
+      },
+      "source": "results/derived/paired-runtime-summary.json",
+      "source_pointer": "/aggregate/pair_count",
+      "unit": "pair_share",
+      "upper": 0.089684
+    },
+    {
+      "boundary": "curated_gate5_denominator_only_not_prevalence_not_human_review_not_adjudication",
+      "confidence_level": 0.95,
+      "denominator": 214,
+      "estimate": 0.051402,
+      "lower": 0.028941,
+      "method": "wilson_score",
+      "metric_id": "pair_max_severity_share",
+      "numerator": 11,
+      "slice": {
+        "dimension": "max_severity",
+        "value": "high"
+      },
+      "source": "results/derived/paired-runtime-summary.json",
+      "source_pointer": "/aggregate/pair_count",
+      "unit": "pair_share",
+      "upper": 0.089684
+    },
+    {
+      "boundary": "curated_gate5_denominator_only_not_prevalence_not_human_review_not_adjudication",
+      "confidence_level": 0.95,
+      "denominator": 214,
+      "estimate": 0.186916,
+      "lower": 0.140374,
+      "method": "wilson_score",
+      "metric_id": "pair_max_severity_share",
+      "numerator": 40,
+      "slice": {
+        "dimension": "max_severity",
+        "value": "critical"
+      },
+      "source": "results/derived/paired-runtime-summary.json",
+      "source_pointer": "/aggregate/pair_count",
+      "unit": "pair_share",
+      "upper": 0.244499
+    }
+  ]
+}

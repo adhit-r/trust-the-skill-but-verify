@@ -1,5 +1,10 @@
 {
   "contract_id": "ticket-api-synthetic-fake-ticket-triage",
+  "coverage": {
+    "unmatched_decision_count": 0,
+    "unmatched_event_status_counts": {},
+    "unmatched_event_type_counts": {}
+  },
   "decisions": [
     {
       "decision": "allow",

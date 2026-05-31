@@ -17,7 +17,7 @@ DEFAULT_PAIRED_SUMMARY = REPO_ROOT / "results" / "derived" / "paired-runtime-sum
 DEFAULT_ADJUDICATION_FORM = REPO_ROOT / "paper" / "gate5-adjudication-form.md"
 DEFAULT_OUTPUT = REPO_ROOT / "benchmark" / "review" / "gate5-review-queue.json"
 SOURCE_MIX_LABELS = ["first_party", "public", "synthetic"]
-SAMPLE_BATCH_ID = "gate5-current-60-case-review-queue"
+SAMPLE_BATCH_ID_TEMPLATE = "gate5-current-{case_count}-case-review-queue"
 
 
 def load_json(path: Path) -> dict[str, Any]:
@@ -126,6 +126,7 @@ def build_item(
     case: dict[str, Any],
     group: dict[str, Any] | None,
     adjudication_form_ref: str,
+    sample_batch_id: str,
 ) -> dict[str, Any]:
     paired_summary = build_paired_summary(entry, group)
     expected_output_path = repo_path(entry.get("expected_output_ref"))
@@ -149,7 +150,7 @@ def build_item(
 
     return {
         "review_item_id": f"gate5-review-{index + 1:03d}-{entry['case_id']}",
-        "sample_batch_id": SAMPLE_BATCH_ID,
+        "sample_batch_id": sample_batch_id,
         "case_id": entry["case_id"],
         "case_pointer": entry["case_pointer"],
         "family_id": entry["family_id"],
@@ -219,6 +220,7 @@ def build_queue(
         for entry in table.get("entries", [])
         if entry.get("included_in_gate5_descriptive_rates") is True
     ]
+    sample_batch_id = SAMPLE_BATCH_ID_TEMPLATE.format(case_count=len(included))
     review_items: list[dict[str, Any]] = []
     for index, entry in enumerate(included):
         case = cases.get(entry["case_id"])
@@ -226,7 +228,7 @@ def build_queue(
             raise KeyError(f"missing source case for {entry['case_id']}")
         group_key = entry.get("paired_summary_group_key")
         group = groups.get(group_key) if isinstance(group_key, str) else None
-        review_items.append(build_item(index, entry, case, group, adjudication_form_ref))
+        review_items.append(build_item(index, entry, case, group, adjudication_form_ref, sample_batch_id))
 
     source_mix_counts = zero_filled_source_mix(
         Counter(item["source_mix_label"] for item in review_items)

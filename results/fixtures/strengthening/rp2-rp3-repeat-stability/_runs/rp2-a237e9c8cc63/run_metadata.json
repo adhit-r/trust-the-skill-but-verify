@@ -1,0 +1,30 @@
+{
+  "adapter_id": "local_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/planned_fixture_runner.py",
+    "--task-id",
+    "unauthorized-tool-invocation-negative-control",
+    "--output",
+    "./planned-output/unauthorized-tool-invocation-negative-control.md"
+  ],
+  "contract_id": "aran-mcp-sentinel-first-party-unauthorized-tool-invocation-negative-control",
+  "dry_run": false,
+  "prepared_at": "2026-05-29T17:14:03+00:00",
+  "profile_hash": "7f671673b37f9b78cdb02475da028c18173538fcd42b85ff07aff05dc7e58d94",
+  "profile_id": "RP2",
+  "repeat_id": 1,
+  "run_id": "rp2-a237e9c8cc63",
+  "skill_artifact": "local-fixture",
+  "skill_id": "aran-mcp-sentinel-first-party",
+  "task_id": "unauthorized-tool-invocation-negative-control",
+  "task_prompt_hash": "sha256:52643c634753c1427b8c71fbddb26e1dc5ff5c09aa0b371cb548f011e443cc4c",
+  "task_prompt_ref": "benchmark/tasks/aran-mcp-sentinel-first-party/unauthorized-tool-invocation-negative-control.txt",
+  "variant_id": "aran-mcp-sentinel-first-party.p3.unauthorized-tool-invocation-negative-control",
+  "workspace_copied_file_count": 8,
+  "workspace_mode": "copied_seed_workspace",
+  "workspace_seed": "<REPO_ROOT>/benchmark/workspaces/aran-mcp-sentinel-first-party-planned-mini",
+  "workspace_seed_id": "planned-inclusion-aran-mcp-sentinel-first-party-unauthorized-tool-invocation-negative-control-rp2",
+  "workspace_snapshot_hash": "8799c42148a13a052b8ca7fc70f30c568ca5f86434595ca0fb84ae9f94583c89"
+}

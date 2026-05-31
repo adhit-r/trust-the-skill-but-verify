@@ -223,7 +223,7 @@ def build_report(
         "boundary": (
             "Raw descriptive denominator and rate artifact built from the frozen Gate 5 inclusion table; "
             "not completed statistics, not confidence intervals, not hypothesis tests, not reviewer "
-            "agreement, not prevalence, not source-mix completion, and not paper-grade completion evidence."
+            "agreement, not prevalence, not source-mix evidence completion, and not paper-grade completion evidence."
         ),
         "input_manifest_refs": [
             table["source_manifest_ref"],
@@ -245,10 +245,10 @@ def build_report(
         "rates": rates,
         "exclusions": exclusions,
         "next_dependencies": [
-            "Add manual review queue and completed two-reviewer records before reviewer agreement claims.",
-            "Add public and additional first-party skills before claiming source-mix completion.",
+            "Use the existing manual review queue and add completed two-reviewer records before reviewer agreement claims.",
+            "Promote first-party/public source-provenance entries into executable evidence before claiming source-mix evidence completion.",
             "Add repeat-backed analysis before Wilson, bootstrap, McNemar, or other statistical claims.",
-            "Keep 40/120 full-paper completion blocked until the manifest reaches that floor.",
+            "Treat 40/120 as a manifest/source-provenance floor only until repeat, statistics, and adjudication evidence catch up.",
         ],
     }
 

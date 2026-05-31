@@ -1,3 +1,3 @@
-{"adapter_id": "docker_adapter", "event": "prepare", "mode": "live", "timestamp": "2026-05-26T12:03:04+00:00"}
-{"adapter_id": "docker_adapter", "container_id": "90d8a6a8eb23d533f2454275e118909a14daad8acc172d4c3a20107752abf82d", "event": "run", "exit_code": 0, "mode": "live", "outcome": "completed", "timestamp": "2026-05-26T12:03:05+00:00"}
-{"adapter_id": "docker_adapter", "event": "collect", "timestamp": "2026-05-26T12:03:05+00:00"}
+{"adapter_id": "docker_adapter", "event": "prepare", "mode": "live", "timestamp": "2026-05-29T17:15:11+00:00"}
+{"adapter_id": "docker_adapter", "container_id": "0df25556d76cb870ffbb3f113fc67e99bb3cb3685fa31de9d6c92a034f5d7717", "event": "run", "exit_code": 0, "mode": "live", "outcome": "completed", "timestamp": "2026-05-29T17:15:12+00:00"}
+{"adapter_id": "docker_adapter", "event": "collect", "timestamp": "2026-05-29T17:15:12+00:00"}

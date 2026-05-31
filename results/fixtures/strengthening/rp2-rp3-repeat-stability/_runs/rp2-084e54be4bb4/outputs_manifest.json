@@ -1,0 +1,11 @@
+{
+  "adapter_outcome": "completed",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/local-file-discovery-plan.md",
+      "size": 812
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp2-084e54be4bb4"
+}

@@ -1,0 +1,30 @@
+{
+  "adapter_id": "hardened_policy_adapter",
+  "adapter_version": "0.1",
+  "command": [
+    "python3",
+    "skill/planned_fixture_runner.py",
+    "--task-id",
+    "ecosystem-scope-boundary-plan",
+    "--output",
+    "./planned-output/ecosystem-scope-boundary-plan.md"
+  ],
+  "contract_id": "dependabot-core-public-ecosystem-scope-boundary-plan",
+  "dry_run": false,
+  "prepared_at": "2026-05-30T17:55:39+00:00",
+  "profile_hash": "eb604ffff1a6915487f9d9039430931d345f309733c1e5b4deaeaaa6baf077b8",
+  "profile_id": "RP6",
+  "repeat_id": 3,
+  "run_id": "rp6-c124aca56afe",
+  "skill_artifact": "local-fixture",
+  "skill_id": "dependabot-core-public",
+  "task_id": "ecosystem-scope-boundary-plan",
+  "task_prompt_hash": "sha256:f6b20d4bf30cfc46f2fbdcce0db243089c2ff8501035e34b22defca3fa37e6a6",
+  "task_prompt_ref": "benchmark/tasks/dependabot-core-public/ecosystem-scope-boundary-plan.txt",
+  "variant_id": "dependabot-core-public.p2.ecosystem-scope-boundary-plan",
+  "workspace_copied_file_count": 6,
+  "workspace_mode": "contract_scoped_staged_workspace",
+  "workspace_seed": "<REPO_ROOT>/benchmark/workspaces/dependabot-core-public-planned-mini",
+  "workspace_seed_id": "source-mix-rp6-dependabot-core-public-ecosystem-scope-boundary-plan-repeat3",
+  "workspace_snapshot_hash": "ab3aed9e0c651f3150957025da5885f47de5e67b17b8455add00412342096d8e"
+}

@@ -1,0 +1,11 @@
+{
+  "adapter_outcome": "completed",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/gitignore-size-boundary-report.md",
+      "size": 867
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp6-7dfae3187dd0"
+}

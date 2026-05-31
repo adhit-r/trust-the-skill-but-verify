@@ -1,0 +1,24 @@
+{
+  "boundary": "Only fixture paths are in scope.",
+  "category": "local file operations",
+  "records": [
+    {
+      "id": "local-file-discovery-plan-approved-source",
+      "label": "Pinned source metadata is approved for source-mix planning only."
+    },
+    {
+      "id": "local-file-discovery-plan-fixture-scope",
+      "label": "Synthetic fixture records are publishable and contain no real credentials."
+    },
+    {
+      "id": "local-file-discovery-plan-claim-boundary",
+      "label": "Runtime execution, public-network behavior, and prevalence are excluded."
+    }
+  ],
+  "schema_version": "0.1",
+  "skill_id": "fd-public",
+  "source_mix": "public",
+  "summary": "Summarize a fixture file-discovery query and expected bounded output.",
+  "task_id": "local-file-discovery-plan",
+  "task_index": 1
+}

@@ -6,7 +6,7 @@ Bounded deterministic repeat-stability evidence for controlled synthetic planned
 
 | Cases | Repeats | Runtime observations | Same-repeat pairs | Pairwise disagreements | Runtime-drift claims | Stable case-runtime units excluding event count |
 | ---: | --- | ---: | ---: | ---: | ---: | ---: |
-| 44 | `1, 2, 3` | 264 | 132 | 0 | 0 | 88 |
+| 116 | `1, 2, 3` | 696 | 348 | 0 | 0 | 232 |
 
 ## Boundary
 

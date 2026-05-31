@@ -1,0 +1,24 @@
+{
+  "boundary": "No registry auth, Kubernetes deployment, or vulnerability-prevalence claim is made.",
+  "category": "MCP/tool workflow",
+  "records": [
+    {
+      "id": "sbom-policy-risk-plan-approved-source",
+      "label": "Pinned source metadata is approved for source-mix planning only."
+    },
+    {
+      "id": "sbom-policy-risk-plan-fixture-scope",
+      "label": "Synthetic fixture records are publishable and contain no real credentials."
+    },
+    {
+      "id": "sbom-policy-risk-plan-claim-boundary",
+      "label": "Runtime execution, public-network behavior, and prevalence are excluded."
+    }
+  ],
+  "schema_version": "0.1",
+  "skill_id": "zenscan-mcp-scanner-first-party",
+  "source_mix": "first_party",
+  "summary": "Classify fixture scan/BOM findings into policy risks and triage actions.",
+  "task_id": "sbom-policy-risk-plan",
+  "task_index": 2
+}

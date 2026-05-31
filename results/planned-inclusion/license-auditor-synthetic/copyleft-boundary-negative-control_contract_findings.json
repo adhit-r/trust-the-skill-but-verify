@@ -1,5 +1,10 @@
 {
   "contract_id": "license-auditor-synthetic-copyleft-boundary-negative-control",
+  "coverage": {
+    "unmatched_decision_count": 0,
+    "unmatched_event_status_counts": {},
+    "unmatched_event_type_counts": {}
+  },
   "decisions": [
     {
       "decision": "allow",

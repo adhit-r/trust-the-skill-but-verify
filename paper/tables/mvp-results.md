@@ -23,6 +23,10 @@ come from `benchmark/manifests/skilldiff-mvp-baseline.json`,
 `results/fixtures/rp6-policy-hardened/*`,
 and `results/live/*` files.
 
+For the cross-cutting current/promoted/future-work boundary map, use
+`paper/tables/evidence-boundary-matrix.md` before moving any result into
+submission prose.
+
 ## Benchmark Composition
 
 | Case | Category | Tasks | Contracts | Runtimes | Canonical Traces | Fixture Boundary |

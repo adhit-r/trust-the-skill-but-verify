@@ -1,0 +1,1 @@
+{"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./planned-output/gitignore-size-boundary-report.md", "sha256": "sha256:0a918b617314fdc0010f4e57b88cda566dfd2f9daff2c9127d9ce123221a495d", "size": 867, "status": "succeeded", "timestamp": "2026-05-29T17:15:42+00:00"}

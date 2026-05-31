@@ -24,10 +24,14 @@ This section is the short execution checklist for the remaining non-human work
 after the Gate 5 review-infrastructure branch. Human/manual review is tracked
 separately under S4.3 and is intentionally excluded from this snapshot.
 
-1. [x] Clear GitHub CI for the draft PR.
+1. [x] Clear GitHub CI and merge the Gate 5 review-infrastructure PR.
    GitHub `make verify` passed on `codex/gate5-review-infra` in PR #1 on
-   2026-05-26; local clean-checkout verification and GitGuardian had already
-   passed.
+   2026-05-31, local clean-checkout verification passed, and the squash merge
+   to `main` passed the post-merge `make verify` run. GitGuardian and SafeDep
+   did not report a vulnerability; both were limited by the very large PR diff.
+   A compensating dependency/workflow review found no changes to dependency
+   manifests, lockfiles, Dockerfiles, or GitHub workflow files in the squash
+   merge.
 2. [x] Scale past the 40 skills / 120 triples manifest floor.
    The planned 24-family source-mix expansion is now in the manifest, moving
    the inventory to 44 skills and 132 tracked skill-task-contract triples.

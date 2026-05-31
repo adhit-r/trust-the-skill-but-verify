@@ -22,6 +22,10 @@ Status: local machine-only bundle path available; no completed human review.
 - `python3 tools/validate_claim_ledger.py`
 - `python3 tools/check_no_local_paths.py`
 - `PYTHON_BIN=python3 make verify`
+- If a GitHub app scanner skips or fails because an artifact PR is too large,
+  perform a compensating dependency/workflow review before treating the PR as
+  release-clean. At minimum, inspect changes to dependency manifests, lockfiles,
+  Dockerfiles, GitHub workflows, and custom GitHub actions.
 
 ## Safety
 

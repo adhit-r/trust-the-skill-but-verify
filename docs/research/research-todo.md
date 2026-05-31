@@ -404,11 +404,13 @@ Goal: reach a credible full-paper benchmark without diluting evidence quality.
    adversarial, unauthorized, or negative-control cases. Keep this partial
    until stricter per-skill variant labels are machine-checked rather than
    inferred from case names.
-5. [~] Store every prompt and expected output in tracked benchmark paths.
-   Current manifest status: all 132 cases have tracked prompt refs; 128 of 132
-   cases have tracked expected-output oracle refs. The remaining four cases
-   have primary artifact metadata but no `oracle_ref`: the network-egress MVP
-   fake-sink smoke case and the three RP5 plugin-style report-card cases
+5. [x] Store every prompt and expected output in tracked benchmark paths.
+   Current manifest status: all 132 cases have tracked prompt refs and
+   expected-output oracle refs. The former four unresolved refs now point to
+   bounded oracle metadata for the network-egress MVP fake-sink smoke case and
+   the three RP5 plugin-style report-card cases. This closes the steering
+   blocker only; it does not promote public-network, commercial-runtime,
+   prevalence, defense-success, or paper-grade completion claims
    (`CL-STEER-001`).
 6. [x] Keep full-product, controlled-fixture, and source-only evidence labels
    visible in every aggregate table.
@@ -629,12 +631,10 @@ The remaining submission-readiness dependencies are:
 1. Run the two-reviewer workflow from the existing blinded packet templates
    before claiming reviewer agreement, adjudication, or human-reviewed
    statistics.
-2. Backfill the four remaining missing expected-output oracle refs if those
-   cases are promoted beyond report-card or smoke metadata.
-3. Add safe task-specific real-run adapters only where they avoid real
+2. Add safe task-specific real-run adapters only where they avoid real
    credentials, public-network exfiltration, commercial-runtime claims, and
    full-product overclaiming.
-4. Keep McNemar, reviewer-agreement, and adjudication claims blocked until
+3. Keep McNemar, reviewer-agreement, and adjudication claims blocked until
    binary matched outcome labels and real two-reviewer evidence exist.
-5. Finalize venue-specific release metadata, especially license and citation
+4. Finalize venue-specific release metadata, especially license and citation
    fields, before external artifact submission.

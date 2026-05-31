@@ -332,6 +332,13 @@ def validate_semantics(manifest: dict[str, Any], path: Path) -> list[ValidationI
         _require_existing_path(path, prefix, provenance.get("workspace_ref"), "provenance.workspace_ref", issues)
         _require_existing_file(path, prefix, execution.get("runnable_manifest_ref"), "execution.runnable_manifest_ref", issues)
         oracle_ref = expected_output.get("oracle_ref")
+        if path.name == "benchmark-cases-current.json" and oracle_ref in {None, ""}:
+            issues.append(
+                ValidationIssue(
+                    path,
+                    f"{prefix} current benchmark entries must provide expected_output.oracle_ref",
+                )
+            )
         if oracle_ref not in {None, ""}:
             _require_existing_file(path, prefix, oracle_ref, "expected_output.oracle_ref", issues)
         _require_existing_file(path, prefix, canary_policy.get("canary_source_ref"), "canary_policy.canary_source_ref", issues)

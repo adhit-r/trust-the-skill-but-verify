@@ -21,11 +21,11 @@
   "boundary": "Gate 5 first-pass blinded packet bundle derived from the review-packet index; it exposes opaque evidence identifiers, hashes, JSON pointers, and runtime slot labels only, not runtime profile labels for exported first-pass pair packets, source run IDs, comparison paths, trace paths, finding paths, raw trace content, machine classification labels, completed human reviews, reviewer agreement, adjudication, completed statistics, prevalence, or paper-grade completion evidence.",
   "bundle_id": "gate5-blinded-packet-bundle",
   "bundle_lock": {
-    "git_head": "1a0c1992f9f2e28f450037d1743b4b72744f5acc",
-    "git_tree": "8d5dc6dafde83005fbb14a219a61293ff4536828",
+    "git_head": "0d42f4f412790ddc4aa0e58949ac51a3690b6b3d",
+    "git_tree": "3cea842f71a94e8ba4565b5d802e81762a54f14d",
     "input_hashes": {
       "adjudication_form_sha256": "387e5ac4c7e0924b0cb08b261b39663d1a542c0dca64f19b05bb3289ed4d8d39",
-      "review_packet_index_sha256": "97451c995f86209b692e2946b3189584f5f588d63869fcf4b4ce696cc6cbc5b2",
+      "review_packet_index_sha256": "a3e5fcaba59594f19a6377c16fd59379f2b79b891ca8791a05178196a5dcb0f7",
       "review_queue_sha256": "514d45958cd5258c62a4986f678489bf54b113a8495f06cabb5a697b00a346b6"
     },
     "lock_id": "gate5-blinded-packet-bundle-current-132-v1",

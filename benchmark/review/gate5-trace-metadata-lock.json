@@ -1,0 +1,1960 @@
+{
+  "boundary": "Release-safe metadata lock for Gate 5 raw trace references. It records trace hashes and event counts for local raw trace files intentionally excluded from the release artifact; it contains no raw trace payloads, local paths, secrets, reviewer identities, completed reviews, adjudication, statistics, prevalence, or paper-grade completion claim.",
+  "lock_id": "gate5-trace-metadata-lock",
+  "record_count": 244,
+  "schema_version": "0.1",
+  "trace_records": {
+    "results/raw/rp2-01deda7a5df8/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 11,
+      "trace_ref": "results/raw/rp2-01deda7a5df8/trace.jsonl",
+      "trace_sha256": "f93f45c4fc03726ef05ad1a6ebc03af925ac0d388850ae9dfde73f4ea1750725",
+      "trace_valid": true
+    },
+    "results/raw/rp2-0a452015c546/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 12,
+      "trace_ref": "results/raw/rp2-0a452015c546/trace.jsonl",
+      "trace_sha256": "18daa0c1e426eafa24050958495a55dd345b667b171f157bb9625a8122dbc8e8",
+      "trace_valid": true
+    },
+    "results/raw/rp2-0cf8b6289085/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 12,
+      "trace_ref": "results/raw/rp2-0cf8b6289085/trace.jsonl",
+      "trace_sha256": "e3fb7113204a68e22a46b3be516b7b6ab65c57826c55686bd9738430165bf6c3",
+      "trace_valid": true
+    },
+    "results/raw/rp2-0e59bb05fe90/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 11,
+      "trace_ref": "results/raw/rp2-0e59bb05fe90/trace.jsonl",
+      "trace_sha256": "4c01916f32e80fa7957fdd34da5b0c20ee1cbb1ed58d86c47aba914dc88723c0",
+      "trace_valid": true
+    },
+    "results/raw/rp2-103c6ddcbec0/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 11,
+      "trace_ref": "results/raw/rp2-103c6ddcbec0/trace.jsonl",
+      "trace_sha256": "81062f6e1964b13b6e943ce624a929c11404619e108b4548697c7f3ce7160838",
+      "trace_valid": true
+    },
+    "results/raw/rp2-117bdb68392f/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 11,
+      "trace_ref": "results/raw/rp2-117bdb68392f/trace.jsonl",
+      "trace_sha256": "dad0835b1e2c23f540caf988c04964d86b08ece760f0ec0ce5fdc29deb2fea94",
+      "trace_valid": true
+    },
+    "results/raw/rp2-12eb3a2f8448/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 12,
+      "trace_ref": "results/raw/rp2-12eb3a2f8448/trace.jsonl",
+      "trace_sha256": "2b99476dcf6645cbe593ce48df6a91132619409cc8d94e04dca49a29f609109a",
+      "trace_valid": true
+    },
+    "results/raw/rp2-12f37c841958/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 12,
+      "trace_ref": "results/raw/rp2-12f37c841958/trace.jsonl",
+      "trace_sha256": "01df81d7cb1308a6c43b1e27b2ae2adf34fa74f8bfeeef9e4ba944e903741e5f",
+      "trace_valid": true
+    },
+    "results/raw/rp2-13955cedf3d5/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 12,
+      "trace_ref": "results/raw/rp2-13955cedf3d5/trace.jsonl",
+      "trace_sha256": "f24a0a1b862a9bd763760da7ee1f4b0b6dee72926c89291a98b9318b0578a0f9",
+      "trace_valid": true
+    },
+    "results/raw/rp2-185e21318f21/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 11,
+      "trace_ref": "results/raw/rp2-185e21318f21/trace.jsonl",
+      "trace_sha256": "d98c2ea75bcb10ade7429637e20efe1ac6882744fa4717a54deeb06affb6109a",
+      "trace_valid": true
+    },
+    "results/raw/rp2-1bc34fbe444d/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 12,
+      "trace_ref": "results/raw/rp2-1bc34fbe444d/trace.jsonl",
+      "trace_sha256": "d2ed64a2b466d8b5e0292ee9607fb696af175753b2546219f5e513f9033c0e93",
+      "trace_valid": true
+    },
+    "results/raw/rp2-1d37c1778a32/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 11,
+      "trace_ref": "results/raw/rp2-1d37c1778a32/trace.jsonl",
+      "trace_sha256": "1e5a3f8354cf6663e2bbea2c110eafee8ca3b81dd0963fbca2e225bf6cf593e6",
+      "trace_valid": true
+    },
+    "results/raw/rp2-1d4b7ae4c3af/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 11,
+      "trace_ref": "results/raw/rp2-1d4b7ae4c3af/trace.jsonl",
+      "trace_sha256": "8ec2836ed5e93c42ff47c0016c5205a4904df03d6aef2fd7aaac8fbae9179a76",
+      "trace_valid": true
+    },
+    "results/raw/rp2-2103aefeee0e/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 12,
+      "trace_ref": "results/raw/rp2-2103aefeee0e/trace.jsonl",
+      "trace_sha256": "005f272b5dce21ead5fdbd7d41a825b8fa1e2d16ed20292ff6a1a597f3e043a6",
+      "trace_valid": true
+    },
+    "results/raw/rp2-21437c6fe980/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 12,
+      "trace_ref": "results/raw/rp2-21437c6fe980/trace.jsonl",
+      "trace_sha256": "d786558148e4210fb0d3d76ac4d0905e70c6fe052c8f9f6af1d42b037a394c72",
+      "trace_valid": true
+    },
+    "results/raw/rp2-2438d4c21d5f/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 11,
+      "trace_ref": "results/raw/rp2-2438d4c21d5f/trace.jsonl",
+      "trace_sha256": "5b2bafdfd0a06c3232f9ae0ab806407ed79109ad5d0066cd925dbf34ab191a28",
+      "trace_valid": true
+    },
+    "results/raw/rp2-287806ea965d/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 12,
+      "trace_ref": "results/raw/rp2-287806ea965d/trace.jsonl",
+      "trace_sha256": "a8c7a94627e5179fed2f86f02e3e10ce77d74df6404209f898809e393112c5fa",
+      "trace_valid": true
+    },
+    "results/raw/rp2-2a76fdf6992a/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 12,
+      "trace_ref": "results/raw/rp2-2a76fdf6992a/trace.jsonl",
+      "trace_sha256": "dd8930331f5e0342a63ba9f29ae087feb61e4e3eecad1f45913e3b109fd5572a",
+      "trace_valid": true
+    },
+    "results/raw/rp2-2b55d2b330c6/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 11,
+      "trace_ref": "results/raw/rp2-2b55d2b330c6/trace.jsonl",
+      "trace_sha256": "8a9ab76714d84f4493aee4428f36cbcfa0ae0a301b3d11ed3a769891f6f146e7",
+      "trace_valid": true
+    },
+    "results/raw/rp2-2f9ff28cb4f9/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 12,
+      "trace_ref": "results/raw/rp2-2f9ff28cb4f9/trace.jsonl",
+      "trace_sha256": "58ddb8c41871023dd9dee77068e5e845d47ffade367b6046cbd32af836ff7156",
+      "trace_valid": true
+    },
+    "results/raw/rp2-32e088a6f032/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 11,
+      "trace_ref": "results/raw/rp2-32e088a6f032/trace.jsonl",
+      "trace_sha256": "f92588915eb77beacb6ee87cd31ce2f139917a8b7f1bef6fc2786d096526907d",
+      "trace_valid": true
+    },
+    "results/raw/rp2-33048db9e995/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 12,
+      "trace_ref": "results/raw/rp2-33048db9e995/trace.jsonl",
+      "trace_sha256": "30ec02d525f370cbb5b0ed346f3ca7ed626bde42e69ba34d2bfc625983dc931a",
+      "trace_valid": true
+    },
+    "results/raw/rp2-38216edf4a77/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 12,
+      "trace_ref": "results/raw/rp2-38216edf4a77/trace.jsonl",
+      "trace_sha256": "1d4b5a2877abcab05af7c83ab9d8ef92cb691b9069bd8daf3dac6c21e52a6206",
+      "trace_valid": true
+    },
+    "results/raw/rp2-3e108ba6c70f/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 12,
+      "trace_ref": "results/raw/rp2-3e108ba6c70f/trace.jsonl",
+      "trace_sha256": "7dc529ac3d4ea1da6ce4178193b723a495e09d6630f5fcf46228368b0023e647",
+      "trace_valid": true
+    },
+    "results/raw/rp2-41585d449341/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 11,
+      "trace_ref": "results/raw/rp2-41585d449341/trace.jsonl",
+      "trace_sha256": "ec2a642371e5ed893ae5db43a433f25051c13c69904f5cbf8f68024a168c328e",
+      "trace_valid": true
+    },
+    "results/raw/rp2-44f514bd35ac/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 12,
+      "trace_ref": "results/raw/rp2-44f514bd35ac/trace.jsonl",
+      "trace_sha256": "f7b1bd966224338c3f68cd110be4b186b07dd64c574db6adea81435d5632097d",
+      "trace_valid": true
+    },
+    "results/raw/rp2-4566be3d33e6/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 11,
+      "trace_ref": "results/raw/rp2-4566be3d33e6/trace.jsonl",
+      "trace_sha256": "f3b966d99f8b87ef63c308b214d8965fb29089026a8babf8d6ff7ee927c8806d",
+      "trace_valid": true
+    },
+    "results/raw/rp2-48f893602ca9/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 11,
+      "trace_ref": "results/raw/rp2-48f893602ca9/trace.jsonl",
+      "trace_sha256": "84603186cee1a06fda17408234fb4c769ca5cd2cbc08e07f192b62d9ceef881a",
+      "trace_valid": true
+    },
+    "results/raw/rp2-52f3964fd28f/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 11,
+      "trace_ref": "results/raw/rp2-52f3964fd28f/trace.jsonl",
+      "trace_sha256": "d896ed8c538fe24f4f2dcb9b5e684da4552c8c2662556a0764c1c196758cc2cb",
+      "trace_valid": true
+    },
+    "results/raw/rp2-5530aaf46451/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 11,
+      "trace_ref": "results/raw/rp2-5530aaf46451/trace.jsonl",
+      "trace_sha256": "2af8566766f59201ca4484145c9dc10b2864535b715799c20cd8da935958df6e",
+      "trace_valid": true
+    },
+    "results/raw/rp2-569391e848c9/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 12,
+      "trace_ref": "results/raw/rp2-569391e848c9/trace.jsonl",
+      "trace_sha256": "7837653b9f12df32b9b513d02d4e54d0ba4903fcad3653ac3639dddeda31eb1b",
+      "trace_valid": true
+    },
+    "results/raw/rp2-579ce76accc9/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 12,
+      "trace_ref": "results/raw/rp2-579ce76accc9/trace.jsonl",
+      "trace_sha256": "b5211e6c497968d6432079ba9234826b3071ab81ccd3eb1ec34782d3bead5ba9",
+      "trace_valid": true
+    },
+    "results/raw/rp2-5d119d860184/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 11,
+      "trace_ref": "results/raw/rp2-5d119d860184/trace.jsonl",
+      "trace_sha256": "4051275476292f7a8b0c7b3aee34dcbd6c79a8a0877a9181c6165f11990b653c",
+      "trace_valid": true
+    },
+    "results/raw/rp2-5d5d6f6a9e6e/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 11,
+      "trace_ref": "results/raw/rp2-5d5d6f6a9e6e/trace.jsonl",
+      "trace_sha256": "c9e1b77f2bc3cceb71a92ea261bf36c6049e60954dc725da0acbb672312af2c1",
+      "trace_valid": true
+    },
+    "results/raw/rp2-5e51991d4d60/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 12,
+      "trace_ref": "results/raw/rp2-5e51991d4d60/trace.jsonl",
+      "trace_sha256": "2c3b2a36f5a280a06e37aefde64b5f15f75343c683eb44df1e0ddbdd85e754ce",
+      "trace_valid": true
+    },
+    "results/raw/rp2-5f20e01c47e2/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 12,
+      "trace_ref": "results/raw/rp2-5f20e01c47e2/trace.jsonl",
+      "trace_sha256": "265e1ca11d22fa8bb748d29ceb9c33fbfb3736ff31ac1570bd18a8c38d5e0355",
+      "trace_valid": true
+    },
+    "results/raw/rp2-625380cdb924/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 12,
+      "trace_ref": "results/raw/rp2-625380cdb924/trace.jsonl",
+      "trace_sha256": "a4026b5e7552f6d85cb274f2184f6516cf0c3836efd32d5a16c8fdd38a7d4229",
+      "trace_valid": true
+    },
+    "results/raw/rp2-67d107167284/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 12,
+      "trace_ref": "results/raw/rp2-67d107167284/trace.jsonl",
+      "trace_sha256": "a4a44b9718ba40c66e02615ce1bd7ffe9311ac7e5b9f5118af568f55af30fb91",
+      "trace_valid": true
+    },
+    "results/raw/rp2-6d678a3af4be/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 12,
+      "trace_ref": "results/raw/rp2-6d678a3af4be/trace.jsonl",
+      "trace_sha256": "4ace9de61e5ee5e85e0406f4e75100756f785176934cdeb77e3587e1feb06423",
+      "trace_valid": true
+    },
+    "results/raw/rp2-6e6691449600/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 12,
+      "trace_ref": "results/raw/rp2-6e6691449600/trace.jsonl",
+      "trace_sha256": "7ec70a8f5bdc662f765644e02fe05ef40b7f1fc0e9d054f0133248b0adde21d6",
+      "trace_valid": true
+    },
+    "results/raw/rp2-707fa3b6503b/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 12,
+      "trace_ref": "results/raw/rp2-707fa3b6503b/trace.jsonl",
+      "trace_sha256": "08b7069033977594024cfaa5a9ebcad4ec56f565376d886f14a3375668237262",
+      "trace_valid": true
+    },
+    "results/raw/rp2-71f0cc08d678/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 11,
+      "trace_ref": "results/raw/rp2-71f0cc08d678/trace.jsonl",
+      "trace_sha256": "28b41a29a794e09699029d4d6cfb3988af89940c8e32a038a5d76a651d69dda9",
+      "trace_valid": true
+    },
+    "results/raw/rp2-73c39d229ea7/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 12,
+      "trace_ref": "results/raw/rp2-73c39d229ea7/trace.jsonl",
+      "trace_sha256": "f63384177a6430c068c602e5da1366eaf8108f41727086741f39a844a2ad47d1",
+      "trace_valid": true
+    },
+    "results/raw/rp2-742e09f7682c/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 12,
+      "trace_ref": "results/raw/rp2-742e09f7682c/trace.jsonl",
+      "trace_sha256": "01151f4d9933e6a995b57fb99d167d6c8c9416755205478a2b1ec4b7d6c877c5",
+      "trace_valid": true
+    },
+    "results/raw/rp2-7519adac6556/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 11,
+      "trace_ref": "results/raw/rp2-7519adac6556/trace.jsonl",
+      "trace_sha256": "71f684ac182f750404c9ffe225cadc2a81a9bc01e68499ea041da83c6488c2b9",
+      "trace_valid": true
+    },
+    "results/raw/rp2-7795b26dc57b/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 12,
+      "trace_ref": "results/raw/rp2-7795b26dc57b/trace.jsonl",
+      "trace_sha256": "255b6d431a9d26f8383cefa98007cec1039f6b78ca45045a867d5d179bb9c8d2",
+      "trace_valid": true
+    },
+    "results/raw/rp2-7a1c4b719848/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 12,
+      "trace_ref": "results/raw/rp2-7a1c4b719848/trace.jsonl",
+      "trace_sha256": "863181ea08e69778c3cb6a4da469ebdf0a4a1d3ed849d894062202caf5e32d8f",
+      "trace_valid": true
+    },
+    "results/raw/rp2-7c1546701eec/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 11,
+      "trace_ref": "results/raw/rp2-7c1546701eec/trace.jsonl",
+      "trace_sha256": "bc0f9bc353b8e17f7ee84ea66be6a620a18abe8116b11b1798a6fd4dfa8a552b",
+      "trace_valid": true
+    },
+    "results/raw/rp2-7c73f683aa55/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 11,
+      "trace_ref": "results/raw/rp2-7c73f683aa55/trace.jsonl",
+      "trace_sha256": "40a9e99f52a31275727c5dbdb0abb32134585e5f1c9a06cbbbad2d48f3b8e82b",
+      "trace_valid": true
+    },
+    "results/raw/rp2-7ccc1e5e56a6/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 12,
+      "trace_ref": "results/raw/rp2-7ccc1e5e56a6/trace.jsonl",
+      "trace_sha256": "09783d0d4cc175a23e7ba12e211eacd47cc0070418adbfe0a180e3a1d7fb8b25",
+      "trace_valid": true
+    },
+    "results/raw/rp2-7dfa1aed90dc/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 11,
+      "trace_ref": "results/raw/rp2-7dfa1aed90dc/trace.jsonl",
+      "trace_sha256": "8805fab05356f35d203cbe61c34b67b17f3372f5145d1c144033133d3747d2b7",
+      "trace_valid": true
+    },
+    "results/raw/rp2-7ea683885a4e/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 12,
+      "trace_ref": "results/raw/rp2-7ea683885a4e/trace.jsonl",
+      "trace_sha256": "c81d2353ab5c19644ce66974a85777cfeac0238dd59e37ecfb170a8d02fe1a87",
+      "trace_valid": true
+    },
+    "results/raw/rp2-804eac9ea554/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 12,
+      "trace_ref": "results/raw/rp2-804eac9ea554/trace.jsonl",
+      "trace_sha256": "e5a458c60feac05dd1f97d92b4ec7e023703ecef352a797b7de405bdc60873f0",
+      "trace_valid": true
+    },
+    "results/raw/rp2-854891ad4315/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 11,
+      "trace_ref": "results/raw/rp2-854891ad4315/trace.jsonl",
+      "trace_sha256": "c12683f1e83bf7247668075f88875855e939bc8137d82b154b910c9129563ab7",
+      "trace_valid": true
+    },
+    "results/raw/rp2-8605cf39fa9a/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 11,
+      "trace_ref": "results/raw/rp2-8605cf39fa9a/trace.jsonl",
+      "trace_sha256": "4e8e5cf1466abd7aa283ff48e51c68eaaab9c1689be7f22231e1eab5a2b25478",
+      "trace_valid": true
+    },
+    "results/raw/rp2-887dc1aa459b/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 11,
+      "trace_ref": "results/raw/rp2-887dc1aa459b/trace.jsonl",
+      "trace_sha256": "6a3ff5af6f345d13a03dece599a1edc341e022ec01f63b74d484c567583e8e73",
+      "trace_valid": true
+    },
+    "results/raw/rp2-8cfd72e76edc/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 11,
+      "trace_ref": "results/raw/rp2-8cfd72e76edc/trace.jsonl",
+      "trace_sha256": "ebb8df7a9576639fcefab144823633b8fd4bfa39e653dbfd321bbd37a8df6072",
+      "trace_valid": true
+    },
+    "results/raw/rp2-8f1414345e6d/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 12,
+      "trace_ref": "results/raw/rp2-8f1414345e6d/trace.jsonl",
+      "trace_sha256": "beabd7a8fe3f5d707eaeea0e1b4ac136a20c5882416086347c2ef08200ccc3a9",
+      "trace_valid": true
+    },
+    "results/raw/rp2-9133b6996ab8/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 12,
+      "trace_ref": "results/raw/rp2-9133b6996ab8/trace.jsonl",
+      "trace_sha256": "fc467ab0a5ff20cb90405fa6060a7ec92e9b42ec1d629645b33cafb54aeb21f0",
+      "trace_valid": true
+    },
+    "results/raw/rp2-91da71d2dd47/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 12,
+      "trace_ref": "results/raw/rp2-91da71d2dd47/trace.jsonl",
+      "trace_sha256": "e670ad2fa1c2ee198a9311a5cc135b3c2c85209aff74929654dbe389445ffd1d",
+      "trace_valid": true
+    },
+    "results/raw/rp2-925ba9d63e18/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 12,
+      "trace_ref": "results/raw/rp2-925ba9d63e18/trace.jsonl",
+      "trace_sha256": "cd6b1ee9b950f3fe39b7b1b165d5491de155c3048c0abbfdd1435a279845d654",
+      "trace_valid": true
+    },
+    "results/raw/rp2-98579221649d/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 12,
+      "trace_ref": "results/raw/rp2-98579221649d/trace.jsonl",
+      "trace_sha256": "bd5c19807896b88e11a6770ea00d6d9d5830877846c6c4713cc3fc397adb8e94",
+      "trace_valid": true
+    },
+    "results/raw/rp2-9ba3528d509c/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 11,
+      "trace_ref": "results/raw/rp2-9ba3528d509c/trace.jsonl",
+      "trace_sha256": "e3ecb2abfa002f399a21da650b0032f62c901b2c72e3bb3b05ffb15175e2f061",
+      "trace_valid": true
+    },
+    "results/raw/rp2-9d8c619f742b/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 12,
+      "trace_ref": "results/raw/rp2-9d8c619f742b/trace.jsonl",
+      "trace_sha256": "959fb98aa32fc2fd9ec12c0218370b5d6c0f02c602b1d9bebfef2c6a1efceeb7",
+      "trace_valid": true
+    },
+    "results/raw/rp2-9e767f0e95dc/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 12,
+      "trace_ref": "results/raw/rp2-9e767f0e95dc/trace.jsonl",
+      "trace_sha256": "7fc6230a5ed59675b8435cd1383de2ef4d23da6941df2fe61f9facb1dca125cc",
+      "trace_valid": true
+    },
+    "results/raw/rp2-a0a6d7f5fad8/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 11,
+      "trace_ref": "results/raw/rp2-a0a6d7f5fad8/trace.jsonl",
+      "trace_sha256": "475c853d3d75a6655e4d5003bc26305aed06a4b4902df18f5bff163cf8d5c4e2",
+      "trace_valid": true
+    },
+    "results/raw/rp2-a1fd9175ccf2/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 12,
+      "trace_ref": "results/raw/rp2-a1fd9175ccf2/trace.jsonl",
+      "trace_sha256": "a629774df0a2c5516996b945ffe3acd2a7040807790fce326a6f1f045fca1d0a",
+      "trace_valid": true
+    },
+    "results/raw/rp2-a237e9c8cc63/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 12,
+      "trace_ref": "results/raw/rp2-a237e9c8cc63/trace.jsonl",
+      "trace_sha256": "79ce61c15cfc5804d7153d505955696dbbeb4689c1d53415efe6b8fa4a055c93",
+      "trace_valid": true
+    },
+    "results/raw/rp2-a4fa2e1ac41c/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 13,
+      "trace_ref": "results/raw/rp2-a4fa2e1ac41c/trace.jsonl",
+      "trace_sha256": "3df272e49cce08d97809568d4a83aad2fca53ec595af5973d8db84244f079a6b",
+      "trace_valid": true
+    },
+    "results/raw/rp2-a549d42cefa9/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 12,
+      "trace_ref": "results/raw/rp2-a549d42cefa9/trace.jsonl",
+      "trace_sha256": "63d696ffea4a19b9041064b25667dd7a4279f6d5008edd096d83c587e45a1411",
+      "trace_valid": true
+    },
+    "results/raw/rp2-a7c61bc9548c/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 12,
+      "trace_ref": "results/raw/rp2-a7c61bc9548c/trace.jsonl",
+      "trace_sha256": "59e09ea2fd17175df0c6d6c12b0abcb36c1fda76ee029954ecf1120085fa428b",
+      "trace_valid": true
+    },
+    "results/raw/rp2-a8fef3a60d5f/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 12,
+      "trace_ref": "results/raw/rp2-a8fef3a60d5f/trace.jsonl",
+      "trace_sha256": "bdb73b64cf034b31f9b86500cded5a4996edaa4c99657f29cc6cac4447174552",
+      "trace_valid": true
+    },
+    "results/raw/rp2-a9c041b9c47d/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 12,
+      "trace_ref": "results/raw/rp2-a9c041b9c47d/trace.jsonl",
+      "trace_sha256": "9b1b24562436b7e31e72e42adce05dddb0c1b536d21e0a380e79bea2294f3cb9",
+      "trace_valid": true
+    },
+    "results/raw/rp2-aa4201a6b65c/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 12,
+      "trace_ref": "results/raw/rp2-aa4201a6b65c/trace.jsonl",
+      "trace_sha256": "225bfba49988a31d8ce55a6a663d1ca7abf0406ff2fcda086c90f40450017f81",
+      "trace_valid": true
+    },
+    "results/raw/rp2-af0608886ff7/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 12,
+      "trace_ref": "results/raw/rp2-af0608886ff7/trace.jsonl",
+      "trace_sha256": "54b92081e0ccba0b42a5c370a4a83343cdb87fb2d1783f584a9131fcd1ad234a",
+      "trace_valid": true
+    },
+    "results/raw/rp2-af219f68f420/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 12,
+      "trace_ref": "results/raw/rp2-af219f68f420/trace.jsonl",
+      "trace_sha256": "d0fd899a73882d4f3f71ef414e282fb54f4e1ed27e1e465b9b89bc97bd64a89f",
+      "trace_valid": true
+    },
+    "results/raw/rp2-afdb23abd7db/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 11,
+      "trace_ref": "results/raw/rp2-afdb23abd7db/trace.jsonl",
+      "trace_sha256": "11042b7bc8977c2bceb0df37a2bc52e81727fdd0cc776d59cd1de360d7700a74",
+      "trace_valid": true
+    },
+    "results/raw/rp2-aff1e0ffbe5b/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 12,
+      "trace_ref": "results/raw/rp2-aff1e0ffbe5b/trace.jsonl",
+      "trace_sha256": "4c6b594a70062b3b45df54d9e403899a930a0dc07c45d786a51f08bede1f131c",
+      "trace_valid": true
+    },
+    "results/raw/rp2-b376ed598fa5/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 12,
+      "trace_ref": "results/raw/rp2-b376ed598fa5/trace.jsonl",
+      "trace_sha256": "55733ade18600d3490dcd8a496859f83f23b369d56f68d3542ec98c7e92f1aef",
+      "trace_valid": true
+    },
+    "results/raw/rp2-b524940d4879/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 12,
+      "trace_ref": "results/raw/rp2-b524940d4879/trace.jsonl",
+      "trace_sha256": "61908c0bdc7dfa5495fb7ffcae2d75b93370c41d74cebd6c788d7c64855e880b",
+      "trace_valid": true
+    },
+    "results/raw/rp2-b596f4d03e11/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 11,
+      "trace_ref": "results/raw/rp2-b596f4d03e11/trace.jsonl",
+      "trace_sha256": "4a53512748c5ac913bb7fab3745ffcf8b3d6fd1b3181e709a7673bfeb58292a3",
+      "trace_valid": true
+    },
+    "results/raw/rp2-b788f9b7e06b/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 11,
+      "trace_ref": "results/raw/rp2-b788f9b7e06b/trace.jsonl",
+      "trace_sha256": "369a6caece8bfed8120ce0d8881a01f3cde45cbe208019e593cc653a06058f0b",
+      "trace_valid": true
+    },
+    "results/raw/rp2-b8c6749b560d/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 12,
+      "trace_ref": "results/raw/rp2-b8c6749b560d/trace.jsonl",
+      "trace_sha256": "466ca928e75bccbd80db1e57a489e26c05731103dcae2d6b73b70be7236f39f6",
+      "trace_valid": true
+    },
+    "results/raw/rp2-bdb29c5ef936/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 12,
+      "trace_ref": "results/raw/rp2-bdb29c5ef936/trace.jsonl",
+      "trace_sha256": "ec61c6279ba3d1b8ea5403539b4f4ef143645666c50ed16a7d11a5d192f5c6ab",
+      "trace_valid": true
+    },
+    "results/raw/rp2-be85a34aeadf/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 12,
+      "trace_ref": "results/raw/rp2-be85a34aeadf/trace.jsonl",
+      "trace_sha256": "052881a53e1ae926c2737575e7f710377ec732e737eac112174867b68134b340",
+      "trace_valid": true
+    },
+    "results/raw/rp2-c07f62cb916f/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 11,
+      "trace_ref": "results/raw/rp2-c07f62cb916f/trace.jsonl",
+      "trace_sha256": "a911b5d66fdae4bc70e2bfe44b6dd71c354ad67bda478827f9e072923e9bf425",
+      "trace_valid": true
+    },
+    "results/raw/rp2-c0908d7c4e3b/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 12,
+      "trace_ref": "results/raw/rp2-c0908d7c4e3b/trace.jsonl",
+      "trace_sha256": "388e54690900f8ac3337bf5c78e43127e277d7f8533fbd7d5dcee724099234d6",
+      "trace_valid": true
+    },
+    "results/raw/rp2-c13b4ab9ba71/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 11,
+      "trace_ref": "results/raw/rp2-c13b4ab9ba71/trace.jsonl",
+      "trace_sha256": "bc1e7aed41576f552b37d71d61a7e2c9d21dee32630e85bbfb3ef2abaecd80d2",
+      "trace_valid": true
+    },
+    "results/raw/rp2-c1c684347d30/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 11,
+      "trace_ref": "results/raw/rp2-c1c684347d30/trace.jsonl",
+      "trace_sha256": "818d375998c33ba41c96c0cb4e0c1fe36b5985b4d6c3b6a5abd7fce46d583db2",
+      "trace_valid": true
+    },
+    "results/raw/rp2-c2520f194c7f/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 11,
+      "trace_ref": "results/raw/rp2-c2520f194c7f/trace.jsonl",
+      "trace_sha256": "9e0e227effc312f982a96538fbabe3fe28c09faa4bbd726d6bacfb9b4e8aa34e",
+      "trace_valid": true
+    },
+    "results/raw/rp2-c26104457031/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 12,
+      "trace_ref": "results/raw/rp2-c26104457031/trace.jsonl",
+      "trace_sha256": "62912c353986388b9eedcbfb4a833b409dcf0103a56514eed59a6a49b9c70bd3",
+      "trace_valid": true
+    },
+    "results/raw/rp2-c814dd826046/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 9,
+      "trace_ref": "results/raw/rp2-c814dd826046/trace.jsonl",
+      "trace_sha256": "c231735901328ca97b5d257b0b84a44a8dda9ed38d3cab3599ba6283b69e5bca",
+      "trace_valid": true
+    },
+    "results/raw/rp2-c95f9195615f/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 12,
+      "trace_ref": "results/raw/rp2-c95f9195615f/trace.jsonl",
+      "trace_sha256": "48a345a7983aa07730f0b892ce018293fc276853439a49131b96315804438ef8",
+      "trace_valid": true
+    },
+    "results/raw/rp2-ca16086b85da/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 11,
+      "trace_ref": "results/raw/rp2-ca16086b85da/trace.jsonl",
+      "trace_sha256": "7746ef7c1ee4e206d761e42dc6e74679f9f5d35d0dfb8ed42d79eb51f7f2ee5b",
+      "trace_valid": true
+    },
+    "results/raw/rp2-cc33d3277b03/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 12,
+      "trace_ref": "results/raw/rp2-cc33d3277b03/trace.jsonl",
+      "trace_sha256": "cb4baced1af51f02c1cabbbf6d3bb9b980702f0685b850c2d89e78b19e76906a",
+      "trace_valid": true
+    },
+    "results/raw/rp2-ce6827526d5d/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 12,
+      "trace_ref": "results/raw/rp2-ce6827526d5d/trace.jsonl",
+      "trace_sha256": "754898d898b92d928fbb5f6303b1ddd1e662ac5cc014a843bef7383c437cf810",
+      "trace_valid": true
+    },
+    "results/raw/rp2-cfcc7ea3fcb3/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 12,
+      "trace_ref": "results/raw/rp2-cfcc7ea3fcb3/trace.jsonl",
+      "trace_sha256": "2ea19746d7a8be047dbb260ceaa49adbdf9ec597ce00af95c972383d3f8f5f92",
+      "trace_valid": true
+    },
+    "results/raw/rp2-d0ae27f90d04/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 12,
+      "trace_ref": "results/raw/rp2-d0ae27f90d04/trace.jsonl",
+      "trace_sha256": "877811beb94b175a6056264c2b086c7e9f7db0434ffd6cfbaaec052ab25386bb",
+      "trace_valid": true
+    },
+    "results/raw/rp2-d0bc70fcd91e/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 11,
+      "trace_ref": "results/raw/rp2-d0bc70fcd91e/trace.jsonl",
+      "trace_sha256": "9bfa35f8072ac5d2fa65765884e1fe156ab32f82d77e4a06793d981602bdb0c6",
+      "trace_valid": true
+    },
+    "results/raw/rp2-d1197449e9d3/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 11,
+      "trace_ref": "results/raw/rp2-d1197449e9d3/trace.jsonl",
+      "trace_sha256": "5dfb44f45a7a43db3931165e458eec2e598e6794ff27d1c0dd57a6c519a6ad79",
+      "trace_valid": true
+    },
+    "results/raw/rp2-d3f3041aa47c/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 12,
+      "trace_ref": "results/raw/rp2-d3f3041aa47c/trace.jsonl",
+      "trace_sha256": "3a0a778b76fd4dd368f252ab4a6db9e9794903706091a939fa6e5bf1d0702eff",
+      "trace_valid": true
+    },
+    "results/raw/rp2-d46e0578204b/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 12,
+      "trace_ref": "results/raw/rp2-d46e0578204b/trace.jsonl",
+      "trace_sha256": "d0f5beeafc80b6d8daac4a6978e875bc9218f4a974e10995b07fa71bd986b165",
+      "trace_valid": true
+    },
+    "results/raw/rp2-d582f9176614/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 12,
+      "trace_ref": "results/raw/rp2-d582f9176614/trace.jsonl",
+      "trace_sha256": "924bb0aa454ea6277599d606c58ef32ecfd97e4665a8af0834e553e23a577993",
+      "trace_valid": true
+    },
+    "results/raw/rp2-d761981439bc/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 12,
+      "trace_ref": "results/raw/rp2-d761981439bc/trace.jsonl",
+      "trace_sha256": "990baebe2fea0ee0bc00e1dc03e5e3e312cc7eac6ad3b4078916cbc4b476cbd7",
+      "trace_valid": true
+    },
+    "results/raw/rp2-dad2057e3d24/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 12,
+      "trace_ref": "results/raw/rp2-dad2057e3d24/trace.jsonl",
+      "trace_sha256": "ec381382a63bbe4151366ae6c1a0d3ae58d702f300e0abc4e0ea9825624177b7",
+      "trace_valid": true
+    },
+    "results/raw/rp2-dae7233773ae/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 12,
+      "trace_ref": "results/raw/rp2-dae7233773ae/trace.jsonl",
+      "trace_sha256": "45f2b7e0379fbd35e9e8c33965818336de86ba85f20991f99f7e8004ba2cd9ad",
+      "trace_valid": true
+    },
+    "results/raw/rp2-dc1d13ac31e7/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 12,
+      "trace_ref": "results/raw/rp2-dc1d13ac31e7/trace.jsonl",
+      "trace_sha256": "9afdfa47931e28c460a928e1ef95e24f0823e43773504c0d022c3cf6e5752eac",
+      "trace_valid": true
+    },
+    "results/raw/rp2-dce40abde454/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 12,
+      "trace_ref": "results/raw/rp2-dce40abde454/trace.jsonl",
+      "trace_sha256": "e3f1919283fde2a27cb63435a7bf3a96bc0309e3eb2f5ca0462032519961ed77",
+      "trace_valid": true
+    },
+    "results/raw/rp2-dd4527f3b7dc/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 12,
+      "trace_ref": "results/raw/rp2-dd4527f3b7dc/trace.jsonl",
+      "trace_sha256": "b0e355e593f1effe59f6e7fba3e6795f2d44fcaa22d2b6ed45968b3dae58683d",
+      "trace_valid": true
+    },
+    "results/raw/rp2-e1502210a0b5/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 11,
+      "trace_ref": "results/raw/rp2-e1502210a0b5/trace.jsonl",
+      "trace_sha256": "1cf8daef3b2387780a466f6e86a7240dea7016f009e95db9bec0e7162532d281",
+      "trace_valid": true
+    },
+    "results/raw/rp2-e268b3dbde4c/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 11,
+      "trace_ref": "results/raw/rp2-e268b3dbde4c/trace.jsonl",
+      "trace_sha256": "54b95d5aa5c92ad37edead0567c1bac60adcce75104cf08c67a4ffb9040e1594",
+      "trace_valid": true
+    },
+    "results/raw/rp2-e44c503efe84/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 11,
+      "trace_ref": "results/raw/rp2-e44c503efe84/trace.jsonl",
+      "trace_sha256": "09f5e842b73d0d4598f0d02ff2b315eb3f6d2142b5efe4e8ccefe184d4352ccc",
+      "trace_valid": true
+    },
+    "results/raw/rp2-e7224b6522a1/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 11,
+      "trace_ref": "results/raw/rp2-e7224b6522a1/trace.jsonl",
+      "trace_sha256": "6da69a21691db658ebcec1a699c1c5bb1e47de73dd302aff367ab0172a2fa92f",
+      "trace_valid": true
+    },
+    "results/raw/rp2-e9cdfb19385e/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 12,
+      "trace_ref": "results/raw/rp2-e9cdfb19385e/trace.jsonl",
+      "trace_sha256": "9018780c845c55b763c4f4c4e5bb1aa62030c90ed9f22b30a0962ab832f07c37",
+      "trace_valid": true
+    },
+    "results/raw/rp2-ea9bd02d5434/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 12,
+      "trace_ref": "results/raw/rp2-ea9bd02d5434/trace.jsonl",
+      "trace_sha256": "733148d458b53f4f116a1e7578a013e688d382d3cf0c14a8144826ee997b3a98",
+      "trace_valid": true
+    },
+    "results/raw/rp2-eb3706191109/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 11,
+      "trace_ref": "results/raw/rp2-eb3706191109/trace.jsonl",
+      "trace_sha256": "cef0021d6f7accfd25186e17460b107e52f49c1facb0f84b5166f4ce8b9b3d11",
+      "trace_valid": true
+    },
+    "results/raw/rp2-ed47ff12ac70/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 12,
+      "trace_ref": "results/raw/rp2-ed47ff12ac70/trace.jsonl",
+      "trace_sha256": "4354593f7370a1ee14fc04379bd8840b2eee8ee302cdbea99eaa514ea35a13a1",
+      "trace_valid": true
+    },
+    "results/raw/rp2-f516a2a32811/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 11,
+      "trace_ref": "results/raw/rp2-f516a2a32811/trace.jsonl",
+      "trace_sha256": "eaf0fcc037409a863366b9bbe7cf60859bcfcb4000e6cded249c8dcb6d8e4e84",
+      "trace_valid": true
+    },
+    "results/raw/rp2-f59a03b8195a/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 11,
+      "trace_ref": "results/raw/rp2-f59a03b8195a/trace.jsonl",
+      "trace_sha256": "688102fa2e10ecbabca7a0c28591bc5d64613d31877bcc2aed391cc78fd656db",
+      "trace_valid": true
+    },
+    "results/raw/rp2-f7d69cc7b6e5/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 11,
+      "trace_ref": "results/raw/rp2-f7d69cc7b6e5/trace.jsonl",
+      "trace_sha256": "3bd075a1f1be63e13de6c947840357291ad27de15e2ba30364f9f68cd5356d69",
+      "trace_valid": true
+    },
+    "results/raw/rp2-f9c206053c99/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 12,
+      "trace_ref": "results/raw/rp2-f9c206053c99/trace.jsonl",
+      "trace_sha256": "ce17281a3c2eddaf61d8cea9899f9782cd173ce0f02bcdc70acb1eaf8483789c",
+      "trace_valid": true
+    },
+    "results/raw/rp2-fd7d19654c40/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 11,
+      "trace_ref": "results/raw/rp2-fd7d19654c40/trace.jsonl",
+      "trace_sha256": "a2e8241f86076c2dfce83e0f5e0f89dce5b43a9dddcd182d6ca8593a0b3b32eb",
+      "trace_valid": true
+    },
+    "results/raw/rp3-03d6647280f3/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 224,
+      "trace_ref": "results/raw/rp3-03d6647280f3/trace.jsonl",
+      "trace_sha256": "cea46ba76154cebdbf725db1ba55942ca0476a6a2d8283ad84aa01ce02b4f79c",
+      "trace_valid": true
+    },
+    "results/raw/rp3-0668ea25017a/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 224,
+      "trace_ref": "results/raw/rp3-0668ea25017a/trace.jsonl",
+      "trace_sha256": "15552290cba2ce505a698555418e5c25c7cce690431f54c6e895b06836757d47",
+      "trace_valid": true
+    },
+    "results/raw/rp3-0a0343588370/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 223,
+      "trace_ref": "results/raw/rp3-0a0343588370/trace.jsonl",
+      "trace_sha256": "fee13632b9620fa3c125be84dc5664e15a76b63779845f3b6ed8f6bcf87d668d",
+      "trace_valid": true
+    },
+    "results/raw/rp3-0adb28522968/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 223,
+      "trace_ref": "results/raw/rp3-0adb28522968/trace.jsonl",
+      "trace_sha256": "fa7dceed011d0c03250a0045336c4c78d10e669bd66c5deeb3e7431d5dc92eaa",
+      "trace_valid": true
+    },
+    "results/raw/rp3-0bd4f913a8b1/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 224,
+      "trace_ref": "results/raw/rp3-0bd4f913a8b1/trace.jsonl",
+      "trace_sha256": "c8e767629a86f5199359ca89a0860f494f2bb6baec45584b6cca979f152be7a9",
+      "trace_valid": true
+    },
+    "results/raw/rp3-0c9ad135cbc0/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 220,
+      "trace_ref": "results/raw/rp3-0c9ad135cbc0/trace.jsonl",
+      "trace_sha256": "93af41d6ac0373c4df8e13ed6b710b6cd004c686fd00444e5a18873784fd92a5",
+      "trace_valid": true
+    },
+    "results/raw/rp3-0e267130f171/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 223,
+      "trace_ref": "results/raw/rp3-0e267130f171/trace.jsonl",
+      "trace_sha256": "6817a839e84255316095c496bcce2d2ce6ffc4a0d9d096debc247f01149afb03",
+      "trace_valid": true
+    },
+    "results/raw/rp3-13c59d71b7bf/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 223,
+      "trace_ref": "results/raw/rp3-13c59d71b7bf/trace.jsonl",
+      "trace_sha256": "ee17dae55a5b25653cb574f0ea4cc55477e05495d130d799d3cf341540fdd5be",
+      "trace_valid": true
+    },
+    "results/raw/rp3-174f067026bb/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 224,
+      "trace_ref": "results/raw/rp3-174f067026bb/trace.jsonl",
+      "trace_sha256": "39c4918017d751af3d2cda9122f6c0b3f2901616fe7bb70c20dedfef0684e5c9",
+      "trace_valid": true
+    },
+    "results/raw/rp3-19b0eb52d49d/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 224,
+      "trace_ref": "results/raw/rp3-19b0eb52d49d/trace.jsonl",
+      "trace_sha256": "1cdbbfa1f5747999c3c479e275b1aaf440eb007be1ad7b559da29710cb1456b2",
+      "trace_valid": true
+    },
+    "results/raw/rp3-1f80c2a03f03/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 224,
+      "trace_ref": "results/raw/rp3-1f80c2a03f03/trace.jsonl",
+      "trace_sha256": "0107725792c21fe1fce95656ff280f5d6a202a9a6a206ce855cd414384f084a2",
+      "trace_valid": true
+    },
+    "results/raw/rp3-1fcc4fdb3ade/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 223,
+      "trace_ref": "results/raw/rp3-1fcc4fdb3ade/trace.jsonl",
+      "trace_sha256": "0f182320d998b58259ac57dbd9d6403236d429c512d510d8e26073c9f56e8c94",
+      "trace_valid": true
+    },
+    "results/raw/rp3-2581b5857013/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 224,
+      "trace_ref": "results/raw/rp3-2581b5857013/trace.jsonl",
+      "trace_sha256": "08952b97538577264e8a6a951ca7bfd5c857ac62cb7fd693eb1f14d43a8f18c0",
+      "trace_valid": true
+    },
+    "results/raw/rp3-27136f540a84/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 223,
+      "trace_ref": "results/raw/rp3-27136f540a84/trace.jsonl",
+      "trace_sha256": "3491a49e997253a001a0fced5413909d53e701c338f9114372529195e5e6b89d",
+      "trace_valid": true
+    },
+    "results/raw/rp3-29ae66d19b6a/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 219,
+      "trace_ref": "results/raw/rp3-29ae66d19b6a/trace.jsonl",
+      "trace_sha256": "3a49237b8107f63815afd918ed67178dfe521f776d3931969b73b7d4a47ab5a0",
+      "trace_valid": true
+    },
+    "results/raw/rp3-2c25bddead43/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 223,
+      "trace_ref": "results/raw/rp3-2c25bddead43/trace.jsonl",
+      "trace_sha256": "d9e70601477824f4bb528223797d0bddc40ae74f0fb909a5d34faab479b52127",
+      "trace_valid": true
+    },
+    "results/raw/rp3-2e47ffb79f0d/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 224,
+      "trace_ref": "results/raw/rp3-2e47ffb79f0d/trace.jsonl",
+      "trace_sha256": "a5e53321d91d3afba95481258cbc7801675cb27778dd9e4a1528d5bf588e8262",
+      "trace_valid": true
+    },
+    "results/raw/rp3-2ecf3baa2fe4/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 224,
+      "trace_ref": "results/raw/rp3-2ecf3baa2fe4/trace.jsonl",
+      "trace_sha256": "24a4b76b7a181d7e1612a8a796c59c1064bb01a98b6ace77b48f778d91e5b604",
+      "trace_valid": true
+    },
+    "results/raw/rp3-2f03171da7f3/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 224,
+      "trace_ref": "results/raw/rp3-2f03171da7f3/trace.jsonl",
+      "trace_sha256": "c37efde8dc5e234c85a819bfa85e29df5aaf9cda5fc23ac98a0bbbc1ab8aa867",
+      "trace_valid": true
+    },
+    "results/raw/rp3-2fc94158cc50/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 224,
+      "trace_ref": "results/raw/rp3-2fc94158cc50/trace.jsonl",
+      "trace_sha256": "8e1c7ed465b895ce6dc6a66951b7bf09cd6d026211c21e802517587567fdb8d0",
+      "trace_valid": true
+    },
+    "results/raw/rp3-3d22a37734e6/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 224,
+      "trace_ref": "results/raw/rp3-3d22a37734e6/trace.jsonl",
+      "trace_sha256": "9d08e1bad6ff59cc3727db5780b566a6b15b835f4feef189b7e0865c677adf78",
+      "trace_valid": true
+    },
+    "results/raw/rp3-40161d23db25/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 224,
+      "trace_ref": "results/raw/rp3-40161d23db25/trace.jsonl",
+      "trace_sha256": "419f844b6a775905ef66e1d8c0e4efa0b6219e628c98d2ba34745aa04d821975",
+      "trace_valid": true
+    },
+    "results/raw/rp3-444113829932/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 223,
+      "trace_ref": "results/raw/rp3-444113829932/trace.jsonl",
+      "trace_sha256": "f4b07b7a77201891d1e85fb5c152bbf8e7c21d18bc595fee71148b1623a2d9d9",
+      "trace_valid": true
+    },
+    "results/raw/rp3-48054f77584c/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 223,
+      "trace_ref": "results/raw/rp3-48054f77584c/trace.jsonl",
+      "trace_sha256": "2bbcd13b7ff1e8b7ecdb7ee1a68da71a604e14b53570d029f529ba7c05b42c35",
+      "trace_valid": true
+    },
+    "results/raw/rp3-4a12342054b5/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 224,
+      "trace_ref": "results/raw/rp3-4a12342054b5/trace.jsonl",
+      "trace_sha256": "5f2581a4e599b0ec1156f8febacb4db410aaf4b5a4586ff4906df463e7b2ebb3",
+      "trace_valid": true
+    },
+    "results/raw/rp3-4bb95d16213d/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 223,
+      "trace_ref": "results/raw/rp3-4bb95d16213d/trace.jsonl",
+      "trace_sha256": "fb431ece3846bb4e99f7d044d6d154a7c980f067c641584299eb4ffbe9ed5ec3",
+      "trace_valid": true
+    },
+    "results/raw/rp3-4bc36bbf8488/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 223,
+      "trace_ref": "results/raw/rp3-4bc36bbf8488/trace.jsonl",
+      "trace_sha256": "47ced3d80d486608ad2730cdfe143ae932264233ae936e004b0447d231946a48",
+      "trace_valid": true
+    },
+    "results/raw/rp3-4cfb89d0c64d/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 222,
+      "trace_ref": "results/raw/rp3-4cfb89d0c64d/trace.jsonl",
+      "trace_sha256": "864e2fb6ca24e66138ef922a9a594393f8b052c2c2bc9112fa17e8d41d03136d",
+      "trace_valid": true
+    },
+    "results/raw/rp3-4daea16a4215/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 224,
+      "trace_ref": "results/raw/rp3-4daea16a4215/trace.jsonl",
+      "trace_sha256": "403d2db7af3ad2cf9ef16def8c0f373f3fa87f34577c31a78af66fc17cd206bd",
+      "trace_valid": true
+    },
+    "results/raw/rp3-4e0a0e40100f/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 224,
+      "trace_ref": "results/raw/rp3-4e0a0e40100f/trace.jsonl",
+      "trace_sha256": "cabd603e7cc1653c0371c73bc62990dc11556894cd68901234deac3fa31740b8",
+      "trace_valid": true
+    },
+    "results/raw/rp3-5060fdc78bd4/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 224,
+      "trace_ref": "results/raw/rp3-5060fdc78bd4/trace.jsonl",
+      "trace_sha256": "723199971947279f70d83955790aa093a32c2ae3a0284b829fbfa8a2c4dbfc1e",
+      "trace_valid": true
+    },
+    "results/raw/rp3-51713aed20ab/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 224,
+      "trace_ref": "results/raw/rp3-51713aed20ab/trace.jsonl",
+      "trace_sha256": "b034fd6d3a644945ae24d7297b318f03c041b88cdc2febf70481b01da82fe9e5",
+      "trace_valid": true
+    },
+    "results/raw/rp3-52e9b1792798/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 223,
+      "trace_ref": "results/raw/rp3-52e9b1792798/trace.jsonl",
+      "trace_sha256": "8d20606e333b5dd07026eaa6c89f6ef7a86cc78800b2cd6f7378703b3e00ab0b",
+      "trace_valid": true
+    },
+    "results/raw/rp3-5690c1330bb3/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 224,
+      "trace_ref": "results/raw/rp3-5690c1330bb3/trace.jsonl",
+      "trace_sha256": "6fe08e8236d6ef4ef868f1ce62f50af5ad4047c6e10baa72cf99cd140214bf16",
+      "trace_valid": true
+    },
+    "results/raw/rp3-6341607e641e/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 223,
+      "trace_ref": "results/raw/rp3-6341607e641e/trace.jsonl",
+      "trace_sha256": "bd7d53f86475d99aaed2feeddf9c81510ab8b98bad95370a12bdf71efaf0b992",
+      "trace_valid": true
+    },
+    "results/raw/rp3-63e4729226ba/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 224,
+      "trace_ref": "results/raw/rp3-63e4729226ba/trace.jsonl",
+      "trace_sha256": "4ea13fc5eef91f56db19e71b918192e8b94575284f3f3d45c241dfce48ed1292",
+      "trace_valid": true
+    },
+    "results/raw/rp3-645c134352ec/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 224,
+      "trace_ref": "results/raw/rp3-645c134352ec/trace.jsonl",
+      "trace_sha256": "fb89d8d7a0f17451fbf86a79357c7c9097f984640934e603cb74300d75bb5be5",
+      "trace_valid": true
+    },
+    "results/raw/rp3-651227933929/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 223,
+      "trace_ref": "results/raw/rp3-651227933929/trace.jsonl",
+      "trace_sha256": "8e9c5decf68f611b96d193e53f4494dac519b183acb663f04950140b0003f425",
+      "trace_valid": true
+    },
+    "results/raw/rp3-662ac93072f1/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 224,
+      "trace_ref": "results/raw/rp3-662ac93072f1/trace.jsonl",
+      "trace_sha256": "74a2be0b22da7a27b38130a81655e3b0a893bad1afb67de33c2db892c11656ef",
+      "trace_valid": true
+    },
+    "results/raw/rp3-668065e9b0f8/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 223,
+      "trace_ref": "results/raw/rp3-668065e9b0f8/trace.jsonl",
+      "trace_sha256": "b2ed1fb3f8d17b7671e763157e49d565cca66e0904614edb3377d9e8b113bda6",
+      "trace_valid": true
+    },
+    "results/raw/rp3-66f575d5a193/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 224,
+      "trace_ref": "results/raw/rp3-66f575d5a193/trace.jsonl",
+      "trace_sha256": "fe11a324f312f02943e45dd6868518d98f268fa769765ceb50495a2fcc2fad8d",
+      "trace_valid": true
+    },
+    "results/raw/rp3-6863873dda37/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 224,
+      "trace_ref": "results/raw/rp3-6863873dda37/trace.jsonl",
+      "trace_sha256": "4cfdc300a189d821b23a4042487e1c3d5d99711d343b1dac9e0b41095f1043ef",
+      "trace_valid": true
+    },
+    "results/raw/rp3-68c30aaceff6/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 223,
+      "trace_ref": "results/raw/rp3-68c30aaceff6/trace.jsonl",
+      "trace_sha256": "e7a9f7b5229edca6ed81e19721cfcbc4db5b4a94c0bea3d71459ec39324e738a",
+      "trace_valid": true
+    },
+    "results/raw/rp3-6d424fe82041/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 223,
+      "trace_ref": "results/raw/rp3-6d424fe82041/trace.jsonl",
+      "trace_sha256": "155511311682a30a6c793254c9eabac6d16ef2f3cd9cb8090910c6a31ffcc905",
+      "trace_valid": true
+    },
+    "results/raw/rp3-6f15089fa8e0/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 224,
+      "trace_ref": "results/raw/rp3-6f15089fa8e0/trace.jsonl",
+      "trace_sha256": "8f9e8fa610419813e74658d2bd82563e761bb68fdd5a0384efe7165ccfc93f15",
+      "trace_valid": true
+    },
+    "results/raw/rp3-73534d579ea7/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 224,
+      "trace_ref": "results/raw/rp3-73534d579ea7/trace.jsonl",
+      "trace_sha256": "532643d0fed854bd349ba53764a78c178152582853369a1863820050d6ef0306",
+      "trace_valid": true
+    },
+    "results/raw/rp3-7363988dd6aa/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 224,
+      "trace_ref": "results/raw/rp3-7363988dd6aa/trace.jsonl",
+      "trace_sha256": "a49ea225e37af780385629ec0a9ea07e80e87f7f622fbf49aa450e21e895a754",
+      "trace_valid": true
+    },
+    "results/raw/rp3-74c0dd0e8ab2/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 224,
+      "trace_ref": "results/raw/rp3-74c0dd0e8ab2/trace.jsonl",
+      "trace_sha256": "f22f868360bf4bba6a40340928c70d049c9acee201e4f5da12af049647f31470",
+      "trace_valid": true
+    },
+    "results/raw/rp3-74f353481ca6/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 224,
+      "trace_ref": "results/raw/rp3-74f353481ca6/trace.jsonl",
+      "trace_sha256": "39ccf1b987c66a6238f0094340fa36f815591ff8ebf4f587ce01ba8dc01189ec",
+      "trace_valid": true
+    },
+    "results/raw/rp3-78eb6882327d/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 224,
+      "trace_ref": "results/raw/rp3-78eb6882327d/trace.jsonl",
+      "trace_sha256": "c671008bd730298f641f0cf0ea4b0631b851238313a8e9c39fa47b36bd0e1e5e",
+      "trace_valid": true
+    },
+    "results/raw/rp3-7f2abf86c6b8/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 224,
+      "trace_ref": "results/raw/rp3-7f2abf86c6b8/trace.jsonl",
+      "trace_sha256": "e2cddeefed218312955c944ccc512a1e81d7af84d4fc6ed63904e5f4569a1a6d",
+      "trace_valid": true
+    },
+    "results/raw/rp3-81d7b8373918/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 223,
+      "trace_ref": "results/raw/rp3-81d7b8373918/trace.jsonl",
+      "trace_sha256": "56738e05f1d4604ea1ca14ac03c9176ea623bb80c0d597f51aec6f93e872c809",
+      "trace_valid": true
+    },
+    "results/raw/rp3-82d52de37c44/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 224,
+      "trace_ref": "results/raw/rp3-82d52de37c44/trace.jsonl",
+      "trace_sha256": "98856160a383d946fc6a98d29f39f5816dc2600742799df510167c8f38df5d12",
+      "trace_valid": true
+    },
+    "results/raw/rp3-8666b9d29b3d/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 223,
+      "trace_ref": "results/raw/rp3-8666b9d29b3d/trace.jsonl",
+      "trace_sha256": "7128b2d84b687ce5264d2d6bf153d4da03abedc2dd16e24b50912178a9ec6622",
+      "trace_valid": true
+    },
+    "results/raw/rp3-8b6c3f5ff2c3/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 224,
+      "trace_ref": "results/raw/rp3-8b6c3f5ff2c3/trace.jsonl",
+      "trace_sha256": "73bb63f08c7eac49c5c78e45663fd865952d59195f860cf5859737790c035fd1",
+      "trace_valid": true
+    },
+    "results/raw/rp3-8cffc6c0ad0d/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 224,
+      "trace_ref": "results/raw/rp3-8cffc6c0ad0d/trace.jsonl",
+      "trace_sha256": "6d6599afdb7cc42ef4204f550eff5913fed7500d92373ca363b31aacdf9c9c2f",
+      "trace_valid": true
+    },
+    "results/raw/rp3-912f4b6d3bb3/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 224,
+      "trace_ref": "results/raw/rp3-912f4b6d3bb3/trace.jsonl",
+      "trace_sha256": "2cc127b79a8b0743a148992de9fdae7febdb87681ccf56cebd9364ea8d5cf8bc",
+      "trace_valid": true
+    },
+    "results/raw/rp3-91551eb9c42b/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 223,
+      "trace_ref": "results/raw/rp3-91551eb9c42b/trace.jsonl",
+      "trace_sha256": "7f06d4dff152f6f68ee7f2165051089789420a6323e72512dff2247d86286e1e",
+      "trace_valid": true
+    },
+    "results/raw/rp3-94f91c353f3f/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 223,
+      "trace_ref": "results/raw/rp3-94f91c353f3f/trace.jsonl",
+      "trace_sha256": "20a946ac0cf21a3e2b975c5c4e958d14dcc578c606131bda024a6c6a923628d6",
+      "trace_valid": true
+    },
+    "results/raw/rp3-950920ff615e/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 224,
+      "trace_ref": "results/raw/rp3-950920ff615e/trace.jsonl",
+      "trace_sha256": "ab4fdf9a0f361f53e530c02d0b39f1eedc4c760e7d18cc4d01fee898179c1c5c",
+      "trace_valid": true
+    },
+    "results/raw/rp3-98df006da37e/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 224,
+      "trace_ref": "results/raw/rp3-98df006da37e/trace.jsonl",
+      "trace_sha256": "e4296ef0f3ac59fdbf064ebbb0177d3c41ab1b8655296654002c65807aff1aef",
+      "trace_valid": true
+    },
+    "results/raw/rp3-9a8ed1688e72/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 224,
+      "trace_ref": "results/raw/rp3-9a8ed1688e72/trace.jsonl",
+      "trace_sha256": "b99e1ffe385bbba9cd959677e77e44bf81102a83f977b3548f185b0cdc50a0c2",
+      "trace_valid": true
+    },
+    "results/raw/rp3-9b139f76c910/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 224,
+      "trace_ref": "results/raw/rp3-9b139f76c910/trace.jsonl",
+      "trace_sha256": "d81360be7c6c796cbe465cfd5e8259a7fc072acf7cd2a5f002dcb3d6460a1594",
+      "trace_valid": true
+    },
+    "results/raw/rp3-9d9969439b67/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 217,
+      "trace_ref": "results/raw/rp3-9d9969439b67/trace.jsonl",
+      "trace_sha256": "11d6fe84452d8fbb0067f38ba9563ba8390754986aa08194d3ad3035c64af40a",
+      "trace_valid": true
+    },
+    "results/raw/rp3-9e6a818a4f4d/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 223,
+      "trace_ref": "results/raw/rp3-9e6a818a4f4d/trace.jsonl",
+      "trace_sha256": "7f8c6953ddcc53219a7bde765e4a17dd009441710815062766f2921d0731c7f6",
+      "trace_valid": true
+    },
+    "results/raw/rp3-a1144ffa641b/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 223,
+      "trace_ref": "results/raw/rp3-a1144ffa641b/trace.jsonl",
+      "trace_sha256": "6d3c9533cab6900e6fd3b29b1174635cb4e606f4ee4757626e83eb1e0ba3a826",
+      "trace_valid": true
+    },
+    "results/raw/rp3-a143bd825c58/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 224,
+      "trace_ref": "results/raw/rp3-a143bd825c58/trace.jsonl",
+      "trace_sha256": "418fe5e0976bbd1f706076da6944e655f4e7557e579151a73427fb0d58ec9056",
+      "trace_valid": true
+    },
+    "results/raw/rp3-a643763cd61a/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 224,
+      "trace_ref": "results/raw/rp3-a643763cd61a/trace.jsonl",
+      "trace_sha256": "d0654fd7277da4833ccebd9c99ffe2a7a5912a80d0499b2dd328504454e58624",
+      "trace_valid": true
+    },
+    "results/raw/rp3-a827edc1862c/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 224,
+      "trace_ref": "results/raw/rp3-a827edc1862c/trace.jsonl",
+      "trace_sha256": "4689b2b9a07a493d90856871e20997c4e8b3e2b68654c6c4a62be8b911b55482",
+      "trace_valid": true
+    },
+    "results/raw/rp3-a9046db4c1b6/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 224,
+      "trace_ref": "results/raw/rp3-a9046db4c1b6/trace.jsonl",
+      "trace_sha256": "c5ecae60106126c2d3f02448ae1f3a1ceeae8130888cc77975156ad7fde0e4f5",
+      "trace_valid": true
+    },
+    "results/raw/rp3-aa42047719df/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 223,
+      "trace_ref": "results/raw/rp3-aa42047719df/trace.jsonl",
+      "trace_sha256": "257a6a5014104c33ce24650c145f22b4607c9a5ff99baa490f6bf7581555b6b6",
+      "trace_valid": true
+    },
+    "results/raw/rp3-aca0adaecf78/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 222,
+      "trace_ref": "results/raw/rp3-aca0adaecf78/trace.jsonl",
+      "trace_sha256": "3763f704022cb79f28e6fc83818abb029aa4cb79d1c1efd8770aef8c2fd3aeda",
+      "trace_valid": true
+    },
+    "results/raw/rp3-b01af61c8848/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 224,
+      "trace_ref": "results/raw/rp3-b01af61c8848/trace.jsonl",
+      "trace_sha256": "85646f282782bd05d8bd6d74d9678e89a827eda94125a47aba926ddea1c5557a",
+      "trace_valid": true
+    },
+    "results/raw/rp3-b38209cdf930/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 224,
+      "trace_ref": "results/raw/rp3-b38209cdf930/trace.jsonl",
+      "trace_sha256": "7d4ba1d7914508de7b6e6b7ec1862767c72296abc26c6e6d01fcdb61c30ecdc5",
+      "trace_valid": true
+    },
+    "results/raw/rp3-b4c684ce4afe/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 224,
+      "trace_ref": "results/raw/rp3-b4c684ce4afe/trace.jsonl",
+      "trace_sha256": "89f0ceecf3eb555051b9d313469ad4e77124dfff84f73ae8365b49134ca16107",
+      "trace_valid": true
+    },
+    "results/raw/rp3-b626332a476d/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 224,
+      "trace_ref": "results/raw/rp3-b626332a476d/trace.jsonl",
+      "trace_sha256": "f78720b67c91b676044b082e8d4a000eaa186d425c131ca57917c837603192ab",
+      "trace_valid": true
+    },
+    "results/raw/rp3-b6d989b97aad/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 224,
+      "trace_ref": "results/raw/rp3-b6d989b97aad/trace.jsonl",
+      "trace_sha256": "0b676ed13690fcd509caf9672e886601b204ac86f1b25885d38611b7b35096e3",
+      "trace_valid": true
+    },
+    "results/raw/rp3-b959c20a398e/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 224,
+      "trace_ref": "results/raw/rp3-b959c20a398e/trace.jsonl",
+      "trace_sha256": "c4da68badfc14e7a6d4e225ea3c83f7bde42baabaa84f677aef4413713606b8f",
+      "trace_valid": true
+    },
+    "results/raw/rp3-bd3aadd6a0fd/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 224,
+      "trace_ref": "results/raw/rp3-bd3aadd6a0fd/trace.jsonl",
+      "trace_sha256": "a2c57e665b0ba62863261e3b2f8b81a5080679098b8a339bae0f8fb76393978e",
+      "trace_valid": true
+    },
+    "results/raw/rp3-bdd8d8ab1395/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 224,
+      "trace_ref": "results/raw/rp3-bdd8d8ab1395/trace.jsonl",
+      "trace_sha256": "bca747aeb451dbacb06c9c8d6db470f31abda05648a5f2896d3418c311028ab0",
+      "trace_valid": true
+    },
+    "results/raw/rp3-bf658d0254a0/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 223,
+      "trace_ref": "results/raw/rp3-bf658d0254a0/trace.jsonl",
+      "trace_sha256": "5a3dee2cee114a08611b77aec76fc28458603068960a98c5f473168dbb7009cf",
+      "trace_valid": true
+    },
+    "results/raw/rp3-bf7dff9df91d/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 223,
+      "trace_ref": "results/raw/rp3-bf7dff9df91d/trace.jsonl",
+      "trace_sha256": "d62d306465f9c828e5bc233c6ebe735e5f7693ef1695cf58c34645b1db4e183f",
+      "trace_valid": true
+    },
+    "results/raw/rp3-c32297d7eba9/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 224,
+      "trace_ref": "results/raw/rp3-c32297d7eba9/trace.jsonl",
+      "trace_sha256": "abbd678ee8db22b75412815a28136215bb57a3a3bde96938e8b7a263b9be2064",
+      "trace_valid": true
+    },
+    "results/raw/rp3-c559635efc00/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 224,
+      "trace_ref": "results/raw/rp3-c559635efc00/trace.jsonl",
+      "trace_sha256": "90bcd3894b54245423a109f70b1082b9055d790d5442747ac62db20872a499a7",
+      "trace_valid": true
+    },
+    "results/raw/rp3-c59cba11e8e1/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 223,
+      "trace_ref": "results/raw/rp3-c59cba11e8e1/trace.jsonl",
+      "trace_sha256": "0de8381fdccf6d8d1f67167d46b6418cde1ce7945dce6a686b7eef515c72f6e2",
+      "trace_valid": true
+    },
+    "results/raw/rp3-c5f3be443797/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 224,
+      "trace_ref": "results/raw/rp3-c5f3be443797/trace.jsonl",
+      "trace_sha256": "166c26df00eaa09b40b0259d116049295e1042060e8118cfcc781e2b5d99b7cf",
+      "trace_valid": true
+    },
+    "results/raw/rp3-c83cafedcdb5/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 224,
+      "trace_ref": "results/raw/rp3-c83cafedcdb5/trace.jsonl",
+      "trace_sha256": "d6a73d883ee8ae3bd2094fbf853bb732724020dc0b01024703b2b0c62811517f",
+      "trace_valid": true
+    },
+    "results/raw/rp3-c935914ba22f/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 224,
+      "trace_ref": "results/raw/rp3-c935914ba22f/trace.jsonl",
+      "trace_sha256": "8c85dd643e1846b98c389126640e3c9c231a33a0af1a33556d008f62a3109a9c",
+      "trace_valid": true
+    },
+    "results/raw/rp3-cb2d96872ac0/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 224,
+      "trace_ref": "results/raw/rp3-cb2d96872ac0/trace.jsonl",
+      "trace_sha256": "e4e6de71c2d68aefd11b32716642605c1c1e6d8334d98690bae86dfd1ccb2ec4",
+      "trace_valid": true
+    },
+    "results/raw/rp3-cbfeac0b5e31/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 224,
+      "trace_ref": "results/raw/rp3-cbfeac0b5e31/trace.jsonl",
+      "trace_sha256": "f18e401fb9aa07761ed5fc5a2fc1ea67355a746eed2f570daad814179815c2d9",
+      "trace_valid": true
+    },
+    "results/raw/rp3-cc897d6cb1ee/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 223,
+      "trace_ref": "results/raw/rp3-cc897d6cb1ee/trace.jsonl",
+      "trace_sha256": "0a9f53f10b2ad770f202ed3c783074f597e9bd50a139883bf5efef1d2c2fd62d",
+      "trace_valid": true
+    },
+    "results/raw/rp3-cfd3b017a7de/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 224,
+      "trace_ref": "results/raw/rp3-cfd3b017a7de/trace.jsonl",
+      "trace_sha256": "58edd866c23bc9dfc8b2fd36adcf7f30e1c9e7ba61ac7cecb318835113fa6e5b",
+      "trace_valid": true
+    },
+    "results/raw/rp3-d06c344db789/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 224,
+      "trace_ref": "results/raw/rp3-d06c344db789/trace.jsonl",
+      "trace_sha256": "9f424d7989809027aa61370d31a7bc5b8663ea1f2765caa01bd99b04f0f19bc8",
+      "trace_valid": true
+    },
+    "results/raw/rp3-d24bbc100e0b/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 224,
+      "trace_ref": "results/raw/rp3-d24bbc100e0b/trace.jsonl",
+      "trace_sha256": "8641f80d38e65f2f9a9c0a5fff4f8e435ed3662ddd50e2a91a3a6429e5aa01cf",
+      "trace_valid": true
+    },
+    "results/raw/rp3-d29db94d7b1a/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 223,
+      "trace_ref": "results/raw/rp3-d29db94d7b1a/trace.jsonl",
+      "trace_sha256": "41f82a6389fd06a5f23bc853516ddb0cf3fd87296bff7c11da9d89462a0ed3fb",
+      "trace_valid": true
+    },
+    "results/raw/rp3-d3af1ac25bd3/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 224,
+      "trace_ref": "results/raw/rp3-d3af1ac25bd3/trace.jsonl",
+      "trace_sha256": "b4b71208af3b67d68faedbfde7bda22122fe3031c27d04af9e8493d1a0d8246d",
+      "trace_valid": true
+    },
+    "results/raw/rp3-d5ed2d8e46d3/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 223,
+      "trace_ref": "results/raw/rp3-d5ed2d8e46d3/trace.jsonl",
+      "trace_sha256": "ff43810e19ccef9bc4095967f1fa751d4e535bbdd742eed3662eb76f3f82806d",
+      "trace_valid": true
+    },
+    "results/raw/rp3-d8bade2e6a04/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 224,
+      "trace_ref": "results/raw/rp3-d8bade2e6a04/trace.jsonl",
+      "trace_sha256": "8b9070658bc05b9267349c3b9e6bf6f7cdd56dbf4c4b40caa0e8971cad81647f",
+      "trace_valid": true
+    },
+    "results/raw/rp3-de0807acf198/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 223,
+      "trace_ref": "results/raw/rp3-de0807acf198/trace.jsonl",
+      "trace_sha256": "5807d6d08256e4508537b7411921f8e84dde67cbebf67eda34f71ee2a02d83bb",
+      "trace_valid": true
+    },
+    "results/raw/rp3-de93d4b0ee0b/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 223,
+      "trace_ref": "results/raw/rp3-de93d4b0ee0b/trace.jsonl",
+      "trace_sha256": "8336a534eb799e93096644dd42a5c969c24a1f273a2c246d77801a3e9b3785cd",
+      "trace_valid": true
+    },
+    "results/raw/rp3-dea073f8171c/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 223,
+      "trace_ref": "results/raw/rp3-dea073f8171c/trace.jsonl",
+      "trace_sha256": "eece01156322ac24dbb229a9c0462ead0a40a4144300b0339782428ecb9a13cf",
+      "trace_valid": true
+    },
+    "results/raw/rp3-e1a6238d840a/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 223,
+      "trace_ref": "results/raw/rp3-e1a6238d840a/trace.jsonl",
+      "trace_sha256": "9bb73fa32e1da782acbd76f195224261bfb8b49e5576f2700aa1aa4228dace4d",
+      "trace_valid": true
+    },
+    "results/raw/rp3-e276ac7d25b8/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 223,
+      "trace_ref": "results/raw/rp3-e276ac7d25b8/trace.jsonl",
+      "trace_sha256": "b8efd2941b36d79813267228358851777e4a592ed0b5c55cd7cc9e2444accb57",
+      "trace_valid": true
+    },
+    "results/raw/rp3-e535d64dc667/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 223,
+      "trace_ref": "results/raw/rp3-e535d64dc667/trace.jsonl",
+      "trace_sha256": "18642cd1852669122c6f1e844fa7b8c5a8686253cfb9b273fb93c9f571328af6",
+      "trace_valid": true
+    },
+    "results/raw/rp3-e620968a946c/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 223,
+      "trace_ref": "results/raw/rp3-e620968a946c/trace.jsonl",
+      "trace_sha256": "e572edd53f03c87af209f64f8f75cb41e619d8e842f12f436986423afc1bdb21",
+      "trace_valid": true
+    },
+    "results/raw/rp3-e7ed0bcc6e46/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 224,
+      "trace_ref": "results/raw/rp3-e7ed0bcc6e46/trace.jsonl",
+      "trace_sha256": "7c7a04360748fe0e4abe5b79e2e6b264a4488f01305d037379d10f6f75a5b142",
+      "trace_valid": true
+    },
+    "results/raw/rp3-ea91be4088da/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 223,
+      "trace_ref": "results/raw/rp3-ea91be4088da/trace.jsonl",
+      "trace_sha256": "b858db7aa1bf479b7ca5eb1ba0503bbc50cc89ba37ab625853ee6b087217867d",
+      "trace_valid": true
+    },
+    "results/raw/rp3-eac8827b2081/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 224,
+      "trace_ref": "results/raw/rp3-eac8827b2081/trace.jsonl",
+      "trace_sha256": "b05608d55af4085a38bdecfbb72510173de7493be0da55cd2d4c1d3c4c753a52",
+      "trace_valid": true
+    },
+    "results/raw/rp3-eb4efb61ed36/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 224,
+      "trace_ref": "results/raw/rp3-eb4efb61ed36/trace.jsonl",
+      "trace_sha256": "ac8fde8a8f0e4d2d49a43eecc7b7316a614a578d7c2676fc547800bcb104545c",
+      "trace_valid": true
+    },
+    "results/raw/rp3-ed8ae4427db2/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 224,
+      "trace_ref": "results/raw/rp3-ed8ae4427db2/trace.jsonl",
+      "trace_sha256": "8c46418386f0daaf9e1c2b72a626027cbffe1753e26c3d925be5fe6d09a91a03",
+      "trace_valid": true
+    },
+    "results/raw/rp3-edd783af527b/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 223,
+      "trace_ref": "results/raw/rp3-edd783af527b/trace.jsonl",
+      "trace_sha256": "c3eb4104176b20c80cc9a7c5eb5254dbd6912c2258b4371432a16997df1b1ef5",
+      "trace_valid": true
+    },
+    "results/raw/rp3-eedd08ffec83/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 223,
+      "trace_ref": "results/raw/rp3-eedd08ffec83/trace.jsonl",
+      "trace_sha256": "1dd9f4945f90f5c78a6c1ab57a0c87cc4f7b45bc97333957ba9584ba4d3dc835",
+      "trace_valid": true
+    },
+    "results/raw/rp3-f0e224b4a63e/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 224,
+      "trace_ref": "results/raw/rp3-f0e224b4a63e/trace.jsonl",
+      "trace_sha256": "f9adf818f4c2f399354b6125c38753f20b508e613d319a150b4d88ec979fe04d",
+      "trace_valid": true
+    },
+    "results/raw/rp3-f1e0e507d559/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 224,
+      "trace_ref": "results/raw/rp3-f1e0e507d559/trace.jsonl",
+      "trace_sha256": "573ee1008ae026f24dc981e1bfe7890ff518946213afdf0207ec30cb502fc240",
+      "trace_valid": true
+    },
+    "results/raw/rp3-f3be54d35fd3/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 224,
+      "trace_ref": "results/raw/rp3-f3be54d35fd3/trace.jsonl",
+      "trace_sha256": "16c69b0574a6883a0c2db59bff6d81d89c5346d7b061cd8093c3b0c5ba5db3f8",
+      "trace_valid": true
+    },
+    "results/raw/rp3-f53d9bc03f7b/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 224,
+      "trace_ref": "results/raw/rp3-f53d9bc03f7b/trace.jsonl",
+      "trace_sha256": "61d21bc9ee8bbd96cf531f2116cc6e50b3ad92a30cbdf967d1ea190454e5c54f",
+      "trace_valid": true
+    },
+    "results/raw/rp3-f6507f895286/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 223,
+      "trace_ref": "results/raw/rp3-f6507f895286/trace.jsonl",
+      "trace_sha256": "17391948c3cc99c5eefd539d8122840b06297acc2a601ee7d5f94310c270eddb",
+      "trace_valid": true
+    },
+    "results/raw/rp3-f9558055483d/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 224,
+      "trace_ref": "results/raw/rp3-f9558055483d/trace.jsonl",
+      "trace_sha256": "abe5563d3a515142cba559c2041452d7a298e83deac8f8ce12c63be9805f402e",
+      "trace_valid": true
+    },
+    "results/raw/rp3-fa27ae8bd62e/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 223,
+      "trace_ref": "results/raw/rp3-fa27ae8bd62e/trace.jsonl",
+      "trace_sha256": "bc6d76cb2ef63b6d64ce2c052e15fdfdba211f0487746bba42b07ccb32762784",
+      "trace_valid": true
+    },
+    "results/raw/rp3-fe5d82589428/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 223,
+      "trace_ref": "results/raw/rp3-fe5d82589428/trace.jsonl",
+      "trace_sha256": "c82a3cea6b62631fcc3851e8e8e4a9512118ab51172b9a27f88957fa65a39a32",
+      "trace_valid": true
+    },
+    "results/raw/rp3-fed145b1f1c4/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 224,
+      "trace_ref": "results/raw/rp3-fed145b1f1c4/trace.jsonl",
+      "trace_sha256": "0161ea9177d7bbdf0732009983c769e9d7b088b63fc49a6b67f64159762ba341",
+      "trace_valid": true
+    },
+    "results/raw/rp3-ffee23c73ab5/trace.jsonl": {
+      "metadata_source": "locked_from_pre_release_local_raw_trace_snapshot",
+      "release_boundary": "raw_trace_content_excluded_from_release",
+      "trace_event_count": 223,
+      "trace_ref": "results/raw/rp3-ffee23c73ab5/trace.jsonl",
+      "trace_sha256": "25b2ec2091a6a2a2923d1fea7ef386749e8bc3c7c0340131f7407ac0fc3587ed",
+      "trace_valid": true
+    }
+  }
+}

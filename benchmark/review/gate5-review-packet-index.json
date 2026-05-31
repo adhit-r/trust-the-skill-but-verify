@@ -32,14 +32,15 @@
   },
   "index_id": "gate5-review-packet-index",
   "index_lock": {
-    "git_head": "1a0c1992f9f2e28f450037d1743b4b72744f5acc",
-    "git_tree": "8d5dc6dafde83005fbb14a219a61293ff4536828",
+    "git_head": "0d42f4f412790ddc4aa0e58949ac51a3690b6b3d",
+    "git_tree": "3cea842f71a94e8ba4565b5d802e81762a54f14d",
     "input_hashes": {
       "adjudication_form_sha256": "387e5ac4c7e0924b0cb08b261b39663d1a542c0dca64f19b05bb3289ed4d8d39",
       "inclusion_table_sha256": "8126baacd0d689b06907d02b5bf00f7b848d5e5c7523b3205fb389f2506a8e81",
       "paired_summary_sha256": "491753748172f7975a8fae4c159b0a615fe07e77729e36ca837501459b6c755c",
       "review_queue_sha256": "514d45958cd5258c62a4986f678489bf54b113a8495f06cabb5a697b00a346b6",
-      "source_manifest_sha256": "7d53a653e42dd636428187830027eeb8d5067903b8ec140679c19095867aa594"
+      "source_manifest_sha256": "7d53a653e42dd636428187830027eeb8d5067903b8ec140679c19095867aa594",
+      "trace_metadata_lock_sha256": "31a96f28f229a1a85cdd9ce15eb5577ba691bf54c3e9d8451072cb0373846fcb"
     },
     "lock_id": "gate5-review-packet-index-current-132-v1",
     "locked_at_utc": "2026-05-26T00:00:00Z"
@@ -47,7 +48,8 @@
   "input_refs": {
     "adjudication_form_ref": "paper/gate5-adjudication-form.md",
     "paired_summary_ref": "results/derived/paired-runtime-summary.json",
-    "review_queue_ref": "benchmark/review/gate5-review-queue.json"
+    "review_queue_ref": "benchmark/review/gate5-review-queue.json",
+    "trace_metadata_lock_ref": "benchmark/review/gate5-trace-metadata-lock.json"
   },
   "next_dependencies": [
     "Export sanitized blinded packet bundles from this index without raw local-path-bearing trace content.",

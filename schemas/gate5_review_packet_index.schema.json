@@ -29,12 +29,14 @@
       "required": [
         "review_queue_ref",
         "paired_summary_ref",
-        "adjudication_form_ref"
+        "adjudication_form_ref",
+        "trace_metadata_lock_ref"
       ],
       "properties": {
         "review_queue_ref": { "type": "string", "minLength": 1 },
         "paired_summary_ref": { "type": "string", "minLength": 1 },
-        "adjudication_form_ref": { "type": "string", "minLength": 1 }
+        "adjudication_form_ref": { "type": "string", "minLength": 1 },
+        "trace_metadata_lock_ref": { "type": "string", "minLength": 1 }
       }
     },
     "index_lock": {
@@ -60,14 +62,16 @@
             "paired_summary_sha256",
             "adjudication_form_sha256",
             "inclusion_table_sha256",
-            "source_manifest_sha256"
+            "source_manifest_sha256",
+            "trace_metadata_lock_sha256"
           ],
           "properties": {
             "review_queue_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
             "paired_summary_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
             "adjudication_form_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
             "inclusion_table_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
-            "source_manifest_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+            "source_manifest_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+            "trace_metadata_lock_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
           }
         }
       }

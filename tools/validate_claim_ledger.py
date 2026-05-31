@@ -13,9 +13,12 @@ from typing import Any
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_LEDGER = REPO_ROOT / "paper" / "claim-ledger.json"
+DEFAULT_TRACE_METADATA_LOCK = REPO_ROOT / "benchmark" / "review" / "gate5-trace-metadata-lock.json"
 sys.path.insert(0, str(REPO_ROOT / "src"))
 
 from skilldiff.metrics.contract_compare import compare_contract_runs, load_contract_result  # noqa: E402
+
+_TRACE_METADATA_LOCK_CACHE: dict[str, dict[str, Any]] | None = None
 
 
 def resolve_pointer(document: Any, pointer: str) -> Any:
@@ -37,6 +40,26 @@ def resolve_pointer(document: Any, pointer: str) -> Any:
 
 def load_json(path: Path) -> Any:
     return json.loads(path.read_text(encoding="utf-8"))
+
+
+def trace_metadata_lock() -> dict[str, dict[str, Any]]:
+    global _TRACE_METADATA_LOCK_CACHE
+    if _TRACE_METADATA_LOCK_CACHE is not None:
+        return _TRACE_METADATA_LOCK_CACHE
+    if not DEFAULT_TRACE_METADATA_LOCK.is_file():
+        _TRACE_METADATA_LOCK_CACHE = {}
+        return _TRACE_METADATA_LOCK_CACHE
+    lock = load_json(DEFAULT_TRACE_METADATA_LOCK)
+    records = lock.get("trace_records", {})
+    if not isinstance(records, dict):
+        raise ValueError(f"{DEFAULT_TRACE_METADATA_LOCK}: trace_records must be an object")
+    if int(lock.get("record_count", -1)) != len(records):
+        raise ValueError(f"{DEFAULT_TRACE_METADATA_LOCK}: record_count does not match trace_records")
+    for trace_ref, record in records.items():
+        if record.get("trace_ref") != trace_ref:
+            raise ValueError(f"{DEFAULT_TRACE_METADATA_LOCK}: trace record key/ref mismatch for {trace_ref}")
+    _TRACE_METADATA_LOCK_CACHE = records
+    return _TRACE_METADATA_LOCK_CACHE
 
 
 def resolve_repo_path(value: str) -> Path:
@@ -132,21 +155,33 @@ def validate_comparison_file(path: Path) -> dict[str, Any]:
 
     for run in runs:
         source_path = resolve_repo_path(run["source_path"])
-        trace_path = resolve_repo_path(run["trace_path"])
+        trace_ref = run["trace_path"]
+        trace_path = resolve_repo_path(trace_ref)
         if not source_path.is_file():
             raise FileNotFoundError(f"{path}: missing run source_path {source_path}")
-        if not trace_path.is_file():
-            raise FileNotFoundError(f"{path}: missing run trace_path {trace_path}")
         source_paths.append(source_path)
 
         findings = load_json(source_path)
         if findings.get("summary", {}).get("trace_valid") is not True:
             raise AssertionError(f"{source_path}: summary.trace_valid is not true")
-        expect_equal(
-            findings.get("summary", {}).get("event_count"),
-            nonblank_line_count(trace_path),
-            f"{source_path}: summary.event_count",
-        )
+        locked_trace = trace_metadata_lock().get(trace_ref)
+        if locked_trace is not None:
+            if not trace_ref.startswith("results/raw/"):
+                raise AssertionError(f"{path}: locked trace ref must be under results/raw: {trace_ref}")
+            expect_equal(locked_trace.get("trace_valid"), True, f"{trace_ref}: locked trace_valid")
+            expect_equal(
+                findings.get("summary", {}).get("event_count"),
+                int(locked_trace["trace_event_count"]),
+                f"{source_path}: summary.event_count",
+            )
+        else:
+            if not trace_path.is_file():
+                raise FileNotFoundError(f"{path}: missing run trace_path {trace_path}")
+            expect_equal(
+                findings.get("summary", {}).get("event_count"),
+                nonblank_line_count(trace_path),
+                f"{source_path}: summary.event_count",
+            )
 
     regenerated = compare_contract_runs([load_contract_result(path) for path in source_paths])
     expect_equal(

@@ -68,9 +68,6 @@ SECRET_PATTERNS = [
         r"bearer\s+[A-Za-z0-9_\-\.]{20,}",
     )
 ]
-SHA256_RE = re.compile(r"[0-9a-f]{64}")
-
-
 def load_json(path: Path) -> dict[str, Any]:
     return json.loads(path.read_text(encoding="utf-8"))
 
@@ -234,11 +231,14 @@ def validate_index(path: Path) -> None:
     queue_path = repo_path(input_refs["review_queue_ref"])
     paired_summary_path = repo_path(input_refs["paired_summary_ref"])
     adjudication_form_path = repo_path(input_refs["adjudication_form_ref"])
+    trace_metadata_lock_path = repo_path(input_refs["trace_metadata_lock_ref"])
     require(queue_path is not None and queue_path.is_file(), "missing review queue")
     require(paired_summary_path is not None and paired_summary_path.is_file(), "missing paired summary")
     require(adjudication_form_path is not None and adjudication_form_path.is_file(), "missing adjudication form")
+    require(trace_metadata_lock_path is not None and trace_metadata_lock_path.is_file(), "missing trace metadata lock")
     validate_gate5_review_queue.validate_queue(queue_path)
     validate_paired_runtime_summary.validate_summary(paired_summary_path)
+    trace_metadata_lock = build_gate5_review_packet_index.load_trace_metadata_lock(trace_metadata_lock_path)
 
     queue = load_json(queue_path)
     inclusion_table_path = repo_path(queue["input_refs"]["frozen_inclusion_table_ref"])
@@ -256,6 +256,7 @@ def validate_index(path: Path) -> None:
         ("adjudication_form_sha256", adjudication_form_path),
         ("inclusion_table_sha256", inclusion_table_path),
         ("source_manifest_sha256", source_manifest_path),
+        ("trace_metadata_lock_sha256", trace_metadata_lock_path),
     ):
         require(
             input_hashes[key] == build_gate5_review_packet_index.sha256_file(artifact_path),
@@ -415,7 +416,19 @@ def validate_index(path: Path) -> None:
                     run_ref["finding_sha256"] == build_gate5_review_packet_index.sha256_file(finding_path),
                     f"{packet_id}: finding hash mismatch",
                 )
-                if trace_path.is_file():
+                locked_trace = trace_metadata_lock.get(run_ref["trace_ref"])
+                if locked_trace is not None:
+                    require(optional_raw_trace_ref(run_ref["trace_ref"]), f"{packet_id}: locked trace must be a raw trace ref")
+                    require(not findings_doc.get("findings"), f"{packet_id}: locked raw trace cannot carry finding locators")
+                    require(run_ref["trace_sha256"] == locked_trace["trace_sha256"], f"{packet_id}: locked trace hash mismatch")
+                    require(run_ref["trace_event_count"] == int(locked_trace["trace_event_count"]), f"{packet_id}: locked trace count mismatch")
+                    require(run_ref["trace_valid"] == bool(locked_trace["trace_valid"]), f"{packet_id}: locked trace-valid mismatch")
+                    require(
+                        run_ref["trace_event_count"] == int(run.get("summary", {}).get("event_count", run_ref["trace_event_count"])),
+                        f"{packet_id}: locked trace count disagrees with run summary",
+                    )
+                    trace_events = {}
+                elif trace_path.is_file():
                     require(
                         run_ref["trace_sha256"] == build_gate5_review_packet_index.sha256_file(trace_path),
                         f"{packet_id}: trace hash mismatch",
@@ -424,9 +437,7 @@ def validate_index(path: Path) -> None:
                     trace_events = trace_event_map(trace_path)
                 else:
                     require(optional_raw_trace_ref(run_ref["trace_ref"]), f"{packet_id}: missing required trace file")
-                    require(SHA256_RE.fullmatch(run_ref["trace_sha256"]), f"{packet_id}: malformed trace hash")
-                    require(isinstance(run_ref["trace_event_count"], int), f"{packet_id}: malformed trace count")
-                    trace_events = {}
+                    raise AssertionError(f"{packet_id}: raw trace ref missing from trace metadata lock")
                 require(run_ref["finding_count"] == len(findings_doc.get("findings", [])), f"{packet_id}: finding count mismatch")
                 require(run_ref["trace_valid"] == bool(run.get("summary", {}).get("trace_valid")), f"{packet_id}: trace-valid mismatch")
 

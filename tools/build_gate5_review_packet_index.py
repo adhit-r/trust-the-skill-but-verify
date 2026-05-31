@@ -15,6 +15,7 @@ from typing import Any
 REPO_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_QUEUE = REPO_ROOT / "benchmark" / "review" / "gate5-review-queue.json"
 DEFAULT_OUTPUT = REPO_ROOT / "benchmark" / "review" / "gate5-review-packet-index.json"
+DEFAULT_TRACE_METADATA_LOCK = REPO_ROOT / "benchmark" / "review" / "gate5-trace-metadata-lock.json"
 LOCKED_AT_UTC = "2026-05-26T00:00:00Z"
 
 
@@ -76,6 +77,19 @@ def line_count(path: Path) -> int:
     return sum(1 for line in path.read_text(encoding="utf-8").splitlines() if line.strip())
 
 
+def load_trace_metadata_lock(path: Path = DEFAULT_TRACE_METADATA_LOCK) -> dict[str, dict[str, Any]]:
+    lock = load_json(path)
+    records = lock.get("trace_records", {})
+    if not isinstance(records, dict):
+        raise ValueError(f"{rel(path)}: trace_records must be an object")
+    if int(lock.get("record_count", -1)) != len(records):
+        raise ValueError(f"{rel(path)}: record_count does not match trace_records")
+    for trace_ref, record in records.items():
+        if record.get("trace_ref") != trace_ref:
+            raise ValueError(f"{rel(path)}: trace record key/ref mismatch for {trace_ref}")
+    return records
+
+
 def build_pair_ref(comparison_ref: str, pair_index: int, pair: dict[str, Any]) -> dict[str, Any]:
     return {
         "comparison_ref": comparison_ref,
@@ -94,13 +108,31 @@ def build_run_and_finding_refs(
     comparison_ref: str,
     run_index: int,
     run: dict[str, Any],
+    trace_metadata_lock: dict[str, Any],
 ) -> tuple[dict[str, Any], list[dict[str, Any]], list[dict[str, Any]]]:
     finding_path = repo_path(run["source_path"])
     trace_path = repo_path(run["trace_path"])
     if finding_path is None or trace_path is None:
         raise ValueError(f"{comparison_ref}: run refs must be repo-relative paths")
     findings_doc = load_json(finding_path)
-    trace_events = trace_event_map(trace_path)
+    locked_trace = trace_metadata_lock.get(run["trace_path"])
+    if locked_trace is not None:
+        # Raw RP2/RP3 traces are local provenance and excluded from the release.
+        # Use the committed metadata lock so clean checkouts and local scratch
+        # trees produce the same packet index.
+        if findings_doc.get("findings"):
+            raise ValueError(
+                f"{comparison_ref}: locked raw trace {run['trace_path']} cannot carry finding event locators"
+            )
+        trace_sha256 = locked_trace["trace_sha256"]
+        trace_event_count = int(locked_trace["trace_event_count"])
+        trace_events: dict[str, dict[str, Any]] = {}
+    else:
+        if not trace_path.is_file():
+            raise FileNotFoundError(trace_path)
+        trace_sha256 = sha256_file(trace_path)
+        trace_event_count = line_count(trace_path)
+        trace_events = trace_event_map(trace_path)
 
     repeat_id = int(run.get("comparison_context", {}).get("repeat_id", findings_doc.get("repeat_id", 0)))
     run_ref = {
@@ -112,9 +144,9 @@ def build_run_and_finding_refs(
         "finding_ref": run["source_path"],
         "finding_sha256": sha256_file(finding_path),
         "trace_ref": run["trace_path"],
-        "trace_sha256": sha256_file(trace_path),
+        "trace_sha256": trace_sha256,
         "trace_valid": bool(run.get("summary", {}).get("trace_valid")),
-        "trace_event_count": line_count(trace_path),
+        "trace_event_count": trace_event_count,
         "finding_count": len(findings_doc.get("findings", [])),
     }
 
@@ -167,7 +199,7 @@ def packet_checks() -> dict[str, bool]:
     }
 
 
-def build_packet(index: int, item: dict[str, Any]) -> dict[str, Any]:
+def build_packet(index: int, item: dict[str, Any], trace_metadata_lock: dict[str, dict[str, Any]]) -> dict[str, Any]:
     source_comparisons = item["paired_summary"]["source_comparison_refs"]
     packet_status = (
         "indexed_pending_sanitized_packet_export"
@@ -247,6 +279,7 @@ def build_packet(index: int, item: dict[str, Any]) -> dict[str, Any]:
                 comparison_ref,
                 run_index,
                 run,
+                trace_metadata_lock,
             )
             packet["run_refs"].append(run_ref)
             packet["trace_event_refs"].extend(trace_event_refs)
@@ -274,14 +307,18 @@ def build_index(queue_path: Path = DEFAULT_QUEUE) -> dict[str, Any]:
     paired_summary_path = repo_path(queue["input_refs"]["paired_summary_ref"])
     adjudication_form_path = repo_path(queue["input_refs"]["adjudication_form_ref"])
     inclusion_table_path = repo_path(queue["input_refs"]["frozen_inclusion_table_ref"])
+    trace_metadata_lock_path = DEFAULT_TRACE_METADATA_LOCK
     if paired_summary_path is None or adjudication_form_path is None or inclusion_table_path is None:
         raise ValueError("queue input refs must be repo-relative paths")
+    if not trace_metadata_lock_path.is_file():
+        raise ValueError(f"missing trace metadata lock: {rel(trace_metadata_lock_path)}")
     inclusion_table = load_json(inclusion_table_path)
     source_manifest_path = repo_path(inclusion_table["source_manifest_ref"])
     if source_manifest_path is None:
         raise ValueError("inclusion-table source manifest ref must be repo-relative")
+    trace_metadata_lock = load_trace_metadata_lock(trace_metadata_lock_path)
     packets = [
-        build_packet(index, item)
+        build_packet(index, item, trace_metadata_lock)
         for index, item in enumerate(queue.get("review_items", []))
     ]
     packet_status_counts = Counter(packet["packet_status"] for packet in packets)
@@ -326,6 +363,7 @@ def build_index(queue_path: Path = DEFAULT_QUEUE) -> dict[str, Any]:
             "review_queue_ref": rel(queue_path),
             "paired_summary_ref": queue["input_refs"]["paired_summary_ref"],
             "adjudication_form_ref": queue["input_refs"]["adjudication_form_ref"],
+            "trace_metadata_lock_ref": rel(trace_metadata_lock_path),
         },
         "index_lock": {
             "lock_id": f"gate5-review-packet-index-current-{aggregate['packet_count']}-v1",
@@ -338,6 +376,7 @@ def build_index(queue_path: Path = DEFAULT_QUEUE) -> dict[str, Any]:
                 "adjudication_form_sha256": sha256_file(adjudication_form_path),
                 "inclusion_table_sha256": sha256_file(inclusion_table_path),
                 "source_manifest_sha256": sha256_file(source_manifest_path),
+                "trace_metadata_lock_sha256": sha256_file(trace_metadata_lock_path),
             },
         },
         "claim_boundary": {

@@ -13,6 +13,7 @@ from typing import Any
 REPO_ROOT = Path(__file__).resolve().parents[1]
 POLICY_PATH = REPO_ROOT / "docs" / "artifact" / "selected-venue-policy.json"
 POLICY_DOC_PATH = REPO_ROOT / "docs" / "artifact" / "selected-venue-policy.md"
+POLICY_SOURCE_AUDIT_PATH = REPO_ROOT / "docs" / "artifact" / "selected-venue-policy-source-audit.json"
 PROFILES_PATH = REPO_ROOT / "docs" / "artifact" / "venue-packaging-profiles.json"
 PACKAGING_PASS_PATH = REPO_ROOT / "docs" / "artifact" / "venue-packaging-pass.md"
 AI_DISCLOSURE_PATH = REPO_ROOT / "docs" / "artifact" / "ai-use-disclosure.md"
@@ -50,6 +51,10 @@ def load_json(path: Path) -> Any:
 def validate_policy(policy: dict[str, Any]) -> None:
     require(policy.get("schema_version") == "0.1", "selected venue policy schema mismatch")
     require(policy.get("status") == EXPECTED_STATUS, "selected venue policy status mismatch")
+    require(
+        policy.get("source_audit_ref") == "docs/artifact/selected-venue-policy-source-audit.json",
+        "selected venue policy source audit ref mismatch",
+    )
 
     selected = policy.get("selected_policy_target")
     require(isinstance(selected, dict), "selected_policy_target must be an object")
@@ -168,6 +173,24 @@ def validate_policy(policy: dict[str, Any]) -> None:
     ):
         require(boundary.get(key) is False, f"claim boundary must remain false: {key}")
 
+    source_audit = load_json(POLICY_SOURCE_AUDIT_PATH)
+    require(source_audit.get("status") == "official_source_audit_ready_final_freeze_open", "source audit status mismatch")
+    require(source_audit.get("checked_on") == EXPECTED_CHECKED_ON, "source audit checked_on mismatch")
+    require(source_audit.get("selected_venue_id") == SELECTED_VENUE_ID, "source audit selected venue mismatch")
+    require(source_audit.get("source_count") == len(sources), "source audit count mismatch")
+    require(
+        {source["source_id"] for source in source_audit["official_sources"]} == set(sources_by_id),
+        "source audit and selected policy source IDs diverge",
+    )
+    require(
+        source_audit["submission_readiness_effect"]["can_close_final_selected_venue_policy_refresh_dependency"] is False,
+        "source audit cannot close final venue refresh",
+    )
+    require(
+        source_audit["claim_boundary"]["final_cfp_policy_frozen_claimed"] is False,
+        "source audit cannot claim final CFP freeze",
+    )
+
 
 def validate_profiles(policy: dict[str, Any]) -> None:
     profiles = load_json(PROFILES_PATH)
@@ -185,7 +208,9 @@ def validate_docs() -> None:
     for text in (
         "Status: current official-source snapshot; no external venue submission claimed.",
         "usenix_security_2027_cycle_2",
+        "docs/artifact/selected-venue-policy-source-audit.json",
         "python3 tools/validate_selected_venue_policy.py --venue-metadata-dir tmp/venue-package-metadata",
+        "python3 tools/validate_selected_venue_policy_source_audit.py",
         "Refresh official venue sources immediately before any real external",
     ):
         require(text in policy_doc, f"selected venue policy doc missing: {text}")

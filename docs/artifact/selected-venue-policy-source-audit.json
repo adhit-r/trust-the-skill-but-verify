@@ -1,0 +1,141 @@
+{
+  "schema_version": "0.1",
+  "status": "official_source_audit_ready_final_freeze_open",
+  "checked_on": "2026-06-01",
+  "timezone": "Asia/Kolkata",
+  "selected_venue_id": "usenix_security_2027_cycle_2",
+  "source_audit_scope": "official venue and policy pages for the selected USENIX Security target plus top-tier backplan venues",
+  "source_policy_state": "usenix_security_2027_dates_official_2026_detailed_policy_precedent",
+  "source_count": 7,
+  "official_source_count": 7,
+  "official_sources": [
+    {
+      "source_id": "usenix_security_2027_dates",
+      "venue_id": "usenix_security_2027_cycle_2",
+      "source_kind": "official_venue_page",
+      "url": "https://www.usenix.org/conference/usenixsecurity27",
+      "facts_verified": [
+        "conference_dates_2027-08-11_to_2027-08-13",
+        "cycle_1_registration_deadline_2026-08-18",
+        "cycle_1_submission_deadline_2026-08-25",
+        "cycle_2_registration_deadline_2027-01-19",
+        "cycle_2_submission_deadline_2027-01-26",
+        "detailed_2027_cfp_cfa_not_available_in_tracked_source_set"
+      ],
+      "use_in_selected_policy": "current_selected_target_dates"
+    },
+    {
+      "source_id": "usenix_security_2026_cfp_precedent",
+      "venue_id": "usenix_security_2026",
+      "source_kind": "official_precedent_cfp",
+      "url": "https://www.usenix.org/conference/usenixsecurity26/call-for-papers",
+      "facts_verified": [
+        "anonymized_submission_required",
+        "open_science_appendix_required",
+        "ethical_considerations_appendix_required",
+        "anonymous_artifact_links_required",
+        "all_authors_orcid_required_by_registration",
+        "ai_integrity_guideline"
+      ],
+      "use_in_selected_policy": "official_precedent_only_until_2027_detailed_cfp_available"
+    },
+    {
+      "source_id": "usenix_security_2026_cfa_precedent",
+      "venue_id": "usenix_security_2026",
+      "source_kind": "official_precedent_artifact_call",
+      "url": "https://www.usenix.org/conference/usenixsecurity26/call-for-artifacts",
+      "facts_verified": [
+        "post_acceptance_artifact_availability_verification",
+        "permanent_public_hosting_expected_for_promised_artifacts",
+        "github_only_archive_insufficient_for_permanent_availability",
+        "functionality_reproducibility_assessment_optional"
+      ],
+      "use_in_selected_policy": "official_precedent_only_until_2027_detailed_cfa_available"
+    },
+    {
+      "source_id": "ndss_2027_cfp",
+      "venue_id": "ndss_2027_fall",
+      "source_kind": "official_cfp",
+      "url": "https://www.ndss-symposium.org/ndss2027/submissions/call-for-papers/",
+      "facts_verified": [
+        "fall_submission_deadline_2026-08-19",
+        "double_blind_required",
+        "artifact_evaluation_encouraged_after_acceptance",
+        "generative_ai_disclosure_policy"
+      ],
+      "use_in_selected_policy": "backplan_target"
+    },
+    {
+      "source_id": "ndss_2027_cfa",
+      "venue_id": "ndss_2027_fall",
+      "source_kind": "official_artifact_call",
+      "url": "https://www.ndss-symposium.org/ndss2027/submissions/call-for-artifacts/",
+      "facts_verified": [
+        "post_notification_artifact_registration_deadline",
+        "post_notification_artifact_submission_deadline",
+        "artifact_evaluation_badge_appendix"
+      ],
+      "use_in_selected_policy": "backplan_artifact_policy"
+    },
+    {
+      "source_id": "ieee_sp_2027_cfp",
+      "venue_id": "ieee_sp_2027_second_deadline",
+      "source_kind": "official_cfp",
+      "url": "https://www.ieee-security.org/TC/SP2027/cfpapers.html",
+      "facts_verified": [
+        "second_deadline_abstract_registration_2026-11-10",
+        "second_deadline_submission_2026-11-17",
+        "anonymous_submission_required",
+        "anonymous_artifact_repository_encouraged",
+        "orcid_required",
+        "generative_ai_hotcrp_disclosure_required"
+      ],
+      "use_in_selected_policy": "backplan_target"
+    },
+    {
+      "source_id": "acm_ccs_2026_cfp",
+      "venue_id": "acm_ccs_2026_cycle_b",
+      "source_kind": "official_cfp",
+      "url": "https://www.sigsac.org/ccs/CCS2026/call-for/call-for-papers.html",
+      "facts_verified": [
+        "cycle_b_submission_deadline_2026-04-29",
+        "anonymous_online_artifact_url_required_when_artifacts_online",
+        "open_science_appendix_required",
+        "artifact_grace_period_until_2026-05-02",
+        "no_artifact_updates_after_deadline",
+        "generative_ai_disclosure_required"
+      ],
+      "use_in_selected_policy": "backup_top_tier_reference"
+    }
+  ],
+  "selected_target_refresh_result": {
+    "venue_id": "usenix_security_2027_cycle_2",
+    "current_official_dates_available": true,
+    "registration_deadline": "2027-01-19",
+    "paper_submission_deadline": "2027-01-26",
+    "conference_dates": {
+      "start": "2027-08-11",
+      "end": "2027-08-13"
+    },
+    "detailed_2027_cfp_available": false,
+    "detailed_2027_cfa_available": false,
+    "uses_2026_policy_as_precedent_only": true,
+    "final_refresh_required_before_external_submission": true
+  },
+  "submission_readiness_effect": {
+    "can_update_selected_venue_snapshot": true,
+    "can_close_final_selected_venue_policy_refresh_dependency": false,
+    "reason_dependency_stays_open": "The current official USENIX Security 2027 source provides dates, but the detailed 2027 CFP/CFA remains unavailable in the tracked source set and a just-before-submission check is still required.",
+    "paper_grade_submission_ready": false
+  },
+  "claim_boundary": {
+    "official_source_refresh_recorded": true,
+    "final_submission_policy_check_complete": false,
+    "final_cfp_policy_frozen_claimed": false,
+    "external_submission_claimed": false,
+    "anonymous_artifact_access_finalized": false,
+    "ai_use_wording_finalized": false,
+    "public_release_claimed": false,
+    "completed_human_review_claimed": false
+  }
+}

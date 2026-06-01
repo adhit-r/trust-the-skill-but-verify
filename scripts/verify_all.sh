@@ -129,6 +129,7 @@ bash -n experiments/source-mix-rp6-repeat-stability/reproduce_source_mix_rp6_rep
 "$PYTHON_BIN" tools/build_venue_package_metadata.py --output-dir "$ARTIFACT_BUNDLE_VERIFY_ROOT/venue-metadata"
 "$PYTHON_BIN" tools/validate_venue_package_metadata.py --bundle-dir "$ARTIFACT_BUNDLE_VERIFY_ROOT/venue-metadata"
 "$PYTHON_BIN" tools/validate_selected_venue_policy.py --venue-metadata-dir "$ARTIFACT_BUNDLE_VERIFY_ROOT/venue-metadata"
+"$PYTHON_BIN" tools/validate_selected_venue_policy_source_audit.py
 "$PYTHON_BIN" tools/build_artifact_release_bundle.py --packaging-profile anonymous_review --output-dir "$ARTIFACT_BUNDLE_VERIFY_ROOT/bundle-anonymous-review"
 "$PYTHON_BIN" tools/validate_artifact_release_bundle.py --packaging-profile anonymous_review --bundle-dir "$ARTIFACT_BUNDLE_VERIFY_ROOT/bundle-anonymous-review"
 "$PYTHON_BIN" tools/build_artifact_release_bundle.py --packaging-profile public_archive --output-dir "$ARTIFACT_BUNDLE_VERIFY_ROOT/bundle-public-archive"

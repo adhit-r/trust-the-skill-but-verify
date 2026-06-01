@@ -171,16 +171,19 @@ Current phase status as of 2026-06-01:
   explicit `NOASSERTION` license boundary, and a selected packaging-profile
   pass for `anonymous_review` and `public_archive` candidate metadata. A
   selected-venue policy snapshot now records USENIX Security 2027 Cycle 2 as
-  the primary realistic target and is validated by `make verify`. The safe
+  the primary realistic target, and the selected-venue policy source audit
+  records the current official-source check; both are validated by `make verify`. The safe
   real-run promotion decision gate now classifies existing bounded local
   live slices and blocks credentialed, public-network, commercial-runtime, and
   full-product candidates. The submission-readiness status now records that
   bounded non-human artifacts are ready for the current claim boundary, while
   human/manual adjudication and a final 2027 CFP/CFA refresh are still required
-  before external artifact submission.
+  before external artifact submission because the source audit does not freeze
+  final venue policy.
 - The remaining paper-grade blockers are two-reviewer adjudication and final
-  selected-venue policy refresh before external submission; this is the final
-  selected-venue policy refresh blocker. New safe real-run adapters remain
+  selected-venue policy refresh before external submission; the current
+  official-source audit is recorded, but this remains the final selected-venue
+  policy refresh blocker. New safe real-run adapters remain
   optional unless they close a named paper gap under the decision gate.
   Status shorthand: final selected-venue policy refresh remains open.
 

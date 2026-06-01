@@ -118,6 +118,12 @@ separately under S4.3 and is intentionally excluded from this snapshot.
     records the exact Gate 5 reviewer inputs, two reviewer slots, completed
     export validator command, and no-completed-review boundary before any real
     reviewer agreement or adjudication claim.
+13. [x] Add a machine-readable selected-venue policy source audit.
+    Current artifact: `docs/artifact/selected-venue-policy-source-audit.json`;
+    it records seven official venue/policy sources checked for the USENIX
+    Security 2027 target and top-tier backplan while keeping final CFP/CFA
+    freeze, external submission, public release, and paper-grade readiness
+    unclaimed.
 
 ## S0: Steering And Claim Hygiene
 
@@ -639,9 +645,10 @@ report-card slice, its three-repeat deterministic stability artifact, and the
 clean local release-bundle path, citation metadata, and explicit license
 boundary, plus the selected packaging-profile pass for `anonymous_review` and
 `public_archive` candidate metadata, plus the selected-venue policy snapshot
-for USENIX Security 2027 Cycle 2, plus the safe real-run promotion decision
-gate, plus the human-review handoff gate, plus the submission-readiness status
-gate, are complete for the bounded non-human evidence boundary.
+for USENIX Security 2027 Cycle 2, plus the selected-venue policy source audit,
+plus the safe real-run promotion decision gate, plus the human-review handoff
+gate, plus the submission-readiness status gate, are complete for the bounded
+non-human evidence boundary.
 Status shorthand: bounded non-human evidence boundary is complete.
 
 The remaining submission-readiness dependencies are:
@@ -653,9 +660,9 @@ The remaining submission-readiness dependencies are:
    binary matched outcome labels and real two-reviewer evidence exist.
 3. Refresh the selected-venue policy snapshot against the final 2027 CFP/CFA
    before external artifact submission. The repo now validates the current
-   official-source snapshot, `anonymous_review` review metadata, and
-   `public_archive` post-acceptance metadata, but actual submission packaging
-   still has to follow the selected venue's current rules.
+   official-source snapshot and source audit, `anonymous_review` review
+   metadata, and `public_archive` post-acceptance metadata, but actual
+   submission packaging still has to follow the selected venue's current rules.
 4. Add new safe real-run adapters only if they close a named paper gap under
    `docs/research/safe-real-run-promotion-decisions.json`; do not treat them
    as required for the current bounded non-human completion state.

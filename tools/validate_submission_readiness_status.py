@@ -119,6 +119,13 @@ def validate_cross_artifacts(status: dict[str, Any]) -> None:
     require(selected_policy["snapshot"]["requires_refresh_before_submission"] is True, "venue refresh must remain required")
     require(selected_policy["snapshot"]["final_submission_policy_check_complete"] is False, "final venue refresh cannot be complete")
     require(selected_policy["claim_boundary"]["actual_external_submission_claimed"] is False, "external submission cannot be claimed")
+    source_audit = load_json(REPO_ROOT / "docs" / "artifact" / "selected-venue-policy-source-audit.json")
+    require(source_audit["status"] == "official_source_audit_ready_final_freeze_open", "venue source audit status mismatch")
+    require(source_audit["source_count"] == 7, "venue source audit source count mismatch")
+    require(
+        source_audit["submission_readiness_effect"]["can_close_final_selected_venue_policy_refresh_dependency"] is False,
+        "venue source audit cannot close final venue dependency",
+    )
 
     safe_real_run = load_json(REPO_ROOT / "docs" / "research" / "safe-real-run-promotion-decisions.json")
     require(len(safe_real_run["allowed_existing_slices"]) == 2, "safe real-run allowed slice count changed")
@@ -161,6 +168,14 @@ def validate_open_dependencies(status: dict[str, Any]) -> None:
     venue_dep = dependencies_by_id["final_selected_venue_policy_refresh"]
     require(venue_dep.get("selected_venue_id") == "usenix_security_2027_cycle_2", "selected venue mismatch")
     require(venue_dep.get("requires_refresh_before_submission") is True, "final venue refresh must be required")
+    require(
+        venue_dep.get("current_source_audit_ref") == "docs/artifact/selected-venue-policy-source-audit.json",
+        "venue dependency source audit ref mismatch",
+    )
+    require(
+        "docs/artifact/selected-venue-policy-source-audit.json" in venue_dep.get("evidence_refs", []),
+        "venue dependency missing source audit evidence",
+    )
 
 
 def validate_optional_work(status: dict[str, Any]) -> None:
@@ -186,6 +201,7 @@ def validate_docs() -> None:
     for required in (
         "Status: bounded non-human artifacts ready for the current claim boundary",
         "Two independent real human reviewers",
+        "selected-venue policy source audit",
         "final official CFP/CFA",
         "python3 tools/validate_submission_readiness_status.py",
     ):

@@ -24,7 +24,8 @@ Cycle 2 as the primary realistic review package. The official 2027 page
 provides dates; detailed USENIX Security 2027 CFP/CFA rules must still be
 refreshed before any real submission, so USENIX Security 2026 detailed rules
 are recorded only as official precedent in
-`docs/artifact/selected-venue-policy.json`.
+`docs/artifact/selected-venue-policy.json`. The official-source audit is
+tracked in `docs/artifact/selected-venue-policy-source-audit.json`.
 
 ## Verification
 
@@ -34,6 +35,7 @@ Run:
 python3 tools/build_venue_package_metadata.py --replace --output-dir tmp/venue-package-metadata
 python3 tools/validate_venue_package_metadata.py --bundle-dir tmp/venue-package-metadata
 python3 tools/validate_selected_venue_policy.py --venue-metadata-dir tmp/venue-package-metadata
+python3 tools/validate_selected_venue_policy_source_audit.py
 ```
 
 `make verify` runs the same build and validation against a temporary output

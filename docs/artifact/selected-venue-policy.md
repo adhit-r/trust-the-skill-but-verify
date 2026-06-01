@@ -16,6 +16,11 @@ available when this snapshot was prepared. The detailed artifact and paper
 policy entries therefore use USENIX Security 2026 official policy pages as
 precedent, not as final 2027 rules.
 
+The official-source audit is tracked at
+`docs/artifact/selected-venue-policy-source-audit.json`. It records seven
+official source checks and keeps the final selected-venue policy refresh
+dependency open.
+
 ## Verification
 
 Run:
@@ -24,6 +29,7 @@ Run:
 python3 tools/build_venue_package_metadata.py --replace --output-dir tmp/venue-package-metadata
 python3 tools/validate_venue_package_metadata.py --bundle-dir tmp/venue-package-metadata
 python3 tools/validate_selected_venue_policy.py --venue-metadata-dir tmp/venue-package-metadata
+python3 tools/validate_selected_venue_policy_source_audit.py
 ```
 
 `make verify` runs the same checks against a temporary metadata directory.

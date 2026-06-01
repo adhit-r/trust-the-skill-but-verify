@@ -8,6 +8,7 @@
     "submission_packaging_profile": "anonymous_review",
     "post_acceptance_packaging_profile": "public_archive"
   },
+  "source_audit_ref": "docs/artifact/selected-venue-policy-source-audit.json",
   "snapshot": {
     "checked_on": "2026-06-01",
     "timezone": "Asia/Kolkata",

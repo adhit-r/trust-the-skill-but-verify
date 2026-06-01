@@ -16,7 +16,7 @@ Date: 2026-06-01, Asia/Kolkata.
 - Gate 5 human-review handoff package with two real-reviewer slots and the
   completed-export validator command.
 - Artifact hygiene, venue packaging profiles, selected-venue policy snapshot,
-  and one-command table reproduction path.
+  selected-venue policy source audit, and one-command table reproduction path.
 - Safe real-run promotion decision gate.
 - Claim ledger and paper claim-boundary validation.
 
@@ -25,8 +25,10 @@ Date: 2026-06-01, Asia/Kolkata.
 - Two independent real human reviewers must complete the frozen review exports
   before reviewer agreement, adjudication, human-reviewed statistics, or
   paper-grade submission readiness can be claimed.
-- The selected-venue policy snapshot must be refreshed against the final official CFP/CFA
-  and submission form immediately before any real external submission.
+- The selected-venue policy source audit records the current official-source
+  check, but the selected-venue policy snapshot must still be refreshed
+  against the final official CFP/CFA and submission form immediately before any
+  real external submission.
 
 ## Optional
 

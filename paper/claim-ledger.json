@@ -2306,6 +2306,97 @@
       "status": "supported_submission_readiness_status_boundary"
     },
     {
+      "claim": "The selected-venue policy source audit records seven official venue and policy sources for the USENIX Security 2027 target and top-tier backplan, including the current USENIX Security 2027 Cycle 2 submission date, while keeping final CFP/CFA freeze, external submission, public release, completed human review, and paper-grade readiness unclaimed.",
+      "claim_id": "CL-READY-002",
+      "evidence": [
+        {
+          "expected": "official_source_audit_ready_final_freeze_open",
+          "path": "docs/artifact/selected-venue-policy-source-audit.json",
+          "pointer": "/status",
+          "type": "json_value"
+        },
+        {
+          "expected": 7,
+          "path": "docs/artifact/selected-venue-policy-source-audit.json",
+          "pointer": "/source_count",
+          "type": "json_value"
+        },
+        {
+          "expected": 7,
+          "path": "docs/artifact/selected-venue-policy-source-audit.json",
+          "pointer": "/official_source_count",
+          "type": "json_value"
+        },
+        {
+          "expected": "2027-01-26",
+          "path": "docs/artifact/selected-venue-policy-source-audit.json",
+          "pointer": "/selected_target_refresh_result/paper_submission_deadline",
+          "type": "json_value"
+        },
+        {
+          "expected": false,
+          "path": "docs/artifact/selected-venue-policy-source-audit.json",
+          "pointer": "/selected_target_refresh_result/detailed_2027_cfp_available",
+          "type": "json_value"
+        },
+        {
+          "expected": false,
+          "path": "docs/artifact/selected-venue-policy-source-audit.json",
+          "pointer": "/selected_target_refresh_result/detailed_2027_cfa_available",
+          "type": "json_value"
+        },
+        {
+          "expected": false,
+          "path": "docs/artifact/selected-venue-policy-source-audit.json",
+          "pointer": "/submission_readiness_effect/can_close_final_selected_venue_policy_refresh_dependency",
+          "type": "json_value"
+        },
+        {
+          "expected": false,
+          "path": "docs/artifact/selected-venue-policy-source-audit.json",
+          "pointer": "/submission_readiness_effect/paper_grade_submission_ready",
+          "type": "json_value"
+        },
+        {
+          "expected": false,
+          "path": "docs/artifact/selected-venue-policy-source-audit.json",
+          "pointer": "/claim_boundary/final_cfp_policy_frozen_claimed",
+          "type": "json_value"
+        },
+        {
+          "expected": false,
+          "path": "docs/artifact/selected-venue-policy-source-audit.json",
+          "pointer": "/claim_boundary/external_submission_claimed",
+          "type": "json_value"
+        },
+        {
+          "expected": false,
+          "path": "docs/artifact/selected-venue-policy-source-audit.json",
+          "pointer": "/claim_boundary/public_release_claimed",
+          "type": "json_value"
+        },
+        {
+          "expected": "docs/artifact/selected-venue-policy-source-audit.json",
+          "path": "docs/artifact/selected-venue-policy.json",
+          "pointer": "/source_audit_ref",
+          "type": "json_value"
+        },
+        {
+          "contains": "tools/validate_selected_venue_policy_source_audit.py",
+          "path": "scripts/verify_all.sh",
+          "type": "file_contains"
+        }
+      ],
+      "paper_locations": [
+        "docs/artifact/selected-venue-policy-source-audit.json",
+        "docs/artifact/selected-venue-policy-source-audit.md",
+        "docs/artifact/selected-venue-policy.json",
+        "docs/research/submission-readiness-status.json",
+        "README.md"
+      ],
+      "status": "supported_source_audit_boundary"
+    },
+    {
       "claim": "The paper spine freezes the top-tier full-paper thesis, research questions, threat model, reviewer-risk table, and venue backplan.",
       "claim_id": "CL-P1-001",
       "evidence": [

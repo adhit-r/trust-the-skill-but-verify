@@ -5,9 +5,10 @@ venue policy and still requires manual finalization.
 
 The selected-venue policy snapshot records USENIX Security 2027 Cycle 2 as the
 primary realistic target and tracks USENIX Security 2026 detailed policy as
-official precedent until the detailed 2027 CFP/CFA is available. This disclosure
-text must therefore be refreshed against the current selected venue policy and
-submission form immediately before any real external submission.
+official precedent until the detailed 2027 CFP/CFA is available. The
+selected-venue source audit records the current official-source check, but this
+disclosure text must still be refreshed against the current selected venue
+policy and submission form immediately before any real external submission.
 
 The authors used AI coding and writing assistance to inspect repository
 structure, draft implementation scaffolds, generate validation scripts, and

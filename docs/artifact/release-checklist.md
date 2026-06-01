@@ -62,6 +62,8 @@ Status: local machine-only bundle path available; no completed human review.
   2027 Cycle 2 policy target, official-source URLs, `anonymous_review`
   submission profile, `public_archive` post-acceptance profile, AI-use
   manual-finalization boundary, and no-submission claim flags.
+- The selected-venue policy source audit records the current official-source
+  check while keeping final CFP/CFA freeze and external submission unclaimed.
 - The machine-only release bundle contains paper-facing derived artifacts,
   aggregate repeat-stability reports, the claim ledger, method boundaries,
   release manifests, and checksums only.

@@ -9,13 +9,20 @@
     "review_packet_index": "benchmark/review/gate5-review-packet-index.json",
     "blinded_packet_bundle": "benchmark/review/gate5-blinded-packet-bundle.json",
     "review_export_templates": "benchmark/review/gate5-review-export-templates.json",
+    "reviewer_a_worksheet_csv": "benchmark/review/gate5-reviewer-a-worksheet.csv",
+    "reviewer_a_worksheet_guide": "benchmark/review/gate5-reviewer-a-worksheet.md",
     "completed_review_schema": "schemas/gate5_completed_review_export.schema.json",
     "completed_review_validator": "tools/validate_gate5_completed_review_export.py",
+    "reviewer_worksheet_builder": "tools/build_gate5_human_review_worksheet.py",
+    "reviewer_worksheet_converter": "tools/convert_gate5_human_review_worksheet.py",
+    "reviewer_worksheet_validator": "tools/validate_gate5_human_review_worksheet.py",
     "adjudication_form": "paper/gate5-adjudication-form.md"
   },
   "handoff_lock": {
     "review_export_templates_sha256": "d57fb5e6786e8b1a3b603d582f5ea37cd2e6fc29a4f1f39fdfb265854c961255",
-    "blinded_packet_bundle_sha256": "965453efb0b3545df6520d8bbf560b7eaafb3256c1d85e675c52373702b8cee8"
+    "blinded_packet_bundle_sha256": "965453efb0b3545df6520d8bbf560b7eaafb3256c1d85e675c52373702b8cee8",
+    "reviewer_a_worksheet_csv_sha256": "f35334f2ffa5d157113811aaa9e8aec5de4810b23b07473eee8d3daaed5cf637",
+    "reviewer_a_worksheet_guide_sha256": "41419cd74a43d6db82f15ee666afe8992c991fbe38bdf1b492ae8ac215d447ac"
   },
   "aggregate": {
     "queued_item_count": 132,
@@ -54,12 +61,18 @@
   ],
   "validation_commands": [
     "python3 tools/validate_gate5_completed_review_export.py <completed-review-export.json>",
-    "python3 tools/validate_gate5_human_review_handoff.py"
+    "python3 tools/validate_gate5_human_review_handoff.py",
+    "python3 tools/validate_gate5_human_review_worksheet.py",
+    "python3 tools/convert_gate5_human_review_worksheet.py --worksheet benchmark/review/gate5-reviewer-a-worksheet.csv --reviewer-slot reviewer_a --reviewer-id human-REPLACE_ME --review-timestamp-utc YYYY-MM-DDTHH:MM:SSZ --output benchmark/review/completed/gate5-reviewer_a-completed-review.json"
   ],
   "handoff_steps": [
     {
       "step_id": "copy_template_for_reviewer_a",
       "action": "Copy template gate5-reviewer_a-first-pass-template into a completed-review export owned by reviewer_a."
+    },
+    {
+      "step_id": "fill_reviewer_a_worksheet",
+      "action": "Reviewer A may fill benchmark/review/gate5-reviewer-a-worksheet.csv and convert it into the completed-review export format after every response row is complete."
     },
     {
       "step_id": "copy_template_for_reviewer_b",

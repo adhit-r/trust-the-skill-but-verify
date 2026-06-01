@@ -68,7 +68,9 @@ Status: local machine-only bundle path available; no completed human review.
   official-source audit files, not only the packaging-profile summary.
 - The machine-only release bundle contains paper-facing derived artifacts,
   aggregate repeat-stability reports, the claim ledger, method boundaries,
-  release manifests, and checksums only.
+  review handoff scaffolds, release manifests, and checksums only.
+- The release bundle includes the Gate 5 Reviewer A blank worksheet and
+  conversion tools as handoff scaffolds, not completed review evidence.
 - The machine-only release bundle does not claim completed human review, reviewer agreement, adjudication, external review, or paper-grade completion.
 - RP6 remains mitigation/report-card evidence unless scaled utility-preserving
   defense evidence is added.

@@ -323,6 +323,10 @@ PYTHON_BIN=/tmp/skilldiff-venv/bin/python make validate-artifact-release-bundle
 
 - The release bundle is conservative and local-only. It does not by itself
   claim external review, public release readiness, or completed human review.
+- The Gate 5 Reviewer A worksheet is a blank spreadsheet-friendly handoff aid
+  generated from the frozen review template. It is not a completed review
+  export, reviewer identity record, agreement metric, adjudication record, or
+  statistic.
 - RP2 read provenance is Python wrapper-level.
 - Failed Python write-attempt provenance is wrapper-level evidence for
   controlled Python commands.

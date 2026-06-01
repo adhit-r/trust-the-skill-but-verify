@@ -25,8 +25,13 @@ EXPECTED_REFS = {
     "review_packet_index": "benchmark/review/gate5-review-packet-index.json",
     "blinded_packet_bundle": "benchmark/review/gate5-blinded-packet-bundle.json",
     "review_export_templates": "benchmark/review/gate5-review-export-templates.json",
+    "reviewer_a_worksheet_csv": "benchmark/review/gate5-reviewer-a-worksheet.csv",
+    "reviewer_a_worksheet_guide": "benchmark/review/gate5-reviewer-a-worksheet.md",
     "completed_review_schema": "schemas/gate5_completed_review_export.schema.json",
     "completed_review_validator": "tools/validate_gate5_completed_review_export.py",
+    "reviewer_worksheet_builder": "tools/build_gate5_human_review_worksheet.py",
+    "reviewer_worksheet_converter": "tools/convert_gate5_human_review_worksheet.py",
+    "reviewer_worksheet_validator": "tools/validate_gate5_human_review_worksheet.py",
     "adjudication_form": "paper/gate5-adjudication-form.md",
 }
 EXPECTED_REVIEWER_SLOTS = {
@@ -122,6 +127,14 @@ def validate_aggregate(handoff: dict[str, Any]) -> None:
         lock.get("blinded_packet_bundle_sha256") == sha256_file(repo_path(refs["blinded_packet_bundle"])),
         "blinded packet bundle hash mismatch",
     )
+    require(
+        lock.get("reviewer_a_worksheet_csv_sha256") == sha256_file(repo_path(refs["reviewer_a_worksheet_csv"])),
+        "Reviewer A worksheet CSV hash mismatch",
+    )
+    require(
+        lock.get("reviewer_a_worksheet_guide_sha256") == sha256_file(repo_path(refs["reviewer_a_worksheet_guide"])),
+        "Reviewer A worksheet guide hash mismatch",
+    )
 
 
 def validate_reviewer_slots(handoff: dict[str, Any]) -> None:
@@ -165,6 +178,14 @@ def validate_boundaries(handoff: dict[str, Any]) -> None:
         "completed export validator command missing",
     )
     require("python3 tools/validate_gate5_human_review_handoff.py" in commands, "handoff validator command missing")
+    require(
+        "python3 tools/validate_gate5_human_review_worksheet.py" in commands,
+        "worksheet validator command missing",
+    )
+    require(
+        any(command.startswith("python3 tools/convert_gate5_human_review_worksheet.py") for command in commands),
+        "worksheet converter command missing",
+    )
 
     blocked = set(handoff.get("blocked_until_completed_exports", []))
     require(
@@ -190,6 +211,9 @@ def validate_docs() -> None:
         "Status: handoff package ready; no completed human review.",
         "python3 tools/validate_gate5_completed_review_export.py <completed-review-export.json>",
         "python3 tools/validate_gate5_human_review_handoff.py",
+        "python3 tools/validate_gate5_human_review_worksheet.py",
+        "benchmark/review/gate5-reviewer-a-worksheet.csv",
+        "tools/convert_gate5_human_review_worksheet.py",
         "Codex-assisted, synthetic, anonymous, placeholder, fake, dummy, or test",
     ):
         require(required in handoff_doc, f"handoff doc missing: {required}")

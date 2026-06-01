@@ -39,6 +39,7 @@ These are feasibility and method claims, not ecosystem prevalence claims.
 | Gate 5 review-packet index | 132 packets / 122 comparison refs / 244 trace refs | `benchmark/review/gate5-review-packet-index.json` |
 | Gate 5 blinded packet bundle | 122 blinded first-pass packet exports / 10 blocked metadata-only packets | `benchmark/review/gate5-blinded-packet-bundle.json` |
 | Gate 5 review export templates | 2 blank reviewer templates / 122 assigned pair-review units each | `benchmark/review/gate5-review-export-templates.json` |
+| Submission readiness status | bounded non-human artifacts ready / human review 0% / final venue refresh open | `docs/research/submission-readiness-status.json` |
 | Formerly planned entries promoted to controlled fixture evidence | 116 | `results/planned-inclusion/` |
 | Planned-inclusion deterministic repeat observations | 696 | `results/fixtures/strengthening/rp2-rp3-repeat-stability/` |
 | Current main deterministic repeat observations | 78 | `results/fixtures/strengthening/rp2-rp3-main-repeat-stability/` |
@@ -54,8 +55,9 @@ source-mix metadata-only count is zero. Seventy-four first-party/public
 source-mix cases across twenty-six families also have bounded deterministic RP6
 repeat mitigation/report-card evidence. The inventory does not claim source-mix
 evidence completion, adjudication, prevalence, defense success, or paper-grade
-full-benchmark completion; source-mix completion remains blocked on adjudication
-and selective safe real-run evidence.
+full-benchmark completion; source-mix completion remains blocked on
+adjudication and any future task-specific real-run adapter that the safe
+real-run promotion gate requires.
 
 The 24 planned source-mix additions improve manifest coverage and source
 labeling. Seventy-two selected cases across twenty-four source-mix families

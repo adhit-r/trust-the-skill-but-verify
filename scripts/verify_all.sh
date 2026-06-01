@@ -119,6 +119,7 @@ done < <(find benchmark/manifests -maxdepth 1 -name '*-planned*.json' -print0 | 
 "$PYTHON_BIN" tools/validate_paper_figures.py
 "$PYTHON_BIN" tools/validate_paper_claim_boundaries.py
 "$PYTHON_BIN" tools/validate_safe_real_run_promotion_decisions.py
+"$PYTHON_BIN" tools/validate_submission_readiness_status.py
 bash -n scripts/reproduce_paper_tables.sh
 bash -n experiments/ripgrep-public-live-local-binary/reproduce_ripgrep_public_live_local_binary.sh
 bash -n experiments/source-mix-rp6-repeat-stability/reproduce_source_mix_rp6_repeat_stability.sh

@@ -1,0 +1,186 @@
+{
+  "schema_version": "0.1",
+  "status": "bounded_non_human_ready_human_review_and_final_refresh_open",
+  "checked_on": "2026-06-01",
+  "timezone": "Asia/Kolkata",
+  "scope": "current bounded non-human submission-readiness state; no external submission or paper-grade completion claim",
+  "completion_state": {
+    "bounded_non_human_artifacts_complete_for_current_claim_boundary": true,
+    "paper_grade_submission_ready": false,
+    "human_review_completion_percent": 0,
+    "final_selected_venue_policy_refresh_complete": false,
+    "new_safe_real_run_adapters_required_for_current_bounded_state": false
+  },
+  "completed_non_human_gates": [
+    {
+      "gate_id": "runtime_profile_and_report_card_coverage",
+      "status": "complete_bounded",
+      "evidence_refs": [
+        "results/derived/runtime-report-cards/rp1_report_card.json",
+        "results/derived/runtime-report-cards/rp2_report_card.json",
+        "results/derived/runtime-report-cards/rp3_report_card.json",
+        "results/derived/runtime-report-cards/rp5_report_card.json",
+        "results/derived/runtime-report-cards/rp6_report_card.json"
+      ],
+      "validator_refs": [
+        "tools/build_runtime_report_cards.py",
+        "tools/build_runtime_report_card_table.py"
+      ]
+    },
+    {
+      "gate_id": "benchmark_manifest_floor",
+      "status": "complete_bounded",
+      "evidence_refs": [
+        "benchmark/manifests/benchmark-cases-current.json",
+        "results/derived/benchmark-scale-gap.json"
+      ],
+      "validator_refs": [
+        "tools/build_benchmark_scale_gap.py",
+        "tools/validate_benchmark_cases.py"
+      ]
+    },
+    {
+      "gate_id": "source_mix_fixture_and_rp6_evidence",
+      "status": "complete_bounded",
+      "evidence_refs": [
+        "results/fixtures/strengthening/source-mix-rp6-report-card/report_card.json",
+        "results/fixtures/strengthening/source-mix-rp6-repeat-stability/repeat_stability.json"
+      ],
+      "validator_refs": [
+        "tools/validate_source_mix_rp6_report_card.py",
+        "tools/build_source_mix_rp6_repeat_stability.py"
+      ]
+    },
+    {
+      "gate_id": "repeat_and_machine_statistics",
+      "status": "complete_machine_only",
+      "evidence_refs": [
+        "results/derived/gate5-statistical-intervals.json",
+        "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/repeat_stability.json",
+        "results/fixtures/strengthening/rp2-rp3-repeat-stability/repeat_stability.json"
+      ],
+      "validator_refs": [
+        "tools/validate_repeat_coverage.py",
+        "tools/validate_gate5_statistical_intervals.py"
+      ]
+    },
+    {
+      "gate_id": "human_review_scaffold",
+      "status": "complete_review_ready_scaffold",
+      "evidence_refs": [
+        "benchmark/review/gate5-review-queue.json",
+        "benchmark/review/gate5-review-packet-index.json",
+        "benchmark/review/gate5-blinded-packet-bundle.json",
+        "benchmark/review/gate5-review-export-templates.json"
+      ],
+      "validator_refs": [
+        "tools/validate_gate5_review_queue.py",
+        "tools/validate_gate5_review_packet_index.py",
+        "tools/validate_gate5_blinded_packet_bundle.py",
+        "tools/validate_gate5_review_export_templates.py"
+      ]
+    },
+    {
+      "gate_id": "artifact_release_hygiene",
+      "status": "complete_bounded",
+      "evidence_refs": [
+        "docs/artifact/venue-packaging-profiles.json",
+        "docs/artifact/selected-venue-policy.json",
+        "docs/artifact/release-checklist.md",
+        "scripts/reproduce_paper_tables.sh"
+      ],
+      "validator_refs": [
+        "tools/validate_artifact_release_bundle.py",
+        "tools/validate_venue_package_metadata.py",
+        "tools/validate_selected_venue_policy.py"
+      ]
+    },
+    {
+      "gate_id": "safe_real_run_promotion_decisions",
+      "status": "complete_decision_gate",
+      "evidence_refs": [
+        "docs/research/safe-real-run-promotion-decisions.json",
+        "docs/research/safe-real-run-promotion-decisions.md"
+      ],
+      "validator_refs": [
+        "tools/validate_safe_real_run_promotion_decisions.py"
+      ]
+    },
+    {
+      "gate_id": "claim_ledger_and_boundary_validation",
+      "status": "complete_bounded",
+      "evidence_refs": [
+        "paper/claim-ledger.json",
+        "paper/claim-ledger.md",
+        "paper/tables/evidence-boundary-matrix.md",
+        "paper/method-boundaries.md"
+      ],
+      "validator_refs": [
+        "tools/validate_claim_ledger.py",
+        "tools/validate_paper_claim_boundaries.py"
+      ]
+    }
+  ],
+  "open_dependencies": [
+    {
+      "dependency_id": "two_reviewer_manual_adjudication",
+      "status": "open_requires_real_independent_human_reviewers",
+      "blocking_for": [
+        "reviewer_agreement_claims",
+        "adjudicated_semantic_findings",
+        "human_reviewed_statistics",
+        "paper_grade_submission_readiness"
+      ],
+      "evidence_refs": [
+        "benchmark/review/gate5-review-export-templates.json",
+        "paper/gate5-adjudication-form.md"
+      ],
+      "current_counts": {
+        "completed_review_exports": 0,
+        "human_reviewer_identities_claimed": 0,
+        "reviewer_agreement_metrics": 0,
+        "adjudication_records": 0
+      }
+    },
+    {
+      "dependency_id": "final_selected_venue_policy_refresh",
+      "status": "open_timing_gated_pre_submission",
+      "blocking_for": [
+        "external_submission_package",
+        "final_anonymous_artifact_access_claim",
+        "final_ai_use_policy_claim",
+        "paper_grade_submission_readiness"
+      ],
+      "evidence_refs": [
+        "docs/artifact/selected-venue-policy.json",
+        "docs/artifact/selected-venue-policy.md"
+      ],
+      "selected_venue_id": "usenix_security_2027_cycle_2",
+      "requires_refresh_before_submission": true
+    }
+  ],
+  "optional_next_work": [
+    {
+      "work_id": "new_safe_real_run_adapters",
+      "status": "optional_not_blocking_current_bounded_non_human_state",
+      "decision_ref": "docs/research/safe-real-run-promotion-decisions.json",
+      "allowed_existing_slice_count": 2,
+      "blocked_candidate_count": 5,
+      "rule": "add only if the adapter closes a named paper gap under synthetic data, no public network, no real credentials, and claim-ledger updates"
+    }
+  ],
+  "claim_boundary": {
+    "paper_grade_completion_claimed": false,
+    "completed_human_review_claimed": false,
+    "reviewer_agreement_claimed": false,
+    "adjudication_claimed": false,
+    "mcnemar_claimed": false,
+    "final_venue_policy_frozen_claimed": false,
+    "external_submission_claimed": false,
+    "public_release_claimed": false,
+    "commercial_runtime_behavior_claimed": false,
+    "public_network_behavior_claimed": false,
+    "defense_success_claimed": false,
+    "source_mix_evidence_completion_claimed": false
+  }
+}

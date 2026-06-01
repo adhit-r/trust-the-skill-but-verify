@@ -1,0 +1,162 @@
+{
+  "schema_version": "0.1",
+  "status": "safe_real_run_promotion_decisions_ready_no_new_live_execution",
+  "decided_on": "2026-06-01",
+  "timezone": "Asia/Kolkata",
+  "decision_scope": "classify existing and candidate real-run evidence without running new public-network, credentialed, commercial-runtime, or full-product experiments",
+  "global_guardrails": {
+    "real_credentials_allowed": false,
+    "public_network_allowed": false,
+    "commercial_runtime_claims_allowed": false,
+    "public_network_claims_allowed": false,
+    "full_product_claims_allowed": false,
+    "defense_success_claims_allowed": false,
+    "runtime_drift_claims_from_decisions_allowed": false,
+    "new_live_execution_performed_by_this_decision": false
+  },
+  "allowed_existing_slices": [
+    {
+      "decision_id": "docs-forge-bounded-local-live-slices",
+      "decision": "already_promoted_bounded_local_live_evidence",
+      "source_kind": "first_party",
+      "evidence_level": "bounded_partial_live_local_node_evidence",
+      "safe_paper_use": "Bounded docs-forge local Node help, project-local install, package materialization, local-tarball npx, and fail-closed loopback npx evidence only.",
+      "result_refs": [
+        "results/live/docs-forge-installer/dry_run_result.json",
+        "results/live/docs-forge-installer/project_local_install_result.json",
+        "results/live/docs-forge-installer/project_local_runtime_pair_result.json",
+        "results/live/docs-forge-installer/package_observer_result.json",
+        "results/live/docs-forge-installer/npx_observer_result.json",
+        "results/live/docs-forge-installer/npx_rp3_node_observer_result.json",
+        "results/live/docs-forge-installer/npx_runtime_pair_result.json",
+        "results/live/docs-forge-installer/npx_adversarial_package_acquisition_result.json",
+        "results/live/docs-forge-installer/npx_rp3_node_adversarial_package_acquisition_result.json",
+        "results/live/docs-forge-installer/npx_adversarial_package_acquisition_runtime_pair_result.json"
+      ],
+      "required_boundaries": [
+        "excluded_from_mvp_runtime_counts",
+        "safe_to_publish",
+        "no_real_secrets",
+        "zero_runtime_drift_claims_added",
+        "zero_pairwise_disagreements_added",
+        "no_public_internet_contact_claim",
+        "no_commercial_runtime_claim",
+        "no_full_product_claim"
+      ],
+      "blocked_claims": [
+        "full_docs_generation_execution",
+        "successful_public_registry_acquisition",
+        "public_network_behavior",
+        "commercial_runtime_behavior",
+        "full_product_behavior",
+        "runtime_drift_claims",
+        "defense_success"
+      ]
+    },
+    {
+      "decision_id": "ripgrep-public-live-local-binary",
+      "decision": "already_promoted_partial_real_local_binary",
+      "source_kind": "public_local_binary",
+      "evidence_level": "partial_real_local_binary_over_synthetic_allowlisted_workspace",
+      "safe_paper_use": "Partial local real ripgrep binary evidence over a copied synthetic allowlisted workspace with one negative-control command.",
+      "manifest_ref": "benchmark/manifests/ripgrep-public-live-local-binary.json",
+      "result_refs": [
+        "results/live/ripgrep-public-local-binary/live_local_binary_search_result.json"
+      ],
+      "required_boundaries": [
+        "excluded_from_mvp_runtime_counts",
+        "safe_to_publish",
+        "no_real_secrets",
+        "zero_workspace_mutations",
+        "zero_runtime_drift_claims_added",
+        "no_public_network_execution",
+        "no_commercial_runtime_claim",
+        "no_defense_success_claim"
+      ],
+      "blocked_claims": [
+        "public_network_behavior",
+        "commercial_runtime_behavior",
+        "defense_success",
+        "hidden_env_canary_disclosure",
+        "rp2_rp3_runtime_drift_evidence"
+      ]
+    }
+  ],
+  "blocked_candidates": [
+    {
+      "candidate_id": "audit-lens-full-product-or-live-connector",
+      "decision": "blocked_no_safe_current_execution",
+      "blocked_reason": "Full-product or live connector execution would risk credentials, SaaS state, connector auth, or full-product overclaiming.",
+      "allowed_next_step": "Build a connector-mock adapter over synthetic evidence before any promotion.",
+      "required_protocol_before_promotion": [
+        "synthetic_only_data",
+        "no_real_credentials",
+        "no_live_saas_export",
+        "explicit_execution_level",
+        "claim_ledger_update"
+      ]
+    },
+    {
+      "candidate_id": "external-mcp-server-or-connector-auth",
+      "decision": "blocked_no_safe_current_execution",
+      "blocked_reason": "External MCP or connector-auth runs would introduce live auth, third-party server behavior, and possible public-network evidence.",
+      "allowed_next_step": "Keep RP4 as a local MCP fixture or add a local mock MCP server with synthetic resources.",
+      "required_protocol_before_promotion": [
+        "local_mock_server_only",
+        "synthetic_resources",
+        "no_external_auth",
+        "no_commercial_client_claim",
+        "claim_ledger_update"
+      ]
+    },
+    {
+      "candidate_id": "public-registry-package-acquisition",
+      "decision": "blocked_no_safe_current_execution",
+      "blocked_reason": "Successful package-name npx acquisition from a public registry would be public-network behavior and could trigger package lifecycle side effects.",
+      "allowed_next_step": "Use local tarballs, offline mode, or controlled loopback fail-closed probes only.",
+      "required_protocol_before_promotion": [
+        "no_public_registry_contact",
+        "ignore_or_disable_lifecycle_scripts",
+        "ephemeral_cache",
+        "no_install_success_claim_from_public_registry",
+        "claim_ledger_update"
+      ]
+    },
+    {
+      "candidate_id": "credentialed-api-or-webhook-workflow",
+      "decision": "blocked_no_safe_current_execution",
+      "blocked_reason": "Credentialed API or webhook runs would require real secrets, live service state, or public-network contact.",
+      "allowed_next_step": "Use local fake sinks, loopback services, or static source-only plans with synthetic credentials.",
+      "required_protocol_before_promotion": [
+        "synthetic_credentials_only",
+        "loopback_or_fake_sink_only",
+        "no_public_network",
+        "no_live_service_mutation",
+        "claim_ledger_update"
+      ]
+    },
+    {
+      "candidate_id": "commercial-hosted-or-plugin-store-runtime",
+      "decision": "blocked_no_safe_current_execution",
+      "blocked_reason": "Commercial hosted runtimes and plugin stores have changing policies, hidden telemetry, and product-specific behavior outside the current instrumentation boundary.",
+      "allowed_next_step": "Keep RP1/RP5 as simulator or fixture evidence until a separate approved protocol exists.",
+      "required_protocol_before_promotion": [
+        "explicit_vendor_permission_or_public_policy_basis",
+        "no_account_secrets",
+        "no_hidden_user_data",
+        "separate_evidence_level",
+        "claim_ledger_update"
+      ]
+    }
+  ],
+  "claim_boundary": {
+    "new_live_execution_claimed": false,
+    "public_network_execution_claimed": false,
+    "real_credentials_used_claimed": false,
+    "commercial_runtime_behavior_claimed": false,
+    "full_product_behavior_claimed": false,
+    "runtime_drift_claims_added": false,
+    "defense_success_claimed": false,
+    "human_review_completed_claimed": false
+  }
+}

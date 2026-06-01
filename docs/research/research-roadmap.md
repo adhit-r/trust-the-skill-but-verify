@@ -171,20 +171,26 @@ Current phase status as of 2026-06-01:
   explicit `NOASSERTION` license boundary, and a selected packaging-profile
   pass for `anonymous_review` and `public_archive` candidate metadata. A
   selected-venue policy snapshot now records USENIX Security 2027 Cycle 2 as
-  the primary realistic target and is validated by `make verify`; a final 2027
-  CFP/CFA refresh is still required before external artifact submission.
-- The remaining paper-grade blockers are two-reviewer adjudication,
-  selective safe real-run promotion decisions, and final selected-venue policy
-  refresh before external submission.
+  the primary realistic target and is validated by `make verify`. The safe
+  real-run promotion decision gate now classifies existing bounded local
+  live slices and blocks credentialed, public-network, commercial-runtime, and
+  full-product candidates; a final 2027 CFP/CFA refresh is still required
+  before external artifact submission.
+- The remaining paper-grade blockers are two-reviewer adjudication and final
+  selected-venue policy refresh before external submission. New safe real-run
+  adapters remain optional unless they close a named paper gap under the
+  decision gate.
 
 Current dependency order:
 
 1. Run the two-reviewer workflow from the existing blinded packet templates
    before claiming reviewer agreement, adjudication, or human-reviewed
    statistics.
-2. Add safe task-specific real-run adapters only when the run can avoid real
-   credentials, public-network exfiltration, commercial-runtime claims, and
-   full-product overclaiming.
+2. Use the safe real-run promotion decision gate before adding or citing any
+   task-specific real-run adapter. Existing promoted slices remain bounded
+   local evidence only; new safe real-run adapters remain optional and must
+   avoid real credentials, public-network exfiltration, commercial-runtime
+   claims, and full-product overclaiming.
 3. Keep `docs/research/adapter-support-matrix.md`, runtime report cards,
    benchmark inclusion metadata, and claim-ledger validation current before
    promoting any new runtime-surface or numerical claim.

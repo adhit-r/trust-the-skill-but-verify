@@ -181,6 +181,44 @@ def validate_citation_profile(bundle_dir: Path, packaging_profile: str) -> None:
     require(isinstance(citation.get("authors"), list) and citation["authors"], "deanonymized/local CFF authors missing")
 
 
+def validate_selected_venue_policy_files(bundle_dir: Path) -> None:
+    policy = load_json(bundle_dir / "docs" / "artifact" / "selected-venue-policy.json")
+    audit = load_json(bundle_dir / "docs" / "artifact" / "selected-venue-policy-source-audit.json")
+    policy_doc = (bundle_dir / "docs" / "artifact" / "selected-venue-policy.md").read_text(encoding="utf-8")
+    audit_doc = (bundle_dir / "docs" / "artifact" / "selected-venue-policy-source-audit.md").read_text(encoding="utf-8")
+
+    require(
+        policy.get("source_audit_ref") == "docs/artifact/selected-venue-policy-source-audit.json",
+        "bundled selected-venue policy source audit ref mismatch",
+    )
+    require(
+        policy["snapshot"]["final_submission_policy_check_complete"] is False,
+        "bundled selected-venue policy cannot claim final policy check",
+    )
+    require(
+        policy["snapshot"]["requires_refresh_before_submission"] is True,
+        "bundled selected-venue policy must require pre-submission refresh",
+    )
+    require(
+        audit.get("status") == "official_source_audit_ready_final_freeze_open",
+        "bundled selected-venue source audit status mismatch",
+    )
+    require(audit.get("source_count") == 7, "bundled selected-venue source audit source count mismatch")
+    require(
+        audit["submission_readiness_effect"]["can_close_final_selected_venue_policy_refresh_dependency"] is False,
+        "bundled selected-venue source audit cannot close final venue dependency",
+    )
+    require(
+        audit["claim_boundary"]["final_cfp_policy_frozen_claimed"] is False,
+        "bundled selected-venue source audit cannot claim final CFP/CFA freeze",
+    )
+    require("final selected-venue policy refresh" in policy_doc, "bundled selected-venue policy doc boundary missing")
+    require(
+        "It does not close the final selected-venue policy refresh dependency." in audit_doc,
+        "bundled source audit doc boundary missing",
+    )
+
+
 def scan_anonymous_bundle(bundle_dir: Path) -> list[str]:
     findings: list[str] = []
     for path in sorted(bundle_dir.rglob("*")):
@@ -252,6 +290,7 @@ def validate_bundle(bundle_dir: Path, packaging_profile: str = LOCAL_MACHINE_PRO
     require(generated_overlays == expected_overlays, "generated overlay list mismatch")
     validate_venue_packaging_manifest(venue_packaging_manifest, packaging_profile, generated_overlays)
     validate_citation_profile(bundle_dir, packaging_profile)
+    validate_selected_venue_policy_files(bundle_dir)
     require(isinstance(copied_files, list) and copied_files, "bundle file list must be non-empty")
     require(
         release_manifest.get("copied_file_count") == len(copied_files),

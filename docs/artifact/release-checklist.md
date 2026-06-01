@@ -64,6 +64,8 @@ Status: local machine-only bundle path available; no completed human review.
   manual-finalization boundary, and no-submission claim flags.
 - The selected-venue policy source audit records the current official-source
   check while keeping final CFP/CFA freeze and external submission unclaimed.
+- The curated bundle includes the selected-venue policy snapshot and
+  official-source audit files, not only the packaging-profile summary.
 - The machine-only release bundle contains paper-facing derived artifacts,
   aggregate repeat-stability reports, the claim ledger, method boundaries,
   release manifests, and checksums only.

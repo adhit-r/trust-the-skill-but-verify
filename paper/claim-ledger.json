@@ -2745,7 +2745,7 @@
       "status": "supported_boundary"
     },
     {
-      "claim": "The artifact-release path provides a one-command machine-only paper-table reproduction entrypoint and a curated local bundle builder/validator, while explicitly avoiding whole-repo archive, public-release, external-review, completed-human-review, secret/auth/cookie, raw-scratch, and public-network claims.",
+      "claim": "The artifact-release path provides a one-command machine-only paper-table reproduction entrypoint and a curated local bundle builder/validator that includes selected-venue policy snapshot and source-audit files, while explicitly avoiding whole-repo archive, public-release, external-review, completed-human-review, secret/auth/cookie, raw-scratch, and public-network claims.",
       "claim_id": "CL-P1-006",
       "evidence": [
         {
@@ -2775,6 +2775,16 @@
         },
         {
           "contains": "completed_human_review_included",
+          "path": "tools/validate_artifact_release_bundle.py",
+          "type": "file_contains"
+        },
+        {
+          "contains": "docs/artifact/selected-venue-policy-source-audit.json",
+          "path": "tools/build_artifact_release_bundle.py",
+          "type": "file_contains"
+        },
+        {
+          "contains": "validate_selected_venue_policy_files",
           "path": "tools/validate_artifact_release_bundle.py",
           "type": "file_contains"
         },

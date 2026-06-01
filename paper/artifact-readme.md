@@ -250,9 +250,10 @@ PYTHON_BIN=/tmp/skilldiff-venv/bin/python make validate-artifact-release-bundle
   artifact.
 - The artifact-release bundle includes release manifests, checksums,
   paper-facing derived artifacts, the claim ledger, method boundaries, and
-  aggregate repeat-stability reports only. It excludes raw scratch, raw trace
-  directories, per-run trace directories, secrets, auth state, cookies, and
-  completed human-review data.
+  aggregate repeat-stability reports, plus selected-venue policy snapshot and
+  official-source audit files. It excludes raw scratch, raw trace directories,
+  per-run trace directories, secrets, auth state, cookies, and completed
+  human-review data.
 - Benchmark network tests use reserved fake-sink destinations or Docker network
   denial; they must not contact the public internet.
 - Raw payload bodies, raw query strings, sensitive headers, and real secrets are

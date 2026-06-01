@@ -174,12 +174,15 @@ Current phase status as of 2026-06-01:
   the primary realistic target and is validated by `make verify`. The safe
   real-run promotion decision gate now classifies existing bounded local
   live slices and blocks credentialed, public-network, commercial-runtime, and
-  full-product candidates; a final 2027 CFP/CFA refresh is still required
+  full-product candidates. The submission-readiness status now records that
+  bounded non-human artifacts are ready for the current claim boundary, while
+  human/manual adjudication and a final 2027 CFP/CFA refresh are still required
   before external artifact submission.
 - The remaining paper-grade blockers are two-reviewer adjudication and final
-  selected-venue policy refresh before external submission. New safe real-run
-  adapters remain optional unless they close a named paper gap under the
-  decision gate.
+  selected-venue policy refresh before external submission; this is the final
+  selected-venue policy refresh blocker. New safe real-run adapters remain
+  optional unless they close a named paper gap under the decision gate.
+  Status shorthand: final selected-venue policy refresh remains open.
 
 Current dependency order:
 

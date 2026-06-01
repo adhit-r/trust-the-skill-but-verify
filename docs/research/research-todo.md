@@ -108,6 +108,11 @@ separately under S4.3 and is intentionally excluded from this snapshot.
 10. [x] Keep the claim ledger synchronized with every paper-facing number.
     Current validation: `python3 tools/validate_claim_ledger.py` passes after
     the related-work and artifact-release updates.
+11. [x] Add a machine-readable submission-readiness status.
+    Current artifact: `docs/research/submission-readiness-status.json`; it
+    records bounded non-human artifacts as ready for the current claim boundary
+    while keeping human review at 0%, final selected-venue policy refresh open,
+    and paper-grade submission readiness unsupported.
 
 ## S0: Steering And Claim Hygiene
 
@@ -612,8 +617,8 @@ Goal: make the work submission-ready without unsupported claims.
 5. [~] By 2027-01-05: USENIX-ready manuscript and clean artifact package are
    complete.
    The clean artifact path and claim-boundary checks are present; the
-   manuscript is still not USENIX-ready until adjudication, selective real-run
-   promotion decisions, and final selected-venue policy refresh is complete.
+   manuscript is still not USENIX-ready until adjudication and final
+   selected-venue policy refresh are complete.
 
 ## Immediate Next Step
 
@@ -630,7 +635,9 @@ clean local release-bundle path, citation metadata, and explicit license
 boundary, plus the selected packaging-profile pass for `anonymous_review` and
 `public_archive` candidate metadata, plus the selected-venue policy snapshot
 for USENIX Security 2027 Cycle 2, plus the safe real-run promotion decision
-gate, are complete for the bounded non-human evidence boundary.
+gate, plus the submission-readiness status gate, are complete for the bounded
+non-human evidence boundary.
+Status shorthand: bounded non-human evidence boundary is complete.
 
 The remaining submission-readiness dependencies are:
 

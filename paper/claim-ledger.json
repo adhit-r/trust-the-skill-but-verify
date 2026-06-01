@@ -2227,6 +2227,85 @@
       "status": "supported_safe_real_run_promotion_decision_gate"
     },
     {
+      "claim": "The submission-readiness status records bounded non-human artifacts as ready for the current claim boundary while keeping human review at 0%, final venue-policy refresh open, and paper-grade submission readiness unsupported.",
+      "claim_id": "CL-READY-001",
+      "evidence": [
+        {
+          "expected": "bounded_non_human_ready_human_review_and_final_refresh_open",
+          "path": "docs/research/submission-readiness-status.json",
+          "pointer": "/status",
+          "type": "json_value"
+        },
+        {
+          "expected": true,
+          "path": "docs/research/submission-readiness-status.json",
+          "pointer": "/completion_state/bounded_non_human_artifacts_complete_for_current_claim_boundary",
+          "type": "json_value"
+        },
+        {
+          "expected": false,
+          "path": "docs/research/submission-readiness-status.json",
+          "pointer": "/completion_state/paper_grade_submission_ready",
+          "type": "json_value"
+        },
+        {
+          "expected": 0,
+          "path": "docs/research/submission-readiness-status.json",
+          "pointer": "/completion_state/human_review_completion_percent",
+          "type": "json_value"
+        },
+        {
+          "expected": false,
+          "path": "docs/research/submission-readiness-status.json",
+          "pointer": "/completion_state/final_selected_venue_policy_refresh_complete",
+          "type": "json_value"
+        },
+        {
+          "expected": false,
+          "path": "docs/research/submission-readiness-status.json",
+          "pointer": "/completion_state/new_safe_real_run_adapters_required_for_current_bounded_state",
+          "type": "json_value"
+        },
+        {
+          "expected": 8,
+          "path": "docs/research/submission-readiness-status.json",
+          "pointer": "/completed_non_human_gates",
+          "type": "json_len"
+        },
+        {
+          "expected": 2,
+          "path": "docs/research/submission-readiness-status.json",
+          "pointer": "/open_dependencies",
+          "type": "json_len"
+        },
+        {
+          "expected": false,
+          "path": "docs/research/submission-readiness-status.json",
+          "pointer": "/claim_boundary/completed_human_review_claimed",
+          "type": "json_value"
+        },
+        {
+          "expected": false,
+          "path": "docs/research/submission-readiness-status.json",
+          "pointer": "/claim_boundary/final_venue_policy_frozen_claimed",
+          "type": "json_value"
+        },
+        {
+          "contains": "tools/validate_submission_readiness_status.py",
+          "path": "scripts/verify_all.sh",
+          "type": "file_contains"
+        }
+      ],
+      "paper_locations": [
+        "docs/research/submission-readiness-status.json",
+        "docs/research/submission-readiness-status.md",
+        "docs/research/research-roadmap.md",
+        "docs/research/research-todo.md",
+        "README.md"
+      ],
+      "status": "supported_submission_readiness_status_boundary"
+    },
+    {
       "claim": "The paper spine freezes the top-tier full-paper thesis, research questions, threat model, reviewer-risk table, and venue backplan.",
       "claim_id": "CL-P1-001",
       "evidence": [

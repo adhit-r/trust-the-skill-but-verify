@@ -10,8 +10,13 @@ Date: 2026-06-01, Asia/Kolkata.
 - Review packet index: `benchmark/review/gate5-review-packet-index.json`
 - Blinded packet bundle: `benchmark/review/gate5-blinded-packet-bundle.json`
 - Blank reviewer templates: `benchmark/review/gate5-review-export-templates.json`
+- Reviewer A worksheet: `benchmark/review/gate5-reviewer-a-worksheet.csv`
+- Reviewer A worksheet guide: `benchmark/review/gate5-reviewer-a-worksheet.md`
 - Completed export schema: `schemas/gate5_completed_review_export.schema.json`
 - Completed export validator: `tools/validate_gate5_completed_review_export.py`
+- Worksheet builder: `tools/build_gate5_human_review_worksheet.py`
+- Worksheet converter: `tools/convert_gate5_human_review_worksheet.py`
+- Worksheet validator: `tools/validate_gate5_human_review_worksheet.py`
 - Adjudication form: `paper/gate5-adjudication-form.md`
 
 ## Current Counts
@@ -32,15 +37,28 @@ Date: 2026-06-01, Asia/Kolkata.
 1. Assign two independent real human reviewers.
 2. Copy one template per reviewer from
    `benchmark/review/gate5-review-export-templates.json`.
-3. Each reviewer fills every response field for all `122` assigned pair-review
+3. Reviewer A may use `benchmark/review/gate5-reviewer-a-worksheet.csv` as a
+   spreadsheet-friendly blank worksheet generated from the frozen template.
+4. Each reviewer fills every response field for all `122` assigned pair-review
    units without using Codex-assisted labels as human review evidence.
-4. Validate each completed export:
+5. Convert a completed worksheet to the completed-review export format:
+
+```sh
+python3 tools/convert_gate5_human_review_worksheet.py \
+  --worksheet benchmark/review/gate5-reviewer-a-worksheet.csv \
+  --reviewer-slot reviewer_a \
+  --reviewer-id human-REPLACE_ME \
+  --review-timestamp-utc YYYY-MM-DDTHH:MM:SSZ \
+  --output benchmark/review/completed/gate5-reviewer_a-completed-review.json
+```
+
+6. Validate each completed export:
 
 ```sh
 python3 tools/validate_gate5_completed_review_export.py <completed-review-export.json>
 ```
 
-5. Compute reviewer agreement and adjudication only after two validated exports
+7. Compute reviewer agreement and adjudication only after two validated exports
    cover the same frozen item set.
 
 ## Boundaries
@@ -57,6 +75,7 @@ Run:
 
 ```sh
 python3 tools/validate_gate5_human_review_handoff.py
+python3 tools/validate_gate5_human_review_worksheet.py
 ```
 
 `make verify` runs this validator.

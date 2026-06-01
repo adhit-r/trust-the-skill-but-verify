@@ -15,6 +15,9 @@ Date: 2026-06-01, Asia/Kolkata.
   exports.
 - Gate 5 human-review handoff package with two real-reviewer slots and the
   completed-export validator command.
+- Reviewer A spreadsheet-friendly blank worksheet and converter path for a
+  future completed human-review export; this is still not completed review
+  evidence.
 - Artifact hygiene, venue packaging profiles, selected-venue policy snapshot,
   selected-venue policy source audit, and one-command table reproduction path.
 - Safe real-run promotion decision gate.

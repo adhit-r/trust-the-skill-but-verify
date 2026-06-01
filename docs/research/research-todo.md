@@ -548,6 +548,10 @@ Goal: make the evaluation credible for a top-tier security review.
    units. These templates do not count as completed human reviews and do not
    support agreement, adjudication, statistics, prevalence, or paper-grade
    completion claims.
+   Reviewer A also has a spreadsheet-friendly blank worksheet at
+   `benchmark/review/gate5-reviewer-a-worksheet.csv`, with conversion support
+   in `tools/convert_gate5_human_review_worksheet.py`. This remains a blank
+   worksheet until a real human fills every response field.
 7. [ ] Report percent agreement and Cohen's kappa where label counts support
    it.
 

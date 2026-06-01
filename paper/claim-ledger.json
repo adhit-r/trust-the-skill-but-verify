@@ -2745,7 +2745,7 @@
       "status": "supported_boundary"
     },
     {
-      "claim": "The artifact-release path provides a one-command machine-only paper-table reproduction entrypoint and a curated local bundle builder/validator that includes selected-venue policy snapshot and source-audit files, while explicitly avoiding whole-repo archive, public-release, external-review, completed-human-review, secret/auth/cookie, raw-scratch, and public-network claims.",
+      "claim": "The artifact-release path provides a one-command machine-only paper-table reproduction entrypoint and a curated local bundle builder/validator that includes selected-venue policy snapshot, source-audit files, and blank Gate 5 worksheet handoff scaffolds, while explicitly avoiding whole-repo archive, public-release, external-review, completed-human-review, secret/auth/cookie, raw-scratch, and public-network claims.",
       "claim_id": "CL-P1-006",
       "evidence": [
         {
@@ -2780,6 +2780,11 @@
         },
         {
           "contains": "docs/artifact/selected-venue-policy-source-audit.json",
+          "path": "tools/build_artifact_release_bundle.py",
+          "type": "file_contains"
+        },
+        {
+          "contains": "benchmark/review/gate5-reviewer-a-worksheet.csv",
           "path": "tools/build_artifact_release_bundle.py",
           "type": "file_contains"
         },
@@ -4500,7 +4505,7 @@
       "status": "supported_boundary"
     },
     {
-      "claim": "The Gate 5 human-review handoff identifies two real-reviewer slots with one hundred twenty-two blinded pair-review units each and the completed-export validator command, while keeping completed reviews, reviewer identities, agreement, adjudication, statistics, prevalence, and paper-grade completion at zero.",
+      "claim": "The Gate 5 human-review handoff identifies two real-reviewer slots with one hundred twenty-two blinded pair-review units each, the completed-export validator command, and a blank Reviewer A worksheet/conversion path, while keeping completed reviews, reviewer identities, agreement, adjudication, statistics, prevalence, and paper-grade completion at zero.",
       "claim_id": "CL-GATE5-008",
       "evidence": [
         {
@@ -4570,6 +4575,23 @@
           "type": "json_value"
         },
         {
+          "expected": "benchmark/review/gate5-reviewer-a-worksheet.csv",
+          "path": "docs/research/gate5-human-review-handoff.json",
+          "pointer": "/handoff_refs/reviewer_a_worksheet_csv",
+          "type": "json_value"
+        },
+        {
+          "expected": "tools/convert_gate5_human_review_worksheet.py",
+          "path": "docs/research/gate5-human-review-handoff.json",
+          "pointer": "/handoff_refs/reviewer_worksheet_converter",
+          "type": "json_value"
+        },
+        {
+          "contains": "Status: blank worksheet only. This file is not completed human review evidence.",
+          "path": "benchmark/review/gate5-reviewer-a-worksheet.md",
+          "type": "file_contains"
+        },
+        {
           "expected": false,
           "path": "docs/research/gate5-human-review-handoff.json",
           "pointer": "/claim_boundary/completed_human_review_claimed",
@@ -4589,6 +4611,11 @@
         },
         {
           "contains": "tools/validate_gate5_human_review_handoff.py",
+          "path": "scripts/verify_all.sh",
+          "type": "file_contains"
+        },
+        {
+          "contains": "tools/validate_gate5_human_review_worksheet.py",
           "path": "scripts/verify_all.sh",
           "type": "file_contains"
         }

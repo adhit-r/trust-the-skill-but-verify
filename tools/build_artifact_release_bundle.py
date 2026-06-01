@@ -66,6 +66,8 @@ REQUIRED_FILES = [
     "benchmark/review/gate5-blinded-packet-bundle.md",
     "benchmark/review/gate5-review-export-templates.json",
     "benchmark/review/gate5-review-export-templates.md",
+    "benchmark/review/gate5-reviewer-a-worksheet.csv",
+    "benchmark/review/gate5-reviewer-a-worksheet.md",
     "results/derived/benchmark-scale-gap.json",
     "results/derived/benchmark-scale-gap.md",
     "results/derived/paired-runtime-summary.json",
@@ -88,6 +90,9 @@ REQUIRED_FILES = [
     "results/live/ripgrep-public-local-binary/live_local_binary_search_report.md",
     "results/live/ripgrep-public-local-binary/live_local_binary_search_trace.jsonl",
     "experiments/ripgrep-public-live-local-binary/reproduce_ripgrep_public_live_local_binary.sh",
+    "tools/build_gate5_human_review_worksheet.py",
+    "tools/convert_gate5_human_review_worksheet.py",
+    "tools/validate_gate5_human_review_worksheet.py",
     "tools/run_ripgrep_public_live_local_binary.py",
     "tools/validate_ripgrep_public_live_local_binary.py",
 ]

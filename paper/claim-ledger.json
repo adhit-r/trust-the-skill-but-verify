@@ -2161,6 +2161,72 @@
       "status": "supported_live_local_binary_fixture"
     },
     {
+      "claim": "The safe real-run promotion decision gate classifies existing bounded local live slices and blocks credentialed, public-network, commercial-runtime, and full-product candidates without adding new live execution or runtime-drift claims.",
+      "claim_id": "CL-EXT-014",
+      "evidence": [
+        {
+          "expected": "safe_real_run_promotion_decisions_ready_no_new_live_execution",
+          "path": "docs/research/safe-real-run-promotion-decisions.json",
+          "pointer": "/status",
+          "type": "json_value"
+        },
+        {
+          "expected": 2,
+          "path": "docs/research/safe-real-run-promotion-decisions.json",
+          "pointer": "/allowed_existing_slices",
+          "type": "json_len"
+        },
+        {
+          "expected": 5,
+          "path": "docs/research/safe-real-run-promotion-decisions.json",
+          "pointer": "/blocked_candidates",
+          "type": "json_len"
+        },
+        {
+          "expected": false,
+          "path": "docs/research/safe-real-run-promotion-decisions.json",
+          "pointer": "/global_guardrails/new_live_execution_performed_by_this_decision",
+          "type": "json_value"
+        },
+        {
+          "expected": false,
+          "path": "docs/research/safe-real-run-promotion-decisions.json",
+          "pointer": "/global_guardrails/public_network_allowed",
+          "type": "json_value"
+        },
+        {
+          "expected": false,
+          "path": "docs/research/safe-real-run-promotion-decisions.json",
+          "pointer": "/claim_boundary/runtime_drift_claims_added",
+          "type": "json_value"
+        },
+        {
+          "contains": "Safe real-run promotion decision gate",
+          "path": "paper/method-boundaries.md",
+          "type": "file_contains"
+        },
+        {
+          "contains": "| Safe real-run promotion decisions | Promoted bounded evidence |",
+          "path": "paper/tables/evidence-boundary-matrix.md",
+          "type": "file_contains"
+        },
+        {
+          "contains": "tools/validate_safe_real_run_promotion_decisions.py",
+          "path": "scripts/verify_all.sh",
+          "type": "file_contains"
+        }
+      ],
+      "paper_locations": [
+        "docs/research/safe-real-run-promotion-decisions.json",
+        "docs/research/safe-real-run-promotion-decisions.md",
+        "paper/method-boundaries.md",
+        "paper/tables/evidence-boundary-matrix.md",
+        "docs/research/research-roadmap.md",
+        "docs/research/research-todo.md"
+      ],
+      "status": "supported_safe_real_run_promotion_decision_gate"
+    },
+    {
       "claim": "The paper spine freezes the top-tier full-paper thesis, research questions, threat model, reviewer-risk table, and venue backplan.",
       "claim_id": "CL-P1-001",
       "evidence": [

@@ -629,21 +629,21 @@ report-card slice, its three-repeat deterministic stability artifact, and the
 clean local release-bundle path, citation metadata, and explicit license
 boundary, plus the selected packaging-profile pass for `anonymous_review` and
 `public_archive` candidate metadata, plus the selected-venue policy snapshot
-for USENIX Security 2027 Cycle 2, are complete for the bounded non-human
-evidence boundary.
+for USENIX Security 2027 Cycle 2, plus the safe real-run promotion decision
+gate, are complete for the bounded non-human evidence boundary.
 
 The remaining submission-readiness dependencies are:
 
 1. Run the two-reviewer workflow from the existing blinded packet templates
    before claiming reviewer agreement, adjudication, or human-reviewed
    statistics.
-2. Add safe task-specific real-run adapters only where they avoid real
-   credentials, public-network exfiltration, commercial-runtime claims, and
-   full-product overclaiming.
-3. Keep McNemar, reviewer-agreement, and adjudication claims blocked until
+2. Keep McNemar, reviewer-agreement, and adjudication claims blocked until
    binary matched outcome labels and real two-reviewer evidence exist.
-4. Refresh the selected-venue policy snapshot against the final 2027 CFP/CFA
+3. Refresh the selected-venue policy snapshot against the final 2027 CFP/CFA
    before external artifact submission. The repo now validates the current
    official-source snapshot, `anonymous_review` review metadata, and
    `public_archive` post-acceptance metadata, but actual submission packaging
    still has to follow the selected venue's current rules.
+4. Add new safe real-run adapters only if they close a named paper gap under
+   `docs/research/safe-real-run-promotion-decisions.json`; do not treat them
+   as required for the current bounded non-human completion state.

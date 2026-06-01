@@ -25,6 +25,7 @@ EXPECTED_COMPLETED_GATES = {
     "source_mix_fixture_and_rp6_evidence",
     "repeat_and_machine_statistics",
     "human_review_scaffold",
+    "human_review_handoff_gate",
     "artifact_release_hygiene",
     "safe_real_run_promotion_decisions",
     "claim_ledger_and_boundary_validation",
@@ -106,6 +107,13 @@ def validate_cross_artifacts(status: dict[str, Any]) -> None:
     require(template_aggregate["human_reviewer_identity_count"] == 0, "human reviewer identity count must remain zero")
     require(template_aggregate["agreement_metric_count"] == 0, "agreement metric count must remain zero")
     require(template_aggregate["adjudication_record_count"] == 0, "adjudication record count must remain zero")
+
+    handoff = load_json(REPO_ROOT / "docs" / "research" / "gate5-human-review-handoff.json")
+    require(handoff["status"] == "human_review_handoff_ready_no_completed_reviews", "human review handoff status mismatch")
+    require(handoff["aggregate"]["template_count"] == 2, "human review handoff template count changed")
+    require(handoff["aggregate"]["assigned_pair_review_unit_count_per_template"] == 122, "human review handoff review-unit count changed")
+    require(handoff["aggregate"]["completed_review_export_count"] == 0, "human review handoff cannot claim completed exports")
+    require(handoff["claim_boundary"]["completed_human_review_claimed"] is False, "human review handoff cannot claim completed review")
 
     selected_policy = load_json(REPO_ROOT / "docs" / "artifact" / "selected-venue-policy.json")
     require(selected_policy["snapshot"]["requires_refresh_before_submission"] is True, "venue refresh must remain required")

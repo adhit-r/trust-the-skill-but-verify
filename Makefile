@@ -3,7 +3,7 @@ ARTIFACT_BUNDLE_DIR ?= tmp/artifact-release-bundle
 ARTIFACT_PACKAGING_PROFILE ?= local_machine
 VENUE_METADATA_DIR ?= tmp/venue-package-metadata
 
-.PHONY: verify reproduce-paper-tables artifact-release-bundle validate-artifact-release-bundle venue-package-metadata validate-venue-package-metadata validate-selected-venue-policy validate-safe-real-run-promotion-decisions validate-submission-readiness-status
+.PHONY: verify reproduce-paper-tables artifact-release-bundle validate-artifact-release-bundle venue-package-metadata validate-venue-package-metadata validate-selected-venue-policy validate-safe-real-run-promotion-decisions validate-submission-readiness-status validate-gate5-human-review-handoff
 
 verify:
 	PYTHON_BIN="$(PYTHON_BIN)" bash scripts/verify_all.sh
@@ -31,3 +31,6 @@ validate-safe-real-run-promotion-decisions:
 
 validate-submission-readiness-status:
 	"$(PYTHON_BIN)" tools/validate_submission_readiness_status.py
+
+validate-gate5-human-review-handoff:
+	"$(PYTHON_BIN)" tools/validate_gate5_human_review_handoff.py

@@ -81,6 +81,18 @@
       ]
     },
     {
+      "gate_id": "human_review_handoff_gate",
+      "status": "complete_review_handoff_ready_no_completed_reviews",
+      "evidence_refs": [
+        "docs/research/gate5-human-review-handoff.json",
+        "docs/research/gate5-human-review-handoff.md"
+      ],
+      "validator_refs": [
+        "tools/validate_gate5_human_review_handoff.py",
+        "tools/validate_gate5_completed_review_export.py"
+      ]
+    },
+    {
       "gate_id": "artifact_release_hygiene",
       "status": "complete_bounded",
       "evidence_refs": [

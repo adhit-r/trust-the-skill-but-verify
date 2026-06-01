@@ -39,6 +39,7 @@ These are feasibility and method claims, not ecosystem prevalence claims.
 | Gate 5 review-packet index | 132 packets / 122 comparison refs / 244 trace refs | `benchmark/review/gate5-review-packet-index.json` |
 | Gate 5 blinded packet bundle | 122 blinded first-pass packet exports / 10 blocked metadata-only packets | `benchmark/review/gate5-blinded-packet-bundle.json` |
 | Gate 5 review export templates | 2 blank reviewer templates / 122 assigned pair-review units each | `benchmark/review/gate5-review-export-templates.json` |
+| Gate 5 human-review handoff | 2 reviewer slots / 122 pair-review units each / completed reviews 0 | `docs/research/gate5-human-review-handoff.json` |
 | Submission readiness status | bounded non-human artifacts ready / human review 0% / final venue refresh open | `docs/research/submission-readiness-status.json` |
 | Formerly planned entries promoted to controlled fixture evidence | 116 | `results/planned-inclusion/` |
 | Planned-inclusion deterministic repeat observations | 696 | `results/fixtures/strengthening/rp2-rp3-repeat-stability/` |

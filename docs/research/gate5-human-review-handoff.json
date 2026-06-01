@@ -1,0 +1,99 @@
+{
+  "schema_version": "0.1",
+  "status": "human_review_handoff_ready_no_completed_reviews",
+  "checked_on": "2026-06-01",
+  "timezone": "Asia/Kolkata",
+  "scope": "Gate 5 first-pass blinded human-review handoff package; no completed human review or agreement claim",
+  "handoff_refs": {
+    "review_queue": "benchmark/review/gate5-review-queue.json",
+    "review_packet_index": "benchmark/review/gate5-review-packet-index.json",
+    "blinded_packet_bundle": "benchmark/review/gate5-blinded-packet-bundle.json",
+    "review_export_templates": "benchmark/review/gate5-review-export-templates.json",
+    "completed_review_schema": "schemas/gate5_completed_review_export.schema.json",
+    "completed_review_validator": "tools/validate_gate5_completed_review_export.py",
+    "adjudication_form": "paper/gate5-adjudication-form.md"
+  },
+  "handoff_lock": {
+    "review_export_templates_sha256": "d57fb5e6786e8b1a3b603d582f5ea37cd2e6fc29a4f1f39fdfb265854c961255",
+    "blinded_packet_bundle_sha256": "965453efb0b3545df6520d8bbf560b7eaafb3256c1d85e675c52373702b8cee8"
+  },
+  "aggregate": {
+    "queued_item_count": 132,
+    "source_packet_count": 132,
+    "blinding_eligible_item_count": 122,
+    "exported_blinded_packet_count": 122,
+    "blocked_metadata_only_packet_count": 10,
+    "template_count": 2,
+    "assigned_pair_review_unit_count_per_template": 122,
+    "completed_review_export_count": 0,
+    "human_reviewer_identity_count": 0,
+    "agreement_metric_count": 0,
+    "adjudication_record_count": 0
+  },
+  "reviewer_slots": [
+    {
+      "reviewer_slot": "reviewer_a",
+      "template_export_id": "gate5-reviewer_a-first-pass-template",
+      "assigned_pair_review_units": 122,
+      "required_completed_export_kind": "completed_human_review_export"
+    },
+    {
+      "reviewer_slot": "reviewer_b",
+      "template_export_id": "gate5-reviewer_b-first-pass-template",
+      "assigned_pair_review_units": 122,
+      "required_completed_export_kind": "completed_human_review_export"
+    }
+  ],
+  "human_reviewer_requirements": [
+    "Use two independent real human reviewers.",
+    "Use reviewer IDs matching human-[A-Za-z0-9][A-Za-z0-9._-]{2,63}.",
+    "Do not use Codex-assisted, synthetic, anonymous, placeholder, fake, dummy, or test reviewer IDs.",
+    "Complete every assigned pair-review unit before counting an export as completed human review.",
+    "Keep runtime profile labels blinded for the first pass.",
+    "Do not compute reviewer agreement, Cohen's kappa, adjudication, McNemar tests, prevalence, or paper-grade completion from a single completed export."
+  ],
+  "validation_commands": [
+    "python3 tools/validate_gate5_completed_review_export.py <completed-review-export.json>",
+    "python3 tools/validate_gate5_human_review_handoff.py"
+  ],
+  "handoff_steps": [
+    {
+      "step_id": "copy_template_for_reviewer_a",
+      "action": "Copy template gate5-reviewer_a-first-pass-template into a completed-review export owned by reviewer_a."
+    },
+    {
+      "step_id": "copy_template_for_reviewer_b",
+      "action": "Copy template gate5-reviewer_b-first-pass-template into a completed-review export owned by reviewer_b."
+    },
+    {
+      "step_id": "complete_all_responses",
+      "action": "Each reviewer independently fills every response field for all 122 assigned pair-review units."
+    },
+    {
+      "step_id": "validate_each_export",
+      "action": "Run tools/validate_gate5_completed_review_export.py on each completed export before computing any agreement or adjudication artifact."
+    },
+    {
+      "step_id": "compute_agreement_later",
+      "action": "Compute reviewer agreement and adjudication only after two validated completed exports cover the same frozen item set."
+    }
+  ],
+  "blocked_until_completed_exports": [
+    "reviewer_agreement_claims",
+    "cohens_kappa_claims",
+    "adjudication_claims",
+    "human_reviewed_statistics",
+    "paper_grade_submission_readiness"
+  ],
+  "claim_boundary": {
+    "completed_human_review_claimed": false,
+    "human_reviewer_identity_claimed": false,
+    "reviewer_agreement_claimed": false,
+    "adjudication_claimed": false,
+    "completed_statistics_claimed": false,
+    "mcnemar_claimed": false,
+    "prevalence_claim": false,
+    "paper_grade_completion_claimed": false,
+    "codex_assisted_review_counted_as_human": false
+  }
+}

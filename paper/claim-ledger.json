@@ -2267,7 +2267,7 @@
           "type": "json_value"
         },
         {
-          "expected": 8,
+          "expected": 9,
           "path": "docs/research/submission-readiness-status.json",
           "pointer": "/completed_non_human_gates",
           "type": "json_len"
@@ -4395,6 +4395,109 @@
         "docs/research/research-todo.md",
         "results/README.md",
         "paper/experiment-protocol.md"
+      ],
+      "status": "supported_boundary"
+    },
+    {
+      "claim": "The Gate 5 human-review handoff identifies two real-reviewer slots with one hundred twenty-two blinded pair-review units each and the completed-export validator command, while keeping completed reviews, reviewer identities, agreement, adjudication, statistics, prevalence, and paper-grade completion at zero.",
+      "claim_id": "CL-GATE5-008",
+      "evidence": [
+        {
+          "expected": "human_review_handoff_ready_no_completed_reviews",
+          "path": "docs/research/gate5-human-review-handoff.json",
+          "pointer": "/status",
+          "type": "json_value"
+        },
+        {
+          "expected": 132,
+          "path": "docs/research/gate5-human-review-handoff.json",
+          "pointer": "/aggregate/queued_item_count",
+          "type": "json_value"
+        },
+        {
+          "expected": 122,
+          "path": "docs/research/gate5-human-review-handoff.json",
+          "pointer": "/aggregate/exported_blinded_packet_count",
+          "type": "json_value"
+        },
+        {
+          "expected": 10,
+          "path": "docs/research/gate5-human-review-handoff.json",
+          "pointer": "/aggregate/blocked_metadata_only_packet_count",
+          "type": "json_value"
+        },
+        {
+          "expected": 2,
+          "path": "docs/research/gate5-human-review-handoff.json",
+          "pointer": "/aggregate/template_count",
+          "type": "json_value"
+        },
+        {
+          "expected": 122,
+          "path": "docs/research/gate5-human-review-handoff.json",
+          "pointer": "/aggregate/assigned_pair_review_unit_count_per_template",
+          "type": "json_value"
+        },
+        {
+          "expected": 0,
+          "path": "docs/research/gate5-human-review-handoff.json",
+          "pointer": "/aggregate/completed_review_export_count",
+          "type": "json_value"
+        },
+        {
+          "expected": 0,
+          "path": "docs/research/gate5-human-review-handoff.json",
+          "pointer": "/aggregate/human_reviewer_identity_count",
+          "type": "json_value"
+        },
+        {
+          "expected": 0,
+          "path": "docs/research/gate5-human-review-handoff.json",
+          "pointer": "/aggregate/agreement_metric_count",
+          "type": "json_value"
+        },
+        {
+          "expected": 0,
+          "path": "docs/research/gate5-human-review-handoff.json",
+          "pointer": "/aggregate/adjudication_record_count",
+          "type": "json_value"
+        },
+        {
+          "expected": "python3 tools/validate_gate5_completed_review_export.py <completed-review-export.json>",
+          "path": "docs/research/gate5-human-review-handoff.json",
+          "pointer": "/validation_commands/0",
+          "type": "json_value"
+        },
+        {
+          "expected": false,
+          "path": "docs/research/gate5-human-review-handoff.json",
+          "pointer": "/claim_boundary/completed_human_review_claimed",
+          "type": "json_value"
+        },
+        {
+          "expected": false,
+          "path": "docs/research/gate5-human-review-handoff.json",
+          "pointer": "/claim_boundary/reviewer_agreement_claimed",
+          "type": "json_value"
+        },
+        {
+          "expected": false,
+          "path": "docs/research/gate5-human-review-handoff.json",
+          "pointer": "/claim_boundary/adjudication_claimed",
+          "type": "json_value"
+        },
+        {
+          "contains": "tools/validate_gate5_human_review_handoff.py",
+          "path": "scripts/verify_all.sh",
+          "type": "file_contains"
+        }
+      ],
+      "paper_locations": [
+        "docs/research/gate5-human-review-handoff.json",
+        "docs/research/gate5-human-review-handoff.md",
+        "docs/research/submission-readiness-status.json",
+        "docs/research/research-todo.md",
+        "README.md"
       ],
       "status": "supported_boundary"
     },

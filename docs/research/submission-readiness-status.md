@@ -13,6 +13,8 @@ Date: 2026-06-01, Asia/Kolkata.
 - Repeat and machine-only interval artifacts.
 - Gate 5 review queue, packet index, blinded packet bundle, and blank review
   exports.
+- Gate 5 human-review handoff package with two real-reviewer slots and the
+  completed-export validator command.
 - Artifact hygiene, venue packaging profiles, selected-venue policy snapshot,
   and one-command table reproduction path.
 - Safe real-run promotion decision gate.

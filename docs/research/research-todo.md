@@ -113,6 +113,11 @@ separately under S4.3 and is intentionally excluded from this snapshot.
     records bounded non-human artifacts as ready for the current claim boundary
     while keeping human review at 0%, final selected-venue policy refresh open,
     and paper-grade submission readiness unsupported.
+12. [x] Add a machine-readable human-review handoff gate.
+    Current artifact: `docs/research/gate5-human-review-handoff.json`; it
+    records the exact Gate 5 reviewer inputs, two reviewer slots, completed
+    export validator command, and no-completed-review boundary before any real
+    reviewer agreement or adjudication claim.
 
 ## S0: Steering And Claim Hygiene
 
@@ -635,8 +640,8 @@ clean local release-bundle path, citation metadata, and explicit license
 boundary, plus the selected packaging-profile pass for `anonymous_review` and
 `public_archive` candidate metadata, plus the selected-venue policy snapshot
 for USENIX Security 2027 Cycle 2, plus the safe real-run promotion decision
-gate, plus the submission-readiness status gate, are complete for the bounded
-non-human evidence boundary.
+gate, plus the human-review handoff gate, plus the submission-readiness status
+gate, are complete for the bounded non-human evidence boundary.
 Status shorthand: bounded non-human evidence boundary is complete.
 
 The remaining submission-readiness dependencies are:

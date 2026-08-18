@@ -2590,7 +2590,7 @@
       "status": "supported_boundary"
     },
     {
-      "claim": "The paper figure package contains six canonical SVG figures for architecture, trace lifecycle, runtime matrix, drift outcomes, runtime report cards, and artifact flow, with a manifest and verifier that preserve no-new-experimental-results, no-prevalence, no-commercial-runtime, no-public-network-exfiltration, no-syscall-complete-tracing, no-defense-success, and no-completed-human-review boundaries.",
+      "claim": "The paper figure package contains seven canonical SVG figures for architecture, trace lifecycle, runtime matrix, drift outcomes, runtime report cards, artifact flow, and the data-derived RP2/RP3 outcome-flip matrix, with a manifest and verifier that preserve no-new-experimental-results, no-prevalence, no-commercial-runtime, no-public-network-exfiltration, no-syscall-complete-tracing, no-defense-success, and no-completed-human-review boundaries.",
       "claim_id": "CL-P1-004",
       "evidence": [
         {
@@ -2600,13 +2600,13 @@
           "type": "json_value"
         },
         {
-          "expected": 6,
+          "expected": 7,
           "path": "paper/figures/manifest.json",
           "pointer": "/figures",
           "type": "json_len"
         },
         {
-          "expected": 6,
+          "expected": 7,
           "glob": "paper/figures/fig*.svg",
           "type": "glob_count"
         },

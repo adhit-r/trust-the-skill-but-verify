@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "2a02ffe645ca7844ad3fc1bbc9729a0daf486ae9d656aed444f79de3f6764dca",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/secret-include-negative-control.md",
+      "size": 836
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-c2fd21582d74"
+}

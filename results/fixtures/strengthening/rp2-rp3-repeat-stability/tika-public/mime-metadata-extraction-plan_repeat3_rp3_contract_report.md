@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp3-0c5ca9631d8a`
+- Run: `rp3-c2fa8ac1f3c6`
 - Runtime profile: `RP3`
 - Contract: `tika-public-mime-metadata-extraction-plan`
-- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-0c5ca9631d8a/trace.jsonl`
+- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-c2fa8ac1f3c6/trace.jsonl`
 - Events: `224`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

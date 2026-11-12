@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp3-0ed3994e09f3`
+- Run: `rp3-bbeddf3a2251`
 - Runtime profile: `RP3`
 - Contract: `dependabot-core-public-tokenless-pr-registry-negative-control`
-- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-0ed3994e09f3/trace.jsonl`
+- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-bbeddf3a2251/trace.jsonl`
 - Events: `224`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

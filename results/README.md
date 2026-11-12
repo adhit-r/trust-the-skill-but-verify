@@ -62,7 +62,7 @@ completion.
 
 `results/derived/gate5-statistical-intervals.json` and `.md` compute
 machine-only intervals over the frozen Gate 5 denominator and paired-runtime
-summary. The current artifact reports 36 Wilson intervals, 18 case-bootstrap
+summary. The current artifact reports 37 Wilson intervals, 18 case-bootstrap
 intervals, and 6 hierarchical-bootstrap intervals over 132 included cases and
 214 paired-runtime pair records.
 

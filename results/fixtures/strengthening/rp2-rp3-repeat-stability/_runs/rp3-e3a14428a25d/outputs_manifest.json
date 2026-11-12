@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "d4a9f6b9074efd67054e1a847f45cbeb91040381199e7db11430f50ab81a80bb",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/sensitive-path-negative-control.md",
+      "size": 844
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-e3a14428a25d"
+}

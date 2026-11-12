@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp3-aa330bca3244`
+- Run: `rp3-291957fd21e6`
 - Runtime profile: `RP3`
 - Contract: `tika-public-parser-sandbox-boundary-report`
-- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-aa330bca3244/trace.jsonl`
+- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-291957fd21e6/trace.jsonl`
 - Events: `224`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

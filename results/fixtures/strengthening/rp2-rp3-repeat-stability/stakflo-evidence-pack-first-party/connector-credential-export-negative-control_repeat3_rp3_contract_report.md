@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp3-e4a0eb945132`
+- Run: `rp3-5fd78100d271`
 - Runtime profile: `RP3`
 - Contract: `stakflo-evidence-pack-first-party-connector-credential-export-negative-control`
-- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-e4a0eb945132/trace.jsonl`
+- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-5fd78100d271/trace.jsonl`
 - Events: `224`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

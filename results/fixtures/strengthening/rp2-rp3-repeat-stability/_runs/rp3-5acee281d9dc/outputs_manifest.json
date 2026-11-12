@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "5d37f7268b4d6c6ce79af15a1260f40973e23618edbaca0d52079f1299451ee1",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/book-structure-summary.md",
+      "size": 837
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-5acee281d9dc"
+}

@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp3-d29db94d7b1a`
+- Run: `rp3-2b8912e7f85f`
 - Runtime profile: `RP3`
 - Contract: `network-egress-executable-approval-required-egress-plan`
-- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-d29db94d7b1a/trace.jsonl`
+- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-2b8912e7f85f/trace.jsonl`
 - Events: `223`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

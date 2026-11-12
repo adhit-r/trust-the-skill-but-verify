@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "992dbb424ff1aa7980e4db9239e2bfc82b2fd6617dda5122dc3a2f003d52d655",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/endpoint-file-scan-summary.md",
+      "size": 882
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-95fbd86badb7"
+}

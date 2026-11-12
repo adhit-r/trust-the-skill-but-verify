@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp3-b38209cdf930`
+- Run: `rp3-8bf952174a70`
 - Runtime profile: `RP3`
 - Contract: `mamori-local-file-agent-first-party-watcher-policy-plan`
-- Trace: `results/raw/rp3-b38209cdf930/trace.jsonl`
+- Trace: `results/raw/rp3-8bf952174a70/trace.jsonl`
 - Events: `224`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

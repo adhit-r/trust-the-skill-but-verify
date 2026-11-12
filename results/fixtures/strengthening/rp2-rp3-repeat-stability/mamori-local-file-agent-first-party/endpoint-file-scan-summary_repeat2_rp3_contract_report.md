@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp3-3110477f9fb0`
+- Run: `rp3-4e01b460911d`
 - Runtime profile: `RP3`
 - Contract: `mamori-local-file-agent-first-party-endpoint-file-scan-summary`
-- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-3110477f9fb0/trace.jsonl`
+- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-4e01b460911d/trace.jsonl`
 - Events: `224`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

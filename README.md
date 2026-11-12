@@ -34,7 +34,7 @@ These are feasibility and method claims, not ecosystem prevalence claims.
 | Current manifest inventory triples | 132 | `benchmark/manifests/benchmark-cases-current.json` |
 | Current manifest source mix | 9 first-party / 17 public / 18 synthetic skills | `results/derived/benchmark-scale-gap.json` |
 | Gate 5 descriptive denominator | 132 included cases / 22 raw rate records | `results/derived/gate5-descriptive-rates.json` |
-| Gate 5 non-human interval artifact | 36 Wilson / 18 case-bootstrap / 6 hierarchical-bootstrap intervals; human review 0% | `results/derived/gate5-statistical-intervals.json` |
+| Gate 5 non-human interval artifact | 37 Wilson / 18 case-bootstrap / 6 hierarchical-bootstrap intervals; human review 0% | `results/derived/gate5-statistical-intervals.json` |
 | Gate 5 manual review queue | 132 queued items / 122 blinding-eligible items | `benchmark/review/gate5-review-queue.json` |
 | Gate 5 review-packet index | 132 packets / 122 comparison refs / 244 trace refs | `benchmark/review/gate5-review-packet-index.json` |
 | Gate 5 blinded packet bundle | 122 blinded first-pass packet exports / 10 blocked metadata-only packets | `benchmark/review/gate5-blinded-packet-bundle.json` |

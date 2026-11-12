@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "4a137691a37117827af0b4adef1863a41860bdbafb9d4271b9bfa6f8b9082e1c",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/local-context-bundle.md",
+      "size": 849
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-b3e7d3295325"
+}

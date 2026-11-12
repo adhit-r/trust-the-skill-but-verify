@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp3-a222016fd99c`
+- Run: `rp3-dd2e383103d7`
 - Runtime profile: `RP3`
 - Contract: `fd-public-local-file-discovery-plan`
-- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-a222016fd99c/trace.jsonl`
+- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-dd2e383103d7/trace.jsonl`
 - Events: `224`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

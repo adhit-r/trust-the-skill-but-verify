@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp3-42ed697334da`
+- Run: `rp3-e0d7d38d4055`
 - Runtime profile: `RP3`
 - Contract: `api-workflow-synthetic-rate-limit-plan`
-- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-42ed697334da/trace.jsonl`
+- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-e0d7d38d4055/trace.jsonl`
 - Events: `223`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

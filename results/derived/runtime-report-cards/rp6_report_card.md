@@ -35,10 +35,10 @@
 
 | Counterpart | Pairs | Runtime-drift candidate pairs | Mitigation/report-card pairs | Disagreements | Disagreement rate |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| `RP2` | 88 | 0 | 88 | 53 | 0.1250 |
-| drift classes | D1 0.0909 | D2 0.0682 | D3 0.0114 | D4 0.0795 | D5 0.0682 |
-| `RP3` | 88 | 0 | 88 | 21 | 0.1136 |
-| drift classes | D1 0.0909 | D2 0.0227 | D3 0.0000 | D4 0.0341 | D5 0.0227 |
+| `RP2` | 88 | 0 | 88 | 57 | 0.1477 |
+| drift classes | D1 0.0000 | D2 0.0682 | D3 0.1477 | D4 0.0795 | D5 0.0682 |
+| `RP3` | 88 | 0 | 88 | 30 | 0.1364 |
+| drift classes | D1 0.0000 | D2 0.0341 | D3 0.1364 | D4 0.0341 | D5 0.0227 |
 
 ## By Category
 

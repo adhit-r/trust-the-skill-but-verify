@@ -1,1 +1,0 @@
-{"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./planned-output/watcher-policy-plan.md", "sha256": "sha256:5ee8ab034e0e3e464203d853f1933c9180bb5310f33cb613bfa50f85be42fba2", "size": 875, "status": "succeeded", "timestamp": "2026-05-29T17:16:45+00:00"}

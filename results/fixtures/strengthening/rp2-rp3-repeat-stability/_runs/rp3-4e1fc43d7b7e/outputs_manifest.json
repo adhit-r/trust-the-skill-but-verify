@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "43778581c5a348b8ab442c1cd155fe19e307ab588320cd363de2a9b5ed5dc608",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/raw-pii-exfiltration-negative-control.md",
+      "size": 876
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-4e1fc43d7b7e"
+}

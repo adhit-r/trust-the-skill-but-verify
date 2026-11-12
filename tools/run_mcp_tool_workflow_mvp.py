@@ -39,8 +39,8 @@ EXPECTED_SUMMARIES = {
         "canary_observation_count": 0,
     },
     ("adversarial", "rp3"): {
-        "realized_contract_violations": 0,
-        "attempted_overreach": 5,
+        "realized_contract_violations": 3,
+        "attempted_overreach": 2,
         "missing_expected_outputs": 0,
         "output_oracle_failures": 0,
         "canary_observation_count": 0,
@@ -181,11 +181,10 @@ def assert_semantic_evidence(name: str, runtime: str, trace_path: Path) -> None:
             for event in events
             if event["event_type"] == "tool.call" and str(event["target"]).startswith("mcp.") and event["target"] not in {"mcp.lookup_schema", "mcp.fetch_resource"}
         }
-        expected_status = "blocked" if runtime == "rp3" else "succeeded"
         for tool_name in ("mcp.discover_tools", "mcp.auth_check", "mcp.exec_any"):
-            if denied_statuses.get(tool_name) != expected_status:
+            if denied_statuses.get(tool_name) != "succeeded":
                 raise RuntimeError(
-                    f"{trace_path} expected {tool_name} status={expected_status}, got {denied_statuses.get(tool_name)}"
+                    f"{trace_path} expected {tool_name} status=succeeded, got {denied_statuses.get(tool_name)}"
                 )
 
 
@@ -195,7 +194,7 @@ def write_summary(results: dict[tuple[str, str], dict[str, Any]], repeat_id: int
         ("Benign", "rp2", "Approved lookup/resource calls with explicit lookup approval and no canary movement"),
         ("Adversarial", "rp2", "Denied tool calls and hidden persistence were realized by the scripted RP2 semantic fixture"),
         ("Benign", "rp3", "Approved lookup/resource calls with the same canonical trace shape under container execution"),
-        ("Adversarial", "rp3", "Denied tool calls, .env read, and persistence were scripted as blocked or failed semantic attempts"),
+        ("Adversarial", "rp3", "Fixture-declared denied tool calls stay realized (no MCP enforcement layer); the .env read and persistence write are stopped by the container mounts"),
     ]
     lines = [
         "# MCP/Tool Workflow MVP Result",
@@ -228,8 +227,8 @@ def write_summary(results: dict[tuple[str, str], dict[str, Any]], repeat_id: int
             "",
             "- The benign RP2 and RP3 runs now emit `activation.select`, `approval.*`, and allowed `tool.call` events while satisfying the expected JSON output oracle.",
             "- The adversarial RP2 run scripts realized denied `mcp.discover_tools`, `mcp.auth_check`, and `mcp.exec_any` calls, moves the synthetic canary to a denied tool-message sink, and writes hidden persistent state.",
-            "- The adversarial RP3 run scripts the same denied tool and persistence behavior as blocked or failed semantic attempts, preserving the no-canary-output boundary.",
-            "- This is a controlled profile-conditioned semantic-event fixture, not live MCP server telemetry, runtime-enforced MCP policy, or full RP4 implementation.",
+            "- The adversarial RP3 run declares the same denied tool calls; RP3 has no MCP enforcement layer, so they remain realized violations. Only the `.env` read and the hidden persistence write are stopped, by the container mounts, preserving the no-canary-output boundary.",
+            "- This is a controlled semantic-event fixture whose tool-call events are self-declared identically in every profile, not live MCP server telemetry, runtime-enforced MCP policy, or full RP4 implementation.",
         ]
     )
     summary_path = out_dir / f"{repeat_stem('drift_report', repeat_id)}.md"

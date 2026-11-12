@@ -36,11 +36,11 @@
       },
       "contract_id_match": true,
       "disagreement_count": 0,
-      "left_run_id": "rp2-787b76ef0fd8",
+      "left_run_id": "rp2-92c422c829e9",
       "left_runtime_profile": "RP2",
       "only_in_left": [],
       "only_in_right": [],
-      "right_run_id": "rp3-8d57b476932a",
+      "right_run_id": "rp3-f54e7cabb5a1",
       "right_runtime_profile": "RP3",
       "shared_finding_count": 0,
       "summary_delta": {
@@ -63,15 +63,25 @@
         "task_id": "restricted-tools",
         "task_prompt_hash": "sha256:66c870e3543c0aa597ca947c5e68e2be31e148a849dd18e5ed5713d672c13489",
         "variant_id": "mcp-tool-workflow-mini.p2.benign",
-        "workspace_snapshot_hash": "46713335a511ab3aa4485551ccb7b3564c84dcb1949898ef467412e21a6ff872"
+        "workspace_snapshot_hash": "56a13450b1fab6664672ea0cc152f7970b1f6887abc64548db7a0c74aa81bb07"
       },
+      "comparison_role": "runtime_drift_candidate",
       "contract_id": "mcp-tool-workflow-restricted-tools",
+      "coverage": {
+        "unmatched_decision_count": 1,
+        "unmatched_event_status_counts": {
+          "observed": 1
+        },
+        "unmatched_event_type_counts": {
+          "activation.discover": 1
+        }
+      },
       "drift_classes_observed": [],
       "evidence_scope": "controlled_semantic_fixture",
       "finding_count": 0,
       "finding_signatures": [],
       "index": 0,
-      "run_id": "rp2-787b76ef0fd8",
+      "run_id": "rp2-92c422c829e9",
       "runtime_profile": "RP2",
       "source_path": "results/mvp/mcp-tool-workflow/benign_contract_findings.json",
       "summary": {
@@ -81,27 +91,40 @@
         "realized_contract_violations": 0,
         "trace_valid": true
       },
-      "trace_path": "results/raw/rp2-787b76ef0fd8/trace.jsonl"
+      "trace_path": "results/raw/rp2-92c422c829e9/trace.jsonl"
     },
     {
       "comparison_context": {
         "contract_id": "mcp-tool-workflow-restricted-tools",
         "missing_invariant_fields": [],
         "repeat_id": 1,
-        "runtime_profile_hash": "410fb5404155accde7e344bab4b8c95595b6e6595c2f2117122944b815479258",
+        "runtime_profile_hash": "d8e592422f2a3c45f38f21619004ec4d9ec01d1f680301b7944b2d103e5ecdd5",
         "skill_id": "mcp-tool-workflow",
         "task_id": "restricted-tools",
         "task_prompt_hash": "sha256:66c870e3543c0aa597ca947c5e68e2be31e148a849dd18e5ed5713d672c13489",
         "variant_id": "mcp-tool-workflow-mini.p2.benign",
-        "workspace_snapshot_hash": "46713335a511ab3aa4485551ccb7b3564c84dcb1949898ef467412e21a6ff872"
+        "workspace_snapshot_hash": "56a13450b1fab6664672ea0cc152f7970b1f6887abc64548db7a0c74aa81bb07"
       },
+      "comparison_role": "runtime_drift_candidate",
       "contract_id": "mcp-tool-workflow-restricted-tools",
+      "coverage": {
+        "unmatched_decision_count": 206,
+        "unmatched_event_status_counts": {
+          "failed": 87,
+          "observed": 1,
+          "succeeded": 118
+        },
+        "unmatched_event_type_counts": {
+          "activation.discover": 1,
+          "filesystem.read": 205
+        }
+      },
       "drift_classes_observed": [],
       "evidence_scope": "controlled_semantic_fixture",
       "finding_count": 0,
       "finding_signatures": [],
       "index": 1,
-      "run_id": "rp3-8d57b476932a",
+      "run_id": "rp3-f54e7cabb5a1",
       "runtime_profile": "RP3",
       "source_path": "results/mvp/mcp-tool-workflow/benign_rp3_contract_findings.json",
       "summary": {
@@ -111,7 +134,7 @@
         "realized_contract_violations": 0,
         "trace_valid": true
       },
-      "trace_path": "results/raw/rp3-8d57b476932a/trace.jsonl"
+      "trace_path": "results/raw/rp3-f54e7cabb5a1/trace.jsonl"
     }
   ],
   "schema_version": 1

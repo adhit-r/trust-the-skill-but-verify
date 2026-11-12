@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp3-e535d64dc667`
+- Run: `rp3-897c48658ca8`
 - Runtime profile: `RP3`
 - Contract: `control-map-synthetic-control-gap-register`
-- Trace: `results/raw/rp3-e535d64dc667/trace.jsonl`
+- Trace: `results/raw/rp3-897c48658ca8/trace.jsonl`
 - Events: `223`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

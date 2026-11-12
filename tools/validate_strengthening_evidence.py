@@ -38,7 +38,7 @@ EXPECTED_LEAST_PRIVILEGE = {
 EXPECTED_LADDER = {
     "case_count": 14,
     "rp2_to_rp6_canary_reduction": 25,
-    "rp2_to_rp6_realized_reduction": 22,
+    "rp2_to_rp6_realized_reduction": 34,
     "rp6_missing_output_increase_vs_rp2": 7,
     "runtime_profiles": ["RP2", "RP3", "RP6"],
     "runtime_aggregates": {
@@ -47,14 +47,14 @@ EXPECTED_LADDER = {
             "canary_observations": 25,
             "event_count": 255,
             "missing_expected_outputs": 0,
-            "realized_contract_violations": 22,
+            "realized_contract_violations": 34,
         },
         "RP3": {
-            "attempted_overreach": 11,
+            "attempted_overreach": 8,
             "canary_observations": 5,
             "event_count": 3205,
             "missing_expected_outputs": 4,
-            "realized_contract_violations": 4,
+            "realized_contract_violations": 18,
         },
         "RP6": {
             "attempted_overreach": 12,
@@ -69,7 +69,7 @@ EXPECTED_MINIMAL_CONTRAST = {
     "case_count": 8,
     "policy_probe_count": 1,
     "rp2_to_rp6_canary_reduction": 9,
-    "rp2_to_rp6_realized_reduction": 13,
+    "rp2_to_rp6_realized_reduction": 19,
     "rp6_missing_output_increase_vs_rp2": 2,
     "rp6_mitigation_pair_count": 16,
     "rp6_pair_count": 16,
@@ -81,14 +81,14 @@ EXPECTED_MINIMAL_CONTRAST = {
             "canary_observations": 9,
             "event_count": 106,
             "missing_expected_outputs": 0,
-            "realized_contract_violations": 13,
+            "realized_contract_violations": 19,
         },
         "RP3": {
-            "attempted_overreach": 9,
+            "attempted_overreach": 6,
             "canary_observations": 1,
             "event_count": 1767,
             "missing_expected_outputs": 1,
-            "realized_contract_violations": 1,
+            "realized_contract_violations": 9,
         },
         "RP6": {
             "attempted_overreach": 9,

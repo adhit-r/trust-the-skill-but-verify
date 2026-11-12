@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp3-9e6a818a4f4d`
+- Run: `rp3-2073712f37cd`
 - Runtime profile: `RP3`
 - Contract: `file-diff-planner-synthetic-diff-plan`
-- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-9e6a818a4f4d/trace.jsonl`
+- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-2073712f37cd/trace.jsonl`
 - Events: `223`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

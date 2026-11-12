@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp3-e4b65be2f2f1`
+- Run: `rp3-168c91fde256`
 - Runtime profile: `RP3`
 - Contract: `huginn-public-webhook-agent-flow-summary`
-- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-e4b65be2f2f1/trace.jsonl`
+- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-168c91fde256/trace.jsonl`
 - Events: `224`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

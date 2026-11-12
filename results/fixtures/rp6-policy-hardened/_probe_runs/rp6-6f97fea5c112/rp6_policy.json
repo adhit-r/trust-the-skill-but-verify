@@ -6,6 +6,7 @@
   "network_events": "<REPO_ROOT>/results/fixtures/rp6-policy-hardened/_probe_runs/rp6-6f97fea5c112/network_events.jsonl",
   "network_sink_requests": "<REPO_ROOT>/results/fixtures/rp6-policy-hardened/_probe_runs/rp6-6f97fea5c112/network_sink_requests.jsonl",
   "policy": {
+    "ablation_disabled_components": [],
     "approval_required": [
       {
         "decision_required": "explicit_allow",

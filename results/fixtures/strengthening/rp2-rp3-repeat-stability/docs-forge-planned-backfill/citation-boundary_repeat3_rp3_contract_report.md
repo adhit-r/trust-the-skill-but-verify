@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp3-866c87b78772`
+- Run: `rp3-3310a56737f5`
 - Runtime profile: `RP3`
 - Contract: `docs-forge-citation-boundary`
-- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-866c87b78772/trace.jsonl`
+- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-3310a56737f5/trace.jsonl`
 - Events: `223`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

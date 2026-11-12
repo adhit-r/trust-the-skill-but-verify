@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp3-cc897d6cb1ee`
+- Run: `rp3-f6b2a34e099f`
 - Runtime profile: `RP3`
 - Contract: `mcp-tool-workflow-tool-inventory`
-- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-cc897d6cb1ee/trace.jsonl`
+- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-f6b2a34e099f/trace.jsonl`
 - Events: `223`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

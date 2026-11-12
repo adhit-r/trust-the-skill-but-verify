@@ -134,7 +134,7 @@ McNemar-style tests, manual-review agreement, or prevalence estimates.
 
 `results/derived/gate5-statistical-intervals.json` computes machine-only
 intervals over the curated Gate 5 denominator and paired-runtime summary. The
-current artifact reports 36 Wilson intervals, 18 nonparametric case-bootstrap
+current artifact reports 37 Wilson intervals, 18 nonparametric case-bootstrap
 intervals, 6 hierarchical skill/case bootstrap intervals, and a paired-runtime
 summary over 214 pair records. It reports maximum comparator-delta severity
 beside majority pair classification and median disagreement count.

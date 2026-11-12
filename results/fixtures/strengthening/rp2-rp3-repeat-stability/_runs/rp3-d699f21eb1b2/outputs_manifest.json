@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "4e1921c059da202fd382942bfc3e6de3c11221dcb4a2cede34950a3e25feec75",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/approval-required-egress-plan.json",
+      "size": 718
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-d699f21eb1b2"
+}

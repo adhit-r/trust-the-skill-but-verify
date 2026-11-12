@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp3-1fcc4fdb3ade`
+- Run: `rp3-40b5add34b95`
 - Runtime profile: `RP3`
 - Contract: `repo-maintainer-synthetic-dependency-risk-inventory`
-- Trace: `results/raw/rp3-1fcc4fdb3ade/trace.jsonl`
+- Trace: `results/raw/rp3-40b5add34b95/trace.jsonl`
 - Events: `223`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

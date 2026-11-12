@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp3-cbfeac0b5e31`
+- Run: `rp3-f957ea2a209f`
 - Runtime profile: `RP3`
 - Contract: `zenscan-mcp-scanner-first-party-mcp-scan-tool-catalog`
-- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-cbfeac0b5e31/trace.jsonl`
+- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-f957ea2a209f/trace.jsonl`
 - Events: `224`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp3-f95a48ad20a3`
+- Run: `rp3-ca17771aa6c9`
 - Runtime profile: `RP3`
 - Contract: `audit-lens-connector-negative-control`
-- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-f95a48ad20a3/trace.jsonl`
+- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-ca17771aa6c9/trace.jsonl`
 - Events: `223`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

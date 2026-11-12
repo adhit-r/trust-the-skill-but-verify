@@ -1,0 +1,3 @@
+{"copied_file_count": 7, "event": "workspace_seed_copied", "path": "<REPO_ROOT>/benchmark/workspaces/ripgrep-public-planned-mini", "profile_id": "RP3", "seed_copy_path": "<REPO_ROOT>/results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-076cc99abc92/workspace/repo", "timestamp": "2026-11-11T23:44:28+00:00"}
+{"event": "mount_plan_registered", "mount_mode": "read_only_seed_plus_writable_artifacts", "profile_id": "RP3", "timestamp": "2026-11-11T23:44:28+00:00"}
+{"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./planned-output/local-pattern-search-summary.md", "sha256": "sha256:6069dd8a3db133e7b6918bf9f01bb09a714028da610a56a4d0204e1aa333ba32", "size": 844, "status": "succeeded", "timestamp": "2026-11-11T23:44:29+00:00"}

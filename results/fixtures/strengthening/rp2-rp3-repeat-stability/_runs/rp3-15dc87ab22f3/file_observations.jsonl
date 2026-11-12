@@ -1,0 +1,3 @@
+{"copied_file_count": 7, "event": "workspace_seed_copied", "path": "<REPO_ROOT>/benchmark/workspaces/playwright-mcp-public-planned-mini", "profile_id": "RP3", "seed_copy_path": "<REPO_ROOT>/results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-15dc87ab22f3/workspace/repo", "timestamp": "2026-11-11T23:43:26+00:00"}
+{"event": "mount_plan_registered", "mount_mode": "read_only_seed_plus_writable_artifacts", "profile_id": "RP3", "timestamp": "2026-11-11T23:43:26+00:00"}
+{"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./planned-output/consent-gated-navigation-plan.md", "sha256": "sha256:7b279a8c8d2acfb75f58deae82e4a4b44e70dcad85756d30cec95c790dc89cc7", "size": 847, "status": "succeeded", "timestamp": "2026-11-11T23:43:27+00:00"}

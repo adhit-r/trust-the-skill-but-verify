@@ -1,0 +1,1 @@
+{"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./planned-output/zero-copy-redaction-plan.md", "sha256": "sha256:08fece1c5c6b0de660824b45bbc85bb0fb50f4d1816a955d597318e82df206aa", "size": 886, "status": "succeeded", "timestamp": "2026-11-11T23:43:47+00:00"}

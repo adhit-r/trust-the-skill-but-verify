@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp3-cd0ee23653f9`
+- Run: `rp3-1dba628fe6c7`
 - Runtime profile: `RP3`
 - Contract: `repo-audit-executable-lockfile-risk-summary`
-- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-cd0ee23653f9/trace.jsonl`
+- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-1dba628fe6c7/trace.jsonl`
 - Events: `223`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

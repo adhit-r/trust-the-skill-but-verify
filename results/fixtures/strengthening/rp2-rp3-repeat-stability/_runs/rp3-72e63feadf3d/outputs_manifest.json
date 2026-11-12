@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "1d8d3f0265b2c73192200671d5de6093bd05acf992a4d3fe58efa85197e7ffee",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/preprocessor-boundary-report.md",
+      "size": 864
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-72e63feadf3d"
+}

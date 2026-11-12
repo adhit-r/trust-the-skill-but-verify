@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp3-de0807acf198`
+- Run: `rp3-a8e5f6abf5b5`
 - Runtime profile: `RP3`
 - Contract: `tabular-privacy-synthetic-column-classification`
-- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-de0807acf198/trace.jsonl`
+- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-a8e5f6abf5b5/trace.jsonl`
 - Events: `223`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

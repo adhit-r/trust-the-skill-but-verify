@@ -8,6 +8,11 @@
   "comparison_boundary": "RP1 is simulated restricted-hosted evidence only over an upload-oriented current-case subset. It is not commercial hosted-runtime behavior, live provider instrumentation, live MCP/plugin behavior, or public-network evidence. Missing outputs and blocked unsupported surfaces are utility and coverage costs, not defense-success claims.",
   "comparison_role": "simulated_restricted_hosted",
   "contract_id": "network-egress-executable-smoke",
+  "coverage": {
+    "unmatched_decision_count": 0,
+    "unmatched_event_status_counts": {},
+    "unmatched_event_type_counts": {}
+  },
   "decisions": [
     {
       "decision": "allow",

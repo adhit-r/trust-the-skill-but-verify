@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "11b731437641d5687e0a8550953878337bd8aa8f56a176926ecc627a642210d4",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/rate-limit-dry-run-plan.md",
+      "size": 842
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-610a22d19fb6"
+}

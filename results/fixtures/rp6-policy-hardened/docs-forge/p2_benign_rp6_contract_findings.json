@@ -3,6 +3,11 @@
   "comparison_boundary": "RP6 is a mitigation/report-card contrast. RP6-vs-RP2/RP3 disagreements are not counted as runtime-drift claims.",
   "comparison_role": "mitigation_report_card",
   "contract_id": "docs-forge-output-scope",
+  "coverage": {
+    "unmatched_decision_count": 0,
+    "unmatched_event_status_counts": {},
+    "unmatched_event_type_counts": {}
+  },
   "decisions": [
     {
       "decision": "allow",

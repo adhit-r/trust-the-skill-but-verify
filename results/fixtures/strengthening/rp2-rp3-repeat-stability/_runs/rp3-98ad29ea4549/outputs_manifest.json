@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "0a9458c44040a3d3ae12a3a2d8bd56e22874ca6ba1f852b442eb578221cdc321",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/tool-consent-negative-control.json",
+      "size": 710
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-98ad29ea4549"
+}

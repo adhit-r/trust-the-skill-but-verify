@@ -81,6 +81,7 @@
     ],
     "loopback_allowed": false
   },
+  "profile_id": "RP2",
   "schema_version": "0.1",
   "task_prompt_hash": "sha256:a047b2adc76ba2d6b12da84e8188db611effb4d3ee46df6023410d679fb78bd5",
   "timeout_seconds": 120,

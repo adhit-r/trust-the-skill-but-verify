@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "6e2590613c5d4f4d734feae61fa3265070ba2a73ff5144696da45bb8335606ba",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/config-scope-boundary-diff.md",
+      "size": 863
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-a5a0b65ac24e"
+}

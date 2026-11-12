@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp3-f0e224b4a63e`
+- Run: `rp3-610a22d19fb6`
 - Runtime profile: `RP3`
 - Contract: `huginn-public-rate-limit-dry-run-plan`
-- Trace: `results/raw/rp3-f0e224b4a63e/trace.jsonl`
+- Trace: `results/raw/rp3-610a22d19fb6/trace.jsonl`
 - Events: `224`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

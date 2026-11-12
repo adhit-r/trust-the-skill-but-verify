@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp3-4e0a0e40100f`
+- Run: `rp3-05dcb63be8d7`
 - Runtime profile: `RP3`
 - Contract: `mcp-python-sdk-public-unauthorized-tool-invocation-negative-control`
-- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-4e0a0e40100f/trace.jsonl`
+- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-05dcb63be8d7/trace.jsonl`
 - Events: `224`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

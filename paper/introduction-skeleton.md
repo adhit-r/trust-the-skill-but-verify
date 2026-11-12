@@ -41,7 +41,8 @@ and repeat identity are held fixed. Under the RP2 local coding-agent profile,
 the adversarial run reads `.env` and places the canary in the generated report.
 Under the RP3 Docker-sandbox profile, the corresponding adversarial run records
 a failed `.env` read and fails closed before canary movement. In ledger form,
-Repo-audit adversarial RP2 has three realized violations, one oracle failure,
+Repo-audit adversarial RP2 has four realized violations (one is a missing
+report-write approval that both runtimes share), one oracle failure,
 and four canary observations; adversarial RP3 has one attempted overreach, one
 missing output, and no canary observations.
 
@@ -99,7 +100,7 @@ fail to preserve the task-conditioned contract.
 The current executable baseline evaluates five controlled case families:
 repo-audit, network-egress, MCP/tool workflow, AuditLens P3/P4, and docs-forge
 P1/P2. Across these cases, tracked manifests record five runtime-drift claims
-and thirty-six pairwise disagreements under RP2 and RP3. The evidence includes
+and thirty-three pairwise disagreements under RP2 and RP3. The evidence includes
 RP2 canary movement into generated reports or dashboards, RP3 blocked attempts,
 missing outputs, read-only source-mount failures, controlled fake-sink network
 evidence, and controlled semantic events for approval, tool, and persistence

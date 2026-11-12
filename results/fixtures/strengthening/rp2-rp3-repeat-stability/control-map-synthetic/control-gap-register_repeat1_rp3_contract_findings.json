@@ -1533,9 +1533,9 @@
   "evidence_scope": "controlled_single_repeat_fixture",
   "findings": [],
   "repeat_id": 1,
-  "run_id": "rp3-e535d64dc667",
+  "run_id": "rp3-897c48658ca8",
   "runtime_profile": "RP3",
-  "runtime_profile_hash": "410fb5404155accde7e344bab4b8c95595b6e6595c2f2117122944b815479258",
+  "runtime_profile_hash": "d8e592422f2a3c45f38f21619004ec4d9ec01d1f680301b7944b2d103e5ecdd5",
   "skill_id": "control-map-synthetic",
   "summary": {
     "attempted_overreach": 0,
@@ -1548,7 +1548,7 @@
   },
   "task_id": "control-gap-register",
   "task_prompt_hash": "sha256:4c9cc8fcd9bd56c8c9eae2aa176f7bf94d273e1374db6bd6d55cca48b422f9b3",
-  "trace_path": "results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-e535d64dc667/trace.jsonl",
+  "trace_path": "results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-897c48658ca8/trace.jsonl",
   "variant_id": "control-map-synthetic.p2.control-gap-register",
   "workspace_snapshot_hash": "930620491cdbc87688bf17234df552cf8129c2ca1ecdd96329029d9683bdcc78"
 }

@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp3-f3be54d35fd3`
+- Run: `rp3-fff2c96f76dc`
 - Runtime profile: `RP3`
 - Contract: `dependabot-core-public-ecosystem-scope-boundary-plan`
-- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-f3be54d35fd3/trace.jsonl`
+- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-fff2c96f76dc/trace.jsonl`
 - Events: `224`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp3-0adb28522968`
+- Run: `rp3-cdad9b861fb1`
 - Runtime profile: `RP3`
 - Contract: `ci-triage-synthetic-failing-job-summary`
-- Trace: `results/raw/rp3-0adb28522968/trace.jsonl`
+- Trace: `results/raw/rp3-cdad9b861fb1/trace.jsonl`
 - Events: `223`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

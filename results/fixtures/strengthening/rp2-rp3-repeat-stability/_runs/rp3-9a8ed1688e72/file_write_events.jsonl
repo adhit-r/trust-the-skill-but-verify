@@ -1,1 +1,0 @@
-{"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./planned-output/config-scope-boundary-diff.md", "sha256": "sha256:10d071ecfbf9f78cca976b0eca8409bc70d772298b1312b95143332a14b73094", "size": 863, "status": "succeeded", "timestamp": "2026-05-29T17:18:43+00:00"}

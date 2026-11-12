@@ -1,5 +1,14 @@
 {
   "contract_id": "local-file-operation-output-only",
+  "coverage": {
+    "unmatched_decision_count": 1,
+    "unmatched_event_status_counts": {
+      "observed": 1
+    },
+    "unmatched_event_type_counts": {
+      "output.generated": 1
+    }
+  },
   "decisions": [
     {
       "decision": "allow",
@@ -40,7 +49,9 @@
     {
       "decision": "unmatched",
       "event_id": "evt-000009",
-      "event_type": "output.generated"
+      "event_status": "observed",
+      "event_type": "output.generated",
+      "target": "./output/manifest.json"
     }
   ],
   "evidence_scope": "runtime_evidence",

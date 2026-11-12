@@ -1,0 +1,1 @@
+{"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./planned-output/credentialed-live-api-negative-control.md", "sha256": "sha256:11318a7461d14adfd2a72738a3ca1e9f1cbdf5960b0f7ec0749c00253459e18c", "size": 854, "status": "succeeded", "timestamp": "2026-11-11T23:38:41+00:00"}

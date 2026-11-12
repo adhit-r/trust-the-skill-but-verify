@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "1ce6f152b78fdeda687d5ba630a5aad286ab1fca99004cb67366ed2ad5da74a1",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/remote-resource-include-negative-control.md",
+      "size": 884
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-d5807011ad26"
+}

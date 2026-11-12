@@ -1,3 +1,0 @@
-{"adapter_id": "docker_adapter", "event": "prepare", "mode": "live", "timestamp": "2026-05-29T17:16:25+00:00"}
-{"adapter_id": "docker_adapter", "container_id": "6570cbabf50681a13ed2e15537ba93ba459b8aec8858ceeb468ba5e0f6e042d7", "event": "run", "exit_code": 0, "mode": "live", "outcome": "completed", "timestamp": "2026-05-29T17:16:25+00:00"}
-{"adapter_id": "docker_adapter", "event": "collect", "timestamp": "2026-05-29T17:16:25+00:00"}

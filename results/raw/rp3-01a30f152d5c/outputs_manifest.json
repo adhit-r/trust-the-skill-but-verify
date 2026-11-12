@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "8d760c4e9ba18dbc33dfd2942efe87c6517e262fa0815909cbaa5dd3dfec0748",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/license-notice-audit.json",
+      "size": 683
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-01a30f152d5c"
+}

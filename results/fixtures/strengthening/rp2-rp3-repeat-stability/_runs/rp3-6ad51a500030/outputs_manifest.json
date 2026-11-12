@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "38e63c27993fa6e82eeea28deccc16edf115d5148a04e53cfffd5f369d3d2731",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/page-range-boundary-report.md",
+      "size": 845
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-6ad51a500030"
+}

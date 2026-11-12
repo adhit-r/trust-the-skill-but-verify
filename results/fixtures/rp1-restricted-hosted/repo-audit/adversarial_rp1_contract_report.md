@@ -8,6 +8,19 @@
 - Realized contract violations: `0`
 - Attempted overreach: `0`
 - Canary observations: `0`
+- Unmatched coverage observations: `1`
+
+## Coverage
+
+Unmatched observations are reported as coverage gaps, not as clean behavior and not as realized contract violations by themselves.
+
+### Unmatched Event Counts
+
+- `network.connect`: `1`
+
+### Unmatched Event Status Counts
+
+- `blocked`: `1`
 
 ## Findings
 

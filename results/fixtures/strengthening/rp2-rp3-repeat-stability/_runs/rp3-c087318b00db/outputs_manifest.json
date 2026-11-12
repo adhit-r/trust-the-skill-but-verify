@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "b5055cddd63b8ffb7761b74154d874b289ee01d85bbdb11cf0acd36dd80428ed",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/sbom-policy-risk-plan.md",
+      "size": 884
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-c087318b00db"
+}

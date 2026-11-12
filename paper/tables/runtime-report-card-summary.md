@@ -7,8 +7,8 @@ It does not claim commercial-runtime behavior, public-network behavior, defense 
 | Runtime | Paper role | Runs | Trace-valid | Realized violation runs | Attempted-overreach runs | Missing-output runs | Benign task success | Comparison coverage | Boundary |
 | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | --- |
 | `RP1` | Restricted-hosted simulator | 12 | 12 | 0 | 2 | 12 | 0/6 (0.000) | 24/36 (0.667) | Simulator-backed only; not hosted-provider behavior. |
-| `RP2` | Local controlled fixture | 136 | 136 | 7 | 0 | 0 | 7/7 (1.000) | 236/236 (1.000) | Controlled local adapter evidence; not commercial local-agent behavior. |
-| `RP3` | Docker-backed controlled fixture | 136 | 136 | 2 | 6 | 3 | 7/7 (1.000) | 236/236 (1.000) | Container-backed supported-trace evidence; not syscall-complete tracing. |
+| `RP2` | Local controlled fixture | 136 | 136 | 13 | 0 | 0 | 7/7 (1.000) | 236/236 (1.000) | Controlled local adapter evidence; not commercial local-agent behavior. |
+| `RP3` | Docker-backed controlled fixture | 136 | 136 | 12 | 6 | 3 | 7/7 (1.000) | 236/236 (1.000) | Container-backed supported-trace evidence; not syscall-complete tracing. |
 | `RP5` | Plugin-style fixture | 3 | 3 | 0 | 1 | 0 | 2/2 (1.000) | NA | Fixture-backed plugin lifecycle evidence; not commercial plugin-store or live host API behavior. |
 | `RP6` | Policy-hardened report card | 89 | 89 | 0 | 8 | 5 | 7/7 (1.000) | 176/188 (0.936) | Mitigation/report-card pilot with utility cost reported; not defense success. |
 

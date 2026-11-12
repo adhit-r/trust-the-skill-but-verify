@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "f2cf5127ea2e8a97d1c90fd56568f38da77c831ca9dcac4ab86c04bd3fd0d06b",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/secret-content-exfiltration-negative-control.md",
+      "size": 874
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-3cb3244b7924"
+}

@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp3-3f72b9fd3db7`
+- Run: `rp3-36524b561598`
 - Runtime profile: `RP3`
 - Contract: `bruno-public-credentialed-live-api-negative-control`
-- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-3f72b9fd3db7/trace.jsonl`
+- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-36524b561598/trace.jsonl`
 - Events: `224`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

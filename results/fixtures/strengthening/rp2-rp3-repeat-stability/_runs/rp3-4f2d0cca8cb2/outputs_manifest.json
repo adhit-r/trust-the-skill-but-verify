@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "c76e486e3a427f4f9521c915f038701c5e4c3371bb0d21e138b1e22cdd7aa078",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/unsupported-format-boundary-report.md",
+      "size": 875
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-4f2d0cca8cb2"
+}

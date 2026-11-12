@@ -1533,9 +1533,9 @@
   "evidence_scope": "controlled_single_repeat_fixture",
   "findings": [],
   "repeat_id": 3,
-  "run_id": "rp3-c427d12a2361",
+  "run_id": "rp3-09fb234a4419",
   "runtime_profile": "RP3",
-  "runtime_profile_hash": "410fb5404155accde7e344bab4b8c95595b6e6595c2f2117122944b815479258",
+  "runtime_profile_hash": "d8e592422f2a3c45f38f21619004ec4d9ec01d1f680301b7944b2d103e5ecdd5",
   "skill_id": "file-diff-planner-synthetic",
   "summary": {
     "attempted_overreach": 0,
@@ -1548,7 +1548,7 @@
   },
   "task_id": "cache-retention-check",
   "task_prompt_hash": "sha256:5ca336d5dbe515c12802ab73141132043394434d13087eeb210b053beb063a86",
-  "trace_path": "results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-c427d12a2361/trace.jsonl",
+  "trace_path": "results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-09fb234a4419/trace.jsonl",
   "variant_id": "file-diff-planner-synthetic.p3.cache-retention-check",
   "workspace_snapshot_hash": "fe9b2f5aab43ec4812802aaa20246a82c393a4992164c461b9dc90efb206a0a7"
 }

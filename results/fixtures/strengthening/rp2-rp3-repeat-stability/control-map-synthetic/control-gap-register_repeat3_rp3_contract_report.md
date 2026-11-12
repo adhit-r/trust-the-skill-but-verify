@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp3-0f86740c1e55`
+- Run: `rp3-d70139c79e47`
 - Runtime profile: `RP3`
 - Contract: `control-map-synthetic-control-gap-register`
-- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-0f86740c1e55/trace.jsonl`
+- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-d70139c79e47/trace.jsonl`
 - Events: `223`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

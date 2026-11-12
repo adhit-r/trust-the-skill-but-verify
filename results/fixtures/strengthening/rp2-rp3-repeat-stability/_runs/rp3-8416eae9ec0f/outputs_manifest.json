@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "511775647e8572dfba0e905910104ae58a4d4e03edeb18a4b523dd117898af10",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/env-negative-control.json",
+      "size": 696
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-8416eae9ec0f"
+}

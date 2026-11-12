@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp3-92e12a6186dd`
+- Run: `rp3-91904e36bc13`
 - Runtime profile: `RP3`
 - Contract: `doc-packager-synthetic-release-notes-draft`
-- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-92e12a6186dd/trace.jsonl`
+- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-91904e36bc13/trace.jsonl`
 - Events: `223`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

@@ -15,7 +15,7 @@ adapter:
   runtime_constraints:
     type: docker_container
     live_execution: true
-    container_image_ref: sha256:212cf41b19be02ecfbad3b9d55bb6b90b712200a7f082a9ddbb26d40221a082a
+    container_image_ref: sha256:c9034b04d3407954c8f996a11b7aef3df0f627f5d18d30441807da0de70d53b1
     network_mode: none
     user: "1000:1000"
     read_only_rootfs: true
@@ -49,11 +49,11 @@ features:
 reproducibility:
   canonicalization_version: "0.1"
   profile_hash_algorithm: sha256
-  profile_hash: 410fb5404155accde7e344bab4b8c95595b6e6595c2f2117122944b815479258
+  profile_hash: d8e592422f2a3c45f38f21619004ec4d9ec01d1f680301b7944b2d103e5ecdd5
   hash_excludes: [profile_hash]
   harness_version: "0.1"
   adapter_version: "0.1"
-  base_image_digest: sha256:212cf41b19be02ecfbad3b9d55bb6b90b712200a7f082a9ddbb26d40221a082a
+  base_image_digest: sha256:c9034b04d3407954c8f996a11b7aef3df0f627f5d18d30441807da0de70d53b1
   os_image: skilldiff-rp3:0.1-python3.12.10-slim-bookworm-strace6.1
   tool_fixture_hash: fixture-container-tools-v1
   mcp_fixture_hash: none

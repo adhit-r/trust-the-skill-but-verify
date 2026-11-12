@@ -120,14 +120,15 @@
       ],
       "numeric_fields": [
         "rows=20 across 7 case families",
-        "contained_with_utility_cost=3",
-        "residual_leak_no_drift=2",
-        "contained_clean=2",
-        "conformant=13",
+        "contained_with_utility_cost=1",
+        "residual_leak_no_drift=12",
+        "residual_leak_no_drift_from_missing_approval_only=9",
+        "contained_clean=0",
+        "conformant=7",
         "canary_observations_prevented_by_rp3=20"
       ],
       "regen_command": "python3 tools/build_outcome_flip_matrix.py",
-      "boundary_note": "Data-derived from existing MVP RP2/RP3 results only; non-entailed cells (utility-cost, no-drift residual) are the contribution and containment cells are labeled config-entailed; mcp-tool-workflow is a scripted fixture, not runtime-enforced MCP policy; pairwise disagreement is not prevalence."
+      "boundary_note": "Data-derived from existing MVP RP2/RP3 results only; non-entailed cells (utility-cost, no-drift residual) are the contribution and containment cells are labeled config-entailed; 9 of the 12 no-drift rows are no-drift only because both runtimes miss a contract-required approval (SC-APR-*) that neither RP2 nor RP3 implements; mcp-tool-workflow tool calls are fixture-declared in both runtimes, not enforced MCP policy; pairwise disagreement is not prevalence."
     }
   ],
   "claim_boundary": {

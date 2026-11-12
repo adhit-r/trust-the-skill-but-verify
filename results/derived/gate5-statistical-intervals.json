@@ -12,7 +12,7 @@
     "paired_summary_unmapped_case_count": 10,
     "reviewer_agreement_result_count": 0,
     "unique_skill_count": 44,
-    "wilson_interval_count": 36
+    "wilson_interval_count": 37
   },
   "analysis_script": "tools/build_gate5_statistical_intervals.py",
   "boundary": "Non-human Wilson and bootstrap interval artifact over the curated Gate 5 denominator and existing paired-runtime summary. It is not an ecosystem prevalence estimate, not a completed human/manual review, not reviewer agreement, not adjudication, not a McNemar hypothesis-test result, not source-mix evidence completion, not commercial-runtime behavior, not defense-success evidence, and not paper-grade completion by itself. Human review remains 0% until real reviewers complete the review exports.",
@@ -467,9 +467,9 @@
   "paired_runtime_summary": {
     "classification_counts": {
       "mitigation_report_card_comparison": 28,
-      "no_pairwise_disagreement": 143,
+      "no_pairwise_disagreement": 134,
       "profile_conditioned_semantic_fixture": 28,
-      "runtime_drift_candidate": 15
+      "runtime_drift_candidate": 24
     },
     "majority_pair_classification": "no_pairwise_disagreement",
     "max_pair_severity": "critical",
@@ -477,13 +477,14 @@
     "median_pair_disagreement_count": 0.0,
     "pair_count": 214,
     "pair_max_severity_counts": {
-      "critical": 40,
-      "high": 11,
-      "low": 11,
-      "none": 152
+      "critical": 41,
+      "high": 10,
+      "low": 4,
+      "medium": 20,
+      "none": 139
     },
-    "pairwise_disagreement_finding_count": 232,
-    "positive_pair_disagreement_count": 62,
+    "pairwise_disagreement_finding_count": 299,
+    "positive_pair_disagreement_count": 75,
     "runtime_pair_counts": {
       "RP2__RP1": 12,
       "RP2__RP3": 162,
@@ -924,11 +925,11 @@
       "boundary": "curated_gate5_denominator_only_not_prevalence_not_human_review_not_adjudication",
       "confidence_level": 0.95,
       "denominator": 214,
-      "estimate": 0.668224,
-      "lower": 0.602661,
+      "estimate": 0.626168,
+      "lower": 0.559657,
       "method": "wilson_score",
       "metric_id": "pair_classification_share",
-      "numerator": 143,
+      "numerator": 134,
       "slice": {
         "dimension": "classification",
         "value": "no_pairwise_disagreement"
@@ -936,7 +937,7 @@
       "source": "results/derived/paired-runtime-summary.json",
       "source_pointer": "/aggregate/classification_counts/no_pairwise_disagreement",
       "unit": "pair_share",
-      "upper": 0.727854
+      "upper": 0.68823
     },
     {
       "boundary": "curated_gate5_denominator_only_not_prevalence_not_human_review_not_adjudication",
@@ -960,11 +961,11 @@
       "boundary": "curated_gate5_denominator_only_not_prevalence_not_human_review_not_adjudication",
       "confidence_level": 0.95,
       "denominator": 214,
-      "estimate": 0.070093,
-      "lower": 0.042934,
+      "estimate": 0.11215,
+      "lower": 0.076531,
       "method": "wilson_score",
       "metric_id": "pair_classification_share",
-      "numerator": 15,
+      "numerator": 24,
       "slice": {
         "dimension": "classification",
         "value": "runtime_drift_candidate"
@@ -972,7 +973,7 @@
       "source": "results/derived/paired-runtime-summary.json",
       "source_pointer": "/aggregate/classification_counts/runtime_drift_candidate",
       "unit": "pair_share",
-      "upper": 0.112415
+      "upper": 0.161447
     },
     {
       "boundary": "curated_gate5_denominator_only_not_prevalence_not_human_review_not_adjudication",
@@ -1068,11 +1069,11 @@
       "boundary": "curated_gate5_denominator_only_not_prevalence_not_human_review_not_adjudication",
       "confidence_level": 0.95,
       "denominator": 214,
-      "estimate": 0.28972,
-      "lower": 0.233074,
+      "estimate": 0.350467,
+      "lower": 0.289691,
       "method": "wilson_score",
       "metric_id": "positive_pair_disagreement_share",
-      "numerator": 62,
+      "numerator": 75,
       "slice": {
         "dimension": "all",
         "value": "all"
@@ -1080,17 +1081,17 @@
       "source": "results/derived/paired-runtime-summary.json",
       "source_pointer": "/aggregate/pair_count",
       "unit": "pair_share",
-      "upper": 0.353781
+      "upper": 0.416517
     },
     {
       "boundary": "curated_gate5_denominator_only_not_prevalence_not_human_review_not_adjudication",
       "confidence_level": 0.95,
       "denominator": 214,
-      "estimate": 0.71028,
-      "lower": 0.646219,
+      "estimate": 0.649533,
+      "lower": 0.583483,
       "method": "wilson_score",
       "metric_id": "pair_max_severity_share",
-      "numerator": 152,
+      "numerator": 139,
       "slice": {
         "dimension": "max_severity",
         "value": "none"
@@ -1098,17 +1099,17 @@
       "source": "results/derived/paired-runtime-summary.json",
       "source_pointer": "/aggregate/pair_count",
       "unit": "pair_share",
-      "upper": 0.766926
+      "upper": 0.710309
     },
     {
       "boundary": "curated_gate5_denominator_only_not_prevalence_not_human_review_not_adjudication",
       "confidence_level": 0.95,
       "denominator": 214,
-      "estimate": 0.051402,
-      "lower": 0.028941,
+      "estimate": 0.018692,
+      "lower": 0.007292,
       "method": "wilson_score",
       "metric_id": "pair_max_severity_share",
-      "numerator": 11,
+      "numerator": 4,
       "slice": {
         "dimension": "max_severity",
         "value": "low"
@@ -1116,17 +1117,35 @@
       "source": "results/derived/paired-runtime-summary.json",
       "source_pointer": "/aggregate/pair_count",
       "unit": "pair_share",
-      "upper": 0.089684
+      "upper": 0.047066
     },
     {
       "boundary": "curated_gate5_denominator_only_not_prevalence_not_human_review_not_adjudication",
       "confidence_level": 0.95,
       "denominator": 214,
-      "estimate": 0.051402,
-      "lower": 0.028941,
+      "estimate": 0.093458,
+      "lower": 0.061315,
       "method": "wilson_score",
       "metric_id": "pair_max_severity_share",
-      "numerator": 11,
+      "numerator": 20,
+      "slice": {
+        "dimension": "max_severity",
+        "value": "medium"
+      },
+      "source": "results/derived/paired-runtime-summary.json",
+      "source_pointer": "/aggregate/pair_count",
+      "unit": "pair_share",
+      "upper": 0.139939
+    },
+    {
+      "boundary": "curated_gate5_denominator_only_not_prevalence_not_human_review_not_adjudication",
+      "confidence_level": 0.95,
+      "denominator": 214,
+      "estimate": 0.046729,
+      "lower": 0.025577,
+      "method": "wilson_score",
+      "metric_id": "pair_max_severity_share",
+      "numerator": 10,
       "slice": {
         "dimension": "max_severity",
         "value": "high"
@@ -1134,17 +1153,17 @@
       "source": "results/derived/paired-runtime-summary.json",
       "source_pointer": "/aggregate/pair_count",
       "unit": "pair_share",
-      "upper": 0.089684
+      "upper": 0.083867
     },
     {
       "boundary": "curated_gate5_denominator_only_not_prevalence_not_human_review_not_adjudication",
       "confidence_level": 0.95,
       "denominator": 214,
-      "estimate": 0.186916,
-      "lower": 0.140374,
+      "estimate": 0.191589,
+      "lower": 0.144484,
       "method": "wilson_score",
       "metric_id": "pair_max_severity_share",
-      "numerator": 40,
+      "numerator": 41,
       "slice": {
         "dimension": "max_severity",
         "value": "critical"
@@ -1152,7 +1171,7 @@
       "source": "results/derived/paired-runtime-summary.json",
       "source_pointer": "/aggregate/pair_count",
       "unit": "pair_share",
-      "upper": 0.244499
+      "upper": 0.249571
     }
   ]
 }

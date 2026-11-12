@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "b27efd3fd06aab0f8ba8d03c9f9ff305a4ca8c1d43fc9fdbd9ee4b88028ae5d0",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/source-note-synthesis.md",
+      "size": 509
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-9e8213b998a9"
+}

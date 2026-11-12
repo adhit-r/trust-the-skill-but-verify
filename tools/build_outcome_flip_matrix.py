@@ -56,7 +56,7 @@ CATEGORIES = {
     "residual_leak_no_drift": {
         "label": "No drift: sandbox did not help",
         "entailed": False,
-        "note": "Both runtimes realize the violation (denied target sat inside the mounted workspace).",
+        "note": "Both runtimes realize a violation: a denied target inside the mounted workspace, or a contract-required approval neither runtime implements.",
     },
     "contained_clean": {
         "label": "Contained, no utility loss",
@@ -79,9 +79,11 @@ def _find_run(runs: list[dict], profile: str) -> dict | None:
     return None
 
 
-def _ft_hist(run: dict) -> Counter:
+def _ft_hist(run: dict, skip_approval: bool = False) -> Counter:
     hist: Counter = Counter()
     for sig in run.get("finding_signatures", []) or []:
+        if skip_approval and str(sig.get("rule_id", "")).startswith("SC-APR"):
+            continue
         hist[sig.get("finding_type", "unknown")] += 1
     return hist
 
@@ -119,6 +121,10 @@ def load_rows() -> list[dict]:
         agg = data.get("aggregate", {}) or {}
         disagreements = int(agg.get("pairwise_disagreements", 0) or 0)
         category = _categorize(h2, h3, disagreements)
+        # Missing approvals are realized in both runtimes because neither implements an approval step.
+        approval_only_residual = category == "residual_leak_no_drift" and _categorize(
+            _ft_hist(rp2, skip_approval=True), _ft_hist(rp3, skip_approval=True), disagreements
+        ) != "residual_leak_no_drift"
         is_neg = "negative_control" in variant or "negative-control" in variant
         rows.append(
             {
@@ -142,6 +148,7 @@ def load_rows() -> list[dict]:
                 "category": category,
                 "category_label": CATEGORIES[category]["label"],
                 "reviewer_entailed": CATEGORIES[category]["entailed"],
+                "approval_only_residual": approval_only_residual,
             }
         )
     return rows
@@ -169,6 +176,7 @@ def write_summary(rows: list[dict]) -> dict:
             "rows_contained_by_rp3": sum(1 for r in rows if r["category"].startswith("contained")),
             "rows_contained_with_utility_cost": cat_counts.get("contained_with_utility_cost", 0),
             "rows_no_drift_residual_leak": cat_counts.get("residual_leak_no_drift", 0),
+            "rows_no_drift_from_missing_approval_only": sum(1 for r in rows if r["approval_only_residual"]),
             "rows_conformant": cat_counts.get("conformant", 0),
             "total_canary_movement_prevented": sum(
                 max(0, r["rp2_canary"] - r["rp3_canary"]) for r in rows
@@ -178,7 +186,9 @@ def write_summary(rows: list[dict]) -> dict:
         "boundary_note": (
             "Existing MVP results only; RP2/RP3 pair; pairwise disagreement is not "
             "prevalence; non-entailed cells (utility-cost, no-drift residual) are the "
-            "contribution, entailed containment cells are labeled as such."
+            "contribution, entailed containment cells are labeled as such; no-drift rows "
+            "include rows whose only shared violation is a contract-required approval "
+            "that neither RP2 nor RP3 implements (counted in rows_no_drift_from_missing_approval_only)."
         ),
         "rows": rows,
     }
@@ -205,7 +215,7 @@ def write_svg(rows: list[dict], summary: dict) -> None:
     rows = sorted(rows, key=lambda r: (r["family"], r["variant"]))
     row_h, top, left = 26, 132, 24
     width = 1200
-    height = top + row_h * len(rows) + 96
+    height = top + row_h * len(rows) + 112
     cols = [
         ("Case family / variant", left, "start"),
         ("RP2 realized", 430, "middle"),
@@ -293,7 +303,10 @@ def write_svg(rows: list[dict], summary: dict) -> None:
              'pairwise disagreement is not prevalence.</text>')
     p.append(f'<text x="{left}" y="{fy + 34}" fill="#6b7280">'
              'Containment cells are partly entailed by the RP3 profile and labeled as such; '
-             'mcp-tool-workflow is a scripted profile-conditioned fixture, not runtime-enforced MCP policy.</text>')
+             'mcp-tool-workflow tool calls are fixture-declared in both runtimes, not enforced MCP policy.</text>')
+    p.append(f'<text x="{left}" y="{fy + 50}" fill="#6b7280">'
+             f'{t["rows_no_drift_from_missing_approval_only"]} of the {t["rows_no_drift_residual_leak"]} no-drift rows are no-drift only because '
+             'both runtimes miss a contract-required approval (SC-APR-*) that neither RP2 nor RP3 implements.</text>')
     p.append("</svg>")
     SVG_PATH.write_text("\n".join(p) + "\n")
 

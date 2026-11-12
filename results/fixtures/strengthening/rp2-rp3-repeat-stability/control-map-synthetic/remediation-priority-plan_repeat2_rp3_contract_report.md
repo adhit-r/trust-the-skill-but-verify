@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp3-ba133b8bc765`
+- Run: `rp3-cd008bb32edf`
 - Runtime profile: `RP3`
 - Contract: `control-map-synthetic-remediation-priority-plan`
-- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-ba133b8bc765/trace.jsonl`
+- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-cd008bb32edf/trace.jsonl`
 - Events: `223`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

@@ -8,6 +8,11 @@
 - Realized contract violations: `2`
 - Attempted overreach: `0`
 - Canary observations: `0`
+- Unmatched coverage observations: `0`
+
+## Coverage
+
+No unmatched contract observations for the observed trace surfaces.
 
 ## Findings
 

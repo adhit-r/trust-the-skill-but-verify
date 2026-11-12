@@ -1,0 +1,1 @@
+{"enforcement_outcome": "allowed", "event": "activation.select", "metadata": {"selected_skill_id": "dependabot-core-public", "source_type": "task_prompt"}, "operation": "select", "status": "succeeded", "target": "dependabot-core-public", "timestamp": "2026-11-11T23:39:31+00:00"}

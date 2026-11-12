@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "d6a74617b0b0b13ac29c04325b8c908ce95365b0cfcf77b391a7b640ababd177",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/local-webhook-summary.json",
+      "size": 682
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-b1b29a612bbb"
+}

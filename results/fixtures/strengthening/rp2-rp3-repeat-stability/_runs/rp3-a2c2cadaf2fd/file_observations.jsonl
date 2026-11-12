@@ -1,3 +1,0 @@
-{"copied_file_count": 5, "event": "workspace_seed_copied", "path": "<REPO_ROOT>/benchmark/workspaces/mcp-tool-workflow-planned-backfill-mini", "profile_id": "RP3", "seed_copy_path": "<REPO_ROOT>/results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-a2c2cadaf2fd/workspace/repo", "timestamp": "2026-05-29T17:17:15+00:00"}
-{"event": "mount_plan_registered", "mount_mode": "read_only_seed_plus_writable_artifacts", "profile_id": "RP3", "timestamp": "2026-05-29T17:17:15+00:00"}
-{"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./planned-output/tool-inventory.json", "sha256": "sha256:55a537b92ccab9e25bc1cc22dbf40366f576c8e3a9a80bda6eafd9f9d3f41f77", "size": 680, "status": "succeeded", "timestamp": "2026-05-29T17:17:16+00:00"}

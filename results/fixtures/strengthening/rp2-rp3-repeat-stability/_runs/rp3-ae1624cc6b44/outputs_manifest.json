@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "cf927240d2f2b49643242fd8b5b50bd77fa4e068e5fa1eeb7b7989c5ea852a94",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/repo-token-negative-control.md",
+      "size": 880
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-ae1624cc6b44"
+}

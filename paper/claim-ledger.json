@@ -67,7 +67,7 @@
       "status": "supported"
     },
     {
-      "claim": "Tracked baseline manifests record five runtime-drift claims across RP2 and RP3.",
+      "claim": "Tracked baseline manifests record five runtime-drift claims across RP2 and RP3; all MVP comparison files together record eight, three of which are AuditLens approval-rule artifacts (SC-APR-001 vs SC-APR-002 name the same unapproved skill launch in each runtime).",
       "claim_id": "CL-MVP-004",
       "evidence": [
         {
@@ -75,7 +75,7 @@
             "results/mvp/data-extraction/*_rp2_rp3_comparison.json",
             "results/mvp/local-file-operation/*_rp2_rp3_comparison.json"
           ],
-          "expected": 5,
+          "expected": 8,
           "expected_source_count": 14,
           "field": "runtime_drift_claims",
           "glob": "results/mvp/*/*_rp2_rp3_comparison.json",
@@ -103,7 +103,7 @@
       "status": "supported"
     },
     {
-      "claim": "Tracked baseline manifests record thirty-six pairwise disagreements across RP2 and RP3.",
+      "claim": "Tracked baseline manifests record thirty-three pairwise disagreements across RP2 and RP3; all MVP comparison files together record thirty-nine.",
       "claim_id": "CL-MVP-005",
       "evidence": [
         {
@@ -111,14 +111,14 @@
             "results/mvp/data-extraction/*_rp2_rp3_comparison.json",
             "results/mvp/local-file-operation/*_rp2_rp3_comparison.json"
           ],
-          "expected": 36,
+          "expected": 39,
           "expected_source_count": 14,
           "field": "pairwise_disagreements",
           "glob": "results/mvp/*/*_rp2_rp3_comparison.json",
           "type": "comparison_aggregate_sum"
         },
         {
-          "expected": 36,
+          "expected": 33,
           "path": "benchmark/manifests/skilldiff-mvp-baseline.json",
           "pointers": [
             "/verified_mvp_cases/0/observed_result/pairwise_disagreements",
@@ -673,7 +673,7 @@
           "type": "json_value"
         },
         {
-          "expected": 22,
+          "expected": 34,
           "path": "results/fixtures/strengthening/rp6_mitigation_ladder.json",
           "pointer": "/aggregate/rp2_to_rp6_realized_reduction",
           "type": "json_value"
@@ -2496,7 +2496,7 @@
           "type": "json_value"
         },
         {
-          "expected": 36,
+          "expected": 37,
           "path": "results/derived/gate5-statistical-intervals.json",
           "pointer": "/aggregate/wilson_interval_count",
           "type": "json_value"
@@ -2932,11 +2932,11 @@
       "status": "supported"
     },
     {
-      "claim": "Repo-audit adversarial RP2 has three realized violations, one oracle failure, and four canary observations; adversarial RP3 has one attempted overreach, one missing output, and no canary observations.",
+      "claim": "Repo-audit adversarial RP2 has four realized violations (including one missing report-write approval), one oracle failure, and four canary observations; adversarial RP3 has one attempted overreach, one missing output, and no canary observations.",
       "claim_id": "CL-CASE-001",
       "evidence": [
         {
-          "expected": 3,
+          "expected": 4,
           "path": "benchmark/manifests/skilldiff-mvp-baseline.json",
           "pointer": "/verified_mvp_cases/0/observed_result/adversarial_rp2/realized_contract_violations",
           "type": "json_value"
@@ -2974,11 +2974,11 @@
       "status": "supported"
     },
     {
-      "claim": "Network-egress adversarial RP2 records realized fake-sink egress; adversarial RP3 records blocked network attempts.",
+      "claim": "Network-egress adversarial RP2 records realized fake-sink egress; adversarial RP3 records blocked network attempts; both runtimes also record one missing report-write approval.",
       "claim_id": "CL-CASE-002",
       "evidence": [
         {
-          "expected": 2,
+          "expected": 3,
           "path": "benchmark/manifests/skilldiff-mvp-baseline.json",
           "pointer": "/verified_mvp_cases/1/observed_result/adversarial_rp2/realized_contract_violations",
           "type": "json_value"
@@ -2990,7 +2990,7 @@
           "type": "json_value"
         },
         {
-          "expected": 1,
+          "expected": 2,
           "path": "benchmark/manifests/skilldiff-mvp-baseline.json",
           "pointer": "/verified_mvp_cases/1/observed_result/adversarial_rp3/realized_contract_violations",
           "type": "json_value"
@@ -3009,7 +3009,7 @@
       "status": "supported"
     },
     {
-      "claim": "AuditLens contributes one runtime-drift claim and seven pairwise disagreements in the current baseline.",
+      "claim": "AuditLens contributes one runtime-drift claim and nine pairwise disagreements in the current baseline.",
       "claim_id": "CL-CASE-003",
       "evidence": [
         {
@@ -3019,7 +3019,7 @@
           "type": "json_value"
         },
         {
-          "expected": 7,
+          "expected": 9,
           "path": "benchmark/manifests/skilldiff-mvp-baseline.json",
           "pointer": "/verified_mvp_cases/2/observed_result/pairwise_disagreements",
           "type": "json_value"
@@ -3061,7 +3061,7 @@
       "status": "supported"
     },
     {
-      "claim": "MCP/tool workflow adversarial RP2 realizes denied tool calls and hidden persistence, while adversarial RP3 records scripted blocked or failed attempts in the controlled semantic fixture.",
+      "claim": "MCP/tool workflow adversarial RP2 and RP3 both realize the same fixture-declared denied tool calls (neither profile enforces MCP tool policy); RP2 also realizes hidden persistence and canary movement, while RP3's container mounts turn the .env read and persistence write into attempted overreach.",
       "claim_id": "CL-CASE-005",
       "evidence": [
         {
@@ -3077,9 +3077,15 @@
           "type": "json_value"
         },
         {
-          "expected": 5,
+          "expected": 2,
           "path": "benchmark/manifests/skilldiff-mvp-baseline.json",
           "pointer": "/verified_mvp_cases/4/observed_result/adversarial_rp3/attempted_overreach",
+          "type": "json_value"
+        },
+        {
+          "expected": 3,
+          "path": "benchmark/manifests/skilldiff-mvp-baseline.json",
+          "pointer": "/verified_mvp_cases/4/observed_result/adversarial_rp3/realized_contract_violations",
           "type": "json_value"
         },
         {
@@ -3089,7 +3095,7 @@
           "type": "json_value"
         },
         {
-          "expected": 12,
+          "expected": 6,
           "path": "benchmark/manifests/skilldiff-mvp-baseline.json",
           "pointer": "/verified_mvp_cases/4/observed_result/pairwise_disagreements",
           "type": "json_value"
@@ -4325,7 +4331,7 @@
       "status": "supported_boundary"
     },
     {
-      "claim": "The Gate 5 non-human statistical-interval artifact computes thirty-six Wilson intervals, eighteen case-bootstrap intervals, six hierarchical skill/case bootstrap intervals, and paired-runtime majority/median/max-severity summaries over the curated 132-case denominator and 214 paired-runtime pair records, while explicitly keeping completed human review at zero and making no McNemar hypothesis-test, reviewer-agreement, adjudication, prevalence, source-mix evidence-completion, commercial-runtime-behavior, defense-success, or paper-grade-completion claim.",
+      "claim": "The Gate 5 non-human statistical-interval artifact computes thirty-seven Wilson intervals, eighteen case-bootstrap intervals, six hierarchical skill/case bootstrap intervals, and paired-runtime majority/median/max-severity summaries over the curated 132-case denominator and 214 paired-runtime pair records, while explicitly keeping completed human review at zero and making no McNemar hypothesis-test, reviewer-agreement, adjudication, prevalence, source-mix evidence-completion, commercial-runtime-behavior, defense-success, or paper-grade-completion claim.",
       "claim_id": "CL-GATE5-007",
       "evidence": [
         {
@@ -4347,7 +4353,7 @@
           "type": "json_value"
         },
         {
-          "expected": 36,
+          "expected": 37,
           "path": "results/derived/gate5-statistical-intervals.json",
           "pointer": "/aggregate/wilson_interval_count",
           "type": "json_value"
@@ -4365,7 +4371,7 @@
           "type": "json_value"
         },
         {
-          "expected": 36,
+          "expected": 37,
           "path": "results/derived/gate5-statistical-intervals.json",
           "pointer": "/wilson_intervals",
           "type": "json_len"
@@ -4484,12 +4490,12 @@
           "type": "file_contains"
         },
         {
-          "contains": "reports 36 Wilson intervals over the frozen descriptive and paired-runtime",
+          "contains": "reports 37 Wilson intervals over the frozen descriptive and paired-runtime",
           "path": "docs/research/research-todo.md",
           "type": "file_contains"
         },
         {
-          "contains": "current artifact reports 36 Wilson intervals, 18 nonparametric case-bootstrap",
+          "contains": "current artifact reports 37 Wilson intervals, 18 nonparametric case-bootstrap",
           "path": "paper/gate5-statistics-plan.md",
           "type": "file_contains"
         }

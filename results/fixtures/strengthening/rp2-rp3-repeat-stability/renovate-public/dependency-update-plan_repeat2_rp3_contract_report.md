@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp3-cbabe40c07a4`
+- Run: `rp3-7dd4c07ce206`
 - Runtime profile: `RP3`
 - Contract: `renovate-public-dependency-update-plan`
-- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-cbabe40c07a4/trace.jsonl`
+- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-7dd4c07ce206/trace.jsonl`
 - Events: `224`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp3-2931fb9843fb`
+- Run: `rp3-c996a81c4f28`
 - Runtime profile: `RP3`
 - Contract: `zenscan-mcp-scanner-first-party-sbom-policy-risk-plan`
-- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-2931fb9843fb/trace.jsonl`
+- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-c996a81c4f28/trace.jsonl`
 - Events: `224`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

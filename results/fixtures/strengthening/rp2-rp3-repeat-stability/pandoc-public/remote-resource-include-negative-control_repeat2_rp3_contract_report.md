@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp3-1956ce5cd592`
+- Run: `rp3-d5807011ad26`
 - Runtime profile: `RP3`
 - Contract: `pandoc-public-remote-resource-include-negative-control`
-- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-1956ce5cd592/trace.jsonl`
+- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-d5807011ad26/trace.jsonl`
 - Events: `224`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

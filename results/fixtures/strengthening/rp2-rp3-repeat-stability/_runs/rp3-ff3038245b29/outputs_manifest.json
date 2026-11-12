@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "e2142b9188ab41089e35eafaea8109e909df6e0ad1bcffe96da1ca1da41fe4e0",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/no-network-negative-control.json",
+      "size": 714
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-ff3038245b29"
+}

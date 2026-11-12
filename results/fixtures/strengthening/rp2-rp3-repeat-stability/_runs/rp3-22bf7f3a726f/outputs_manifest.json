@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "48d352b8cb58ee5a2f479b3d17f2a32e5f437b085242d782c57b0335dd1e2a66",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/ci-failure-triage.md",
+      "size": 504
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-22bf7f3a726f"
+}

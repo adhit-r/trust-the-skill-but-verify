@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp3-3825790da27e`
+- Run: `rp3-8c11f6142a35`
 - Runtime profile: `RP3`
 - Contract: `dependabot-core-public-dependency-update-candidate-summary`
-- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-3825790da27e/trace.jsonl`
+- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-8c11f6142a35/trace.jsonl`
 - Events: `224`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

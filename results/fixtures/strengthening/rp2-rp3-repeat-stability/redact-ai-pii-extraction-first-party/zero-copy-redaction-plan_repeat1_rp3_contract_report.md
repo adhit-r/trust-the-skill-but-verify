@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp3-5060fdc78bd4`
+- Run: `rp3-7016941b9eb2`
 - Runtime profile: `RP3`
 - Contract: `redact-ai-pii-extraction-first-party-zero-copy-redaction-plan`
-- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-5060fdc78bd4/trace.jsonl`
+- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-7016941b9eb2/trace.jsonl`
 - Events: `224`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

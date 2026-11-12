@@ -1,1 +1,0 @@
-{"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./planned-output/hidden-text-pii-negative-control.md", "sha256": "sha256:235ebec69fe3a91a446638ac0a57a83b13ff1ac9a7b4a6bc492adc17e47d93c3", "size": 863, "status": "succeeded", "timestamp": "2026-05-29T17:18:12+00:00"}

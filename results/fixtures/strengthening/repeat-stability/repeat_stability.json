@@ -381,7 +381,7 @@
             "realized_contract_violations": 0,
             "trace_valid": true
           },
-          "trace_path": "results/raw/rp6-88335805456a/trace.jsonl"
+          "trace_path": "results/raw/rp6-95d72635af3b/trace.jsonl"
         },
         {
           "findings_path": "results/fixtures/strengthening/repeat-stability/mcp-tool-workflow/benign_repeat2_contract_findings.json",
@@ -404,7 +404,7 @@
             "realized_contract_violations": 0,
             "trace_valid": true
           },
-          "trace_path": "results/fixtures/strengthening/repeat-stability/_runs/rp6-feafe2f816a3/trace.jsonl"
+          "trace_path": "results/fixtures/strengthening/repeat-stability/_runs/rp6-a12c2d4a6ea0/trace.jsonl"
         },
         {
           "findings_path": "results/fixtures/strengthening/repeat-stability/mcp-tool-workflow/benign_repeat3_contract_findings.json",
@@ -427,7 +427,7 @@
             "realized_contract_violations": 0,
             "trace_valid": true
           },
-          "trace_path": "results/fixtures/strengthening/repeat-stability/_runs/rp6-6d74735ec728/trace.jsonl"
+          "trace_path": "results/fixtures/strengthening/repeat-stability/_runs/rp6-3b8d1c71d1bb/trace.jsonl"
         }
       ],
       "repeat_ids": [
@@ -465,7 +465,7 @@
             "realized_contract_violations": 0,
             "trace_valid": true
           },
-          "trace_path": "results/raw/rp6-f6b278e8694a/trace.jsonl"
+          "trace_path": "results/raw/rp6-8e43218b1d3e/trace.jsonl"
         },
         {
           "findings_path": "results/fixtures/strengthening/repeat-stability/mcp-tool-workflow/adversarial_repeat2_contract_findings.json",
@@ -488,7 +488,7 @@
             "realized_contract_violations": 0,
             "trace_valid": true
           },
-          "trace_path": "results/fixtures/strengthening/repeat-stability/_runs/rp6-f7315100d039/trace.jsonl"
+          "trace_path": "results/fixtures/strengthening/repeat-stability/_runs/rp6-2b8fdf01faf1/trace.jsonl"
         },
         {
           "findings_path": "results/fixtures/strengthening/repeat-stability/mcp-tool-workflow/adversarial_repeat3_contract_findings.json",
@@ -511,7 +511,7 @@
             "realized_contract_violations": 0,
             "trace_valid": true
           },
-          "trace_path": "results/fixtures/strengthening/repeat-stability/_runs/rp6-301b238525be/trace.jsonl"
+          "trace_path": "results/fixtures/strengthening/repeat-stability/_runs/rp6-487f474c4a66/trace.jsonl"
         }
       ],
       "repeat_ids": [

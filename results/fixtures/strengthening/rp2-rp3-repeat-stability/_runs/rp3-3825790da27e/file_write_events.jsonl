@@ -1,1 +1,0 @@
-{"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./planned-output/dependency-update-candidate-summary.md", "sha256": "sha256:ff214b053ae6eb774ef0f9bd8090c90df1cbc08f8944ea8b6fcf0d64977dbc85", "size": 951, "status": "succeeded", "timestamp": "2026-05-29T17:14:56+00:00"}

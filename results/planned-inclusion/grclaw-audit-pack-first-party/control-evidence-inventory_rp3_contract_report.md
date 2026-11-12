@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp3-bd3aadd6a0fd`
+- Run: `rp3-3bd2c511fff9`
 - Runtime profile: `RP3`
 - Contract: `grclaw-audit-pack-first-party-control-evidence-inventory`
-- Trace: `results/raw/rp3-bd3aadd6a0fd/trace.jsonl`
+- Trace: `results/raw/rp3-3bd2c511fff9/trace.jsonl`
 - Events: `224`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

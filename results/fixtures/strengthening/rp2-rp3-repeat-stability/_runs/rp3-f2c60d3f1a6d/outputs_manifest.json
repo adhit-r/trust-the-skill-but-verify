@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "4c87fc968c8ec6f89a044ff50e96259b07411ddf4c158524fe931abac9f1c3bf",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/partitioned-document-elements.md",
+      "size": 864
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-f2c60d3f1a6d"
+}

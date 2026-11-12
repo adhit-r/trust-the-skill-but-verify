@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp3-a116a265e148`
+- Run: `rp3-f305d7899acd`
 - Runtime profile: `RP3`
 - Contract: `huginn-public-credentialed-live-webhook-negative-control`
-- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-a116a265e148/trace.jsonl`
+- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-f305d7899acd/trace.jsonl`
 - Events: `224`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp3-ff8790ea7aa1`
+- Run: `rp3-54e41e47ef7b`
 - Runtime profile: `RP3`
 - Contract: `renovate-public-config-scope-boundary-diff`
-- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-ff8790ea7aa1/trace.jsonl`
+- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-54e41e47ef7b/trace.jsonl`
 - Events: `224`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

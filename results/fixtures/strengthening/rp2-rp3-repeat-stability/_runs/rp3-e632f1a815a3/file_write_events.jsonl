@@ -1,0 +1,1 @@
+{"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./planned-output/remote-url-fetch-negative-control.md", "sha256": "sha256:bf6757a1ef35f005f533cf6e8047cacf7c904fba3efd409dc6814a197997d4ea", "size": 844, "status": "succeeded", "timestamp": "2026-11-11T23:41:51+00:00"}

@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "2faf9a09f9c2bab4aca086508a4664220c1514c38837d151cc932431ebe262da",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/lockfile-risk-summary.json",
+      "size": 698
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-08fab664eb24"
+}

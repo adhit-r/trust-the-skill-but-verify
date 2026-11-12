@@ -1,0 +1,10 @@
+{
+  "container_id": "25ab9b244bf3db0f23bbb60e7c14fb29daa1a5bb4d35ccd570f8da4a5460100f",
+  "leftover_paths": [
+    "<REPO_ROOT>/results/raw/rp3-9e8213b998a9"
+  ],
+  "removed_paths": [],
+  "run_id": "rp3-9e8213b998a9",
+  "status": "recorded_container_removed_by_docker_rm",
+  "timestamp": "2026-11-11T23:34:26+00:00"
+}

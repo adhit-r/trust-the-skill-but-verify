@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp3-cbf322ed00a8`
+- Run: `rp3-495691499e3a`
 - Runtime profile: `RP3`
 - Contract: `pdfplumber-public-pdf-table-extraction-plan`
-- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-cbf322ed00a8/trace.jsonl`
+- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-495691499e3a/trace.jsonl`
 - Events: `224`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

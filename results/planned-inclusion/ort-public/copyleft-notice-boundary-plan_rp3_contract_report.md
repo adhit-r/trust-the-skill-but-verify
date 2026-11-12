@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp3-d8bade2e6a04`
+- Run: `rp3-5c1b79153287`
 - Runtime profile: `RP3`
 - Contract: `ort-public-copyleft-notice-boundary-plan`
-- Trace: `results/raw/rp3-d8bade2e6a04/trace.jsonl`
+- Trace: `results/raw/rp3-5c1b79153287/trace.jsonl`
 - Events: `224`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

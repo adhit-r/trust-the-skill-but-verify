@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp3-aaf16f6c8fe9`
+- Run: `rp3-b4dec0607dd9`
 - Runtime profile: `RP3`
 - Contract: `ticket-api-synthetic-credentialed-call-negative-control`
-- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-aaf16f6c8fe9/trace.jsonl`
+- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-b4dec0607dd9/trace.jsonl`
 - Events: `223`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

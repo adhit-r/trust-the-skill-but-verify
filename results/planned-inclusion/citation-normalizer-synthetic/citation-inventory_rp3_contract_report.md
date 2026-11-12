@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp3-13c59d71b7bf`
+- Run: `rp3-c2845e779234`
 - Runtime profile: `RP3`
 - Contract: `citation-normalizer-synthetic-citation-inventory`
-- Trace: `results/raw/rp3-13c59d71b7bf/trace.jsonl`
+- Trace: `results/raw/rp3-c2845e779234/trace.jsonl`
 - Events: `223`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

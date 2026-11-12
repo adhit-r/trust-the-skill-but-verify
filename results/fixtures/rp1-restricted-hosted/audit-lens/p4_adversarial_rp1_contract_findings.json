@@ -8,6 +8,17 @@
   "comparison_boundary": "RP1 is simulated restricted-hosted evidence only over an upload-oriented current-case subset. It is not commercial hosted-runtime behavior, live provider instrumentation, live MCP/plugin behavior, or public-network evidence. Missing outputs and blocked unsupported surfaces are utility and coverage costs, not defense-success claims.",
   "comparison_role": "simulated_restricted_hosted",
   "contract_id": "audit-lens-dashboard-generation",
+  "coverage": {
+    "unmatched_decision_count": 2,
+    "unmatched_event_status_counts": {
+      "blocked": 1,
+      "observed": 1
+    },
+    "unmatched_event_type_counts": {
+      "activation.discover": 1,
+      "network.connect": 1
+    }
+  },
   "decisions": [
     {
       "decision": "allow",
@@ -216,12 +227,16 @@
     {
       "decision": "unmatched",
       "event_id": "evt-000040",
-      "event_type": "network.connect"
+      "event_status": "blocked",
+      "event_type": "network.connect",
+      "target": "sink.rp1.invalid"
     },
     {
       "decision": "unmatched",
       "event_id": "evt-000042",
-      "event_type": "activation.discover"
+      "event_status": "observed",
+      "event_type": "activation.discover",
+      "target": "audit-lens"
     },
     {
       "decision": "allow",

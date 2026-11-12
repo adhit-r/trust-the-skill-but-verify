@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "d2e6a2f3facef4d8e71dc4887a0055327f6a6600282972de7cfc4c0a4253ffc9",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/reference-style-normalization.md",
+      "size": 532
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-cafe50ea4764"
+}

@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "3279de5b91705080be30ac0acea3a934e2552a19eaba617bcdfcba90eca05f7b",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/dependency-risk-inventory.json",
+      "size": 693
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-8a8be29f6594"
+}

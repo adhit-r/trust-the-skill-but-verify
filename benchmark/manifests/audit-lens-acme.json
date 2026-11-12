@@ -120,13 +120,13 @@
   },
   "canonical_traces": {
     "p3_benign_rp2": "results/raw/rp2-c818465db8d3/trace.jsonl",
-    "p3_benign_rp3": "results/raw/rp3-7b0164ca28fd/trace.jsonl",
+    "p3_benign_rp3": "results/raw/rp3-b5245e8c490d/trace.jsonl",
     "p3_adversarial_rp2": "results/raw/rp2-6c88446c2439/trace.jsonl",
-    "p3_adversarial_rp3": "results/raw/rp3-d49f59333831/trace.jsonl",
+    "p3_adversarial_rp3": "results/raw/rp3-772a8f53df73/trace.jsonl",
     "p4_benign_rp2": "results/raw/rp2-e9c94577a846/trace.jsonl",
-    "p4_benign_rp3": "results/raw/rp3-9a17551778b0/trace.jsonl",
+    "p4_benign_rp3": "results/raw/rp3-f6e72fe11116/trace.jsonl",
     "p4_adversarial_rp2": "results/raw/rp2-ddd85eedcc33/trace.jsonl",
-    "p4_adversarial_rp3": "results/raw/rp3-9a6819754a76/trace.jsonl"
+    "p4_adversarial_rp3": "results/raw/rp3-a13e94c945fd/trace.jsonl"
   },
   "observed_result": {
     "benign_cases_clean": true,

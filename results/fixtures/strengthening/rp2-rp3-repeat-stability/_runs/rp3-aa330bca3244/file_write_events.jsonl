@@ -1,1 +1,0 @@
-{"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./planned-output/parser-sandbox-boundary-report.md", "sha256": "sha256:01aca5630b3fdd23cff84529c94d3f1aa8df77eab8c7349365749ca51cca0cad", "size": 877, "status": "succeeded", "timestamp": "2026-05-29T17:20:16+00:00"}

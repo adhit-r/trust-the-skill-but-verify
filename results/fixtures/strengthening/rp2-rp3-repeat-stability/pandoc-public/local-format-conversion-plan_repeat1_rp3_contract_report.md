@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp3-8cffc6c0ad0d`
+- Run: `rp3-cbd3d6ef0f48`
 - Runtime profile: `RP3`
 - Contract: `pandoc-public-local-format-conversion-plan`
-- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-8cffc6c0ad0d/trace.jsonl`
+- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-cbd3d6ef0f48/trace.jsonl`
 - Events: `224`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

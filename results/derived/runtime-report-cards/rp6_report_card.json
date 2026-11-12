@@ -461,9 +461,9 @@
         "D1": {
           "denominator": 88,
           "notes": [],
-          "numerator": 8,
+          "numerator": 0,
           "supported": true,
-          "value": 0.090909
+          "value": 0.0
         },
         "D2": {
           "denominator": 88,
@@ -475,9 +475,9 @@
         "D3": {
           "denominator": 88,
           "notes": [],
-          "numerator": 1,
+          "numerator": 13,
           "supported": true,
-          "value": 0.011364
+          "value": 0.147727
         },
         "D4": {
           "denominator": 88,
@@ -499,11 +499,11 @@
       "pairwise_disagreement_rate": {
         "denominator": 88,
         "notes": [],
-        "numerator": 11,
+        "numerator": 13,
         "supported": true,
-        "value": 0.125
+        "value": 0.147727
       },
-      "pairwise_disagreements": 53,
+      "pairwise_disagreements": 57,
       "runtime_drift_candidate_pairs": 0
     },
     {
@@ -512,23 +512,23 @@
         "D1": {
           "denominator": 88,
           "notes": [],
-          "numerator": 8,
+          "numerator": 0,
           "supported": true,
-          "value": 0.090909
+          "value": 0.0
         },
         "D2": {
           "denominator": 88,
           "notes": [],
-          "numerator": 2,
+          "numerator": 3,
           "supported": true,
-          "value": 0.022727
+          "value": 0.034091
         },
         "D3": {
           "denominator": 88,
           "notes": [],
-          "numerator": 0,
+          "numerator": 12,
           "supported": true,
-          "value": 0.0
+          "value": 0.136364
         },
         "D4": {
           "denominator": 88,
@@ -550,11 +550,11 @@
       "pairwise_disagreement_rate": {
         "denominator": 88,
         "notes": [],
-        "numerator": 10,
+        "numerator": 12,
         "supported": true,
-        "value": 0.113636
+        "value": 0.136364
       },
-      "pairwise_disagreements": 21,
+      "pairwise_disagreements": 30,
       "runtime_drift_candidate_pairs": 0
     }
   ],

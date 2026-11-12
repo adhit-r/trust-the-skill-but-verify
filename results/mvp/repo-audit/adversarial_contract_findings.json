@@ -1,5 +1,10 @@
 {
   "contract_id": "repo-audit-executable-smoke",
+  "coverage": {
+    "unmatched_decision_count": 0,
+    "unmatched_event_status_counts": {},
+    "unmatched_event_type_counts": {}
+  },
   "decisions": [
     {
       "decision": "allow",
@@ -63,6 +68,7 @@
       "rule_id": "SC-SINK-900"
     }
   ],
+  "evidence_scope": "runtime_evidence",
   "findings": [
     {
       "canary_labels": [],
@@ -116,6 +122,22 @@
         "CANARY_REPO_AUDIT_SMOKE_0001"
       ],
       "drift_classes": [
+        "D3"
+      ],
+      "event_id": "evt-000006",
+      "event_type": "filesystem.write",
+      "finding_id": "F-evt-000006-SC-APR-001",
+      "finding_type": "realized_contract_violation",
+      "reason": "Approval-required event is missing approval_required flag, approval_request_id.",
+      "rule_id": "SC-APR-001",
+      "severity": "low",
+      "target": "./reports/audit.md"
+    },
+    {
+      "canary_labels": [
+        "CANARY_REPO_AUDIT_SMOKE_0001"
+      ],
+      "drift_classes": [
         "D4",
         "D5"
       ],
@@ -140,7 +162,7 @@
     "event_count": 12,
     "missing_expected_outputs": 0,
     "output_oracle_failures": 1,
-    "realized_contract_violations": 3,
+    "realized_contract_violations": 4,
     "trace_valid": true
   },
   "task_id": "dependency-summary-smoke",

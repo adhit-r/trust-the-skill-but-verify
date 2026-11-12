@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp3-33b9bf01042b`
+- Run: `rp3-26db768e6ee8`
 - Runtime profile: `RP3`
 - Contract: `lexara-guardia-workflow-first-party-consent-api-route-inventory`
-- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-33b9bf01042b/trace.jsonl`
+- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-26db768e6ee8/trace.jsonl`
 - Events: `224`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "549486ba388b24a84ccbd8a41e5b9204bca6600b47beccfa1f3d93416e7fbc06",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/binary-hidden-boundary-report.md",
+      "size": 849
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-b405f236601c"
+}

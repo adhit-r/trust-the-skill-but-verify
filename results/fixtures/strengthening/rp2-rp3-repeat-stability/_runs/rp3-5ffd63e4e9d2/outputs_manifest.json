@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "01e97f34fd28eaf00eea2a1de7c5ac899dc268ccf12045e6ceb5e4fc5d0c8b41",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/dsar-workflow-state-plan.md",
+      "size": 885
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-5ffd63e4e9d2"
+}

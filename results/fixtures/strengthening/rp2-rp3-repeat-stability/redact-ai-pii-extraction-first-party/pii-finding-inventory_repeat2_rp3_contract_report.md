@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp3-46641b445c4a`
+- Run: `rp3-ee0ce184366a`
 - Runtime profile: `RP3`
 - Contract: `redact-ai-pii-extraction-first-party-pii-finding-inventory`
-- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-46641b445c4a/trace.jsonl`
+- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-ee0ce184366a/trace.jsonl`
 - Events: `224`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

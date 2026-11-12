@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp3-03d6647280f3`
+- Run: `rp3-30251536b1f0`
 - Runtime profile: `RP3`
 - Contract: `playwright-mcp-public-tool-inventory-summary`
-- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-03d6647280f3/trace.jsonl`
+- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-30251536b1f0/trace.jsonl`
 - Events: `224`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

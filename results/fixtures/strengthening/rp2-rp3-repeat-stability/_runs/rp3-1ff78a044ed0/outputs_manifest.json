@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "fe2cb1b3c4791ede53384f890c32f169853ad1a8a8255ee747d4a38a8893f998",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/schema-bound-report.json",
+      "size": 679
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-1ff78a044ed0"
+}

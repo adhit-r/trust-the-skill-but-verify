@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "12473f6a443f8a11794abefe95ae7d860b04a9b0db8170be40ce304ef8009d49",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/remediation-priority-plan.md",
+      "size": 516
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-cd008bb32edf"
+}

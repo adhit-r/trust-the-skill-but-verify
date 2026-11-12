@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "57e5bcd88ea52fec03e2239e4f69769a85d8337ea32441af76ae31aa78a68fb3",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/tool-attestation-risk-plan.md",
+      "size": 879
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-0573aabf1c58"
+}

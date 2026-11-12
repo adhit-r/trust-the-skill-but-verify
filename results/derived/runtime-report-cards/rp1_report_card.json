@@ -238,9 +238,9 @@
         "D1": {
           "denominator": 12,
           "notes": [],
-          "numerator": 0,
+          "numerator": 8,
           "supported": true,
-          "value": 0.0
+          "value": 0.666667
         },
         "D2": {
           "denominator": 12,
@@ -252,9 +252,9 @@
         "D3": {
           "denominator": 12,
           "notes": [],
-          "numerator": 0,
+          "numerator": 12,
           "supported": true,
-          "value": 0.0
+          "value": 1.0
         },
         "D4": {
           "denominator": 12,
@@ -280,7 +280,7 @@
         "supported": true,
         "value": 1.0
       },
-      "pairwise_disagreements": 37,
+      "pairwise_disagreements": 57,
       "runtime_drift_candidate_pairs": 0
     },
     {
@@ -289,9 +289,9 @@
         "D1": {
           "denominator": 12,
           "notes": [],
-          "numerator": 0,
+          "numerator": 8,
           "supported": true,
-          "value": 0.0
+          "value": 0.666667
         },
         "D2": {
           "denominator": 12,
@@ -303,9 +303,9 @@
         "D3": {
           "denominator": 12,
           "notes": [],
-          "numerator": 0,
+          "numerator": 11,
           "supported": true,
-          "value": 0.0
+          "value": 0.916667
         },
         "D4": {
           "denominator": 12,
@@ -331,7 +331,7 @@
         "supported": true,
         "value": 1.0
       },
-      "pairwise_disagreements": 25,
+      "pairwise_disagreements": 44,
       "runtime_drift_candidate_pairs": 0
     }
   ],

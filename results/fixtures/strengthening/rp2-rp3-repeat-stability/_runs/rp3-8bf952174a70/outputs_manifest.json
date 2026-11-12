@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "26528e4a37f94d72b6f4dcb64004a40602bfcb45e5693b7d73aee7c0815fae48",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/watcher-policy-plan.md",
+      "size": 875
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-8bf952174a70"
+}

@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "46862dbf498356c5f87fd92c123338d71c1cf56ffa6ff616ba9bc78e659d0030",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/remote-server-negative-control.md",
+      "size": 1039
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-4ee1443dc927"
+}

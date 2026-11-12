@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "63ce11885af4d2a09fb294f528febaabd78f759fd06f9c81608bc72a0d1d70df",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/copyleft-boundary-refusal.json",
+      "size": 711
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-8a50a445799e"
+}

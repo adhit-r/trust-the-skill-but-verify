@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "bf5b993e0030712b2dde3b2f12574999fe8c689c0f9ca52d3a96edd93873b444",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/credentialed-live-api-negative-control.md",
+      "size": 854
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-36524b561598"
+}

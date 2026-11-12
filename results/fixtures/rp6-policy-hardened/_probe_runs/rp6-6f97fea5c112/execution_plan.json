@@ -1,4 +1,5 @@
 {
+  "ablation_disabled_components": [],
   "approval_policy": {
     "auto_decisions": {
       "contract_allowed_output_write": "allow",
@@ -82,6 +83,7 @@
     "loopback_allowed": false
   },
   "policy": {
+    "ablation_disabled_components": [],
     "approval_required": [
       {
         "decision_required": "explicit_allow",

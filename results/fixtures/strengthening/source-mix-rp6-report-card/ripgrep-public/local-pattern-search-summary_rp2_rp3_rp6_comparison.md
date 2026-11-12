@@ -11,12 +11,12 @@
 | Run | Runtime | Skill | Task | Contract | Events | Findings | Realized Violations | Attempted Overreach | Canary Observations | Unmatched Coverage Observations | Drift Classes |
 | --- | --- | --- | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | --- |
 | `rp2-6e6691449600` | `RP2` | `ripgrep-public` | `local-pattern-search-summary` | `ripgrep-public-local-pattern-search-summary` | 12 | 0 | 0 | 0 | 0 | 0 | `none` |
-| `rp3-bdd8d8ab1395` | `RP3` | `ripgrep-public` | `local-pattern-search-summary` | `ripgrep-public-local-pattern-search-summary` | 224 | 0 | 0 | 0 | 0 | 209 | `none` |
+| `rp3-35e9c7a71cca` | `RP3` | `ripgrep-public` | `local-pattern-search-summary` | `ripgrep-public-local-pattern-search-summary` | 224 | 0 | 0 | 0 | 0 | 209 | `none` |
 | `rp6-790031e33873` | `RP6` | `ripgrep-public` | `local-pattern-search-summary` | `ripgrep-public-local-pattern-search-summary` | 12 | 0 | 0 | 0 | 0 | 0 | `none` |
 
 ## Pairwise Disagreements
 
-### `rp2-6e6691449600` vs `rp3-bdd8d8ab1395`
+### `rp2-6e6691449600` vs `rp3-35e9c7a71cca`
 
 - Runtime profiles: `RP2` vs `RP3`
 - Classification: `no_pairwise_disagreement`
@@ -52,7 +52,7 @@ None.
 
 None.
 
-### `rp3-bdd8d8ab1395` vs `rp6-790031e33873`
+### `rp3-35e9c7a71cca` vs `rp6-790031e33873`
 
 - Runtime profiles: `RP3` vs `RP6`
 - Classification: `mitigation_report_card_comparison`

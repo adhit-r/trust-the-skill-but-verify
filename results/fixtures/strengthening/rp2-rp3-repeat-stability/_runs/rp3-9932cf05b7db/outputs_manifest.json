@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "160474c730df3a277135ef82e183b07ce3011f5dd0ef5c0c7a6dac50000fd541",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/credentialed-live-webhook-negative-control.md",
+      "size": 1030
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-9932cf05b7db"
+}

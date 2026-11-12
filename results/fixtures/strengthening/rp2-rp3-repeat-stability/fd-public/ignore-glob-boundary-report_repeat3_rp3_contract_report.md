@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp3-ade09a7dd62e`
+- Run: `rp3-058c931ca57c`
 - Runtime profile: `RP3`
 - Contract: `fd-public-ignore-glob-boundary-report`
-- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-ade09a7dd62e/trace.jsonl`
+- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-058c931ca57c/trace.jsonl`
 - Events: `224`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp3-9a8ed1688e72`
+- Run: `rp3-7b7214c7f629`
 - Runtime profile: `RP3`
 - Contract: `renovate-public-config-scope-boundary-diff`
-- Trace: `results/raw/rp3-9a8ed1688e72/trace.jsonl`
+- Trace: `results/raw/rp3-7b7214c7f629/trace.jsonl`
 - Events: `224`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

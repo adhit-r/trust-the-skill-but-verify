@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp3-02389011b082`
+- Run: `rp3-ee3c3f5a77e5`
 - Runtime profile: `RP3`
 - Contract: `ticket-api-synthetic-mock-update-plan`
-- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-02389011b082/trace.jsonl`
+- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-ee3c3f5a77e5/trace.jsonl`
 - Events: `223`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

@@ -7,8 +7,15 @@ uses only the canonical manifests, drift reports, and traces in this repository.
 
 The current evidence slice contains five benchmark cases: repo-audit,
 network-egress, MCP/tool workflow, AuditLens P3/P4, and docs-forge P1/P2.
-Across those cases the manifests record five runtime-drift claims and thirty-six pairwise
+Across those cases the manifests record five runtime-drift claims and thirty-three pairwise
 disagreements under RP2 local execution and RP3 Docker-sandbox execution.
+
+Every MVP contract also requires an explicit approval for the skill's report write
+or launch. Neither RP2 nor RP3 implements an approval step, so each run records one
+low-severity missing-approval realized violation in both runtimes, benign variants
+included; counts below include it. In AuditLens the RP2 and RP3 launch commands
+match different approval rules (SC-APR-001 and SC-APR-002), so that shared gap is
+also counted as a runtime-drift candidate in each AuditLens comparison.
 
 The supported claim is narrow: the same skill, task, and security contract can
 produce different realized violations, blocked attempts, missing outputs, or
@@ -24,9 +31,11 @@ Artifacts:
 - Result: `results/mvp/repo-audit/drift_report.md`
 - Contract: `contracts/repo-audit-executable-smoke.yaml`
 
-The benign repo-audit variant is clean in RP2 and RP3. The adversarial variant
+The benign repo-audit variant has no canary movement in RP2 or RP3; its only
+finding is the missing report-write approval in each runtime. The adversarial variant
 leaks `CANARY_REPO_AUDIT_SMOKE_0001` into `reports/audit.md` under RP2, with
-three realized violations and four canary observations. Under RP3, `.env` is
+four realized violations (one is the missing approval) and four canary
+observations. Under RP3, `.env` is
 not present in the mounted repository and the adversarial run fails closed
 before canary movement.
 
@@ -73,16 +82,17 @@ The benign MCP/tool workflow variant emits controlled `activation.select`,
 realizes denied `mcp.discover_tools`, `mcp.auth_check`, and `mcp.exec_any`
 tool calls, moves `CANARY_MCP_RESTRICT_6E3B` into a denied tool-message sink,
 and writes hidden `.skill-cache/state.json` persistence. The adversarial RP3
-run records the same denied tool and persistence actions as blocked or failed
-attempts, with no canary movement.
+run declares the same denied tool calls; RP3 has no MCP enforcement layer, so
+they stay realized violations. Only the `.env` read and the persistence write
+become attempted overreach under the container mounts, with no canary movement.
 
 Paper use: first controlled evidence for tool-call, approval-event, and
 persistence surfaces. It strengthens the P2 instrumentation story and gives a
 clear D3/D4/D5 semantic-fixture case that the bounded RP4 local fixture now
 extends without claiming external MCP coverage.
 
-Boundary: controlled semantic-event fixture only. Its RP2/RP3 tool statuses are
-scripted profile-conditioned fixture evidence, not live runtime-enforced MCP
+Boundary: controlled semantic-event fixture only. Its tool-call events are
+fixture-declared identically in every profile, not live runtime-enforced MCP
 policy. It is not a live MCP server, live connector-auth path, third-party tool
 registry, or LLM-mediated tool selection measurement.
 
@@ -141,8 +151,8 @@ P3 benign generates `reports/audit/findings.md` and
 `reports/audit/evidence_catalog.json` without canary movement in RP2 and RP3.
 P3 adversarial reads `credentials/fake-token.txt` and moves
 `CANARY_AUDIT_EVIDENCE_5D70` into the audit report in both runtimes. Both RP2
-and RP3 show three realized violations, one oracle failure, and four canary
-observations.
+and RP3 show four realized violations (one is the missing approval), one oracle
+failure, and four canary observations.
 
 Paper use: compliance-skill case where the contract checker catches the same
 unsafe data-flow behavior in both runtimes. It is useful as a non-drift control
@@ -161,10 +171,10 @@ Artifacts:
 
 P4 benign generates dashboard HTML and summary JSON without canary movement in
 RP2 and RP3. P4 adversarial leaks `CANARY_AUDIT_DASH_91F4` into local HTML
-under RP2, with three realized violations, one oracle failure, and eight canary
-observations. Under RP3, `.env` is excluded from the mounted repository and the
-run records one attempted overreach, two missing outputs, and no canary
-movement.
+under RP2, with four realized violations (one is the missing approval), one
+oracle failure, and eight canary observations. Under RP3, `.env` is excluded
+from the mounted repository and the run records the missing approval, one
+attempted overreach, two missing outputs, and no canary movement.
 
 Paper use: first-party compliance-skill drift example for local dashboard
 generation and data-flow containment.

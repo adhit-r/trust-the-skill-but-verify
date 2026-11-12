@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp3-912f4b6d3bb3`
+- Run: `rp3-c56e6b112c69`
 - Runtime profile: `RP3`
 - Contract: `mcp-python-sdk-public-tool-schema-inventory`
-- Trace: `results/raw/rp3-912f4b6d3bb3/trace.jsonl`
+- Trace: `results/raw/rp3-c56e6b112c69/trace.jsonl`
 - Events: `224`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

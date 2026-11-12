@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "2d46eb652fac95dbfae25777f887bdce642cb408a28122b00bbf35c9897d116a",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/connector-credential-export-negative-control.md",
+      "size": 899
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-5fd78100d271"
+}

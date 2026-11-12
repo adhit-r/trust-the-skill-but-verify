@@ -20,8 +20,8 @@ claims, public-internet testing claims, or syscall-complete tracing claims.
 | CL-MVP-001 | Five controlled case families | `benchmark/manifests/skilldiff-mvp-baseline.json` |
 | CL-MVP-002 | Twenty-eight paper-facing canonical trace files | `benchmark/manifests/skilldiff-mvp-baseline.json` |
 | CL-MVP-003 | 234 tracked raw trace files including older smoke traces, expanded runtime fixtures, bounded RP4 fixture traces, and RP6 current-case report-card traces | `results/raw/*/trace.jsonl` |
-| CL-MVP-004 | Five runtime-drift claims across RP2/RP3 | `benchmark/manifests/skilldiff-mvp-baseline.json` |
-| CL-MVP-005 | Thirty-six pairwise disagreements across RP2/RP3 | `benchmark/manifests/skilldiff-mvp-baseline.json` |
+| CL-MVP-004 | Five runtime-drift claims across RP2/RP3 in the baseline manifest (eight across all MVP comparisons) | `benchmark/manifests/skilldiff-mvp-baseline.json` |
+| CL-MVP-005 | Thirty-three pairwise disagreements across RP2/RP3 in the baseline manifest (thirty-nine across all MVP comparisons) | `benchmark/manifests/skilldiff-mvp-baseline.json` |
 | CL-MVP-007 | Two first-party seed case families: AuditLens and docs-forge | Baseline manifest |
 | CL-MVP-008 | Three controlled synthetic case families: repo-audit, network-egress, and MCP/tool workflow | Baseline manifest |
 | CL-MVP-009 | Fourteen RP2/RP3 comparison JSON files and twenty-eight contract-finding JSON files | `results/mvp/*/*.json` |
@@ -62,7 +62,7 @@ claims, public-internet testing claims, or syscall-complete tracing claims.
 | CL-P1-007 | Methodology and limitation prose includes reviewer-objection responses plus machine-checked claim-boundary validation without firstness, prevalence, defense-success, Semia-equivalence, commercial-runtime, public-release, external-review, or completed-human-review claims | `paper/method-boundaries.md`; `tools/validate_paper_claim_boundaries.py` |
 | CL-CASE-001 | Repo-audit adversarial RP2/RP3 outcome counts | Baseline manifest and repo-audit result artifacts |
 | CL-CASE-002 | Network-egress adversarial RP2/RP3 outcome counts | Baseline manifest and network-egress result artifacts |
-| CL-CASE-003 | AuditLens contributes one drift claim and seven pairwise disagreements | Baseline manifest |
+| CL-CASE-003 | AuditLens contributes one drift claim and nine pairwise disagreements | Baseline manifest |
 | CL-CASE-004 | docs-forge contributes two drift claims and eight pairwise disagreements | Baseline manifest |
 | CL-CASE-005 | MCP/tool workflow adversarial RP2/RP3 outcome counts | Baseline manifest and MCP/tool workflow result artifacts |
 | CL-GATE3-001 | Current benchmark manifest records 44 skills and 132 skill-task-contract triples after adding 24 first-party/public source-provenance families; seventy-two selected source-mix cases across twenty-four first-party/public families have controlled RP2/RP3 fixture evidence and the current source-mix metadata-only count is zero, without claiming source-mix evidence completion, prevalence, live product behavior, or paper-grade 40/120 execution completion | `benchmark/manifests/benchmark-cases-current.json` |
@@ -77,7 +77,7 @@ claims, public-internet testing claims, or syscall-complete tracing claims.
 | CL-GATE5-004 | Gate 5 review-packet index expands the queue into 132 packet-index records with 122 comparison refs, 244 run refs, 244 trace refs, zero finding refs, 122 runtime-pair review units, and 10 metadata-only blocked packets, without claiming raw trace content, completed reviews, reviewer agreement, adjudication, statistics, prevalence, or paper-grade completion | `benchmark/review/gate5-review-packet-index.json` |
 | CL-GATE5-005 | Gate 5 blinded packet bundle derives from the frozen packet index and exports 122 first-pass runtime-label-blinded pair-review packets while keeping 10 unmapped packets blocked as metadata-only records, without claiming raw trace content, completed reviews, reviewer agreement, adjudication, statistics, prevalence, commercial-runtime behavior, or paper-grade completion | `benchmark/review/gate5-blinded-packet-bundle.json` |
 | CL-GATE5-006 | Gate 5 review export template package creates two blank first-pass human-review templates over the same 122 blinded pair-review units while keeping 10 unmapped packets blocked, without claiming completed human reviews, human reviewer identities, Codex-assisted human-review substitution, reviewer agreement, adjudication, statistics, prevalence, or paper-grade completion | `benchmark/review/gate5-review-export-templates.json` |
-| CL-GATE5-007 | Gate 5 non-human interval artifact computes 36 Wilson intervals, 18 case-bootstrap intervals, 6 hierarchical skill/case bootstrap intervals, and paired-runtime majority/median/max-severity summaries over the curated 132-case denominator and 214 paired-runtime pair records, while keeping completed human review at zero and making no McNemar, reviewer-agreement, adjudication, prevalence, source-mix evidence-completion, commercial-runtime-behavior, defense-success, or paper-grade-completion claim | `results/derived/gate5-statistical-intervals.json` |
+| CL-GATE5-007 | Gate 5 non-human interval artifact computes 37 Wilson intervals, 18 case-bootstrap intervals, 6 hierarchical skill/case bootstrap intervals, and paired-runtime majority/median/max-severity summaries over the curated 132-case denominator and 214 paired-runtime pair records, while keeping completed human review at zero and making no McNemar, reviewer-agreement, adjudication, prevalence, source-mix evidence-completion, commercial-runtime-behavior, defense-success, or paper-grade-completion claim | `results/derived/gate5-statistical-intervals.json` |
 
 ## Boundary Claims
 

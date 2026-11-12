@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp3-e46f26a7677a`
+- Run: `rp3-8b5ef036da2a`
 - Runtime profile: `RP3`
 - Contract: `ci-triage-synthetic-flaky-test-register`
-- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-e46f26a7677a/trace.jsonl`
+- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-8b5ef036da2a/trace.jsonl`
 - Events: `223`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

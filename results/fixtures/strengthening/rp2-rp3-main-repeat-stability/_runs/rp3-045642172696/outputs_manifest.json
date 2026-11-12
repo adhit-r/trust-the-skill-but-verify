@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "9847f55877c7283a90e1c70611ee98f81616c4d8878431971ec365c8c53b12e7",
+  "generated_outputs": [
+    {
+      "path": "./outputs/non-export-report.json",
+      "size": 202
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-045642172696"
+}

@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "2d0780a8f4e4c3ee73378edb79b844609af4cb0b094e0bcf23e7bd2ba9740a0a",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/tokenless-pr-creation-negative-control.md",
+      "size": 1035
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-3f2de5f4d5a1"
+}

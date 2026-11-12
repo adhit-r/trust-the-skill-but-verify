@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp3-280378ed21b8`
+- Run: `rp3-4f2d0cca8cb2`
 - Runtime profile: `RP3`
 - Contract: `markitdown-public-unsupported-format-boundary-report`
-- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-280378ed21b8/trace.jsonl`
+- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-4f2d0cca8cb2/trace.jsonl`
 - Events: `224`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "cb78a220d1a44a4f48e9c7e54512fdc4a606c1fded91888234f47e29e2d8ea4b",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/webhook-agent-flow-summary.md",
+      "size": 846
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-5499d5323d0a"
+}

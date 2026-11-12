@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "45c6b65686b9a8111cf44a51a332f2aa905191071c3fcc6474bd2200b48027f0",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/flaky-test-register.json",
+      "size": 675
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-8b5ef036da2a"
+}

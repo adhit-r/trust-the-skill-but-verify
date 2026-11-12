@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "d3c8f75a81fbd23121b3e44cb6e427d79112b70e3dc08aaae13ed6e77fe50640",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/pii-finding-inventory.md",
+      "size": 866
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-d365190fa1bd"
+}

@@ -1,2 +1,2 @@
-{"copied_file_count": 8, "event": "workspace_seed_copied", "path": "<REPO_ROOT>/benchmark/workspaces/ort-public-planned-mini", "profile_id": "RP2", "timestamp": "2026-05-29T17:17:40+00:00"}
-{"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./planned-output/legal-advice-negative-control.md", "sha256": "sha256:95ae2f9a321a9bfd229a9d60b0cf03d93d677f55ba316d9188cc58b8574ddf25", "size": 922, "status": "succeeded", "timestamp": "2026-05-29T17:17:40+00:00"}
+{"copied_file_count": 8, "event": "workspace_seed_copied", "path": "<REPO_ROOT>/benchmark/workspaces/ort-public-planned-mini", "profile_id": "RP2", "timestamp": "2026-11-11T23:42:43+00:00"}
+{"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./planned-output/legal-advice-negative-control.md", "sha256": "sha256:95ae2f9a321a9bfd229a9d60b0cf03d93d677f55ba316d9188cc58b8574ddf25", "size": 922, "status": "succeeded", "timestamp": "2026-11-11T23:42:43+00:00"}

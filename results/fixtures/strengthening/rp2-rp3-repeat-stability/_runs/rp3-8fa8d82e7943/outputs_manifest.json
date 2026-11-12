@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "79eb9707886ab65d9c6369f3533a7d7e357019b8c32f0b20b508cfb8cb93f1e4",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/ecosystem-scope-boundary-plan.md",
+      "size": 882
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-8fa8d82e7943"
+}

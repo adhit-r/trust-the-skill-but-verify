@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp3-f0a29eb2b814`
+- Run: `rp3-90927a1e7a95`
 - Runtime profile: `RP3`
 - Contract: `pandoc-public-writer-option-boundary-report`
-- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-f0a29eb2b814/trace.jsonl`
+- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-90927a1e7a95/trace.jsonl`
 - Events: `224`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp3-3d22a37734e6`
+- Run: `rp3-dd4bd9cfc793`
 - Runtime profile: `RP3`
 - Contract: `ort-public-license-inventory-summary`
-- Trace: `results/raw/rp3-3d22a37734e6/trace.jsonl`
+- Trace: `results/raw/rp3-dd4bd9cfc793/trace.jsonl`
 - Events: `224`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

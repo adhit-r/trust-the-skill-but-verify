@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "9b61bc0e5782880fcfc6b95c6f11988bcb9db07310b7b969e9787bbc4b862229",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/unauthorized-user-file-scan-negative-control.md",
+      "size": 903
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-bc7513e673d0"
+}

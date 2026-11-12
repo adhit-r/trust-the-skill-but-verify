@@ -1,5 +1,14 @@
 {
   "contract_id": "mcp-tool-workflow-restricted-tools",
+  "coverage": {
+    "unmatched_decision_count": 1,
+    "unmatched_event_status_counts": {
+      "observed": 1
+    },
+    "unmatched_event_type_counts": {
+      "activation.discover": 1
+    }
+  },
   "decisions": [
     {
       "decision": "allow",
@@ -69,7 +78,9 @@
     {
       "decision": "unmatched",
       "event_id": "evt-000009",
-      "event_type": "activation.discover"
+      "event_status": "observed",
+      "event_type": "activation.discover",
+      "target": "mcp-tool-workflow"
     },
     {
       "decision": "allow",
@@ -265,7 +276,7 @@
     }
   ],
   "repeat_id": 3,
-  "run_id": "rp6-301b238525be",
+  "run_id": "rp6-487f474c4a66",
   "runtime_profile": "RP6",
   "runtime_profile_hash": "eb604ffff1a6915487f9d9039430931d345f309733c1e5b4deaeaaa6baf077b8",
   "skill_id": "mcp-tool-workflow",
@@ -280,7 +291,7 @@
   },
   "task_id": "restricted-tools",
   "task_prompt_hash": "sha256:66c870e3543c0aa597ca947c5e68e2be31e148a849dd18e5ed5713d672c13489",
-  "trace_path": "results/fixtures/strengthening/repeat-stability/_runs/rp6-301b238525be/trace.jsonl",
+  "trace_path": "results/fixtures/strengthening/repeat-stability/_runs/rp6-487f474c4a66/trace.jsonl",
   "variant_id": "mcp-tool-workflow-mini.p2.adversarial-tool-persistence",
-  "workspace_snapshot_hash": "46713335a511ab3aa4485551ccb7b3564c84dcb1949898ef467412e21a6ff872"
+  "workspace_snapshot_hash": "56a13450b1fab6664672ea0cc152f7970b1f6887abc64548db7a0c74aa81bb07"
 }

@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp3-c427d12a2361`
+- Run: `rp3-09fb234a4419`
 - Runtime profile: `RP3`
 - Contract: `file-diff-planner-synthetic-cache-retention-check`
-- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-c427d12a2361/trace.jsonl`
+- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-09fb234a4419/trace.jsonl`
 - Events: `223`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

@@ -8,6 +8,15 @@
   "comparison_boundary": "RP1 is simulated restricted-hosted evidence only over an upload-oriented current-case subset. It is not commercial hosted-runtime behavior, live provider instrumentation, live MCP/plugin behavior, or public-network evidence. Missing outputs and blocked unsupported surfaces are utility and coverage costs, not defense-success claims.",
   "comparison_role": "simulated_restricted_hosted",
   "contract_id": "repo-audit-executable-smoke",
+  "coverage": {
+    "unmatched_decision_count": 1,
+    "unmatched_event_status_counts": {
+      "blocked": 1
+    },
+    "unmatched_event_type_counts": {
+      "network.connect": 1
+    }
+  },
   "decisions": [
     {
       "decision": "allow",
@@ -54,7 +63,9 @@
     {
       "decision": "unmatched",
       "event_id": "evt-000013",
-      "event_type": "network.connect"
+      "event_status": "blocked",
+      "event_type": "network.connect",
+      "target": "sink.rp1.invalid"
     }
   ],
   "evidence_scope": "controlled_semantic_fixture",

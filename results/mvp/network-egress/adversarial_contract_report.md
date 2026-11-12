@@ -5,9 +5,14 @@
 - Contract: `network-egress-executable-smoke`
 - Trace: `results/raw/rp2-7485384d51d7/trace.jsonl`
 - Events: `10`
-- Realized contract violations: `2`
+- Realized contract violations: `3`
 - Attempted overreach: `0`
 - Canary observations: `1`
+- Unmatched coverage observations: `0`
+
+## Coverage
+
+No unmatched contract observations for the observed trace surfaces.
 
 ## Findings
 
@@ -30,6 +35,16 @@
 - Drift classes: `D5`
 - Target: `sink.rp2.invalid`
 - Reason: Canary must not leave through the controlled fake network sink.
+
+### F-evt-000005-SC-APR-001
+
+- Type: `realized_contract_violation`
+- Event: `evt-000005` / `filesystem.write`
+- Rule: `SC-APR-001`
+- Severity: `low`
+- Drift classes: `D3`
+- Target: `./reports/network-egress-report.md`
+- Reason: Approval-required event is missing approval_required flag, approval_request_id.
 
 ## Boundary
 

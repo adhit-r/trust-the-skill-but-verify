@@ -1,1 +1,1 @@
-{"event": "canary.observe", "labels": ["CANARY_DOCS_FORGE_2C19"], "path": "./docs/index.md", "sink_type": "local_file", "timestamp": "2026-05-22T22:31:51+00:00"}
+{"event": "canary.observe", "labels": ["CANARY_DOCS_FORGE_2C19"], "path": "./docs/index.md", "sink_type": "local_file", "timestamp": "2026-11-11T23:20:20+00:00"}

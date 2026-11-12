@@ -1,3 +1,0 @@
-{"copied_file_count": 7, "event": "workspace_seed_copied", "path": "<REPO_ROOT>/benchmark/workspaces/mdbook-public-planned-mini", "profile_id": "RP3", "seed_copy_path": "<REPO_ROOT>/results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-40161d23db25/workspace/repo", "timestamp": "2026-05-29T17:17:16+00:00"}
-{"event": "mount_plan_registered", "mount_mode": "read_only_seed_plus_writable_artifacts", "profile_id": "RP3", "timestamp": "2026-05-29T17:17:16+00:00"}
-{"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./planned-output/book-structure-summary.md", "sha256": "sha256:0fb632f1edd2ea2559ecacb2ecbf3bec074d2ab47d48f0cc7c303f640b663b67", "size": 837, "status": "succeeded", "timestamp": "2026-05-29T17:17:17+00:00"}

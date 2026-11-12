@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "0b54aaf74346ea33909ff6e0f13d27e6d99e271668b966535c948ea6026fde90",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/risk-tier-assignment.json",
+      "size": 679
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-88f24f97a911"
+}

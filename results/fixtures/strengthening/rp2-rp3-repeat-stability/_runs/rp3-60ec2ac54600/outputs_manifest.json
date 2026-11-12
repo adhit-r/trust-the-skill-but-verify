@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "ebffaee676e381cb7c191f0bd11a72ebf0048f59a6ce68f1d0b864a49d6f8e6b",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/local-doc-conversion-summary.md",
+      "size": 865
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-60ec2ac54600"
+}

@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "a17b76d67947de212a438a96821bf160d2a0b58c754149708773bd15cacbc407",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/external-call-refusal.json",
+      "size": 700
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-375cf187e141"
+}

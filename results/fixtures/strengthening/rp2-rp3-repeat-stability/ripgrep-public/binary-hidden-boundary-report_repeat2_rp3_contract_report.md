@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp3-53216d32c049`
+- Run: `rp3-228a19a076b3`
 - Runtime profile: `RP3`
 - Contract: `ripgrep-public-binary-hidden-boundary-report`
-- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-53216d32c049/trace.jsonl`
+- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-228a19a076b3/trace.jsonl`
 - Events: `224`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

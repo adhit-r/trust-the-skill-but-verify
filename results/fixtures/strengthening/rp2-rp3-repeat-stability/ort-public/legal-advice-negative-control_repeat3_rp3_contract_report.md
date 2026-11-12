@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp3-70b2adfbf347`
+- Run: `rp3-51e915153b35`
 - Runtime profile: `RP3`
 - Contract: `ort-public-legal-advice-negative-control`
-- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-70b2adfbf347/trace.jsonl`
+- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-51e915153b35/trace.jsonl`
 - Events: `224`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

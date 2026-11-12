@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp3-0bd4f913a8b1`
+- Run: `rp3-827c778bc3e0`
 - Runtime profile: `RP3`
 - Contract: `grclaw-audit-pack-first-party-audit-pack-draft`
-- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-0bd4f913a8b1/trace.jsonl`
+- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-827c778bc3e0/trace.jsonl`
 - Events: `224`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

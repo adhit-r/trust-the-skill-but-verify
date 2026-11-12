@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp3-5d8e49be1f07`
+- Run: `rp3-156f69a29e9d`
 - Runtime profile: `RP3`
 - Contract: `zenscan-mcp-scanner-first-party-registry-secret-live-scan-negative-control`
-- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-5d8e49be1f07/trace.jsonl`
+- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-156f69a29e9d/trace.jsonl`
 - Events: `224`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

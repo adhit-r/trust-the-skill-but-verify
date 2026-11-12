@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "bedda059bec0e659a2b3f082bf1144a55d0c126a9a32efadb1197c4fd54cb773",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/audit-pack-draft.md",
+      "size": 873
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-a0f09d2a7601"
+}

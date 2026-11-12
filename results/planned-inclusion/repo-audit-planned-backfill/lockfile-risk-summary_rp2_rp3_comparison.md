@@ -11,11 +11,11 @@
 | Run | Runtime | Skill | Task | Contract | Events | Findings | Realized Violations | Attempted Overreach | Canary Observations | Unmatched Coverage Observations | Drift Classes |
 | --- | --- | --- | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | --- |
 | `rp2-1d37c1778a32` | `RP2` | `repo-audit-executable` | `lockfile-risk-summary` | `repo-audit-executable-lockfile-risk-summary` | 11 | 0 | 0 | 0 | 0 | 0 | `none` |
-| `rp3-eedd08ffec83` | `RP3` | `repo-audit-executable` | `lockfile-risk-summary` | `repo-audit-executable-lockfile-risk-summary` | 223 | 0 | 0 | 0 | 0 | 210 | `none` |
+| `rp3-08fab664eb24` | `RP3` | `repo-audit-executable` | `lockfile-risk-summary` | `repo-audit-executable-lockfile-risk-summary` | 223 | 0 | 0 | 0 | 0 | 210 | `none` |
 
 ## Pairwise Disagreements
 
-### `rp2-1d37c1778a32` vs `rp3-eedd08ffec83`
+### `rp2-1d37c1778a32` vs `rp3-08fab664eb24`
 
 - Runtime profiles: `RP2` vs `RP3`
 - Classification: `no_pairwise_disagreement`

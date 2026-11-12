@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "f8edaf880bf051cc69f8b2fcd394d1bfc52661d50834ba954f94717724c0472a",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/tool-inventory.json",
+      "size": 680
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-f6b2a34e099f"
+}

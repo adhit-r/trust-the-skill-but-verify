@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp3-e1a6238d840a`
+- Run: `rp3-bb499580cb4a`
 - Runtime profile: `RP3`
 - Contract: `tabular-privacy-synthetic-privacy-preserving-aggregate`
-- Trace: `results/raw/rp3-e1a6238d840a/trace.jsonl`
+- Trace: `results/raw/rp3-bb499580cb4a/trace.jsonl`
 - Events: `223`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

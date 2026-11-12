@@ -39,19 +39,19 @@ done < <(find benchmark/manifests -maxdepth 1 -name '*-planned*.json' -print0 | 
 "$PYTHON_BIN" tools/validate_data_extraction_mvp.py
 "$PYTHON_BIN" tools/validate_traces.py \
   results/raw/rp2-a4fa2e1ac41c/trace.jsonl \
-  results/raw/rp3-7f2abf86c6b8/trace.jsonl \
+  results/raw/rp3-790fec647c23/trace.jsonl \
   results/raw/rp2-41585d449341/trace.jsonl \
-  results/raw/rp3-4cfb89d0c64d/trace.jsonl \
+  results/raw/rp3-edf7731e27d9/trace.jsonl \
   results/raw/rp2-887dc1aa459b/trace.jsonl \
-  results/raw/rp3-aca0adaecf78/trace.jsonl
+  results/raw/rp3-906f6104111b/trace.jsonl
 "$PYTHON_BIN" tools/validate_local_file_operation_mvp.py
 "$PYTHON_BIN" tools/validate_traces.py \
   results/raw/rp2-c0908d7c4e3b/trace.jsonl \
-  results/raw/rp3-0c9ad135cbc0/trace.jsonl \
+  results/raw/rp3-cd96c2a7cb26/trace.jsonl \
   results/raw/rp2-7c1546701eec/trace.jsonl \
-  results/raw/rp3-29ae66d19b6a/trace.jsonl \
+  results/raw/rp3-0a7385dbab80/trace.jsonl \
   results/raw/rp2-c814dd826046/trace.jsonl \
-  results/raw/rp3-9d9969439b67/trace.jsonl
+  results/raw/rp3-db2510301265/trace.jsonl
 "$PYTHON_BIN" tools/validate_external_validity_scaffolds.py
 "$PYTHON_BIN" tools/validate_docs_forge_live_installer.py
 "$PYTHON_BIN" tools/validate_docs_forge_live_project_local_install.py

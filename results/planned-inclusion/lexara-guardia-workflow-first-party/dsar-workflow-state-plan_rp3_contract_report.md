@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp3-a643763cd61a`
+- Run: `rp3-b6b1b61ead4b`
 - Runtime profile: `RP3`
 - Contract: `lexara-guardia-workflow-first-party-dsar-workflow-state-plan`
-- Trace: `results/raw/rp3-a643763cd61a/trace.jsonl`
+- Trace: `results/raw/rp3-b6b1b61ead4b/trace.jsonl`
 - Events: `224`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

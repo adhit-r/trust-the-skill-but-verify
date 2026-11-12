@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp3-cceafa7a3295`
+- Run: `rp3-a87242d471f8`
 - Runtime profile: `RP3`
 - Contract: `mcp-python-sdk-public-consent-gated-tool-plan`
-- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-cceafa7a3295/trace.jsonl`
+- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-a87242d471f8/trace.jsonl`
 - Events: `224`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

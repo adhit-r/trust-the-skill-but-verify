@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp3-6fe4eb166541`
+- Run: `rp3-449b9f94c0c7`
 - Runtime profile: `RP3`
 - Contract: `tabular-privacy-synthetic-identifier-export-negative-control`
-- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-6fe4eb166541/trace.jsonl`
+- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-449b9f94c0c7/trace.jsonl`
 - Events: `223`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

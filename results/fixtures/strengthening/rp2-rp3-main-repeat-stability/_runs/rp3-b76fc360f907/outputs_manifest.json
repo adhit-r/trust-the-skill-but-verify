@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "ec9ebaa14bbc7dad392b4a53b2ba59139023fa6bbebd78abdfb6f4cd8439d284",
+  "generated_outputs": [
+    {
+      "path": "./output/cleanup-plan.json",
+      "size": 194
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-b76fc360f907"
+}

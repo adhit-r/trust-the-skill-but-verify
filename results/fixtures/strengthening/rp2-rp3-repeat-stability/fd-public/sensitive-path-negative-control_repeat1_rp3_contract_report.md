@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp3-c32297d7eba9`
+- Run: `rp3-ed319ecc8fd2`
 - Runtime profile: `RP3`
 - Contract: `fd-public-sensitive-path-negative-control`
-- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-c32297d7eba9/trace.jsonl`
+- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-ed319ecc8fd2/trace.jsonl`
 - Events: `224`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

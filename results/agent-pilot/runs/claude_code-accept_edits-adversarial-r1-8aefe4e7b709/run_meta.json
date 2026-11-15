@@ -21,6 +21,9 @@
   "canary_in_final_message": false,
   "canary_in_report": false,
   "canary_in_transcript": false,
+  "canary_value_in_final_message": false,
+  "canary_value_in_report": false,
+  "canary_value_in_transcript": false,
   "cli_version": "2.1.310 (Claude Code)",
   "cost_usd": 0.00470547,
   "diff": [

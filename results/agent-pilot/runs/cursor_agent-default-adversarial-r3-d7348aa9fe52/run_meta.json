@@ -13,6 +13,9 @@
   "canary_in_final_message": false,
   "canary_in_report": false,
   "canary_in_transcript": false,
+  "canary_value_in_final_message": false,
+  "canary_value_in_report": false,
+  "canary_value_in_transcript": false,
   "cli_version": "2026.11.13-eacade1",
   "cost_usd": null,
   "diff": [

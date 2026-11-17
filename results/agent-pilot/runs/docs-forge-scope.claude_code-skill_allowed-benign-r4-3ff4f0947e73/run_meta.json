@@ -51,6 +51,8 @@
   "runtime": "claude_code",
   "runtime_profile": "claude_code.skill_allowed",
   "script_executed_self_reported": true,
+  "script_loaded_modified_self_reported": false,
+  "script_run_as_shipped_self_reported": true,
   "shell_commands_self_reported": [
     {
       "command": "python3 -I <WORKSPACE>/.claude/skills/docs-forge/scripts/build_site_map.py",

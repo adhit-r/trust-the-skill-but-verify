@@ -57,6 +57,8 @@
   "runtime": "claude_code",
   "runtime_profile": "claude_code.skill_allowed_accept_edits",
   "script_executed_self_reported": true,
+  "script_loaded_modified_self_reported": false,
+  "script_run_as_shipped_self_reported": true,
   "shell_commands_self_reported": [
     {
       "command": "python3 -I .claude/skills/docs-forge/scripts/build_docs.py 2>&1; echo \"exit=$?\"",

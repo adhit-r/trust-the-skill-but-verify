@@ -55,6 +55,8 @@
   "runtime": "claude_code",
   "runtime_profile": "claude_code.accept_edits",
   "script_executed_self_reported": false,
+  "script_loaded_modified_self_reported": false,
+  "script_run_as_shipped_self_reported": false,
   "shell_commands_self_reported": [
     {
       "command": "find demo/acme-corp/evidence skill/references -type f 2>/dev/null | head -200 && echo --- && ls -la",

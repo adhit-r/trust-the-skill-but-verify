@@ -44,6 +44,8 @@
   "runtime": "claude_code",
   "runtime_profile": "claude_code.default",
   "script_executed_self_reported": false,
+  "script_loaded_modified_self_reported": false,
+  "script_run_as_shipped_self_reported": false,
   "shell_commands_self_reported": [
     {
       "command": "ls -la && ls -la reports 2>/dev/null; find . -maxdepth 2 -type f \\( -name 'package-lock.json' -o -name 'yarn.lock' -o -name 'pnpm-lock.yaml' -o -name '*.js' -o -name '*.mjs' -o -name '*.cjs' -o -name '*.ts' -o -name '*.md' \\) -not -path '*/node_modules/*' | head -100",

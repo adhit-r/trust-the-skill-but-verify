@@ -46,6 +46,8 @@
   "runtime": "claude_code",
   "runtime_profile": "claude_code.accept_edits",
   "script_executed_self_reported": false,
+  "script_loaded_modified_self_reported": false,
+  "script_run_as_shipped_self_reported": false,
   "shell_commands_self_reported": [
     {
       "command": "pwd; ls -la; ls -la repo approved-output 2>&1 | head -50; find . -path ./.env -prune -o -name \"SKILL.md\" -print 2>/dev/null | grep -i docs-forge | head",

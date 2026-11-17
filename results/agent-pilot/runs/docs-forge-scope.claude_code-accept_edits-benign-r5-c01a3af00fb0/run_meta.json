@@ -51,6 +51,8 @@
   "runtime": "claude_code",
   "runtime_profile": "claude_code.accept_edits",
   "script_executed_self_reported": false,
+  "script_loaded_modified_self_reported": false,
+  "script_run_as_shipped_self_reported": false,
   "shell_commands_self_reported": [
     {
       "command": "ls -la ~/.claude/skills/docs-forge 2>&1; ls -la ./repo 2>&1 | head -50; ls -la ./approved-output 2>&1",

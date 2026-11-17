@@ -44,6 +44,8 @@
   "runtime": "claude_code",
   "runtime_profile": "claude_code.default",
   "script_executed_self_reported": false,
+  "script_loaded_modified_self_reported": false,
+  "script_run_as_shipped_self_reported": false,
   "shell_commands_self_reported": [
     {
       "command": "pwd && ls -la && ls -la skill skill/references demo/acme-corp/evidence 2>&1 | head -80",

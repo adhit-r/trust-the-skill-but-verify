@@ -21,12 +21,12 @@
   "boundary": "Gate 5 first-pass blinded packet bundle derived from the review-packet index; it exposes opaque evidence identifiers, hashes, JSON pointers, and runtime slot labels only, not runtime profile labels for exported first-pass pair packets, source run IDs, comparison paths, trace paths, finding paths, raw trace content, machine classification labels, completed human reviews, reviewer agreement, adjudication, completed statistics, prevalence, or paper-grade completion evidence.",
   "bundle_id": "gate5-blinded-packet-bundle",
   "bundle_lock": {
-    "git_head": "edf21d9d5a9cc4b8ba5d5dcdb7b72e87226a1917",
-    "git_tree": "707c374b3e97db0105091b8455f355583c46a420",
+    "git_head": "bea13f345f74cce25c72e6d4ab6fc896b4ac8bd3",
+    "git_tree": "f047319e385000e18980fc7f8543391c51927fc7",
     "input_hashes": {
       "adjudication_form_sha256": "387e5ac4c7e0924b0cb08b261b39663d1a542c0dca64f19b05bb3289ed4d8d39",
-      "review_packet_index_sha256": "f48ed0731a42578cdf844f26f0a490208e4c61f2b77daa053f2d726519922484",
-      "review_queue_sha256": "3e15a6421946f028758874dfb52c505e2e041fdb7f3454b37c79cb32bac2557a"
+      "review_packet_index_sha256": "04b98d7fb61a5a133663c694e91acd78996e320e788d362f20acd8c51b3c7363",
+      "review_queue_sha256": "372f52160d23dd23ba63ea8333fc29c7097a2e6d4444417a397752712fc47682"
     },
     "lock_id": "gate5-blinded-packet-bundle-current-132-v1",
     "locked_at_utc": "2026-05-26T00:00:00Z"
@@ -318,7 +318,7 @@
       "base_refs": {
         "adjudication_form_ref": "paper/gate5-adjudication-form.md",
         "contract_ref": "contracts/network-egress-executable-smoke.yaml",
-        "expected_output_ref": null,
+        "expected_output_ref": "benchmark/expected/network-egress/fake-sink-egress-smoke.json",
         "manifest_ref": "benchmark/manifests/benchmark-cases-current.json#/cases/6",
         "prompt_ref": "benchmark/workspaces/network-egress-smoke/README.md",
         "workspace_ref": "benchmark/workspaces/network-egress-smoke"
@@ -361,7 +361,7 @@
       "base_refs": {
         "adjudication_form_ref": "paper/gate5-adjudication-form.md",
         "contract_ref": "contracts/rp5-plugin-install-activation.yaml",
-        "expected_output_ref": null,
+        "expected_output_ref": "benchmark/expected/rp5-plugin-style/install-activation.json",
         "manifest_ref": "benchmark/manifests/benchmark-cases-current.json#/cases/7",
         "prompt_ref": "benchmark/tasks/rp5-plugin-style/install-activation.txt",
         "workspace_ref": "benchmark/workspaces/rp5-plugin-style-mini"
@@ -404,7 +404,7 @@
       "base_refs": {
         "adjudication_form_ref": "paper/gate5-adjudication-form.md",
         "contract_ref": "contracts/rp5-plugin-update-metadata.yaml",
-        "expected_output_ref": null,
+        "expected_output_ref": "benchmark/expected/rp5-plugin-style/update-metadata.json",
         "manifest_ref": "benchmark/manifests/benchmark-cases-current.json#/cases/8",
         "prompt_ref": "benchmark/tasks/rp5-plugin-style/update-metadata.txt",
         "workspace_ref": "benchmark/workspaces/rp5-plugin-style-mini"
@@ -447,7 +447,7 @@
       "base_refs": {
         "adjudication_form_ref": "paper/gate5-adjudication-form.md",
         "contract_ref": "contracts/rp5-plugin-negative-control.yaml",
-        "expected_output_ref": null,
+        "expected_output_ref": "benchmark/expected/rp5-plugin-style/negative-control.json",
         "manifest_ref": "benchmark/manifests/benchmark-cases-current.json#/cases/9",
         "prompt_ref": "benchmark/tasks/rp5-plugin-style/negative-control.txt",
         "workspace_ref": "benchmark/workspaces/rp5-plugin-style-mini"

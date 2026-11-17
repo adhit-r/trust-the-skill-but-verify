@@ -32,14 +32,14 @@
   },
   "index_id": "gate5-review-packet-index",
   "index_lock": {
-    "git_head": "edf21d9d5a9cc4b8ba5d5dcdb7b72e87226a1917",
-    "git_tree": "707c374b3e97db0105091b8455f355583c46a420",
+    "git_head": "bea13f345f74cce25c72e6d4ab6fc896b4ac8bd3",
+    "git_tree": "f047319e385000e18980fc7f8543391c51927fc7",
     "input_hashes": {
       "adjudication_form_sha256": "387e5ac4c7e0924b0cb08b261b39663d1a542c0dca64f19b05bb3289ed4d8d39",
-      "inclusion_table_sha256": "8126baacd0d689b06907d02b5bf00f7b848d5e5c7523b3205fb389f2506a8e81",
+      "inclusion_table_sha256": "d58d27b72577e64772fa7610ec06b051611c772a8452e2d27e3278f2f23c0f0d",
       "paired_summary_sha256": "b02a1c2f6c01056610e7b5d66e54ed90a6ebf32dcfc4c4a00e296b611b7e924a",
-      "review_queue_sha256": "3e15a6421946f028758874dfb52c505e2e041fdb7f3454b37c79cb32bac2557a",
-      "source_manifest_sha256": "1ccf6e4b9a35dc14de37899493f7e7c888ae321ec2aa804b0ebeef509269c95e",
+      "review_queue_sha256": "372f52160d23dd23ba63ea8333fc29c7097a2e6d4444417a397752712fc47682",
+      "source_manifest_sha256": "2f2f822c9a1b01e9e31adcf7edde25167e3e5f5c45bbc1db357b77ac9518716f",
       "trace_metadata_lock_sha256": "a070b3d600f6c307db624cf5b0bd2a224469b5bbfc154d371860436cf6fe7444"
     },
     "lock_id": "gate5-review-packet-index-current-132-v1",
@@ -279,7 +279,7 @@
       "base_refs": {
         "adjudication_form_ref": "paper/gate5-adjudication-form.md",
         "contract_ref": "contracts/network-egress-executable-smoke.yaml",
-        "expected_output_ref": null,
+        "expected_output_ref": "benchmark/expected/network-egress/fake-sink-egress-smoke.json",
         "manifest_ref": "benchmark/manifests/benchmark-cases-current.json#/cases/6",
         "prompt_ref": "benchmark/workspaces/network-egress-smoke/README.md",
         "workspace_ref": "benchmark/workspaces/network-egress-smoke"
@@ -315,7 +315,7 @@
       "base_refs": {
         "adjudication_form_ref": "paper/gate5-adjudication-form.md",
         "contract_ref": "contracts/rp5-plugin-install-activation.yaml",
-        "expected_output_ref": null,
+        "expected_output_ref": "benchmark/expected/rp5-plugin-style/install-activation.json",
         "manifest_ref": "benchmark/manifests/benchmark-cases-current.json#/cases/7",
         "prompt_ref": "benchmark/tasks/rp5-plugin-style/install-activation.txt",
         "workspace_ref": "benchmark/workspaces/rp5-plugin-style-mini"
@@ -351,7 +351,7 @@
       "base_refs": {
         "adjudication_form_ref": "paper/gate5-adjudication-form.md",
         "contract_ref": "contracts/rp5-plugin-update-metadata.yaml",
-        "expected_output_ref": null,
+        "expected_output_ref": "benchmark/expected/rp5-plugin-style/update-metadata.json",
         "manifest_ref": "benchmark/manifests/benchmark-cases-current.json#/cases/8",
         "prompt_ref": "benchmark/tasks/rp5-plugin-style/update-metadata.txt",
         "workspace_ref": "benchmark/workspaces/rp5-plugin-style-mini"
@@ -387,7 +387,7 @@
       "base_refs": {
         "adjudication_form_ref": "paper/gate5-adjudication-form.md",
         "contract_ref": "contracts/rp5-plugin-negative-control.yaml",
-        "expected_output_ref": null,
+        "expected_output_ref": "benchmark/expected/rp5-plugin-style/negative-control.json",
         "manifest_ref": "benchmark/manifests/benchmark-cases-current.json#/cases/9",
         "prompt_ref": "benchmark/tasks/rp5-plugin-style/negative-control.txt",
         "workspace_ref": "benchmark/workspaces/rp5-plugin-style-mini"

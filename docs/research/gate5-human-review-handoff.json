@@ -19,8 +19,8 @@
     "adjudication_form": "paper/gate5-adjudication-form.md"
   },
   "handoff_lock": {
-    "review_export_templates_sha256": "d57fb5e6786e8b1a3b603d582f5ea37cd2e6fc29a4f1f39fdfb265854c961255",
-    "blinded_packet_bundle_sha256": "965453efb0b3545df6520d8bbf560b7eaafb3256c1d85e675c52373702b8cee8",
+    "review_export_templates_sha256": "8b98a039b01be5118a2b55b25006caed96fe3b4c972e25d93e9aa033cd2325d3",
+    "blinded_packet_bundle_sha256": "a013868a0a262b12ebd836b58221644fad9d83189c1901719d90be6e5c4d59d7",
     "reviewer_a_worksheet_csv_sha256": "f35334f2ffa5d157113811aaa9e8aec5de4810b23b07473eee8d3daaed5cf637",
     "reviewer_a_worksheet_guide_sha256": "41419cd74a43d6db82f15ee666afe8992c991fbe38bdf1b492ae8ac215d447ac"
   },

@@ -322,10 +322,19 @@ def main() -> int:
         return 2
 
     if args.check:
-        prior = JSON_PATH.read_text() if JSON_PATH.exists() else ""
-        summary = write_summary(rows)  # writes; then compare
-        if JSON_PATH.read_text() != prior:
-            print("outcome-flip outputs are stale; run tools/build_outcome_flip_matrix.py", file=sys.stderr)
+        outputs = (CSV_PATH, JSON_PATH, SVG_PATH)
+        prior = {path: path.read_bytes() if path.exists() else None for path in outputs}
+        write_csv(rows)
+        write_svg(rows, write_summary(rows))
+        stale = [path for path in outputs if path.read_bytes() != prior[path]]
+        for path in outputs:  # --check must not change the tracked outputs
+            if prior[path] is None:
+                path.unlink()
+            else:
+                path.write_bytes(prior[path])
+        if stale:
+            names = ", ".join(path.name for path in stale)
+            print(f"outcome-flip outputs are stale ({names}); run tools/build_outcome_flip_matrix.py", file=sys.stderr)
             return 1
         return 0
 

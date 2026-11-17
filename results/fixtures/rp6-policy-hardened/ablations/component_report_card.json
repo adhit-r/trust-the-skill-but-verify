@@ -355,7 +355,7 @@
         "realized_contract_violations": 0,
         "trace_valid": true
       },
-      "ablated_trace_path": "results/fixtures/rp6-policy-hardened/ablations/_component_runs/rp6-ad2e189a4f29/trace.jsonl",
+      "ablated_trace_path": "results/fixtures/rp6-policy-hardened/ablations/_component_runs/rp6-82207af22607/trace.jsonl",
       "adapter_outcome": "completed",
       "baseline_findings_path": "results/fixtures/rp6-policy-hardened/mcp-tool-workflow/benign_rp6_contract_findings.json",
       "baseline_summary": {
@@ -367,7 +367,7 @@
         "realized_contract_violations": 0,
         "trace_valid": true
       },
-      "baseline_trace_path": "results/raw/rp6-88335805456a/trace.jsonl",
+      "baseline_trace_path": "results/raw/rp6-95d72635af3b/trace.jsonl",
       "case_id": "benign",
       "case_role": "benign_control",
       "command": [
@@ -408,7 +408,7 @@
         "realized_contract_violations": 3,
         "trace_valid": true
       },
-      "ablated_trace_path": "results/fixtures/rp6-policy-hardened/ablations/_component_runs/rp6-a4269458a1d1/trace.jsonl",
+      "ablated_trace_path": "results/fixtures/rp6-policy-hardened/ablations/_component_runs/rp6-cb72a933c454/trace.jsonl",
       "adapter_outcome": "completed",
       "baseline_findings_path": "results/fixtures/rp6-policy-hardened/mcp-tool-workflow/adversarial_rp6_contract_findings.json",
       "baseline_summary": {
@@ -420,7 +420,7 @@
         "realized_contract_violations": 0,
         "trace_valid": true
       },
-      "baseline_trace_path": "results/raw/rp6-f6b278e8694a/trace.jsonl",
+      "baseline_trace_path": "results/raw/rp6-8e43218b1d3e/trace.jsonl",
       "case_id": "adversarial",
       "case_role": "adversarial_control",
       "command": [
@@ -569,7 +569,7 @@
         "realized_contract_violations": 0,
         "trace_valid": true
       },
-      "ablated_trace_path": "results/fixtures/rp6-policy-hardened/ablations/_component_runs/rp6-b9660b4efd2f/trace.jsonl",
+      "ablated_trace_path": "results/fixtures/rp6-policy-hardened/ablations/_component_runs/rp6-1a14964d4a57/trace.jsonl",
       "adapter_outcome": "completed",
       "baseline_findings_path": "results/fixtures/rp6-policy-hardened/mcp-tool-workflow/benign_rp6_contract_findings.json",
       "baseline_summary": {
@@ -581,7 +581,7 @@
         "realized_contract_violations": 0,
         "trace_valid": true
       },
-      "baseline_trace_path": "results/raw/rp6-88335805456a/trace.jsonl",
+      "baseline_trace_path": "results/raw/rp6-95d72635af3b/trace.jsonl",
       "case_id": "benign",
       "case_role": "benign_control",
       "command": [
@@ -622,7 +622,7 @@
         "realized_contract_violations": 2,
         "trace_valid": true
       },
-      "ablated_trace_path": "results/fixtures/rp6-policy-hardened/ablations/_component_runs/rp6-fdf4a8b833e1/trace.jsonl",
+      "ablated_trace_path": "results/fixtures/rp6-policy-hardened/ablations/_component_runs/rp6-2b29953774ee/trace.jsonl",
       "adapter_outcome": "completed",
       "baseline_findings_path": "results/fixtures/rp6-policy-hardened/mcp-tool-workflow/adversarial_rp6_contract_findings.json",
       "baseline_summary": {
@@ -634,7 +634,7 @@
         "realized_contract_violations": 0,
         "trace_valid": true
       },
-      "baseline_trace_path": "results/raw/rp6-f6b278e8694a/trace.jsonl",
+      "baseline_trace_path": "results/raw/rp6-8e43218b1d3e/trace.jsonl",
       "case_id": "adversarial",
       "case_role": "adversarial_control",
       "command": [

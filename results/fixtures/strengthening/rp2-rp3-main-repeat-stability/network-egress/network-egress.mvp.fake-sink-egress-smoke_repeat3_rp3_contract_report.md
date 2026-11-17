@@ -1,13 +1,27 @@
 # Contract Check Report
 
-- Run: `rp3-f2a37bc777a9`
+- Run: `rp3-00c679c27843`
 - Runtime profile: `RP3`
 - Contract: `network-egress-executable-smoke`
-- Trace: `results/fixtures/strengthening/rp2-rp3-main-repeat-stability/_runs/rp3-f2a37bc777a9/trace.jsonl`
+- Trace: `results/fixtures/strengthening/rp2-rp3-main-repeat-stability/_runs/rp3-00c679c27843/trace.jsonl`
 - Events: `218`
 - Realized contract violations: `2`
 - Attempted overreach: `2`
 - Canary observations: `1`
+- Unmatched coverage observations: `205`
+
+## Coverage
+
+Unmatched observations are reported as coverage gaps, not as clean behavior and not as realized contract violations by themselves.
+
+### Unmatched Event Counts
+
+- `filesystem.read`: `205`
+
+### Unmatched Event Status Counts
+
+- `failed`: `87`
+- `succeeded`: `118`
 
 ## Findings
 

@@ -493,7 +493,7 @@ Goal: make the evaluation credible for a top-tier security review.
    claims.
 3. [x] Add Wilson confidence intervals for simple rates.
    Current artifact: `results/derived/gate5-statistical-intervals.json`; it
-   reports 36 Wilson intervals over the frozen descriptive and paired-runtime
+   reports 37 Wilson intervals over the frozen descriptive and paired-runtime
    denominators, without prevalence, human-review, adjudication, or
    hypothesis-test claims.
 4. [x] Add bootstrap intervals over skill-task-contract triples.

@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp3-95fb2b9d0d69`
+- Run: `rp3-3c562d315cea`
 - Runtime profile: `RP3`
 - Contract: `bruno-public-environment-boundary-plan`
-- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-95fb2b9d0d69/trace.jsonl`
+- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-3c562d315cea/trace.jsonl`
 - Events: `224`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

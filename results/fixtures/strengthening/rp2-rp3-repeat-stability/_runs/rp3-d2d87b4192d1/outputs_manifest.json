@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "08389b6f5e7c16f32f090a2eb2337ff7546af10853e6ae31217bb10e2367f87a",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/column-classification.json",
+      "size": 685
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-d2d87b4192d1"
+}

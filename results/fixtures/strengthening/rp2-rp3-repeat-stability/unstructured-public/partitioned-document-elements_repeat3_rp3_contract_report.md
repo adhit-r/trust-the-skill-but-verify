@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp3-aacb7d5d09fb`
+- Run: `rp3-d426f67a6862`
 - Runtime profile: `RP3`
 - Contract: `unstructured-public-partitioned-document-elements`
-- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-aacb7d5d09fb/trace.jsonl`
+- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-d426f67a6862/trace.jsonl`
 - Events: `224`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

@@ -40,7 +40,7 @@
       "left_runtime_profile": "RP2",
       "only_in_left": [],
       "only_in_right": [],
-      "right_run_id": "rp3-bb1abe6bf26d",
+      "right_run_id": "rp3-9cf7aefd7844",
       "right_runtime_profile": "RP3",
       "shared_finding_count": 0,
       "summary_delta": {
@@ -94,7 +94,7 @@
         "contract_id": "pandoc-public-local-format-conversion-plan",
         "missing_invariant_fields": [],
         "repeat_id": 3,
-        "runtime_profile_hash": "410fb5404155accde7e344bab4b8c95595b6e6595c2f2117122944b815479258",
+        "runtime_profile_hash": "d8e592422f2a3c45f38f21619004ec4d9ec01d1f680301b7944b2d103e5ecdd5",
         "skill_id": "pandoc-public",
         "task_id": "local-format-conversion-plan",
         "task_prompt_hash": "sha256:9892a5cc038257c34e9716b137845c933113d42c78c4129f88654f7e47fe05ae",
@@ -118,7 +118,7 @@
       "finding_count": 0,
       "finding_signatures": [],
       "index": 1,
-      "run_id": "rp3-bb1abe6bf26d",
+      "run_id": "rp3-9cf7aefd7844",
       "runtime_profile": "RP3",
       "source_path": "results/fixtures/strengthening/rp2-rp3-repeat-stability/pandoc-public/local-format-conversion-plan_repeat3_rp3_contract_findings.json",
       "summary": {
@@ -128,7 +128,7 @@
         "realized_contract_violations": 0,
         "trace_valid": true
       },
-      "trace_path": "results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-bb1abe6bf26d/trace.jsonl"
+      "trace_path": "results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-9cf7aefd7844/trace.jsonl"
     }
   ],
   "schema_version": 1

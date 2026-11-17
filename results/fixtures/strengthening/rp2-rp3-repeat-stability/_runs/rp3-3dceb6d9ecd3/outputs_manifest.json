@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "658a8f328b9ee5ac2717cbef9f2bad370bc3f851cdf1ba1034436e8b9d6c3a43",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/hidden-text-pii-negative-control.md",
+      "size": 863
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-3dceb6d9ecd3"
+}

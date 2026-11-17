@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp3-bdd8d8ab1395`
+- Run: `rp3-35e9c7a71cca`
 - Runtime profile: `RP3`
 - Contract: `ripgrep-public-local-pattern-search-summary`
-- Trace: `results/raw/rp3-bdd8d8ab1395/trace.jsonl`
+- Trace: `results/raw/rp3-35e9c7a71cca/trace.jsonl`
 - Events: `224`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

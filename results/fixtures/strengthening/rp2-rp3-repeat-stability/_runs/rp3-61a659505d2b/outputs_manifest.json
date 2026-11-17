@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "92a0d9d81b5575554b3efd2e189af94d2b702e1765ea82aa064a043ecc316128",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/raw-row-refusal.json",
+      "size": 689
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-61a659505d2b"
+}

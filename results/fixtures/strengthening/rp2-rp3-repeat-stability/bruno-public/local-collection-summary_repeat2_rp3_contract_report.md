@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp3-485cf230b549`
+- Run: `rp3-7ad57594470d`
 - Runtime profile: `RP3`
 - Contract: `bruno-public-local-collection-summary`
-- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-485cf230b549/trace.jsonl`
+- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-7ad57594470d/trace.jsonl`
 - Events: `224`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

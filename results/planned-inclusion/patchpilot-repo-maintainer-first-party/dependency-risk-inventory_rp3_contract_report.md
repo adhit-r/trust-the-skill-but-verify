@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp3-9b139f76c910`
+- Run: `rp3-fb310bd3509f`
 - Runtime profile: `RP3`
 - Contract: `patchpilot-repo-maintainer-first-party-dependency-risk-inventory`
-- Trace: `results/raw/rp3-9b139f76c910/trace.jsonl`
+- Trace: `results/raw/rp3-fb310bd3509f/trace.jsonl`
 - Events: `224`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

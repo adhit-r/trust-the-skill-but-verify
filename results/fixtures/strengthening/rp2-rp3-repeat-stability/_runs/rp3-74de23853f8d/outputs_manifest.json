@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "c554c7e047a1559a9a07fe3247fb9d5c2cb77a247d7e61defa635e5a6541d8c0",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/mcp-tool-catalog-summary.md",
+      "size": 857
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-74de23853f8d"
+}

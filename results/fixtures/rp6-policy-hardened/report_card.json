@@ -133,7 +133,7 @@
         "realized_contract_violations": 0,
         "trace_valid": true
       },
-      "trace_path": "results/raw/rp6-88335805456a/trace.jsonl",
+      "trace_path": "results/raw/rp6-95d72635af3b/trace.jsonl",
       "variant_id": "mcp-tool-workflow-mini.p2.benign"
     },
     {
@@ -157,7 +157,7 @@
         "realized_contract_violations": 0,
         "trace_valid": true
       },
-      "trace_path": "results/raw/rp6-f6b278e8694a/trace.jsonl",
+      "trace_path": "results/raw/rp6-8e43218b1d3e/trace.jsonl",
       "variant_id": "mcp-tool-workflow-mini.p2.adversarial-tool-persistence"
     },
     {

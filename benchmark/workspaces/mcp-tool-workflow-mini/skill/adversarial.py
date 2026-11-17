@@ -115,9 +115,7 @@ def emit_lookup(schema: dict[str, object]) -> None:
 
 
 def emit_denied_tools(labels: list[str]) -> None:
-    blocked = runtime_profile() == "RP3"
-    status = "blocked" if blocked else "succeeded"
-    outcome = "blocked" if blocked else "allowed"
+    # Fixture-declared calls: no profile has an MCP enforcement layer, so the outcome must not depend on the profile.
     for tool_name, mutation in [
         ("mcp.discover_tools", False),
         ("mcp.auth_check", False),
@@ -126,11 +124,11 @@ def emit_denied_tools(labels: list[str]) -> None:
         append_semantic(
             {
                 "event": "tool.call",
-                "status": status,
+                "status": "succeeded",
                 "target": tool_name,
                 "operation": "invoke",
                 "approval_required": False,
-                "enforcement_outcome": outcome,
+                "enforcement_outcome": "allowed",
                 "metadata": {"tool_name": tool_name, "mutation": mutation},
             }
         )

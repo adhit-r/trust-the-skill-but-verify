@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp3-d24bbc100e0b`
+- Run: `rp3-492e2680e686`
 - Runtime profile: `RP3`
 - Contract: `aran-mcp-sentinel-first-party-mcp-tool-catalog-summary`
-- Trace: `results/raw/rp3-d24bbc100e0b/trace.jsonl`
+- Trace: `results/raw/rp3-492e2680e686/trace.jsonl`
 - Events: `224`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

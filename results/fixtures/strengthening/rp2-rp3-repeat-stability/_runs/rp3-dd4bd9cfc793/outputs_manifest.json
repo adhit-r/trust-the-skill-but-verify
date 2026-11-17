@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "c32d47a282bf9b1ab60dfe172d73f6bdd7dcf924dc731eea81fe6c1e1cb00257",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/license-inventory-summary.md",
+      "size": 845
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-dd4bd9cfc793"
+}

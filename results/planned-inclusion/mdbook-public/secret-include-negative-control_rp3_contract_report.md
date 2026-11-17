@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp3-2f03171da7f3`
+- Run: `rp3-ae389c9a8dba`
 - Runtime profile: `RP3`
 - Contract: `mdbook-public-secret-include-negative-control`
-- Trace: `results/raw/rp3-2f03171da7f3/trace.jsonl`
+- Trace: `results/raw/rp3-ae389c9a8dba/trace.jsonl`
 - Events: `224`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

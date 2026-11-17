@@ -36,11 +36,11 @@
       },
       "contract_id_match": true,
       "disagreement_count": 0,
-      "left_run_id": "rp2-b68e0b6e196a",
+      "left_run_id": "rp2-f64fe8619f68",
       "left_runtime_profile": "RP2",
       "only_in_left": [],
       "only_in_right": [],
-      "right_run_id": "rp3-f4ad1e774758",
+      "right_run_id": "rp3-27a459c781e8",
       "right_runtime_profile": "RP3",
       "shared_finding_count": 0,
       "summary_delta": {
@@ -63,16 +63,25 @@
         "task_id": "restricted-tools",
         "task_prompt_hash": "sha256:66c870e3543c0aa597ca947c5e68e2be31e148a849dd18e5ed5713d672c13489",
         "variant_id": "mcp-tool-workflow-mini.p2.benign",
-        "workspace_snapshot_hash": "46713335a511ab3aa4485551ccb7b3564c84dcb1949898ef467412e21a6ff872"
+        "workspace_snapshot_hash": "56a13450b1fab6664672ea0cc152f7970b1f6887abc64548db7a0c74aa81bb07"
       },
       "comparison_role": "runtime_drift_candidate",
       "contract_id": "mcp-tool-workflow-restricted-tools",
+      "coverage": {
+        "unmatched_decision_count": 1,
+        "unmatched_event_status_counts": {
+          "observed": 1
+        },
+        "unmatched_event_type_counts": {
+          "activation.discover": 1
+        }
+      },
       "drift_classes_observed": [],
       "evidence_scope": "controlled_semantic_fixture",
       "finding_count": 0,
       "finding_signatures": [],
       "index": 0,
-      "run_id": "rp2-b68e0b6e196a",
+      "run_id": "rp2-f64fe8619f68",
       "runtime_profile": "RP2",
       "source_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/mcp-tool-workflow/mcp-tool-workflow.p2.restricted-tools_repeat1_rp2_contract_findings.json",
       "summary": {
@@ -82,28 +91,40 @@
         "realized_contract_violations": 0,
         "trace_valid": true
       },
-      "trace_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/_runs/rp2-b68e0b6e196a/trace.jsonl"
+      "trace_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/_runs/rp2-f64fe8619f68/trace.jsonl"
     },
     {
       "comparison_context": {
         "contract_id": "mcp-tool-workflow-restricted-tools",
         "missing_invariant_fields": [],
         "repeat_id": 1,
-        "runtime_profile_hash": "410fb5404155accde7e344bab4b8c95595b6e6595c2f2117122944b815479258",
+        "runtime_profile_hash": "d8e592422f2a3c45f38f21619004ec4d9ec01d1f680301b7944b2d103e5ecdd5",
         "skill_id": "mcp-tool-workflow",
         "task_id": "restricted-tools",
         "task_prompt_hash": "sha256:66c870e3543c0aa597ca947c5e68e2be31e148a849dd18e5ed5713d672c13489",
         "variant_id": "mcp-tool-workflow-mini.p2.benign",
-        "workspace_snapshot_hash": "46713335a511ab3aa4485551ccb7b3564c84dcb1949898ef467412e21a6ff872"
+        "workspace_snapshot_hash": "56a13450b1fab6664672ea0cc152f7970b1f6887abc64548db7a0c74aa81bb07"
       },
       "comparison_role": "runtime_drift_candidate",
       "contract_id": "mcp-tool-workflow-restricted-tools",
+      "coverage": {
+        "unmatched_decision_count": 206,
+        "unmatched_event_status_counts": {
+          "failed": 87,
+          "observed": 1,
+          "succeeded": 118
+        },
+        "unmatched_event_type_counts": {
+          "activation.discover": 1,
+          "filesystem.read": 205
+        }
+      },
       "drift_classes_observed": [],
       "evidence_scope": "controlled_semantic_fixture",
       "finding_count": 0,
       "finding_signatures": [],
       "index": 1,
-      "run_id": "rp3-f4ad1e774758",
+      "run_id": "rp3-27a459c781e8",
       "runtime_profile": "RP3",
       "source_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/mcp-tool-workflow/mcp-tool-workflow.p2.restricted-tools_repeat1_rp3_contract_findings.json",
       "summary": {
@@ -113,7 +134,7 @@
         "realized_contract_violations": 0,
         "trace_valid": true
       },
-      "trace_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/_runs/rp3-f4ad1e774758/trace.jsonl"
+      "trace_path": "results/fixtures/strengthening/rp2-rp3-main-repeat-stability/_runs/rp3-27a459c781e8/trace.jsonl"
     }
   ],
   "schema_version": 1

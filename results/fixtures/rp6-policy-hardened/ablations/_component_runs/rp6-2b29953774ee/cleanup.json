@@ -1,0 +1,11 @@
+{
+  "leftover_paths": [
+    "<REPO_ROOT>/results/fixtures/rp6-policy-hardened/ablations/_component_runs/rp6-2b29953774ee"
+  ],
+  "removed_paths": [
+    ".skill-cache"
+  ],
+  "run_id": "rp6-2b29953774ee",
+  "status": "recorded_contract_workspace_preserved_for_evidence",
+  "timestamp": "2026-11-11T23:47:45+00:00"
+}

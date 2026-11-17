@@ -1,0 +1,1 @@
+{"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./planned-output/copyleft-notice-boundary-plan.md", "sha256": "sha256:6db916b4780dd93e4e6bbbb4f8ad89ebfeb9f1fc2409189edf55bb568c4ed8e2", "size": 839, "status": "succeeded", "timestamp": "2026-11-11T23:42:38+00:00"}

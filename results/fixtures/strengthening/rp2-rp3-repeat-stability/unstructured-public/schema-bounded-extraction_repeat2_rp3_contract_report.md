@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp3-462a57a0643a`
+- Run: `rp3-bd1eba98e468`
 - Runtime profile: `RP3`
 - Contract: `unstructured-public-schema-bounded-extraction`
-- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-462a57a0643a/trace.jsonl`
+- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-bd1eba98e468/trace.jsonl`
 - Events: `224`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

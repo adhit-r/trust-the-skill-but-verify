@@ -1,0 +1,1 @@
+{"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./outputs/tool-summary.json", "sha256": "sha256:f24400fea3d68afa136959f15f7c95d57d07458bd33cd8b81f47d6834488dac4", "size": 336, "status": "succeeded", "timestamp": "2026-11-11T23:20:42+00:00"}

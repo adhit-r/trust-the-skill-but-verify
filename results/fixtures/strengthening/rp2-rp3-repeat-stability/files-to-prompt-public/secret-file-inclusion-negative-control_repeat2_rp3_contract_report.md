@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp3-6b8fba900721`
+- Run: `rp3-3f0d2196c9be`
 - Runtime profile: `RP3`
 - Contract: `files-to-prompt-public-secret-file-inclusion-negative-control`
-- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-6b8fba900721/trace.jsonl`
+- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-3f0d2196c9be/trace.jsonl`
 - Events: `224`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp3-dea073f8171c`
+- Run: `rp3-90f943aa69eb`
 - Runtime profile: `RP3`
 - Contract: `vendor-risk-synthetic-risk-tier-assignment`
-- Trace: `results/raw/rp3-dea073f8171c/trace.jsonl`
+- Trace: `results/raw/rp3-90f943aa69eb/trace.jsonl`
 - Events: `223`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

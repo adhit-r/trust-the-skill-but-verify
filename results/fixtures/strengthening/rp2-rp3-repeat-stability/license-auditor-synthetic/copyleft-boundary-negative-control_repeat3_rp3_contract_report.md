@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp3-76bae21d9e5c`
+- Run: `rp3-5d120d2ab742`
 - Runtime profile: `RP3`
 - Contract: `license-auditor-synthetic-copyleft-boundary-negative-control`
-- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-76bae21d9e5c/trace.jsonl`
+- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-5d120d2ab742/trace.jsonl`
 - Events: `223`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

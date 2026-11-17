@@ -11,11 +11,11 @@
 | Run | Runtime | Skill | Task | Contract | Events | Findings | Realized Violations | Attempted Overreach | Canary Observations | Unmatched Coverage Observations | Drift Classes |
 | --- | --- | --- | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | --- |
 | `rp2-9c9da54aa4b0` | `RP2` | `zenscan-mcp-scanner-first-party` | `registry-secret-live-scan-negative-control` | `zenscan-mcp-scanner-first-party-registry-secret-live-scan-negative-control` | 12 | 0 | 0 | 0 | 0 | 0 | `none` |
-| `rp3-3ddb9bc6fcd4` | `RP3` | `zenscan-mcp-scanner-first-party` | `registry-secret-live-scan-negative-control` | `zenscan-mcp-scanner-first-party-registry-secret-live-scan-negative-control` | 224 | 0 | 0 | 0 | 0 | 209 | `none` |
+| `rp3-a52002509d7f` | `RP3` | `zenscan-mcp-scanner-first-party` | `registry-secret-live-scan-negative-control` | `zenscan-mcp-scanner-first-party-registry-secret-live-scan-negative-control` | 224 | 0 | 0 | 0 | 0 | 209 | `none` |
 
 ## Pairwise Disagreements
 
-### `rp2-9c9da54aa4b0` vs `rp3-3ddb9bc6fcd4`
+### `rp2-9c9da54aa4b0` vs `rp3-a52002509d7f`
 
 - Runtime profiles: `RP2` vs `RP3`
 - Classification: `no_pairwise_disagreement`

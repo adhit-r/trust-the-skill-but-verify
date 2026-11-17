@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp3-74f353481ca6`
+- Run: `rp3-591ddf9286e6`
 - Runtime profile: `RP3`
 - Contract: `grclaw-audit-pack-first-party-connector-secret-negative-control`
-- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-74f353481ca6/trace.jsonl`
+- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-591ddf9286e6/trace.jsonl`
 - Events: `224`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

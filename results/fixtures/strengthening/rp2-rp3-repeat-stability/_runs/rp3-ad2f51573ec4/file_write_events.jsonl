@@ -1,1 +1,0 @@
-{"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./planned-output/preprocessor-boundary-report.md", "sha256": "sha256:867ec5cf46272bcdb4f8668ca9007faaa7fc47b50b7f6d9fdccfe6901da30384", "size": 864, "status": "succeeded", "timestamp": "2026-05-29T17:17:22+00:00"}

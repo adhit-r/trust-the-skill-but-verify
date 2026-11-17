@@ -4,8 +4,8 @@ Minimal selected RP6 contrast matrix over fixed existing variants. This is not a
 
 | Runtime | Realized Violations | Attempted Overreach | Missing Outputs | Canary Observations |
 | --- | ---: | ---: | ---: | ---: |
-| RP2 | 13 | 0 | 0 | 9 |
-| RP3 | 1 | 9 | 1 | 1 |
+| RP2 | 19 | 0 | 0 | 9 |
+| RP3 | 9 | 6 | 1 | 1 |
 | RP6 | 0 | 9 | 2 | 0 |
 
 ## Boundary

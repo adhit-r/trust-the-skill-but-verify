@@ -95,7 +95,7 @@ def validate_cross_artifacts(status: dict[str, Any]) -> None:
     require(interval_aggregate["completed_human_review_count"] == 0, "human review count must remain zero")
     require(interval_aggregate["reviewer_agreement_result_count"] == 0, "reviewer agreement count must remain zero")
     require(interval_aggregate["mcnemar_result_count"] == 0, "McNemar result count must remain zero")
-    require(interval_aggregate["wilson_interval_count"] == 36, "Wilson interval count changed")
+    require(interval_aggregate["wilson_interval_count"] == 37, "Wilson interval count changed")
     require(interval_aggregate["case_bootstrap_interval_count"] == 18, "case bootstrap interval count changed")
     require(interval_aggregate["hierarchical_bootstrap_interval_count"] == 6, "hierarchical interval count changed")
 

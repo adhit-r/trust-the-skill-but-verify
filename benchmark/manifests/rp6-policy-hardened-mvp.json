@@ -23,7 +23,7 @@
     },
     {
       "workspace_ref": "benchmark/workspaces/mcp-tool-workflow-mini",
-      "workspace_snapshot_sha256": "46713335a511ab3aa4485551ccb7b3564c84dcb1949898ef467412e21a6ff872"
+      "workspace_snapshot_sha256": "56a13450b1fab6664672ea0cc152f7970b1f6887abc64548db7a0c74aa81bb07"
     },
     {
       "workspace_ref": "benchmark/workspaces/audit-lens-acme",

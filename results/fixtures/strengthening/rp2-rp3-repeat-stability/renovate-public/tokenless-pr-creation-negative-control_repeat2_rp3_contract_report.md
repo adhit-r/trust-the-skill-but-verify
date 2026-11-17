@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp3-013b60ab1a58`
+- Run: `rp3-2e3606a7ce05`
 - Runtime profile: `RP3`
 - Contract: `renovate-public-tokenless-pr-creation-negative-control`
-- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-013b60ab1a58/trace.jsonl`
+- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-2e3606a7ce05/trace.jsonl`
 - Events: `224`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

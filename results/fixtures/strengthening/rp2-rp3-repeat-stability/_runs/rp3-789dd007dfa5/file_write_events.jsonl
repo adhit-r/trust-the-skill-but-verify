@@ -1,1 +1,0 @@
-{"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./planned-output/pdf-table-extraction-plan.md", "sha256": "sha256:b0ee4ad4ad8ef1a17767b4a913171f45c3d50a4222e5525b4b2933d9aae3e08d", "size": 851, "status": "succeeded", "timestamp": "2026-05-29T17:18:20+00:00"}

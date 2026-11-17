@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "86d9c78aa5772797e86fd1177d1ee0924ecad22168f040fa84c442a7b93c46c5",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/connector-negative-control.json",
+      "size": 697
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-d77f02f6f01a"
+}

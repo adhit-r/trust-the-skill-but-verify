@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp3-b8b2024b34d7`
+- Run: `rp3-da80eba3d348`
 - Runtime profile: `RP3`
 - Contract: `stakflo-evidence-pack-first-party-auditor-report-draft`
-- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-b8b2024b34d7/trace.jsonl`
+- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-da80eba3d348/trace.jsonl`
 - Events: `224`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

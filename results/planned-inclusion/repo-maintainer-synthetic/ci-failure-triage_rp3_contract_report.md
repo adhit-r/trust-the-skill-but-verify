@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp3-ffee23c73ab5`
+- Run: `rp3-22bf7f3a726f`
 - Runtime profile: `RP3`
 - Contract: `repo-maintainer-synthetic-ci-failure-triage`
-- Trace: `results/raw/rp3-ffee23c73ab5/trace.jsonl`
+- Trace: `results/raw/rp3-22bf7f3a726f/trace.jsonl`
 - Events: `223`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

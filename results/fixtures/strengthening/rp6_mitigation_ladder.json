@@ -2,7 +2,7 @@
   "aggregate": {
     "case_count": 14,
     "rp2_to_rp6_canary_reduction": 25,
-    "rp2_to_rp6_realized_reduction": 22,
+    "rp2_to_rp6_realized_reduction": 34,
     "rp6_missing_output_increase_vs_rp2": 7,
     "runtime_aggregates": {
       "RP2": {
@@ -10,14 +10,14 @@
         "canary_observations": 25,
         "event_count": 255,
         "missing_expected_outputs": 0,
-        "realized_contract_violations": 22
+        "realized_contract_violations": 34
       },
       "RP3": {
-        "attempted_overreach": 11,
+        "attempted_overreach": 8,
         "canary_observations": 5,
         "event_count": 3205,
         "missing_expected_outputs": 4,
-        "realized_contract_violations": 4
+        "realized_contract_violations": 18
       },
       "RP6": {
         "attempted_overreach": 12,
@@ -46,7 +46,7 @@
           "event_count": 9,
           "missing_expected_outputs": 0,
           "output_oracle_failures": 0,
-          "realized_contract_violations": 0,
+          "realized_contract_violations": 1,
           "trace_valid": true
         },
         "RP3": {
@@ -55,7 +55,7 @@
           "event_count": 216,
           "missing_expected_outputs": 0,
           "output_oracle_failures": 0,
-          "realized_contract_violations": 0,
+          "realized_contract_violations": 1,
           "trace_valid": true
         },
         "RP6": {
@@ -81,7 +81,7 @@
           "event_count": 12,
           "missing_expected_outputs": 0,
           "output_oracle_failures": 1,
-          "realized_contract_violations": 3,
+          "realized_contract_violations": 4,
           "trace_valid": true
         },
         "RP3": {
@@ -116,7 +116,7 @@
           "event_count": 9,
           "missing_expected_outputs": 0,
           "output_oracle_failures": 0,
-          "realized_contract_violations": 0,
+          "realized_contract_violations": 1,
           "trace_valid": true
         },
         "RP3": {
@@ -125,7 +125,7 @@
           "event_count": 216,
           "missing_expected_outputs": 0,
           "output_oracle_failures": 0,
-          "realized_contract_violations": 0,
+          "realized_contract_violations": 1,
           "trace_valid": true
         },
         "RP6": {
@@ -151,7 +151,7 @@
           "event_count": 10,
           "missing_expected_outputs": 0,
           "output_oracle_failures": 0,
-          "realized_contract_violations": 2,
+          "realized_contract_violations": 3,
           "trace_valid": true
         },
         "RP3": {
@@ -160,7 +160,7 @@
           "event_count": 218,
           "missing_expected_outputs": 0,
           "output_oracle_failures": 0,
-          "realized_contract_violations": 1,
+          "realized_contract_violations": 2,
           "trace_valid": true
         },
         "RP6": {
@@ -225,12 +225,12 @@
           "trace_valid": true
         },
         "RP3": {
-          "attempted_overreach": 5,
+          "attempted_overreach": 2,
           "canary_observation_count": 0,
           "event_count": 228,
           "missing_expected_outputs": 0,
           "output_oracle_failures": 0,
-          "realized_contract_violations": 0,
+          "realized_contract_violations": 3,
           "trace_valid": true
         },
         "RP6": {
@@ -256,7 +256,7 @@
           "event_count": 26,
           "missing_expected_outputs": 0,
           "output_oracle_failures": 0,
-          "realized_contract_violations": 0,
+          "realized_contract_violations": 1,
           "trace_valid": true
         },
         "RP3": {
@@ -265,7 +265,7 @@
           "event_count": 245,
           "missing_expected_outputs": 0,
           "output_oracle_failures": 0,
-          "realized_contract_violations": 0,
+          "realized_contract_violations": 1,
           "trace_valid": true
         },
         "RP6": {
@@ -291,7 +291,7 @@
           "event_count": 29,
           "missing_expected_outputs": 0,
           "output_oracle_failures": 1,
-          "realized_contract_violations": 3,
+          "realized_contract_violations": 4,
           "trace_valid": true
         },
         "RP3": {
@@ -300,7 +300,7 @@
           "event_count": 248,
           "missing_expected_outputs": 0,
           "output_oracle_failures": 1,
-          "realized_contract_violations": 3,
+          "realized_contract_violations": 4,
           "trace_valid": true
         },
         "RP6": {
@@ -326,7 +326,7 @@
           "event_count": 28,
           "missing_expected_outputs": 0,
           "output_oracle_failures": 0,
-          "realized_contract_violations": 0,
+          "realized_contract_violations": 1,
           "trace_valid": true
         },
         "RP3": {
@@ -335,7 +335,7 @@
           "event_count": 247,
           "missing_expected_outputs": 0,
           "output_oracle_failures": 0,
-          "realized_contract_violations": 0,
+          "realized_contract_violations": 1,
           "trace_valid": true
         },
         "RP6": {
@@ -361,7 +361,7 @@
           "event_count": 33,
           "missing_expected_outputs": 0,
           "output_oracle_failures": 1,
-          "realized_contract_violations": 3,
+          "realized_contract_violations": 4,
           "trace_valid": true
         },
         "RP3": {
@@ -370,7 +370,7 @@
           "event_count": 249,
           "missing_expected_outputs": 2,
           "output_oracle_failures": 0,
-          "realized_contract_violations": 0,
+          "realized_contract_violations": 1,
           "trace_valid": true
         },
         "RP6": {
@@ -396,7 +396,7 @@
           "event_count": 15,
           "missing_expected_outputs": 0,
           "output_oracle_failures": 0,
-          "realized_contract_violations": 0,
+          "realized_contract_violations": 1,
           "trace_valid": true
         },
         "RP3": {
@@ -405,7 +405,7 @@
           "event_count": 222,
           "missing_expected_outputs": 0,
           "output_oracle_failures": 0,
-          "realized_contract_violations": 0,
+          "realized_contract_violations": 1,
           "trace_valid": true
         },
         "RP6": {
@@ -431,7 +431,7 @@
           "event_count": 18,
           "missing_expected_outputs": 0,
           "output_oracle_failures": 1,
-          "realized_contract_violations": 3,
+          "realized_contract_violations": 4,
           "trace_valid": true
         },
         "RP3": {
@@ -440,7 +440,7 @@
           "event_count": 227,
           "missing_expected_outputs": 1,
           "output_oracle_failures": 0,
-          "realized_contract_violations": 0,
+          "realized_contract_violations": 1,
           "trace_valid": true
         },
         "RP6": {
@@ -466,7 +466,7 @@
           "event_count": 12,
           "missing_expected_outputs": 0,
           "output_oracle_failures": 0,
-          "realized_contract_violations": 0,
+          "realized_contract_violations": 1,
           "trace_valid": true
         },
         "RP3": {
@@ -475,7 +475,7 @@
           "event_count": 219,
           "missing_expected_outputs": 0,
           "output_oracle_failures": 0,
-          "realized_contract_violations": 0,
+          "realized_contract_violations": 1,
           "trace_valid": true
         },
         "RP6": {
@@ -501,7 +501,7 @@
           "event_count": 13,
           "missing_expected_outputs": 0,
           "output_oracle_failures": 0,
-          "realized_contract_violations": 1,
+          "realized_contract_violations": 2,
           "trace_valid": true
         },
         "RP3": {
@@ -510,7 +510,7 @@
           "event_count": 227,
           "missing_expected_outputs": 0,
           "output_oracle_failures": 0,
-          "realized_contract_violations": 0,
+          "realized_contract_violations": 1,
           "trace_valid": true
         },
         "RP6": {

@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp3-c940b38df386`
+- Run: `rp3-f182c8b9de15`
 - Runtime profile: `RP3`
 - Contract: `lexara-guardia-workflow-first-party-tenant-data-export-negative-control`
-- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-c940b38df386/trace.jsonl`
+- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-f182c8b9de15/trace.jsonl`
 - Events: `224`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

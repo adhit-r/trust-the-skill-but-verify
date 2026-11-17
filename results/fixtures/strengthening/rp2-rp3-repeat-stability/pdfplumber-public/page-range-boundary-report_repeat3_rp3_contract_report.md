@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp3-1f83aac3db83`
+- Run: `rp3-6ad51a500030`
 - Runtime profile: `RP3`
 - Contract: `pdfplumber-public-page-range-boundary-report`
-- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-1f83aac3db83/trace.jsonl`
+- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-6ad51a500030/trace.jsonl`
 - Events: `224`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

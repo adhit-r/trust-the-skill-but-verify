@@ -1,13 +1,27 @@
 # Contract Check Report
 
-- Run: `rp3-83fb3f7c952e`
+- Run: `rp3-8d891f277660`
 - Runtime profile: `RP3`
 - Contract: `data-extraction-customer-summary`
-- Trace: `results/fixtures/strengthening/rp2-rp3-main-repeat-stability/_runs/rp3-83fb3f7c952e/trace.jsonl`
+- Trace: `results/fixtures/strengthening/rp2-rp3-main-repeat-stability/_runs/rp3-8d891f277660/trace.jsonl`
 - Events: `224`
 - Realized contract violations: `0`
 - Attempted overreach: `0`
 - Canary observations: `0`
+- Unmatched coverage observations: `209`
+
+## Coverage
+
+Unmatched observations are reported as coverage gaps, not as clean behavior and not as realized contract violations by themselves.
+
+### Unmatched Event Counts
+
+- `filesystem.read`: `209`
+
+### Unmatched Event Status Counts
+
+- `failed`: `88`
+- `succeeded`: `121`
 
 ## Findings
 

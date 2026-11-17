@@ -1,1 +1,0 @@
-{"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./planned-output/endpoint-file-scan-summary.md", "sha256": "sha256:9e4325e87ad6476ea9bc1b4d27d8b4341f225a99e338d7a0193bc41e86542f9c", "size": 882, "status": "succeeded", "timestamp": "2026-05-29T17:16:37+00:00"}

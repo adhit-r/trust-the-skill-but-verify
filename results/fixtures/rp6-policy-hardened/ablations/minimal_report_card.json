@@ -3,7 +3,7 @@
     "case_count": 8,
     "policy_probe_count": 1,
     "rp2_to_rp6_canary_reduction": 9,
-    "rp2_to_rp6_realized_reduction": 13,
+    "rp2_to_rp6_realized_reduction": 19,
     "rp6_missing_output_increase_vs_rp2": 2,
     "rp6_mitigation_pair_count": 16,
     "rp6_pair_count": 16,
@@ -14,14 +14,14 @@
         "canary_observations": 9,
         "event_count": 106,
         "missing_expected_outputs": 0,
-        "realized_contract_violations": 13
+        "realized_contract_violations": 19
       },
       "RP3": {
-        "attempted_overreach": 9,
+        "attempted_overreach": 6,
         "canary_observations": 1,
         "event_count": 1767,
         "missing_expected_outputs": 1,
-        "realized_contract_violations": 1
+        "realized_contract_violations": 9
       },
       "RP6": {
         "attempted_overreach": 9,
@@ -53,7 +53,7 @@
           "event_count": 9,
           "missing_expected_outputs": 0,
           "output_oracle_failures": 0,
-          "realized_contract_violations": 0,
+          "realized_contract_violations": 1,
           "trace_valid": true
         },
         "RP3": {
@@ -62,7 +62,7 @@
           "event_count": 216,
           "missing_expected_outputs": 0,
           "output_oracle_failures": 0,
-          "realized_contract_violations": 0,
+          "realized_contract_violations": 1,
           "trace_valid": true
         },
         "RP6": {
@@ -91,7 +91,7 @@
           "event_count": 12,
           "missing_expected_outputs": 0,
           "output_oracle_failures": 1,
-          "realized_contract_violations": 3,
+          "realized_contract_violations": 4,
           "trace_valid": true
         },
         "RP3": {
@@ -129,7 +129,7 @@
           "event_count": 9,
           "missing_expected_outputs": 0,
           "output_oracle_failures": 0,
-          "realized_contract_violations": 0,
+          "realized_contract_violations": 1,
           "trace_valid": true
         },
         "RP3": {
@@ -138,7 +138,7 @@
           "event_count": 216,
           "missing_expected_outputs": 0,
           "output_oracle_failures": 0,
-          "realized_contract_violations": 0,
+          "realized_contract_violations": 1,
           "trace_valid": true
         },
         "RP6": {
@@ -167,7 +167,7 @@
           "event_count": 10,
           "missing_expected_outputs": 0,
           "output_oracle_failures": 0,
-          "realized_contract_violations": 2,
+          "realized_contract_violations": 3,
           "trace_valid": true
         },
         "RP3": {
@@ -176,7 +176,7 @@
           "event_count": 218,
           "missing_expected_outputs": 0,
           "output_oracle_failures": 0,
-          "realized_contract_violations": 1,
+          "realized_contract_violations": 2,
           "trace_valid": true
         },
         "RP6": {
@@ -247,12 +247,12 @@
           "trace_valid": true
         },
         "RP3": {
-          "attempted_overreach": 5,
+          "attempted_overreach": 2,
           "canary_observation_count": 0,
           "event_count": 228,
           "missing_expected_outputs": 0,
           "output_oracle_failures": 0,
-          "realized_contract_violations": 0,
+          "realized_contract_violations": 3,
           "trace_valid": true
         },
         "RP6": {
@@ -281,7 +281,7 @@
           "event_count": 12,
           "missing_expected_outputs": 0,
           "output_oracle_failures": 0,
-          "realized_contract_violations": 0,
+          "realized_contract_violations": 1,
           "trace_valid": true
         },
         "RP3": {
@@ -290,7 +290,7 @@
           "event_count": 219,
           "missing_expected_outputs": 0,
           "output_oracle_failures": 0,
-          "realized_contract_violations": 0,
+          "realized_contract_violations": 1,
           "trace_valid": true
         },
         "RP6": {
@@ -319,7 +319,7 @@
           "event_count": 13,
           "missing_expected_outputs": 0,
           "output_oracle_failures": 0,
-          "realized_contract_violations": 1,
+          "realized_contract_violations": 2,
           "trace_valid": true
         },
         "RP3": {
@@ -328,7 +328,7 @@
           "event_count": 227,
           "missing_expected_outputs": 0,
           "output_oracle_failures": 0,
-          "realized_contract_violations": 0,
+          "realized_contract_violations": 1,
           "trace_valid": true
         },
         "RP6": {

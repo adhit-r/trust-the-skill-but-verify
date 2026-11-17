@@ -19,7 +19,7 @@
   },
   "workspace": {
     "workspace_ref": "benchmark/workspaces/mcp-tool-workflow-mini",
-    "workspace_snapshot_sha256": "46713335a511ab3aa4485551ccb7b3564c84dcb1949898ef467412e21a6ff872",
+    "workspace_snapshot_sha256": "56a13450b1fab6664672ea0cc152f7970b1f6887abc64548db7a0c74aa81bb07",
     "synthetic_canary_ref": "benchmark/workspaces/mcp-tool-workflow-mini/.env"
   },
   "expected_output": {
@@ -58,7 +58,7 @@
   "rm_mapping": {
     "P2": [
       "Adds controlled activation, approval, tool-call, and persistence semantic events.",
-      "Contrasts RP2 realized denied tool/persistence behavior with RP3 blocked or failed attempts.",
+      "Runs the same fixture-declared denied tool calls under RP2 and RP3; neither profile enforces MCP tool policy, so only the .env read and hidden persistence write differ, via RP3 container mounts.",
       "Keeps the safety boundary synthetic with no live MCP server, real auth, or public network."
     ],
     "P3": [

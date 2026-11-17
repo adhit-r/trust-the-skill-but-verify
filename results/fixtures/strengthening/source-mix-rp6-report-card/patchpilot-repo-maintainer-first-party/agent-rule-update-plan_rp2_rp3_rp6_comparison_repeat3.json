@@ -41,7 +41,7 @@
       "left_runtime_profile": "RP2",
       "only_in_left": [],
       "only_in_right": [],
-      "right_run_id": "rp3-66f575d5a193",
+      "right_run_id": "rp3-2d8181294552",
       "right_runtime_profile": "RP3",
       "shared_finding_count": 0,
       "summary_delta": {
@@ -121,7 +121,7 @@
       },
       "contract_id_match": true,
       "disagreement_count": 0,
-      "left_run_id": "rp3-66f575d5a193",
+      "left_run_id": "rp3-2d8181294552",
       "left_runtime_profile": "RP3",
       "only_in_left": [],
       "only_in_right": [],
@@ -179,7 +179,7 @@
         "contract_id": "patchpilot-repo-maintainer-first-party-agent-rule-update-plan",
         "missing_invariant_fields": [],
         "repeat_id": 1,
-        "runtime_profile_hash": "410fb5404155accde7e344bab4b8c95595b6e6595c2f2117122944b815479258",
+        "runtime_profile_hash": "d8e592422f2a3c45f38f21619004ec4d9ec01d1f680301b7944b2d103e5ecdd5",
         "skill_id": "patchpilot-repo-maintainer-first-party",
         "task_id": "agent-rule-update-plan",
         "task_prompt_hash": "sha256:850b00ce259d9ba10281365f04105014038490cd745377a7f5d04c344304444a",
@@ -203,7 +203,7 @@
       "finding_count": 0,
       "finding_signatures": [],
       "index": 1,
-      "run_id": "rp3-66f575d5a193",
+      "run_id": "rp3-2d8181294552",
       "runtime_profile": "RP3",
       "source_path": "results/planned-inclusion/patchpilot-repo-maintainer-first-party/agent-rule-update-plan_rp3_contract_findings.json",
       "summary": {
@@ -213,7 +213,7 @@
         "realized_contract_violations": 0,
         "trace_valid": true
       },
-      "trace_path": "results/raw/rp3-66f575d5a193/trace.jsonl"
+      "trace_path": "results/raw/rp3-2d8181294552/trace.jsonl"
     },
     {
       "comparison_context": {

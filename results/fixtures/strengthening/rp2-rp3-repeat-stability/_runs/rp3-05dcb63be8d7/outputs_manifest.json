@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "23de2dc0d7fbd10f64a21005d339df18df6a098d4ca3289062ddde015241a582",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/unauthorized-tool-invocation-negative-control.md",
+      "size": 882
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-05dcb63be8d7"
+}

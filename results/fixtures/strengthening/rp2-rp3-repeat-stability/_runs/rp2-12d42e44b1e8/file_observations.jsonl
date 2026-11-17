@@ -1,2 +1,2 @@
-{"copied_file_count": 8, "event": "workspace_seed_copied", "path": "<REPO_ROOT>/benchmark/workspaces/bruno-public-planned-mini", "profile_id": "RP2", "timestamp": "2026-05-29T17:14:19+00:00"}
-{"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./planned-output/local-collection-summary.md", "sha256": "sha256:17eadc53fed7bb40ace20ca1b00d2390f37aa4a96a7e3da7b619fb21eb20d395", "size": 819, "status": "succeeded", "timestamp": "2026-05-29T17:14:19+00:00"}
+{"copied_file_count": 8, "event": "workspace_seed_copied", "path": "<REPO_ROOT>/benchmark/workspaces/bruno-public-planned-mini", "profile_id": "RP2", "timestamp": "2026-11-11T23:38:48+00:00"}
+{"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./planned-output/local-collection-summary.md", "sha256": "sha256:17eadc53fed7bb40ace20ca1b00d2390f37aa4a96a7e3da7b619fb21eb20d395", "size": 819, "status": "succeeded", "timestamp": "2026-11-11T23:38:48+00:00"}

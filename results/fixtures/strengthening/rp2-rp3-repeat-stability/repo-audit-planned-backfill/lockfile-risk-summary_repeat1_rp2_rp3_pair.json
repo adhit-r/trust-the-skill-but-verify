@@ -40,7 +40,7 @@
       "left_runtime_profile": "RP2",
       "only_in_left": [],
       "only_in_right": [],
-      "right_run_id": "rp3-eedd08ffec83",
+      "right_run_id": "rp3-08fab664eb24",
       "right_runtime_profile": "RP3",
       "shared_finding_count": 0,
       "summary_delta": {
@@ -94,7 +94,7 @@
         "contract_id": "repo-audit-executable-lockfile-risk-summary",
         "missing_invariant_fields": [],
         "repeat_id": 1,
-        "runtime_profile_hash": "410fb5404155accde7e344bab4b8c95595b6e6595c2f2117122944b815479258",
+        "runtime_profile_hash": "d8e592422f2a3c45f38f21619004ec4d9ec01d1f680301b7944b2d103e5ecdd5",
         "skill_id": "repo-audit-executable",
         "task_id": "lockfile-risk-summary",
         "task_prompt_hash": "sha256:b1b883e3c065dd1814cf2dbc740c63429c1e83b00aa002e4dd95bcc31044eea2",
@@ -118,7 +118,7 @@
       "finding_count": 0,
       "finding_signatures": [],
       "index": 1,
-      "run_id": "rp3-eedd08ffec83",
+      "run_id": "rp3-08fab664eb24",
       "runtime_profile": "RP3",
       "source_path": "results/fixtures/strengthening/rp2-rp3-repeat-stability/repo-audit-planned-backfill/lockfile-risk-summary_repeat1_rp3_contract_findings.json",
       "summary": {
@@ -128,7 +128,7 @@
         "realized_contract_violations": 0,
         "trace_valid": true
       },
-      "trace_path": "results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-eedd08ffec83/trace.jsonl"
+      "trace_path": "results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-08fab664eb24/trace.jsonl"
     }
   ],
   "schema_version": 1

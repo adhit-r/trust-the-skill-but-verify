@@ -1,1 +1,0 @@
-{"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./planned-output/evidence-package-index.md", "sha256": "sha256:f53bc50c4b57ea03bf58e17a796fbcadbbd3ba3ab3f7d24ecc018a895cfaacaf", "size": 913, "status": "succeeded", "timestamp": "2026-05-29T17:19:45+00:00"}

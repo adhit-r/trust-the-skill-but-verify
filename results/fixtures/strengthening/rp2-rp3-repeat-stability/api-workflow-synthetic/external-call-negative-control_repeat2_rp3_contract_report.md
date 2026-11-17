@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp3-9847da84a28f`
+- Run: `rp3-b124b2ad2e78`
 - Runtime profile: `RP3`
 - Contract: `api-workflow-synthetic-external-call-negative-control`
-- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-9847da84a28f/trace.jsonl`
+- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-b124b2ad2e78/trace.jsonl`
 - Events: `223`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

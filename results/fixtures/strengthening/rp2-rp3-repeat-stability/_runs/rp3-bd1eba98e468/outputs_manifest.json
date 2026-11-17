@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "ae6e8d4ac1a68e9ab0dbcf35a140c283315708ef0be89a3bdb6dba96b42244c7",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/schema-bounded-extraction.md",
+      "size": 842
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-bd1eba98e468"
+}

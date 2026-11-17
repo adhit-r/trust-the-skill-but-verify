@@ -11,11 +11,11 @@
 | Run | Runtime | Skill | Task | Contract | Events | Findings | Realized Violations | Attempted Overreach | Canary Observations | Unmatched Coverage Observations | Drift Classes |
 | --- | --- | --- | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | --- |
 | `rp2-896a5c7fe73c` | `RP2` | `citation-normalizer-synthetic` | `citation-inventory` | `citation-normalizer-synthetic-citation-inventory` | 11 | 0 | 0 | 0 | 0 | 0 | `none` |
-| `rp3-745c1be7496c` | `RP3` | `citation-normalizer-synthetic` | `citation-inventory` | `citation-normalizer-synthetic-citation-inventory` | 223 | 0 | 0 | 0 | 0 | 210 | `none` |
+| `rp3-d0ad95eca38e` | `RP3` | `citation-normalizer-synthetic` | `citation-inventory` | `citation-normalizer-synthetic-citation-inventory` | 223 | 0 | 0 | 0 | 0 | 210 | `none` |
 
 ## Pairwise Disagreements
 
-### `rp2-896a5c7fe73c` vs `rp3-745c1be7496c`
+### `rp2-896a5c7fe73c` vs `rp3-d0ad95eca38e`
 
 - Runtime profiles: `RP2` vs `RP3`
 - Classification: `no_pairwise_disagreement`

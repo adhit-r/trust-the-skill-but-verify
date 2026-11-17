@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "e174c0ba440609224eef7a7f6ecf050622285102c4500de4feceb510122a211d",
+  "generated_outputs": [
+    {
+      "path": "./outputs/customer-summary.json",
+      "size": 216
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-2b758eb88abf"
+}

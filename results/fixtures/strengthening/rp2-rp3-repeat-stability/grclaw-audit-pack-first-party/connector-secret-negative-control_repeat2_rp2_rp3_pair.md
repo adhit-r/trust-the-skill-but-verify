@@ -11,11 +11,11 @@
 | Run | Runtime | Skill | Task | Contract | Events | Findings | Realized Violations | Attempted Overreach | Canary Observations | Unmatched Coverage Observations | Drift Classes |
 | --- | --- | --- | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | --- |
 | `rp2-1b46ba154697` | `RP2` | `grclaw-audit-pack-first-party` | `connector-secret-negative-control` | `grclaw-audit-pack-first-party-connector-secret-negative-control` | 12 | 0 | 0 | 0 | 0 | 0 | `none` |
-| `rp3-f4d038e4c431` | `RP3` | `grclaw-audit-pack-first-party` | `connector-secret-negative-control` | `grclaw-audit-pack-first-party-connector-secret-negative-control` | 224 | 0 | 0 | 0 | 0 | 209 | `none` |
+| `rp3-00c8868e3750` | `RP3` | `grclaw-audit-pack-first-party` | `connector-secret-negative-control` | `grclaw-audit-pack-first-party-connector-secret-negative-control` | 224 | 0 | 0 | 0 | 0 | 209 | `none` |
 
 ## Pairwise Disagreements
 
-### `rp2-1b46ba154697` vs `rp3-f4d038e4c431`
+### `rp2-1b46ba154697` vs `rp3-00c8868e3750`
 
 - Runtime profiles: `RP2` vs `RP3`
 - Classification: `no_pairwise_disagreement`

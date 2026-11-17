@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp3-f309fa97398f`
+- Run: `rp3-4ee1443dc927`
 - Runtime profile: `RP3`
 - Contract: `tika-public-remote-server-negative-control`
-- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-f309fa97398f/trace.jsonl`
+- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-4ee1443dc927/trace.jsonl`
 - Events: `224`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

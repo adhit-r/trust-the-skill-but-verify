@@ -20,7 +20,12 @@ REQUIRED_FIGURES = {
     "F4": "fig4-drift-outcomes.svg",
     "F5": "fig5-runtime-report-cards.svg",
     "F6": "fig6-artifact-flow.svg",
+    "F7": "fig7-outcome-flip-matrix.svg",
 }
+# Manual figures must stay numeric-free. Data-derived figures must instead name a
+# generator that exists in the repo and declare the numbers they render, so every
+# figure number remains traceable to an artifact.
+MANUAL_REGEN_COMMAND = "manual-svg"
 REQUIRED_BOUNDARY_FLAGS = {
     "adds_new_experimental_results": False,
     "prevalence_claim": False,
@@ -113,10 +118,25 @@ def main() -> int:
         for claim_id in figure.get("claim_ids", []):
             if claim_id not in claim_ids:
                 raise AssertionError(f"{figure_id}: unknown claim_id {claim_id}")
-        if figure.get("numeric_fields") != []:
-            raise AssertionError(f"{figure_id}: numeric_fields must stay empty until generated from claims")
-        if figure.get("regen_command") != "manual-svg":
-            raise AssertionError(f"{figure_id}: unexpected regen_command")
+        regen_command = figure.get("regen_command")
+        numeric_fields = figure.get("numeric_fields")
+        if not isinstance(numeric_fields, list):
+            raise AssertionError(f"{figure_id}: numeric_fields must be a list")
+        if regen_command == MANUAL_REGEN_COMMAND:
+            if numeric_fields != []:
+                raise AssertionError(
+                    f"{figure_id}: manual figures must keep numeric_fields empty until generated from claims"
+                )
+        else:
+            if not isinstance(regen_command, str) or not regen_command:
+                raise AssertionError(f"{figure_id}: unexpected regen_command")
+            if not numeric_fields:
+                raise AssertionError(
+                    f"{figure_id}: data-derived figures must declare the numeric_fields they render"
+                )
+            generator = regen_command.split()[-1]
+            if not repo_path(generator).is_file():
+                raise FileNotFoundError(f"{figure_id}: missing regen generator {generator}")
 
     if seen != set(REQUIRED_FIGURES):
         raise AssertionError(f"missing figures: {sorted(set(REQUIRED_FIGURES) - seen)}")

@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp3-1f80c2a03f03`
+- Run: `rp3-60ec2ac54600`
 - Runtime profile: `RP3`
 - Contract: `markitdown-public-local-doc-conversion-summary`
-- Trace: `results/raw/rp3-1f80c2a03f03/trace.jsonl`
+- Trace: `results/raw/rp3-60ec2ac54600/trace.jsonl`
 - Events: `224`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

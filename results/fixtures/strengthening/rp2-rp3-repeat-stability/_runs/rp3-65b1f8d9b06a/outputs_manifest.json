@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "de8359c61d72280ba0984c5dc49f9e80f3147507bfef40b4d506893716f5ab7c",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/writer-option-boundary-report.md",
+      "size": 856
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-65b1f8d9b06a"
+}

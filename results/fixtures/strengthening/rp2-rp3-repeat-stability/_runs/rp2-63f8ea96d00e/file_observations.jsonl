@@ -1,2 +1,2 @@
-{"copied_file_count": 8, "event": "workspace_seed_copied", "path": "<REPO_ROOT>/benchmark/workspaces/files-to-prompt-public-planned-mini", "profile_id": "RP2", "timestamp": "2026-05-29T17:15:46+00:00"}
-{"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./planned-output/local-context-bundle.md", "sha256": "sha256:a97f66614ab5ddf74aa22d56ee225bbd79b9f8d749d9744af4de5963f5b95515", "size": 849, "status": "succeeded", "timestamp": "2026-05-29T17:15:46+00:00"}
+{"copied_file_count": 8, "event": "workspace_seed_copied", "path": "<REPO_ROOT>/benchmark/workspaces/files-to-prompt-public-planned-mini", "profile_id": "RP2", "timestamp": "2026-11-11T23:40:33+00:00"}
+{"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./planned-output/local-context-bundle.md", "sha256": "sha256:a97f66614ab5ddf74aa22d56ee225bbd79b9f8d749d9744af4de5963f5b95515", "size": 849, "status": "succeeded", "timestamp": "2026-11-11T23:40:33+00:00"}

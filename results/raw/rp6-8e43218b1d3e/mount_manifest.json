@@ -1,0 +1,9 @@
+{
+  "mounts": [
+    {
+      "mode": "contract_scoped_read_write",
+      "source": "<REPO_ROOT>/results/raw/rp6-8e43218b1d3e/workspace",
+      "target": "<REPO_ROOT>/results/raw/rp6-8e43218b1d3e/workspace"
+    }
+  ]
+}

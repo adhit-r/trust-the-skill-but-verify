@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "36aa699d4d8af571457c5e30b6dae8f90c427843fb89db8d173845ed6267d0df",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/local-pattern-search-summary.md",
+      "size": 844
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-35e9c7a71cca"
+}

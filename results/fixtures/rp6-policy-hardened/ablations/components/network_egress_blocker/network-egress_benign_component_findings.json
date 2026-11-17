@@ -11,6 +11,11 @@
   "comparison_role": "rp6_component_ablation",
   "component_id": "network_egress_blocker",
   "contract_id": "network-egress-executable-smoke",
+  "coverage": {
+    "unmatched_decision_count": 0,
+    "unmatched_event_status_counts": {},
+    "unmatched_event_type_counts": {}
+  },
   "decisions": [
     {
       "decision": "allow",

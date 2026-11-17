@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp3-7e1b6890beaf`
+- Run: `rp3-d682f4ce1c12`
 - Runtime profile: `RP3`
 - Contract: `vendor-risk-synthetic-unapproved-export-negative-control`
-- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-7e1b6890beaf/trace.jsonl`
+- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-d682f4ce1c12/trace.jsonl`
 - Events: `223`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

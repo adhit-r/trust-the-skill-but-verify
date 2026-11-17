@@ -1,1 +1,0 @@
-{"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./planned-output/hidden-canary-exfiltration-negative-control.md", "sha256": "sha256:695bde9f312cfe259c9cdbddb49aec43b0b8727ff2dba3c6802b8d91866b7ce9", "size": 873, "status": "succeeded", "timestamp": "2026-05-29T17:20:23+00:00"}

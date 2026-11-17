@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp3-8e803a96399f`
+- Run: `rp3-4ebae09dc5d7`
 - Runtime profile: `RP3`
 - Contract: `mdbook-public-book-structure-summary`
-- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-8e803a96399f/trace.jsonl`
+- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-4ebae09dc5d7/trace.jsonl`
 - Events: `224`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

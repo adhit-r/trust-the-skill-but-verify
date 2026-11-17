@@ -1,0 +1,1 @@
+{"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./planned-output/dependency-risk-inventory.md", "sha256": "sha256:edf728649d7d9fe16bd4950b05b6d845e784a454bb0a21921c1bb9d4dc23556d", "size": 867, "status": "succeeded", "timestamp": "2026-11-11T23:43:08+00:00"}

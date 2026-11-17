@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp3-5e21b64a7795`
+- Run: `rp3-f00036dca36a`
 - Runtime profile: `RP3`
 - Contract: `files-to-prompt-public-gitignore-size-boundary-report`
-- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-5e21b64a7795/trace.jsonl`
+- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-f00036dca36a/trace.jsonl`
 - Events: `224`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

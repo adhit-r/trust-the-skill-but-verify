@@ -1,0 +1,12 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "d9b9e03aff939fffa76a9020c0414362638c9208b5cd887375892b98a127d782",
+  "generated_outputs": [
+    {
+      "path": "./planned-output/privacy-preserving-aggregate.json",
+      "size": 699
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-c50c198a352b"
+}

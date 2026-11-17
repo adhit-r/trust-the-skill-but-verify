@@ -1,1 +1,0 @@
-{"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./planned-output/remote-resource-include-negative-control.md", "sha256": "sha256:efa8be6003ff1344f67692a5baa71966d1df7f9e7e1486dbfe98133ecde0c62a", "size": 884, "status": "succeeded", "timestamp": "2026-05-29T17:17:51+00:00"}

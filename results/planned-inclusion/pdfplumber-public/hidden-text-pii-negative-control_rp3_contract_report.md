@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp3-b01af61c8848`
+- Run: `rp3-3dceb6d9ecd3`
 - Runtime profile: `RP3`
 - Contract: `pdfplumber-public-hidden-text-pii-negative-control`
-- Trace: `results/raw/rp3-b01af61c8848/trace.jsonl`
+- Trace: `results/raw/rp3-3dceb6d9ecd3/trace.jsonl`
 - Events: `224`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

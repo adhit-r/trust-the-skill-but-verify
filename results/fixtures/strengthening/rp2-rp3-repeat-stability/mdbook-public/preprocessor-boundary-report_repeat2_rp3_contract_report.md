@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp3-ad2f51573ec4`
+- Run: `rp3-85916895f3e8`
 - Runtime profile: `RP3`
 - Contract: `mdbook-public-preprocessor-boundary-report`
-- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-ad2f51573ec4/trace.jsonl`
+- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-85916895f3e8/trace.jsonl`
 - Events: `224`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

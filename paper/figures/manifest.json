@@ -103,6 +103,32 @@
       "numeric_fields": [],
       "regen_command": "manual-svg",
       "boundary_note": "Release-flow scaffold only; clean bundle and completed human review remain pending."
+    },
+    {
+      "figure_id": "F7",
+      "title": "RP2->RP3 outcome-flip matrix (data-derived)",
+      "asset": "paper/figures/fig7-outcome-flip-matrix.svg",
+      "source_paths": [
+        "results/mvp",
+        "results/derived/outcome-flip-matrix/outcome_flip_summary.json",
+        "tools/build_outcome_flip_matrix.py"
+      ],
+      "claim_ids": [
+        "CL-MVP-004",
+        "CL-MVP-005",
+        "CL-BOUNDARY-001"
+      ],
+      "numeric_fields": [
+        "rows=20 across 7 case families",
+        "contained_with_utility_cost=1",
+        "residual_leak_no_drift=12",
+        "residual_leak_no_drift_from_missing_approval_only=9",
+        "contained_clean=0",
+        "conformant=7",
+        "canary_observations_prevented_by_rp3=20"
+      ],
+      "regen_command": "python3 tools/build_outcome_flip_matrix.py",
+      "boundary_note": "Data-derived from existing MVP RP2/RP3 results only; non-entailed cells (utility-cost, no-drift residual) are the contribution and containment cells are labeled config-entailed; 9 of the 12 no-drift rows are no-drift only because both runtimes miss a contract-required approval (SC-APR-*) that neither RP2 nor RP3 implements; mcp-tool-workflow tool calls are fixture-declared in both runtimes, not enforced MCP policy; pairwise disagreement is not prevalence."
     }
   ],
   "claim_boundary": {

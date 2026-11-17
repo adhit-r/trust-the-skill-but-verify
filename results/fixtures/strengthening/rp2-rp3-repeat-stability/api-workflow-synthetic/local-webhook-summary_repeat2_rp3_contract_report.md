@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp3-b82124ca590f`
+- Run: `rp3-4c2d86d5a344`
 - Runtime profile: `RP3`
 - Contract: `api-workflow-synthetic-local-webhook-summary`
-- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-b82124ca590f/trace.jsonl`
+- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-4c2d86d5a344/trace.jsonl`
 - Events: `223`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

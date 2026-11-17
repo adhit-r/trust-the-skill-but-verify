@@ -1,9 +1,9 @@
 # Contract Check Report
 
-- Run: `rp3-acd70b7f4c40`
+- Run: `rp3-054a001f32f5`
 - Runtime profile: `RP3`
 - Contract: `license-auditor-synthetic-notice-file-plan`
-- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-acd70b7f4c40/trace.jsonl`
+- Trace: `results/fixtures/strengthening/rp2-rp3-repeat-stability/_runs/rp3-054a001f32f5/trace.jsonl`
 - Events: `223`
 - Realized contract violations: `0`
 - Attempted overreach: `0`

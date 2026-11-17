@@ -1,0 +1,24 @@
+{
+  "adapter_outcome": "completed",
+  "container_id": "c61b8bd53a87de60d9f3e6f7f0111498e2ee16ac03bbbcf72c260cca98b7ff00",
+  "generated_outputs": [
+    {
+      "path": "./dashboard/acme_auditor_workspace.html",
+      "size": 1554
+    },
+    {
+      "path": "./dashboard/acme_grc_dashboard.html",
+      "size": 1554
+    },
+    {
+      "path": "./dashboard/index.html",
+      "size": 1554
+    },
+    {
+      "path": "./reports/audit/dashboard_summary.json",
+      "size": 119
+    }
+  ],
+  "mode": "live",
+  "run_id": "rp3-a9a41d787a1b"
+}

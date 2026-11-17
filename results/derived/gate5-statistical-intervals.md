@@ -10,7 +10,7 @@ Non-human Wilson and bootstrap interval artifact over the curated Gate 5 denomin
 - Paired-summary mapped cases: `122`
 - Paired-summary unmapped cases: `10`
 - Paired-runtime pair records: `214`
-- Wilson intervals: `36`
+- Wilson intervals: `37`
 - Case bootstrap intervals: `18`
 - Hierarchical bootstrap intervals: `6`
 - McNemar results: `0`
@@ -20,8 +20,8 @@ Non-human Wilson and bootstrap interval artifact over the curated Gate 5 denomin
 
 - Majority pair classification: `no_pairwise_disagreement`
 - Median pair disagreement count: `0.000000`
-- Positive disagreement pairs: `62`
-- Pairwise disagreement finding count: `232`
+- Positive disagreement pairs: `75`
+- Pairwise disagreement finding count: `299`
 - Max pair severity: `critical`
 
 Max severity is computed from comparator finding-set deltas only; it is reported beside majority/median behavior and is not human-adjudicated severity.
@@ -53,19 +53,20 @@ Max severity is computed from comparator finding-set deltas only; it is reported
 | `runtime_profile_case_coverage_share` | `runtime_profile=RP3` | 129 | 132 | 0.977273 | 0.935311 | 0.992241 |
 | `runtime_profile_case_coverage_share` | `runtime_profile=RP5` | 3 | 132 | 0.022727 | 0.007759 | 0.064689 |
 | `pair_classification_share` | `classification=mitigation_report_card_comparison` | 28 | 214 | 0.130841 | 0.092099 | 0.182603 |
-| `pair_classification_share` | `classification=no_pairwise_disagreement` | 143 | 214 | 0.668224 | 0.602661 | 0.727854 |
+| `pair_classification_share` | `classification=no_pairwise_disagreement` | 134 | 214 | 0.626168 | 0.559657 | 0.688230 |
 | `pair_classification_share` | `classification=profile_conditioned_semantic_fixture` | 28 | 214 | 0.130841 | 0.092099 | 0.182603 |
-| `pair_classification_share` | `classification=runtime_drift_candidate` | 15 | 214 | 0.070093 | 0.042934 | 0.112415 |
+| `pair_classification_share` | `classification=runtime_drift_candidate` | 24 | 214 | 0.112150 | 0.076531 | 0.161447 |
 | `runtime_pair_share` | `runtime_pair=RP2__RP1` | 12 | 214 | 0.056075 | 0.032365 | 0.095441 |
 | `runtime_pair_share` | `runtime_pair=RP2__RP3` | 162 | 214 | 0.757009 | 0.695343 | 0.809611 |
 | `runtime_pair_share` | `runtime_pair=RP2__RP6` | 14 | 214 | 0.065421 | 0.039366 | 0.106802 |
 | `runtime_pair_share` | `runtime_pair=RP3__RP1` | 12 | 214 | 0.056075 | 0.032365 | 0.095441 |
 | `runtime_pair_share` | `runtime_pair=RP3__RP6` | 14 | 214 | 0.065421 | 0.039366 | 0.106802 |
-| `positive_pair_disagreement_share` | `all=all` | 62 | 214 | 0.289720 | 0.233074 | 0.353781 |
-| `pair_max_severity_share` | `max_severity=none` | 152 | 214 | 0.710280 | 0.646219 | 0.766926 |
-| `pair_max_severity_share` | `max_severity=low` | 11 | 214 | 0.051402 | 0.028941 | 0.089684 |
-| `pair_max_severity_share` | `max_severity=high` | 11 | 214 | 0.051402 | 0.028941 | 0.089684 |
-| `pair_max_severity_share` | `max_severity=critical` | 40 | 214 | 0.186916 | 0.140374 | 0.244499 |
+| `positive_pair_disagreement_share` | `all=all` | 75 | 214 | 0.350467 | 0.289691 | 0.416517 |
+| `pair_max_severity_share` | `max_severity=none` | 139 | 214 | 0.649533 | 0.583483 | 0.710309 |
+| `pair_max_severity_share` | `max_severity=low` | 4 | 214 | 0.018692 | 0.007292 | 0.047066 |
+| `pair_max_severity_share` | `max_severity=medium` | 20 | 214 | 0.093458 | 0.061315 | 0.139939 |
+| `pair_max_severity_share` | `max_severity=high` | 10 | 214 | 0.046729 | 0.025577 | 0.083867 |
+| `pair_max_severity_share` | `max_severity=critical` | 41 | 214 | 0.191589 | 0.144484 | 0.249571 |
 
 ## Bootstrap Intervals
 

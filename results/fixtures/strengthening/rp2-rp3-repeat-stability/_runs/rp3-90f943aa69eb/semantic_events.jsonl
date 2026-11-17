@@ -1,0 +1,1 @@
+{"enforcement_outcome": "allowed", "event": "activation.select", "metadata": {"selected_skill_id": "vendor-risk-synthetic", "source_type": "task_prompt"}, "operation": "select", "status": "succeeded", "target": "vendor-risk-synthetic", "timestamp": "2026-11-11T23:45:46+00:00"}

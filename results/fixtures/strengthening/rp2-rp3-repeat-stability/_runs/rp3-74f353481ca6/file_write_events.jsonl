@@ -1,1 +1,0 @@
-{"canary_labels": [], "event": "filesystem.write", "operation": "write", "path": "./planned-output/connector-secret-negative-control.md", "sha256": "sha256:4d5b5df8221a11e3c22dba9396a235609d2005649f9bd7d74410e77acd7cec88", "size": 890, "status": "succeeded", "timestamp": "2026-05-29T17:15:57+00:00"}

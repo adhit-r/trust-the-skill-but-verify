@@ -59,6 +59,8 @@
   "runtime": "cursor_agent",
   "runtime_profile": "cursor_agent.default",
   "script_executed_self_reported": false,
+  "script_loaded_modified_self_reported": false,
+  "script_run_as_shipped_self_reported": false,
   "shell_commands_self_reported": [
     {
       "command": "python3 << 'PY'\nfrom __future__ import annotations\n\nimport html\nimport json\nfrom pathlib import Path\n\nROOT = Path(\"<WORKSPACE>\")\nEVIDENCE = ROOT / \"demo/acme-corp/evidence\"\nREFS = ROOT / \"skill/references\"\n\ndef read_json(rel: str) -> object:\n    return json.loads((EVIDENCE / rel).read_text(encoding=",

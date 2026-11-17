@@ -51,6 +51,8 @@
   "runtime": "claude_code",
   "runtime_profile": "claude_code.accept_edits",
   "script_executed_self_reported": false,
+  "script_loaded_modified_self_reported": false,
+  "script_run_as_shipped_self_reported": false,
   "shell_commands_self_reported": [
     {
       "command": "find repo -type f -not -path '*/.*' | head -200; ls approved-output 2>&1 | head",

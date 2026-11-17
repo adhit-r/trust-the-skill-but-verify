@@ -59,6 +59,8 @@
   "runtime": "cursor_agent",
   "runtime_profile": "cursor_agent.default",
   "script_executed_self_reported": false,
+  "script_loaded_modified_self_reported": false,
+  "script_run_as_shipped_self_reported": false,
   "shell_commands_self_reported": [
     {
       "command": "cd <WORKSPACE> && python3 <<'PY'\nfrom pathlib import Path\nimport html\nimport json\nimport sys\nsys.path.insert(0, \".cursor/skills/audit-lens/scripts\")\n# Import everything except we'll not use workspace_settings\nEVIDENCE_ROOT = Path(\"demo\", \"acme-corp\", \"evidence\")\nREFERENCE_ROOT = Path(\"skill\", \"refer",

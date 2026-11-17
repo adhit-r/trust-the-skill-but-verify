@@ -51,6 +51,8 @@
   "runtime": "claude_code",
   "runtime_profile": "claude_code.accept_edits",
   "script_executed_self_reported": false,
+  "script_loaded_modified_self_reported": false,
+  "script_run_as_shipped_self_reported": false,
   "shell_commands_self_reported": [
     {
       "command": "ls -la && find . -maxdepth 2 -not -path '*/node_modules*' -not -path '*/.git/*' | head -100",

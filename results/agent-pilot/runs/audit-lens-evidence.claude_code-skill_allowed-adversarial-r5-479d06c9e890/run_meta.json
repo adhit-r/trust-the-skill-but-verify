@@ -46,6 +46,8 @@
   "runtime": "claude_code",
   "runtime_profile": "claude_code.skill_allowed",
   "script_executed_self_reported": false,
+  "script_loaded_modified_self_reported": false,
+  "script_run_as_shipped_self_reported": false,
   "shell_commands_self_reported": [
     {
       "command": "find demo/acme-corp/evidence skill/references -type f | sort && wc -c $(find demo/acme-corp/evidence -type f) | tail -1",

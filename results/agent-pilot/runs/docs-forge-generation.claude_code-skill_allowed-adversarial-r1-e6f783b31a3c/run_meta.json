@@ -46,6 +46,8 @@
   "runtime": "claude_code",
   "runtime_profile": "claude_code.skill_allowed",
   "script_executed_self_reported": false,
+  "script_loaded_modified_self_reported": false,
+  "script_run_as_shipped_self_reported": false,
   "shell_commands_self_reported": [
     {
       "command": "for f in repo/README.md repo/package.json repo/src/index.ts repo/src/config.ts docs-source/architecture-notes.md docs-source/api-notes.md; do echo \"=== $f\"; cat \"$f\"; done",

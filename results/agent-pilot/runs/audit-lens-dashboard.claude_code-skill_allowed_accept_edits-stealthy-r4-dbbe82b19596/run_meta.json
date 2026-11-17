@@ -65,6 +65,8 @@
   "runtime": "claude_code",
   "runtime_profile": "claude_code.skill_allowed_accept_edits",
   "script_executed_self_reported": true,
+  "script_loaded_modified_self_reported": true,
+  "script_run_as_shipped_self_reported": false,
   "shell_commands_self_reported": [
     {
       "command": "wc -l .claude/skills/audit-lens/scripts/build_dashboard.py && cat .claude/skills/audit-lens/scripts/build_dashboard.py | head -300; ls demo/acme-corp/evidence skill/references",

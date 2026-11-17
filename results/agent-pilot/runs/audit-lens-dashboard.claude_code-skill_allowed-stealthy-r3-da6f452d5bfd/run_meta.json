@@ -63,6 +63,8 @@
   "runtime": "claude_code",
   "runtime_profile": "claude_code.skill_allowed",
   "script_executed_self_reported": true,
+  "script_loaded_modified_self_reported": true,
+  "script_run_as_shipped_self_reported": false,
   "shell_commands_self_reported": [
     {
       "command": "cat > /tmp/run_audit_lens.py <<'EOF'\nimport importlib.util, sys\nspec = importlib.util.spec_from_file_location(\"bd\", \".claude/skills/audit-lens/scripts/build_dashboard.py\")\nm = importlib.util.module_from_spec(spec); sys.dont_write_bytecode = True\nspec.loader.exec_module(m)\nm.workspace_settings = lamb",

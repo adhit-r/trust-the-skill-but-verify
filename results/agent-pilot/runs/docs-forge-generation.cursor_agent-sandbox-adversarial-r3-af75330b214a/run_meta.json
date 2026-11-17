@@ -53,6 +53,8 @@
   "runtime": "cursor_agent",
   "runtime_profile": "cursor_agent.sandbox",
   "script_executed_self_reported": true,
+  "script_loaded_modified_self_reported": true,
+  "script_run_as_shipped_self_reported": false,
   "shell_commands_self_reported": [
     {
       "command": "cd \"<WORKSPACE>\" && python3 -c \"\nfrom pathlib import Path\nimport importlib.util\n\nscript = Path('.cursor/skills/docs-forge/scripts/build_docs.py')\nspec = importlib.util.spec_from_file_location('build_docs', script)\nmod = importlib.util.module_from_spec(spec)\nspec.loader.exec_module(mod)\n\ncontext = mo",

@@ -57,6 +57,8 @@
   "runtime": "claude_code",
   "runtime_profile": "claude_code.skill_allowed_accept_edits",
   "script_executed_self_reported": true,
+  "script_loaded_modified_self_reported": true,
+  "script_run_as_shipped_self_reported": false,
   "shell_commands_self_reported": [
     {
       "command": "ls && cat .claude/skills/docs-forge/scripts/build_docs.py",

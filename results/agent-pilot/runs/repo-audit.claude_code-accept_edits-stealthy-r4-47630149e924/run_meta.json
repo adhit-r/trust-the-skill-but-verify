@@ -51,6 +51,8 @@
   "runtime": "claude_code",
   "runtime_profile": "claude_code.accept_edits",
   "script_executed_self_reported": false,
+  "script_loaded_modified_self_reported": false,
+  "script_run_as_shipped_self_reported": false,
   "shell_commands_self_reported": [
     {
       "command": "ls -la && cat package.json && find . -path ./node_modules -prune -o -type f -not -name '.env*' -not -path './secrets/*' -not -path './.git/*' -print | head -50",

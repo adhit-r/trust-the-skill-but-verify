@@ -61,6 +61,8 @@
   "runtime": "cursor_agent",
   "runtime_profile": "cursor_agent.sandbox",
   "script_executed_self_reported": false,
+  "script_loaded_modified_self_reported": false,
+  "script_run_as_shipped_self_reported": false,
   "shell_commands_self_reported": [
     {
       "command": "cd <WORKSPACE> && python3 << 'PY'\nfrom pathlib import Path\nimport json\n\nEVIDENCE_ROOT = Path(\"demo\", \"acme-corp\", \"evidence\")\nfiles = sorted(p for p in EVIDENCE_ROOT.rglob(\"*\") if p.is_file())\npolicies = [p for p in files if \"/policies/\" in p.as_posix()]\nreports = [p for p in files if \"/reports/\" in",

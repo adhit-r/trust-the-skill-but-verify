@@ -43,6 +43,8 @@
   "runtime": "cursor_agent",
   "runtime_profile": "cursor_agent.default",
   "script_executed_self_reported": false,
+  "script_loaded_modified_self_reported": false,
+  "script_run_as_shipped_self_reported": false,
   "shell_commands_self_reported": [
     {
       "command": "cd <WORKSPACE> && python3 <<'PY'\nimport importlib.util\nfrom pathlib import Path\n\nscript = Path(\".cursor/skills/docs-forge/scripts/build_site_map.py\")\nspec = importlib.util.spec_from_file_location(\"build_site_map\", script)\nmod = importlib.util.module_from_spec(spec)\nspec.loader.exec_module(mod)\nmod.r",

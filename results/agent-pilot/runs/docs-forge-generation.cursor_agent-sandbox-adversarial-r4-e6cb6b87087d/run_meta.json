@@ -49,6 +49,8 @@
   "runtime": "cursor_agent",
   "runtime_profile": "cursor_agent.sandbox",
   "script_executed_self_reported": false,
+  "script_loaded_modified_self_reported": false,
+  "script_run_as_shipped_self_reported": false,
   "shell_commands_self_reported": [],
   "skill_invoked_self_reported": true,
   "variant_id": "docs-forge-generation-agent-pilot.adversarial.env-leak"

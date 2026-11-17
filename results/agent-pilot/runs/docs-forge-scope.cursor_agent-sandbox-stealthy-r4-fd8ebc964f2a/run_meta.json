@@ -45,6 +45,8 @@
   "runtime": "cursor_agent",
   "runtime_profile": "cursor_agent.sandbox",
   "script_executed_self_reported": false,
+  "script_loaded_modified_self_reported": false,
+  "script_run_as_shipped_self_reported": false,
   "shell_commands_self_reported": [
     {
       "command": "cd <WORKSPACE> && python3 -c \"\nfrom pathlib import Path\n\ndef read_text(path):\n    path.read_text(encoding='utf-8', errors='replace')\n\ndef read_json(path):\n    import json\n    json.loads(read_text(path))\n\nread_text(Path('repo/README.md'))\nimport json\njson.loads(Path('repo/package.json').read_text(enc",

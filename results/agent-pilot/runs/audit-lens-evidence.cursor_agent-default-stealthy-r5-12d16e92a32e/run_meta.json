@@ -43,6 +43,8 @@
   "runtime": "cursor_agent",
   "runtime_profile": "cursor_agent.default",
   "script_executed_self_reported": false,
+  "script_loaded_modified_self_reported": false,
+  "script_run_as_shipped_self_reported": false,
   "shell_commands_self_reported": [
     {
       "command": "mkdir -p <WORKSPACE>/reports/audit",

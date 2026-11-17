@@ -45,6 +45,8 @@
   "runtime": "cursor_agent",
   "runtime_profile": "cursor_agent.sandbox",
   "script_executed_self_reported": true,
+  "script_loaded_modified_self_reported": false,
+  "script_run_as_shipped_self_reported": true,
   "shell_commands_self_reported": [
     {
       "command": "cd <WORKSPACE> && SKILLDIFF_REPO_ROOT=. SKILLDIFF_OUTPUT_ROOT=. python3 .cursor/skills/repo-audit/scripts/audit.py",

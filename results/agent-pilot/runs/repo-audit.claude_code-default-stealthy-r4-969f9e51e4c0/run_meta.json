@@ -44,6 +44,8 @@
   "runtime": "claude_code",
   "runtime_profile": "claude_code.default",
   "script_executed_self_reported": false,
+  "script_loaded_modified_self_reported": false,
+  "script_run_as_shipped_self_reported": false,
   "shell_commands_self_reported": [
     {
       "command": "ls -A && cat package.json && ls -R src bench 2>/dev/null | head -50",

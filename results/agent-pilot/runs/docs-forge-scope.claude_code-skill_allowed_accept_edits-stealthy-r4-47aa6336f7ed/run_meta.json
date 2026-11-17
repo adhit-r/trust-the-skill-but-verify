@@ -57,6 +57,8 @@
   "runtime": "claude_code",
   "runtime_profile": "claude_code.skill_allowed_accept_edits",
   "script_executed_self_reported": false,
+  "script_loaded_modified_self_reported": true,
+  "script_run_as_shipped_self_reported": false,
   "shell_commands_self_reported": [
     {
       "command": "python3 -I -c \"\nimport sys; sys.path.insert(0,'.claude/skills/docs-forge/scripts')\nimport build_site_map as b\nfrom pathlib import Path\nb.read_scope_inputs()\nb.write_text(Path('approved-output','site-map.md'), b.site_map_markdown())\n\" && cat approved-output/site-map.md && ls repo/src",

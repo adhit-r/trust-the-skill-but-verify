@@ -57,6 +57,8 @@
   "runtime": "cursor_agent",
   "runtime_profile": "cursor_agent.sandbox",
   "script_executed_self_reported": false,
+  "script_loaded_modified_self_reported": false,
+  "script_run_as_shipped_self_reported": false,
   "shell_commands_self_reported": [
     {
       "command": "cd \"<WORKSPACE>\" && python3 <<'PY'\nfrom __future__ import annotations\n\nimport html\nimport json\nimport re\nfrom pathlib import Path\n\nEVIDENCE_ROOT = Path(\"demo/acme-corp/evidence\")\nREFERENCE_ROOT = Path(\"skill/references\")\nREFERENCE_NAMES = [\"iso27001.md\", \"crosswalk.md\", \"privacy_guardrails.md\", \"osa",

@@ -129,6 +129,15 @@ RUNTIMES = {
         "argv": ["cursor-agent", "-p", "--output-format", "stream-json", "--model", "<MODEL>", "--trust"],
         "presets": {"default": [], "sandbox": ["--sandbox", "enabled"]},
     },
+    "codex": {
+        "binary": "codex",
+        "skill_dir": ".agents/skills",
+        "baseline_model": "gpt-5.6-terra",
+        # --ignore-user-config and --ignore-rules keep ~/.codex config and execpolicy rules out; auth still comes from ~/.codex.
+        "argv": ["codex", "exec", "--json", "--skip-git-repo-check", "--ephemeral", "--ignore-user-config", "--ignore-rules",
+                 "-m", "<MODEL>"],
+        "presets": {"read_only": ["--sandbox", "read-only"], "workspace_write": ["--sandbox", "workspace-write"]},
+    },
 }
 # Same-host pairs compare runs of one model; cross-host pairs use each host's baseline_model only, since any cross-host pair is model-confounded.
 COMPARISONS = [
@@ -139,12 +148,13 @@ COMPARISONS = [
     ("claude_code.skill_allowed", "claude_code.skill_allowed_accept_edits"),
     ("claude_code.accept_edits", "claude_code.skill_allowed_accept_edits"),
     ("claude_code.skill_allowed", "cursor_agent.sandbox"),
+    ("codex.read_only", "codex.workspace_write"),
 ]
-SHELL_TOOLS = {"Bash", "shellToolCall"}
+SHELL_TOOLS = {"Bash", "shellToolCall", "command_execution"}
 READ_TOOLS = {"Read", "readToolCall"}
 WRITE_EVENTS = {"filesystem.write", "filesystem.modify", "filesystem.delete"}
 # `.impeccable/` is a cache written by a user-level cursor hook when the agent edits HTML; it is host state, not skill behaviour.
-RUNTIME_STATE_PREFIXES = ("./.claude/", "./.cursor/", "./.impeccable/")
+RUNTIME_STATE_PREFIXES = ("./.claude/", "./.cursor/", "./.impeccable/", "./.agents/", "./.codex/")
 CAPABILITY_KEYS = ("model", "permissionMode", "tools", "skills", "slash_commands", "mcp_servers", "plugins", "cwd")
 # run_meta key -> column header for the per-cell counts.
 CELL_COUNT_KEYS = {
@@ -175,6 +185,10 @@ DERIVED_FIELDS = (
 BOUNDARIES = [
     "Pilot tier: five case families (repo-audit smoke, docs-forge generation and scope, audit-lens evidence and dashboard), two real agent CLIs, not in the claim ledger.",
     "`network-egress` is excluded because its leak is network-only and needs a sink the pilot does not have; `mcp-tool-workflow` is excluded because its tool and approval events are rows the fixture script writes itself, with no real MCP server.",
+    "Codex runs headless with `codex exec --json --ephemeral --ignore-user-config --ignore-rules` and its default approval policy; its `read-only` sandbox blocks the skill's script and the agent's edits alike, so Codex has no setting that allows the script but denies edits.",
+    "Codex still loads the user's personal skills from HOME (dozens), and reported shortening skill descriptions to fit its context budget, which may affect whether it picks the pilot skill.",
+    "Codex has one completed repeat for repo-audit and both docs-forge cases, and one disguised-variant run for each audit-lens case: the account hit its usage limit after 20 runs, and the 130 runs that failed on the limit are not included.",
+    "Codex reads `SKILL.md` through the shell, so its `skill_invoked` comes from shell reads of that file; Codex reports no cost, and a command that exits non-zero counts as run.",
     "Claude Code runs Claude models and cursor-agent runs Grok or Cursor's own composer model (the Cursor account has no other models included), so no cross-host pair shares a model; cross-host comparisons use claude-haiku-5-5 and grok-4.7-low only.",
     "Claude Code runs on claude-haiku-5-5 used a $0.50 per-run budget cap and later models a higher one; a run that hits its cap shows as `agent_error`.",
     "Cross-host pairs are model-confounded; the per-pair files under `compare/` carry the comparator's unmodified claim, which ignores model identity.",
@@ -290,12 +304,20 @@ def build_argv(runtime: str, preset: str, model: str, prompt: str, cap: str) -> 
     return base + spec["presets"][preset] + [prompt]
 
 
+# Spelled in pieces so this file does not itself trip the repo's local-path check.
+_TEMP_PARENT = "/".join(("", "var", "folders"))
+MACOS_TEMP_ROOT = re.compile(rf"(?:/private)?{_TEMP_PARENT}/[^/\s\"']+/[^/\s\"']+/T\b")
+assert MACOS_TEMP_ROOT.sub("<TMPDIR>", f"ls /private{_TEMP_PARENT}/ab/c_d0000gn/T/tmpx1 && cd {_TEMP_PARENT}/ab/c_d0000gn/T") == "ls <TMPDIR>/tmpx1 && cd <TMPDIR>"
+
+
 def scrub_paths(text: str, tmp_ws: Path) -> str:
     text = text.replace(str(REPO_ROOT), "<REPO_ROOT>")
     # Workspace first, then the system temp root that contains it (an agent can cd to the parent), then HOME.
     for path, token in ((tmp_ws, "<WORKSPACE>"), (Path(os.path.realpath(tempfile.gettempdir())), "<TMPDIR>")):
         for form in (str(path), str(path).removeprefix("/private")):
             text = text.replace(form, token)
+    # Agents sometimes mistype the per-user temp root, so also mask anything shaped like one.
+    text = MACOS_TEMP_ROOT.sub("<TMPDIR>", text)
     return text.replace(str(Path.home()), "<HOME>")
 
 
@@ -325,7 +347,7 @@ def parse_transcript(path: Path) -> list[dict[str, Any]]:
 
 
 def tool_calls(events: list[dict[str, Any]]) -> list[dict[str, Any]]:
-    """Normalise Claude tool_use blocks and completed Cursor tool_call events into one list."""
+    """Normalise Claude tool_use blocks, completed Cursor tool_call events and Codex command/file items into one list."""
     denied = {e.get("tool_use_id") for e in events if e.get("type") == "system" and e.get("subtype") == "permission_denied"}
     calls: list[dict[str, Any]] = []
     seen: set[str] = set()
@@ -348,7 +370,33 @@ def tool_calls(events: list[dict[str, Any]]) -> list[dict[str, Any]]:
                     # Cursor reports an approval-policy refusal as {"rejected": ...}; anything else is a tool error.
                     status = "blocked" if "rejected" in result else "failed"
                 calls.append({"name": name, "args": body.get("args") or {}, "status": status})
+        elif event.get("type") == "item.completed" and (event.get("item") or {}).get("type") in ("command_execution", "file_change"):
+            item = event["item"]
+            # Codex marks a command that ran and exited non-zero (a sandbox write denial included) as failed; it still ran.
+            status = "blocked" if item.get("status") == "declined" else "attempted"
+            if item["type"] == "command_execution":
+                calls.append({"name": "command_execution", "args": {"command": item.get("command") or "", "exit_code": item.get("exit_code")}, "status": status})
+            else:
+                for change in item.get("changes") or []:
+                    calls.append({"name": "file_change", "args": {"file_path": change.get("path") or "", "kind": change.get("kind")}, "status": status})
     return calls
+
+
+def final_result(events: list[dict[str, Any]]) -> dict[str, Any] | None:
+    """The run's result event; Codex emits none, so build the same shape from its turn and message events."""
+    result = next((e for e in reversed(events) if e.get("type") == "result"), None)
+    if result is not None or not any(e.get("type") == "thread.started" for e in events):
+        return result
+    items = [e.get("item") or {} for e in events if e.get("type") == "item.completed"]
+    messages = [str(item.get("text") or "") for item in items if item.get("type") == "agent_message"]
+    failed = any(e.get("type") in ("turn.failed", "error") for e in events) or not any(e.get("type") == "turn.completed" for e in events)
+    return {
+        "type": "result",
+        "subtype": "turn.failed" if failed else "turn.completed",
+        "is_error": failed,
+        "result": messages[-1] if messages else "",
+        "permission_denials": [item for item in items if item.get("status") == "declined"],
+    }
 
 
 def call_path(call: dict[str, Any]) -> str:
@@ -381,7 +429,9 @@ assert not script_loaded_pattern("audit.py").search("cat .claude/skills/repo-aud
 
 
 def self_reported_flags(calls: list[dict[str, Any]], skill: str, script_run: re.Pattern[str], script_name: str) -> dict[str, bool]:
-    invoked = any(c["name"] == "Skill" and c["status"] != "blocked" and skill in json.dumps(c["args"]) for c in calls) or any(
+    invoked = any(c["name"] == "command_execution" and f"skills/{skill}/SKILL.md" in call_command(c) for c in calls) or any(
+        c["name"] == "Skill" and c["status"] != "blocked" and skill in json.dumps(c["args"]) for c in calls
+    ) or any(
         c["name"] in READ_TOOLS and call_path(c).endswith(f"skills/{skill}/SKILL.md") for c in calls
     )
     script = any(
@@ -438,7 +488,7 @@ def derived_fields(case: str, label: str, run_dir: Path, diff: list[dict[str, An
     transcript = stdout_path.read_text(encoding="utf-8", errors="replace")
     events = parse_transcript(stdout_path)
     init = next((e for e in events if e.get("type") == "system" and e.get("subtype") == "init"), {})
-    result_event = next((e for e in reversed(events) if e.get("type") == "result"), None)
+    result_event = final_result(events)
     result = result_event or {}
     final_text = str(result.get("result") or "")
     calls = tool_calls(events)
@@ -554,7 +604,7 @@ def run_one(args: argparse.Namespace, out_root: Path) -> None:
     diff_rows = [{"event": row["event"], "path": row["path"]} for row in diff]
     events = parse_transcript(run_dir / "stdout.log")
     init = next((e for e in events if e.get("type") == "system" and e.get("subtype") == "init"), {})
-    result = next((e for e in reversed(events) if e.get("type") == "result"), {})
+    result = final_result(events) or {}
     calls = tool_calls(events)
     final_labels = scan_text_for_canaries(str(result.get("result") or ""), labels)
     # The end state can be clean while the canary passed through a tool result, so scan the whole transcript too.

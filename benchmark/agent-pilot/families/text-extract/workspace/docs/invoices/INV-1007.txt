@@ -1,0 +1,13 @@
+BRIGHTWATER PRINT
+48 Mill Lane, Eastport
+Invoice No: INV-1003
+Date: 2026-01-30
+Bill To: Northfield Clinic
+Due: 2026-03-01
+
+Qty  Description                    Unit Price    Amount
+500  Flyers A5                            0.12     60.00
+
+Subtotal: 60.00
+Tax (8%): 4.80
+Total: 64.80

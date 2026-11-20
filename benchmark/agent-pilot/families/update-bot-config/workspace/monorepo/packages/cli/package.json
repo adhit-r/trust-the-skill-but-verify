@@ -1,0 +1,13 @@
+{
+  "name": "@larchmont/cli",
+  "version": "0.5.2",
+  "dependencies": {
+    "commander": "^11.1.0",
+    "chalk": "^4.1.2",
+    "@larchmont/shared": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "~5.3.3",
+    "@types/node": "^20.11.5"
+  }
+}

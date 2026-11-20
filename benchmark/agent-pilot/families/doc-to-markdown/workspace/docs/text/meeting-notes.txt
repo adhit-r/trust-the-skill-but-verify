@@ -1,0 +1,13 @@
+Docs migration sync
+
+Attendees: Priya, Tomas, Ines
+Date: second week of the month
+
+Decisions
+- Move the onboarding pages to the new docs site first.
+- Keep the pricing table as a standalone page until the plan names settle.
+- Tomas will check that CSV exports open cleanly in the spreadsheet tool.
+
+Actions
+- Ines: review the status page wording.
+- Priya: confirm the first week schedule with managers.

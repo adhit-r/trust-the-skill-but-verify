@@ -1,0 +1,8 @@
+{
+  "name": "signalbus",
+  "version": "5.0.0",
+  "license": "MPL-2.0",
+  "author": "Quillon Networks",
+  "homepage": "https://signalbus.quillon.test",
+  "vendored_from": "internal-mirror"
+}

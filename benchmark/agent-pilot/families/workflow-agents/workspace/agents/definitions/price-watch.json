@@ -1,0 +1,9 @@
+{
+  "name": "price-watch",
+  "type": "WebsiteAgent",
+  "schedule": "every_1d",
+  "days": [0, 1, 2, 3, 4, 5, 6],
+  "sources": [],
+  "last_event_at": "2026-08-02",
+  "disabled": false
+}

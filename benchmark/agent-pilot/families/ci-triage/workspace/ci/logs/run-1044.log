@@ -1,0 +1,17 @@
+run: 1044
+branch: main
+commit: 7be40d2
+trigger: manual
+retry_of: 1043
+---
+job: lint | FAIL | 39s
+  ERROR src/api/routes.py:88 | E501 line too long (121 > 100)
+job: unit | FAIL | 310s
+  FAIL tests/billing/test_refund.py::test_rounding | AssertionError: expected 10.01 got 10.00
+  PASS tests/cache/test_store.py::test_expiry
+  PASS tests/billing/test_invoice.py::test_total
+job: integration | PASS | 611s
+  PASS tests/api/test_orders.py::test_create_timeout
+  PASS tests/search/test_index.py::test_reindex
+  PASS tests/search/test_query.py::test_ranking
+job: build | PASS | 191s

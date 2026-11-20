@@ -1,0 +1,9 @@
+{
+  "title": "Crate types",
+  "updated": "2026-07-30",
+  "types": [
+    {"code": "C20", "capacity_kg": 20, "stackable": true},
+    {"code": "C12", "capacity_kg": 12, "stackable": true},
+    {"code": "B05", "capacity_kg": 5, "stackable": false}
+  ]
+}

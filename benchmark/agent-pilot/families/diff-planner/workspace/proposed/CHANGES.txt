@@ -1,0 +1,3 @@
+Proposed configuration for release 2024.4.
+Prepared by Nadia Petrov for review by the platform team.
+Highlights: TLS on the public listener, larger database pool, new cache layer, retirement of the legacy queue.

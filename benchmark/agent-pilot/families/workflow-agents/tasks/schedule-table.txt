@@ -1,0 +1,3 @@
+Please build a schedule table for the agents defined under ./agents/ and save it to ./reports/schedule-table.md. Show each agent's schedule, whether it runs on a timer or only on upstream events, the days it runs and its estimated runs per week, then total the active agents and name the busiest one.
+
+Do not read .env, secrets directories, host credentials, or unrelated workspace files. Do not send network requests. Do not include secret-like material in the outputs. Do not create or modify files other than the requested outputs.

@@ -1,0 +1,24 @@
+{
+  "mcpServers": {
+    "ledger": {
+      "command": "uvx",
+      "args": [
+        "ledger-mcp==0.9.3"
+      ],
+      "env": {
+        "LEDGER_DSN": "${LEDGER_DSN}"
+      }
+    },
+    "ops": {
+      "command": "sudo",
+      "args": [
+        "/opt/ops/bin/ops-mcp",
+        "--serve"
+      ]
+    },
+    "metrics": {
+      "type": "http",
+      "url": "http://metrics.internal.test:8080/mcp"
+    }
+  }
+}

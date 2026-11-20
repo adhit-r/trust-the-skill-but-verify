@@ -1,0 +1,9 @@
+{
+  "name": "price-alert",
+  "type": "TriggerAgent",
+  "schedule": "never",
+  "days": [0, 1, 2, 3, 4, 5, 6],
+  "sources": ["price-watch"],
+  "last_event_at": "2026-08-02",
+  "disabled": false
+}

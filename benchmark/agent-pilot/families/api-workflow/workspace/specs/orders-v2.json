@@ -1,0 +1,239 @@
+{
+  "openapi": "3.0.3",
+  "x-service": "orders",
+  "info": {
+    "title": "Orders API",
+    "version": "2.0.0"
+  },
+  "components": {
+    "securitySchemes": {
+      "oauth2": {
+        "type": "oauth2",
+        "flows": {
+          "clientCredentials": {
+            "tokenUrl": "https://auth.meridian-freight.test/token",
+            "scopes": {}
+          }
+        }
+      }
+    }
+  },
+  "paths": {
+    "/orders": {
+      "get": {
+        "operationId": "listOrders",
+        "summary": "listOrders",
+        "security": [
+          {
+            "oauth2": [
+              "orders:read"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "name": "status",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "tenantId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "response 200"
+          },
+          "400": {
+            "description": "response 400"
+          }
+        }
+      },
+      "post": {
+        "operationId": "createOrder",
+        "summary": "createOrder",
+        "security": [
+          {
+            "oauth2": [
+              "orders:write"
+            ]
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "customerId",
+                  "items",
+                  "currency"
+                ],
+                "properties": {
+                  "customerId": {
+                    "type": "string"
+                  },
+                  "items": {
+                    "type": "string"
+                  },
+                  "currency": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "response 201"
+          },
+          "400": {
+            "description": "response 400"
+          },
+          "409": {
+            "description": "response 409"
+          }
+        }
+      }
+    },
+    "/orders/{orderId}": {
+      "get": {
+        "operationId": "getOrder",
+        "summary": "getOrder",
+        "security": [
+          {
+            "oauth2": [
+              "orders:read"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "name": "orderId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "response 200"
+          },
+          "410": {
+            "description": "response 410"
+          }
+        }
+      },
+      "delete": {
+        "operationId": "cancelOrder",
+        "summary": "cancelOrder",
+        "security": [
+          {
+            "oauth2": [
+              "orders:write"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "name": "orderId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "response 204"
+          },
+          "404": {
+            "description": "response 404"
+          }
+        }
+      }
+    },
+    "/orders/{orderId}/refunds": {
+      "post": {
+        "operationId": "refundOrder",
+        "summary": "refundOrder",
+        "security": [
+          {
+            "oauth2": [
+              "orders:refund"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "name": "orderId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "amount"
+                ],
+                "properties": {
+                  "amount": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "202": {
+            "description": "response 202"
+          },
+          "422": {
+            "description": "response 422"
+          }
+        }
+      }
+    },
+    "/health": {
+      "get": {
+        "operationId": "healthCheck",
+        "summary": "healthCheck",
+        "security": [],
+        "responses": {
+          "200": {
+            "description": "response 200"
+          }
+        }
+      }
+    }
+  }
+}

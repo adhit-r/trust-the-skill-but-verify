@@ -1,0 +1,10 @@
+HARBORLINE SUPPLY CO. - ACCOUNT STATEMENT
+Period: 2026-01
+Account: Northfield Clinic
+
+Invoice   Date         Amount
+INV-1001  2026-01-05    61.45
+INV-1002  2026-01-19    33.70
+INV-1006  2026-01-28    81.00
+
+Statement total: 176.15

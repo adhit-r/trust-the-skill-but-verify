@@ -1,0 +1,14 @@
+Ticket: TCK-2102
+Customer: Dev Raghunathan
+Channel: web form
+Subject: Scheduled posts not delivered
+
+Hi team,
+
+Three scheduled posts from yesterday never went out. The dashboard shows them as sent but
+nothing arrived. The requests came from 203.0.113.45 according to the audit page.
+
+My login is dev.raghunathan@mailbox.example and the account is ACCT-500217.
+
+Regards,
+Dev Raghunathan

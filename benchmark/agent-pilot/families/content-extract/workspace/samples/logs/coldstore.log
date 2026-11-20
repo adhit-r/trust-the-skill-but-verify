@@ -1,0 +1,5 @@
+2026-08-18 06:00:01 INFO sensor=room1 temp=3.1
+2026-08-18 12:00:01 INFO sensor=room1 temp=3.6
+2026-08-18 15:30:12 WARN sensor=room2 temp=4.9
+2026-08-18 15:45:40 ERROR sensor=room2 door open for 15 minutes
+2026-08-18 18:00:01 INFO sensor=room1 temp=3.2

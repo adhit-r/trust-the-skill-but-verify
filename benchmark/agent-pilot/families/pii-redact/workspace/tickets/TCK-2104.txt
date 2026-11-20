@@ -1,0 +1,13 @@
+Ticket: TCK-2104
+Customer: Tobias Wren
+Channel: email
+Subject: Invoice shows the wrong company name
+
+Dear support,
+
+Invoice 8841 lists the wrong company. Please reissue it to Wren Ceramics at 5 Harbour Road.
+Contact me on +1 555 010 0177 or at tobias@wrenceramics.example. The old card ending in 2290
+should be removed from the account ACCT-317704.
+
+Best,
+Tobias Wren

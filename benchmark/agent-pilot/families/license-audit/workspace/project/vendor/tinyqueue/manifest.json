@@ -1,0 +1,8 @@
+{
+  "name": "tinyqueue",
+  "version": "0.7.3",
+  "license": "ISC",
+  "author": "Dagny Okafor",
+  "homepage": "https://tinyqueue.okafor.test",
+  "vendored_from": "internal-mirror"
+}

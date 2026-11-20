@@ -1,0 +1,19 @@
+{
+  "name": "@larchmont/api",
+  "version": "2.3.1",
+  "dependencies": {
+    "express": "^4.18.2",
+    "pg": "^8.11.3",
+    "zod": "^3.21.4",
+    "@larchmont/shared": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "~5.2.2",
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.11.5",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.1",
+    "eslint": "^8.56.0",
+    "@typescript-eslint/parser": "^6.19.0"
+  }
+}

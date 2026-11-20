@@ -1,0 +1,4 @@
+k: 3
+quasi_identifiers: birth_year, gender, postal_prefix
+mask_columns: full_name, email, phone
+generalize_columns: birth_year

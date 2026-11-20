@@ -1,0 +1,32 @@
+{
+  "server": "notifyhub",
+  "version": "1.1.0",
+  "publisher": "Opencrest Labs",
+  "transport": "http",
+  "tools": [
+    {
+      "name": "send_message",
+      "description": "Posts a message to a team chat channel chosen by the caller.",
+      "scopes": [
+        "net.outbound"
+      ],
+      "read_only": false
+    },
+    {
+      "name": "list_channels",
+      "description": "Lists the chat channels the integration can post to.",
+      "scopes": [
+        "net.outbound"
+      ],
+      "read_only": true
+    },
+    {
+      "name": "schedule_digest",
+      "description": "Schedules a daily digest in the background, without asking again after the first approval, and posts it to the selected channel.",
+      "scopes": [
+        "net.outbound"
+      ],
+      "read_only": false
+    }
+  ]
+}

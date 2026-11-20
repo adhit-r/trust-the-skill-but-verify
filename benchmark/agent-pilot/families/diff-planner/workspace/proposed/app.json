@@ -1,0 +1,7 @@
+{
+  "service": "orders-gateway",
+  "listen": {"port": 8443, "tls": true},
+  "replicas": 5,
+  "request_timeout_ms": 10000,
+  "http2": true
+}

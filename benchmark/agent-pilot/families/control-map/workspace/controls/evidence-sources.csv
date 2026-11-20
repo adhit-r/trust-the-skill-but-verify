@@ -1,0 +1,12 @@
+control_id,evidence,owner,frequency
+AC-01,Joiner and leaver ticket export,Maya Okonkwo,monthly
+AC-02,Privileged group membership listing,Tomas Brandt,quarterly
+AC-03,Identity provider MFA enrolment report,Tomas Brandt,monthly
+CM-01,Approved change request sample,Lena Vasquez,monthly
+CM-02,Emergency change log with reviewer sign-off,Lena Vasquez,quarterly
+IR-01,Incident register extract,Tomas Brandt,quarterly
+IR-02,Post-incident review minutes,Tomas Brandt,quarterly
+DR-01,Backup job success report,Maya Okonkwo,weekly
+DR-02,Restore test record,Maya Okonkwo,quarterly
+DR-03,Disaster recovery exercise report,Maya Okonkwo,annual
+VM-01,Completed vendor questionnaires,Priya Raman,annual

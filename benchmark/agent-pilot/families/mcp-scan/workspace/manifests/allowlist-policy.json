@@ -1,0 +1,17 @@
+{
+  "auto_allow": [
+    "fs.read"
+  ],
+  "review_required": [
+    "fs.write",
+    "net.outbound"
+  ],
+  "deny": [
+    "shell.exec",
+    "env.read"
+  ],
+  "trusted_publishers": [
+    "Meridian Tools",
+    "Opencrest Labs"
+  ]
+}

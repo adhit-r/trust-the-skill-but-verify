@@ -1,0 +1,7 @@
+# entry type: required fields
+article: author, title, journal, year
+inproceedings: author, title, booktitle, year
+book: author, title, publisher, year
+techreport: author, title, institution, year
+misc: title, year
+proceedings: title, year

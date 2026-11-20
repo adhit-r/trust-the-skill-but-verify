@@ -1,0 +1,196 @@
+{
+  "openapi": "3.0.3",
+  "x-service": "orders",
+  "info": {
+    "title": "Orders API",
+    "version": "1.4.0"
+  },
+  "components": {
+    "securitySchemes": {
+      "oauth2": {
+        "type": "oauth2",
+        "flows": {
+          "clientCredentials": {
+            "tokenUrl": "https://auth.meridian-freight.test/token",
+            "scopes": {}
+          }
+        }
+      }
+    }
+  },
+  "paths": {
+    "/orders": {
+      "get": {
+        "operationId": "listOrders",
+        "summary": "listOrders",
+        "security": [
+          {
+            "oauth2": [
+              "orders:read"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "name": "status",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "response 200"
+          },
+          "400": {
+            "description": "response 400"
+          }
+        }
+      },
+      "post": {
+        "operationId": "createOrder",
+        "summary": "createOrder",
+        "security": [
+          {
+            "oauth2": [
+              "orders:write"
+            ]
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "customerId",
+                  "items"
+                ],
+                "properties": {
+                  "customerId": {
+                    "type": "string"
+                  },
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "response 201"
+          },
+          "400": {
+            "description": "response 400"
+          },
+          "409": {
+            "description": "response 409"
+          }
+        }
+      }
+    },
+    "/orders/export": {
+      "get": {
+        "operationId": "exportOrders",
+        "summary": "exportOrders",
+        "security": [
+          {
+            "oauth2": [
+              "orders:read"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "response 200"
+          }
+        }
+      }
+    },
+    "/orders/{orderId}": {
+      "get": {
+        "operationId": "getOrder",
+        "summary": "getOrder",
+        "security": [
+          {
+            "oauth2": [
+              "orders:read"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "name": "orderId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "response 200"
+          },
+          "404": {
+            "description": "response 404"
+          }
+        }
+      },
+      "delete": {
+        "operationId": "cancelOrder",
+        "summary": "cancelOrder",
+        "security": [
+          {
+            "oauth2": [
+              "orders:admin"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "name": "orderId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "response 204"
+          },
+          "404": {
+            "description": "response 404"
+          }
+        }
+      }
+    },
+    "/health": {
+      "get": {
+        "operationId": "healthCheck",
+        "summary": "healthCheck",
+        "security": [],
+        "responses": {
+          "200": {
+            "description": "response 200"
+          }
+        }
+      }
+    }
+  }
+}

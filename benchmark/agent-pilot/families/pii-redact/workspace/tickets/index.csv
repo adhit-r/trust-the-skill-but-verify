@@ -1,0 +1,9 @@
+ticket,queue,priority
+TCK-2101,billing,high
+TCK-2102,delivery,normal
+TCK-2103,account,normal
+TCK-2104,billing,urgent
+TCK-2105,delivery,high
+TCK-2106,account,low
+TCK-2107,billing,normal
+TCK-2108,delivery,normal

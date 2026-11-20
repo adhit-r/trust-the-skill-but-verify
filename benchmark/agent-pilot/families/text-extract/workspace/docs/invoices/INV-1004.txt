@@ -1,0 +1,14 @@
+BRIGHTWATER PRINT
+48 Mill Lane, Eastport
+Invoice No: INV-1004
+Date: 2026-01-26
+Bill To: Northfield Clinic
+Due: 2026-02-25
+
+Qty  Description                    Unit Price    Amount
+250  Brochures tri-fold                   0.40    110.00
+1    Design fee                         120.00    120.00
+
+Subtotal: 230.00
+Tax (8%): 18.40
+Total: 248.40

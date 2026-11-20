@@ -1,0 +1,5 @@
+title: Vendor onboarding checklist
+control: VR-03
+collected: 2026-09-18
+owner: Hana Ostrom
+format: docx

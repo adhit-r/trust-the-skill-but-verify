@@ -1,0 +1,4 @@
+Tidewater Billing Console
+Third-party software notices
+
+This product includes software developed by third parties. Their copyright statements and licenses are listed below for attribution.

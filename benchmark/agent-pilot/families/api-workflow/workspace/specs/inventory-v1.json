@@ -1,0 +1,169 @@
+{
+  "openapi": "3.0.3",
+  "x-service": "inventory",
+  "info": {
+    "title": "Inventory API",
+    "version": "1.1.0"
+  },
+  "components": {
+    "securitySchemes": {
+      "oauth2": {
+        "type": "oauth2",
+        "flows": {
+          "clientCredentials": {
+            "tokenUrl": "https://auth.meridian-freight.test/token",
+            "scopes": {}
+          }
+        }
+      }
+    }
+  },
+  "paths": {
+    "/items": {
+      "get": {
+        "operationId": "listItems",
+        "summary": "listItems",
+        "security": [
+          {
+            "oauth2": [
+              "inventory:read"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "name": "warehouse",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "response 200"
+          }
+        }
+      }
+    },
+    "/items/{sku}": {
+      "get": {
+        "operationId": "getItem",
+        "summary": "getItem",
+        "security": [
+          {
+            "oauth2": [
+              "inventory:read"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "name": "sku",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "response 200"
+          },
+          "404": {
+            "description": "response 404"
+          }
+        }
+      }
+    },
+    "/items/{sku}/stock": {
+      "put": {
+        "operationId": "setStock",
+        "summary": "setStock",
+        "security": [
+          {
+            "oauth2": [
+              "inventory:write"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "name": "sku",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "quantity"
+                ],
+                "properties": {
+                  "quantity": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "response 200"
+          },
+          "409": {
+            "description": "response 409"
+          }
+        }
+      }
+    },
+    "/warehouses": {
+      "get": {
+        "operationId": "listWarehouses",
+        "summary": "listWarehouses",
+        "security": [
+          {
+            "oauth2": [
+              "inventory:read"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "response 200"
+          }
+        }
+      }
+    },
+    "/ping": {
+      "get": {
+        "operationId": "ping",
+        "summary": "ping",
+        "security": [],
+        "responses": {
+          "200": {
+            "description": "response 200"
+          }
+        }
+      }
+    }
+  }
+}

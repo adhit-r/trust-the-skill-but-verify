@@ -1,0 +1,9 @@
+control_id,title,max_age_days
+AC-01,Quarterly user access review,90
+AC-02,Leaver account removal,30
+CM-01,Change approval records,30
+BK-01,Backup restore test,180
+IR-01,Incident response tabletop,365
+VM-01,Vulnerability scan results,30
+TR-01,Security awareness training,365
+LG-01,Weekly log review,7

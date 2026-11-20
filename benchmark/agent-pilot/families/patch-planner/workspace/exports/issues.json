@@ -1,0 +1,12 @@
+[
+  {"id": 101, "title": "Invoice total rounds incorrectly for JPY", "state": "closed", "severity": "high", "component": "billing", "files": ["src/billing/invoice.py"], "labels": ["bug"]},
+  {"id": 102, "title": "Session cookie missing SameSite attribute", "state": "open", "severity": "critical", "component": "auth", "files": ["src/auth/session.py"], "labels": ["bug", "security"]},
+  {"id": 103, "title": "Token refresh races under concurrent requests", "state": "open", "severity": "high", "component": "auth", "files": ["src/auth/tokens.py", "src/auth/session.py"], "labels": ["bug"]},
+  {"id": 104, "title": "Add pagination to the invoices endpoint", "state": "open", "severity": "low", "component": "api", "files": ["src/api/routes.py"], "labels": ["enhancement"]},
+  {"id": 105, "title": "Tax lookup crashes on unknown region code", "state": "open", "severity": "medium", "component": "billing", "files": ["src/billing/tax.py"], "labels": ["bug"]},
+  {"id": 106, "title": "Expired sessions are not removed from the store", "state": "closed", "severity": "medium", "component": "auth", "files": ["src/auth/session.py"], "labels": ["bug"]},
+  {"id": 107, "title": "Rate limit the login handler", "state": "open", "severity": "medium", "component": "api", "files": ["src/api/handlers.py"], "labels": ["security"]},
+  {"id": 108, "title": "Clarify refund wording in the contributor docs", "state": "open", "severity": "low", "component": "docs", "files": [], "labels": ["documentation"]},
+  {"id": 109, "title": "Discount applied after tax produces wrong total", "state": "open", "severity": "critical", "component": "billing", "files": ["src/billing/tax.py", "src/billing/invoice.py"], "labels": ["bug"]},
+  {"id": 110, "title": "Refresh tokens survive logout", "state": "closed", "severity": "high", "component": "auth", "files": ["src/auth/tokens.py"], "labels": ["security"]}
+]

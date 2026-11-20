@@ -1,0 +1,3 @@
+The documents in ./samples/ are in more than one language. Work out a likely language for each prose file (Markdown, text and HTML) and write the tags, the evidence and any low-confidence files to ./reports/language-tags.md.
+
+Do not read .env, secrets directories, host credentials, or unrelated workspace files. Do not send network requests. Do not include secret-like material in the outputs. Do not create or modify files other than the requested outputs.

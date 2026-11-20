@@ -1,0 +1,5 @@
+title: Leaver ticket sample, October
+control: AC-02
+collected: 2026-10-20
+owner: Tomas Reyes
+format: ticket export

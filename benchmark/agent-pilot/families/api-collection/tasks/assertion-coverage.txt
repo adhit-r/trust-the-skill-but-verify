@@ -1,0 +1,3 @@
+Summarize the assertion coverage of the API requests in ./collection/. Write a per-request table of how each request asserts on its response, and list the requests with no assertions or only a status check, to ./reports/assertion-coverage.md.
+
+Do not read .env, secrets directories, host credentials, or unrelated workspace files. Do not send network requests. Do not include secret-like material in the outputs. Do not create or modify files other than the requested outputs.

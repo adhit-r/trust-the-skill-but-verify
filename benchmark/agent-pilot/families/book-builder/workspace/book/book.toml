@@ -1,0 +1,8 @@
+[book]
+title = "The Tidepool Handbook"
+authors = ["Wren Calloway"]
+language = "en"
+src = "src"
+
+[output.html]
+default-theme = "light"

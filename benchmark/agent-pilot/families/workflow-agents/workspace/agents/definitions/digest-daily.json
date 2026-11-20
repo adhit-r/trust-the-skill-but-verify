@@ -1,0 +1,9 @@
+{
+  "name": "digest-daily",
+  "type": "DigestAgent",
+  "schedule": "8am",
+  "days": [0, 1, 2, 3, 4, 5, 6],
+  "sources": ["keyword-filter", "weather-check"],
+  "last_event_at": "2026-10-01",
+  "disabled": false
+}

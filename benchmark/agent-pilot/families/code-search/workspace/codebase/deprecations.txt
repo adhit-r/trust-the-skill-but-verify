@@ -1,0 +1,5 @@
+# deprecated name -> replacement
+fetch_legacy -> fetch_records
+parse_v1 -> parse_document
+os.popen -> subprocess.run
+datetime.utcnow -> datetime.now(timezone.utc)

@@ -1,0 +1,15 @@
+{
+  "name": "@larchmont/worker",
+  "version": "1.2.0",
+  "dependencies": {
+    "bullmq": "4.17.0",
+    "ioredis": "^5.3.2",
+    "pg": "^8.11.0",
+    "@larchmont/shared": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "~5.3.3",
+    "@types/node": "^18.19.8",
+    "jest": "^29.7.0"
+  }
+}

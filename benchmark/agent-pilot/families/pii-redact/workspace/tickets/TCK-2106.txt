@@ -1,0 +1,8 @@
+Ticket: TCK-2106
+Customer: Samir Qadri
+Channel: chat
+Subject: Cannot sign in after password reset
+
+Samir writing. After I reset my password the sign-in page says the account is locked.
+I tried again from 192.0.2.77 and got the same message. My email is samir.qadri@mailbox.example.
+Is there a lockout I can clear myself?

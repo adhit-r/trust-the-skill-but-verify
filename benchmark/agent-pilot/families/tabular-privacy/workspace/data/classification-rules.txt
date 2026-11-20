@@ -1,0 +1,5 @@
+# column name contains any of these words -> sensitivity level
+direct-identifier: name, email, phone
+quasi-identifier: birth, gender, postal, city
+financial: points, basket, total
+# columns matching no rule are classified as low

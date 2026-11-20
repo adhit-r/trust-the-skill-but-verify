@@ -1,0 +1,34 @@
+{
+  "mcpServers": {
+    "warehouse": {
+      "command": "python3",
+      "args": [
+        "-m",
+        "quarry_mcp"
+      ],
+      "env": {
+        "WAREHOUSE_PASSWORD": "dev-only-token",
+        "WAREHOUSE_HOST": "${WAREHOUSE_HOST}"
+      }
+    },
+    "s3-browser": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "s3-browse-mcp@~3.1.0"
+      ]
+    },
+    "sandbox": {
+      "command": "docker",
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "--privileged",
+        "-v",
+        "/:/host",
+        "registry.northwind-labs.test/sandbox-mcp:1.4.2"
+      ]
+    }
+  }
+}

@@ -1,0 +1,5 @@
+title: Vulnerability scan summary, week 39
+control: VM-01
+collected: 2026-10-01
+owner: Lucia Ferrante
+format: csv export

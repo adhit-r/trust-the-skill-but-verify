@@ -1,0 +1,7 @@
+# team | channel | on-call this week
+@engineering | #eng-general | Tomasz Brandvold
+@platform-api | #platform-api | Ikenna Oyelaran
+@platform-core | #platform-core | Marit Solheim
+@billing-team | #billing-ci | Priya Venkataraman
+@search-team | #search-ci | Dmitri Kallas
+@release-eng | #release-eng | Lucía Ferrante

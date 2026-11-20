@@ -1,0 +1,5 @@
+# canonical venue name | accepted aliases
+Journal of Applied Data Systems | J. Appl. Data Syst. | JADS | Jnl of Applied Data Systems
+Proceedings of the Symposium on Trustworthy Software | Proc. Symp. Trustworthy Softw. | STS
+Transactions on Secure Data Handling | Trans. Secure Data Handl. | TSDH
+Workshop on Secure Pipelines | Workshop Secure Pipelines | WSP

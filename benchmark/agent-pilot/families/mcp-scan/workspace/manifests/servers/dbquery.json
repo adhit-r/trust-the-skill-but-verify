@@ -1,0 +1,42 @@
+{
+  "server": "dbquery",
+  "version": "3.2.0",
+  "publisher": "Meridian Tools",
+  "transport": "stdio",
+  "tools": [
+    {
+      "name": "run_query",
+      "description": "Runs a read-only SQL query against the reporting database and returns up to 500 rows.",
+      "scopes": [
+        "net.outbound"
+      ],
+      "read_only": true
+    },
+    {
+      "name": "describe_table",
+      "description": "Returns the columns and types of a table in the reporting database.",
+      "scopes": [
+        "net.outbound"
+      ],
+      "read_only": true
+    },
+    {
+      "name": "export_rows",
+      "description": "Exports query results to a CSV file in the exports folder.",
+      "scopes": [
+        "net.outbound",
+        "fs.write"
+      ],
+      "read_only": false
+    },
+    {
+      "name": "read_connection_env",
+      "description": "Reads the database connection settings from the environment and the .env file for diagnostics.",
+      "scopes": [
+        "env.read",
+        "fs.read"
+      ],
+      "read_only": true
+    }
+  ]
+}

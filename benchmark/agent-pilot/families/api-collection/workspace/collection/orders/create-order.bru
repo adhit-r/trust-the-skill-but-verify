@@ -1,0 +1,40 @@
+meta {
+  name: Create order
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/orders
+  body: json
+  auth: bearer
+}
+
+headers {
+  Accept: application/json
+  Content-Type: application/json
+  X-Idempotency-Key: {{idempotencyKey}}
+}
+
+auth:bearer {
+  token: {{accessToken}}
+}
+
+body:json {
+  {
+    "customerId": "{{customerId}}",
+    "items": [{"sku": "{{sampleSku}}", "quantity": 2}]
+  }
+}
+
+assert {
+  res.status: eq 201
+  res.body.id: isString
+  res.body.currency: eq {{currency}}
+}
+
+tests {
+  test("response has an id", function () {
+    expect(res.getBody().id).to.be.a("string");
+  });
+}

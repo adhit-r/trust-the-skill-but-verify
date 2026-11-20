@@ -1,0 +1,5 @@
+# team | owners | path prefixes
+platform | @mira-okafor @dev-ruiz | src/core/ build/
+api | @jonas-lindqvist @pri-natarajan | src/api/ tests/test_routes.py
+frontend | @tess-whitlock | src/ui/
+docs | @amara-beck | docs/

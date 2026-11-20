@@ -1,0 +1,7 @@
+Expected sales tax rate by vendor, as agreed with the finance office.
+
+harborline supply co.: 8%
+brightwater print: 8%
+kestrel courier ltd: 0%
+
+Totals are expected to match line sums to the cent.

@@ -1,0 +1,16 @@
+run: 1045
+branch: main
+commit: c91a5e8
+trigger: push
+---
+job: lint | PASS | 41s
+job: unit | PASS | 305s
+  PASS tests/billing/test_refund.py::test_rounding
+  PASS tests/cache/test_store.py::test_expiry
+  PASS tests/billing/test_invoice.py::test_total
+job: integration | FAIL | 640s
+  FAIL tests/api/test_orders.py::test_create_timeout | TimeoutError: no response in 30s
+  PASS tests/search/test_index.py::test_reindex
+  PASS tests/search/test_query.py::test_ranking
+job: build | FAIL | 412s
+  ERROR Dockerfile | layer pull timed out after 300s

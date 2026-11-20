@@ -1,0 +1,5 @@
+title: Q2 access review sign-off
+control: AC-01
+collected: 2026-05-02
+owner: Ines Varga
+format: pdf export

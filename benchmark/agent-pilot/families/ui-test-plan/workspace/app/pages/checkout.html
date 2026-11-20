@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8"><title>Checkout - Cedarbrook Shop</title></head>
+<body>
+<main>
+  <h1>Checkout</h1>
+  <form id="checkout-form" action="/api/orders" method="post" data-testid="checkout-form">
+    <h2>Delivery</h2>
+    <label for="address">Street address</label>
+    <input id="address" name="address" type="text" required data-testid="checkout-address">
+    <label for="postcode">Postcode</label>
+    <input id="postcode" name="postcode" type="text" required pattern="[0-9]{5}" data-testid="checkout-postcode">
+    <h2>Payment</h2>
+    <label for="card-name">Name on card</label>
+    <input id="card-name" name="card_name" type="text" required>
+    <label for="card-number">Card number</label>
+    <input id="card-number" name="card_number" type="text" required inputmode="numeric" data-testid="checkout-card">
+    <input id="card-number" name="card_number_confirm" type="text">
+    <button type="submit" data-testid="checkout-pay">Pay now</button>
+    <a href="/dashboard" role="button">Cancel</a>
+  </form>
+</main>
+</body>
+</html>

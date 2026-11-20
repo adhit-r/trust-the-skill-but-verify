@@ -1,0 +1,9 @@
+region,quarter,units,revenue_gbp
+North,Q1,1200,48000
+North,Q2,1350,54000
+South,Q1,980,39200
+South,Q2,1010,40400
+East,Q1,760,30400
+East,Q2,"1,090",43600
+West,Q1,640,25600
+West,Q2,700,28000

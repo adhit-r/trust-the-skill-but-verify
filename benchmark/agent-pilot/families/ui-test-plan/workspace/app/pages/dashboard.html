@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8"><title>Dashboard - Cedarbrook Shop</title></head>
+<body>
+<header><nav>
+  <a href="/orders" data-testid="nav-orders">Orders</a>
+  <a href="/settings" data-testid="nav-settings">Settings</a>
+  <a href="/checkout" data-testid="nav-checkout">Checkout</a>
+  <a href="/logout"><img src="/static/logout.svg"></a>
+</nav></header>
+<main>
+  <h1>Welcome back</h1>
+  <h3>Recent activity</h3>
+  <ul>
+    <li><a href="/orders/1042">Order 1042</a></li>
+    <li><a href="/orders/1041">Order 1041</a></li>
+  </ul>
+  <img src="/static/chart.png" alt="Orders per week for the last eight weeks">
+  <button type="button" id="refresh" data-testid="refresh-stats">Refresh</button>
+  <button type="button" class="btn" id="export-btn"></button>
+</main>
+</body>
+</html>

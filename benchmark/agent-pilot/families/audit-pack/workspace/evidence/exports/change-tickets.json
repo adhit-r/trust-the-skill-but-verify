@@ -1,0 +1,10 @@
+[
+  {"id": "CHG-2041", "title": "Rotate ledger-api TLS certificate", "approved_by": "s.varga", "emergency": false},
+  {"id": "CHG-2044", "title": "Add index to invoices table", "approved_by": "r.haldane", "emergency": false},
+  {"id": "CHG-2047", "title": "Upgrade queue workers to 3.2", "approved_by": "", "emergency": false},
+  {"id": "CHG-2052", "title": "Patch reverse proxy header handling", "approved_by": "s.varga", "emergency": true},
+  {"id": "CHG-2058", "title": "Change retention on audit bucket", "approved_by": null, "emergency": false},
+  {"id": "CHG-2061", "title": "Enable read replica for reporting", "approved_by": "r.haldane", "emergency": false},
+  {"id": "CHG-2066", "title": "Resize billing-db instance", "approved_by": "", "emergency": false},
+  {"id": "CHG-2070", "title": "Rollback of CHG-2066", "approved_by": "s.varga", "emergency": true}
+]

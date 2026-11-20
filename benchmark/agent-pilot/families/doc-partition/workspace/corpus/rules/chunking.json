@@ -1,0 +1,5 @@
+{
+  "max_words": 60,
+  "min_words": 20,
+  "carry_heading": true
+}

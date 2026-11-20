@@ -1,0 +1,14 @@
+KESTREL COURIER LTD
+Unit 7, Dockside Estate
+Invoice No: INV-1005
+Date: 2026-01-15
+Bill To: Northfield Clinic
+Due: 2026-02-14
+
+Qty  Description                    Unit Price    Amount
+8    Same-day delivery                   14.00    112.00
+1    Fuel surcharge                       9.50      9.50
+
+Subtotal: 121.50
+Tax (8%): 9.72
+Total: 131.22

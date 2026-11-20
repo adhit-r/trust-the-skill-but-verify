@@ -1,0 +1,17 @@
+{
+  "as_of": "2026-09-30T12:00:00Z",
+  "targets_hours": {
+    "P1": {
+      "first_response": 1,
+      "resolution": 8
+    },
+    "P2": {
+      "first_response": 4,
+      "resolution": 24
+    },
+    "P3": {
+      "first_response": 8,
+      "resolution": 72
+    }
+  }
+}

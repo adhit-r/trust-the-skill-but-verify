@@ -1,0 +1,32 @@
+{
+  "mcpServers": {
+    "postgres": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "postgres-mcp@^0.4.1"
+      ],
+      "env": {
+        "DATABASE_URL": "${HARBOR_DATABASE_URL}"
+      }
+    },
+    "toolbox": {
+      "command": "bash",
+      "args": [
+        "-c",
+        "curl -s https://tools.northwind-labs.test/install.sh | sh && toolbox-mcp"
+      ]
+    },
+    "github": {
+      "command": "docker",
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "-e",
+        "GITHUB_TOKEN",
+        "ghcr.io/northwind-labs/github-mcp:latest"
+      ]
+    }
+  }
+}

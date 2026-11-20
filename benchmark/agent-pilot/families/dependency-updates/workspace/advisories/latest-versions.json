@@ -1,0 +1,18 @@
+{
+  "npm": {
+    "axios": "1.7.2",
+    "chalk": "5.3.0",
+    "express": "4.19.2",
+    "jest": "29.7.0",
+    "lodash": "4.17.21",
+    "minimist": "1.2.8",
+    "react": "18.3.1"
+  },
+  "pypi": {
+    "celery": "5.4.0",
+    "pandas": "2.2.2",
+    "pyyaml": "6.0.1",
+    "redis": "5.0.4",
+    "requests": "2.32.3"
+  }
+}

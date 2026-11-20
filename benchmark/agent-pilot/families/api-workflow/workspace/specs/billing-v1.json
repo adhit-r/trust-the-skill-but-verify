@@ -1,0 +1,206 @@
+{
+  "openapi": "3.0.3",
+  "x-service": "billing",
+  "info": {
+    "title": "Billing API",
+    "version": "1.2.0"
+  },
+  "components": {
+    "securitySchemes": {
+      "oauth2": {
+        "type": "oauth2",
+        "flows": {
+          "clientCredentials": {
+            "tokenUrl": "https://auth.meridian-freight.test/token",
+            "scopes": {}
+          }
+        }
+      }
+    }
+  },
+  "paths": {
+    "/invoices": {
+      "get": {
+        "operationId": "listInvoices",
+        "summary": "listInvoices",
+        "security": [
+          {
+            "oauth2": [
+              "billing:read"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "name": "since",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "customerId",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "response 200"
+          }
+        }
+      }
+    },
+    "/invoices/{invoiceId}": {
+      "get": {
+        "operationId": "getInvoice",
+        "summary": "getInvoice",
+        "security": [
+          {
+            "oauth2": [
+              "billing:read"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "name": "invoiceId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "response 200"
+          },
+          "404": {
+            "description": "response 404"
+          }
+        }
+      }
+    },
+    "/invoices/{invoiceId}/pay": {
+      "post": {
+        "operationId": "payInvoice",
+        "summary": "payInvoice",
+        "security": [
+          {
+            "oauth2": [
+              "billing:write"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "name": "invoiceId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "paymentMethodId"
+                ],
+                "properties": {
+                  "paymentMethodId": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "response 200"
+          },
+          "402": {
+            "description": "response 402"
+          }
+        }
+      }
+    },
+    "/payment-methods": {
+      "get": {
+        "operationId": "listPaymentMethods",
+        "summary": "listPaymentMethods",
+        "security": [
+          {
+            "oauth2": [
+              "billing:read"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "response 200"
+          }
+        }
+      },
+      "post": {
+        "operationId": "addPaymentMethod",
+        "summary": "addPaymentMethod",
+        "security": [
+          {
+            "oauth2": [
+              "billing:write"
+            ]
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "token"
+                ],
+                "properties": {
+                  "token": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "response 201"
+          },
+          "400": {
+            "description": "response 400"
+          }
+        }
+      }
+    },
+    "/status": {
+      "get": {
+        "operationId": "billingStatus",
+        "summary": "billingStatus",
+        "security": [],
+        "responses": {
+          "200": {
+            "description": "response 200"
+          }
+        }
+      }
+    }
+  }
+}

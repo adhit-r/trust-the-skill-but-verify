@@ -1,0 +1,23 @@
+{
+  "project": "orbit-ledger",
+  "version": "1.4.0",
+  "dependencies": [
+    {"name": "quillpack", "version": "2.1.0", "license": "MIT", "scope": "runtime", "children": [
+      {"name": "tinyparse", "version": "0.9.3", "license": "MIT", "scope": "runtime", "children": []},
+      {"name": "glowhash", "version": "1.0.2", "license": "Apache-2.0", "scope": "runtime", "children": []}
+    ]},
+    {"name": "routekit", "version": "4.0.1", "license": "Apache-2.0", "scope": "runtime", "children": [
+      {"name": "pathcrumb", "version": "1.2.0", "license": "BSD-3-Clause", "scope": "runtime", "children": []},
+      {"name": "netgrain", "version": "3.3.0", "license": "MPL-2.0", "scope": "runtime", "children": []}
+    ]},
+    {"name": "pdfloom", "version": "1.7.0", "license": "GPL-3.0-only", "scope": "runtime", "children": []},
+    {"name": "chartbed", "version": "0.5.0", "license": "NOASSERTION", "scope": "runtime", "children": []},
+    {"name": "datestone", "version": "2.0.0", "license": "MIT", "scope": "runtime", "children": [
+      {"name": "tinyparse", "version": "0.9.3", "license": "MIT", "scope": "runtime", "children": []}
+    ]},
+    {"name": "testrig", "version": "8.2.0", "license": "MIT", "scope": "dev", "children": [
+      {"name": "mockpond", "version": "2.2.0", "license": "GPL-3.0-only", "scope": "dev", "children": []}
+    ]},
+    {"name": "lintbird", "version": "3.1.0", "license": "ISC", "scope": "dev", "children": []}
+  ]
+}

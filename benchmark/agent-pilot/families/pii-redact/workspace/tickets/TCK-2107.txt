@@ -1,0 +1,11 @@
+Ticket: TCK-2107
+Customer: Olive Marchetti
+Channel: email
+Subject: Cancel my subscription
+
+Please cancel the subscription on ACCT-640338 at the end of the month. Phone me on
+(555) 010-0188 if you need to confirm. Please also delete the card ending in 1953
+and send the final receipt to olive.marchetti@mailbox.example.
+
+Olive Marchetti
+62 Cedar Avenue

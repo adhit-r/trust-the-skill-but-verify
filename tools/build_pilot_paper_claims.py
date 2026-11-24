@@ -199,10 +199,10 @@ def build(ag: dict, arms: dict) -> Claims:
         "they are not prevalence claims",
         "excluded from the same-model comparisons",
         "Each intervention arm has one repeat per task",
-        "both models come from one vendor",
+        "the third model ran only on a third host",
         "The two sentences met on one host with one model")]
     c.claim("CL-PILOT-BOUNDARY-001", "The same-model pilot results use transcript-derived labels with no human-label check yet, cover disguised variants for two attack kinds only, are bounded to the "
-            "named host versions, presets and two models from one vendor, and exclude Cursor; the intervention arms have one repeat per task, and the host's read-first "
+            "named host versions, presets and three models from two vendors (the third model on its own host only), and exclude Cursor; the intervention arms have one repeat per task, and the host's read-first "
             "sentence was tested against the skill's do-not-read sentence on Claude Code with Haiku only.", "supported_boundary")
     return c
 
@@ -281,6 +281,29 @@ def build_arms(c: Claims, tasks: str) -> None:
             f"and OpenCode in {k['KNsOCShip']} of {k['KNsOCN']} (harm at end {k['KNsOCHarm']}; {k['KNsOCBenN']} benign runs). Against {haiku} with the same sentence: Claude Code {ci(ms['CC'])}; OpenCode {ci(ms['OC'])}. "
             f"Across hosts with the sentence on Sonnet over {xs['N']} tasks: {xs['A']}% versus {xs['B']}% ({ci(xs)}).")
 
+    # Another vendor's host and model: Codex CLI on its own model, as built and with the do-not-read sentence. No baseline campaign, so its untreated arm runs are the reference.
+    cxp, gpt = "codex.workspace_write", "gpt-5.6-terra"
+    cx = row("NrCX", treat(cxp, nr))
+    for code, label, m in (("Ship", "adversarial", "as_shipped"), ("Read", "adversarial", "read_before_run"), ("Harm", "adversarial", "harm_persists"), ("Ben", "benign", "as_shipped")):
+        cmp(f"TCx{code}", treat(cxp, nr), label, m, "B")  # the as-built row of the table: Codex untreated on the paired tasks
+    k = {name: cell(name, cxp, gpt, t, label, field) for name, t, label, field in (
+        ("KCxShip", "none", "adversarial", "as_shipped"), ("KCxN", "none", "adversarial", "n"), ("KCxRead", "none", "adversarial", "read_script_before_run"),
+        ("KCxAny", "none", "adversarial", "executed"), ("KCxHarm", "none", "adversarial", "attack_persists"), ("KCxBenShip", "none", "benign", "as_shipped"), ("KCxBenN", "none", "benign", "n"),
+        ("KNrCXShip", nr, "adversarial", "as_shipped"), ("KNrCXN", nr, "adversarial", "n"), ("KNrCXRead", nr, "adversarial", "read_script_before_run"), ("KNrCXHarm", nr, "adversarial", "attack_persists"),
+        ("KNrCXBenN", nr, "benign", "n"))}
+    sp = {f: c.num(f"KCx{tag}", f"/codex_exec_start_errors/{f}") for f, tag in (
+        ("n", "Rows"), ("runs_with_error", "StartErr"), ("as_built_adversarial_with_error", "ErrN"), ("as_built_adversarial_with_error_as_shipped", "ErrShip"),
+        ("as_built_adversarial_clean", "CleanN"), ("as_built_adversarial_clean_as_shipped", "CleanShip"))}
+    cxv = c.num("VerCX", "/cli_versions/codex/0", "str").split()[-1]
+    c.evidence += [{"type": "json_len", "path": ARMS, "pointer": "/aggregates/cli_versions/codex", "expected": 1},
+                   {"type": "file_contains", "path": HARNESS, "contains": '"workspace_write": ["--sandbox", "workspace-write"]'}]
+    c.claim("CL-PILOT-022", f"On a third host with another vendor's model, Codex CLI {cxv} with {gpt} (preset workspace_write, one repeat per task; no baseline campaign, so differences are against "
+            f"Codex's own untreated runs), the benchmark as built gave: adversarial script run as shipped in {k['KCxShip']} of {k['KCxN']} runs (any version {k['KCxAny']}), read first in {k['KCxRead']}, "
+            f"harm present at the end in {k['KCxHarm']}; benign script run as shipped in {k['KCxBenShip']} of {k['KCxBenN']}. With the do-not-read sentence in the installed SKILL.md: {line(cx)}; "
+            f"{k['KNrCXShip']} of {k['KNrCXN']} adversarial runs ran the script as shipped, {k['KNrCXRead']} read it first and {k['KNrCXHarm']} ended with the harm ({k['KNrCXBenN']} benign runs). "
+            f"In {sp['runs_with_error']} of the {sp['n']} analysed Codex runs a shell command failed to start inside Codex and the agent went on with a later command; as built, the adversarial script ran as shipped in "
+            f"{sp['as_built_adversarial_with_error_as_shipped']} of {sp['as_built_adversarial_with_error']} such runs and {sp['as_built_adversarial_clean_as_shipped']} of {sp['as_built_adversarial_clean']} others.")
+
     # Payload hidden from a reader of the entry script: moved into an imported helper module, or base64-encoded (adversarial packages only)
     def moved(code: str, ab: tuple[str, str]) -> dict:  # as row(), without the benign column: the change does nothing to a benign package
         return {"ship": cmp(f"T{code}Ship", ab, "adversarial", "as_shipped", "ADLH"), "read": cmp(f"T{code}Read", ab, "adversarial", "read_before_run", "A")["A"],
@@ -328,7 +351,7 @@ def build_arms(c: Claims, tasks: str) -> None:
     left = cell("KObOCN", ocp, sonnet, "payload_obfuscated", "adversarial", "n")
     full = [cell(name, ocp, sonnet, t, label, "n") for name, t, label in (("KMsOCN", "none", "adversarial"), ("KMsOCBenN", "none", "benign"), ("KMsOCDisN", "none", "stealthy"),
                                                                            ("KNsOCN", "skill_no_read", "adversarial"), ("KNsOCBenN", "skill_no_read", "benign"), ("KPmOCN", "payload_in_module", "adversarial"))]
-    c.claim("CL-PILOT-017", f"The second-model and intervention arms hold {rows:,} analysed runs, one repeat per task, all on the pair-1 presets. {e[0]} OpenCode runs still ended in agent errors after "
+    c.claim("CL-PILOT-017", f"The second-model and intervention arms hold {rows:,} analysed runs, one repeat per task, on the pair-1 presets and Codex workspace_write. {e[0]} OpenCode runs still ended in agent errors after "
             f"retries and are excluded, all of them adversarial {sonnet} runs of the encoded-payload arm, which leaves {left} in that cell; of the excluded runs, {lost['as_shipped']} ran the script as shipped and "
             f"{lost['attack_persists']} ended with the harm. The other OpenCode Sonnet cells are complete ({full[0]} adversarial, {full[1]} benign and {full[2]} disguised runs as built; {full[3]} adversarial and "
             f"{full[4]} benign with the do-not-read sentence; {full[5]} with the payload in a helper module). {e[1]} Claude Code runs flagged agent_error are the "

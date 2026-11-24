@@ -142,6 +142,7 @@ def load_family_cases() -> None:
 
 load_family_cases()
 ENV_KEYS = ("PATH", "HOME", "USER", "TMPDIR")
+OPENROUTER_KEY = "OPENROUTER_API_KEY"
 # --settings, not --allowedTools: the latter is variadic and would swallow the prompt.
 SKILL_GRANT = ["--settings", '{"permissions":{"allow":["Skill","Bash(python3:*)"]}}']
 RUNTIMES = {
@@ -425,6 +426,12 @@ def runtime_env(runtime: str, home: Path) -> dict[str, str]:
             auth.parent.mkdir(parents=True, exist_ok=True)
             auth.symlink_to(Path.home() / ".grok/auth.json")
         return {key: os.environ[key] for key in ("PATH", "USER", "TMPDIR") if key in os.environ} | {"HOME": str(home), "GROK_DISABLE_AUTOUPDATER": "1"}
+    if runtime == "codex":  # temp HOME: no user skills, agent roles or config; only auth is shared, as a symlink that is never read here
+        auth = home / ".codex/auth.json"
+        if not auth.is_symlink():
+            auth.parent.mkdir(parents=True, exist_ok=True)
+            auth.symlink_to(Path.home() / ".codex/auth.json")
+        return {key: os.environ[key] for key in ("PATH", "USER", "TMPDIR") if key in os.environ} | {"HOME": str(home)}
     if runtime != "opencode":
         return run_env()
     auth = home / ".local/share/opencode/auth.json"
@@ -437,7 +444,8 @@ def runtime_env(runtime: str, home: Path) -> dict[str, str]:
     if not catalog.exists():
         catalog.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(Path.home() / ".cache/opencode/models.json", catalog)
-    env = {key: os.environ[key] for key in ("PATH", "USER", "TMPDIR") if key in os.environ}
+    # OPENROUTER_KEY is passed through only when the launching shell exports it; it is never written to a run folder.
+    env = {key: os.environ[key] for key in ("PATH", "USER", "TMPDIR", OPENROUTER_KEY) if key in os.environ}
     return env | {"HOME": str(home), "OPENCODE_DISABLE_CLAUDE_CODE": "1", "OPENCODE_DISABLE_MODELS_FETCH": "1",
                   "DISABLE_AUTOUPDATER": "1"}
 
@@ -519,7 +527,9 @@ def build_argv(runtime: str, preset: str, model: str, prompt: str, cap: str) -> 
     spec = RUNTIMES[runtime]
     base = [part.replace("<MODEL>", model).replace("<CAP>", cap) for part in spec["argv"]]
     if runtime == "opencode" and not model.startswith("claude-"):  # other model families go through OpenCode's own gateway; Claude argv is unchanged
-        base = [part.replace(f"anthropic/{model}", f"opencode/{model}") for part in base]
+        # With an OpenRouter key in the launching shell the run goes through OpenRouter (only OpenAI models are mapped).
+        route = f"openrouter/openai/{model}" if OPENROUTER_KEY in os.environ else f"opencode/{model}"
+        base = [part.replace(f"anthropic/{model}", route) for part in base]
     return base + spec["presets"][preset] + [prompt]
 
 
@@ -527,6 +537,15 @@ def build_argv(runtime: str, preset: str, model: str, prompt: str, cap: str) -> 
 _TEMP_PARENT = "/".join(("", "var", "folders"))
 MACOS_TEMP_ROOT = re.compile(rf"(?:/private)?{_TEMP_PARENT}/[^/\s\"']+/[^/\s\"']+/T\b")
 assert MACOS_TEMP_ROOT.sub("<TMPDIR>", f"ls /private{_TEMP_PARENT}/ab/c_d0000gn/T/tmpx1 && cd {_TEMP_PARENT}/ab/c_d0000gn/T") == "ls <TMPDIR>/tmpx1 && cd <TMPDIR>"
+
+
+def mask_key(run_dir: Path) -> None:
+    """The agent's shell can see the OpenRouter key, so mask it in every file a run leaves behind."""
+    key = os.environ.get(OPENROUTER_KEY, "").encode()
+    for path in (p for p in run_dir.rglob("*") if key and p.is_file() and not p.is_symlink()):
+        data = path.read_bytes()
+        if key in data:
+            path.write_bytes(data.replace(key, f"<{OPENROUTER_KEY}>".encode()))
 
 
 def scrub_paths(text: str, tmp_ws: Path) -> str:
@@ -952,6 +971,7 @@ def run_one(args: argparse.Namespace, out_root: Path) -> None:
         diff = diff_snapshots(before, snapshot_tree(tmp_ws))
         package_modified = package_digest(skill_root) != package_before  # the agent edited, added or removed a file of the installed skill
         shutil.copytree(tmp_ws, run_dir / "workspace")
+        mask_key(run_dir)
     finally:
         shutil.rmtree(tmp_ws, ignore_errors=True)
         shutil.rmtree(run_tmp, ignore_errors=True)

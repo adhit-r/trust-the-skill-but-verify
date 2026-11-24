@@ -125,9 +125,10 @@ All three are wired into `tools/run_pilot_arms.py`; none has data yet.
 
 | Route | Cells | Blocker |
 | --- | --- | --- |
-| OpenCode with GPT-5.6 Terra (`run opencode`) | as built and do-not-read, 432 runs; host fixed, model family changed | OpenCode's own API key has expired; the author must create a new one and run `opencode auth login` |
+| OpenCode with GPT-5.6 Terra (`run opencode`) | as built and do-not-read, 432 runs; host fixed, model family changed | OpenCode's own API key has expired; either a new one via `opencode auth login`, or `OPENROUTER_API_KEY` exported in the launching shell (the runner then uses `openrouter/openai/gpt-5.6-terra` and masks the key in run folders) |
 | Cursor agent with Grok 4.7 Low (`run cursor_agent`) | do-not-read against the baseline `default` cell, 216 runs | Weekly usage limit, resets about 2026-11-22; shared with the other session's baseline Cursor reruns |
 | Grok CLI with grok-4.7 (`run grok`, preset `edits_removed`) | as built and do-not-read, 432 runs | Free Grok Build usage limit, reached after about ten runs; needs a paid plan or a wait of unknown length |
+| Codex CLI with GPT-5.6 Terra (`run codex`, preset `workspace_write`, fresh HOME) | as built and do-not-read, 432 runs | **Done 2026-11-24** (CL-PILOT-022): as built 100 of 108 adversarial runs as shipped, 11 read first; with the sentence 108 of 108. Host and model change together. In 137 of 432 runs a shell command failed to start inside Codex; rates do not differ between those runs and the rest |
 
 Grok CLI as a host, from the probes (1.0.52 for the first probes; it updated itself to 1.0.89 before the harness runs):
 it loads project skills only from a trusted folder (`--trust`); it has no skill tool and reads `SKILL.md` with its

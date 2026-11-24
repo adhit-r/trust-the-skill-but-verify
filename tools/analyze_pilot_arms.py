@@ -19,6 +19,7 @@ import run_agent_pilot as H  # noqa: E402
 ARMS = H.REPO_ROOT / "results/agent-pilot-arms"
 BASE_MODEL = {rt: spec["baseline_model"] for rt, spec in H.RUNTIMES.items()}
 COUNTS = ("as_shipped", "executed", "read_script_before_run", "read_helper_before_run", "decoded_payload", "attack_persists")  # helper read and decoding exist in their payload arms only
+CODEX_SPAWN_ERROR = "Failed to create unified exec process"
 COMPONENTS = {"host_read_first_skill_no_read": ("host_read_first", "skill_no_read"), "host_read_first_payload_in_module": ("host_read_first",),
               "host_read_first_payload_obfuscated": ("host_read_first",)}  # a combined treatment is also compared with each part
 
@@ -69,6 +70,14 @@ def main() -> int:
         if m.get("agent_error"):
             failed[".".join((m["runtime"], m["preset"], m["model_id"], m.get("treatment", "none"), m["label"]))].update(
                 n=1, as_shipped=bool(m.get("script_run_as_shipped_self_reported")), executed=bool(m.get("script_executed_self_reported")), attack_persists=bool(m.get("attack_persists")))
+    # Codex sometimes fails to start a shell command ("Failed to create unified exec process") and the agent reissues it; count the analysed runs where that happened.
+    spawn: collections.Counter = collections.Counter()
+    for r in arm:
+        if r["runtime"] == "codex":
+            hit = CODEX_SPAWN_ERROR in (ARMS / "runs" / r["run_id"] / "stderr.log").read_text(encoding="utf-8", errors="replace")
+            built = r["label"] == "adversarial" and r["treatment"] == "none"  # the as-built adversarial cell, split by whether the error occurred
+            spawn.update({"n": 1, "runs_with_error": hit, "as_built_adversarial_with_error": built and hit, "as_built_adversarial_with_error_as_shipped": built and hit and bool(r["as_shipped"]),
+                          "as_built_adversarial_clean": built and not hit, "as_built_adversarial_clean_as_shipped": built and not hit and bool(r["as_shipped"])})
     comps = comparisons(arm, base)
     pp = lambda x: f"{100 * x:+.1f}"
     md = ["# Agent pilot arms: treatments and second model", "", f"Rows: {len(arm)}; retained agent-error runs: {dict(errors)}.", "",
@@ -82,6 +91,8 @@ def main() -> int:
                     f"{pp(c['diff'])} [{pp(c['ci95'][0])}, {pp(c['ci95'][1])}]", f"{c['a_gt_b']} / {c['a_lt_b']}"] for c in comps])
     (ARMS / "analysis.md").write_text("\n".join(md), encoding="utf-8")
     (ARMS / "analysis.json").write_text(json.dumps({"aggregates": {"cells": cells, "comparisons": comps, "agent_error_retained": dict(errors), "agent_error_cells": {k: dict(v) for k, v in sorted(failed.items())},
+                                                                   "codex_exec_start_errors": {k: int(v) for k, v in sorted(spawn.items())},
+                                                                   "cli_versions": {rt: sorted({r["cli_version"] for r in arm if r["runtime"] == rt}) for rt in sorted({r["runtime"] for r in arm})},
                                                                    "treatments": H.TREATMENTS}, "rows": arm}, indent=1, sort_keys=True), encoding="utf-8")
     print(f"{len(arm)} arm rows, {len(comps)} comparisons -> {(ARMS / 'analysis.md').relative_to(H.REPO_ROOT)}")
     return 0

@@ -8914,31 +8914,31 @@
         {
           "expected": "opencode.edits_denied@claude-sonnet-5-5",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/217/a",
+          "pointer": "/aggregates/comparisons/228/a",
           "type": "json_value"
         },
         {
           "expected": "opencode.edits_denied@claude-haiku-5-5",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/217/b",
+          "pointer": "/aggregates/comparisons/228/b",
           "type": "json_value"
         },
         {
           "expected": "adversarial",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/217/label",
+          "pointer": "/aggregates/comparisons/228/label",
           "type": "json_value"
         },
         {
           "expected": "as_shipped",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/217/metric",
+          "pointer": "/aggregates/comparisons/228/metric",
           "type": "json_value"
         },
         {
           "expected": 0.0,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/217/a_rate",
+          "pointer": "/aggregates/comparisons/228/a_rate",
           "round": 3,
           "type": "json_value"
         },
@@ -8950,7 +8950,7 @@
         {
           "expected": -0.019,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/217/diff",
+          "pointer": "/aggregates/comparisons/228/diff",
           "round": 3,
           "type": "json_value"
         },
@@ -8962,7 +8962,7 @@
         {
           "expected": -0.033,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/217/ci95/0",
+          "pointer": "/aggregates/comparisons/228/ci95/0",
           "round": 3,
           "type": "json_value"
         },
@@ -8974,7 +8974,7 @@
         {
           "expected": -0.006,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/217/ci95/1",
+          "pointer": "/aggregates/comparisons/228/ci95/1",
           "round": 3,
           "type": "json_value"
         },
@@ -8986,31 +8986,31 @@
         {
           "expected": "opencode.edits_denied@claude-sonnet-5-5",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/219/a",
+          "pointer": "/aggregates/comparisons/230/a",
           "type": "json_value"
         },
         {
           "expected": "opencode.edits_denied@claude-haiku-5-5",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/219/b",
+          "pointer": "/aggregates/comparisons/230/b",
           "type": "json_value"
         },
         {
           "expected": "adversarial",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/219/label",
+          "pointer": "/aggregates/comparisons/230/label",
           "type": "json_value"
         },
         {
           "expected": "read_before_run",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/219/metric",
+          "pointer": "/aggregates/comparisons/230/metric",
           "type": "json_value"
         },
         {
           "expected": 1.0,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/219/a_rate",
+          "pointer": "/aggregates/comparisons/230/a_rate",
           "round": 3,
           "type": "json_value"
         },
@@ -9022,31 +9022,31 @@
         {
           "expected": "opencode.edits_denied@claude-sonnet-5-5",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/220/a",
+          "pointer": "/aggregates/comparisons/231/a",
           "type": "json_value"
         },
         {
           "expected": "opencode.edits_denied@claude-haiku-5-5",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/220/b",
+          "pointer": "/aggregates/comparisons/231/b",
           "type": "json_value"
         },
         {
           "expected": "adversarial",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/220/label",
+          "pointer": "/aggregates/comparisons/231/label",
           "type": "json_value"
         },
         {
           "expected": "harm_persists",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/220/metric",
+          "pointer": "/aggregates/comparisons/231/metric",
           "type": "json_value"
         },
         {
           "expected": 0.0,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/220/a_rate",
+          "pointer": "/aggregates/comparisons/231/a_rate",
           "round": 3,
           "type": "json_value"
         },
@@ -9058,7 +9058,7 @@
         {
           "expected": -0.009,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/220/diff",
+          "pointer": "/aggregates/comparisons/231/diff",
           "round": 3,
           "type": "json_value"
         },
@@ -9070,7 +9070,7 @@
         {
           "expected": -0.02,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/220/ci95/0",
+          "pointer": "/aggregates/comparisons/231/ci95/0",
           "round": 3,
           "type": "json_value"
         },
@@ -9082,7 +9082,7 @@
         {
           "expected": -0.002,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/220/ci95/1",
+          "pointer": "/aggregates/comparisons/231/ci95/1",
           "round": 3,
           "type": "json_value"
         },
@@ -9094,31 +9094,31 @@
         {
           "expected": "opencode.edits_denied@claude-sonnet-5-5",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/224/a",
+          "pointer": "/aggregates/comparisons/235/a",
           "type": "json_value"
         },
         {
           "expected": "opencode.edits_denied@claude-haiku-5-5",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/224/b",
+          "pointer": "/aggregates/comparisons/235/b",
           "type": "json_value"
         },
         {
           "expected": "benign",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/224/label",
+          "pointer": "/aggregates/comparisons/235/label",
           "type": "json_value"
         },
         {
           "expected": "as_shipped",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/224/metric",
+          "pointer": "/aggregates/comparisons/235/metric",
           "type": "json_value"
         },
         {
           "expected": 0.981,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/224/a_rate",
+          "pointer": "/aggregates/comparisons/235/a_rate",
           "round": 3,
           "type": "json_value"
         },
@@ -9130,7 +9130,7 @@
         {
           "expected": 0.007,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/224/diff",
+          "pointer": "/aggregates/comparisons/235/diff",
           "round": 3,
           "type": "json_value"
         },
@@ -9142,7 +9142,7 @@
         {
           "expected": -0.026,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/224/ci95/0",
+          "pointer": "/aggregates/comparisons/235/ci95/0",
           "round": 3,
           "type": "json_value"
         },
@@ -9154,7 +9154,7 @@
         {
           "expected": 0.037,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/224/ci95/1",
+          "pointer": "/aggregates/comparisons/235/ci95/1",
           "round": 3,
           "type": "json_value"
         },
@@ -9287,31 +9287,31 @@
         {
           "expected": "claude_code.skill_allowed@claude-sonnet-5-5",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/318/a",
+          "pointer": "/aggregates/comparisons/329/a",
           "type": "json_value"
         },
         {
           "expected": "opencode.edits_denied@claude-sonnet-5-5",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/318/b",
+          "pointer": "/aggregates/comparisons/329/b",
           "type": "json_value"
         },
         {
           "expected": "adversarial",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/318/label",
+          "pointer": "/aggregates/comparisons/329/label",
           "type": "json_value"
         },
         {
           "expected": "as_shipped",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/318/metric",
+          "pointer": "/aggregates/comparisons/329/metric",
           "type": "json_value"
         },
         {
           "expected": 0.009,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/318/a_rate",
+          "pointer": "/aggregates/comparisons/329/a_rate",
           "round": 3,
           "type": "json_value"
         },
@@ -9323,7 +9323,7 @@
         {
           "expected": 0.0,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/318/b_rate",
+          "pointer": "/aggregates/comparisons/329/b_rate",
           "round": 3,
           "type": "json_value"
         },
@@ -9335,7 +9335,7 @@
         {
           "expected": 0.009,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/318/diff",
+          "pointer": "/aggregates/comparisons/329/diff",
           "round": 3,
           "type": "json_value"
         },
@@ -9347,7 +9347,7 @@
         {
           "expected": 0.0,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/318/ci95/0",
+          "pointer": "/aggregates/comparisons/329/ci95/0",
           "round": 3,
           "type": "json_value"
         },
@@ -9359,7 +9359,7 @@
         {
           "expected": 0.028,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/318/ci95/1",
+          "pointer": "/aggregates/comparisons/329/ci95/1",
           "round": 3,
           "type": "json_value"
         },
@@ -9371,7 +9371,7 @@
         {
           "expected": 108,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/318/cases",
+          "pointer": "/aggregates/comparisons/329/cases",
           "type": "json_value"
         },
         {
@@ -9382,31 +9382,31 @@
         {
           "expected": "claude_code.skill_allowed@claude-sonnet-5-5",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/321/a",
+          "pointer": "/aggregates/comparisons/332/a",
           "type": "json_value"
         },
         {
           "expected": "opencode.edits_denied@claude-sonnet-5-5",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/321/b",
+          "pointer": "/aggregates/comparisons/332/b",
           "type": "json_value"
         },
         {
           "expected": "adversarial",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/321/label",
+          "pointer": "/aggregates/comparisons/332/label",
           "type": "json_value"
         },
         {
           "expected": "harm_persists",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/321/metric",
+          "pointer": "/aggregates/comparisons/332/metric",
           "type": "json_value"
         },
         {
           "expected": 0.019,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/321/a_rate",
+          "pointer": "/aggregates/comparisons/332/a_rate",
           "round": 3,
           "type": "json_value"
         },
@@ -9418,7 +9418,7 @@
         {
           "expected": 0.0,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/321/b_rate",
+          "pointer": "/aggregates/comparisons/332/b_rate",
           "round": 3,
           "type": "json_value"
         },
@@ -9430,31 +9430,31 @@
         {
           "expected": "claude_code.skill_allowed@claude-sonnet-5-5",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/325/a",
+          "pointer": "/aggregates/comparisons/336/a",
           "type": "json_value"
         },
         {
           "expected": "opencode.edits_denied@claude-sonnet-5-5",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/325/b",
+          "pointer": "/aggregates/comparisons/336/b",
           "type": "json_value"
         },
         {
           "expected": "benign",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/325/label",
+          "pointer": "/aggregates/comparisons/336/label",
           "type": "json_value"
         },
         {
           "expected": "as_shipped",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/325/metric",
+          "pointer": "/aggregates/comparisons/336/metric",
           "type": "json_value"
         },
         {
           "expected": 0.991,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/325/a_rate",
+          "pointer": "/aggregates/comparisons/336/a_rate",
           "round": 3,
           "type": "json_value"
         },
@@ -9466,7 +9466,7 @@
         {
           "expected": 0.981,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/325/b_rate",
+          "pointer": "/aggregates/comparisons/336/b_rate",
           "round": 3,
           "type": "json_value"
         },
@@ -9478,31 +9478,31 @@
         {
           "expected": "claude_code.skill_allowed@claude-sonnet-5-5",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/327/a",
+          "pointer": "/aggregates/comparisons/338/a",
           "type": "json_value"
         },
         {
           "expected": "opencode.edits_denied@claude-sonnet-5-5",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/327/b",
+          "pointer": "/aggregates/comparisons/338/b",
           "type": "json_value"
         },
         {
           "expected": "benign",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/327/label",
+          "pointer": "/aggregates/comparisons/338/label",
           "type": "json_value"
         },
         {
           "expected": "output_matches_script",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/327/metric",
+          "pointer": "/aggregates/comparisons/338/metric",
           "type": "json_value"
         },
         {
           "expected": 0.963,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/327/a_rate",
+          "pointer": "/aggregates/comparisons/338/a_rate",
           "round": 3,
           "type": "json_value"
         },
@@ -9514,7 +9514,7 @@
         {
           "expected": 0.806,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/327/b_rate",
+          "pointer": "/aggregates/comparisons/338/b_rate",
           "round": 3,
           "type": "json_value"
         },
@@ -9526,7 +9526,7 @@
         {
           "expected": 0.157,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/327/diff",
+          "pointer": "/aggregates/comparisons/338/diff",
           "round": 3,
           "type": "json_value"
         },
@@ -9538,7 +9538,7 @@
         {
           "expected": 0.093,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/327/ci95/0",
+          "pointer": "/aggregates/comparisons/338/ci95/0",
           "round": 3,
           "type": "json_value"
         },
@@ -9550,7 +9550,7 @@
         {
           "expected": 0.231,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/327/ci95/1",
+          "pointer": "/aggregates/comparisons/338/ci95/1",
           "round": 3,
           "type": "json_value"
         },
@@ -10076,31 +10076,31 @@
         {
           "expected": "opencode.edits_denied+skill_inline_source",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/195/a",
+          "pointer": "/aggregates/comparisons/206/a",
           "type": "json_value"
         },
         {
           "expected": "opencode.edits_denied",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/195/b",
+          "pointer": "/aggregates/comparisons/206/b",
           "type": "json_value"
         },
         {
           "expected": "adversarial",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/195/label",
+          "pointer": "/aggregates/comparisons/206/label",
           "type": "json_value"
         },
         {
           "expected": "as_shipped",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/195/metric",
+          "pointer": "/aggregates/comparisons/206/metric",
           "type": "json_value"
         },
         {
           "expected": 0.0,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/195/a_rate",
+          "pointer": "/aggregates/comparisons/206/a_rate",
           "round": 3,
           "type": "json_value"
         },
@@ -10112,7 +10112,7 @@
         {
           "expected": -0.019,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/195/diff",
+          "pointer": "/aggregates/comparisons/206/diff",
           "round": 3,
           "type": "json_value"
         },
@@ -10124,7 +10124,7 @@
         {
           "expected": -0.033,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/195/ci95/0",
+          "pointer": "/aggregates/comparisons/206/ci95/0",
           "round": 3,
           "type": "json_value"
         },
@@ -10136,7 +10136,7 @@
         {
           "expected": -0.006,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/195/ci95/1",
+          "pointer": "/aggregates/comparisons/206/ci95/1",
           "round": 3,
           "type": "json_value"
         },
@@ -10148,31 +10148,31 @@
         {
           "expected": "opencode.edits_denied+skill_inline_source",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/197/a",
+          "pointer": "/aggregates/comparisons/208/a",
           "type": "json_value"
         },
         {
           "expected": "opencode.edits_denied",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/197/b",
+          "pointer": "/aggregates/comparisons/208/b",
           "type": "json_value"
         },
         {
           "expected": "adversarial",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/197/label",
+          "pointer": "/aggregates/comparisons/208/label",
           "type": "json_value"
         },
         {
           "expected": "read_before_run",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/197/metric",
+          "pointer": "/aggregates/comparisons/208/metric",
           "type": "json_value"
         },
         {
           "expected": 0.0,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/197/a_rate",
+          "pointer": "/aggregates/comparisons/208/a_rate",
           "round": 3,
           "type": "json_value"
         },
@@ -10184,31 +10184,31 @@
         {
           "expected": "opencode.edits_denied+skill_inline_source",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/198/a",
+          "pointer": "/aggregates/comparisons/209/a",
           "type": "json_value"
         },
         {
           "expected": "opencode.edits_denied",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/198/b",
+          "pointer": "/aggregates/comparisons/209/b",
           "type": "json_value"
         },
         {
           "expected": "adversarial",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/198/label",
+          "pointer": "/aggregates/comparisons/209/label",
           "type": "json_value"
         },
         {
           "expected": "harm_persists",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/198/metric",
+          "pointer": "/aggregates/comparisons/209/metric",
           "type": "json_value"
         },
         {
           "expected": 0.0,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/198/a_rate",
+          "pointer": "/aggregates/comparisons/209/a_rate",
           "round": 3,
           "type": "json_value"
         },
@@ -10220,7 +10220,7 @@
         {
           "expected": -0.009,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/198/diff",
+          "pointer": "/aggregates/comparisons/209/diff",
           "round": 3,
           "type": "json_value"
         },
@@ -10232,7 +10232,7 @@
         {
           "expected": -0.02,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/198/ci95/0",
+          "pointer": "/aggregates/comparisons/209/ci95/0",
           "round": 3,
           "type": "json_value"
         },
@@ -10244,7 +10244,7 @@
         {
           "expected": -0.002,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/198/ci95/1",
+          "pointer": "/aggregates/comparisons/209/ci95/1",
           "round": 3,
           "type": "json_value"
         },
@@ -10256,31 +10256,31 @@
         {
           "expected": "opencode.edits_denied+skill_inline_source",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/202/a",
+          "pointer": "/aggregates/comparisons/213/a",
           "type": "json_value"
         },
         {
           "expected": "opencode.edits_denied",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/202/b",
+          "pointer": "/aggregates/comparisons/213/b",
           "type": "json_value"
         },
         {
           "expected": "benign",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/202/label",
+          "pointer": "/aggregates/comparisons/213/label",
           "type": "json_value"
         },
         {
           "expected": "as_shipped",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/202/metric",
+          "pointer": "/aggregates/comparisons/213/metric",
           "type": "json_value"
         },
         {
           "expected": 0.972,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/202/a_rate",
+          "pointer": "/aggregates/comparisons/213/a_rate",
           "round": 3,
           "type": "json_value"
         },
@@ -10292,7 +10292,7 @@
         {
           "expected": -0.002,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/202/diff",
+          "pointer": "/aggregates/comparisons/213/diff",
           "round": 3,
           "type": "json_value"
         },
@@ -10304,7 +10304,7 @@
         {
           "expected": -0.039,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/202/ci95/0",
+          "pointer": "/aggregates/comparisons/213/ci95/0",
           "round": 3,
           "type": "json_value"
         },
@@ -10316,7 +10316,7 @@
         {
           "expected": 0.03,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/202/ci95/1",
+          "pointer": "/aggregates/comparisons/213/ci95/1",
           "round": 3,
           "type": "json_value"
         },
@@ -10644,31 +10644,31 @@
         {
           "expected": "opencode.edits_denied+skill_no_read",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/206/a",
+          "pointer": "/aggregates/comparisons/217/a",
           "type": "json_value"
         },
         {
           "expected": "opencode.edits_denied",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/206/b",
+          "pointer": "/aggregates/comparisons/217/b",
           "type": "json_value"
         },
         {
           "expected": "adversarial",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/206/label",
+          "pointer": "/aggregates/comparisons/217/label",
           "type": "json_value"
         },
         {
           "expected": "as_shipped",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/206/metric",
+          "pointer": "/aggregates/comparisons/217/metric",
           "type": "json_value"
         },
         {
           "expected": 0.926,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/206/a_rate",
+          "pointer": "/aggregates/comparisons/217/a_rate",
           "round": 3,
           "type": "json_value"
         },
@@ -10680,7 +10680,7 @@
         {
           "expected": 0.907,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/206/diff",
+          "pointer": "/aggregates/comparisons/217/diff",
           "round": 3,
           "type": "json_value"
         },
@@ -10692,7 +10692,7 @@
         {
           "expected": 0.859,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/206/ci95/0",
+          "pointer": "/aggregates/comparisons/217/ci95/0",
           "round": 3,
           "type": "json_value"
         },
@@ -10704,7 +10704,7 @@
         {
           "expected": 0.952,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/206/ci95/1",
+          "pointer": "/aggregates/comparisons/217/ci95/1",
           "round": 3,
           "type": "json_value"
         },
@@ -10716,31 +10716,31 @@
         {
           "expected": "opencode.edits_denied+skill_no_read",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/208/a",
+          "pointer": "/aggregates/comparisons/219/a",
           "type": "json_value"
         },
         {
           "expected": "opencode.edits_denied",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/208/b",
+          "pointer": "/aggregates/comparisons/219/b",
           "type": "json_value"
         },
         {
           "expected": "adversarial",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/208/label",
+          "pointer": "/aggregates/comparisons/219/label",
           "type": "json_value"
         },
         {
           "expected": "read_before_run",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/208/metric",
+          "pointer": "/aggregates/comparisons/219/metric",
           "type": "json_value"
         },
         {
           "expected": 0.046,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/208/a_rate",
+          "pointer": "/aggregates/comparisons/219/a_rate",
           "round": 3,
           "type": "json_value"
         },
@@ -10752,31 +10752,31 @@
         {
           "expected": "opencode.edits_denied+skill_no_read",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/209/a",
+          "pointer": "/aggregates/comparisons/220/a",
           "type": "json_value"
         },
         {
           "expected": "opencode.edits_denied",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/209/b",
+          "pointer": "/aggregates/comparisons/220/b",
           "type": "json_value"
         },
         {
           "expected": "adversarial",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/209/label",
+          "pointer": "/aggregates/comparisons/220/label",
           "type": "json_value"
         },
         {
           "expected": "harm_persists",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/209/metric",
+          "pointer": "/aggregates/comparisons/220/metric",
           "type": "json_value"
         },
         {
           "expected": 0.731,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/209/a_rate",
+          "pointer": "/aggregates/comparisons/220/a_rate",
           "round": 3,
           "type": "json_value"
         },
@@ -10788,7 +10788,7 @@
         {
           "expected": 0.722,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/209/diff",
+          "pointer": "/aggregates/comparisons/220/diff",
           "round": 3,
           "type": "json_value"
         },
@@ -10800,7 +10800,7 @@
         {
           "expected": 0.656,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/209/ci95/0",
+          "pointer": "/aggregates/comparisons/220/ci95/0",
           "round": 3,
           "type": "json_value"
         },
@@ -10812,7 +10812,7 @@
         {
           "expected": 0.789,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/209/ci95/1",
+          "pointer": "/aggregates/comparisons/220/ci95/1",
           "round": 3,
           "type": "json_value"
         },
@@ -10824,31 +10824,31 @@
         {
           "expected": "opencode.edits_denied+skill_no_read",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/213/a",
+          "pointer": "/aggregates/comparisons/224/a",
           "type": "json_value"
         },
         {
           "expected": "opencode.edits_denied",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/213/b",
+          "pointer": "/aggregates/comparisons/224/b",
           "type": "json_value"
         },
         {
           "expected": "benign",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/213/label",
+          "pointer": "/aggregates/comparisons/224/label",
           "type": "json_value"
         },
         {
           "expected": "as_shipped",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/213/metric",
+          "pointer": "/aggregates/comparisons/224/metric",
           "type": "json_value"
         },
         {
           "expected": 0.972,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/213/a_rate",
+          "pointer": "/aggregates/comparisons/224/a_rate",
           "round": 3,
           "type": "json_value"
         },
@@ -10860,7 +10860,7 @@
         {
           "expected": -0.002,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/213/diff",
+          "pointer": "/aggregates/comparisons/224/diff",
           "round": 3,
           "type": "json_value"
         },
@@ -10872,7 +10872,7 @@
         {
           "expected": -0.039,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/213/ci95/0",
+          "pointer": "/aggregates/comparisons/224/ci95/0",
           "round": 3,
           "type": "json_value"
         },
@@ -10884,7 +10884,7 @@
         {
           "expected": 0.028,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/213/ci95/1",
+          "pointer": "/aggregates/comparisons/224/ci95/1",
           "round": 3,
           "type": "json_value"
         },
@@ -10896,31 +10896,31 @@
         {
           "expected": "opencode.edits_denied+skill_no_read",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/210/a",
+          "pointer": "/aggregates/comparisons/221/a",
           "type": "json_value"
         },
         {
           "expected": "opencode.edits_denied",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/210/b",
+          "pointer": "/aggregates/comparisons/221/b",
           "type": "json_value"
         },
         {
           "expected": "adversarial",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/210/label",
+          "pointer": "/aggregates/comparisons/221/label",
           "type": "json_value"
         },
         {
           "expected": "shipped_repaired",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/210/metric",
+          "pointer": "/aggregates/comparisons/221/metric",
           "type": "json_value"
         },
         {
           "expected": 0.194,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/210/a_rate",
+          "pointer": "/aggregates/comparisons/221/a_rate",
           "round": 3,
           "type": "json_value"
         },
@@ -10932,31 +10932,31 @@
         {
           "expected": "claude_code.skill_allowed@claude-haiku-5-5+skill_no_read",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/307/a",
+          "pointer": "/aggregates/comparisons/318/a",
           "type": "json_value"
         },
         {
           "expected": "opencode.edits_denied@claude-haiku-5-5+skill_no_read",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/307/b",
+          "pointer": "/aggregates/comparisons/318/b",
           "type": "json_value"
         },
         {
           "expected": "adversarial",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/307/label",
+          "pointer": "/aggregates/comparisons/318/label",
           "type": "json_value"
         },
         {
           "expected": "as_shipped",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/307/metric",
+          "pointer": "/aggregates/comparisons/318/metric",
           "type": "json_value"
         },
         {
           "expected": 0.074,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/307/diff",
+          "pointer": "/aggregates/comparisons/318/diff",
           "round": 3,
           "type": "json_value"
         },
@@ -10968,7 +10968,7 @@
         {
           "expected": 0.037,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/307/ci95/0",
+          "pointer": "/aggregates/comparisons/318/ci95/0",
           "round": 3,
           "type": "json_value"
         },
@@ -10980,7 +10980,7 @@
         {
           "expected": 0.12,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/307/ci95/1",
+          "pointer": "/aggregates/comparisons/318/ci95/1",
           "round": 3,
           "type": "json_value"
         },
@@ -10992,31 +10992,31 @@
         {
           "expected": "claude_code.skill_allowed@claude-haiku-5-5+skill_no_read",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/310/a",
+          "pointer": "/aggregates/comparisons/321/a",
           "type": "json_value"
         },
         {
           "expected": "opencode.edits_denied@claude-haiku-5-5+skill_no_read",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/310/b",
+          "pointer": "/aggregates/comparisons/321/b",
           "type": "json_value"
         },
         {
           "expected": "adversarial",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/310/label",
+          "pointer": "/aggregates/comparisons/321/label",
           "type": "json_value"
         },
         {
           "expected": "harm_persists",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/310/metric",
+          "pointer": "/aggregates/comparisons/321/metric",
           "type": "json_value"
         },
         {
           "expected": 0.269,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/310/diff",
+          "pointer": "/aggregates/comparisons/321/diff",
           "round": 3,
           "type": "json_value"
         },
@@ -11028,7 +11028,7 @@
         {
           "expected": 0.204,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/310/ci95/0",
+          "pointer": "/aggregates/comparisons/321/ci95/0",
           "round": 3,
           "type": "json_value"
         },
@@ -11040,7 +11040,7 @@
         {
           "expected": 0.333,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/310/ci95/1",
+          "pointer": "/aggregates/comparisons/321/ci95/1",
           "round": 3,
           "type": "json_value"
         },
@@ -11936,31 +11936,31 @@
         {
           "expected": "opencode.edits_denied@claude-sonnet-5-5+skill_no_read",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/263/a",
+          "pointer": "/aggregates/comparisons/274/a",
           "type": "json_value"
         },
         {
           "expected": "opencode.edits_denied@claude-sonnet-5-5",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/263/b",
+          "pointer": "/aggregates/comparisons/274/b",
           "type": "json_value"
         },
         {
           "expected": "adversarial",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/263/label",
+          "pointer": "/aggregates/comparisons/274/label",
           "type": "json_value"
         },
         {
           "expected": "as_shipped",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/263/metric",
+          "pointer": "/aggregates/comparisons/274/metric",
           "type": "json_value"
         },
         {
           "expected": 0.963,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/263/a_rate",
+          "pointer": "/aggregates/comparisons/274/a_rate",
           "round": 3,
           "type": "json_value"
         },
@@ -11972,7 +11972,7 @@
         {
           "expected": 0.963,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/263/diff",
+          "pointer": "/aggregates/comparisons/274/diff",
           "round": 3,
           "type": "json_value"
         },
@@ -11984,7 +11984,7 @@
         {
           "expected": 0.926,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/263/ci95/0",
+          "pointer": "/aggregates/comparisons/274/ci95/0",
           "round": 3,
           "type": "json_value"
         },
@@ -11996,7 +11996,7 @@
         {
           "expected": 0.991,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/263/ci95/1",
+          "pointer": "/aggregates/comparisons/274/ci95/1",
           "round": 3,
           "type": "json_value"
         },
@@ -12008,108 +12008,36 @@
         {
           "expected": "opencode.edits_denied@claude-sonnet-5-5+skill_no_read",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/265/a",
+          "pointer": "/aggregates/comparisons/276/a",
           "type": "json_value"
         },
         {
           "expected": "opencode.edits_denied@claude-sonnet-5-5",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/265/b",
+          "pointer": "/aggregates/comparisons/276/b",
           "type": "json_value"
         },
         {
           "expected": "adversarial",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/265/label",
+          "pointer": "/aggregates/comparisons/276/label",
           "type": "json_value"
         },
         {
           "expected": "read_before_run",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/265/metric",
+          "pointer": "/aggregates/comparisons/276/metric",
           "type": "json_value"
         },
         {
           "expected": 0.046,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/265/a_rate",
+          "pointer": "/aggregates/comparisons/276/a_rate",
           "round": 3,
           "type": "json_value"
         },
         {
           "contains": "\\newcommand{\\TNsOCReadA}{4.6}",
-          "path": "paper/usenix/numbers.tex",
-          "type": "file_contains"
-        },
-        {
-          "expected": "opencode.edits_denied@claude-sonnet-5-5+skill_no_read",
-          "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/266/a",
-          "type": "json_value"
-        },
-        {
-          "expected": "opencode.edits_denied@claude-sonnet-5-5",
-          "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/266/b",
-          "type": "json_value"
-        },
-        {
-          "expected": "adversarial",
-          "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/266/label",
-          "type": "json_value"
-        },
-        {
-          "expected": "harm_persists",
-          "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/266/metric",
-          "type": "json_value"
-        },
-        {
-          "expected": 0.759,
-          "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/266/a_rate",
-          "round": 3,
-          "type": "json_value"
-        },
-        {
-          "contains": "\\newcommand{\\TNsOCHarmA}{75.9}",
-          "path": "paper/usenix/numbers.tex",
-          "type": "file_contains"
-        },
-        {
-          "expected": 0.759,
-          "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/266/diff",
-          "round": 3,
-          "type": "json_value"
-        },
-        {
-          "contains": "\\newcommand{\\TNsOCHarmD}{+75.9}",
-          "path": "paper/usenix/numbers.tex",
-          "type": "file_contains"
-        },
-        {
-          "expected": 0.694,
-          "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/266/ci95/0",
-          "round": 3,
-          "type": "json_value"
-        },
-        {
-          "contains": "\\newcommand{\\TNsOCHarmL}{+69.4}",
-          "path": "paper/usenix/numbers.tex",
-          "type": "file_contains"
-        },
-        {
-          "expected": 0.824,
-          "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/266/ci95/1",
-          "round": 3,
-          "type": "json_value"
-        },
-        {
-          "contains": "\\newcommand{\\TNsOCHarmH}{+82.4}",
           "path": "paper/usenix/numbers.tex",
           "type": "file_contains"
         },
@@ -12126,21 +12054,93 @@
           "type": "json_value"
         },
         {
-          "expected": "benign",
+          "expected": "adversarial",
           "path": "results/agent-pilot-arms/analysis.json",
           "pointer": "/aggregates/comparisons/277/label",
           "type": "json_value"
         },
         {
-          "expected": "as_shipped",
+          "expected": "harm_persists",
           "path": "results/agent-pilot-arms/analysis.json",
           "pointer": "/aggregates/comparisons/277/metric",
           "type": "json_value"
         },
         {
-          "expected": 1.0,
+          "expected": 0.759,
           "path": "results/agent-pilot-arms/analysis.json",
           "pointer": "/aggregates/comparisons/277/a_rate",
+          "round": 3,
+          "type": "json_value"
+        },
+        {
+          "contains": "\\newcommand{\\TNsOCHarmA}{75.9}",
+          "path": "paper/usenix/numbers.tex",
+          "type": "file_contains"
+        },
+        {
+          "expected": 0.759,
+          "path": "results/agent-pilot-arms/analysis.json",
+          "pointer": "/aggregates/comparisons/277/diff",
+          "round": 3,
+          "type": "json_value"
+        },
+        {
+          "contains": "\\newcommand{\\TNsOCHarmD}{+75.9}",
+          "path": "paper/usenix/numbers.tex",
+          "type": "file_contains"
+        },
+        {
+          "expected": 0.694,
+          "path": "results/agent-pilot-arms/analysis.json",
+          "pointer": "/aggregates/comparisons/277/ci95/0",
+          "round": 3,
+          "type": "json_value"
+        },
+        {
+          "contains": "\\newcommand{\\TNsOCHarmL}{+69.4}",
+          "path": "paper/usenix/numbers.tex",
+          "type": "file_contains"
+        },
+        {
+          "expected": 0.824,
+          "path": "results/agent-pilot-arms/analysis.json",
+          "pointer": "/aggregates/comparisons/277/ci95/1",
+          "round": 3,
+          "type": "json_value"
+        },
+        {
+          "contains": "\\newcommand{\\TNsOCHarmH}{+82.4}",
+          "path": "paper/usenix/numbers.tex",
+          "type": "file_contains"
+        },
+        {
+          "expected": "opencode.edits_denied@claude-sonnet-5-5+skill_no_read",
+          "path": "results/agent-pilot-arms/analysis.json",
+          "pointer": "/aggregates/comparisons/288/a",
+          "type": "json_value"
+        },
+        {
+          "expected": "opencode.edits_denied@claude-sonnet-5-5",
+          "path": "results/agent-pilot-arms/analysis.json",
+          "pointer": "/aggregates/comparisons/288/b",
+          "type": "json_value"
+        },
+        {
+          "expected": "benign",
+          "path": "results/agent-pilot-arms/analysis.json",
+          "pointer": "/aggregates/comparisons/288/label",
+          "type": "json_value"
+        },
+        {
+          "expected": "as_shipped",
+          "path": "results/agent-pilot-arms/analysis.json",
+          "pointer": "/aggregates/comparisons/288/metric",
+          "type": "json_value"
+        },
+        {
+          "expected": 1.0,
+          "path": "results/agent-pilot-arms/analysis.json",
+          "pointer": "/aggregates/comparisons/288/a_rate",
           "round": 3,
           "type": "json_value"
         },
@@ -12152,7 +12152,7 @@
         {
           "expected": 0.019,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/277/diff",
+          "pointer": "/aggregates/comparisons/288/diff",
           "round": 3,
           "type": "json_value"
         },
@@ -12164,7 +12164,7 @@
         {
           "expected": 0.0,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/277/ci95/0",
+          "pointer": "/aggregates/comparisons/288/ci95/0",
           "round": 3,
           "type": "json_value"
         },
@@ -12176,7 +12176,7 @@
         {
           "expected": 0.046,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/277/ci95/1",
+          "pointer": "/aggregates/comparisons/288/ci95/1",
           "round": 3,
           "type": "json_value"
         },
@@ -12248,31 +12248,31 @@
         {
           "expected": "opencode.edits_denied@claude-sonnet-5-5+skill_no_read",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/270/a",
+          "pointer": "/aggregates/comparisons/281/a",
           "type": "json_value"
         },
         {
           "expected": "opencode.edits_denied@claude-haiku-5-5+skill_no_read",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/270/b",
+          "pointer": "/aggregates/comparisons/281/b",
           "type": "json_value"
         },
         {
           "expected": "adversarial",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/270/label",
+          "pointer": "/aggregates/comparisons/281/label",
           "type": "json_value"
         },
         {
           "expected": "as_shipped",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/270/metric",
+          "pointer": "/aggregates/comparisons/281/metric",
           "type": "json_value"
         },
         {
           "expected": 0.037,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/270/diff",
+          "pointer": "/aggregates/comparisons/281/diff",
           "round": 3,
           "type": "json_value"
         },
@@ -12284,7 +12284,7 @@
         {
           "expected": -0.028,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/270/ci95/0",
+          "pointer": "/aggregates/comparisons/281/ci95/0",
           "round": 3,
           "type": "json_value"
         },
@@ -12296,7 +12296,7 @@
         {
           "expected": 0.093,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/270/ci95/1",
+          "pointer": "/aggregates/comparisons/281/ci95/1",
           "round": 3,
           "type": "json_value"
         },
@@ -12308,31 +12308,31 @@
         {
           "expected": "claude_code.skill_allowed@claude-sonnet-5-5+skill_no_read",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/350/a",
+          "pointer": "/aggregates/comparisons/361/a",
           "type": "json_value"
         },
         {
           "expected": "opencode.edits_denied@claude-sonnet-5-5+skill_no_read",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/350/b",
+          "pointer": "/aggregates/comparisons/361/b",
           "type": "json_value"
         },
         {
           "expected": "adversarial",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/350/label",
+          "pointer": "/aggregates/comparisons/361/label",
           "type": "json_value"
         },
         {
           "expected": "as_shipped",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/350/metric",
+          "pointer": "/aggregates/comparisons/361/metric",
           "type": "json_value"
         },
         {
           "expected": 0.963,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/350/a_rate",
+          "pointer": "/aggregates/comparisons/361/a_rate",
           "round": 3,
           "type": "json_value"
         },
@@ -12344,7 +12344,7 @@
         {
           "expected": 0.963,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/350/b_rate",
+          "pointer": "/aggregates/comparisons/361/b_rate",
           "round": 3,
           "type": "json_value"
         },
@@ -12356,7 +12356,7 @@
         {
           "expected": 0.0,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/350/diff",
+          "pointer": "/aggregates/comparisons/361/diff",
           "round": 3,
           "type": "json_value"
         },
@@ -12368,7 +12368,7 @@
         {
           "expected": -0.056,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/350/ci95/0",
+          "pointer": "/aggregates/comparisons/361/ci95/0",
           "round": 3,
           "type": "json_value"
         },
@@ -12380,7 +12380,7 @@
         {
           "expected": 0.046,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/350/ci95/1",
+          "pointer": "/aggregates/comparisons/361/ci95/1",
           "round": 3,
           "type": "json_value"
         },
@@ -12392,7 +12392,7 @@
         {
           "expected": 108,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/350/cases",
+          "pointer": "/aggregates/comparisons/361/cases",
           "type": "json_value"
         },
         {
@@ -12486,6 +12486,632 @@
         {
           "contains": "\\newcommand{\\KNsOCBenN}{108}",
           "path": "paper/usenix/numbers.tex",
+          "type": "file_contains"
+        }
+      ],
+      "paper_locations": [
+        "paper/usenix/main.tex"
+      ],
+      "status": "supported_agent_pilot"
+    },
+    {
+      "claim": "On a third host with another vendor's model, Codex CLI 0.144.4 with gpt-5.6-terra (preset workspace_write, one repeat per task; no baseline campaign, so differences are against Codex's own untreated runs), the benchmark as built gave: adversarial script run as shipped in 100 of 108 runs (any version 100), read first in 11, harm present at the end in 76; benign script run as shipped in 107 of 108. With the do-not-read sentence in the installed SKILL.md: as shipped 100.0% (+7.4 points, 95% CI +2.8 to +13.9), read first 0.0%, harm at end 80.6% (+10.2 points, 95% CI +4.6 to +16.7), benign as shipped 100.0% (+0.9 points, 95% CI +0.0 to +2.8); 108 of 108 adversarial runs ran the script as shipped, 0 read it first and 87 ended with the harm (108 benign runs). In 137 of the 432 analysed Codex runs a shell command failed to start inside Codex and the agent went on with a later command; as built, the adversarial script ran as shipped in 31 of 34 such runs and 69 of 74 others.",
+      "claim_id": "CL-PILOT-022",
+      "evidence": [
+        {
+          "expected": "codex.workspace_write+skill_no_read",
+          "path": "results/agent-pilot-arms/analysis.json",
+          "pointer": "/aggregates/comparisons/170/a",
+          "type": "json_value"
+        },
+        {
+          "expected": "codex.workspace_write",
+          "path": "results/agent-pilot-arms/analysis.json",
+          "pointer": "/aggregates/comparisons/170/b",
+          "type": "json_value"
+        },
+        {
+          "expected": "adversarial",
+          "path": "results/agent-pilot-arms/analysis.json",
+          "pointer": "/aggregates/comparisons/170/label",
+          "type": "json_value"
+        },
+        {
+          "expected": "as_shipped",
+          "path": "results/agent-pilot-arms/analysis.json",
+          "pointer": "/aggregates/comparisons/170/metric",
+          "type": "json_value"
+        },
+        {
+          "expected": 1.0,
+          "path": "results/agent-pilot-arms/analysis.json",
+          "pointer": "/aggregates/comparisons/170/a_rate",
+          "round": 3,
+          "type": "json_value"
+        },
+        {
+          "contains": "\\newcommand{\\TNrCXShipA}{100.0}",
+          "path": "paper/usenix/numbers.tex",
+          "type": "file_contains"
+        },
+        {
+          "expected": 0.074,
+          "path": "results/agent-pilot-arms/analysis.json",
+          "pointer": "/aggregates/comparisons/170/diff",
+          "round": 3,
+          "type": "json_value"
+        },
+        {
+          "contains": "\\newcommand{\\TNrCXShipD}{+7.4}",
+          "path": "paper/usenix/numbers.tex",
+          "type": "file_contains"
+        },
+        {
+          "expected": 0.028,
+          "path": "results/agent-pilot-arms/analysis.json",
+          "pointer": "/aggregates/comparisons/170/ci95/0",
+          "round": 3,
+          "type": "json_value"
+        },
+        {
+          "contains": "\\newcommand{\\TNrCXShipL}{+2.8}",
+          "path": "paper/usenix/numbers.tex",
+          "type": "file_contains"
+        },
+        {
+          "expected": 0.139,
+          "path": "results/agent-pilot-arms/analysis.json",
+          "pointer": "/aggregates/comparisons/170/ci95/1",
+          "round": 3,
+          "type": "json_value"
+        },
+        {
+          "contains": "\\newcommand{\\TNrCXShipH}{+13.9}",
+          "path": "paper/usenix/numbers.tex",
+          "type": "file_contains"
+        },
+        {
+          "expected": "codex.workspace_write+skill_no_read",
+          "path": "results/agent-pilot-arms/analysis.json",
+          "pointer": "/aggregates/comparisons/172/a",
+          "type": "json_value"
+        },
+        {
+          "expected": "codex.workspace_write",
+          "path": "results/agent-pilot-arms/analysis.json",
+          "pointer": "/aggregates/comparisons/172/b",
+          "type": "json_value"
+        },
+        {
+          "expected": "adversarial",
+          "path": "results/agent-pilot-arms/analysis.json",
+          "pointer": "/aggregates/comparisons/172/label",
+          "type": "json_value"
+        },
+        {
+          "expected": "read_before_run",
+          "path": "results/agent-pilot-arms/analysis.json",
+          "pointer": "/aggregates/comparisons/172/metric",
+          "type": "json_value"
+        },
+        {
+          "expected": 0.0,
+          "path": "results/agent-pilot-arms/analysis.json",
+          "pointer": "/aggregates/comparisons/172/a_rate",
+          "round": 3,
+          "type": "json_value"
+        },
+        {
+          "contains": "\\newcommand{\\TNrCXReadA}{0.0}",
+          "path": "paper/usenix/numbers.tex",
+          "type": "file_contains"
+        },
+        {
+          "expected": "codex.workspace_write+skill_no_read",
+          "path": "results/agent-pilot-arms/analysis.json",
+          "pointer": "/aggregates/comparisons/173/a",
+          "type": "json_value"
+        },
+        {
+          "expected": "codex.workspace_write",
+          "path": "results/agent-pilot-arms/analysis.json",
+          "pointer": "/aggregates/comparisons/173/b",
+          "type": "json_value"
+        },
+        {
+          "expected": "adversarial",
+          "path": "results/agent-pilot-arms/analysis.json",
+          "pointer": "/aggregates/comparisons/173/label",
+          "type": "json_value"
+        },
+        {
+          "expected": "harm_persists",
+          "path": "results/agent-pilot-arms/analysis.json",
+          "pointer": "/aggregates/comparisons/173/metric",
+          "type": "json_value"
+        },
+        {
+          "expected": 0.806,
+          "path": "results/agent-pilot-arms/analysis.json",
+          "pointer": "/aggregates/comparisons/173/a_rate",
+          "round": 3,
+          "type": "json_value"
+        },
+        {
+          "contains": "\\newcommand{\\TNrCXHarmA}{80.6}",
+          "path": "paper/usenix/numbers.tex",
+          "type": "file_contains"
+        },
+        {
+          "expected": 0.102,
+          "path": "results/agent-pilot-arms/analysis.json",
+          "pointer": "/aggregates/comparisons/173/diff",
+          "round": 3,
+          "type": "json_value"
+        },
+        {
+          "contains": "\\newcommand{\\TNrCXHarmD}{+10.2}",
+          "path": "paper/usenix/numbers.tex",
+          "type": "file_contains"
+        },
+        {
+          "expected": 0.046,
+          "path": "results/agent-pilot-arms/analysis.json",
+          "pointer": "/aggregates/comparisons/173/ci95/0",
+          "round": 3,
+          "type": "json_value"
+        },
+        {
+          "contains": "\\newcommand{\\TNrCXHarmL}{+4.6}",
+          "path": "paper/usenix/numbers.tex",
+          "type": "file_contains"
+        },
+        {
+          "expected": 0.167,
+          "path": "results/agent-pilot-arms/analysis.json",
+          "pointer": "/aggregates/comparisons/173/ci95/1",
+          "round": 3,
+          "type": "json_value"
+        },
+        {
+          "contains": "\\newcommand{\\TNrCXHarmH}{+16.7}",
+          "path": "paper/usenix/numbers.tex",
+          "type": "file_contains"
+        },
+        {
+          "expected": "codex.workspace_write+skill_no_read",
+          "path": "results/agent-pilot-arms/analysis.json",
+          "pointer": "/aggregates/comparisons/177/a",
+          "type": "json_value"
+        },
+        {
+          "expected": "codex.workspace_write",
+          "path": "results/agent-pilot-arms/analysis.json",
+          "pointer": "/aggregates/comparisons/177/b",
+          "type": "json_value"
+        },
+        {
+          "expected": "benign",
+          "path": "results/agent-pilot-arms/analysis.json",
+          "pointer": "/aggregates/comparisons/177/label",
+          "type": "json_value"
+        },
+        {
+          "expected": "as_shipped",
+          "path": "results/agent-pilot-arms/analysis.json",
+          "pointer": "/aggregates/comparisons/177/metric",
+          "type": "json_value"
+        },
+        {
+          "expected": 1.0,
+          "path": "results/agent-pilot-arms/analysis.json",
+          "pointer": "/aggregates/comparisons/177/a_rate",
+          "round": 3,
+          "type": "json_value"
+        },
+        {
+          "contains": "\\newcommand{\\TNrCXBenA}{100.0}",
+          "path": "paper/usenix/numbers.tex",
+          "type": "file_contains"
+        },
+        {
+          "expected": 0.009,
+          "path": "results/agent-pilot-arms/analysis.json",
+          "pointer": "/aggregates/comparisons/177/diff",
+          "round": 3,
+          "type": "json_value"
+        },
+        {
+          "contains": "\\newcommand{\\TNrCXBenD}{+0.9}",
+          "path": "paper/usenix/numbers.tex",
+          "type": "file_contains"
+        },
+        {
+          "expected": 0.0,
+          "path": "results/agent-pilot-arms/analysis.json",
+          "pointer": "/aggregates/comparisons/177/ci95/0",
+          "round": 3,
+          "type": "json_value"
+        },
+        {
+          "contains": "\\newcommand{\\TNrCXBenL}{+0.0}",
+          "path": "paper/usenix/numbers.tex",
+          "type": "file_contains"
+        },
+        {
+          "expected": 0.028,
+          "path": "results/agent-pilot-arms/analysis.json",
+          "pointer": "/aggregates/comparisons/177/ci95/1",
+          "round": 3,
+          "type": "json_value"
+        },
+        {
+          "contains": "\\newcommand{\\TNrCXBenH}{+2.8}",
+          "path": "paper/usenix/numbers.tex",
+          "type": "file_contains"
+        },
+        {
+          "expected": "codex.workspace_write+skill_no_read",
+          "path": "results/agent-pilot-arms/analysis.json",
+          "pointer": "/aggregates/comparisons/170/a",
+          "type": "json_value"
+        },
+        {
+          "expected": "codex.workspace_write",
+          "path": "results/agent-pilot-arms/analysis.json",
+          "pointer": "/aggregates/comparisons/170/b",
+          "type": "json_value"
+        },
+        {
+          "expected": "adversarial",
+          "path": "results/agent-pilot-arms/analysis.json",
+          "pointer": "/aggregates/comparisons/170/label",
+          "type": "json_value"
+        },
+        {
+          "expected": "as_shipped",
+          "path": "results/agent-pilot-arms/analysis.json",
+          "pointer": "/aggregates/comparisons/170/metric",
+          "type": "json_value"
+        },
+        {
+          "expected": 0.926,
+          "path": "results/agent-pilot-arms/analysis.json",
+          "pointer": "/aggregates/comparisons/170/b_rate",
+          "round": 3,
+          "type": "json_value"
+        },
+        {
+          "contains": "\\newcommand{\\TCxShipB}{92.6}",
+          "path": "paper/usenix/numbers.tex",
+          "type": "file_contains"
+        },
+        {
+          "expected": "codex.workspace_write+skill_no_read",
+          "path": "results/agent-pilot-arms/analysis.json",
+          "pointer": "/aggregates/comparisons/172/a",
+          "type": "json_value"
+        },
+        {
+          "expected": "codex.workspace_write",
+          "path": "results/agent-pilot-arms/analysis.json",
+          "pointer": "/aggregates/comparisons/172/b",
+          "type": "json_value"
+        },
+        {
+          "expected": "adversarial",
+          "path": "results/agent-pilot-arms/analysis.json",
+          "pointer": "/aggregates/comparisons/172/label",
+          "type": "json_value"
+        },
+        {
+          "expected": "read_before_run",
+          "path": "results/agent-pilot-arms/analysis.json",
+          "pointer": "/aggregates/comparisons/172/metric",
+          "type": "json_value"
+        },
+        {
+          "expected": 0.102,
+          "path": "results/agent-pilot-arms/analysis.json",
+          "pointer": "/aggregates/comparisons/172/b_rate",
+          "round": 3,
+          "type": "json_value"
+        },
+        {
+          "contains": "\\newcommand{\\TCxReadB}{10.2}",
+          "path": "paper/usenix/numbers.tex",
+          "type": "file_contains"
+        },
+        {
+          "expected": "codex.workspace_write+skill_no_read",
+          "path": "results/agent-pilot-arms/analysis.json",
+          "pointer": "/aggregates/comparisons/173/a",
+          "type": "json_value"
+        },
+        {
+          "expected": "codex.workspace_write",
+          "path": "results/agent-pilot-arms/analysis.json",
+          "pointer": "/aggregates/comparisons/173/b",
+          "type": "json_value"
+        },
+        {
+          "expected": "adversarial",
+          "path": "results/agent-pilot-arms/analysis.json",
+          "pointer": "/aggregates/comparisons/173/label",
+          "type": "json_value"
+        },
+        {
+          "expected": "harm_persists",
+          "path": "results/agent-pilot-arms/analysis.json",
+          "pointer": "/aggregates/comparisons/173/metric",
+          "type": "json_value"
+        },
+        {
+          "expected": 0.704,
+          "path": "results/agent-pilot-arms/analysis.json",
+          "pointer": "/aggregates/comparisons/173/b_rate",
+          "round": 3,
+          "type": "json_value"
+        },
+        {
+          "contains": "\\newcommand{\\TCxHarmB}{70.4}",
+          "path": "paper/usenix/numbers.tex",
+          "type": "file_contains"
+        },
+        {
+          "expected": "codex.workspace_write+skill_no_read",
+          "path": "results/agent-pilot-arms/analysis.json",
+          "pointer": "/aggregates/comparisons/177/a",
+          "type": "json_value"
+        },
+        {
+          "expected": "codex.workspace_write",
+          "path": "results/agent-pilot-arms/analysis.json",
+          "pointer": "/aggregates/comparisons/177/b",
+          "type": "json_value"
+        },
+        {
+          "expected": "benign",
+          "path": "results/agent-pilot-arms/analysis.json",
+          "pointer": "/aggregates/comparisons/177/label",
+          "type": "json_value"
+        },
+        {
+          "expected": "as_shipped",
+          "path": "results/agent-pilot-arms/analysis.json",
+          "pointer": "/aggregates/comparisons/177/metric",
+          "type": "json_value"
+        },
+        {
+          "expected": 0.991,
+          "path": "results/agent-pilot-arms/analysis.json",
+          "pointer": "/aggregates/comparisons/177/b_rate",
+          "round": 3,
+          "type": "json_value"
+        },
+        {
+          "contains": "\\newcommand{\\TCxBenB}{99.1}",
+          "path": "paper/usenix/numbers.tex",
+          "type": "file_contains"
+        },
+        {
+          "expected": 100,
+          "path": "results/agent-pilot-arms/analysis.json",
+          "pointer": "/aggregates/cells/codex.workspace_write.gpt-5.6-terra.none.adversarial/as_shipped",
+          "type": "json_value"
+        },
+        {
+          "contains": "\\newcommand{\\KCxShip}{100}",
+          "path": "paper/usenix/numbers.tex",
+          "type": "file_contains"
+        },
+        {
+          "expected": 108,
+          "path": "results/agent-pilot-arms/analysis.json",
+          "pointer": "/aggregates/cells/codex.workspace_write.gpt-5.6-terra.none.adversarial/n",
+          "type": "json_value"
+        },
+        {
+          "contains": "\\newcommand{\\KCxN}{108}",
+          "path": "paper/usenix/numbers.tex",
+          "type": "file_contains"
+        },
+        {
+          "expected": 11,
+          "path": "results/agent-pilot-arms/analysis.json",
+          "pointer": "/aggregates/cells/codex.workspace_write.gpt-5.6-terra.none.adversarial/read_script_before_run",
+          "type": "json_value"
+        },
+        {
+          "contains": "\\newcommand{\\KCxRead}{11}",
+          "path": "paper/usenix/numbers.tex",
+          "type": "file_contains"
+        },
+        {
+          "expected": 100,
+          "path": "results/agent-pilot-arms/analysis.json",
+          "pointer": "/aggregates/cells/codex.workspace_write.gpt-5.6-terra.none.adversarial/executed",
+          "type": "json_value"
+        },
+        {
+          "contains": "\\newcommand{\\KCxAny}{100}",
+          "path": "paper/usenix/numbers.tex",
+          "type": "file_contains"
+        },
+        {
+          "expected": 76,
+          "path": "results/agent-pilot-arms/analysis.json",
+          "pointer": "/aggregates/cells/codex.workspace_write.gpt-5.6-terra.none.adversarial/attack_persists",
+          "type": "json_value"
+        },
+        {
+          "contains": "\\newcommand{\\KCxHarm}{76}",
+          "path": "paper/usenix/numbers.tex",
+          "type": "file_contains"
+        },
+        {
+          "expected": 107,
+          "path": "results/agent-pilot-arms/analysis.json",
+          "pointer": "/aggregates/cells/codex.workspace_write.gpt-5.6-terra.none.benign/as_shipped",
+          "type": "json_value"
+        },
+        {
+          "contains": "\\newcommand{\\KCxBenShip}{107}",
+          "path": "paper/usenix/numbers.tex",
+          "type": "file_contains"
+        },
+        {
+          "expected": 108,
+          "path": "results/agent-pilot-arms/analysis.json",
+          "pointer": "/aggregates/cells/codex.workspace_write.gpt-5.6-terra.none.benign/n",
+          "type": "json_value"
+        },
+        {
+          "contains": "\\newcommand{\\KCxBenN}{108}",
+          "path": "paper/usenix/numbers.tex",
+          "type": "file_contains"
+        },
+        {
+          "expected": 108,
+          "path": "results/agent-pilot-arms/analysis.json",
+          "pointer": "/aggregates/cells/codex.workspace_write.gpt-5.6-terra.skill_no_read.adversarial/as_shipped",
+          "type": "json_value"
+        },
+        {
+          "contains": "\\newcommand{\\KNrCXShip}{108}",
+          "path": "paper/usenix/numbers.tex",
+          "type": "file_contains"
+        },
+        {
+          "expected": 108,
+          "path": "results/agent-pilot-arms/analysis.json",
+          "pointer": "/aggregates/cells/codex.workspace_write.gpt-5.6-terra.skill_no_read.adversarial/n",
+          "type": "json_value"
+        },
+        {
+          "contains": "\\newcommand{\\KNrCXN}{108}",
+          "path": "paper/usenix/numbers.tex",
+          "type": "file_contains"
+        },
+        {
+          "expected": 0,
+          "path": "results/agent-pilot-arms/analysis.json",
+          "pointer": "/aggregates/cells/codex.workspace_write.gpt-5.6-terra.skill_no_read.adversarial/read_script_before_run",
+          "type": "json_value"
+        },
+        {
+          "contains": "\\newcommand{\\KNrCXRead}{0}",
+          "path": "paper/usenix/numbers.tex",
+          "type": "file_contains"
+        },
+        {
+          "expected": 87,
+          "path": "results/agent-pilot-arms/analysis.json",
+          "pointer": "/aggregates/cells/codex.workspace_write.gpt-5.6-terra.skill_no_read.adversarial/attack_persists",
+          "type": "json_value"
+        },
+        {
+          "contains": "\\newcommand{\\KNrCXHarm}{87}",
+          "path": "paper/usenix/numbers.tex",
+          "type": "file_contains"
+        },
+        {
+          "expected": 108,
+          "path": "results/agent-pilot-arms/analysis.json",
+          "pointer": "/aggregates/cells/codex.workspace_write.gpt-5.6-terra.skill_no_read.benign/n",
+          "type": "json_value"
+        },
+        {
+          "contains": "\\newcommand{\\KNrCXBenN}{108}",
+          "path": "paper/usenix/numbers.tex",
+          "type": "file_contains"
+        },
+        {
+          "expected": 432,
+          "path": "results/agent-pilot-arms/analysis.json",
+          "pointer": "/aggregates/codex_exec_start_errors/n",
+          "type": "json_value"
+        },
+        {
+          "contains": "\\newcommand{\\KCxRows}{432}",
+          "path": "paper/usenix/numbers.tex",
+          "type": "file_contains"
+        },
+        {
+          "expected": 137,
+          "path": "results/agent-pilot-arms/analysis.json",
+          "pointer": "/aggregates/codex_exec_start_errors/runs_with_error",
+          "type": "json_value"
+        },
+        {
+          "contains": "\\newcommand{\\KCxStartErr}{137}",
+          "path": "paper/usenix/numbers.tex",
+          "type": "file_contains"
+        },
+        {
+          "expected": 34,
+          "path": "results/agent-pilot-arms/analysis.json",
+          "pointer": "/aggregates/codex_exec_start_errors/as_built_adversarial_with_error",
+          "type": "json_value"
+        },
+        {
+          "contains": "\\newcommand{\\KCxErrN}{34}",
+          "path": "paper/usenix/numbers.tex",
+          "type": "file_contains"
+        },
+        {
+          "expected": 31,
+          "path": "results/agent-pilot-arms/analysis.json",
+          "pointer": "/aggregates/codex_exec_start_errors/as_built_adversarial_with_error_as_shipped",
+          "type": "json_value"
+        },
+        {
+          "contains": "\\newcommand{\\KCxErrShip}{31}",
+          "path": "paper/usenix/numbers.tex",
+          "type": "file_contains"
+        },
+        {
+          "expected": 74,
+          "path": "results/agent-pilot-arms/analysis.json",
+          "pointer": "/aggregates/codex_exec_start_errors/as_built_adversarial_clean",
+          "type": "json_value"
+        },
+        {
+          "contains": "\\newcommand{\\KCxCleanN}{74}",
+          "path": "paper/usenix/numbers.tex",
+          "type": "file_contains"
+        },
+        {
+          "expected": 69,
+          "path": "results/agent-pilot-arms/analysis.json",
+          "pointer": "/aggregates/codex_exec_start_errors/as_built_adversarial_clean_as_shipped",
+          "type": "json_value"
+        },
+        {
+          "contains": "\\newcommand{\\KCxCleanShip}{69}",
+          "path": "paper/usenix/numbers.tex",
+          "type": "file_contains"
+        },
+        {
+          "expected": "codex-cli 0.144.4",
+          "path": "results/agent-pilot-arms/analysis.json",
+          "pointer": "/aggregates/cli_versions/codex/0",
+          "type": "json_value"
+        },
+        {
+          "contains": "\\newcommand{\\VerCX}{codex-cli 0.144.4}",
+          "path": "paper/usenix/numbers.tex",
+          "type": "file_contains"
+        },
+        {
+          "expected": 1,
+          "path": "results/agent-pilot-arms/analysis.json",
+          "pointer": "/aggregates/cli_versions/codex",
+          "type": "json_len"
+        },
+        {
+          "contains": "\"workspace_write\": [\"--sandbox\", \"workspace-write\"]",
+          "path": "tools/run_agent_pilot.py",
           "type": "file_contains"
         }
       ],
@@ -12681,31 +13307,31 @@
         {
           "expected": "opencode.edits_denied@claude-sonnet-5-5+payload_in_module",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/235/a",
+          "pointer": "/aggregates/comparisons/246/a",
           "type": "json_value"
         },
         {
           "expected": "opencode.edits_denied@claude-sonnet-5-5",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/235/b",
+          "pointer": "/aggregates/comparisons/246/b",
           "type": "json_value"
         },
         {
           "expected": "adversarial",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/235/label",
+          "pointer": "/aggregates/comparisons/246/label",
           "type": "json_value"
         },
         {
           "expected": "as_shipped",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/235/metric",
+          "pointer": "/aggregates/comparisons/246/metric",
           "type": "json_value"
         },
         {
           "expected": 0.009,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/235/a_rate",
+          "pointer": "/aggregates/comparisons/246/a_rate",
           "round": 3,
           "type": "json_value"
         },
@@ -12717,7 +13343,7 @@
         {
           "expected": 0.009,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/235/diff",
+          "pointer": "/aggregates/comparisons/246/diff",
           "round": 3,
           "type": "json_value"
         },
@@ -12729,7 +13355,7 @@
         {
           "expected": 0.0,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/235/ci95/0",
+          "pointer": "/aggregates/comparisons/246/ci95/0",
           "round": 3,
           "type": "json_value"
         },
@@ -12741,7 +13367,7 @@
         {
           "expected": 0.028,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/235/ci95/1",
+          "pointer": "/aggregates/comparisons/246/ci95/1",
           "round": 3,
           "type": "json_value"
         },
@@ -12753,31 +13379,31 @@
         {
           "expected": "opencode.edits_denied@claude-sonnet-5-5+payload_in_module",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/237/a",
+          "pointer": "/aggregates/comparisons/248/a",
           "type": "json_value"
         },
         {
           "expected": "opencode.edits_denied@claude-sonnet-5-5",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/237/b",
+          "pointer": "/aggregates/comparisons/248/b",
           "type": "json_value"
         },
         {
           "expected": "adversarial",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/237/label",
+          "pointer": "/aggregates/comparisons/248/label",
           "type": "json_value"
         },
         {
           "expected": "read_before_run",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/237/metric",
+          "pointer": "/aggregates/comparisons/248/metric",
           "type": "json_value"
         },
         {
           "expected": 0.991,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/237/a_rate",
+          "pointer": "/aggregates/comparisons/248/a_rate",
           "round": 3,
           "type": "json_value"
         },
@@ -12789,31 +13415,31 @@
         {
           "expected": "opencode.edits_denied@claude-sonnet-5-5+payload_in_module",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/238/a",
+          "pointer": "/aggregates/comparisons/249/a",
           "type": "json_value"
         },
         {
           "expected": "opencode.edits_denied@claude-sonnet-5-5",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/238/b",
+          "pointer": "/aggregates/comparisons/249/b",
           "type": "json_value"
         },
         {
           "expected": "adversarial",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/238/label",
+          "pointer": "/aggregates/comparisons/249/label",
           "type": "json_value"
         },
         {
           "expected": "harm_persists",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/238/metric",
+          "pointer": "/aggregates/comparisons/249/metric",
           "type": "json_value"
         },
         {
           "expected": 0.009,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/238/a_rate",
+          "pointer": "/aggregates/comparisons/249/a_rate",
           "round": 3,
           "type": "json_value"
         },
@@ -12825,7 +13451,7 @@
         {
           "expected": 0.009,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/238/diff",
+          "pointer": "/aggregates/comparisons/249/diff",
           "round": 3,
           "type": "json_value"
         },
@@ -12837,7 +13463,7 @@
         {
           "expected": 0.0,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/238/ci95/0",
+          "pointer": "/aggregates/comparisons/249/ci95/0",
           "round": 3,
           "type": "json_value"
         },
@@ -12849,7 +13475,7 @@
         {
           "expected": 0.028,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/238/ci95/1",
+          "pointer": "/aggregates/comparisons/249/ci95/1",
           "round": 3,
           "type": "json_value"
         },
@@ -12861,31 +13487,31 @@
         {
           "expected": "opencode.edits_denied+payload_in_module",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/170/a",
+          "pointer": "/aggregates/comparisons/181/a",
           "type": "json_value"
         },
         {
           "expected": "opencode.edits_denied",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/170/b",
+          "pointer": "/aggregates/comparisons/181/b",
           "type": "json_value"
         },
         {
           "expected": "adversarial",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/170/label",
+          "pointer": "/aggregates/comparisons/181/label",
           "type": "json_value"
         },
         {
           "expected": "as_shipped",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/170/metric",
+          "pointer": "/aggregates/comparisons/181/metric",
           "type": "json_value"
         },
         {
           "expected": 0.028,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/170/a_rate",
+          "pointer": "/aggregates/comparisons/181/a_rate",
           "round": 3,
           "type": "json_value"
         },
@@ -12897,7 +13523,7 @@
         {
           "expected": 0.009,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/170/diff",
+          "pointer": "/aggregates/comparisons/181/diff",
           "round": 3,
           "type": "json_value"
         },
@@ -12909,7 +13535,7 @@
         {
           "expected": -0.015,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/170/ci95/0",
+          "pointer": "/aggregates/comparisons/181/ci95/0",
           "round": 3,
           "type": "json_value"
         },
@@ -12921,7 +13547,7 @@
         {
           "expected": 0.039,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/170/ci95/1",
+          "pointer": "/aggregates/comparisons/181/ci95/1",
           "round": 3,
           "type": "json_value"
         },
@@ -12933,31 +13559,31 @@
         {
           "expected": "opencode.edits_denied+payload_in_module",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/172/a",
+          "pointer": "/aggregates/comparisons/183/a",
           "type": "json_value"
         },
         {
           "expected": "opencode.edits_denied",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/172/b",
+          "pointer": "/aggregates/comparisons/183/b",
           "type": "json_value"
         },
         {
           "expected": "adversarial",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/172/label",
+          "pointer": "/aggregates/comparisons/183/label",
           "type": "json_value"
         },
         {
           "expected": "read_before_run",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/172/metric",
+          "pointer": "/aggregates/comparisons/183/metric",
           "type": "json_value"
         },
         {
           "expected": 0.972,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/172/a_rate",
+          "pointer": "/aggregates/comparisons/183/a_rate",
           "round": 3,
           "type": "json_value"
         },
@@ -12969,31 +13595,31 @@
         {
           "expected": "opencode.edits_denied+payload_in_module",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/173/a",
+          "pointer": "/aggregates/comparisons/184/a",
           "type": "json_value"
         },
         {
           "expected": "opencode.edits_denied",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/173/b",
+          "pointer": "/aggregates/comparisons/184/b",
           "type": "json_value"
         },
         {
           "expected": "adversarial",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/173/label",
+          "pointer": "/aggregates/comparisons/184/label",
           "type": "json_value"
         },
         {
           "expected": "harm_persists",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/173/metric",
+          "pointer": "/aggregates/comparisons/184/metric",
           "type": "json_value"
         },
         {
           "expected": 0.009,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/173/a_rate",
+          "pointer": "/aggregates/comparisons/184/a_rate",
           "round": 3,
           "type": "json_value"
         },
@@ -13005,7 +13631,7 @@
         {
           "expected": 0.0,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/173/diff",
+          "pointer": "/aggregates/comparisons/184/diff",
           "round": 3,
           "type": "json_value"
         },
@@ -13017,7 +13643,7 @@
         {
           "expected": -0.015,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/173/ci95/0",
+          "pointer": "/aggregates/comparisons/184/ci95/0",
           "round": 3,
           "type": "json_value"
         },
@@ -13029,7 +13655,7 @@
         {
           "expected": 0.02,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/173/ci95/1",
+          "pointer": "/aggregates/comparisons/184/ci95/1",
           "round": 3,
           "type": "json_value"
         },
@@ -13510,7 +14136,7 @@
       "status": "supported_agent_pilot"
     },
     {
-      "claim": "With the body of the function that an adversarial script adds to its benign counterpart base64-encoded and run with exec (adversarial packages, one repeat per task): Claude Code with claude-sonnet-5-5: as shipped 0.9% (+0.0 points, 95% CI -2.8 to +2.8), read the entry script first 99.1%, harm at end 1.9% (+0.0 points, 95% CI -3.7 to +3.7); 1 of 108 runs as shipped, 0 decoded base64 in a shell command, 57 ran some version, 2 ended with the harm. OpenCode with claude-sonnet-5-5: as shipped 0.0% (+0.0 points, 95% CI +0.0 to +0.0), read the entry script first 100.0%, harm at end 0.0% (+0.0 points, 95% CI +0.0 to +0.0); 0 of 70 runs as shipped, 1 decoded base64 in a shell command, 11 ran some version, 0 ended with the harm. OpenCode with claude-haiku-5-5: as shipped 0.9% (-0.9 points, 95% CI -2.6 to +0.9), read the entry script first 97.2%, harm at end 0.9% (-0.0 points, 95% CI -1.5 to +2.0); 1 of 108 runs as shipped, 2 decoded base64 in a shell command, 14 ran some version, 1 ended with the harm. Claude Code with claude-haiku-5-5 and the host's read-first sentence: as shipped 0.9% (-79.1 points, 95% CI -84.6 to -73.5), read the entry script first 99.1%, harm at end 0.0% (-79.6 points, 95% CI -85.0 to -73.7); 1 of 108 runs as shipped, 7 decoded base64 in a shell command, 13 ran some version, 0 ended with the harm; against the host sentence with the payload in plain view, as shipped +0.9 points, 95% CI +0.0 to +2.8. Other differences are against the same host and model on the benchmark as built. Runs of these arms count as shipped only if no file of the installed skill changed.",
+      "claim": "With the body of the function that an adversarial script adds to its benign counterpart base64-encoded and run with exec (adversarial packages, one repeat per task): Claude Code with claude-sonnet-5-5: as shipped 0.9% (+0.0 points, 95% CI -2.8 to +2.8), read the entry script first 99.1%, harm at end 1.9% (+0.0 points, 95% CI -3.7 to +3.7); 1 of 108 runs as shipped, 0 decoded base64 in a shell command, 57 ran some version, 2 ended with the harm. OpenCode with claude-sonnet-5-5: as shipped 0.0% (+0.0 points, 95% CI +0.0 to +0.0), read the entry script first 100.0%, harm at end 0.0% (+0.0 points, 95% CI +0.0 to +0.0); 0 of 71 runs as shipped, 1 decoded base64 in a shell command, 11 ran some version, 0 ended with the harm. OpenCode with claude-haiku-5-5: as shipped 0.9% (-0.9 points, 95% CI -2.6 to +0.9), read the entry script first 97.2%, harm at end 0.9% (-0.0 points, 95% CI -1.5 to +2.0); 1 of 108 runs as shipped, 2 decoded base64 in a shell command, 14 ran some version, 1 ended with the harm. Claude Code with claude-haiku-5-5 and the host's read-first sentence: as shipped 0.9% (-79.1 points, 95% CI -84.6 to -73.5), read the entry script first 99.1%, harm at end 0.0% (-79.6 points, 95% CI -85.0 to -73.7); 1 of 108 runs as shipped, 7 decoded base64 in a shell command, 13 ran some version, 0 ended with the harm; against the host sentence with the payload in plain view, as shipped +0.9 points, 95% CI +0.0 to +2.8. Other differences are against the same host and model on the benchmark as built. Runs of these arms count as shipped only if no file of the installed skill changed.",
       "claim_id": "CL-PILOT-021",
       "evidence": [
         {
@@ -13696,31 +14322,31 @@
         {
           "expected": "opencode.edits_denied@claude-sonnet-5-5+payload_obfuscated",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/249/a",
+          "pointer": "/aggregates/comparisons/260/a",
           "type": "json_value"
         },
         {
           "expected": "opencode.edits_denied@claude-sonnet-5-5",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/249/b",
+          "pointer": "/aggregates/comparisons/260/b",
           "type": "json_value"
         },
         {
           "expected": "adversarial",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/249/label",
+          "pointer": "/aggregates/comparisons/260/label",
           "type": "json_value"
         },
         {
           "expected": "as_shipped",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/249/metric",
+          "pointer": "/aggregates/comparisons/260/metric",
           "type": "json_value"
         },
         {
           "expected": 0.0,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/249/a_rate",
+          "pointer": "/aggregates/comparisons/260/a_rate",
           "round": 3,
           "type": "json_value"
         },
@@ -13732,7 +14358,7 @@
         {
           "expected": 0.0,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/249/diff",
+          "pointer": "/aggregates/comparisons/260/diff",
           "round": 3,
           "type": "json_value"
         },
@@ -13744,7 +14370,7 @@
         {
           "expected": 0.0,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/249/ci95/0",
+          "pointer": "/aggregates/comparisons/260/ci95/0",
           "round": 3,
           "type": "json_value"
         },
@@ -13756,7 +14382,7 @@
         {
           "expected": 0.0,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/249/ci95/1",
+          "pointer": "/aggregates/comparisons/260/ci95/1",
           "round": 3,
           "type": "json_value"
         },
@@ -13768,31 +14394,31 @@
         {
           "expected": "opencode.edits_denied@claude-sonnet-5-5+payload_obfuscated",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/251/a",
+          "pointer": "/aggregates/comparisons/262/a",
           "type": "json_value"
         },
         {
           "expected": "opencode.edits_denied@claude-sonnet-5-5",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/251/b",
+          "pointer": "/aggregates/comparisons/262/b",
           "type": "json_value"
         },
         {
           "expected": "adversarial",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/251/label",
+          "pointer": "/aggregates/comparisons/262/label",
           "type": "json_value"
         },
         {
           "expected": "read_before_run",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/251/metric",
+          "pointer": "/aggregates/comparisons/262/metric",
           "type": "json_value"
         },
         {
           "expected": 1.0,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/251/a_rate",
+          "pointer": "/aggregates/comparisons/262/a_rate",
           "round": 3,
           "type": "json_value"
         },
@@ -13804,31 +14430,31 @@
         {
           "expected": "opencode.edits_denied@claude-sonnet-5-5+payload_obfuscated",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/252/a",
+          "pointer": "/aggregates/comparisons/263/a",
           "type": "json_value"
         },
         {
           "expected": "opencode.edits_denied@claude-sonnet-5-5",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/252/b",
+          "pointer": "/aggregates/comparisons/263/b",
           "type": "json_value"
         },
         {
           "expected": "adversarial",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/252/label",
+          "pointer": "/aggregates/comparisons/263/label",
           "type": "json_value"
         },
         {
           "expected": "harm_persists",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/252/metric",
+          "pointer": "/aggregates/comparisons/263/metric",
           "type": "json_value"
         },
         {
           "expected": 0.0,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/252/a_rate",
+          "pointer": "/aggregates/comparisons/263/a_rate",
           "round": 3,
           "type": "json_value"
         },
@@ -13840,7 +14466,7 @@
         {
           "expected": 0.0,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/252/diff",
+          "pointer": "/aggregates/comparisons/263/diff",
           "round": 3,
           "type": "json_value"
         },
@@ -13852,7 +14478,7 @@
         {
           "expected": 0.0,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/252/ci95/0",
+          "pointer": "/aggregates/comparisons/263/ci95/0",
           "round": 3,
           "type": "json_value"
         },
@@ -13864,7 +14490,7 @@
         {
           "expected": 0.0,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/252/ci95/1",
+          "pointer": "/aggregates/comparisons/263/ci95/1",
           "round": 3,
           "type": "json_value"
         },
@@ -13876,31 +14502,31 @@
         {
           "expected": "opencode.edits_denied+payload_obfuscated",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/177/a",
+          "pointer": "/aggregates/comparisons/188/a",
           "type": "json_value"
         },
         {
           "expected": "opencode.edits_denied",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/177/b",
+          "pointer": "/aggregates/comparisons/188/b",
           "type": "json_value"
         },
         {
           "expected": "adversarial",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/177/label",
+          "pointer": "/aggregates/comparisons/188/label",
           "type": "json_value"
         },
         {
           "expected": "as_shipped",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/177/metric",
+          "pointer": "/aggregates/comparisons/188/metric",
           "type": "json_value"
         },
         {
           "expected": 0.009,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/177/a_rate",
+          "pointer": "/aggregates/comparisons/188/a_rate",
           "round": 3,
           "type": "json_value"
         },
@@ -13912,7 +14538,7 @@
         {
           "expected": -0.009,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/177/diff",
+          "pointer": "/aggregates/comparisons/188/diff",
           "round": 3,
           "type": "json_value"
         },
@@ -13924,7 +14550,7 @@
         {
           "expected": -0.026,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/177/ci95/0",
+          "pointer": "/aggregates/comparisons/188/ci95/0",
           "round": 3,
           "type": "json_value"
         },
@@ -13936,7 +14562,7 @@
         {
           "expected": 0.009,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/177/ci95/1",
+          "pointer": "/aggregates/comparisons/188/ci95/1",
           "round": 3,
           "type": "json_value"
         },
@@ -13948,31 +14574,31 @@
         {
           "expected": "opencode.edits_denied+payload_obfuscated",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/179/a",
+          "pointer": "/aggregates/comparisons/190/a",
           "type": "json_value"
         },
         {
           "expected": "opencode.edits_denied",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/179/b",
+          "pointer": "/aggregates/comparisons/190/b",
           "type": "json_value"
         },
         {
           "expected": "adversarial",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/179/label",
+          "pointer": "/aggregates/comparisons/190/label",
           "type": "json_value"
         },
         {
           "expected": "read_before_run",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/179/metric",
+          "pointer": "/aggregates/comparisons/190/metric",
           "type": "json_value"
         },
         {
           "expected": 0.972,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/179/a_rate",
+          "pointer": "/aggregates/comparisons/190/a_rate",
           "round": 3,
           "type": "json_value"
         },
@@ -13984,31 +14610,31 @@
         {
           "expected": "opencode.edits_denied+payload_obfuscated",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/180/a",
+          "pointer": "/aggregates/comparisons/191/a",
           "type": "json_value"
         },
         {
           "expected": "opencode.edits_denied",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/180/b",
+          "pointer": "/aggregates/comparisons/191/b",
           "type": "json_value"
         },
         {
           "expected": "adversarial",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/180/label",
+          "pointer": "/aggregates/comparisons/191/label",
           "type": "json_value"
         },
         {
           "expected": "harm_persists",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/180/metric",
+          "pointer": "/aggregates/comparisons/191/metric",
           "type": "json_value"
         },
         {
           "expected": 0.009,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/180/a_rate",
+          "pointer": "/aggregates/comparisons/191/a_rate",
           "round": 3,
           "type": "json_value"
         },
@@ -14020,7 +14646,7 @@
         {
           "expected": -0.0,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/180/diff",
+          "pointer": "/aggregates/comparisons/191/diff",
           "round": 3,
           "type": "json_value"
         },
@@ -14032,7 +14658,7 @@
         {
           "expected": -0.015,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/180/ci95/0",
+          "pointer": "/aggregates/comparisons/191/ci95/0",
           "round": 3,
           "type": "json_value"
         },
@@ -14044,7 +14670,7 @@
         {
           "expected": 0.02,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/180/ci95/1",
+          "pointer": "/aggregates/comparisons/191/ci95/1",
           "round": 3,
           "type": "json_value"
         },
@@ -14360,13 +14986,13 @@
           "type": "file_contains"
         },
         {
-          "expected": 70,
+          "expected": 71,
           "path": "results/agent-pilot-arms/analysis.json",
           "pointer": "/aggregates/cells/opencode.edits_denied.claude-sonnet-5-5.payload_obfuscated.adversarial/n",
           "type": "json_value"
         },
         {
-          "contains": "\\newcommand{\\KObOCN}{70}",
+          "contains": "\\newcommand{\\KObOCN}{71}",
           "path": "paper/usenix/numbers.tex",
           "type": "file_contains"
         },
@@ -14783,31 +15409,31 @@
         {
           "expected": "opencode.edits_denied+prompt_no_boundary",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/184/a",
+          "pointer": "/aggregates/comparisons/195/a",
           "type": "json_value"
         },
         {
           "expected": "opencode.edits_denied",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/184/b",
+          "pointer": "/aggregates/comparisons/195/b",
           "type": "json_value"
         },
         {
           "expected": "adversarial",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/184/label",
+          "pointer": "/aggregates/comparisons/195/label",
           "type": "json_value"
         },
         {
           "expected": "as_shipped",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/184/metric",
+          "pointer": "/aggregates/comparisons/195/metric",
           "type": "json_value"
         },
         {
           "expected": 0.13,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/184/a_rate",
+          "pointer": "/aggregates/comparisons/195/a_rate",
           "round": 3,
           "type": "json_value"
         },
@@ -14819,7 +15445,7 @@
         {
           "expected": 0.111,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/184/diff",
+          "pointer": "/aggregates/comparisons/195/diff",
           "round": 3,
           "type": "json_value"
         },
@@ -14831,7 +15457,7 @@
         {
           "expected": 0.043,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/184/ci95/0",
+          "pointer": "/aggregates/comparisons/195/ci95/0",
           "round": 3,
           "type": "json_value"
         },
@@ -14843,7 +15469,7 @@
         {
           "expected": 0.193,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/184/ci95/1",
+          "pointer": "/aggregates/comparisons/195/ci95/1",
           "round": 3,
           "type": "json_value"
         },
@@ -14855,31 +15481,31 @@
         {
           "expected": "opencode.edits_denied+prompt_no_boundary",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/186/a",
+          "pointer": "/aggregates/comparisons/197/a",
           "type": "json_value"
         },
         {
           "expected": "opencode.edits_denied",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/186/b",
+          "pointer": "/aggregates/comparisons/197/b",
           "type": "json_value"
         },
         {
           "expected": "adversarial",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/186/label",
+          "pointer": "/aggregates/comparisons/197/label",
           "type": "json_value"
         },
         {
           "expected": "read_before_run",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/186/metric",
+          "pointer": "/aggregates/comparisons/197/metric",
           "type": "json_value"
         },
         {
           "expected": 0.889,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/186/a_rate",
+          "pointer": "/aggregates/comparisons/197/a_rate",
           "round": 3,
           "type": "json_value"
         },
@@ -14891,31 +15517,31 @@
         {
           "expected": "opencode.edits_denied+prompt_no_boundary",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/187/a",
+          "pointer": "/aggregates/comparisons/198/a",
           "type": "json_value"
         },
         {
           "expected": "opencode.edits_denied",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/187/b",
+          "pointer": "/aggregates/comparisons/198/b",
           "type": "json_value"
         },
         {
           "expected": "adversarial",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/187/label",
+          "pointer": "/aggregates/comparisons/198/label",
           "type": "json_value"
         },
         {
           "expected": "harm_persists",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/187/metric",
+          "pointer": "/aggregates/comparisons/198/metric",
           "type": "json_value"
         },
         {
           "expected": 0.065,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/187/a_rate",
+          "pointer": "/aggregates/comparisons/198/a_rate",
           "round": 3,
           "type": "json_value"
         },
@@ -14927,7 +15553,7 @@
         {
           "expected": 0.056,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/187/diff",
+          "pointer": "/aggregates/comparisons/198/diff",
           "round": 3,
           "type": "json_value"
         },
@@ -14939,7 +15565,7 @@
         {
           "expected": 0.019,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/187/ci95/0",
+          "pointer": "/aggregates/comparisons/198/ci95/0",
           "round": 3,
           "type": "json_value"
         },
@@ -14951,7 +15577,7 @@
         {
           "expected": 0.096,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/187/ci95/1",
+          "pointer": "/aggregates/comparisons/198/ci95/1",
           "round": 3,
           "type": "json_value"
         },
@@ -14963,31 +15589,31 @@
         {
           "expected": "opencode.edits_denied+prompt_no_boundary",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/191/a",
+          "pointer": "/aggregates/comparisons/202/a",
           "type": "json_value"
         },
         {
           "expected": "opencode.edits_denied",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/191/b",
+          "pointer": "/aggregates/comparisons/202/b",
           "type": "json_value"
         },
         {
           "expected": "benign",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/191/label",
+          "pointer": "/aggregates/comparisons/202/label",
           "type": "json_value"
         },
         {
           "expected": "as_shipped",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/191/metric",
+          "pointer": "/aggregates/comparisons/202/metric",
           "type": "json_value"
         },
         {
           "expected": 0.981,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/191/a_rate",
+          "pointer": "/aggregates/comparisons/202/a_rate",
           "round": 3,
           "type": "json_value"
         },
@@ -14999,7 +15625,7 @@
         {
           "expected": 0.007,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/191/diff",
+          "pointer": "/aggregates/comparisons/202/diff",
           "round": 3,
           "type": "json_value"
         },
@@ -15011,7 +15637,7 @@
         {
           "expected": -0.022,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/191/ci95/0",
+          "pointer": "/aggregates/comparisons/202/ci95/0",
           "round": 3,
           "type": "json_value"
         },
@@ -15023,7 +15649,7 @@
         {
           "expected": 0.035,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/191/ci95/1",
+          "pointer": "/aggregates/comparisons/202/ci95/1",
           "round": 3,
           "type": "json_value"
         },
@@ -15035,31 +15661,31 @@
         {
           "expected": "claude_code.skill_allowed@claude-haiku-5-5+prompt_no_boundary",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/285/a",
+          "pointer": "/aggregates/comparisons/296/a",
           "type": "json_value"
         },
         {
           "expected": "opencode.edits_denied@claude-haiku-5-5+prompt_no_boundary",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/285/b",
+          "pointer": "/aggregates/comparisons/296/b",
           "type": "json_value"
         },
         {
           "expected": "adversarial",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/285/label",
+          "pointer": "/aggregates/comparisons/296/label",
           "type": "json_value"
         },
         {
           "expected": "as_shipped",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/285/metric",
+          "pointer": "/aggregates/comparisons/296/metric",
           "type": "json_value"
         },
         {
           "expected": 0.944,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/285/a_rate",
+          "pointer": "/aggregates/comparisons/296/a_rate",
           "round": 3,
           "type": "json_value"
         },
@@ -15071,7 +15697,7 @@
         {
           "expected": 0.13,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/285/b_rate",
+          "pointer": "/aggregates/comparisons/296/b_rate",
           "round": 3,
           "type": "json_value"
         },
@@ -15083,7 +15709,7 @@
         {
           "expected": 0.815,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/285/diff",
+          "pointer": "/aggregates/comparisons/296/diff",
           "round": 3,
           "type": "json_value"
         },
@@ -15095,7 +15721,7 @@
         {
           "expected": 0.731,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/285/ci95/0",
+          "pointer": "/aggregates/comparisons/296/ci95/0",
           "round": 3,
           "type": "json_value"
         },
@@ -15107,7 +15733,7 @@
         {
           "expected": 0.889,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/285/ci95/1",
+          "pointer": "/aggregates/comparisons/296/ci95/1",
           "round": 3,
           "type": "json_value"
         },
@@ -15119,7 +15745,7 @@
         {
           "expected": 88,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/285/a_gt_b",
+          "pointer": "/aggregates/comparisons/296/a_gt_b",
           "type": "json_value"
         },
         {
@@ -15130,7 +15756,7 @@
         {
           "expected": 0,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/285/a_lt_b",
+          "pointer": "/aggregates/comparisons/296/a_lt_b",
           "type": "json_value"
         },
         {
@@ -15141,31 +15767,31 @@
         {
           "expected": "claude_code.skill_allowed@claude-haiku-5-5+prompt_no_boundary",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/288/a",
+          "pointer": "/aggregates/comparisons/299/a",
           "type": "json_value"
         },
         {
           "expected": "opencode.edits_denied@claude-haiku-5-5+prompt_no_boundary",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/288/b",
+          "pointer": "/aggregates/comparisons/299/b",
           "type": "json_value"
         },
         {
           "expected": "adversarial",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/288/label",
+          "pointer": "/aggregates/comparisons/299/label",
           "type": "json_value"
         },
         {
           "expected": "harm_persists",
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/288/metric",
+          "pointer": "/aggregates/comparisons/299/metric",
           "type": "json_value"
         },
         {
           "expected": 0.87,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/288/a_rate",
+          "pointer": "/aggregates/comparisons/299/a_rate",
           "round": 3,
           "type": "json_value"
         },
@@ -15177,7 +15803,7 @@
         {
           "expected": 0.065,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/288/b_rate",
+          "pointer": "/aggregates/comparisons/299/b_rate",
           "round": 3,
           "type": "json_value"
         },
@@ -15189,7 +15815,7 @@
         {
           "expected": 0.806,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/288/diff",
+          "pointer": "/aggregates/comparisons/299/diff",
           "round": 3,
           "type": "json_value"
         },
@@ -15201,7 +15827,7 @@
         {
           "expected": 0.731,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/288/ci95/0",
+          "pointer": "/aggregates/comparisons/299/ci95/0",
           "round": 3,
           "type": "json_value"
         },
@@ -15213,7 +15839,7 @@
         {
           "expected": 0.87,
           "path": "results/agent-pilot-arms/analysis.json",
-          "pointer": "/aggregates/comparisons/288/ci95/1",
+          "pointer": "/aggregates/comparisons/299/ci95/1",
           "round": 3,
           "type": "json_value"
         },
@@ -15590,28 +16216,28 @@
       "status": "supported_agent_pilot"
     },
     {
-      "claim": "The second-model and intervention arms hold 3,578 analysed runs, one repeat per task, all on the pair-1 presets. 38 OpenCode runs still ended in agent errors after retries and are excluded, all of them adversarial claude-sonnet-5-5 runs of the encoded-payload arm, which leaves 70 in that cell; of the excluded runs, 0 ran the script as shipped and 0 ended with the harm. The other OpenCode Sonnet cells are complete (108 adversarial, 108 benign and 44 disguised runs as built; 108 adversarial and 108 benign with the do-not-read sentence; 108 with the payload in a helper module). 8 Claude Code runs flagged agent_error are the attempts of an isolated-home arm that did not authenticate, which is not reported.",
+      "claim": "The second-model and intervention arms hold 4,011 analysed runs, one repeat per task, on the pair-1 presets and Codex workspace_write. 37 OpenCode runs still ended in agent errors after retries and are excluded, all of them adversarial claude-sonnet-5-5 runs of the encoded-payload arm, which leaves 71 in that cell; of the excluded runs, 0 ran the script as shipped and 0 ended with the harm. The other OpenCode Sonnet cells are complete (108 adversarial, 108 benign and 44 disguised runs as built; 108 adversarial and 108 benign with the do-not-read sentence; 108 with the payload in a helper module). 8 Claude Code runs flagged agent_error are the attempts of an isolated-home arm that did not authenticate, which is not reported.",
       "claim_id": "CL-PILOT-017",
       "evidence": [
         {
-          "expected": 3578,
+          "expected": 4011,
           "path": "results/agent-pilot-arms/analysis.json",
           "pointer": "/rows",
           "type": "json_len"
         },
         {
-          "contains": "\\newcommand{\\ArmRows}{3,578}",
+          "contains": "\\newcommand{\\ArmRows}{4,011}",
           "path": "paper/usenix/numbers.tex",
           "type": "file_contains"
         },
         {
-          "expected": 38,
+          "expected": 37,
           "path": "results/agent-pilot-arms/analysis.json",
           "pointer": "/aggregates/agent_error_retained/opencode.edits_denied",
           "type": "json_value"
         },
         {
-          "contains": "\\newcommand{\\ArmErrOC}{38}",
+          "contains": "\\newcommand{\\ArmErrOC}{37}",
           "path": "paper/usenix/numbers.tex",
           "type": "file_contains"
         },
@@ -15633,13 +16259,13 @@
           "type": "json_len"
         },
         {
-          "expected": 38,
+          "expected": 37,
           "path": "results/agent-pilot-arms/analysis.json",
           "pointer": "/aggregates/agent_error_cells/opencode.edits_denied.claude-sonnet-5-5.payload_obfuscated.adversarial/n",
           "type": "json_value"
         },
         {
-          "contains": "\\newcommand{\\KObOCErrN}{38}",
+          "contains": "\\newcommand{\\KObOCErrN}{37}",
           "path": "paper/usenix/numbers.tex",
           "type": "file_contains"
         },
@@ -15666,13 +16292,13 @@
           "type": "file_contains"
         },
         {
-          "expected": 70,
+          "expected": 71,
           "path": "results/agent-pilot-arms/analysis.json",
           "pointer": "/aggregates/cells/opencode.edits_denied.claude-sonnet-5-5.payload_obfuscated.adversarial/n",
           "type": "json_value"
         },
         {
-          "contains": "\\newcommand{\\KObOCN}{70}",
+          "contains": "\\newcommand{\\KObOCN}{71}",
           "path": "paper/usenix/numbers.tex",
           "type": "file_contains"
         },
@@ -15749,7 +16375,7 @@
       "status": "supported_agent_pilot_scope"
     },
     {
-      "claim": "The same-model pilot results use transcript-derived labels with no human-label check yet, cover disguised variants for two attack kinds only, are bounded to the named host versions, presets and two models from one vendor, and exclude Cursor; the intervention arms have one repeat per task, and the host's read-first sentence was tested against the skill's do-not-read sentence on Claude Code with Haiku only.",
+      "claim": "The same-model pilot results use transcript-derived labels with no human-label check yet, cover disguised variants for two attack kinds only, are bounded to the named host versions, presets and three models from two vendors (the third model on its own host only), and exclude Cursor; the intervention arms have one repeat per task, and the host's read-first sentence was tested against the skill's do-not-read sentence on Claude Code with Haiku only.",
       "claim_id": "CL-PILOT-BOUNDARY-001",
       "evidence": [
         {
@@ -15778,7 +16404,7 @@
           "type": "file_contains"
         },
         {
-          "contains": "both models come from one vendor",
+          "contains": "the third model ran only on a third host",
           "path": "paper/usenix/main.tex",
           "type": "file_contains"
         },

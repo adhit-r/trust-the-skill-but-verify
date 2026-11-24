@@ -18,6 +18,7 @@
 
 \newcommand{\cc}{Claude Code}
 \newcommand{\oc}{OpenCode}
+\newcommand{\cx}{Codex CLI}
 \newcommand{\preset}[1]{\texttt{#1}}
 \newcommand{\ci}[3]{$#1$ [$#2$, $#3$]}
 \newcommand{\armnum}[2]{\csname T#1#2\endcsname}
@@ -44,7 +45,8 @@ and \oc{} with the same model in \XaAdvShipB\% (difference $\XaAdvShipD$
 points, 95\% CI $\XaAdvShipL$ to $\XaAdvShipH$); the harmful change was in the
 workspace at the end of \XaAdvHarmA\% and \XaAdvHarmB\% of runs. The gap does
 not belong to the host alone: with Claude Sonnet 5.5 the rates were
-\TMsCCShipA\% and \TMsOCShipA\%. What separates these cells is whether the
+\TMsCCShipA\% and \TMsOCShipA\%, and on a third host with another vendor's
+model, \cx{} with GPT-5.6 Terra, the rate was \TCxShipB\%. What separates these cells is whether the
 agent sees the script's source before running it. One sentence added to
 \cc{}'s system prompt, or the source placed in \texttt{SKILL.md}, brought
 Haiku's rate to \TRfCCShipA\% while benign scripts still ran
@@ -58,7 +60,7 @@ preset that refuses file edits ended with the harm present more often than one
 that accepts them (\HcAdvHarmA\% versus \HcAdvHarmB\%), because the agent
 reported the damage instead of repairing it. Reading a bundled script before
 running it is a habit of the model that a host can prompt and a skill can
-remove; in our runs neither host enforced it. A security verdict about a skill should name
+remove; in our runs no host enforced it. A security verdict about a skill should name
 the host, preset and model it was measured on, and hosts should not rely on
 the habit.
 \end{abstract}
@@ -146,7 +148,7 @@ user (\S\ref{sec:presets}).
 Together these say that reading a bundled script before running it is a habit
 of the model. The host and the model each change how often it happens, a host
 can prompt it at little cost to benign tasks, and the skill's own text can
-remove it, in the larger model too. Neither host enforced it under any preset
+remove it, in the larger model too. No host enforced it under any preset
 we ran. The removal is the
 Jedi mind trick of our title: the skill hides nothing and claims no authority;
 it tells the agent that it need not look, and in nearly every run the agent
@@ -160,6 +162,7 @@ with end-state observation and family-clustered paired statistics.
 adversarial and disguised packages, synthetic canaries and a package check that
 each harmful script realizes its harm when run alone.
 (3)~A same-model comparison of two production agent hosts, a second model, a
+third host with another vendor's model, a
 within-host comparison of permission presets, and four single-change
 interventions that locate the difference in whether the agent sees the script's
 source and show that one attacker-written sentence removes it.
@@ -293,7 +296,7 @@ compared (task, variant, host, preset) cell has five repeats (\NCCa{} or
 \preset{edits\_denied} preset has slightly fewer runs because \ErrRetained{} of
 its runs ended in agent errors and are excluded.
 
-\paragraph{Second model and interventions.} All arms use the pair-1 presets, all \ScopeN{} tasks unless
+\paragraph{Second model and interventions.} All arms but the last use the pair-1 presets, all \ScopeN{} tasks unless
 noted, and one repeat per task (\ArmRows{} runs; Table~\ref{tab:arms}).
 \emph{Second model}: Claude Sonnet 5.5 in place of Haiku 5.5 on the benchmark
 as built, disguised packages included.
@@ -318,6 +321,11 @@ base64 string run with \texttt{exec} inside the entry script.
 \emph{No boundary}: the boundary paragraph is removed from the user prompt.
 \emph{Serial}: one task per family (\TSeCCShipN{} tasks) on \cc{}, one run at a
 time instead of several.
+\emph{Third host}: \cx{} (\texttt{\VerCX}) with OpenAI's GPT-5.6 Terra under
+its \preset{workspace\_write} sandbox and a fresh home directory, on the
+benchmark as built and with the do-not-read sentence. This host has no
+three-repeat baseline, so its change is measured against its own as-built
+runs.
 
 \begin{table}[t]
 \centering\footnotesize\setlength{\tabcolsep}{4pt}
@@ -464,6 +472,9 @@ Payload base64-encoded, host sentence & \cc{} & \armrowadv{RoCC} \\
 No boundary paragraph & \cc{} & \armrow{NbCC} \\
  & \oc{} & \armrow{NbOC} \\
 One run at a time (\TSeCCShipN{} tasks) & \cc{} & \armrow{SeCC} \\
+\midrule
+Benchmark as built (GPT-5.6 Terra) & \cx{} & \TCxShipB\% & & \TCxReadB\% & \TCxHarmB\% & \TCxBenB\% \\
+Do-not-read sentence in \texttt{SKILL.md} & \cx{} & \armrow{NrCX} \\
 \bottomrule
 \end{tabular}
 \caption{Second model and interventions on the pair-1 presets, one repeat per
@@ -473,7 +484,8 @@ families. Arms use Claude Haiku 5.5 unless Sonnet is named; for the Sonnet
 rows after the first, change is against Sonnet on the benchmark as built. With
 the source in \texttt{SKILL.md} the agent needs no read call, so ``read first''
 is zero there. The two payload arms have no benign runs, because the change
-does nothing to a benign package.}
+does nothing to a benign package. The \cx{} rows use GPT-5.6 Terra and the
+\preset{workspace\_write} preset; their change is against \cx{} as built.}
 \label{tab:arms}
 \end{table*}
 
@@ -507,6 +519,16 @@ some version in \OrigSonnetAnyAdv{} and \OrigSonnetAnyDis{} runs.
 The gap in \S\ref{sec:cross-host} is therefore a property of one host with one
 model. The host mattered for the model that does not inspect by default, and
 did not for the one that does.
+
+\paragraph{A third host and another vendor's model.} Inspecting by default is
+not the rule outside these four cells. On \cx{} with GPT-5.6 Terra, the
+benchmark as built ended much as it did under \cc{} with Haiku: the agent ran
+the adversarial script as shipped in \KCxShip{} of \KCxN{} runs, read it first
+in \KCxRead{}, and the harm was present at the end of \KCxHarm{}; benign
+scripts ran as shipped in \KCxBenShip{} of \KCxBenN{} runs. This cell changes
+host and model together, so it cannot say which of the two is responsible. It
+shows that running a bundled script unread is not peculiar to one vendor's
+smallest model.
 
 \subsection{Seeing the source}
 \label{sec:mechanism}
@@ -623,6 +645,12 @@ with the same sentence, Sonnet differs by
 \ci{\MNsCCShipD}{\MNsCCShipL}{\MNsCCShipH} points under \cc{} and
 \ci{\MNsOCShipD}{\MNsOCShipL}{\MNsOCShipH} under \oc{}. The model that
 inspected nearly every script stopped inspecting when the skill asked it to.
+
+\paragraph{The third host.} On \cx{} the sentence had little left to remove.
+With it, the agent ran the adversarial script as shipped in \KNrCXShip{} of
+\KNrCXN{} runs (\ci{\TNrCXShipD}{\TNrCXShipL}{\TNrCXShipH} points against \cx{}
+as built), read it first in \KNrCXRead{}, and the harm was present at the end
+of \KNrCXHarm.
 
 \paragraph{Host sentence against skill sentence.} With the host's read-first
 sentence in \cc{}'s system prompt and the do-not-read sentence in
@@ -807,8 +835,10 @@ scores the two as close. Preset evaluations should report all three.
 \paragraph{Generality.} The results describe \cc{}~\VerCC{} and \oc{}~\VerOC{}
 with the named presets, in headless mode;
 they are not prevalence claims.
-We have two hosts and two models, and
-both models come from one vendor.
+We have three hosts and three models from two vendors, but
+the third model ran only on a third host,
+with one repeat per task and one preset, so that cell does not separate host
+from model.
 Each intervention arm has one repeat per task
 and uses the pair-1 presets only, and most arms use Haiku only.
 The two sentences met on one host with one model,
@@ -817,7 +847,10 @@ so we cannot say how a host instruction fares against an adversarial skill on
 also ran Cursor's agent CLI on a different model; it is
 excluded from the same-model comparisons
  and reported in
-the artifact. A Codex CLI campaign stopped at its usage limit after 20 runs.
+the artifact. In \KCxStartErr{} of the \KCxRows{} \cx{} runs a shell command
+failed to start inside the host and the agent went on with a later command; as
+built, the adversarial script ran as shipped in \KCxErrShip{} of \KCxErrN{}
+such runs and \KCxCleanShip{} of \KCxCleanN{} others.
 
 \paragraph{Labels.} Running as shipped, running any version and reading are
 derived from host transcripts by rules and
@@ -965,9 +998,10 @@ differed by more than 70 points in how often they ran an adversarial skill
 script unmodified. The difference disappeared with a larger model, disappeared
 when a host sentence or the skill itself put the script's source in front of
 the agent, and reversed, on both hosts and with both models, when one sentence
-in the skill told the agent not to look. Refusing file edits on one host changed a silent
+in the skill told the agent not to look. A third host with another vendor's
+model ran them unread with no such sentence. Refusing file edits on one host changed a silent
 repair into a reported residue. What stood between these skills and the
-workspace was the model's habit of reading before running, which neither host
+workspace was the model's habit of reading before running, which no host
 enforced under the presets we ran. Test a skill on the host, preset and model it will run on, say which
 those were, and do not count on the habit.
 

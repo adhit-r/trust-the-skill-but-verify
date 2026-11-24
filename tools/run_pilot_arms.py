@@ -3,10 +3,11 @@
 
 Usage, from the repo root:
   python3 tools/run_pilot_arms.py list                 # print job counts
-  python3 tools/run_pilot_arms.py run <host> <workers> # host: claude_code | opencode | cursor_agent | grok | serial | isolated
+  python3 tools/run_pilot_arms.py run <host> <workers> # host: claude_code | opencode | cursor_agent | grok | codex | serial | isolated
   --repeat-id N selects the repeat (default 1); each repeat has its own run ids and its own done-list.
   python3 tools/run_pilot_arms.py check-payload        # the payload treatments leave every workspace as the shipped script does
 `isolated` (Claude Code with a fresh HOME per run) needs CLAUDE_CODE_OAUTH_TOKEN or ANTHROPIC_API_KEY in the environment.
+With OPENROUTER_API_KEY exported in the launching shell, the non-Claude OpenCode jobs go through OpenRouter instead of OpenCode's gateway.
 Jobs already present with agent_error false are skipped. A queue stops after 6 failed runs in a row (usage limit, outage).
 """
 import argparse, glob, json, os, random, shutil, subprocess, sys, tempfile, threading, time
@@ -18,7 +19,7 @@ import run_agent_pilot as H
 OUT = "results/agent-pilot-arms"
 ORIGINAL = {c for c, s in H.CASES.items() if s.get("attack") is None}
 CASES = sorted(c for c in H.CASES if c not in ORIGINAL)
-PRESET = {"claude_code": "skill_allowed", "opencode": "edits_denied", "cursor_agent": "default", "grok": "edits_removed"}
+PRESET = {"claude_code": "skill_allowed", "opencode": "edits_denied", "cursor_agent": "default", "grok": "edits_removed", "codex": "workspace_write"}
 HAIKU, SONNET = "claude-haiku-5-5", "claude-sonnet-5-5"
 OTHER_FAMILY = "gpt-5.6-terra"  # a non-Claude model, OpenCode only: Claude Code cannot run it; it is also the Codex host's baseline model
 ARMS = {  # treatment -> hosts
@@ -34,7 +35,7 @@ def jobs(host):
             first.setdefault(H.CASES[c]["skill"], c)
         treatment = "serial_control" if host == "serial" else "isolated_home"
         return [(c, "claude_code", label, HAIKU, treatment) for c in first.values() for label in ("adversarial", "benign")]
-    if host == "grok":  # a host with no baseline campaign: as built and with the do-not-read sentence, on its own model
+    if host in ("grok", "codex"):  # a host with no baseline campaign: as built and with the do-not-read sentence, on its own model
         out = [(c, host, label, H.RUNTIMES[host]["baseline_model"], t) for c in CASES for label in ("adversarial", "benign") for t in ("none", "skill_no_read")]
         random.Random(0).shuffle(out)
         return out
@@ -99,7 +100,7 @@ def done(repeat):
 def main():
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("command", choices=("list", "run", "check-payload"))
-    parser.add_argument("host", nargs="?", choices=("claude_code", "opencode", "cursor_agent", "grok", "serial", "isolated"))
+    parser.add_argument("host", nargs="?", choices=("claude_code", "opencode", "cursor_agent", "grok", "codex", "serial", "isolated"))
     parser.add_argument("workers", nargs="?", type=int)
     parser.add_argument("--repeat-id", default="1")
     a = parser.parse_args()
@@ -107,7 +108,7 @@ def main():
         raise SystemExit(check_payload())
     if a.command == "list":
         d = done(a.repeat_id)
-        for host in ("claude_code", "opencode", "cursor_agent", "grok", "serial", "isolated"):
+        for host in ("claude_code", "opencode", "cursor_agent", "grok", "codex", "serial", "isolated"):
             js = jobs(host)
             print(host, len(js), "jobs,", sum(j in d for j in js), "done")
         return

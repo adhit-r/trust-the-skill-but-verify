@@ -109,6 +109,7 @@ number macros (`paper/usenix/numbers.tex`).
 | CL-PILOT-019 | Do-not-read sentence with Sonnet 5.5, both hosts | `results/agent-pilot-arms/analysis.json` |
 | CL-PILOT-020 | Payload moved into an imported helper module, four cells in which the agent reads the script | `results/agent-pilot-arms/analysis.json`; `tools/run_agent_pilot.py` |
 | CL-PILOT-021 | Payload base64-encoded and run with exec, the same four cells | `results/agent-pilot-arms/analysis.json`; `tools/run_agent_pilot.py` |
+| CL-PILOT-022 | Third host with another vendor's model: Codex CLI with GPT-5.6 Terra, as built and with the do-not-read sentence | `results/agent-pilot-arms/analysis.json`; `tools/run_agent_pilot.py` |
 
 ## Boundary Claims
 

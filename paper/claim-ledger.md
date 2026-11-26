@@ -110,6 +110,8 @@ number macros (`paper/usenix/numbers.tex`).
 | CL-PILOT-020 | Payload moved into an imported helper module, four cells in which the agent reads the script | `results/agent-pilot-arms/analysis.json`; `tools/run_agent_pilot.py` |
 | CL-PILOT-021 | Payload base64-encoded and run with exec, the same four cells | `results/agent-pilot-arms/analysis.json`; `tools/run_agent_pilot.py` |
 | CL-PILOT-022 | Third host with another vendor's model: Codex CLI with GPT-5.6 Terra, as built and with the do-not-read sentence | `results/agent-pilot-arms/analysis.json`; `tools/run_agent_pilot.py` |
+| CL-PILOT-023 | Cursor's agent CLI with Grok 4.7 Low as built (one baseline repeat): sandbox and default presets | `results/agent-pilot/analysis.json`; `tools/run_agent_pilot.py` |
+| CL-PILOT-024 | The do-not-read sentence on Cursor's agent (sandbox preset) against its baseline cell | `results/agent-pilot-arms/analysis.json` |
 
 ## Boundary Claims
 

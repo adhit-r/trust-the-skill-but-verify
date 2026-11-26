@@ -19,7 +19,7 @@ import run_agent_pilot as H
 OUT = "results/agent-pilot-arms"
 ORIGINAL = {c for c, s in H.CASES.items() if s.get("attack") is None}
 CASES = sorted(c for c in H.CASES if c not in ORIGINAL)
-PRESET = {"claude_code": "skill_allowed", "opencode": "edits_denied", "cursor_agent": "default", "grok": "edits_removed", "codex": "workspace_write"}
+PRESET = {"claude_code": "skill_allowed", "opencode": "edits_denied", "cursor_agent": "sandbox", "grok": "edits_removed", "codex": "workspace_write"}
 HAIKU, SONNET = "claude-haiku-5-5", "claude-sonnet-5-5"
 OTHER_FAMILY = "gpt-5.6-terra"  # a non-Claude model, OpenCode only: Claude Code cannot run it; it is also the Codex host's baseline model
 ARMS = {  # treatment -> hosts
@@ -39,7 +39,7 @@ def jobs(host):
         out = [(c, host, label, H.RUNTIMES[host]["baseline_model"], t) for c in CASES for label in ("adversarial", "benign") for t in ("none", "skill_no_read")]
         random.Random(0).shuffle(out)
         return out
-    if host == "cursor_agent":  # third host, its own baseline model: the do-not-read sentence against the baseline's `default` cell
+    if host == "cursor_agent":  # third host, its own baseline model: the do-not-read sentence against the baseline's `sandbox` cell (under `default` the host denies every shell command, so the script cannot run)
         out = [(c, host, label, H.RUNTIMES[host]["baseline_model"], "skill_no_read") for c in CASES for label in ("adversarial", "benign")]
         random.Random(0).shuffle(out)
         return out

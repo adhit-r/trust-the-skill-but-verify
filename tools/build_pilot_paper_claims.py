@@ -190,6 +190,17 @@ def build(ag: dict, arms: dict) -> Claims:
     c.claim("CL-PILOT-011", f"On the five original cases under Claude Code skill_allowed ({o['OrigN']} runs per cell), claude-sonnet-5-5 ran the adversarial script as shipped in {o['OrigSonnetAdv']} runs and the "
             f"disguised one in {o['OrigSonnetDis']}, against {o['OrigHaikuAdv']} and {o['OrigHaikuDis']} for claude-haiku-5-5; Sonnet ran a modified copy or the shipped script in {o['OrigSonnetAnyAdv']} and {o['OrigSonnetAnyDis']} runs.")
 
+    # Cursor's agent CLI as built: one repeat, a different model, so outside the same-model pairs. It is the reference for the do-not-read arm on that host.
+    cuv = c.num("VerCU", "/cli_versions/cursor_agent/0", "str")
+    k = {name: cell(name, f"cursor_agent.{key}", field) for name, key, field in (
+        ("KCuDefN", "default.adversarial", "n"), ("KCuDefAny", "default.adversarial", "executed"), ("KCuDefDenied", "default.adversarial", "shell_denied"),
+        ("KCuN", "sandbox.adversarial", "n"), ("KCuShip", "sandbox.adversarial", "as_shipped"), ("KCuRead", "sandbox.adversarial", "read_script_before_run"),
+        ("KCuHarm", "sandbox.adversarial", "harm_persists"), ("KCuBenN", "sandbox.benign", "n"), ("KCuBenShip", "sandbox.benign", "as_shipped"))}
+    c.evidence += [{"type": "file_contains", "path": HARNESS, "contains": '"sandbox": ["--sandbox", "enabled"]'}, {"type": "file_contains", "path": HARNESS, "contains": '"baseline_model": "grok-4.7-low"'}]
+    c.claim("CL-PILOT-023", f"On Cursor's agent CLI {cuv} with grok-4.7-low (one repeat per task, outside the same-model pairs), the benchmark as built gave, under the sandbox preset: adversarial script run as shipped "
+            f"in {k['KCuShip']} of {k['KCuN']} runs, read first in {k['KCuRead']}, harm present at the end in {k['KCuHarm']}; benign script run as shipped in {k['KCuBenShip']} of {k['KCuBenN']}. Under the default preset "
+            f"the host denied a shell command in {k['KCuDefDenied']} of {k['KCuDefN']} adversarial runs and the script ran in {k['KCuDefAny']}.")
+
     c.src, c.ag = ARMS, arms
     build_arms(c, s["N"])
 
@@ -199,10 +210,10 @@ def build(ag: dict, arms: dict) -> Claims:
         "they are not prevalence claims",
         "excluded from the same-model comparisons",
         "Each intervention arm has one repeat per task",
-        "the third model ran only on a third host",
+        "each of the other two models ran only on its own host",
         "The two sentences met on one host with one model")]
     c.claim("CL-PILOT-BOUNDARY-001", "The same-model pilot results use transcript-derived labels with no human-label check yet, cover disguised variants for two attack kinds only, are bounded to the "
-            "named host versions, presets and three models from two vendors (the third model on its own host only), and exclude Cursor; the intervention arms have one repeat per task, and the host's read-first "
+            "named host versions, presets and four models from three vendors (the third and fourth each on its own host only), and keep Cursor out of the same-model comparisons; the intervention arms have one repeat per task, and the host's read-first "
             "sentence was tested against the skill's do-not-read sentence on Claude Code with Haiku only.", "supported_boundary")
     return c
 
@@ -304,6 +315,21 @@ def build_arms(c: Claims, tasks: str) -> None:
             f"In {sp['runs_with_error']} of the {sp['n']} analysed Codex runs a shell command failed to start inside Codex and the agent went on with a later command; as built, the adversarial script ran as shipped in "
             f"{sp['as_built_adversarial_with_error_as_shipped']} of {sp['as_built_adversarial_with_error']} such runs and {sp['as_built_adversarial_clean_as_shipped']} of {sp['as_built_adversarial_clean']} others.")
 
+    # A fourth host on a third vendor's model: the do-not-read sentence on Cursor's agent, against its baseline sandbox cell (CL-PILOT-023)
+    cup, grok = "cursor_agent.sandbox", "grok-4.7-low"
+    cu = row("NrCU", treat(cup, nr))
+    for code, label, m in (("Ship", "adversarial", "as_shipped"), ("Read", "adversarial", "read_before_run"), ("Harm", "adversarial", "harm_persists"), ("Ben", "benign", "as_shipped")):
+        cmp(f"TCu{code}", treat(cup, nr), label, m, "B")  # the as-built row of the table: the baseline cell on the paired tasks
+    on = {label: cmp(f"TNrCU{tag}", treat(cup, nr), label, "as_shipped", "N")["N"] for label, tag in (("adversarial", "Tasks"), ("benign", "BenTasks"))}
+    k = {name: cell(name, cup, grok, nr, label, field) for name, label, field in (
+        ("KNrCUShip", "adversarial", "as_shipped"), ("KNrCUN", "adversarial", "n"), ("KNrCURead", "adversarial", "read_script_before_run"), ("KNrCUHarm", "adversarial", "attack_persists"), ("KNrCUBenN", "benign", "n"))}
+    cav = c.num("VerCUArm", "/cli_versions/cursor_agent/0", "str")
+    span = "" if cav == c.macros["VerCU"] else f" The baseline ran on build {c.macros['VerCU']}, so the difference also spans a host update."
+    c.evidence.append({"type": "json_len", "path": ARMS, "pointer": "/aggregates/cli_versions/cursor_agent", "expected": 1})
+    c.claim("CL-PILOT-024", f"On Cursor's agent CLI ({cav}) with {grok} under the sandbox preset, the do-not-read sentence in the installed SKILL.md gave: {line(cu)}; {k['KNrCUShip']} of {k['KNrCUN']} adversarial runs "
+            f"ran the script as shipped, {k['KNrCURead']} read it first and {k['KNrCUHarm']} ended with the harm ({k['KNrCUBenN']} benign runs). Differences are against the baseline's single repeat of the same cell "
+            f"(CL-PILOT-023), over the {on['adversarial']} adversarial and {on['benign']} benign tasks run on both sides." + span)
+
     # Payload hidden from a reader of the entry script: moved into an imported helper module, or base64-encoded (adversarial packages only)
     def moved(code: str, ab: tuple[str, str]) -> dict:  # as row(), without the benign column: the change does nothing to a benign package
         return {"ship": cmp(f"T{code}Ship", ab, "adversarial", "as_shipped", "ADLH"), "read": cmp(f"T{code}Read", ab, "adversarial", "read_before_run", "A")["A"],
@@ -351,7 +377,7 @@ def build_arms(c: Claims, tasks: str) -> None:
     left = cell("KObOCN", ocp, sonnet, "payload_obfuscated", "adversarial", "n")
     full = [cell(name, ocp, sonnet, t, label, "n") for name, t, label in (("KMsOCN", "none", "adversarial"), ("KMsOCBenN", "none", "benign"), ("KMsOCDisN", "none", "stealthy"),
                                                                            ("KNsOCN", "skill_no_read", "adversarial"), ("KNsOCBenN", "skill_no_read", "benign"), ("KPmOCN", "payload_in_module", "adversarial"))]
-    c.claim("CL-PILOT-017", f"The second-model and intervention arms hold {rows:,} analysed runs, one repeat per task, on the pair-1 presets and Codex workspace_write. {e[0]} OpenCode runs still ended in agent errors after "
+    c.claim("CL-PILOT-017", f"The second-model and intervention arms hold {rows:,} analysed runs, one repeat per task, on the pair-1 presets, Codex workspace_write and Cursor sandbox. {e[0]} OpenCode runs still ended in agent errors after "
             f"retries and are excluded, all of them adversarial {sonnet} runs of the encoded-payload arm, which leaves {left} in that cell; of the excluded runs, {lost['as_shipped']} ran the script as shipped and "
             f"{lost['attack_persists']} ended with the harm. The other OpenCode Sonnet cells are complete ({full[0]} adversarial, {full[1]} benign and {full[2]} disguised runs as built; {full[3]} adversarial and "
             f"{full[4]} benign with the do-not-read sentence; {full[5]} with the payload in a helper module). {e[1]} Claude Code runs flagged agent_error are the "

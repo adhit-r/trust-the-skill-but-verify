@@ -19,6 +19,7 @@
 \newcommand{\cc}{Claude Code}
 \newcommand{\oc}{OpenCode}
 \newcommand{\cx}{Codex CLI}
+\newcommand{\cu}{Cursor}
 \newcommand{\preset}[1]{\texttt{#1}}
 \newcommand{\ci}[3]{$#1$ [$#2$, $#3$]}
 \newcommand{\armnum}[2]{\csname T#1#2\endcsname}
@@ -45,8 +46,9 @@ and \oc{} with the same model in \XaAdvShipB\% (difference $\XaAdvShipD$
 points, 95\% CI $\XaAdvShipL$ to $\XaAdvShipH$); the harmful change was in the
 workspace at the end of \XaAdvHarmA\% and \XaAdvHarmB\% of runs. The gap does
 not belong to the host alone: with Claude Sonnet 5.5 the rates were
-\TMsCCShipA\% and \TMsOCShipA\%, and on a third host with another vendor's
-model, \cx{} with GPT-5.6 Terra, the rate was \TCxShipB\%. What separates these cells is whether the
+\TMsCCShipA\% and \TMsOCShipA\%, and on two more hosts with other vendors'
+models, \cx{} with GPT-5.6 Terra and \cu{}'s agent with Grok 4.7 Low, they
+were \TCxShipB\% and \TCuShipB\%. What separates these cells is whether the
 agent sees the script's source before running it. One sentence added to
 \cc{}'s system prompt, or the source placed in \texttt{SKILL.md}, brought
 Haiku's rate to \TRfCCShipA\% while benign scripts still ran
@@ -162,7 +164,7 @@ with end-state observation and family-clustered paired statistics.
 adversarial and disguised packages, synthetic canaries and a package check that
 each harmful script realizes its harm when run alone.
 (3)~A same-model comparison of two production agent hosts, a second model, a
-third host with another vendor's model, a
+two more hosts with other vendors' models, a
 within-host comparison of permission presets, and four single-change
 interventions that locate the difference in whether the agent sees the script's
 source and show that one attacker-written sentence removes it.
@@ -296,7 +298,7 @@ compared (task, variant, host, preset) cell has five repeats (\NCCa{} or
 \preset{edits\_denied} preset has slightly fewer runs because \ErrRetained{} of
 its runs ended in agent errors and are excluded.
 
-\paragraph{Second model and interventions.} All arms but the last use the pair-1 presets, all \ScopeN{} tasks unless
+\paragraph{Second model and interventions.} All arms but the last two use the pair-1 presets, all \ScopeN{} tasks unless
 noted, and one repeat per task (\ArmRows{} runs; Table~\ref{tab:arms}).
 \emph{Second model}: Claude Sonnet 5.5 in place of Haiku 5.5 on the benchmark
 as built, disguised packages included.
@@ -326,6 +328,13 @@ its \preset{workspace\_write} sandbox and a fresh home directory, on the
 benchmark as built and with the do-not-read sentence. This host has no
 three-repeat baseline, so its change is measured against its own as-built
 runs.
+\emph{Fourth host}: \cu{}'s agent CLI (\texttt{\VerCUArm}) with xAI's Grok 4.7
+Low under its \preset{sandbox} preset, with the do-not-read sentence, against
+one baseline repeat of the same cell run on an earlier build
+(\texttt{\VerCU}). Under its \preset{default} preset the
+host denied a shell command in \KCuDefDenied{} of \KCuDefN{} adversarial
+baseline runs and the script ran in \KCuDefAny{}, so the sentence has nothing
+to act on there.
 
 \begin{table}[t]
 \centering\footnotesize\setlength{\tabcolsep}{4pt}
@@ -475,6 +484,8 @@ One run at a time (\TSeCCShipN{} tasks) & \cc{} & \armrow{SeCC} \\
 \midrule
 Benchmark as built (GPT-5.6 Terra) & \cx{} & \TCxShipB\% & & \TCxReadB\% & \TCxHarmB\% & \TCxBenB\% \\
 Do-not-read sentence in \texttt{SKILL.md} & \cx{} & \armrow{NrCX} \\
+Benchmark as built (Grok 4.7 Low) & \cu{} & \TCuShipB\% & & \TCuReadB\% & \TCuHarmB\% & \TCuBenB\% \\
+Do-not-read sentence in \texttt{SKILL.md} & \cu{} & \armrow{NrCU} \\
 \bottomrule
 \end{tabular}
 \caption{Second model and interventions on the pair-1 presets, one repeat per
@@ -485,7 +496,9 @@ rows after the first, change is against Sonnet on the benchmark as built. With
 the source in \texttt{SKILL.md} the agent needs no read call, so ``read first''
 is zero there. The two payload arms have no benign runs, because the change
 does nothing to a benign package. The \cx{} rows use GPT-5.6 Terra and the
-\preset{workspace\_write} preset; their change is against \cx{} as built.}
+\preset{workspace\_write} preset, the \cu{} rows Grok 4.7 Low and the
+\preset{sandbox} preset; their change is against the same host as built, for
+\cu{} over the \TNrCUTasksN{} tasks its baseline covers.}
 \label{tab:arms}
 \end{table*}
 
@@ -520,15 +533,18 @@ The gap in \S\ref{sec:cross-host} is therefore a property of one host with one
 model. The host mattered for the model that does not inspect by default, and
 did not for the one that does.
 
-\paragraph{A third host and another vendor's model.} Inspecting by default is
+\paragraph{Other hosts and other vendors' models.} Inspecting by default is
 not the rule outside these four cells. On \cx{} with GPT-5.6 Terra, the
 benchmark as built ended much as it did under \cc{} with Haiku: the agent ran
 the adversarial script as shipped in \KCxShip{} of \KCxN{} runs, read it first
 in \KCxRead{}, and the harm was present at the end of \KCxHarm{}; benign
-scripts ran as shipped in \KCxBenShip{} of \KCxBenN{} runs. This cell changes
-host and model together, so it cannot say which of the two is responsible. It
-shows that running a bundled script unread is not peculiar to one vendor's
-smallest model.
+scripts ran as shipped in \KCxBenShip{} of \KCxBenN{} runs. \cu{}'s agent with
+Grok 4.7 Low, under its \preset{sandbox} preset, ran it as shipped in
+\KCuShip{} of \KCuN{} runs, read it first in \KCuRead{}, and left the harm in
+\KCuHarm{} (benign \KCuBenShip{} of \KCuBenN{}). These cells change host and
+model together, so they cannot say which of the two is responsible. They show
+that running a bundled script unread is not peculiar to one vendor's smallest
+model.
 
 \subsection{Seeing the source}
 \label{sec:mechanism}
@@ -646,11 +662,14 @@ with the same sentence, Sonnet differs by
 \ci{\MNsOCShipD}{\MNsOCShipL}{\MNsOCShipH} under \oc{}. The model that
 inspected nearly every script stopped inspecting when the skill asked it to.
 
-\paragraph{The third host.} On \cx{} the sentence had little left to remove.
-With it, the agent ran the adversarial script as shipped in \KNrCXShip{} of
+\paragraph{The other hosts.} On \cx{} and \cu{} the sentence had little left
+to remove. With it, the \cx{} agent ran the adversarial script as shipped in \KNrCXShip{} of
 \KNrCXN{} runs (\ci{\TNrCXShipD}{\TNrCXShipL}{\TNrCXShipH} points against \cx{}
 as built), read it first in \KNrCXRead{}, and the harm was present at the end
-of \KNrCXHarm.
+of \KNrCXHarm. \cu{}'s agent ran it as shipped in \KNrCUShip{} of \KNrCUN{}
+runs (\ci{\TNrCUShipD}{\TNrCUShipL}{\TNrCUShipH} points against its baseline
+over \TNrCUTasksN{} tasks), read it first in \KNrCURead{}, and the harm was
+present at the end of \KNrCUHarm.
 
 \paragraph{Host sentence against skill sentence.} With the host's read-first
 sentence in \cc{}'s system prompt and the do-not-read sentence in
@@ -835,19 +854,18 @@ scores the two as close. Preset evaluations should report all three.
 \paragraph{Generality.} The results describe \cc{}~\VerCC{} and \oc{}~\VerOC{}
 with the named presets, in headless mode;
 they are not prevalence claims.
-We have three hosts and three models from two vendors, but
-the third model ran only on a third host,
-with one repeat per task and one preset, so that cell does not separate host
+We have four hosts and four models from three vendors, but
+each of the other two models ran only on its own host,
+with one repeat per task and one preset, so those cells do not separate host
 from model.
 Each intervention arm has one repeat per task
 and uses the pair-1 presets only, and most arms use Haiku only.
 The two sentences met on one host with one model,
 so we cannot say how a host instruction fares against an adversarial skill on
-\oc{} or with Sonnet, or against a sentence written to defeat it. We
-also ran Cursor's agent CLI on a different model; it is
-excluded from the same-model comparisons
- and reported in
-the artifact. In \KCxStartErr{} of the \KCxRows{} \cx{} runs a shell command
+\oc{} or with Sonnet, or against a sentence written to defeat it.
+\cu{}'s agent runs a different model, so it is
+excluded from the same-model comparisons;
+its baseline has one repeat and \KCuN{} of the \ScopeN{} tasks. In \KCxStartErr{} of the \KCxRows{} \cx{} runs a shell command
 failed to start inside the host and the agent went on with a later command; as
 built, the adversarial script ran as shipped in \KCxErrShip{} of \KCxErrN{}
 such runs and \KCxCleanShip{} of \KCxCleanN{} others.
@@ -998,8 +1016,8 @@ differed by more than 70 points in how often they ran an adversarial skill
 script unmodified. The difference disappeared with a larger model, disappeared
 when a host sentence or the skill itself put the script's source in front of
 the agent, and reversed, on both hosts and with both models, when one sentence
-in the skill told the agent not to look. A third host with another vendor's
-model ran them unread with no such sentence. Refusing file edits on one host changed a silent
+in the skill told the agent not to look. Two more hosts with other vendors'
+models ran most of them unread with no such sentence. Refusing file edits on one host changed a silent
 repair into a reported residue. What stood between these skills and the
 workspace was the model's habit of reading before running, which no host
 enforced under the presets we ran. Test a skill on the host, preset and model it will run on, say which

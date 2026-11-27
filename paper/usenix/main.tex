@@ -330,7 +330,7 @@ three-repeat baseline, so its change is measured against its own as-built
 runs.
 \emph{Fourth host}: \cu{}'s agent CLI (\texttt{\VerCUArm}) with xAI's Grok 4.7
 Low under its \preset{sandbox} preset, with the do-not-read sentence, against
-one baseline repeat of the same cell run on an earlier build
+the five baseline repeats of the same cell run on an earlier build
 (\texttt{\VerCU}). Under its \preset{default} preset the
 host denied a shell command in \KCuDefDenied{} of \KCuDefN{} adversarial
 baseline runs and the script ran in \KCuDefAny{}, so the sentence has nothing
@@ -497,8 +497,7 @@ the source in \texttt{SKILL.md} the agent needs no read call, so ``read first''
 is zero there. The two payload arms have no benign runs, because the change
 does nothing to a benign package. The \cx{} rows use GPT-5.6 Terra and the
 \preset{workspace\_write} preset, the \cu{} rows Grok 4.7 Low and the
-\preset{sandbox} preset; their change is against the same host as built, for
-\cu{} over the \TNrCUTasksN{} tasks its baseline covers.}
+\preset{sandbox} preset; their change is against the same host as built.}
 \label{tab:arms}
 \end{table*}
 
@@ -865,7 +864,7 @@ so we cannot say how a host instruction fares against an adversarial skill on
 \oc{} or with Sonnet, or against a sentence written to defeat it.
 \cu{}'s agent runs a different model, so it is
 excluded from the same-model comparisons;
-its baseline has one repeat and \KCuN{} of the \ScopeN{} tasks. In \KCxStartErr{} of the \KCxRows{} \cx{} runs a shell command
+its \preset{sandbox} baseline has five repeats of each of the \ScopeN{} tasks. In \KCxStartErr{} of the \KCxRows{} \cx{} runs a shell command
 failed to start inside the host and the agent went on with a later command; as
 built, the adversarial script ran as shipped in \KCxErrShip{} of \KCxErrN{}
 such runs and \KCxCleanShip{} of \KCxCleanN{} others.
@@ -917,8 +916,9 @@ cross-host gap, so this difference does not explain it.
 infrastructure error were re-run, and a re-run replaces the earlier attempt, so
 we cannot report baseline attrition per cell. This includes 762 early \oc{}
 runs that shared one session database, most of which failed at startup. The
-retained baseline data hold \ErrRetained{} runs flagged as agent errors, all in
-one \oc{} preset, and the analysis excludes them. Retrying until a run
+retained baseline data hold \ErrRetained{} runs flagged as agent errors in
+one \oc{} preset and \ErrRetainedCu{} \cu{} run that timed out on every
+attempt, and the analysis excludes them. Retrying until a run
 completes is a selection step, and budget-cap failures in particular could
 correlate with long, exploratory runs. In the arms a failed run was retried
 each time its queue was started, and every failure but one kind cleared. The

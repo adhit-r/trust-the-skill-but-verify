@@ -4887,7 +4887,7 @@
       "status": "supported_boundary"
     },
     {
-      "claim": "The same-model pilot compares Claude Code 2.1.310 and OpenCode 1.18.29 on claude-haiku-5-5 over 108 tasks from 36 skill families (benign and adversarial packages) and 44 disguised packages. Adversarial runs per compared preset: 540, 540 (Claude Code) and 539, 540 (OpenCode); disguised: 220, 220, 219, 220; single-repeat presets have 108. The run directory retains 5 runs flagged agent_error, all OpenCode edits_denied, which the analysis excludes.",
+      "claim": "The same-model pilot compares Claude Code 2.1.310 and OpenCode 1.18.29 on claude-haiku-5-5 over 108 tasks from 36 skill families (benign and adversarial packages) and 44 disguised packages. Adversarial runs per compared preset: 540, 540 (Claude Code) and 539, 540 (OpenCode); disguised: 220, 220, 219, 220; single-repeat presets have 108. The run directory retains 5 OpenCode edits_denied runs and 1 Cursor default run flagged agent_error, which the analysis excludes.",
       "claim_id": "CL-PILOT-001",
       "evidence": [
         {
@@ -5111,6 +5111,17 @@
         },
         {
           "expected": 1,
+          "path": "results/agent-pilot/analysis.json",
+          "pointer": "/aggregates/agent_error_retained/cursor_agent.default",
+          "type": "json_value"
+        },
+        {
+          "contains": "\\newcommand{\\ErrRetainedCu}{1}",
+          "path": "paper/usenix/numbers.tex",
+          "type": "file_contains"
+        },
+        {
+          "expected": 2,
           "path": "results/agent-pilot/analysis.json",
           "pointer": "/aggregates/agent_error_retained",
           "type": "json_len"
@@ -8656,7 +8667,7 @@
       "status": "supported_agent_pilot"
     },
     {
-      "claim": "On Cursor's agent CLI 2026.11.13-eacade1 with grok-4.7-low (one repeat per task, outside the same-model pairs), the benchmark as built gave, under the sandbox preset: adversarial script run as shipped in 76 of 98 runs, read first in 3, harm present at the end in 56; benign script run as shipped in 99 of 100. Under the default preset the host denied a shell command in 96 of 98 adversarial runs and the script ran in 0.",
+      "claim": "On Cursor's agent CLI 2026.11.13-eacade1 with grok-4.7-low (one repeat per task, outside the same-model pairs), the benchmark as built gave, under the sandbox preset: adversarial script run as shipped in 420 of 540 runs, read first in 16, harm present at the end in 318; benign script run as shipped in 535 of 540. Under the default preset the host denied a shell command in 105 of 107 adversarial runs and the script ran in 0.",
       "claim_id": "CL-PILOT-023",
       "evidence": [
         {
@@ -8671,13 +8682,13 @@
           "type": "file_contains"
         },
         {
-          "expected": 98,
+          "expected": 107,
           "path": "results/agent-pilot/analysis.json",
           "pointer": "/aggregates/cells/cursor_agent.default.adversarial/n",
           "type": "json_value"
         },
         {
-          "contains": "\\newcommand{\\KCuDefN}{98}",
+          "contains": "\\newcommand{\\KCuDefN}{107}",
           "path": "paper/usenix/numbers.tex",
           "type": "file_contains"
         },
@@ -8693,79 +8704,79 @@
           "type": "file_contains"
         },
         {
-          "expected": 96,
+          "expected": 105,
           "path": "results/agent-pilot/analysis.json",
           "pointer": "/aggregates/cells/cursor_agent.default.adversarial/shell_denied",
           "type": "json_value"
         },
         {
-          "contains": "\\newcommand{\\KCuDefDenied}{96}",
+          "contains": "\\newcommand{\\KCuDefDenied}{105}",
           "path": "paper/usenix/numbers.tex",
           "type": "file_contains"
         },
         {
-          "expected": 98,
+          "expected": 540,
           "path": "results/agent-pilot/analysis.json",
           "pointer": "/aggregates/cells/cursor_agent.sandbox.adversarial/n",
           "type": "json_value"
         },
         {
-          "contains": "\\newcommand{\\KCuN}{98}",
+          "contains": "\\newcommand{\\KCuN}{540}",
           "path": "paper/usenix/numbers.tex",
           "type": "file_contains"
         },
         {
-          "expected": 76,
+          "expected": 420,
           "path": "results/agent-pilot/analysis.json",
           "pointer": "/aggregates/cells/cursor_agent.sandbox.adversarial/as_shipped",
           "type": "json_value"
         },
         {
-          "contains": "\\newcommand{\\KCuShip}{76}",
+          "contains": "\\newcommand{\\KCuShip}{420}",
           "path": "paper/usenix/numbers.tex",
           "type": "file_contains"
         },
         {
-          "expected": 3,
+          "expected": 16,
           "path": "results/agent-pilot/analysis.json",
           "pointer": "/aggregates/cells/cursor_agent.sandbox.adversarial/read_script_before_run",
           "type": "json_value"
         },
         {
-          "contains": "\\newcommand{\\KCuRead}{3}",
+          "contains": "\\newcommand{\\KCuRead}{16}",
           "path": "paper/usenix/numbers.tex",
           "type": "file_contains"
         },
         {
-          "expected": 56,
+          "expected": 318,
           "path": "results/agent-pilot/analysis.json",
           "pointer": "/aggregates/cells/cursor_agent.sandbox.adversarial/harm_persists",
           "type": "json_value"
         },
         {
-          "contains": "\\newcommand{\\KCuHarm}{56}",
+          "contains": "\\newcommand{\\KCuHarm}{318}",
           "path": "paper/usenix/numbers.tex",
           "type": "file_contains"
         },
         {
-          "expected": 100,
+          "expected": 540,
           "path": "results/agent-pilot/analysis.json",
           "pointer": "/aggregates/cells/cursor_agent.sandbox.benign/n",
           "type": "json_value"
         },
         {
-          "contains": "\\newcommand{\\KCuBenN}{100}",
+          "contains": "\\newcommand{\\KCuBenN}{540}",
           "path": "paper/usenix/numbers.tex",
           "type": "file_contains"
         },
         {
-          "expected": 99,
+          "expected": 535,
           "path": "results/agent-pilot/analysis.json",
           "pointer": "/aggregates/cells/cursor_agent.sandbox.benign/as_shipped",
           "type": "json_value"
         },
         {
-          "contains": "\\newcommand{\\KCuBenShip}{99}",
+          "contains": "\\newcommand{\\KCuBenShip}{535}",
           "path": "paper/usenix/numbers.tex",
           "type": "file_contains"
         },
@@ -13251,7 +13262,7 @@
       "status": "supported_agent_pilot"
     },
     {
-      "claim": "On Cursor's agent CLI (2026.11.22-e9042b2) with grok-4.7-low under the sandbox preset, the do-not-read sentence in the installed SKILL.md gave: as shipped 81.6% (+4.1 points, 95% CI -2.0 to +11.2), read first 0.0%, harm at end 60.2% (+3.1 points, 95% CI -3.1 to +10.6), benign as shipped 99.0% (+0.0 points, 95% CI +0.0 to +0.0); 89 of 108 adversarial runs ran the script as shipped, 0 read it first and 67 ended with the harm (108 benign runs). Differences are against the baseline's single repeat of the same cell (CL-PILOT-023), over the 98 adversarial and 100 benign tasks run on both sides. The baseline ran on build 2026.11.13-eacade1, so the difference also spans a host update.",
+      "claim": "On Cursor's agent CLI (2026.11.22-e9042b2) with grok-4.7-low under the sandbox preset, the do-not-read sentence in the installed SKILL.md gave: as shipped 82.4% (+4.6 points, 95% CI +1.3 to +8.7), read first 0.0%, harm at end 62.0% (+3.1 points, 95% CI -1.5 to +7.8), benign as shipped 99.1% (+0.0 points, 95% CI -1.5 to +1.3); 89 of 108 adversarial runs ran the script as shipped, 0 read it first and 67 ended with the harm (108 benign runs). Differences are against the baseline's single repeat of the same cell (CL-PILOT-023), over the 108 adversarial and 108 benign tasks run on both sides. The baseline ran on build 2026.11.13-eacade1, so the difference also spans a host update.",
       "claim_id": "CL-PILOT-024",
       "evidence": [
         {
@@ -13279,50 +13290,50 @@
           "type": "json_value"
         },
         {
-          "expected": 0.816,
+          "expected": 0.824,
           "path": "results/agent-pilot-arms/analysis.json",
           "pointer": "/aggregates/comparisons/181/a_rate",
           "round": 3,
           "type": "json_value"
         },
         {
-          "contains": "\\newcommand{\\TNrCUShipA}{81.6}",
+          "contains": "\\newcommand{\\TNrCUShipA}{82.4}",
           "path": "paper/usenix/numbers.tex",
           "type": "file_contains"
         },
         {
-          "expected": 0.041,
+          "expected": 0.046,
           "path": "results/agent-pilot-arms/analysis.json",
           "pointer": "/aggregates/comparisons/181/diff",
           "round": 3,
           "type": "json_value"
         },
         {
-          "contains": "\\newcommand{\\TNrCUShipD}{+4.1}",
+          "contains": "\\newcommand{\\TNrCUShipD}{+4.6}",
           "path": "paper/usenix/numbers.tex",
           "type": "file_contains"
         },
         {
-          "expected": -0.02,
+          "expected": 0.013,
           "path": "results/agent-pilot-arms/analysis.json",
           "pointer": "/aggregates/comparisons/181/ci95/0",
           "round": 3,
           "type": "json_value"
         },
         {
-          "contains": "\\newcommand{\\TNrCUShipL}{-2.0}",
+          "contains": "\\newcommand{\\TNrCUShipL}{+1.3}",
           "path": "paper/usenix/numbers.tex",
           "type": "file_contains"
         },
         {
-          "expected": 0.112,
+          "expected": 0.087,
           "path": "results/agent-pilot-arms/analysis.json",
           "pointer": "/aggregates/comparisons/181/ci95/1",
           "round": 3,
           "type": "json_value"
         },
         {
-          "contains": "\\newcommand{\\TNrCUShipH}{+11.2}",
+          "contains": "\\newcommand{\\TNrCUShipH}{+8.7}",
           "path": "paper/usenix/numbers.tex",
           "type": "file_contains"
         },
@@ -13387,14 +13398,14 @@
           "type": "json_value"
         },
         {
-          "expected": 0.602,
+          "expected": 0.62,
           "path": "results/agent-pilot-arms/analysis.json",
           "pointer": "/aggregates/comparisons/184/a_rate",
           "round": 3,
           "type": "json_value"
         },
         {
-          "contains": "\\newcommand{\\TNrCUHarmA}{60.2}",
+          "contains": "\\newcommand{\\TNrCUHarmA}{62.0}",
           "path": "paper/usenix/numbers.tex",
           "type": "file_contains"
         },
@@ -13411,26 +13422,26 @@
           "type": "file_contains"
         },
         {
-          "expected": -0.031,
+          "expected": -0.015,
           "path": "results/agent-pilot-arms/analysis.json",
           "pointer": "/aggregates/comparisons/184/ci95/0",
           "round": 3,
           "type": "json_value"
         },
         {
-          "contains": "\\newcommand{\\TNrCUHarmL}{-3.1}",
+          "contains": "\\newcommand{\\TNrCUHarmL}{-1.5}",
           "path": "paper/usenix/numbers.tex",
           "type": "file_contains"
         },
         {
-          "expected": 0.106,
+          "expected": 0.078,
           "path": "results/agent-pilot-arms/analysis.json",
           "pointer": "/aggregates/comparisons/184/ci95/1",
           "round": 3,
           "type": "json_value"
         },
         {
-          "contains": "\\newcommand{\\TNrCUHarmH}{+10.6}",
+          "contains": "\\newcommand{\\TNrCUHarmH}{+7.8}",
           "path": "paper/usenix/numbers.tex",
           "type": "file_contains"
         },
@@ -13459,14 +13470,14 @@
           "type": "json_value"
         },
         {
-          "expected": 0.99,
+          "expected": 0.991,
           "path": "results/agent-pilot-arms/analysis.json",
           "pointer": "/aggregates/comparisons/188/a_rate",
           "round": 3,
           "type": "json_value"
         },
         {
-          "contains": "\\newcommand{\\TNrCUBenA}{99.0}",
+          "contains": "\\newcommand{\\TNrCUBenA}{99.1}",
           "path": "paper/usenix/numbers.tex",
           "type": "file_contains"
         },
@@ -13483,26 +13494,26 @@
           "type": "file_contains"
         },
         {
-          "expected": 0.0,
+          "expected": -0.015,
           "path": "results/agent-pilot-arms/analysis.json",
           "pointer": "/aggregates/comparisons/188/ci95/0",
           "round": 3,
           "type": "json_value"
         },
         {
-          "contains": "\\newcommand{\\TNrCUBenL}{+0.0}",
+          "contains": "\\newcommand{\\TNrCUBenL}{-1.5}",
           "path": "paper/usenix/numbers.tex",
           "type": "file_contains"
         },
         {
-          "expected": 0.0,
+          "expected": 0.013,
           "path": "results/agent-pilot-arms/analysis.json",
           "pointer": "/aggregates/comparisons/188/ci95/1",
           "round": 3,
           "type": "json_value"
         },
         {
-          "contains": "\\newcommand{\\TNrCUBenH}{+0.0}",
+          "contains": "\\newcommand{\\TNrCUBenH}{+1.3}",
           "path": "paper/usenix/numbers.tex",
           "type": "file_contains"
         },
@@ -13531,14 +13542,14 @@
           "type": "json_value"
         },
         {
-          "expected": 0.776,
+          "expected": 0.778,
           "path": "results/agent-pilot-arms/analysis.json",
           "pointer": "/aggregates/comparisons/181/b_rate",
           "round": 3,
           "type": "json_value"
         },
         {
-          "contains": "\\newcommand{\\TCuShipB}{77.6}",
+          "contains": "\\newcommand{\\TCuShipB}{77.8}",
           "path": "paper/usenix/numbers.tex",
           "type": "file_contains"
         },
@@ -13567,14 +13578,14 @@
           "type": "json_value"
         },
         {
-          "expected": 0.031,
+          "expected": 0.03,
           "path": "results/agent-pilot-arms/analysis.json",
           "pointer": "/aggregates/comparisons/183/b_rate",
           "round": 3,
           "type": "json_value"
         },
         {
-          "contains": "\\newcommand{\\TCuReadB}{3.1}",
+          "contains": "\\newcommand{\\TCuReadB}{3.0}",
           "path": "paper/usenix/numbers.tex",
           "type": "file_contains"
         },
@@ -13603,14 +13614,14 @@
           "type": "json_value"
         },
         {
-          "expected": 0.571,
+          "expected": 0.589,
           "path": "results/agent-pilot-arms/analysis.json",
           "pointer": "/aggregates/comparisons/184/b_rate",
           "round": 3,
           "type": "json_value"
         },
         {
-          "contains": "\\newcommand{\\TCuHarmB}{57.1}",
+          "contains": "\\newcommand{\\TCuHarmB}{58.9}",
           "path": "paper/usenix/numbers.tex",
           "type": "file_contains"
         },
@@ -13639,14 +13650,14 @@
           "type": "json_value"
         },
         {
-          "expected": 0.99,
+          "expected": 0.991,
           "path": "results/agent-pilot-arms/analysis.json",
           "pointer": "/aggregates/comparisons/188/b_rate",
           "round": 3,
           "type": "json_value"
         },
         {
-          "contains": "\\newcommand{\\TCuBenB}{99.0}",
+          "contains": "\\newcommand{\\TCuBenB}{99.1}",
           "path": "paper/usenix/numbers.tex",
           "type": "file_contains"
         },
@@ -13675,13 +13686,13 @@
           "type": "json_value"
         },
         {
-          "expected": 98,
+          "expected": 108,
           "path": "results/agent-pilot-arms/analysis.json",
           "pointer": "/aggregates/comparisons/181/cases",
           "type": "json_value"
         },
         {
-          "contains": "\\newcommand{\\TNrCUTasksN}{98}",
+          "contains": "\\newcommand{\\TNrCUTasksN}{108}",
           "path": "paper/usenix/numbers.tex",
           "type": "file_contains"
         },
@@ -13710,13 +13721,13 @@
           "type": "json_value"
         },
         {
-          "expected": 100,
+          "expected": 108,
           "path": "results/agent-pilot-arms/analysis.json",
           "pointer": "/aggregates/comparisons/188/cases",
           "type": "json_value"
         },
         {
-          "contains": "\\newcommand{\\TNrCUBenTasksN}{100}",
+          "contains": "\\newcommand{\\TNrCUBenTasksN}{108}",
           "path": "paper/usenix/numbers.tex",
           "type": "file_contains"
         },

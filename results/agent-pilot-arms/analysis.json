@@ -3868,37 +3868,37 @@
    },
    {
     "a": "cursor_agent.sandbox+skill_no_read",
-    "a_gt_b": 6,
+    "a_gt_b": 11,
     "a_lt_b": 2,
-    "a_rate": 0.8163265306122449,
+    "a_rate": 0.8240740740740741,
     "b": "cursor_agent.sandbox",
-    "b_rate": 0.7755102040816326,
-    "cases": 98,
+    "b_rate": 0.7777777777777778,
+    "cases": 108,
     "ci95": [
-     -0.02040816326530612,
-     0.11224489795918367
+     0.01296296296296296,
+     0.08703703703703704
     ],
-    "diff": 0.04081632653061224,
-    "families": 33,
+    "diff": 0.046296296296296294,
+    "families": 36,
     "kind": "treatment",
     "label": "adversarial",
     "metric": "as_shipped",
-    "tie": 90
+    "tie": 95
    },
    {
     "a": "cursor_agent.sandbox+skill_no_read",
-    "a_gt_b": 10,
-    "a_lt_b": 3,
-    "a_rate": 0.8775510204081632,
+    "a_gt_b": 16,
+    "a_lt_b": 7,
+    "a_rate": 0.8796296296296297,
     "b": "cursor_agent.sandbox",
-    "b_rate": 0.8061224489795918,
-    "cases": 98,
+    "b_rate": 0.8370370370370371,
+    "cases": 108,
     "ci95": [
-     0.0,
-     0.15306122448979592
+     -0.00740740740740741,
+     0.0962962962962963
     ],
-    "diff": 0.07142857142857142,
-    "families": 33,
+    "diff": 0.04259259259259259,
+    "families": 36,
     "kind": "treatment",
     "label": "adversarial",
     "metric": "executed",
@@ -3907,55 +3907,55 @@
    {
     "a": "cursor_agent.sandbox+skill_no_read",
     "a_gt_b": 0,
-    "a_lt_b": 3,
+    "a_lt_b": 10,
     "a_rate": 0.0,
     "b": "cursor_agent.sandbox",
-    "b_rate": 0.030612244897959183,
-    "cases": 98,
+    "b_rate": 0.02962962962962963,
+    "cases": 108,
     "ci95": [
-     -0.0707070707070707,
-     0.0
+     -0.053703703703703705,
+     -0.009259259259259259
     ],
-    "diff": -0.030612244897959183,
-    "families": 33,
+    "diff": -0.02962962962962963,
+    "families": 36,
     "kind": "treatment",
     "label": "adversarial",
     "metric": "read_before_run",
-    "tie": 95
+    "tie": 98
    },
    {
     "a": "cursor_agent.sandbox+skill_no_read",
-    "a_gt_b": 6,
-    "a_lt_b": 3,
-    "a_rate": 0.6020408163265306,
+    "a_gt_b": 16,
+    "a_lt_b": 6,
+    "a_rate": 0.6203703703703703,
     "b": "cursor_agent.sandbox",
-    "b_rate": 0.5714285714285714,
-    "cases": 98,
+    "b_rate": 0.5888888888888889,
+    "cases": 108,
     "ci95": [
-     -0.030927835051546393,
-     0.10638297872340426
+     -0.014814814814814817,
+     0.07777777777777778
     ],
-    "diff": 0.030612244897959183,
-    "families": 33,
+    "diff": 0.03148148148148148,
+    "families": 36,
     "kind": "treatment",
     "label": "adversarial",
     "metric": "harm_persists",
-    "tie": 89
+    "tie": 86
    },
    {
     "a": "cursor_agent.sandbox+skill_no_read",
-    "a_gt_b": 5,
-    "a_lt_b": 4,
-    "a_rate": 0.21428571428571427,
+    "a_gt_b": 9,
+    "a_lt_b": 10,
+    "a_rate": 0.2037037037037037,
     "b": "cursor_agent.sandbox",
-    "b_rate": 0.20408163265306123,
-    "cases": 98,
+    "b_rate": 0.18888888888888888,
+    "cases": 108,
     "ci95": [
-     -0.061224489795918366,
-     0.07216494845360824
+     -0.03518518518518519,
+     0.06666666666666667
     ],
-    "diff": 0.01020408163265306,
-    "families": 33,
+    "diff": 0.014814814814814814,
+    "families": 36,
     "kind": "treatment",
     "label": "adversarial",
     "metric": "shipped_repaired",
@@ -3968,93 +3968,93 @@
     "a_rate": 0.0,
     "b": "cursor_agent.sandbox",
     "b_rate": 0.0,
-    "cases": 98,
+    "cases": 108,
     "ci95": [
      0.0,
      0.0
     ],
     "diff": 0.0,
-    "families": 33,
+    "families": 36,
     "kind": "treatment",
     "label": "adversarial",
     "metric": "cleanup_blocked",
-    "tie": 98
+    "tie": 108
    },
    {
     "a": "cursor_agent.sandbox+skill_no_read",
-    "a_gt_b": 6,
-    "a_lt_b": 3,
-    "a_rate": 0.6020408163265306,
+    "a_gt_b": 16,
+    "a_lt_b": 6,
+    "a_rate": 0.6203703703703703,
     "b": "cursor_agent.sandbox",
-    "b_rate": 0.5714285714285714,
-    "cases": 98,
+    "b_rate": 0.5888888888888889,
+    "cases": 108,
     "ci95": [
-     -0.030927835051546393,
-     0.10638297872340426
+     -0.014814814814814817,
+     0.07777777777777778
     ],
-    "diff": 0.030612244897959183,
-    "families": 33,
+    "diff": 0.03148148148148148,
+    "families": 36,
     "kind": "treatment",
     "label": "adversarial",
     "metric": "harm_left",
-    "tie": 89
+    "tie": 86
    },
    {
     "a": "cursor_agent.sandbox+skill_no_read",
-    "a_gt_b": 0,
-    "a_lt_b": 0,
-    "a_rate": 0.99,
+    "a_gt_b": 2,
+    "a_lt_b": 1,
+    "a_rate": 0.9907407407407407,
     "b": "cursor_agent.sandbox",
-    "b_rate": 0.99,
-    "cases": 100,
+    "b_rate": 0.9907407407407407,
+    "cases": 108,
     "ci95": [
-     0.0,
-     0.0
+     -0.014814814814814815,
+     0.012962962962962963
     ],
     "diff": 0.0,
-    "families": 34,
+    "families": 36,
     "kind": "treatment",
     "label": "benign",
     "metric": "as_shipped",
-    "tie": 100
+    "tie": 105
    },
    {
     "a": "cursor_agent.sandbox+skill_no_read",
-    "a_gt_b": 0,
-    "a_lt_b": 0,
-    "a_rate": 0.99,
+    "a_gt_b": 2,
+    "a_lt_b": 1,
+    "a_rate": 0.9907407407407407,
     "b": "cursor_agent.sandbox",
-    "b_rate": 0.99,
-    "cases": 100,
+    "b_rate": 0.9907407407407407,
+    "cases": 108,
     "ci95": [
-     0.0,
-     0.0
+     -0.014814814814814815,
+     0.012962962962962963
     ],
     "diff": 0.0,
-    "families": 34,
+    "families": 36,
     "kind": "treatment",
     "label": "benign",
     "metric": "executed",
-    "tie": 100
+    "tie": 105
    },
    {
     "a": "cursor_agent.sandbox+skill_no_read",
-    "a_gt_b": 0,
-    "a_lt_b": 0,
-    "a_rate": 0.99,
+    "a_gt_b": 2,
+    "a_lt_b": 1,
+    "a_rate": 0.9907407407407407,
     "b": "cursor_agent.sandbox",
-    "b_rate": 0.99,
-    "cases": 100,
+    "b_rate": 0.9907407407407407,
+    "cases": 108,
     "ci95": [
-     0.0,
-     0.0
+     -0.014814814814814815,
+     0.012962962962962963
     ],
     "diff": 0.0,
-    "families": 34,
+    "families": 36,
     "kind": "treatment",
     "label": "benign",
     "metric": "output_matches_script",
-    "tie": 100
+    "tie": 105
    },
    {
     "a": "cursor_agent.sandbox+skill_no_read",
@@ -4063,17 +4063,17 @@
     "a_rate": 1.0,
     "b": "cursor_agent.sandbox",
     "b_rate": 1.0,
-    "cases": 100,
+    "cases": 108,
     "ci95": [
      0.0,
      0.0
     ],
     "diff": 0.0,
-    "families": 34,
+    "families": 36,
     "kind": "treatment",
     "label": "benign",
     "metric": "report_exists",
-    "tie": 100
+    "tie": 108
    },
    {
     "a": "opencode.edits_denied+payload_in_module",

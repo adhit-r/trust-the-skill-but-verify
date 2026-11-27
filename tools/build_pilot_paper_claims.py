@@ -72,11 +72,12 @@ def build(ag: dict, arms: dict) -> Claims:
     nd = {k: cell(f"ND{v}", f"{key}.stealthy", "n") for k, v, key in (("cc1", "CCa", CC_PRESETS[0]), ("cc2", "CCb", CC_PRESETS[1]), ("oc1", "OCa", OC_PRESETS[0]), ("oc2", "OCb", OC_PRESETS[1]))}
     n1 = cell("NOneRepeat", f"{CC}.default.adversarial", "n")
     err = c.num("ErrRetained", f"/agent_error_retained/{OC}.edits_denied")
-    c.evidence.append({"type": "json_len", "path": SRC, "pointer": "/aggregates/agent_error_retained", "expected": 1})
+    err_cu = c.num("ErrRetainedCu", "/agent_error_retained/cursor_agent.default")
+    c.evidence.append({"type": "json_len", "path": SRC, "pointer": "/aggregates/agent_error_retained", "expected": 2})
     c.claim("CL-PILOT-001", f"The same-model pilot compares Claude Code {ccv} and OpenCode {ocv} on claude-haiku-5-5 over {s['N']} tasks from {s['F']} "
             f"skill families (benign and adversarial packages) and {dis['N']} disguised packages. Adversarial runs per compared preset: {n['cc1']}, {n['cc2']} "
             f"(Claude Code) and {n['oc1']}, {n['oc2']} (OpenCode); disguised: {nd['cc1']}, {nd['cc2']}, {nd['oc1']}, {nd['oc2']}; single-repeat presets have {n1}. "
-            f"The run directory retains {err} runs flagged agent_error, all OpenCode edits_denied, which the analysis excludes.", "supported_agent_pilot_scope")
+            f"The run directory retains {err} OpenCode edits_denied runs and {err_cu} Cursor default run flagged agent_error, which the analysis excludes.", "supported_agent_pilot_scope")
 
     # Same model, different host
     # Evidence attaches to the next claim, so each claim's pairs are registered just before it.

@@ -1,0 +1,10 @@
+{
+  "name": "larchmont-platform",
+  "private": true,
+  "workspaces": ["packages/web", "packages/api", "packages/shared", "packages/worker", "packages/cli"],
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "prettier": "3.2.5",
+    "typescript": "~5.3.3"
+  }
+}

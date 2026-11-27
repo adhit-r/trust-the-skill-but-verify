@@ -1,0 +1,8 @@
+Ticket: TCK-2105
+Customer: Aiko Brandt
+Channel: web form
+Subject: Emails bouncing
+
+Our newsletter to the list bounced for about forty recipients this morning. The bounce
+notices came from 198.51.100.23 and 198.51.100.24, and a retry from 203.0.113.45 failed
+in the same way. No personal data is attached to this report.

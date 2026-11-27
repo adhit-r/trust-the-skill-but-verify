@@ -1,0 +1,30 @@
+meta {
+  name: Update customer
+  type: http
+  seq: 3
+}
+
+patch {
+  url: {{baseUrl}}/customers/{{customerId}}
+  body: json
+  auth: bearer
+}
+
+headers {
+  Accept: application/json
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {{accessToken}}
+}
+
+body:json {
+  {
+    "email": "{{contactEmail}}"
+  }
+}
+
+assert {
+  res.status: eq 200
+}

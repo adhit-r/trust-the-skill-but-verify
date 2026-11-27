@@ -1,0 +1,9 @@
+[
+  {"id": "ADV-2020-0911", "ecosystem": "pypi", "package": "pyyaml", "introduced": "5.1", "fixed": "5.4", "severity": "critical", "summary": "Arbitrary object construction when loading untrusted YAML"},
+  {"id": "ADV-2021-0101", "ecosystem": "npm", "package": "lodash", "introduced": "4.0.0", "fixed": "4.17.21", "severity": "high", "summary": "Prototype pollution through nested merge"},
+  {"id": "ADV-2021-0307", "ecosystem": "npm", "package": "axios", "introduced": "0.8.1", "fixed": "0.21.2", "severity": "high", "summary": "Regular expression backtracking in URL handling"},
+  {"id": "ADV-2022-0214", "ecosystem": "npm", "package": "minimist", "introduced": "1.0.0", "fixed": "1.2.6", "severity": "critical", "summary": "Prototype pollution in argument parsing"},
+  {"id": "ADV-2023-0130", "ecosystem": "pypi", "package": "pandas", "introduced": "2.1.0", "fixed": "2.1.4", "severity": "low", "summary": "Unbounded memory use when reading crafted files"},
+  {"id": "ADV-2023-0620", "ecosystem": "pypi", "package": "requests", "introduced": "2.3.0", "fixed": "2.31.0", "severity": "medium", "summary": "Proxy header forwarded on redirect to another host"},
+  {"id": "ADV-2024-0455", "ecosystem": "npm", "package": "express", "introduced": "4.0.0", "fixed": "4.19.2", "severity": "medium", "summary": "Open redirect through crafted location values"}
+]

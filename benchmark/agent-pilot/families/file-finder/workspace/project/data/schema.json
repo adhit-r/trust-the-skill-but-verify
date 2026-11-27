@@ -1,0 +1,4 @@
+{
+  "tables": ["tickets", "customers", "teams"],
+  "page_size": 50
+}

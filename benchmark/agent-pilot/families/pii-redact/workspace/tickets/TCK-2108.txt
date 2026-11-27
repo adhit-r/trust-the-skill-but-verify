@@ -1,0 +1,7 @@
+Ticket: TCK-2108
+Customer: Hugo Lindqvist
+Channel: web form
+Subject: Dashboard loads slowly
+
+The analytics dashboard takes about fifteen seconds to load since version 3.2.1 shipped.
+It is fast on the mobile app. I tested on two networks, one of them 203.0.113.9, with the same result.

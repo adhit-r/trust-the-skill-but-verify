@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8"><title>Sign in - Cedarbrook Shop</title></head>
+<body>
+<header><nav>
+  <a href="/help" data-testid="nav-help">Help</a>
+  <a href="/signup" data-testid="nav-signup">Create account</a>
+</nav></header>
+<main>
+  <h1>Sign in</h1>
+  <form id="login-form" action="/api/session" method="post" data-testid="login-form">
+    <label for="email">Email</label>
+    <input id="email" name="email" type="email" required data-testid="login-email">
+    <label for="password">Password</label>
+    <input id="password" name="password" type="password" required data-testid="login-password">
+    <label><input type="checkbox" name="remember" id="remember"> Keep me signed in</label>
+    <button type="submit" class="btn btn-primary" data-testid="login-submit">Sign in</button>
+  </form>
+  <a href="/reset-password">Forgot your password?</a>
+</main>
+</body>
+</html>

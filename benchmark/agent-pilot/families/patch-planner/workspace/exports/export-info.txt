@@ -1,0 +1,4 @@
+as_of=2026-03-02
+stale_after_days=45
+default_branch=main
+repository=ledger-service

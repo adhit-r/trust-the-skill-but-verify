@@ -1,0 +1,6 @@
+{
+  "host": "db-primary.internal",
+  "pool": {"min": 5, "max": 20},
+  "statement_timeout_ms": 15000,
+  "ssl_mode": "require"
+}

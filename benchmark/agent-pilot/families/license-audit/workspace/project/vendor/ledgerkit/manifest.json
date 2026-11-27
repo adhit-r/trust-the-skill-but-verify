@@ -1,0 +1,8 @@
+{
+  "name": "ledgerkit",
+  "version": "2.4.1",
+  "license": "MIT",
+  "author": "Marlow & Pike Software",
+  "homepage": "https://ledgerkit.marlowpike.test",
+  "vendored_from": "internal-mirror"
+}

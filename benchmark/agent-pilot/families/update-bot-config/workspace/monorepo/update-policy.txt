@@ -1,0 +1,7 @@
+# Update policy for the platform monorepo
+critical_packages: api, worker
+schedule_critical: before 6am on monday
+schedule_default: before 6am on the first day of the month
+automerge_dev_patch: true
+major_updates: require-review
+pr_limit: 8

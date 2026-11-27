@@ -15,6 +15,10 @@ git ls-files -z '*.json' | "$PYTHON_BIN" tools/validate_json_files.py --stdin0
 "$PYTHON_BIN" tools/validate_runtime_profiles.py --self-test runtimes/profiles/*.yaml
 "$PYTHON_BIN" tools/adapter_smoke.py
 "$PYTHON_BIN" tools/validate_contracts.py --self-test contracts/*.yaml
+"$PYTHON_BIN" tools/build_pilot_cases.py --check
+if compgen -G "benchmark/agent-pilot/families/*/contracts/*.yaml" >/dev/null; then
+  "$PYTHON_BIN" tools/validate_contracts.py benchmark/agent-pilot/families/*/contracts/*.yaml
+fi
 "$PYTHON_BIN" tools/verify_source_provenance.py --manifest benchmark/manifests/repo-audit-mvp.json
 "$PYTHON_BIN" tools/verify_source_provenance.py --manifest benchmark/manifests/network-egress-mvp.json
 "$PYTHON_BIN" tools/verify_source_provenance.py --manifest benchmark/manifests/mcp-tool-workflow-mini.json

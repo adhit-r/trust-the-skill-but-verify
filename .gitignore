@@ -28,6 +28,7 @@ __pycache__/
 # and provenance shims can contain local paths or synthetic canaries.
 /results/**/stdout.log
 /results/**/stderr.log
+/results/agent-pilot-arms/queue-*.log
 /results/**/container.id
 /results/**/workspace/
 /results/**/rp6_policy_shim/

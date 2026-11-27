@@ -1,0 +1,3 @@
+BSD 3-Clause License
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the copyright notice, this list of conditions and the following disclaimer are retained, and that the names of the contributors are not used to endorse derived products without permission.

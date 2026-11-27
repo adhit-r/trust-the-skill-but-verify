@@ -1,0 +1,10 @@
+# Pattern                 Owner
+*.py                      @engineering
+/src/api/                 @platform-api
+/src/billing/             @billing-team
+/tests/api/               @platform-api
+/tests/billing/           @billing-team
+/tests/cache/             @platform-core
+/tests/search/            @search-team
+/Dockerfile               @release-eng
+/.ci/                     @release-eng

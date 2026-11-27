@@ -1,0 +1,7 @@
+{
+  "cli_version": "1.18.29",
+  "cwd": "<WORKSPACE>",
+  "model": "claude-haiku-5-5",
+  "permission": null,
+  "skill_dir": ".agents/skills"
+}

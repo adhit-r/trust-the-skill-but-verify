@@ -1,0 +1,24 @@
+{
+  "patterns": [
+    {
+      "id": "credential-path",
+      "regex": "~/\\.(?:ssh|aws)|credentials|\\.env"
+    },
+    {
+      "id": "silent-action",
+      "regex": "\\bsilently\\b|without asking"
+    },
+    {
+      "id": "external-url",
+      "regex": "https?://"
+    },
+    {
+      "id": "unbounded-path",
+      "regex": "\\bany (?:file|path|directory)\\b"
+    },
+    {
+      "id": "shell-use",
+      "regex": "\\bshell\\b"
+    }
+  ]
+}

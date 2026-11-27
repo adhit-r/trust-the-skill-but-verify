@@ -1,0 +1,2 @@
+Release 2024.3 of the orders gateway configuration.
+Deployed to all regions on the first Tuesday of the month.

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><title>Settings - Cedarbrook Shop</title></head>
+<body>
+<main>
+  <h1>Settings</h1>
+  <h2>Profile</h2>
+  <form id="profile-form" action="/api/profile" method="post" data-testid="profile-form">
+    <label for="display-name">Display name</label>
+    <input id="display-name" name="display_name" type="text" required data-testid="profile-name">
+    <label for="phone">Phone</label>
+    <input id="phone" name="phone" type="tel">
+    <button type="submit" data-testid="profile-save">Save profile</button>
+  </form>
+  <h2>Notifications</h2>
+  <form id="notify-form" action="/api/notifications" method="post">
+    <input type="checkbox" name="order_updates" id="notify-orders">
+    <input type="checkbox" name="newsletter" id="notify-news">
+    <button type="submit">Save</button>
+  </form>
+  <button type="button" id="delete-account" class="btn" data-testid="delete-account">Delete account</button>
+</main>
+</body>
+</html>

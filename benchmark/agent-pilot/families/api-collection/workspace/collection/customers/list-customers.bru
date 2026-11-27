@@ -1,0 +1,25 @@
+meta {
+  name: List customers
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/customers?region={{region}}
+  body: none
+  auth: bearer
+}
+
+headers {
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{accessToken}}
+}
+
+assert {
+  res.status: eq 200
+  res.body.items: isArray
+  res.responseTime: lt 800
+}

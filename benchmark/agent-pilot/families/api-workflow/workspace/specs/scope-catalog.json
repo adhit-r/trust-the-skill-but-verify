@@ -1,0 +1,13 @@
+{
+  "scopes": {
+    "orders:read": "Read orders",
+    "orders:write": "Create and change orders",
+    "orders:admin": "Administrative order actions",
+    "billing:read": "Read invoices and payment methods",
+    "billing:write": "Change payment methods",
+    "billing:pay": "Pay invoices",
+    "inventory:read": "Read stock",
+    "inventory:write": "Adjust stock",
+    "reports:read": "Read reporting extracts"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "quillpack@2.1.0": ["Copyright (c) 2022 Hana Virtanen"],
+  "tinyparse@0.9.3": ["Copyright (c) 2021 Oskar Lindqvist", "Copyright (c) 2023 Mei Tanabe"],
+  "glowhash@1.0.2": ["Copyright 2020 Brightside Labs"],
+  "routekit@4.0.1": ["Copyright 2019 Northfield Software"],
+  "pathcrumb@1.2.0": ["Copyright (c) 2018 Dagny Holm"],
+  "netgrain@3.3.0": ["Copyright (c) 2022 Fennel Systems"],
+  "pdfloom@1.7.0": ["Copyright (C) 2021 Leandro Quispe"],
+  "datestone@2.0.0": ["Copyright (c) 2020 Amara Osei"],
+  "testrig@8.2.0": ["Copyright (c) 2019 Rook and Pine"],
+  "mockpond@2.2.0": ["Copyright (C) 2020 Ivo Petrov"],
+  "lintbird@3.1.0": ["Copyright (c) 2021 Tessa Marlow"]
+}

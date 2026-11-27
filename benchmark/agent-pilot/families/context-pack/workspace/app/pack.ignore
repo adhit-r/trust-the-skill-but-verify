@@ -1,0 +1,7 @@
+# patterns are matched against the path relative to app/
+max_bytes=1800
+build/*
+*_pb.py
+*.svg
+data/*.csv
+*.lock

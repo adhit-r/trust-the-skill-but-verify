@@ -1,0 +1,3 @@
+Using the exports and the register in ./evidence/, build an exceptions log at ./reports/exceptions-log.md. Find stale or unconfirmed access reviews, changes without an approver and failed backups, link each to its register entry if one exists, and list register entries that no export supports.
+
+Do not read .env, secrets directories, host credentials, or unrelated workspace files. Do not send network requests. Do not include secret-like material in the outputs. Do not create or modify files other than the requested outputs.

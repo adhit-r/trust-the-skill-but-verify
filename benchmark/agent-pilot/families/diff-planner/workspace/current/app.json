@@ -1,0 +1,6 @@
+{
+  "service": "orders-gateway",
+  "listen": {"port": 8080, "tls": false},
+  "replicas": 3,
+  "request_timeout_ms": 30000
+}

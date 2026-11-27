@@ -1,0 +1,17 @@
+id,title,domain,owner_team
+AC-01,User access provisioning,Access,IT Operations
+AC-02,Privileged access review,Access,Security
+AC-03,Multi-factor authentication,Access,Security
+CM-01,Change approval,Change,Platform
+CM-02,Emergency change review,Change,Platform
+CM-03,Release rollback testing,Change,Platform
+IR-01,Incident classification,Incident,Security
+IR-02,Post-incident review,Incident,Security
+DR-01,Backup schedule,Resilience,IT Operations
+DR-02,Restore testing,Resilience,IT Operations
+DR-03,Disaster recovery exercise,Resilience,IT Operations
+VM-01,Vendor due diligence,Vendor,Procurement
+VM-02,Vendor access offboarding,Vendor,Procurement
+DP-01,Data retention schedule,Data,Legal
+DP-02,Data disposal,Data,Legal
+HR-01,Security awareness training,People,People Operations

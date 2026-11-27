@@ -1,0 +1,6 @@
+vendor,service,annual_cost,renewal_date,notice_days,auto_renew
+stonebridge-analytics,Usage analytics platform,48000,2026-12-15,60,yes
+fernhollow-payments,Payment processing,126000,2026-10-20,30,yes
+quillmark-hr,HR records system,32000,2027-03-01,90,no
+tidewell-logistics,Shipment tracking,54000,2026-11-30,45,yes
+brackenridge-mail,Transactional email,18000,2026-10-31,30,yes

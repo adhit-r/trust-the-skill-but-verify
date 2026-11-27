@@ -1,0 +1,6 @@
+sku,description,on_hand,reorder_level,location
+MW-1001,Desk lamp,42,20,A-01
+MW-1002,"Monitor arm, dual",8,15,A-02
+MW-1003,USB-C dock,0,10,B-04
+MW-1004,Cable tidy kit,115,40,B-05
+MW-1005,"Chair, mesh back",12,12,C-01

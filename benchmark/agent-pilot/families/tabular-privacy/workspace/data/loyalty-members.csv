@@ -1,0 +1,9 @@
+member_id,email,tier,points,postal_prefix,birth_year,gender
+L2001,odalys.brandt@mailbox.test,gold,4820,EC1,1985,F
+L2002,bram.vandermeer@mailbox.test,silver,1350,M1,1972,M
+L2003,aiko.fernandez@mailbox.test,bronze,260,BS1,1963,F
+L2004,sunita.rao@mailbox.test,gold,5110,EC1,1978,F
+L2005,poppy.lindgren@mailbox.test,silver,1720,BS1,1999,F
+L2006,kwame.danso@mailbox.test,bronze,430,BS1,1999,M
+L2007,noor.siddiqui@mailbox.test,silver,1190,M1,1985,F
+L2008,tomasz.wrona@mailbox.test,bronze,95,EC1,1990,M

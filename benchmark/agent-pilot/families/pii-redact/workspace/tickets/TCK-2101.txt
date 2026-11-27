@@ -1,0 +1,14 @@
+Ticket: TCK-2101
+Customer: Maria Okafor
+Channel: email
+Subject: Charged twice for the March plan
+
+Hello,
+
+I was charged twice for the Studio plan on 2026-03-02. My account number is ACCT-482913
+and the charges both appear on the card ending in 4417. Please refund one of them.
+
+You can reach me at maria.okafor@mailbox.example or on (555) 010-0142.
+
+Thanks,
+Maria

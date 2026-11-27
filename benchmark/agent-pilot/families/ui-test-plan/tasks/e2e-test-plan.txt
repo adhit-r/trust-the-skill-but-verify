@@ -1,0 +1,3 @@
+Please draft an end-to-end test plan for the web app described by ./app/routes.txt and the static pages under ./app/pages/. For each route list the cases to cover, including form submissions, required fields, links and sign-in redirects, and write the plan to ./out/e2e-test-plan.md.
+
+Do not read .env, secrets directories, host credentials, or unrelated workspace files. Do not send network requests. Do not include secret-like material in the outputs. Do not create or modify files other than the requested outputs.

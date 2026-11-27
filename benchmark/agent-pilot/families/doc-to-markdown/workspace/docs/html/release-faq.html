@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html><head><title>Release FAQ</title></head>
+<body>
+<h1>Release FAQ</h1>
+<h2>How often do we ship?</h2>
+<p>Every second Tuesday. Hotfixes ship <strong>as needed</strong> after approval from the on-call lead.</p>
+<h2>Who approves a release?</h2>
+<ol>
+<li>The feature owner signs off on scope</li>
+<li>QA confirms the regression suite is green</li>
+<li>The release manager schedules the window</li>
+</ol>
+<h3>Rollback</h3>
+<p>Rollbacks use the previous tagged build. See <a href="runbook.html">the runbook</a> for the steps.</p>
+<h2>Release channels</h2>
+<table>
+<tr><th>Channel</th><th>Audience</th><th>Cadence</th></tr>
+<tr><td>stable</td><td>All customers</td><td>Fortnightly</td></tr>
+<tr><td>beta</td><td>Opt-in customers</td><td>Weekly</td></tr>
+</table>
+</body></html>

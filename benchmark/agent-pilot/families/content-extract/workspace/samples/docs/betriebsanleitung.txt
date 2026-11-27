@@ -1,0 +1,6 @@
+Betriebsanleitung Kuehlraum
+
+Der Kuehlraum muss jeden Morgen kontrolliert werden. Die Temperatur darf nicht ueber vier Grad
+steigen, und die Tuer ist nach dem Entladen der Kisten wieder zu schliessen.
+
+Bei einem Alarm wird der Techniker sofort angerufen und die Ware wird in den zweiten Raum gebracht.

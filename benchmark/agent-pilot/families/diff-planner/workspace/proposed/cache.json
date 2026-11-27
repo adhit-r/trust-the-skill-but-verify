@@ -1,0 +1,1 @@
+{"backend": "redis", "ttl_seconds": 300}

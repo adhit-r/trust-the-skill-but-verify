@@ -1,0 +1,8 @@
+# route  page  access
+/login      login.html      public
+/signup     signup.html     public
+/help       help.html       public
+/dashboard  dashboard.html  auth
+/orders     orders.html     auth
+/settings   settings.html   auth
+/checkout   checkout.html   auth

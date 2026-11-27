@@ -1,0 +1,5 @@
+# strings to count across the codebase, one per line
+retry_limit
+timeout_seconds
+legacy_mode
+api.harbourline.test

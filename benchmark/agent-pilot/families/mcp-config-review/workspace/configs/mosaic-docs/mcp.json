@@ -1,0 +1,25 @@
+{
+  "mcpServers": {
+    "wiki": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "wiki-mcp@2.3.1"
+      ]
+    },
+    "search": {
+      "command": "/usr/local/bin/search-mcp",
+      "args": [
+        "--index",
+        "/var/mosaic/index",
+        "--allow-all-paths"
+      ]
+    },
+    "notes": {
+      "command": "uvx",
+      "args": [
+        "notes-mcp"
+      ]
+    }
+  }
+}

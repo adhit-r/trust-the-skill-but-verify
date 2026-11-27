@@ -1,0 +1,9 @@
+{
+  "name": "orphan-formatter",
+  "type": "FormattingAgent",
+  "schedule": "never",
+  "days": [0, 1, 2, 3, 4, 5, 6],
+  "sources": ["tide-table-scraper"],
+  "last_event_at": "2026-09-12",
+  "disabled": false
+}

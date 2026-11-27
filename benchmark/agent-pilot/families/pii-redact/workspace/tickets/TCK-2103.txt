@@ -1,0 +1,9 @@
+Ticket: TCK-2103
+Customer: Lena Hartmann
+Channel: chat
+Subject: Change the billing address
+
+Lena here. I moved last month and need the billing address changed to 27 Alder Street.
+The old one was 9 Willow Lane. There is nothing else to update on the account.
+
+Thank you.

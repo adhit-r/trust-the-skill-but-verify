@@ -1,0 +1,6 @@
+Docs changelog
+
+2024-02-05  Added the onboarding guide.
+2024-02-19  Added the release FAQ and pricing table.
+2024-03-04  Added the service status page.
+2024-03-18  Imported quarterly sales and inventory exports.

@@ -1,0 +1,12 @@
+9f2c1ab 2026-01-23 fix(billing): round JPY totals to whole units (#101)
+3d8e04c 2026-01-26 feat(api)!: return invoices as a paged object instead of a list (#104)
+b71a9e2 2026-01-28 docs: describe the branch naming rules
+5c0d3f7 2026-02-03 fix(auth): revoke refresh tokens on logout (#110)
+e48b2d9 2026-02-05 feat(billing): add exemption flag to customer records (#99)
+1a6f7cc 2026-02-09 chore: bump test dependencies
+7d3be10 2026-02-12 perf(api): cache tax rates per request (#105)
+c92a4f8 2026-02-16 fix(auth): add SameSite attribute to session cookies (#102)
+0be5d71 2026-02-19 refactor(billing): split discount helper from totals
+48f1c3a 2026-02-23 fix(billing): apply discounts before tax (#109)
+a3c77e5 2026-02-26 fix(auth): serialise concurrent token refresh (#103)
+6e90d24 2026-02-28 test: cover expired session removal

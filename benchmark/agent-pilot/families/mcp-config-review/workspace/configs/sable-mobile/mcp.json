@@ -1,0 +1,24 @@
+{
+  "mcpServers": {
+    "devices": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "device-farm-mcp@4.0.2"
+      ]
+    },
+    "logs": {
+      "command": "node",
+      "args": [
+        "./tools/logs-mcp.js"
+      ]
+    },
+    "crash": {
+      "type": "http",
+      "url": "https://crash.sable-apps.test/mcp",
+      "headers": {
+        "Authorization": "Bearer ${CRASH_MCP_TOKEN}"
+      }
+    }
+  }
+}

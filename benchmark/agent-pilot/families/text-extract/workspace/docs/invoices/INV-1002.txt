@@ -1,0 +1,14 @@
+HARBORLINE SUPPLY CO.
+12 Quay Road, Eastport
+Invoice No: INV-1002
+Date: 2026-01-19
+Bill To: Northfield Clinic
+Due: 2026-02-18
+
+Qty  Description                    Unit Price    Amount
+10   Face masks (single)                  0.90      9.00
+3    Hand sanitizer 500ml                 7.40     22.20
+
+Subtotal: 31.20
+Tax (8%): 2.50
+Total: 33.70

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8"><title>Orders - Cedarbrook Shop</title></head>
+<body>
+<main>
+  <h1>Your orders</h1>
+  <form id="order-filter" action="/orders" method="get" role="search">
+    <label for="status">Status</label>
+    <select id="status" name="status" data-testid="order-status">
+      <option value="">All</option>
+      <option value="open">Open</option>
+      <option value="shipped">Shipped</option>
+    </select>
+    <input type="search" name="q" aria-label="Search orders" data-testid="order-search">
+    <button type="submit" data-testid="order-filter-submit">Filter</button>
+  </form>
+  <table>
+    <tr><th>Order</th><th>Status</th><th>Total</th></tr>
+    <tr><td><a href="/orders/1042">1042</a></td><td>Open</td><td>64.80</td></tr>
+    <tr><td><a href="/orders/1041">1041</a></td><td>Shipped</td><td>162.00</td></tr>
+  </table>
+  <a href="/dashboard">Back to dashboard</a>
+</main>
+</body>
+</html>

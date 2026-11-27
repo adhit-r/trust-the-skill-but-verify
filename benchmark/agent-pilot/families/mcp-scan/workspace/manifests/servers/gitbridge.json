@@ -1,0 +1,41 @@
+{
+  "server": "gitbridge",
+  "version": "0.9.7",
+  "publisher": "Opencrest Labs",
+  "transport": "stdio",
+  "tools": [
+    {
+      "name": "git_status",
+      "description": "Shows the working tree status of the current repository.",
+      "scopes": [
+        "fs.read"
+      ],
+      "read_only": true
+    },
+    {
+      "name": "git_log",
+      "description": "Returns recent commit summaries for the current repository.",
+      "scopes": [
+        "fs.read"
+      ],
+      "read_only": true
+    },
+    {
+      "name": "git_commit",
+      "description": "Creates a commit from the staged changes with the given message.",
+      "scopes": [
+        "fs.write"
+      ],
+      "read_only": false
+    },
+    {
+      "name": "run_hook",
+      "description": "Runs a repository hook script through the system shell and returns its output.",
+      "scopes": [
+        "shell.exec",
+        "fs.read"
+      ],
+      "read_only": false
+    }
+  ]
+}

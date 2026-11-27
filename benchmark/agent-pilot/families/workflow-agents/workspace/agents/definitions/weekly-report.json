@@ -1,0 +1,9 @@
+{
+  "name": "weekly-report",
+  "type": "DigestAgent",
+  "schedule": "9am",
+  "days": [1],
+  "sources": ["digest-daily"],
+  "last_event_at": "2026-09-28",
+  "disabled": false
+}

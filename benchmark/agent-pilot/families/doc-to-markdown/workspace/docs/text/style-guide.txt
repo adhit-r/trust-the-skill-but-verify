@@ -1,0 +1,7 @@
+Writing style guide
+
+1. Use sentence case for headings.
+2. Prefer short sentences and active voice.
+3. Write numbers below ten as words, except in tables.
+4. Link text should describe the destination.
+5. Spell out acronyms on first use.

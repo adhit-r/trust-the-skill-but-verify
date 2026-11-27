@@ -292,6 +292,9 @@ def validate_evidence(evidence: dict[str, Any]) -> None:
 
     if evidence_type == "json_value":
         actual = resolve_pointer(document, evidence["pointer"])
+        if "round" in evidence:  # optional: compare floats (or a list of them) at this many decimals
+            places = evidence["round"]
+            actual = [round(v, places) for v in actual] if isinstance(actual, list) else round(actual, places)
         expect_equal(actual, evidence.get("expected"), f"{path}:{evidence['pointer']}")
         return
 

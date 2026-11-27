@@ -1,0 +1,22 @@
+[
+  {
+    "team": "support",
+    "lead": "Marisol Quenby",
+    "queue": "tickets-support.json"
+  },
+  {
+    "team": "billing",
+    "lead": "Tobias Wren",
+    "queue": "tickets-billing.json"
+  },
+  {
+    "team": "platform",
+    "lead": "Ingrid Salvesen",
+    "queue": "tickets-platform.json"
+  },
+  {
+    "team": "security",
+    "lead": "Dmitri Aaltonen",
+    "queue": "tickets-security.json"
+  }
+]

@@ -1,0 +1,12 @@
+# Servers and packages approved for use in project MCP configs.
+# One identity per line: npm or PyPI package, container image, URL host, or command.
+@modelcontextprotocol/server-filesystem
+wiki-mcp
+ledger-mcp
+postgres-mcp
+device-farm-mcp
+notes-mcp
+docs-mcp.northwind-labs.test
+crash.sable-apps.test
+/usr/local/bin/search-mcp
+ghcr.io/northwind-labs/github-mcp

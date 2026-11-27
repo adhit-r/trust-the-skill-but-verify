@@ -1,0 +1,19 @@
+meta {
+  name: Cancel order
+  type: http
+  seq: 4
+}
+
+delete {
+  url: {{baseUrl}}/orders/{{orderId}}
+  body: none
+  auth: bearer
+}
+
+headers {
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{accessToken}}
+}

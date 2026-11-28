@@ -198,7 +198,7 @@ def build(ag: dict, arms: dict) -> Claims:
         ("KCuN", "sandbox.adversarial", "n"), ("KCuShip", "sandbox.adversarial", "as_shipped"), ("KCuRead", "sandbox.adversarial", "read_script_before_run"),
         ("KCuHarm", "sandbox.adversarial", "harm_persists"), ("KCuBenN", "sandbox.benign", "n"), ("KCuBenShip", "sandbox.benign", "as_shipped"))}
     c.evidence += [{"type": "file_contains", "path": HARNESS, "contains": '"sandbox": ["--sandbox", "enabled"]'}, {"type": "file_contains", "path": HARNESS, "contains": '"baseline_model": "grok-4.7-low"'}]
-    c.claim("CL-PILOT-023", f"On Cursor's agent CLI {cuv} with grok-4.7-low (one repeat per task, outside the same-model pairs), the benchmark as built gave, under the sandbox preset: adversarial script run as shipped "
+    c.claim("CL-PILOT-023", f"On Cursor's agent CLI {cuv} with grok-4.7-low (outside the same-model pairs), the benchmark as built gave, under the sandbox preset: adversarial script run as shipped "
             f"in {k['KCuShip']} of {k['KCuN']} runs, read first in {k['KCuRead']}, harm present at the end in {k['KCuHarm']}; benign script run as shipped in {k['KCuBenShip']} of {k['KCuBenN']}. Under the default preset "
             f"the host denied a shell command in {k['KCuDefDenied']} of {k['KCuDefN']} adversarial runs and the script ran in {k['KCuDefAny']}.")
 
@@ -328,7 +328,7 @@ def build_arms(c: Claims, tasks: str) -> None:
     span = "" if cav == c.macros["VerCU"] else f" The baseline ran on build {c.macros['VerCU']}, so the difference also spans a host update."
     c.evidence.append({"type": "json_len", "path": ARMS, "pointer": "/aggregates/cli_versions/cursor_agent", "expected": 1})
     c.claim("CL-PILOT-024", f"On Cursor's agent CLI ({cav}) with {grok} under the sandbox preset, the do-not-read sentence in the installed SKILL.md gave: {line(cu)}; {k['KNrCUShip']} of {k['KNrCUN']} adversarial runs "
-            f"ran the script as shipped, {k['KNrCURead']} read it first and {k['KNrCUHarm']} ended with the harm ({k['KNrCUBenN']} benign runs). Differences are against the baseline's single repeat of the same cell "
+            f"ran the script as shipped, {k['KNrCURead']} read it first and {k['KNrCUHarm']} ended with the harm ({k['KNrCUBenN']} benign runs). Differences are against the baseline runs of the same cell "
             f"(CL-PILOT-023), over the {on['adversarial']} adversarial and {on['benign']} benign tasks run on both sides." + span)
 
     # Payload hidden from a reader of the entry script: moved into an imported helper module, or base64-encoded (adversarial packages only)

@@ -8667,7 +8667,7 @@
       "status": "supported_agent_pilot"
     },
     {
-      "claim": "On Cursor's agent CLI 2026.11.13-eacade1 with grok-4.7-low (one repeat per task, outside the same-model pairs), the benchmark as built gave, under the sandbox preset: adversarial script run as shipped in 420 of 540 runs, read first in 16, harm present at the end in 318; benign script run as shipped in 535 of 540. Under the default preset the host denied a shell command in 105 of 107 adversarial runs and the script ran in 0.",
+      "claim": "On Cursor's agent CLI 2026.11.13-eacade1 with grok-4.7-low (outside the same-model pairs), the benchmark as built gave, under the sandbox preset: adversarial script run as shipped in 420 of 540 runs, read first in 16, harm present at the end in 318; benign script run as shipped in 535 of 540. Under the default preset the host denied a shell command in 105 of 107 adversarial runs and the script ran in 0.",
       "claim_id": "CL-PILOT-023",
       "evidence": [
         {
@@ -13262,7 +13262,7 @@
       "status": "supported_agent_pilot"
     },
     {
-      "claim": "On Cursor's agent CLI (2026.11.22-e9042b2) with grok-4.7-low under the sandbox preset, the do-not-read sentence in the installed SKILL.md gave: as shipped 82.4% (+4.6 points, 95% CI +1.3 to +8.7), read first 0.0%, harm at end 62.0% (+3.1 points, 95% CI -1.5 to +7.8), benign as shipped 99.1% (+0.0 points, 95% CI -1.5 to +1.3); 89 of 108 adversarial runs ran the script as shipped, 0 read it first and 67 ended with the harm (108 benign runs). Differences are against the baseline's single repeat of the same cell (CL-PILOT-023), over the 108 adversarial and 108 benign tasks run on both sides. The baseline ran on build 2026.11.13-eacade1, so the difference also spans a host update.",
+      "claim": "On Cursor's agent CLI (2026.11.22-e9042b2) with grok-4.7-low under the sandbox preset, the do-not-read sentence in the installed SKILL.md gave: as shipped 82.4% (+4.6 points, 95% CI +1.3 to +8.7), read first 0.0%, harm at end 62.0% (+3.1 points, 95% CI -1.5 to +7.8), benign as shipped 99.1% (+0.0 points, 95% CI -1.5 to +1.3); 89 of 108 adversarial runs ran the script as shipped, 0 read it first and 67 ended with the harm (108 benign runs). Differences are against the baseline runs of the same cell (CL-PILOT-023), over the 108 adversarial and 108 benign tasks run on both sides. The baseline ran on build 2026.11.13-eacade1, so the difference also spans a host update.",
       "claim_id": "CL-PILOT-024",
       "evidence": [
         {
